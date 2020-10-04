@@ -8,7 +8,10 @@ Projeto do Desafio de Process Mining do Hackaton CNJ
     │   ├── brutos                      <- Dados originais, brutos (não processados).
     │   │   ├── dump_estrutura.sql      <- Estrutura das tabelas processuais unificadas (Classe, assunto, movimento)
     │   │   ├── dump_dados.sql          <- Dados das tabelas processuais unificadas (inserts)
-    │   │   └── Hierarquia...2020.xlsx  <- Hierarquia das unidades judiarias e produtividade (estoque, taxa congestionamento)
+    │   │   ├── Hierarquia...2020.xlsx  <- Hierarquia das unidades judiarias e produtividade (estoque, taxa congestionamento)
+    │   │   ├── JF_Secao_2_...2020.csv  <- Dados das variáveis da justiça federal 2009 - 2019
+    │   │   ├── JN_25-Ago-2020.csv      <- Dados das variáveis da justiça 2009 - 2019
+    │   │   └── Variaveis_2...2020.csv  <- Relação das variáveis da justiça com descrição das variáveis.
     │   │
     │   ├── externos                    <- Dados obtidos de terceiros (não CNJ) 
     │   │   └── RELATORIO...ICIPIO.xls  <- Tabela dos municípios do brasil (fonte IBGE)
