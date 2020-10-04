@@ -9,7 +9,7 @@ Projeto do Desafio de Process Mining do Hackaton CNJ
     │   │   ├── dump_estrutura.sql      <- Estrutura das tabelas processuais unificadas (Classe, assunto, movimento)
     │   │   └── dump_dados.sql          <- Dados das tabelas processuais unificadas (inserts)
     │   │
-    │   ├── externos                    <- Dados obtidos de terceiros (não CNJ)
+    │   ├── externos                    <- Dados obtidos de terceiros (não CNJ) 
     │   │   └── RELATORIO...ICIPIO.xls  <- Tabela dos municípios do brasil (fonte IBGE)
     │   │
     │   ├── processados                 <- Conjuntos de dados canônicos para modelagem.
@@ -20,6 +20,7 @@ Projeto do Desafio de Process Mining do Hackaton CNJ
     │       ├── df_movimentos.csv       <- Dados dos movimentos gerado pelo script 01-Criacao_DF_TPU.py a partir do banco TPU.db
     │       ├── dump_dados...Lite.sql   <- Inserts das tabelas processuais unificadas para o banco SQLIte
     │       ├── dump_estrutu..Lite.sql  <- Estrutura de banco para as tabelas processuais unificadas para o banco SQLite
+    │       ├── OrgaoJul...encia.xlsx   <- Dados dos orgaos julgadores e suas competencias
     │       └── TPU.db                  <- (arquivo 13Gb), não incluso no Git. Banco SQLite com os dados das tabelas processuais unificadas
     │
     ├── modelos                         <- Modelos treinados e serializados, previsões de modelos ou resumos de modelos
