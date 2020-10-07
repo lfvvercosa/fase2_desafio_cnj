@@ -1,0 +1,694 @@
+,breadscrum,cod_item,cod_item_pai,nome,situacao,visibilidade_externa,monocratico,colegiado,presidente_vice,flg_papel,flg_eletronico,just_es_2grau,just_es_juizado_es,just_es_turmas,just_es_1grau_mil,just_es_2grau_mil,just_es_juizado_es_fp,just_tu_es_un,just_fed_1grau,just_fed_2grau,just_fed_juizado_es,just_fed_turmas,just_fed_nacional,just_fed_regional,just_trab_1grau,just_trab_2grau,just_trab_tst,just_trab_csjt,stf,stj,cjf,cnj,just_mil_uniao_1grau,just_mil_uniao_stm,just_mil_est_1grau,just_mil_est_tjm,just_elei_1grau,just_elei_2grau,just_elei_tse
+0,1,1,0,Magistrado,A,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+1,1:3,3,1,Decisão,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+2,1:3:7,7,3,Conversão,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+3,1:3:11,11,3,Declaração,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+4,14:15:16,16,15,Cálculo,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,0,N,S,S,S
+5,14:18:22,22,18,Baixa Definitiva,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+6,1:3:25,25,3,Suspensão ou Sobrestamento,A,S,N,N,N,S,S,S,N,N,N,N,N,N,S,S,N,N,N,N,S,S,S,N,N,S,N,S,N,N,N,N,S,S,S
+7,14:18:26,26,18,Distribuição,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+8,14:18:36,36,18,Redistribuição,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,N,S,S,S,S,S,S,S,S
+9,14:48,48,14,Escrivão/Diretor de Secretaria/Secretário Jurídico,A,S,N,N,N,N,N,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+10,14:48:51,51,48,Conclusão,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+11,1:3:56,56,3,Requisição de informações,I,S,S,S,S,S,S,S,S,S,N,N,S,S,S,S,S,S,N,S,S,S,S,N,S,S,N,N,N,N,N,N,S,S,S
+12,14:48:60,60,48,Expedição de documento,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+13,1:3:63,63,3,Ordenação de entrega de autos,I,S,N,N,N,S,N,S,S,S,N,N,S,N,S,N,S,N,N,N,S,S,S,N,N,S,N,N,N,N,N,N,S,S,S
+14,14:48:67,67,48,Juntada,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,0,N,S,S,S
+15,1:3:83,83,3,Cancelamento da distribuição,A,S,S,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,N,S,N,S,S,S,S,S,S,S,S
+16,14:48:67:85,85,67,Petição,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+17,14:48:92,92,48,Publicação,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,N,S,S,S,S,S,S,S
+18,14:104:105,105,104,Devolução,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,0,N,S,S,S
+19,14:104:105:106,106,105,Mandado,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+20,1:3:108,108,3,Decretação de Prisão Criminal,A,N,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,0,N,S,S,S
+21,14:104:105:112,112,105,Ofício,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+22,1:3:113,113,3,Decretação de Prisão Civil,A,N,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,0,N,S,S,S
+23,14:104:115,115,104,Recebimento,A,S,N,N,N,S,S,S,S,S,N,N,S,S,S,S,S,S,S,S,S,S,S,N,N,S,N,S,N,N,0,N,S,S,S
+24,1:3:117,117,3,Decretação de Internação,A,N,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,0,N,S,S,S
+25,14:48:118,118,48,Protocolo de Petição,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,N,S,S,S,S,S,S,S
+26,1:3:122,122,3,Desacolhimento de Prisão,A,N,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,0,N,S,S,S
+27,14:48:123,123,48,Remessa,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+28,1:3:157:128,128,157,Prisão,A,S,N,N,N,S,S,S,N,N,S,S,N,N,S,S,S,N,N,N,S,S,S,N,N,S,N,N,S,S,S,S,S,S,S
+29,14:48:132,132,48,Recebimento,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+30,1:3:133,133,3,Acolhimento de exceção,A,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,N,N,N,S,N,S,S,S,S,S,S,S,S,S
+31,14:48:135,135,48,Apensamento,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+32,14:48:137,137,48,Desapensamento,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+33,1:3:138,138,3,Rejeição,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+34,1:3:146,146,3,Não-Homologação de prisão em flagrante,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+35,1:3:151,151,3,Concessão de efeito suspensivo,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+36,1:3:157,157,3,Revogação,A,N,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,0,N,S,S,S
+37,1:3:160,160,3,Recebimento,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+38,1:3:163,163,3,Não-Recebimento,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+39,1:3:172,172,3,Deliberação da partilha,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+40,1:3:378:175,175,378,Prisão em flagrante,I,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+41,1:3:190,190,3,Reforma de decisão anterior,A,S,N,N,N,S,S,S,S,S,S,S,S,N,N,N,N,N,N,N,S,N,N,N,S,N,N,S,N,S,S,S,S,S,S
+42,1:193,193,1,Julgamento,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+43,1:193:385:196,196,385,Extinção da execução ou do cumprimento da sentença,A,S,S,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,S,S,S,N,N,S,N,N,N,N,S,S,S,S,S
+44,1:193:385:198,198,385,Acolhimento de Embargos de Declaração,A,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,N,N,N,S,S,S,S,S,S
+45,1:193:385:200,200,385,Não-Acolhimento de Embargos de Declaração,A,S,N,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,N,N,N,S,S,S,S,S,S
+46,1:193:385:202,202,385,Decretação de falência,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,0,N,S,S,S
+47,1:3:206,206,3,Admissão,A,S,N,N,S,S,S,S,N,N,N,N,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+48,1:3:207,207,3,Não-Admissão,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,0,N,S,S,S
+49,1:193:385:208,208,385,Não-Decretação de Falência,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,0,N,S,S,S
+50,1:193:385:210,210,385,Concessão,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+51,1:193:385:212,212,385,Denegação,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+52,1:193:385:214,214,385,Concessão em Parte,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+53,1:193:218,218,193,Sem Resolução de Mérito,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+54,1:193:385:219,219,385,Procedência,A,S,N,S,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,S,S,S,N,S,S,N,S,N,N,S,S,S,S,S
+55,1:193:385:220,220,385,Improcedência,A,S,N,S,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,S,S,S,N,S,S,N,S,N,N,S,S,S,S,S
+56,1:193:385:221,221,385,Procedência em Parte,A,S,N,S,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,S,S,S,N,S,S,N,S,N,N,S,S,S,S,S
+57,1:193:218:228,228,218,Arquivamento,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+58,1:193:218:230,230,218,Recurso prejudicado,A,S,S,S,N,S,S,S,N,S,N,S,N,S,N,S,N,S,N,S,N,S,S,N,S,S,N,S,N,S,N,S,S,S,S
+59,1:193:218:235,235,218,Não Conhecimento de recurso,A,S,N,S,N,S,S,S,N,S,S,S,N,S,S,S,N,S,N,S,S,S,S,N,S,S,N,S,N,S,S,S,S,S,S
+60,1:193:218:236,236,218,Negação de Seguimento,A,S,S,S,S,S,S,S,N,S,S,S,N,S,N,S,N,S,N,S,N,S,S,N,S,S,N,S,N,S,S,S,S,S,S
+61,1:193:385:237,237,385,Provimento,A,S,N,S,N,S,S,S,N,S,N,S,N,S,N,S,N,S,N,S,N,S,S,N,S,S,N,S,N,S,N,S,S,S,S
+62,1:193:385:238,238,385,Provimento em Parte,A,S,N,S,N,S,S,S,N,S,N,S,N,S,N,S,N,S,N,S,N,S,S,N,S,S,N,S,N,S,N,S,S,S,S
+63,1:193:385:239,239,385,Não-Provimento,A,S,N,S,N,S,S,S,N,S,N,S,N,S,N,S,N,S,N,S,N,S,S,N,S,S,N,S,N,S,N,S,S,S,S
+64,1:193:385:240,240,385,Conhecimento em Parte e Provimento,A,S,N,S,N,S,S,S,N,S,N,S,N,S,N,S,N,S,N,S,N,S,S,N,S,S,N,S,N,S,N,S,S,S,S
+65,1:193:385:241,241,385,Conhecimento em Parte e Provimento em Parte,A,S,S,S,S,S,S,S,N,S,N,S,N,S,N,S,N,S,N,S,N,S,S,N,S,S,N,S,N,S,N,S,S,S,S
+66,1:193:385:242,242,385,Conhecimento em Parte e Não-Provimento,A,S,N,S,N,S,S,S,N,S,N,S,N,S,N,S,N,S,N,S,N,S,S,N,S,S,N,S,N,S,N,S,S,S,S
+67,1:193:218:244,244,218,Conversão de Agravo de Instrumento em Agravo Retido,A,S,S,N,N,S,S,S,N,N,N,S,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S,S
+68,14:48:861:245,245,861,Provisório,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,N,N,S,S,N,S,N,S,S,S,S
+69,14:48:861:246,246,861,Definitivo,A,S,S,N,N,S,S,S,S,S,S,S,S,S,N,N,N,N,N,N,S,S,S,N,S,S,N,S,S,S,S,S,S,S,S
+70,1:3:25:263,263,25,Réu revel citado por edital ,A,S,N,N,N,S,S,S,N,N,N,N,N,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,N,N,0,N,S,S,S
+71,1:3:25:264,264,25,Suspensão Condicional do Processo,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S,S,S
+72,1:3:25:265,265,25,Recurso Extraordinário com repercussão geral,A,S,N,N,S,S,S,S,S,S,N,S,N,S,S,S,S,S,N,S,N,N,S,N,S,S,N,N,N,S,N,S,S,S,S
+73,1:3:7:266,266,7,Julgamento em Diligência,I,S,N,N,N,S,S,N,S,N,N,N,S,N,S,N,S,N,N,N,S,S,S,N,S,N,N,N,N,N,N,N,S,S,S
+74,1:3:25:268,268,25,Morte ou perda da capacidade,A,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,N,S,N,N,S,S,S,S,S,S,S
+75,1:3:11:269,269,11,Impedimento ou Suspeição,I,S,S,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,N,S,S,S,S,S,S,S,S
+76,1:3:25:270,270,25,Convenção das Partes,I,S,S,S,N,S,S,S,S,S,N,N,S,N,S,S,S,S,N,N,S,S,S,N,N,S,N,N,N,N,N,N,S,S,S
+77,1:3:25:271,271,25,"Exceção de Incompetência, suspeição ou Impedimento",I,S,S,S,N,S,S,S,S,S,N,N,S,S,S,S,S,S,S,S,S,S,S,N,N,S,N,N,N,N,N,N,S,S,S
+78,1:3:25:272,272,25,"A depender do julgamento de outra causa, de outro juízo ou declaração incidente",A,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,N,S,S,S,S,S,S,S,S
+79,1:3:25:275,275,25,Força maior,A,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,N,S,N,N,S,S,S,S,S,S,S
+80,1:3:25:276,276,25,Execução frustrada,A,S,S,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,S,S,S,N,N,N,N,N,N,N,S,S,S,S,S
+81,1:3:25:277,277,25,Convenção das Partes para Cumprimento Voluntário da obrigação,I,S,S,N,N,S,S,S,S,S,N,N,S,N,S,S,S,N,N,N,S,S,S,N,N,S,N,N,N,N,N,N,S,S,S
+82,1:3:25:278,278,25,Recebimento de Embargos à Execução,I,S,N,N,N,S,S,S,S,S,N,N,S,N,S,S,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+83,1:3:25:279,279,25,Incidente de Insanidade Mental,I,S,N,N,N,S,S,S,S,S,N,N,S,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+84,14:48:311,311,48,Leilão ou Praça,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,S,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+85,14:48:313,313,48,Sessão do Tribunal do Júri,A,S,N,N,N,S,S,N,N,N,N,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+86,1:3:817:332,332,817,Antecipação de tutela,A,S,S,S,N,S,S,S,S,N,S,S,S,N,S,S,N,N,N,N,S,S,S,N,S,S,N,N,N,N,S,S,S,S,S
+87,1:3:968:334,334,968,Assistência judiciária gratuita,A,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,N,N,S,S,S,S,S,S,S
+88,1:3:133:335,335,133,de pré-executividade,A,S,S,S,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,S,S,S,N,N,S,N,N,N,N,S,S,S,S,S
+89,1:3:817:339,339,817,Liminar,A,S,S,S,N,S,S,S,S,S,S,S,S,N,S,S,S,S,N,N,S,S,S,N,S,S,N,S,S,S,S,S,S,S,S
+90,1:3:157:347,347,157,Antecipação de Tutela,A,S,S,S,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,S,S,S,N,S,S,N,N,N,N,S,S,S,S,S
+91,1:3:157:348,348,157,Liminar,A,S,S,S,N,S,S,S,S,S,S,S,S,N,S,S,S,S,N,N,S,S,S,N,S,S,N,S,N,S,S,S,S,S,S
+92,1:3:157:349,349,157,Assistência Judiciária Gratuita,A,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+93,1:3:108:352,352,108,Temporária,A,N,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+94,1:3:108:353,353,108,Preventiva,A,N,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+95,1:3:113:354,354,113,Alimentos,A,N,N,N,N,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+96,1:3:113:355,355,113,Depositário infiel,I,N,S,S,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,S,S,S,N,N,S,N,N,N,N,S,S,S,S,S
+97,1:3:122:357,357,122,Temporária,A,N,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+98,1:3:122:358,358,122,Preventiva,A,N,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+99,1:3:133:371,371,133,Incompetência,A,S,S,S,S,S,S,S,N,N,S,S,N,S,S,S,S,S,N,S,S,S,S,N,S,S,N,N,S,S,S,S,S,S,S
+100,1:3:138:373,373,138,Exceção de Impedimento ou Suspeição,A,S,N,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,N,S,S,N,S,S,N,S,S,S,S,S,S,S,S
+101,1:3:138:374,374,138,Exceção de incompetência,A,S,N,S,N,S,S,S,N,N,S,S,N,S,S,S,S,S,N,S,S,S,S,N,S,S,N,N,S,S,S,S,S,S,S
+102,1:3:378:377,377,378,Acordo em execução ou em cumprimento de sentença,A,S,S,N,N,S,S,N,N,N,S,S,N,N,N,N,N,N,N,N,S,S,S,N,S,N,N,N,N,N,S,S,S,S,S
+103,1:3:378,378,3,Homologação,A,S,N,N,N,S,S,S,S,S,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+104,1:3:151:381,381,151,Recurso,A,S,N,N,N,S,S,S,S,S,S,S,S,N,S,S,S,S,N,N,N,N,S,N,S,S,N,N,S,S,S,S,S,S,S
+105,1:3:151:383,383,151,Impugnação ao cumprimento de sentença,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S,S,S
+106,1:193:385,385,193,Com Resolução do Mérito,A,S,N,N,N,S,S,S,S,S,N,N,N,N,S,S,S,S,N,N,N,N,N,N,N,S,N,S,N,N,N,N,S,S,S
+107,1:3:160:388,388,160,Aditamento da denúncia,A,S,N,N,N,S,S,S,N,N,S,S,N,N,S,S,S,N,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+108,1:3:160:389,389,160,Aditamento da queixa,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,S,S,N,N,N,N,S,S,S,S,S
+109,1:3:160:390,390,160,Aditamento do libelo,I,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+110,1:3:160:391,391,160,Denúncia,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+111,1:3:160:392,392,160,Libelo,I,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+112,1:3:160:393,393,160,Queixa,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,S,S,N,N,N,N,S,S,S,S,S
+113,1:3:160:1060:394,394,1060,Com efeito suspensivo,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+114,1:3:138:399,399,138,Aditamento da denúncia,A,S,N,N,N,S,S,S,N,N,S,S,N,N,S,S,S,N,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+115,1:3:138:400,400,138,Aditamento da queixa,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,S,S,N,N,N,N,S,S,S,S,S
+116,1:3:138:402,402,138,Denúncia,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+117,1:3:138:404,404,138,Queixa,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,S,S,N,N,N,N,S,S,S,S,S
+118,14:48:417,417,48,Inclusão em pauta,I,S,S,N,N,S,S,S,N,S,N,S,N,S,N,S,N,S,N,S,N,S,S,N,S,S,N,S,N,S,N,S,S,S,S
+119,1:3:206:429,429,206,Recurso extraordinário,A,S,N,N,S,S,S,S,N,S,N,S,N,N,S,S,N,S,N,N,N,N,S,N,S,S,N,N,N,S,N,S,S,S,S
+120,1:3:206:430,430,206,Recurso especial,A,S,N,N,S,S,S,S,N,N,N,S,N,N,N,S,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,S,S,S,S
+121,1:3:206:431,431,206,Recurso de revista,A,S,N,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,N,N,N,S,N,N,N,N,N,N,N,N,N,N,S,S,S
+122,1:3:207:432,432,207,Recurso Extraordinário,A,S,N,N,S,S,S,S,N,S,N,S,N,N,S,S,N,S,N,N,N,N,S,N,S,S,N,N,N,S,N,S,S,S,S
+123,1:3:207:433,433,207,Recurso Especial,A,S,N,N,S,S,S,S,N,N,N,S,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S,S
+124,1:3:207:434,434,207,Recurso de Revista,A,S,N,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,N,N,N,S,N,N,N,N,N,N,N,N,0,N,S,S,S
+125,1:193:385:210:442,442,210,Segurança,A,S,S,S,N,S,S,S,N,S,S,S,N,N,S,S,N,S,N,N,S,S,S,N,S,S,N,N,N,S,S,S,S,S,S
+126,1:193:385:210:443,443,210,Habeas corpus,A,S,S,S,N,S,S,S,N,S,S,S,N,N,S,S,N,S,N,N,N,S,S,N,S,S,N,N,N,S,S,S,S,S,S
+127,1:193:385:210:444,444,210,Habeas data,A,S,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,S,N,N,N,S,S,N,N,N,S,S,S,S,S,S
+128,1:193:385:210:445,445,210,Mandado de injunção,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,N,S,S,S
+129,1:193:385:212:446,446,212,Segurança,A,S,S,S,N,S,S,S,N,S,S,S,N,N,S,S,N,S,N,N,S,S,S,N,S,S,N,N,N,S,S,S,S,S,S
+130,1:193:385:212:447,447,212,Habeas corpus,A,S,S,S,N,S,S,S,N,S,S,S,N,N,S,S,N,S,N,N,N,S,S,N,S,S,N,N,N,S,S,S,S,S,S
+131,1:193:385:212:448,448,212,Habeas data,A,S,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,S,N,N,N,S,S,N,N,N,S,S,S,S,S,S
+132,1:193:385:212:449,449,212,Mandado de injunção,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,N,S,S,S
+133,1:193:385:214:450,450,214,Segurança,A,S,S,S,N,S,S,S,N,S,S,S,N,N,S,S,N,S,N,N,S,S,S,N,S,S,N,N,N,S,S,S,S,S,S
+134,1:193:385:214:451,451,214,Habeas corpus,A,S,S,S,N,S,S,S,N,S,S,S,N,N,S,S,N,S,N,N,N,S,S,N,S,S,N,N,N,S,S,S,S,S,S
+135,1:193:385:214:452,452,214,Habeas data,A,S,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,S,N,N,N,S,S,N,N,N,S,S,S,S,S,S
+136,1:193:385:214:453,453,214,Mandado de injunção,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,N,S,S,S
+137,1:193:218:456:454,454,456,Indeferimento da petição inicial,A,S,S,S,N,S,S,S,S,S,S,S,S,N,S,S,S,S,N,N,S,S,S,N,S,S,N,S,N,S,S,S,S,S,S
+138,1:193:385:455,455,385,Renúncia ao direito pelo autor,A,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,N,N,N,N,S,S,S,S,S
+139,1:193:218:456,456,218,Extinção,A,S,S,S,N,S,S,S,S,N,N,N,S,N,S,S,S,N,N,N,S,S,N,N,N,S,N,S,N,N,0,N,S,S,S
+140,1:193:218:456:457,457,456,Paralisação por negligência das partes,A,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,N,N,N,S,S,S,S,S,S
+141,1:193:218:456:458,458,456,Abandono da causa,A,S,N,N,N,S,S,S,S,S,S,S,S,N,S,S,S,S,N,N,S,S,S,N,S,S,N,N,N,N,S,S,S,S,S
+142,1:193:218:456:459,459,456,Ausência de pressupostos processuais,A,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,N,S,S,S,N,S,S,N,S,N,S,S,S,S,S,S
+143,1:193:218:456:460,460,456,"Perempção, litispendência ou coisa julgada",A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,N,S,N,S,S,S,S,S,S
+144,1:193:218:456:461,461,456,Ausência das condições da ação,A,S,N,N,N,S,S,S,S,S,S,S,S,N,S,S,S,S,N,N,S,S,S,N,S,S,N,S,N,S,S,S,S,S,S
+145,1:193:218:456:462,462,456,Convenção de arbitragem,A,S,N,N,N,S,S,S,S,S,N,N,S,S,S,S,S,S,N,S,S,S,S,N,S,S,N,N,N,N,N,N,S,S,S
+146,1:193:218:456:463,463,456,Desistência,A,S,S,S,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,S,S,N,N,S,S,N,S,N,S,S,S,S,S,S
+147,1:193:218:456:464,464,456,Ação intransmissível,A,S,N,N,N,S,S,S,S,S,N,N,S,S,S,S,S,S,N,S,S,S,S,N,S,S,N,N,N,N,N,N,S,S,S
+148,1:193:218:456:465,465,456,Confusão entre autor e réu,I,S,N,N,N,S,S,S,N,N,N,N,N,N,S,S,N,N,N,N,S,S,S,N,S,S,N,N,N,N,N,N,S,S,S
+149,1:193:385:466,466,385,Homologação de Transação,A,S,N,N,N,S,S,S,S,S,S,S,S,N,S,S,S,S,N,N,S,S,S,N,S,N,N,S,N,N,S,S,S,S,S
+150,1:193:385:471,471,385,Pronúncia de Decadência ou Prescrição,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,N,N,N,N,S,S,S,S,S
+151,1:193:218:228:472,472,228,"Sumaríssimo (art. 852-B, § 1º/CLT)",A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+152,1:193:218:228:473,473,228,Ausência do Reclamante,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+153,14:15:16:478,478,16,Cálculo de Liquidação,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,S,S,S,N,N,S,N,N,N,N,S,S,S,S,S
+154,14:15:16:479,479,16,Custas,A,S,N,N,N,S,S,S,S,S,S,S,S,N,N,N,N,N,N,N,S,S,S,N,S,S,N,N,N,N,S,S,S,S,S
+155,14:15:16:480,480,16,Atualização de conta,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,S,S,S,N,N,S,N,N,N,N,S,S,S,S,S
+156,14:15:16:481,481,16,Tributos,A,S,N,N,N,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S,N,N,S,N,N,N,N,0,N,S,S,S
+157,14:18:488,488,18,Cancelamento de Distribuição,A,S,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,S,S,S,N,N,S,N,S,S,S,S,S,S,S,S
+158,14:48:493,493,48,Entrega em carga/vista,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+159,14:48:67:581,581,67,Documento,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+160,1:3:968:785,785,968,Antecipação de tutela,A,S,S,S,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,S,S,S,N,S,S,N,N,N,N,S,S,S,S,S
+161,1:3:817:787,787,817,Assistência Judiciária Gratuita,I,S,S,S,N,S,S,S,S,S,N,N,S,S,S,S,S,S,N,S,S,S,S,N,S,S,N,N,N,N,N,N,S,S,S
+162,1:3:138:788,788,138,Exceção de pré-executividade,A,S,S,S,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,S,S,S,N,N,S,N,N,N,N,S,S,S,S,S
+163,1:3:968:792,792,968,Liminar,A,S,S,S,N,S,S,S,S,S,S,S,S,N,S,S,S,S,N,N,S,S,S,N,S,S,N,S,N,S,S,S,S,S,S
+164,1:3:163:799,799,163,Aditamento do libelo,I,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+165,1:3:163:803,803,163,Libelo,I,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+166,1:3:163:804,804,163,Recurso,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,N,S,S,S,S,S,S,S
+167,1:3:817,817,3,Concessão,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+168,1:3:817:818,818,817,Liberdade provisória,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+169,1:3:817:819,819,817,Livramento Condicional,A,S,N,N,N,S,S,S,N,N,S,S,N,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+170,1:3:7:821,821,7,Pena / Medida,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+171,1:3:117:823,823,117,Provisória,A,N,N,N,N,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+172,1:3:117:824,824,117,Definitiva,I,N,N,N,N,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+173,14:48:848,848,48,Trânsito em julgado,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+174,14:48:849,849,48,Reativação,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,N,N,N,N,S,N,S,S,S,S,S,S,S,S,S
+175,1:193:218:853,853,218,Conversão de Agravo de Instrumento em Recurso Especial ou Extraordinário,A,S,S,S,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,N,N,N,N,N,N,S,S,S
+176,14:48:861,861,48,Arquivamento,A,S,N,N,N,S,S,S,S,S,N,N,S,S,S,S,S,S,S,S,S,S,S,N,N,S,N,S,N,N,0,N,S,S,S
+177,14:865,865,14,Arquivista,A,S,N,N,N,S,S,N,N,N,N,N,N,S,S,S,S,S,N,S,S,S,S,N,N,N,N,S,N,N,N,N,S,S,S
+178,14:865:866,866,865,Guarda Intermediária,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,N,S,S,S,S,S,S,S,S,S,S
+179,14:865:867,867,865,Guarda Permanente,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+180,14:865:869,869,865,Entrega definitiva dos autos,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,N,S,S,S,N,N,S,S,S,S,S
+181,14:865:870,870,865,Autos Eliminados,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,N,S,S,S,S,S,S,S,S,S,S
+182,1:193:385:871,871,385,Acolhimento em parte de Embargos de Declaração,A,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,N,N,S,S,S,S,S,S
+183,14:48:873,873,48,Deliberação em Sessão,I,S,N,N,N,S,S,S,N,S,S,S,N,S,N,S,N,S,S,S,N,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+184,1:193:385:884,884,385,Transação Penal,A,S,N,N,N,S,S,N,S,N,S,S,S,N,N,N,S,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S,S,S
+185,1:3:888,888,3,Concessão em parte,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+186,1:3:888:889,889,888,Antecipação de Tutela,A,S,S,S,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,S,S,S,N,S,S,N,N,N,N,S,S,S,S,S
+187,1:3:888:892,892,888,Liminar,A,S,S,S,N,S,S,S,S,S,S,S,S,N,S,S,S,S,N,N,S,S,S,N,S,S,N,S,N,S,S,S,S,S,S
+188,14:48:893,893,48,Desarquivamento,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,N,S,S,S,S,S,S,S,S
+189,14:48:897,897,48,Retirada de pauta,A,S,S,S,N,S,S,S,N,S,N,S,N,S,N,S,N,S,N,S,N,S,S,N,S,S,S,S,N,S,N,S,S,S,S
+190,1:3:25:898,898,25,Por decisão judicial,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,N,S,S,S,S,S,S,S,S
+191,1:193:385:900,900,385,Declaração de competência em conflito,I,S,N,S,N,S,S,S,S,S,S,S,S,N,S,S,S,S,N,N,S,S,S,N,N,S,S,N,S,S,S,S,S,S,S
+192,1:193:385:901,901,385,Negação de seguimento,A,S,S,N,N,S,S,S,N,N,N,S,N,N,N,S,N,N,N,N,N,S,S,N,S,S,N,N,N,S,N,S,S,S,S
+193,1:3:113:905,905,113,"de estrangeiro para deportação, expulsão ou extradição",A,N,N,N,N,S,S,N,N,N,N,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+194,14:48:928,928,48,Republicação,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,N,S,S,S,S,S,S,S
+195,1:3:133:940,940,133,Impedimento ou Suspeição,A,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+196,1:3:11:941,941,11,Incompetência,A,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,N,S,S,S,S,S,S,S,S
+197,1:3:378:944,944,378,Desistência de Recurso,A,S,S,N,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,N,S,S,S,N,S,S,N,S,S,S,S,S,S,S,S
+198,1:3:157:945,945,157,Decisão anterior,A,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,N,S,S,S,S,S,S,S,S
+199,1:3:25:947,947,25,Por pendência de AIREsp,I,S,N,N,N,S,S,S,N,N,N,S,N,N,N,S,N,N,N,N,N,N,N,N,S,S,N,N,N,N,N,S,S,S,S
+200,1:3:25:960,960,25,Conflito de Competência,I,S,N,N,N,S,S,S,S,S,N,N,S,N,S,S,S,S,N,N,S,S,S,N,N,S,N,N,N,N,N,N,S,S,S
+201,1:3:961,961,3,Suscitação de Conflito de Competência,A,S,N,N,N,S,S,S,S,S,S,S,S,N,S,S,S,S,N,N,S,S,S,N,S,S,N,N,S,S,S,S,S,S,S
+202,1:3:968,968,3,Não-Concessão,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+203,14:48:970,970,48,Audiência,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,S,S,S,N,S,S,N,S,S,S,S,S,S,S,S
+204,1:3:25:971,971,25,Exceção da Verdade,I,S,N,N,N,S,S,S,N,N,N,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+205,1:193:385:972,972,385,Provimento (art. 557 do CPC),A,S,S,N,N,S,S,S,N,N,N,S,N,N,N,S,N,S,S,S,N,S,S,N,S,S,N,N,N,N,N,S,S,S,S
+206,1:193:385:973,973,385,Extinção da Punibilidade,A,S,N,S,N,S,S,S,S,N,N,N,S,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,N,N,0,N,S,S,S
+207,14:865:977,977,865,Recebimento,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+208,14:865:978,978,865,Remessa,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+209,14:15:979,979,15,Recebimento,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,N,S,N,N,N,N,S,S,S,S,S
+210,14:15:980,980,15,Remessa,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,N,S,N,N,N,N,S,S,S,S,S
+211,14:18:981,981,18,Recebimento,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+212,14:18:982,982,18,Remessa,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+213,14:104:115:985,985,115,Mandado,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,N,S,S,S,S,S,S,S
+214,14:104:115:987,987,115,Ofício,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+215,1:3:817:988,988,817,Permissão de saída,A,S,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S,S,S
+216,1:3:817:990,990,817,Direito de visita,A,S,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+217,1:3:817:1002,1002,817,Progressão de regime,A,S,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S,S,S
+218,1:3:11:1003,1003,11,Remição,A,S,N,N,N,S,S,N,N,N,S,S,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S,S,S
+219,1:3:157:1004,1004,157,Livramento Condicional,A,N,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+220,1:3:1008,1008,3,Autorização,A,N,N,N,N,S,S,S,N,N,N,N,N,N,S,S,N,N,N,N,N,N,N,N,N,S,N,N,N,N,0,N,S,S,S
+221,1:3:1008:1009,1009,1008,Trabalho Externo,A,S,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S,S,S
+222,1:3:1008:1010,1010,1008,Saída Temporária,A,S,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S,S,S
+223,1:3:1008:1011,1011,1008,Inclusão em Regime Disciplinar Diferenciado,A,N,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S,S,S
+224,1:3:1013,1013,3,Determinação,A,S,N,N,N,S,S,S,N,N,N,N,N,N,S,S,N,N,N,N,N,N,N,N,N,S,N,N,N,N,0,N,S,S,S
+225,1:3:1013:1014,1014,1013,Regressão de Regime,A,S,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S,S,S
+226,1:3:1013:1015,1015,1013,Suspensão do Processo,I,S,N,N,N,S,S,S,N,N,N,N,N,N,S,S,N,N,N,N,N,N,N,N,S,S,N,N,N,N,N,N,S,S,S
+227,1:3:157:1016,1016,157,Suspensão Condicional da Pena,A,N,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+228,1:3:817:1017,1017,817,Suspensão Condicional da Pena,A,S,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+229,1:3:1008:1018,1018,1008,Transferência para outro Estabelecimento Penal,A,N,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S,S,S
+230,1:3:1008:1019,1019,1008,Transferência da Execução da Pena,A,N,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+231,1:193:385:973:1042,1042,973,Morte do agente,A,S,N,N,N,N,N,S,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+232,1:193:385:973:1043,1043,973,"Anistia, graça ou indulto",A,S,N,N,N,N,N,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+233,1:193:385:973:1044,1044,973,Retroatividade de lei,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+234,1:193:385:973:1045,1045,973,"Prescrição, decadência ou perempção",I,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+235,1:193:385:973:1046,1046,973,Renúncia do queixoso ou perdão aceito ,A,S,N,N,N,S,S,S,S,N,N,N,S,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,N,N,0,N,S,S,S
+236,1:193:385:973:1047,1047,973,Retratação do agente,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+237,1:193:385:973:1048,1048,973,Perdão judicial,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+238,1:193:385:973:1049,1049,973,Pagamento integral do débito,A,S,N,N,N,S,S,S,N,N,N,N,N,N,S,S,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+239,1:193:385:973:1050,1050,973,Cumprimento da Pena,A,S,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+240,14:48:1051,1051,48,Decurso de Prazo,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,N,S,S,S,S,S,S,S,S
+241,14:48:1052,1052,48,Bens Apreendidos,A,S,N,N,N,S,S,S,S,N,N,N,S,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,N,N,0,N,S,S,S
+242,14:48:1052:1053,1053,1052,Destinação,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+243,14:48:1052:1054,1054,1052,Destinação Parcial,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+244,14:48:1052:1055,1055,1052,Cadastramento,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+245,1:3:160:1060:1059,1059,1060,Sem efeito suspensivo,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+246,1:3:160:1060,1060,160,Recurso,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,N,N,N,S,N,S,S,N,S,S,S,S,S,S,S,S
+247,14:48:1061,1061,48,Disponibilização no Diário da Justiça Eletrônico,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+248,14:48:1062,1062,48,Redisponibilização no Diário da Justiça Eletrônico,A,S,N,N,N,S,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S,S
+249,1:3:1013:1063,1063,1013,Determinação de arquivamento de procedimentos investigatórios,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,S,S,N,S,S,S,S,S,S,S,S
+250,1:193:218:10953,10953,218,Pronúncia,A,S,N,N,N,S,S,N,N,N,N,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+251,1:193:218:10961,10961,218,Impronúncia,A,S,N,N,N,S,S,N,N,N,N,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+252,1:3:1013:10962,10962,1013,Regressão de Medida Sócio-Educativa,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+253,1:3:817:10963,10963,817,Progressão de Medida Sócio-Educativa,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+254,1:193:385:10964,10964,385,Extinção por Cumprimento de Medida Sócio-Educativa,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+255,1:193:385:210:10965,10965,210,Remissão a Adolescente Infrator,I,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+256,14:48:10966,10966,48,Mudança de Classe Processual,A,S,N,N,N,S,S,S,S,S,S,S,S,N,S,S,S,S,N,N,S,S,S,N,N,S,N,S,S,S,S,S,S,S,S
+257,1:3:157:11002,11002,157,Revogação da Suspensão do Processo,A,S,N,N,N,S,S,N,S,N,S,S,S,N,S,S,S,N,N,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S
+258,14:48:11003,11003,48,Início do Cumprimento da Transação Penal,A,N,N,N,N,N,N,N,S,N,S,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,S,S,S
+259,14:48:11008,11008,48,Desmembramento de Feitos,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+260,1:11009,11009,1,Despacho,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+261,1:11009:11010,11010,11009,Mero expediente,A,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+262,1:3:378:11011,11011,378,Homologada a Remissão,I,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+263,1:11009:11025:11012,11012,11025,Conflito de Competência,A,S,N,N,N,S,S,S,S,S,S,S,S,N,S,S,S,S,N,N,S,S,S,N,N,S,N,N,S,S,S,S,S,S,S
+264,1:11009:11025:11013,11013,11025,Convenção das Partes,A,S,S,S,N,S,S,S,S,S,S,S,S,N,S,S,S,S,N,N,S,S,S,N,N,S,N,N,N,N,S,S,S,S,S
+265,1:11009:11025:11014,11014,11025,Convenção das Partes para Cumprimento Voluntário da obrigação,A,S,S,N,N,S,S,S,S,S,S,S,S,N,S,S,S,N,N,N,S,S,S,N,N,S,N,N,N,N,S,S,S,S,S
+266,1:11009:11025:11015,11015,11025,"Exceção de Incompetência, suspeição ou Impedimento",A,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,N,S,N,S,S,S,S,S,S,S,S
+267,1:11009:11025:11016,11016,11025,Exceção da Verdade,A,S,N,N,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S,S,S
+268,1:11009:11025:11017,11017,11025,Incidente de Insanidade Mental,A,S,N,N,N,S,S,S,S,S,S,S,S,N,S,S,S,N,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+269,1:11009:11025:11018,11018,11025,Recebimento de Embargos à Execução,A,S,N,N,N,S,S,S,S,S,S,S,S,N,S,S,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S,S,S
+270,1:11009:11019,11019,11009,Ordenação de entrega de autos,A,S,N,N,N,S,N,S,S,S,S,S,S,N,S,N,S,N,N,N,S,S,S,N,N,S,N,N,S,S,S,S,S,S,S
+271,1:11009:11020,11020,11009,Requisição de Informações,A,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,N,S,S,S,S,S,S,S,S
+272,1:11009:11021:11022,11022,11021,Julgamento em Diligência,A,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,N,S,S,S,S,S,S,S,S
+273,1:11009:11023:11024,11024,11023,Assistência Judiciária Gratuita,A,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,N,S,S,N,N,S,S,S,S,S,S,S
+274,1:11009:11025,11025,11009,Suspensão ou Sobrestamento,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+275,1:193:218:11373,11373,218,Anulação de sentença/acórdão,A,S,S,S,N,S,S,S,S,S,S,S,S,N,S,S,S,S,N,N,S,S,S,N,S,S,N,N,S,S,S,S,S,S,S
+276,1:193:218:456:11374,11374,456,Devedor não encontrado,A,S,N,N,N,S,S,N,S,N,N,N,S,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+277,1:193:218:456:11375,11375,456,Inexistência de bens penhoráveis,A,S,N,N,N,S,S,N,S,N,N,N,S,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+278,1:193:218:456:11376,11376,456,Ausência do autor à audiência,A,S,N,N,N,S,S,N,S,N,N,N,S,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+279,1:193:218:456:11377,11377,456,Inadmissibilidade do procedimento sumaríssimo,A,S,N,N,N,S,S,N,S,N,N,N,S,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+280,1:193:218:456:11378,11378,456,Incompetência territorial,A,S,N,N,N,S,S,N,S,N,N,N,S,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+281,1:193:218:456:11379,11379,456,Incompetência em razão da pessoa,A,S,N,N,N,S,S,N,S,N,N,N,S,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+282,1:193:218:456:11380,11380,456,Autor falecido e sem habilitação de sucessores,A,S,N,N,N,S,S,N,S,N,N,N,S,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+283,1:193:218:456:11381,11381,456,Ausência de citação de sucessores do réu falecido,A,S,N,N,N,S,S,N,S,N,N,N,S,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+284,1:3:1013:11382,11382,1013,Bloqueio/penhora on line,A,N,N,N,N,S,S,S,S,S,N,N,S,S,S,S,S,S,S,S,S,S,S,N,S,S,N,N,N,N,N,N,S,S,S
+285,14:48:11383,11383,48,Ato ordinatório,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S
+286,14:48:11384,11384,48,Liquidação iniciada,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S,N,N,N,N,N,N,N,N,N,S,S,S
+287,14:48:11385,11385,48,Execução iniciada,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S,N,N,N,N,N,N,N,N,N,S,S,S
+288,1:3:117:11393,11393,117,Sanção,A,N,N,N,N,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+289,1:193:218:11394,11394,218,Homologada a Remissão,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+290,1:3:817:11395,11395,817,Remissão ao adolescente com suspensão do processo,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+291,1:193:218:11396,11396,218,Concessão de remissão a adolescente com exclusão do processo,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+292,1:193:385:11401,11401,385,Procedência do pedido e procedência do pedido contraposto,A,S,N,N,N,S,S,N,S,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+293,1:193:385:11402,11402,385,Procedência do pedido e procedência em parte do pedido contraposto,A,S,N,N,N,S,S,N,S,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+294,1:193:385:11403,11403,385,Procedência do pedido e improcedência do pedido contraposto,A,S,N,N,N,S,S,N,S,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+295,1:193:385:11404,11404,385,Procedência em parte do pedido e procedência do pedido contraposto,A,S,N,N,N,S,S,N,S,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+296,1:193:385:11405,11405,385,Procedência em parte do pedido e procedência em parte do pedido contraposto,A,S,N,N,N,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+297,1:193:385:11406,11406,385,Procedência em parte do pedido e improcedência do pedido contraposto,A,S,N,N,N,S,S,N,S,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+298,1:193:385:11407,11407,385,Improcedência do pedido e procedência do pedido contraposto,A,S,N,N,N,S,S,N,S,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+299,1:193:385:11408,11408,385,Improcedência do pedido e procedência em parte do pedido contraposto,A,S,N,N,N,S,S,N,S,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+300,1:193:385:11409,11409,385,Improcedência do pedido e improcedência do pedido contraposto,A,S,N,N,N,S,S,N,S,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+301,1:193:385:973:11411,11411,973,Cumprimento da suspensão condicional do processo,A,S,S,S,N,S,S,S,S,N,N,N,S,N,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+302,1:3:817:11415,11415,817,Comutação da pena,A,S,S,S,N,S,S,S,N,N,N,N,N,N,S,S,N,N,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+303,1:3:817:11423,11423,817,Medida protetiva,A,N,S,S,N,S,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,S,S,N,N,N,N,S,S,S,S,S
+304,1:3:888:11424,11424,888,Medida protetiva,A,N,S,S,N,S,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,S,S,N,N,N,N,S,S,S,S,S
+305,1:3:968:11425,11425,968,Medida protetiva,A,S,S,N,N,S,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,S,S,N,N,N,N,S,S,S,S,S
+306,1:3:157:11426,11426,157,Medida protetiva,A,S,N,N,N,S,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,S,S,N,N,N,N,S,S,S,S,S
+307,1:3:817:11554,11554,817,Indulto,A,S,S,S,N,S,S,S,S,S,S,S,N,N,S,S,S,S,N,N,N,N,N,N,N,N,N,N,S,S,S,S,S,S,S
+308,1:3:25:11792,11792,25,Livramento Condicional,A,N,S,S,N,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S,S,S,S,S
+309,1:193:385:11795,11795,385,Procedência do Pedido - Reconhecimento pelo réu,A,S,S,S,N,S,S,S,S,S,N,N,S,N,S,S,S,S,S,S,S,S,S,N,N,N,N,S,N,N,N,N,S,S,S
+310,1:193:385:11796,11796,385,Declaração de competência em conflito,A,S,S,S,N,S,S,S,N,S,N,S,N,N,N,N,N,S,S,S,N,S,N,N,S,S,N,N,N,S,N,S,S,S,S
+311,1:193:385:973:11801,11801,973,Reparação do dano,A,S,N,S,N,S,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S,S,S,S,S
+312,1:193:385:11876,11876,385,Absolvição Sumária do art. 397-CPP,A,S,S,S,N,S,S,S,S,S,N,N,N,N,S,S,S,S,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+313,1:193:385:11877,11877,385,Absolvição sumária - crimes dolosos contra a vida,A,S,S,S,N,S,S,S,N,N,N,N,N,,S,S,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+314,1:193:385:973:11878,11878,973,Prescrição,A,S,S,S,N,S,S,S,S,S,S,S,N,N,S,S,S,S,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+315,1:193:385:973:11879,11879,973,Decadência ou perempção,A,S,S,S,N,S,S,S,S,S,S,S,N,N,S,S,S,S,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+316,1:3:25:11975,11975,25,Recurso Especial repetitivo,A,N,N,N,N,N,N,S,S,S,N,N,N,N,S,S,S,S,N,N,N,N,S,N,N,S,N,N,N,S,N,S,S,S,S
+317,14:48:11983,11983,48,Retificação de movimento,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+318,1:193:385:973:12028,12028,973,Cumprimento de transação penal,A,S,N,N,N,S,S,S,S,S,N,N,N,N,S,S,S,S,S,S,N,N,N,N,N,S,N,N,S,N,S,N,S,S,S
+319,1:193:385:210:12032,12032,210,Exequatur,A,S,N,N,N,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+320,1:3:378:12033,12033,378,Sentença Estrangeira,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+321,1:3:968:12034,12034,968,Exequatur,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+322,1:3:160:12035,12035,160,Representação por ato infracional,A,S,N,N,N,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+323,1:3:138:12036,12036,138,Representação por ato infracional,A,S,N,N,N,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+324,1:3:1013:12037,12037,1013,Quebra de sigilo fiscal,A,N,N,N,N,S,S,S,S,S,S,S,S,N,S,S,S,S,S,S,S,S,S,N,S,S,N,N,S,S,S,S,S,S,S
+325,1:3:1013:12038,12038,1013,Quebra de sigilo bancário,A,N,N,N,N,S,S,S,S,S,S,S,S,N,S,S,S,S,S,S,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+326,1:3:1013:12039,12039,1013,Quebra de sigilo telemático,A,N,N,N,N,S,S,S,S,S,S,S,S,N,S,S,S,N,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+327,1:3:1013:12040,12040,1013,Indisponibilidade de bens,A,N,N,N,N,S,S,S,N,N,N,N,N,N,S,S,N,N,N,N,S,S,S,N,S,S,N,N,N,N,N,N,S,S,S
+328,1:193:385:210:12041,12041,210,Recuperação judicial,A,S,N,N,N,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+329,14:48:12065,12065,48,Cumprimento de Suspensão ou Sobrestamento,A,N,N,N,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+330,14:48:12066,12066,48,Cumprimento de Levantamento da Suspensão ou Dessobrestamento,A,N,N,N,N,N,N,S,S,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+331,1:3:12067,12067,3,Levantamento da Suspensão ou Dessobrestamento,A,N,N,N,N,N,N,S,S,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+332,1:11009:12068,12068,11009,Levantamento da Suspensão ou Dessobrestamento,A,N,N,N,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+333,1:3:12092,12092,3,Afetação ao rito dos recursos repetitivos ,A,S,S,N,S,N,N,S,N,N,N,S,N,N,N,S,N,N,N,N,N,S,N,N,N,S,N,N,N,N,N,S,S,S,S
+334,1:3:12093,12093,3,Desafetação ao rito dos recursos repetitivos ,A,N,N,N,S,N,N,S,N,N,N,S,N,N,N,S,N,N,N,N,N,S,N,N,N,N,N,N,N,N,N,S,S,S,S
+335,1:3:206:12094,12094,206,Incidente de Resolução de demandas repetitivas (art. 981 e 982),A,N,N,S,N,N,N,S,N,N,N,S,N,N,N,S,N,N,N,N,N,S,N,N,N,N,N,N,N,N,N,S,S,S,S
+336,1:3:207:12095,12095,207,Incidente de resolução de demandas repetitivas,A,N,N,S,N,N,N,S,N,N,N,S,N,N,N,S,N,N,N,N,N,S,N,N,N,N,N,N,N,N,N,S,S,S,S
+337,1:3:206:12096,12096,206,Incidente de assunção de competência,A,N,N,S,N,N,N,S,N,N,N,S,N,N,N,S,N,N,N,N,N,S,N,N,N,N,N,N,N,N,N,S,S,S,S
+338,1:3:207:12097,12097,207,Incidente de assunção de competência ,A,N,N,S,N,N,N,S,N,N,N,S,N,N,N,S,N,N,N,N,N,S,N,N,N,N,N,N,N,N,N,S,S,S,S
+339,1:3:25:12098,12098,25,Incidente de Resolução de Demandas Repetitivas ,A,N,S,N,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,N,N,N,N,N,N,N,S,S,S,S,S
+340,1:3:25:12099,12099,25,Por decisão do Presidente do STJ -  IRDR,A,N,S,N,N,N,N,S,N,N,S,S,N,N,S,S,N,N,N,N,S,S,S,N,N,N,N,N,N,N,S,S,S,S,S
+341,1:3:25:12100,12100,25,Por decisão do Presidente do STF  - IRDR,A,N,S,N,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,N,N,N,N,N,N,N,S,S,S,S,S
+342,14:48:12103,12103,48,Pauta,A,N,N,N,N,N,N,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+343,14:48:12103:12104,12104,12103,Inclusão em pauta,A,N,N,N,N,N,N,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+344,14:48:12103:12105,12105,12103,Inclusão do processo para julgamento eletrônico,A,N,N,N,N,N,N,S,N,S,N,N,N,S,N,S,N,S,S,S,N,S,S,S,S,S,S,S,N,S,N,S,S,S,S
+345,14:48:12103:12106,12106,12103,Adiamento do julgamento (art. 935 do CPC),A,N,N,N,N,N,N,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+346,14:48:12103:12105:12107,12107,12105,Para análise de repercussão geral,A,N,N,N,N,N,N,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,N,S,S,S
+347,14:48:12103:12104:12108,12108,12104,Para análise de repercussão geral,A,N,N,N,N,N,N,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,N,S,S,S
+348,14:48:12103:12105:12109,12109,12105,Para análise da admissão do recurso repetitivo ,A,N,N,N,N,N,N,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,S,N,S,S,N,N,N,N,N,N,S,S,S
+349,14:48:12103:12104:12110,12110,12104,Para análise da admissão do recurso repetitivo ,A,N,N,N,N,N,N,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,S,N,S,S,N,N,N,N,N,N,S,S,S
+350,14:48:12103:12104:12111,12111,12104,Para análise da admissão do IRDR,A,N,N,N,N,N,N,S,N,N,N,S,N,,N,S,N,N,N,N,N,S,S,N,S,S,N,N,N,N,N,S,S,S,S
+351,14:48:12103:12105:12112,12112,12105,Para análise da admissão do IRDR,A,N,N,N,N,N,N,S,N,N,N,S,N,,N,S,N,N,N,N,N,S,S,N,S,S,N,N,N,N,N,S,S,S,S
+352,14:48:12103:12105:12113,12113,12105,Para análise da admissão do IAC,A,N,N,N,N,N,N,S,N,N,N,S,N,,N,S,N,N,N,N,N,S,N,N,N,N,N,N,N,N,N,S,S,S,S
+353,14:48:12103:12104:12114,12114,12104,Para análise da admissão do IAC,A,N,N,N,N,N,N,S,N,N,N,S,N,,N,S,N,N,N,N,N,S,N,N,N,N,N,N,N,N,N,S,S,S,S
+354,14:48:12103:12104:12115,12115,12104,Para julgamento de mérito,A,N,N,N,N,N,N,S,S,S,N,N,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+355,14:48:12103:12105:12116,12116,12105,Para julgamento de mérito,A,N,N,N,N,N,N,S,N,S,N,S,N,,N,S,N,S,S,S,N,N,S,S,S,S,S,N,N,S,N,S,S,S,S
+356,1:3:7:12140,12140,7,Prisão em Flagrante em Prisão Preventiva,A,N,S,S,N,S,S,S,S,N,S,S,N,,S,S,S,N,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+357,1:3:12141,12141,3,Relaxamento do Flagrante,A,N,S,S,N,S,S,S,S,N,S,S,N,,S,S,S,N,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+358,14:48:12142,12142,48,Mudança de Parte,A,S,S,S,S,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,N,N,S,S,S,S,S
+359,14:48:12143,12143,48,Mudança de Assunto Processual,A,S,S,S,S,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+360,1:3:12144,12144,3,Unificação e Soma de Penas,A,S,S,S,N,S,S,S,S,N,S,S,N,,S,S,S,N,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+361,1:3:157:12145,12145,157,Detração/Remição,A,S,S,S,N,S,S,S,S,N,S,S,N,,S,S,S,N,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+362,1:3:968:12146,12146,968,Liberdade Provisória,A,S,S,S,N,S,S,S,S,S,S,S,N,,S,S,S,S,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+363,1:3:122:12147,12147,122,Domiciliar,A,S,S,S,N,S,S,S,S,S,S,S,N,,S,S,S,S,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+364,1:3:817:12148,12148,817,Prisão Domiciliar,A,S,S,S,N,S,S,S,S,S,S,S,N,,S,S,S,N,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+365,1:3:817:12149,12149,817,Detração/Remição da Pena,A,S,S,S,N,S,S,S,S,S,S,S,N,,S,S,S,S,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+366,1:3:11:12150,12150,11,Impedimento,A,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+367,1:3:11:12151,12151,11,Suspeição,A,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+368,1:3:12164,12164,3,Outras Decisões,A,S,N,N,N,N,N,S,S,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+369,14:48:12165,12165,48,Requisição de Pagamento,A,S,N,N,N,N,N,S,S,S,N,N,S,N,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+370,14:48:12165:12166,12166,12165,Precatório,A,S,N,N,N,N,N,S,S,N,N,N,S,N,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+371,14:48:12165:12166:12167,12167,12166,Enviada ao Tribunal,A,S,N,N,N,N,N,S,S,S,S,S,S,N,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S,S,S
+372,14:48:12165:12166:12168,12168,12166,Preparada para Envio,A,N,N,N,N,N,N,S,S,S,S,S,S,N,S,S,S,S,N,N,N,N,N,N,N,N,N,N,S,S,N,N,S,S,S
+373,14:48:12165:12166:12169,12169,12166,Paga,A,S,N,N,N,N,N,S,S,S,S,S,S,N,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,S,S,S,S,S
+374,14:48:12165:12166:12170,12170,12166,Cancelada,A,S,N,N,N,N,N,S,S,S,S,S,S,N,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S,S,S
+375,14:48:12165:12166:12171,12171,12166,Retificado,A,N,N,N,N,N,N,S,S,S,S,S,S,N,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S,S,S
+376,14:48:12165:12166:12172,12172,12166,Suspensão,A,S,N,N,N,N,N,S,S,S,S,S,S,N,S,S,S,S,N,N,N,N,N,N,N,N,N,N,S,S,N,N,S,S,S
+377,14:48:12165:12173,12173,12165,Pequeno Valor,A,S,N,N,N,N,N,S,S,S,N,N,S,,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+378,14:48:12165:12173:12174,12174,12173,Enviada ao Tribunal,A,S,N,N,N,N,N,S,S,S,S,S,S,N,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S,S,S
+379,14:48:12165:12173:12175,12175,12173,Preparada para Envio,A,S,N,N,N,N,N,S,S,S,N,N,S,,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+380,14:48:12165:12173:12176,12176,12173,Paga,A,S,N,N,N,N,N,S,S,S,S,S,S,N,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S,S,S
+381,14:48:12165:12173:12177,12177,12173,Cancelada,A,S,N,N,N,N,N,S,S,S,S,S,S,N,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S,S,S
+382,14:48:12165:12173:12178,12178,12173,Retificada,A,S,N,N,N,N,N,S,S,S,S,S,S,N,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S,S,S
+383,14:48:12165:12173:12179,12179,12173,Suspensão,A,S,N,N,N,N,N,S,S,S,S,S,S,N,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S,S,S
+384,1:3:817:11395:12180,12180,11395,Prestação de Serviços à Comunidade,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+385,1:3:817:11395:12181,12181,11395,Reparação do Dano,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+386,1:3:817:11395:12182,12182,11395,Liberdade Assistida,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+387,1:3:817:11395:12183,12183,11395,Justiça Restaurativa,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+388,1:193:218:12184,12184,218,Suspensão Condicional do Processo,I,S,N,N,N,N,N,S,S,S,N,N,N,N,S,S,S,S,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+389,1:3:12185,12185,3,Decisão Interlocutória de Mérito,A,S,N,N,N,N,N,S,S,S,N,N,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+390,14:48:12186,12186,48,Cancelamento de Distribuição,A,S,N,N,N,N,N,S,S,S,N,N,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+391,1:193:385:12187,12187,385,Homologação de Decisão de Juiz Leigo,I,S,N,N,N,N,N,S,S,S,N,N,N,N,S,S,S,S,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+392,1:3:1008:12188,12188,1008,Recambiamento de Preso,A,N,N,N,N,N,N,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S,S,S,S,S
+393,14:48:12189,12189,48,Entrega de Documento,A,S,N,N,N,N,N,S,S,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+394,14:48:12198,12198,48,Deliberado em Sessão,A,S,N,N,N,S,S,S,N,S,N,S,N,S,N,S,N,S,S,S,N,S,S,S,S,S,S,S,N,S,N,S,S,S,S
+395,14:48:12198:12199,12199,12198,Julgado,A,S,N,N,N,S,S,S,N,S,N,S,N,S,N,S,N,S,S,S,N,S,S,S,N,N,S,S,N,S,N,S,S,S,S
+396,14:48:12198:12199:12200,12200,12199,Mérito,A,S,N,N,N,S,S,S,N,S,N,S,N,S,N,S,N,S,S,S,N,S,S,S,N,N,S,S,N,S,N,S,S,S,S
+397,14:48:12198:12199:12201,12201,12199,Liminar,A,S,N,N,N,S,S,S,N,S,N,S,N,S,N,S,N,S,S,S,N,S,S,S,N,N,S,S,N,S,N,S,S,S,S
+398,14:48:12198:12199:12202,12202,12199,Questão de Ordem,A,S,N,N,N,S,N,S,N,S,N,S,N,S,N,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+399,14:48:12198:12203,12203,12198,Adiado,A,S,N,N,N,S,S,S,N,S,S,S,N,S,N,S,N,S,S,S,N,S,S,S,S,S,S,S,N,S,N,S,S,S,S
+400,14:48:12198:12204,12204,12198,Pedido de Vista,A,S,N,N,N,S,S,S,N,S,N,S,N,S,N,S,N,S,S,S,N,S,S,S,S,S,S,S,N,S,N,S,S,S,S
+401,14:48:12198:12205,12205,12198,Retirado,A,S,N,N,N,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+402,1:3:12206,12206,3,Ratificação,A,S,N,N,N,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+403,1:3:12206:12207,12207,12206,Liminar,A,S,N,N,N,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+404,1:3:12208,12208,3,Não-Ratificação,A,S,N,N,N,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+405,1:3:12208:12209,12209,12208,Liminar,A,S,N,N,N,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+406,1:3:12210,12210,3,Ratificação em Parte,A,S,N,N,N,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+407,1:3:12210:12211,12211,12210,Liminar,A,S,N,N,N,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+408,14:48:12198:12199:12212,12212,12199,Prorrogação de PAD,A,N,N,N,N,N,N,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+409,1:3:12206:12213,12213,12206,Decisão Monocrática,A,S,N,N,N,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+410,14:48:12214,12214,48,Processo Encaminhado,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+411,14:48:12215,12215,48,Processo devolvido à Secretaria,A,S,N,N,N,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+412,1:193:385:12252,12252,385,Sentença confirmada,A,S,N,S,N,S,S,S,N,N,N,S,N,N,N,S,N,N,N,N,N,S,S,N,N,S,N,N,N,S,N,S,S,S,S
+413,1:193:385:12253,12253,385,Sentença confirmada em parte,A,S,N,S,N,S,S,S,N,N,N,S,N,,N,S,N,N,N,N,N,S,S,N,N,S,N,N,N,S,N,S,S,S,S
+414,1:193:385:12254,12254,385,Sentença desconstituída,A,S,N,S,N,S,S,S,N,N,N,S,N,N,N,N,N,N,N,N,N,S,S,N,N,S,N,N,N,S,N,S,S,S,S
+415,1:3:1013:12255,12255,1013,Redistribuição por prevenção,A,S,S,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,S,S,S
+416,1:193:218:456:12256,12256,456,Continência,A,S,S,N,N,S,S,S,S,N,S,S,N,,S,S,S,N,N,N,S,S,S,N,S,S,N,S,N,N,S,S,S,S,S
+417,1:193:385:12257,12257,385,Definição de tese jurídica em incidentes repetitivos,A,S,N,S,N,S,S,S,N,N,N,S,N,N,N,S,N,N,N,N,N,S,N,N,S,S,N,N,N,S,N,S,S,S,S
+418,1:193:385:12258,12258,385,Emissão de juízo de retratação pelo Órgão Julgador,A,S,S,S,N,S,S,S,N,S,N,S,N,,N,S,S,S,S,S,N,S,S,S,N,S,N,N,N,S,N,S,S,S,S
+419,1:3:25:12259,12259,25,"Prescrição intercorrente (art. 921, § 4º, CPC)",A,S,S,N,N,S,S,S,N,N,N,N,N,,S,S,N,N,N,N,S,S,S,N,N,S,N,N,N,N,N,N,S,S,S
+420,14:48:12260,12260,48,Autos restaurados,A,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+421,1:3:160:12261,12261,160,Emenda a inicial,A,S,N,N,N,S,S,S,S,N,S,S,S,,S,S,S,N,N,N,S,S,S,N,S,S,N,N,N,N,S,S,S,S,S
+422,14:48:12263,12263,48,Intimação,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+423,14:48:12263:12264,12264,12263,Eletrônica,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+424,14:48:12263:12264:12265,12265,12264,Expedida/certificada,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+425,14:48:12263:12264:12266,12266,12264,Confirmada,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+426,14:48:12263:12267,12267,12263,Em audiência,A,S,N,N,N,S,N,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+427,14:48:12263:12268,12268,12263,Em Secretaria,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+428,14:48:12269,12269,48,Desentranhamento,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+429,14:48:12269:12270,12270,12269,Documento,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+430,14:48:12269:12271,12271,12269,Petição,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+431,14:48:12198:12272,12272,12198,Declinada a competência,A,S,N,N,N,S,S,S,S,S,N,S,N,,N,S,N,S,S,S,N,S,S,N,S,S,N,N,N,S,N,S,S,S,S
+432,14:48:12198:12273,12273,12198,Convertido em diligência,A,S,N,N,N,S,S,S,N,S,N,S,N,,N,S,N,S,S,S,N,S,S,S,S,S,S,N,N,S,N,S,S,S,S
+433,14:48:12198:12274,12274,12198,Sobrestado,A,S,N,N,N,S,S,S,N,S,N,S,N,N,N,S,N,S,S,S,N,S,S,S,S,S,S,S,N,S,N,S,S,S,S
+434,14:48:12198:12275,12275,12198,Retificado,A,S,N,N,N,S,S,S,N,S,N,S,N,,N,S,N,S,S,S,N,S,S,S,S,S,S,N,N,S,N,S,S,S,S
+435,14:48:12276,12276,48,Cumprimento da pena,A,S,N,N,N,N,N,S,S,N,S,S,N,,S,S,S,N,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+436,14:48:12276:12277,12277,12276,Início,A,S,N,N,N,S,S,S,S,N,S,S,N,,S,S,S,N,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+437,14:48:12276:12278,12278,12276,Fim,A,S,N,N,N,S,S,S,S,N,S,S,N,,S,S,S,N,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+438,14:48:12276:12280,12280,12276,Interrupção,A,S,N,N,N,S,S,N,S,N,N,N,N,,S,S,S,N,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+439,14:48:12281,12281,48,Comunicação eletrônica,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+440,14:48:12281:12282,12282,12281,Expedida/Certificada,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+441,14:48:12281:12283,12283,12281,Confirmada,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+442,14:48:12284,12284,48,Citação,A,S,N,N,N,S,S,S,S,N,S,S,S,,S,S,S,N,N,N,S,S,S,N,S,S,S,N,S,S,S,S,S,S,S
+443,14:48:12284:12285,12285,12284,Em Secretaria/Comparecimento Espontâneo,A,S,N,N,N,S,S,S,S,N,N,N,S,,S,S,S,N,N,N,S,S,S,N,S,S,N,N,S,S,S,S,S,S,S
+444,14:48:12284:12286,12286,12284,Eletrônica,A,S,N,N,N,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,S,S,S,N,S,S,N,N,S,S,S,S,S,S,S
+445,14:48:12284:12286:12287,12287,12286,Expedida/Certificada,A,S,N,N,N,S,S,S,S,N,S,S,S,,S,S,S,N,N,N,S,S,S,N,S,S,N,S,S,S,S,S,S,S,S
+446,14:48:12284:12286:12288,12288,12286,Confirmada,A,S,N,N,N,S,S,S,S,N,S,S,S,,S,S,S,N,N,N,S,S,S,N,S,S,N,N,S,S,S,S,S,S,S
+447,14:48:12289,12289,48,Cancelamento,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+448,14:48:12289:12290,12290,12289,Documento Expedido,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+449,14:48:12289:12291,12291,12289,Movimentação processual,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+450,14:48:12292,12292,48,Ato cumprido pela parte ou interessado,A,S,N,N,N,S,S,S,S,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+451,14:48:12292:12293,12293,12292,Ato cumprido pela parte ou interessado (sem atributo),A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+452,14:48:12292:12294,12294,12292,Comparecimento do Réu/Apenado,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,N,N,N,N,S,S,S,N,S,S,S,S,S,S,S
+453,14:48:12292:12295,12295,12292,Depósito de Bens/Dinheiro,A,S,N,N,N,S,N,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,N,S,S,N,N,N,N,S,S,S,S,S
+454,14:18:12296,12296,18,Registro,A,S,N,N,N,S,S,S,S,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+455,14:18:12297,12297,18,Atribuição de competência,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,N,S,S,N,N,S,S,S,S,S,S,S
+456,1:193:218:456:12298,12298,456,Cancelamento de Dívida Ativa,A,S,N,N,N,S,S,N,S,N,N,N,S,,S,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+457,1:3:12299,12299,3,Prorrogação de cumprimento de pena/medida de segurança,A,S,N,N,N,S,S,N,S,N,S,N,N,N,S,N,S,N,N,N,N,N,N,N,N,N,N,N,S,N,S,N,S,S,S
+458,1:3:12300,12300,3,Nomeação,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,N,S,S,N,N,S,S,S,S,S,S,S
+459,1:3:12300:12301,12301,12300,Advogado Voluntário,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,N,S,S,N,N,S,S,S,S,S,S,S
+460,1:3:12300:12302,12302,12300,Curador,A,S,N,N,N,S,S,S,S,S,N,N,S,,S,S,S,S,S,S,S,S,S,N,S,S,S,N,S,S,S,S,S,S,S
+461,1:3:12300:12303,12303,12300,Defensor Dativo,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,N,S,S,N,N,S,S,S,S,S,S,S
+462,1:3:12300:12304,12304,12300,Intérprete/Tradutor,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+463,1:3:12300:12305,12305,12300,Outros auxiliares de justiça,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+464,1:3:12300:12306,12306,12300,Perito,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+465,1:3:12307,12307,3,Decretação de revelia,A,S,N,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,N,N,S,S,S,N,S,S,N,N,S,S,S,S,S,S,S
+466,1:3:817:12308,12308,817,Substituição/Sucessão,A,S,S,N,N,S,S,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,N,S,S,N,N,N,N,S,S,S,S,S
+467,14:48:12103:12309,12309,12103,Retirada,A,N,N,N,N,N,N,S,S,S,S,S,S,,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+468,1:11009:12310,12310,11009,Pauta,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+469,1:11009:12310:12311,12311,12310,Pedido de inclusão,A,S,S,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+470,1:11009:12310:12312,12312,12310,Retirar pedido de inclusão,A,S,S,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+471,1:11009:12310:12313,12313,12310,Pedido de inclusão em pauta virtual,A,S,S,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+472,1:11009:12310:12314,12314,12310,Retirar pedido de pauta virtual,A,S,S,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+473,14:48:12315,12315,48,Devolvidos os autos,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+474,14:48:12316,12316,48,Notificação Inicial,I,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+475,14:48:12317,12317,48,Notificação inicial com liminar,I,S,N,N,N,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+476,1:3:12318,12318,3,Reconhecimento de prevenção,A,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,S,N,N,N,N,S,S,S
+477,1:193:218:12319,12319,218,Não conhecimento do pedido,A,S,S,N,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,S,N,N,N,N,S,S,S
+478,1:3:12320,12320,3,Denegação de prevenção,A,S,S,N,N,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+479,1:193:385:12321,12321,385,Parecer,A,S,N,S,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+480,1:193:385:12321:12322,12322,12321,Favorável,A,S,N,S,N,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+481,1:193:385:12321:12323,12323,12321,Favorável em parte,A,S,N,S,N,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+482,1:193:385:12321:12324,12324,12321,Desfavorável,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+483,1:193:218:456:12325,12325,456,Perda do objeto,A,S,S,S,N,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+484,1:193:385:12326,12326,385,Consulta,A,S,N,S,N,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+485,1:193:385:12326:12327,12327,12326,Respondida,A,S,N,S,N,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+486,1:193:385:12326:12328,12328,12326,Respondida em parte,A,S,N,N,N,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+487,1:193:385:12329,12329,385,Pedido conhecido em parte e procedente,A,S,N,S,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+488,1:193:385:12330,12330,385,Pedido conhecido em parte e procedente em parte,A,S,N,S,N,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+489,1:193:385:12331,12331,385,Pedido conhecido em parte e improcedente,A,S,N,S,N,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+490,1:3:12332,12332,3,Prorrogado prazo de conclusão,A,S,N,S,N,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+491,1:3:12359,12359,3,Liminar Prejudicada,A,S,S,S,S,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,S,S,S
+492,1:3:12387,12387,3,Decisão de Saneamento e Organização,A,S,S,N,S,S,S,S,S,N,S,S,S,,S,S,S,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+493,1:3:1013:12421,12421,1013,Juízo provisório para medidas urgentes,A,N,S,S,S,N,N,S,N,N,N,N,N,N,N,S,N,N,N,N,N,N,N,N,S,S,N,N,N,N,N,N,S,S,S
+494,1:3:1013:12422,12422,1013,Devolução da carta rogatória ao juízo rogante,A,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+495,1:3:12425,12425,3,Unificação de Medidas Socioeducativas,A,S,S,N,N,S,S,S,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,S,S,N,N,N,N,N,N,S,S,S
+496,1:3:207:12427,12427,207,Agravo em recurso especial ,A,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+497,1:3:206:12428,12428,206,Reclamação,A,S,S,S,S,N,N,S,N,N,N,S,N,N,N,S,N,N,N,N,N,S,S,N,S,S,N,N,N,S,N,S,S,S,S
+498,1:3:206:12429,12429,206,Embargos de Divergência,A,S,S,S,N,N,N,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,S,S,N,N,N,N,N,N,S,S,S
+499,1:3:1013:12430,12430,1013,Arquivamento,A,S,S,S,S,S,S,S,N,N,N,S,N,,N,S,N,N,N,N,N,S,N,N,S,S,N,S,N,S,N,S,S,S,S
+500,1:3:206:12431,12431,206,Embargos ,A,S,N,N,N,N,N,S,N,N,N,N,N,,S,S,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+501,1:3:12432,12432,3,Afetação,A,N,S,S,N,N,N,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+502,1:193:385:12433,12433,385,Conjunto Agravo e Recurso Especial,A,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+503,1:193:385:12433:12434,12434,12433,Conhecimento para dar provimento ao Recurso Especial ,A,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+504,1:193:385:12433:12435,12435,12433,Conhecimento para negar provimento ao recurso especial,A,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+505,1:193:385:12433:12436,12436,12433,Conhecimento para não conhecer do Recurso Especial,A,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+506,1:193:385:12433:12437,12437,12433,Conhecimento para determinar sua autuação como Recurso Especial,A,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+507,1:193:385:12433:12438,12438,12433,conhecimento para dar parcial provimento ao recurso especial,A,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+508,1:193:385:12433:12439,12439,12433,conhecimento para conhecer em parte o recurso especial e dar provimento ,A,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+509,1:193:385:12433:12440,12440,12433,conhecimento para conhecer em parte o recurso especial e negar provimento,A,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+510,1:193:385:12433:12441,12441,12433,Conhecimento para conhecer o recurso especial,A,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+511,1:193:385:12433:12442,12442,12433,conhecimento para conhecer em parte o recurso especial ,A,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+512,1:193:385:12433:12443,12443,12433,conhecimento em parte para dar provimento ao recurso especial,A,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+513,1:3:12444,12444,3,deferimento,A,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+514,1:3:206:12445,12445,206,Recurso Ordinário,A,S,S,S,S,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,S,S,N,N,N,N,N,N,S,S,S
+515,1:3:206:12446,12446,206,Afetação tornada sem efeito,A,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,N,N,N,N,N,N,S,S,S
+516,1:3:1008:12447,12447,1008,pagamento,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+517,1:3:1013:12448,12448,1013,Demonstração de existência de repercussão geral e  manifestação sobre a questão constitucional,A,S,S,S,S,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,S,S,N,N,N,N,N,N,S,S,S
+518,1:11009:11010:12449,12449,11010,expedição de alvará de levantamento,I,S,S,S,S,S,S,S,S,S,N,N,N,N,S,S,N,N,N,N,N,N,N,N,S,S,N,S,N,N,N,N,S,S,S
+519,1:193:385:12450:12451,12451,12450,Procedência,A,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,N,N,N,N,N,N,S,S,S
+520,1:193:385:12450:12452,12452,12450,procedência parcial,A,S,S,S,S,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,S,S,N,N,N,N,N,N,S,S,S
+521,1:193:385:12450:12453,12453,12450,improcedência,A,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,N,N,N,N,N,N,S,S,S
+522,1:3:206:12454,12454,206,Pedido de Uniformização de Interpretação de Lei,A,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+523,1:3:12455,12455,3,Indeferimento,A,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,N,N,N,N,N,N,S,S,S
+524,1:3:207:12456,12456,207,Recurso Ordinário,A,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+525,1:3:1013:12457,12457,1013,Expedição de precatório/rpv,A,S,S,S,S,S,S,S,S,N,S,S,S,N,S,S,S,N,N,N,S,S,S,N,S,S,N,S,N,N,S,S,S,S,S
+526,1:193:218:12458,12458,218,Não conhecimento do habeas corpus,A,S,S,S,S,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,S,N,N,N,S,S,N,N,N,N,S,S,S,S,S
+527,1:193:218:12459,12459,218,Prejudicado,A,S,S,S,S,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,S,S,N,S,N,N,N,N,S,S,S
+528,1:3:378:12467,12467,378,Desistência de pedido,A,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,N,N,N,N,N,N,S,S,S
+529,1:3:1013:12472,12472,1013,Devolução dos autos à origem ,A,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,N,N,N,N,N,N,S,S,S
+530,1:3:7:12473,12473,7,agravo em recurso especial ,A,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+531,1:3:1013:12474,12474,1013,Distribuição,A,S,S,S,S,S,S,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,S,N,N,N,N,N,N,S,S,S
+532,1:193:385:210:12475,12475,210,Habeas Corpus de ofício,A,S,S,S,S,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,S,S,N,N,S,S,N,S,S,S,S,S,S,S,S
+533,1:3:378:12476,12476,378,Medida protetiva determinada por autoridade policial,A,S,S,S,N,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,N,N,N,N,N,N,S,S,S
+534,1:3:12477,12477,3,Não-Homologação,I,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+535,1:3:12477:12478,12478,12477,Medida protetiva determinada por autoridade policia,I,S,S,S,N,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+536,1:3:157:12479,12479,157,Medida protetiva determinada por autoridade policia,A,S,S,S,N,S,S,S,N,N,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S,S,S
+537,14:12522,12522,14,Auxiliar da Justiça,A,N,N,N,N,N,N,S,S,S,N,N,S,N,S,S,S,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N
+538,14:12522:12523,12523,12522,Conciliador,A,N,N,N,N,N,N,S,S,S,N,N,S,N,S,S,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N
+539,14:12522:12524,12524,12522,Juiz Leigo,A,N,N,N,N,N,N,S,S,S,N,N,S,N,S,S,S,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N
+540,14:12522:12525,12525,12522,Mediador,A,N,N,N,N,N,N,S,S,S,N,N,S,N,S,S,S,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N
+541,14:12522:12525:12526,12526,12525,Conciliação,A,N,N,N,N,N,N,S,S,S,N,N,S,N,S,S,S,S,S,S,S,S,S,N,N,S,N,N,N,N,N,N,N,N,N
+542,14:12522:12525:12527,12527,12525,Mediação,A,N,N,N,N,N,N,S,S,S,N,N,S,N,S,S,S,S,S,S,S,S,S,N,N,S,N,N,N,N,N,N,N,N,N
+543,14:12522:12523:12528,12528,12523,Conciliação,A,N,N,N,N,N,N,S,S,S,N,N,S,N,S,S,S,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N
+544,14:12522:12524:12529,12529,12524,Decisão,A,N,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+545,14:12522:12524:12530,12530,12524,Conciliação,A,N,N,N,N,N,N,S,S,S,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+546,14:12522:12523:12528:12531,12531,12528,Frutífera,A,S,N,N,N,S,S,S,S,S,N,N,S,N,S,S,S,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N
+547,14:12522:12523:12528:12532,12532,12528,Infrutífera,A,S,N,N,N,S,S,S,S,S,N,N,S,N,S,S,S,S,S,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N
+548,14:12522:12524:12530:12533,12533,12530,Frutífera,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+549,14:12522:12524:12530:12534,12534,12530,Infrutífera,A,S,N,N,N,S,S,S,S,S,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+550,1:11009:12548,12548,11009,Expedição de alvará de levantamento,A,S,S,S,S,S,S,S,S,S,N,N,N,N,S,S,S,S,N,N,N,N,N,N,S,S,N,S,N,N,N,N,S,S,S
+551,14:48:12606,12606,48,Remessa negociação consumidor.gov.br,A,N,N,N,N,N,N,S,S,S,N,N,N,N,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+552,14:48:12607,12607,48,Recebimento negociação consumidor.gov.br,A,N,N,N,N,N,N,S,S,S,N,N,N,N,S,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+553,14:12522:12523:12528:12608,12608,12528,Parcial,A,S,N,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+554,14:12522:12524:12530:12609,12609,12530,Parcial,A,S,N,N,N,S,S,S,S,S,N,N,S,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+555,14:48:12614,12614,48,Remessa para o CEJUSC,A,S,N,N,N,S,S,S,S,S,N,N,S,S,S,S,S,S,S,S,S,S,S,N,S,S,N,N,N,N,N,N,N,N,N
+556,1:193:385:12615,12615,385,Composição Civil,I,S,N,N,N,S,S,S,S,S,N,N,N,N,S,S,S,S,N,N,N,N,N,N,S,S,N,N,N,N,N,N,S,S,S
+557,1:193:385:973:12616,12616,973,Composição Civil dos Danos,A,S,N,N,N,S,S,S,S,S,N,N,N,N,S,S,N,S,N,N,N,N,N,N,S,S,N,N,N,N,N,N,N,N,N
+558,1:193:218:456:12617,12617,456,Renúncia,I,N,N,N,N,N,N,S,S,S,N,N,S,S,N,N,N,N,N,N,S,S,S,N,S,S,N,N,N,N,N,N,S,S,S
+559,14:48:12618,12618,48,Remessa CEJUSC,I,S,N,N,N,S,S,S,S,S,N,N,S,N,S,S,S,S,S,S,S,S,S,N,S,S,N,N,N,N,N,N,N,N,N
+560,14:48:12619,12619,48,Recebimento do CEJUSC ,A,S,N,N,N,S,S,S,S,S,N,N,S,N,S,S,S,S,S,S,N,N,N,N,S,S,N,N,N,N,N,N,N,N,N
+561,14:48:12621,12621,48,Recebimento no CEJUSC,A,S,N,N,N,S,S,S,S,S,N,N,S,N,S,S,S,S,S,S,S,S,S,N,S,S,N,N,N,N,N,N,N,N,N
+562,14:48:12622,12622,48,Remessa para Câmara de Conciliação/Mediação,A,S,N,N,N,S,S,S,S,S,N,N,S,S,S,S,S,S,S,S,S,S,S,N,S,S,N,N,N,N,N,N,N,N,N
+563,14:48:12623,12623,48,Recebimento de Câmara de Conciliação/Mediação,A,S,N,N,N,S,S,S,S,S,N,N,S,S,S,S,S,S,S,S,S,S,S,N,S,S,N,N,N,N,N,N,N,N,N
+564,14:48:970:12624,12624,970,Audiência do art. 334 CPC,A,N,N,N,N,N,N,S,S,S,S,S,S,N,S,S,S,S,S,S,S,S,S,N,S,S,N,N,N,N,S,S,S,S,S
+565,1:3:1013:12646,12646,1013,Determinada a Redistribuição,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,N
+566,1:3:12647,12647,3,Mantida a Distribuição do Processo,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,N
+567,1:3:1013:12648,12648,1013,Determinação de Diligência,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+568,1:193:385:12649,12649,385,Homologado o Pedido,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+569,1:193:385:12650,12650,385,Não Homologado o Pedido,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+570,1:193:385:12651,12651,385,Contas Não Prestação,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+571,1:193:385:12652,12652,385,Contas Aprovadas,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+572,1:193:385:12653,12653,385,Contas Desaprovadas,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+573,1:193:385:12654,12654,385,Contas Aprovadas com Ressalvas,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+574,14:48:12655,12655,48,Identificada Possível Dissidência Partidária,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+575,14:48:12657,12657,48,Partido Movimentado,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+576,14:48:12658,12658,48,Sistema de Candidaturas Fechado,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+577,14:48:12659,12659,48,Totalização de Eleições Efetuada,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+578,1:193:385:12660,12660,385,Deferimento do Pedido de Registro de Candidatura,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+579,1:193:385:12661,12661,385,Impugnação do Registro de Candidatura,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+580,1:193:385:12662,12662,385,Cassação do Registro de Candidatura,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+581,1:193:385:12663,12663,385,Cancelamento do Pedido de Registro de Candidatura,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+582,1:193:385:12664,12664,385,Movimentar Partido,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+583,1:193:385:12665,12665,385,Procedência da Impugnação (Registro Deferido),I,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+584,1:193:385:12661:12666,12666,12661,Procedência da Impugnação (Registro Deferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S
+585,1:193:385:12661:12667,12667,12661,Procedência da Impugnação (Registro Indeferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+586,1:193:385:12661:12668,12668,12661,Procedência em Parte da Impugnação (Registro Deferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+587,1:193:385:12661:12669,12669,12661,Procedência em Parte da Impugnação (Registro Indeferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+588,1:193:385:12661:12670,12670,12661,Procedência em Parte da Impugnação (Registro Cancelado),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+589,1:193:385:12661:12672,12672,12661,Procedência em Parte da Impugnação (Registro Cassado),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+590,1:193:385:12661:12673,12673,12661,Não-Procedência da Impugnação (Registro Deferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+591,1:193:385:12661:12674,12674,12661,Não-Procedência da Impugnação (Registro Indeferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+592,1:193:385:12661:12675,12675,12661,Não-Procedência da Impugnação (Registro Cancelado),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+593,1:193:385:12661:12676,12676,12661,Não-Procedência da Impugnação (Registro Cassado),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+594,1:193:385:12661:12677,12677,12661,Procedência da Impugnação (Registro Cancelado),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S
+595,1:193:385:12678:12679,12679,12678,Provimento (Registro Deferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+596,1:193:385:12678:12680,12680,12678,Provimento (Registro Indeferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+597,1:193:385:12678:12681,12681,12678,Provimento (Registro Cancelado),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S
+598,1:193:385:12678:12682,12682,12678,Provimento (Registro Cassado),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+599,1:193:385:12678:12683,12683,12678,Provimento (Registro Sem Julgamento),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+600,1:193:385:12678:12684,12684,12678,Provimento em Parte (Registro Deferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+601,1:193:385:12678:12685,12685,12678,Provimento em Parte (Registro Indeferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+602,1:193:385:12678:12686,12686,12678,Provimento em Parte (Registro Cancelado),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S
+603,1:193:385:12678:12687,12687,12678,Provimento em Parte (Registro Cassado),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+604,1:193:385:12678:12688,12688,12678,Provimento em Parte (Registro Sem Julgamento),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+605,1:193:385:12678:12689,12689,12678,Não-Provimento (Registro Deferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S
+606,1:193:385:12678:12690,12690,12678,Não-Provimento (Registro Indeferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+607,1:193:385:12678:12691,12691,12678,Não-Provimento (Registro Cancelado),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+608,1:193:385:12678:12692,12692,12678,Não-Provimento (Registro Cassado),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+609,1:193:385:12678:12693,12693,12678,Não-Provimento (Registro Sem Julgamento),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+610,1:193:385:12678:12694,12694,12678,Acolhimento (Registro Deferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S
+611,1:193:385:12678:12695,12695,12678,Acolhimento (Registro Indeferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+612,1:193:385:12678:12696,12696,12678,Acolhimento (Registro Cancelado),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+613,1:193:385:12678:12697,12697,12678,Acolhimento (Registro Cassado),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+614,1:193:385:12678:12698,12698,12678,Acolhimento (Registro Sem Julgamento),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+615,1:193:385:12678:12699,12699,12678,Não-Acolhimento (Registro Deferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+616,1:193:385:12678:12700,12700,12678,Não-Acolhimento (Registro Indeferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+617,1:193:385:12678:12701,12701,12678,Não-Acolhimento (Registro Cancelado),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+618,1:193:385:12678:12702,12702,12678,Não-Acolhimento (Registro Cassado),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+619,1:193:385:12678:12703,12703,12678,Não-Acolhimento (Registro Sem Julgamento),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S
+620,1:193:385:12678:12704,12704,12678,Anulação de Acórdão (Registro Deferido),I,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+621,1:193:385:12678:12705,12705,12678,Anulação de Acórdão (Registro Indeferido),I,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+622,1:193:385:12678:12706,12706,12678,Anulação de Acórdão (Registro Cancelado),I,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+623,1:193:385:12678:12707,12707,12678,Anulação de Acórdão (Registro Cassado),I,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+624,1:193:385:12678:12708,12708,12678,Anulação de Acórdão (Registro Sem Julgamento),I,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S
+625,1:193:218:12709:12710,12710,12709,Anulação de Acórdão (Registro Deferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+626,1:193:218:12709:12711,12711,12709,Anulação de Acórdao (Registro Indeferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+627,1:193:218:12709:12712,12712,12709,Anulação de Acórdão (Registro Cancelado),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+628,1:193:218:12709:12713,12713,12709,Anulação de Acórdão (Registro Cassado),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+629,1:193:218:12709:12714,12714,12709,Anulação de Acórdão (Registro Sem Julgamento),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+630,1:193:218:12709:12715,12715,12709,Não Conhecimento (Registro Deferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+631,1:193:218:12709:12716,12716,12709,Não Conhecimento (Registro Indeferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+632,1:193:218:12709:12717,12717,12709,Não Conhecimento (Registro Cancelado),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+633,1:193:218:12709:12718,12718,12709,Não Conhecimento (Registro Cassado),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+634,1:193:218:12709:12719,12719,12709,Não Conhecimento (Registro Sem Julgamento),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+635,1:193:218:12709:12720,12720,12709,Negação de Seguimento (Registro Deferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+636,1:193:218:12709:12721,12721,12709,Negação de Seguimento (Registro Indeferido),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+637,1:193:218:12709:12722,12722,12709,Negação de Seguimento (Registro Cancelado),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+638,1:193:218:12709:12723,12723,12709,Negação de Seguimento (Registro Cassado),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+639,1:193:218:12709:12724,12724,12709,Negação de Seguimento (Registro Sem Julgamento),A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S
+640,1:3:378:12733,12733,378,Homologação do Acordo de Não Persecução Penal,A,N,N,N,N,N,N,S,S,S,S,S,N,,S,S,S,S,N,N,N,N,N,N,S,S,N,S,S,S,S,S,S,S,S
+641,1:3:157:12734,12734,157,Revogação do Acordo de Não Persecução Penal,A,N,N,N,N,N,N,S,S,S,S,S,N,,S,S,S,S,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+642,1:193:385:973:12735,12735,973,Extinção de Punibilidade em Razão do Cumprimento de Acordo de Não Persecução Penal,A,N,N,N,N,N,N,S,S,S,S,S,N,,S,S,S,S,N,N,N,N,N,N,N,S,N,N,S,S,S,S,S,S,S
+643,1:3:12736,12736,3,Unificação de Processos de Execução,A,N,N,N,N,N,N,S,S,S,S,S,N,N,S,S,S,S,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+644,1:3:157:12737,12737,157,Revogação da Suspensão Condicional do Processo,A,N,N,N,N,N,N,S,S,S,S,S,N,,S,S,S,S,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+645,1:193:385:12738,12738,385,Homologação de Transação Penal,A,N,N,N,N,N,N,S,S,S,S,S,N,,S,S,S,N,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+646,14:48:970:12739,12739,970,Admonitória,A,N,N,N,N,N,N,S,S,N,S,S,N,N,S,S,S,N,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+647,14:48:970:12740,12740,970,de Conciliação,A,N,N,N,N,N,N,S,S,S,S,S,S,N,S,S,S,S,N,N,S,S,S,N,S,S,N,N,N,N,S,S,N,N,N
+648,14:48:970:12741,12741,970,de Acolhimento,A,N,N,N,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,N,N,N,N,N,N,N,N,N
+649,14:48:970:12742,12742,970,de Custódia,A,N,N,N,N,N,N,S,S,N,S,S,N,N,S,S,S,N,N,N,N,N,N,N,S,S,N,N,S,S,S,N,S,S,N
+650,14:48:970:12743,12743,970,de Interrogatório,A,N,N,N,N,N,N,S,S,S,S,S,N,N,S,S,S,S,N,N,N,N,N,N,S,S,N,N,S,S,S,S,S,S,S
+651,14:48:970:12744,12744,970,de Justificação,A,N,N,N,N,N,N,S,S,S,S,S,N,N,S,S,S,S,N,N,S,S,S,N,S,S,N,N,N,N,S,S,S,S,S
+652,14:48:970:12745,12745,970,do art. 16 da Lei 11.340,A,N,N,N,N,N,N,S,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,N,N,N,N,N,N,N,N,N
+653,14:48:970:12746,12746,970,em Execução,A,N,N,N,N,N,N,S,S,N,S,S,N,N,S,S,S,N,N,N,S,S,S,N,S,S,N,N,N,N,S,S,S,S,S
+654,14:48:970:12747,12747,970,Inicial,A,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S,S,N,N,N,N,N,N,N,N,N,N,N,N
+655,14:48:970:12749,12749,970,de Instrução,A,N,N,N,N,N,N,S,S,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+656,14:48:970:12750,12750,970,de Instrução e Julgamento,A,N,N,N,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+657,14:48:970:12751,12751,970,de Julgamento,A,N,N,N,N,N,N,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S
+658,14:48:970:12752,12752,970,de Mediação,A,N,N,N,N,N,N,S,S,S,S,S,S,N,S,S,S,S,N,N,S,S,S,N,S,S,N,N,N,N,S,S,N,N,N
+659,14:48:970:12753,12753,970,Preliminar,A,N,N,N,N,N,N,S,S,N,S,S,S,N,S,S,S,N,N,N,S,S,S,N,S,S,N,N,N,N,S,S,S,S,S
+660,14:48:12759,12759,48,Realização de Procedimento Restaurativo,A,S,S,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S,N,S,S,S,S,S,S,S,S,S,S
+661,1:3:12765:12766,12766,12765,Por Divergência de Entendimento com o STF,A,S,N,N,S,S,S,S,N,S,N,S,N,N,N,S,N,S,S,S,N,S,S,N,N,S,N,N,N,S,N,S,N,S,S
+662,1:3:12765:12767,12767,12765,Por Divergência de Entendimento com Tribunal Superior,A,S,N,N,S,S,S,S,N,S,N,S,N,N,N,S,N,S,S,S,N,S,N,N,N,N,N,N,N,N,N,S,N,S,N
+663,1:3:12768,12768,3,Manutenção de Acórdão,A,S,S,S,S,S,S,S,N,S,N,S,N,,N,S,N,S,S,S,N,S,S,N,N,S,N,N,N,S,N,S,N,S,S
+664,1:3:12769,12769,3,Desclassificação de Delito,A,S,S,S,S,S,S,S,N,N,S,S,N,N,S,S,N,N,N,N,N,N,N,N,S,S,N,N,S,S,S,S,N,N,N
+665,1:193:385:12661:12792,12792,12661,Procedência da Impugnação (Registro Cassado),A,N,N,N,N,N,N,N,N,N,N,N,N,,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,S,S
+666,14,14,0,Serventuário,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+667,14:15,15,14,Contador,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+668,14:18,18,14,Distribuidor,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+669,14:104,104,14,Oficial de Justiça,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+670,1:11009:11021,11021,11009,Conversão,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+671,1:11009:11023,11023,11009,Concessão,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+672,14:865:12029,12029,865,Recebe Teste,I,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+673,14:48:12101,12101,48,Inclusão do processo para julgamento eletrônico,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+674,14:48:12102,12102,48,"Adiamento do julgamento (CPC, art. 935)",A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+675,1:3:12163,12163,3,Outras Decisões,I,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+676,1:3:160:12262,12262,160,Emenda a inicial,I,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+677,14:48:12276:12279,12279,12276,Fim,I,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+678,1:193:385:12450,12450,385,impugnação à execução,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+679,14:12522:12525:12526:12535,12535,12526,Frutífera,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+680,14:12522:12525:12526:12536,12536,12526,Infrutífera,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+681,14:12522:12525:12527:12537,12537,12527,Não-realizada,I,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+682,14:12522:12525:12527:12537:12538,12538,12537,Infrutífera,I,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+683,14:12522:12525:12527:12539,12539,12527,Infrutífera,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+684,14:12522:12525:12527:12540,12540,12527,Frutífera,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+685,14:12522:12525:12526:12610,12610,12526,Parcial,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+686,14:12522:12525:12527:12611,12611,12527,Parcial,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+687,14:48:12655:12656,12656,12655,Partido Movimentado,I,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+688,1:193:385:12661:12670:12671,12671,12670,Procedência em Parte da Impugnação (Registro Cassado),I,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+689,1:193:385:12678,12678,385,Registro de Candidatura,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+690,1:193:218:12709,12709,218,Registro de Candidatura,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+691,14:48:970:12747:12748,12748,12747,de Instrução,I,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+692,1:3:12765,12765,3,Envio para Juízo de Retratação ,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
