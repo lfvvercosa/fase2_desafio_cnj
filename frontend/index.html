@@ -2,13 +2,21 @@
 <html>
   <head>
     <title>Simple Map</title>
-    <link rel="stylesheet" href="./css/index.css">
+    <!-- style -->
+    <link rel="stylesheet" href="./css/layout/page.css">
+    <link rel="stylesheet" href="./css/components/card.css">
+    <link rel="stylesheet" href="./css/components/map.css">
+
+    <!-- behaviour -->
     <script src="./config.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script src="./js/requester.js" ></script>
     <script src="./js/map.js" ></script>
   </head>
   <body>
-    <div id="map"></div>
+    <div class="card">
+      <div class="card-title"><p>DESCRIÇÃO DO MAPA</p></div>
+      <div  id="map"></div>
+    </div>
   </body>
 </html>

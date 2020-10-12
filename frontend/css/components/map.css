@@ -1,0 +1,9 @@
+#map {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+}
+
+.gm-svpc, .gmnoprint, .gm-fullscreen-control {
+  display: none;
+}
