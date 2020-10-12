@@ -1,4 +1,23 @@
+.header-left-group {
+  display: flex;
+}
+.header-right .row {
+  height: 40%;
+}
+.header-right-text {
+  display: flex;
+  align-items: center;
+  height: auto;
+}
+.header-right-text div {
+  height: auto;
+  display: block;
+}
+.header-right-text div p {
+  margin: 0;
+}
 .header-right-photo img {
+  padding: 0.4rem;
   border-radius: 50%;
 }
 
