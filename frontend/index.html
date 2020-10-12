@@ -26,34 +26,32 @@
     <script src="./js/map.js" ></script>
   </head>
   <body>
-
     <div class="container header">
       <div class="row">
-        <div class="col-9 header-left">
-          <h6>bem vindo a</h6>
-          <h1>VARA ÚNICA DE ANAJAS</h1>
-          <div class="header-left-group">
-            <p>GRUPO</p>
-            <div class="rounded-info"><p>JUSTICA COMERCIAL</p></div>
-            <div class="rounded-info"><p>1° Grau</p></div>
-            <div class="rounded-info"><p>Competência Mista</p></div>
-            <div class="rounded-info"><p>Justiça Comercial</p></div>
+        <div class="col-10 header-left">
+          <h6 class="header-left-welcome">bem vindo a</h6>
+          <h1 class="header-left-court">VARA ÚNICA DE ANAJAS</h1>
+        </div>
+        <div class="col-2 header-right">
+          <div class="header-right-text">
+            <div>
+              <p class="header-right-text-username">ANTONIO</p>
+              <p class="header-right-text-position">juiz/Desembargador</p>
+            </div>
+          </div>
+          <div class="header-right-photo">
+            <img src="https://www.melhoresfilmes.com.br/dimg/?w=165&amp;h=220&amp;mode=crop&amp;url=https%3A%2F%2Fwww.melhoresfilmes.com.br%2Fimg%2Factors%2F6493.jpg"
+              alt="Antonio" width="100%" height="100%">
           </div>
         </div>
-        <div class="col-3 header-right">
-          <div class="row">
-            <div class="col-6 header-right-text">
-              <div>
-                <p>ANTONIO</p>
-                <p>juiz/Desembargador</p>
-              </div>
-              
-            </div>
-            <div class="col-4 header-right-photo">
-              <img src="https://www.melhoresfilmes.com.br/dimg/?w=165&amp;h=220&amp;mode=crop&amp;url=https%3A%2F%2Fwww.melhoresfilmes.com.br%2Fimg%2Factors%2F6493.jpg"
-               alt="Antonio" width="100%" height="100%">
-            </div>
-          </div>
+      </div>
+      <div class="row">
+        <div class="header-group">
+          <p class="header-group-amount" >GRUPO (120 órgãos)</p>
+          <div class="rounded-info header-group-item"><p>Justiça Comercial</p></div>
+          <div class="rounded-info header-group-item"><p>1° Grau</p></div>
+          <div class="rounded-info header-group-item"><p>Competência Mista</p></div>
+          <div class="rounded-info header-group-item"><p>Justiça Comercial</p></div>
         </div>
       </div>
     </div>
@@ -62,5 +60,6 @@
       <div class="card-title"><p>DESCRIÇÃO DO MAPA</p></div>
       <div id="map"></div>
     </div>
+    <script src="./js/components.js" ></script>
   </body>
 </html>

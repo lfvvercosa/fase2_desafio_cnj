@@ -1,5 +1,17 @@
-/*# sourceMappingURL=rounded-info.css.map */
-/*# sourceMappingURL=rounded-info.css.map */
-/*# sourceMappingURL=rounded-info.css.map */
+.rounded-info {
+  height: 100%;
+  width: 100%;
+  border-radius: 3rem;
+  border: solid 1px;
+  padding-left: 1rem;
+  margin-right: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+.rounded-info p {
+  margin: auto;
+}
 
 /*# sourceMappingURL=rounded-info.css.map */

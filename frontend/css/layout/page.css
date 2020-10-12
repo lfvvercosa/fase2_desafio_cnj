@@ -1,11 +1,18 @@
-/*# sourceMappingURL=page.css.map */
-/*# sourceMappingURL=page.css.map */
-/*# sourceMappingURL=page.css.map */
-/*# sourceMappingURL=page.css.map */
-/*# sourceMappingURL=page.css.map */
-/*# sourceMappingURL=page.css.map */
-/*# sourceMappingURL=page.css.map */
-/*# sourceMappingURL=page.css.map */
-/*# sourceMappingURL=page.css.map */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 0.60978vw;
+}
+
+@font-face {
+  font-family: "OpenSans-Semibold";
+  src: url("../../resources/fonts/Open_Sans/OpenSans-SemiBold.ttf");
+}
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: url("../../resources/fonts/Open_Sans/OpenSans-Regular.ttf");
+}
 
 /*# sourceMappingURL=page.css.map */

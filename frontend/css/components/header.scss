@@ -1,31 +1,74 @@
 .header {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 3.5rem;
+  .row {
+    margin: 0;
+  }
   &-left {
-    &-group {
-      display: flex;
+    padding: 0;
+    &-welcome {
+       font-family: 'OpenSans-Regular';
+       font-size: 1.4rem; 
+    }
+    &-court{
+      font-family: 'OpenSans-Semibold';
+      font-size: 4rem;
     }
   }
   &-right {
-    .row {
-      height: 40%;
-    }
+    display: flex;
+    align-items: center;
+    padding: 0;
+    justify-content: flex-end;
     &-text {
-      display: flex;
-      align-items: center;
       height: auto;
+      margin-right: 2.3rem;
+      margin-left: 3.7rem;
+      &-username {
+        font-family: 'OpenSans-Semibold';
+        font-size: 2.2rem;
+      }
+      &-position {
+        font-family: 'OpenSans-Regular';
+        font-size: 1.6rem;
+      }
       div {
         height: auto;
         display: block;
         p {
-        margin: 0;
-      }
+          margin: 0;
+        }
       }
       
     }
     &-photo {
       img {
-        padding: 0.4rem;
+        height: 7.1rem;
+        width: 7.4rem;
         border-radius: 50%;
       }
+    }
+  }
+  &-group {
+    display: flex;
+    align-items: center;
+    padding-top: 2.5rem;
+    padding-bottom: 0.7rem;
+    &-amount {
+      font-family: OpenSans-Semibold;
+      font-size: 2.2rem;
+      color: #09253B;
+      margin-right: 1rem;
+      margin-bottom: 0;
+    }
+    &-item {
+       p{
+         font-family: OpenSans-Regular;
+         font-size: 1.6rem;
+        margin-right: 1rem;
+        margin-bottom: 0;
+       }
     }
   }
 }

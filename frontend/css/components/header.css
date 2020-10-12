@@ -1,13 +1,40 @@
-.header-left-group {
-  display: flex;
+.header {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 3.5rem;
 }
-.header-right .row {
-  height: 40%;
+.header .row {
+  margin: 0;
 }
-.header-right-text {
+.header-left {
+  padding: 0;
+}
+.header-left-welcome {
+  font-family: "OpenSans-Regular";
+  font-size: 1.4rem;
+}
+.header-left-court {
+  font-family: "OpenSans-Semibold";
+  font-size: 4rem;
+}
+.header-right {
   display: flex;
   align-items: center;
+  padding: 0;
+  justify-content: flex-end;
+}
+.header-right-text {
   height: auto;
+  margin-right: 2.3rem;
+  margin-left: 3.7rem;
+}
+.header-right-text-username {
+  font-family: "OpenSans-Semibold";
+  font-size: 2.2rem;
+}
+.header-right-text-position {
+  font-family: "OpenSans-Regular";
+  font-size: 1.6rem;
 }
 .header-right-text div {
   height: auto;
@@ -17,8 +44,28 @@
   margin: 0;
 }
 .header-right-photo img {
-  padding: 0.4rem;
+  height: 7.1rem;
+  width: 7.4rem;
   border-radius: 50%;
+}
+.header-group {
+  display: flex;
+  align-items: center;
+  padding-top: 2.5rem;
+  padding-bottom: 0.7rem;
+}
+.header-group-amount {
+  font-family: OpenSans-Semibold;
+  font-size: 2.2rem;
+  color: #09253B;
+  margin-right: 1rem;
+  margin-bottom: 0;
+}
+.header-group-item p {
+  font-family: OpenSans-Regular;
+  font-size: 1.6rem;
+  margin-right: 1rem;
+  margin-bottom: 0;
 }
 
 /*# sourceMappingURL=header.css.map */

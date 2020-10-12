@@ -1,8 +1,15 @@
 .rounded-info {
   height: 100%;
   width: 100%;
-  padding: 0.1rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  border-radius: 5px;
+  border-radius: 3rem;
+  border: solid 1px;
+  padding-left: 1rem;
+  margin-right: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  p {
+    margin: auto;
+  }
 }
