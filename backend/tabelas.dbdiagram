@@ -1,0 +1,44 @@
+// Abrir o site https://dbdiagram.io/ e colar este script
+
+Table varas{
+  identificador bigint [pk, increment] // auto-increment
+  nome string
+  colocacao integer
+  processos_julgados integer
+  dias_baixa_processo integer
+  movimentacoes integer
+  
+  identificador_grupo bigint [ref: > grupos.identificador]
+  
+  tempo_macroetapa_1 integer
+  tempo_macroetapa_2 integer
+  tempo_macroetapa_3 integer
+  tempo_macroetapa_4 integer
+  
+  latitude string
+  longitude string
+}
+
+Table grupos{
+  identificador bigint [pk, increment]
+  justica string
+  grau string
+  tribunal string
+  classe_judicial string
+  assunto string
+  orgao_julgador string
+  quantidade_de_varas integer
+}
+
+Table cadastro_etapas{
+  identificador bigint [pk, increment]
+  atividade string
+  proxima_atividade string
+}
+
+Table etapas{
+  identificador_etapa bigint [ref: > cadastro_etapas.identificador]
+  identificador_vara bigint [ref: > varas.identificador]
+  tempo integer
+  comentario string
+}
