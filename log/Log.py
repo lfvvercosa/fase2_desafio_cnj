@@ -1,16 +1,20 @@
 from pm4py.objects.log.importer.xes import importer as xes_importer
 from pm4py.statistics.traces.log import case_statistics
 from pm4py.algo.filtering.log.variants import variants_filter
+from pm4py.objects.conversion.log import converter as log_converter
 
 
 LOW_FILTERING = 1
-MODERATE_FILTERING = 2
-INTENSE_FILTERING = 4
+MODERATE_FILTERING = 4
+INTENSE_FILTERING = 8
 
 
 class Log():
-    def __init__(self, file_location):
-        self.log = xes_importer.apply(file_location)
+    def __init__(self, file_location=None, df_log=None):
+        if df_log is None:
+            self.log = xes_importer.apply(file_location)
+        else:
+            self.log = log_converter.apply(df_log)
 
 
     def filter_variants(self, filter_level):
