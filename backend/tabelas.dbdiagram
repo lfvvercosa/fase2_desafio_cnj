@@ -1,26 +1,34 @@
 // Abrir o site https://dbdiagram.io/ e colar este script
 
-Table varas{
+Table vara{
   identificador bigint [pk, increment] // auto-increment
   nome string
   colocacao integer
   processos_julgados integer
-  dias_baixa_processo integer
-  movimentacoes integer
-  
-  identificador_grupo bigint [ref: > grupos.identificador]
-  
-  tempo_macroetapa_1 integer
-  tempo_macroetapa_2 integer
-  tempo_macroetapa_3 integer
-  tempo_macroetapa_4 integer
-  
+  identificador_grupo bigint [ref: > grupo.identificador]
   latitude string
   longitude string
 }
 
-Table grupos{
+Table processo{
+  identificador bigint [pk, increment] // auto-increment
+  identificador_vara bigint [ref: > vara.identificador]
+
+  dias_baixa_processo integer
+}
+
+Table processo_estatistica{
+  identificador bigint [pk, increment] // auto-increment
+  identificador_processo bigint [ref: - processo.identificador]
+  tempo_macroetapa_1 integer
+  tempo_macroetapa_2 integer
+  tempo_macroetapa_3 integer
+  tempo_macroetapa_4 integer
+}
+
+Table grupo{
   identificador bigint [pk, increment]
+  competencias integer
   justica string
   grau string
   tribunal string
@@ -30,15 +38,19 @@ Table grupos{
   quantidade_de_varas integer
 }
 
-Table cadastro_etapas{
+Table etapa{
   identificador bigint [pk, increment]
-  atividade string
-  proxima_atividade string
+  identificador_processo bigint [ref: > processo.identificador]
+  origem string
+  destino string
+  comentario string
 }
 
-Table etapas{
-  identificador_etapa bigint [ref: > cadastro_etapas.identificador]
-  identificador_vara bigint [ref: > varas.identificador]
-  tempo integer
-  comentario string
+Table etapa_estatistica{
+  identificador bigint [pk, increment] // auto-increment
+  identificador_etapa bigint [ref: - etapa.identificador]
+  tempo_min integer
+  tempo_max integer
+  tempo_mean integer
+  frequencia integer
 }
