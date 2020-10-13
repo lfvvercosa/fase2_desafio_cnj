@@ -50,25 +50,40 @@
       }
     }
   }
-  &-group {
-    display: flex;
-    align-items: center;
-    padding-top: 2.5rem;
-    padding-bottom: 0.7rem;
-    &-amount {
-      font-family: OpenSans-Semibold;
-      font-size: 2.2rem;
-      color: #09253B;
-      margin-right: 1rem;
-      margin-bottom: 0;
-    }
-    &-item {
-       p{
-         font-family: OpenSans-Regular;
-         font-size: 1.6rem;
+  &-bottom{
+    align-self: flex-end;
+    padding: 0;
+    padding-top: 3.2rem;
+    &-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 3.3rem;
+      &-amount {
+        font-family: OpenSans-Semibold;
+        font-size: 2.2rem;
+        color: #09253B;
         margin-right: 1rem;
         margin-bottom: 0;
-       }
+      }
+      &-item {
+         p{
+           font-family: OpenSans-Regular;
+           font-size: 1.6rem;
+          margin-right: 1rem;
+          margin-bottom: 0;
+         }
+      }
+      /* &-rank {
+        font-family: 'OpenSans-Semibold';
+        padding: 0.1rem;
+        &-number {
+          font-size: 4.5rem;
+          text-align: center;
+        }
+        &-text {
+          font-size: 2.25rem;
+        }
+      } */
     }
   }
 }

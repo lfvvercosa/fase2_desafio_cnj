@@ -1,0 +1,17 @@
+.statistics {
+  height: 32.2rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.statistics .row {
+  margin: 0;
+  width: 100%;
+}
+.statistics .row div {
+  height: 24.4rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+/*# sourceMappingURL=statistics.css.map */

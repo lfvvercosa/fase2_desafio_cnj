@@ -3,6 +3,19 @@
   width: 100%;
   margin: auto;
 }
+#map .row {
+  height: 100%;
+}
+#map-title {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+#map-title p {
+  margin: 0;
+}
 
 .gm-svpc, .gmnoprint, .gm-fullscreen-control {
   display: none;

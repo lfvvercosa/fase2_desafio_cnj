@@ -12,18 +12,31 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
+    <!-- d3 -->
+    <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+
+    <!-- c3js -->
+    <link href="./resources/c3/c3.min.css" rel="stylesheet">
+    <script src="./resources/c3/c3.min.js"></script>
+
     <!-- style -->
     <link rel="stylesheet" href="./css/layout/page.css">
     <link rel="stylesheet" href="./css/components/header.css">
     <link rel="stylesheet" href="./css/components/rounded-info.css">
     <link rel="stylesheet" href="./css/components/card.css">
+    <link rel="stylesheet" href="./css/components/rank.css">
+    <link rel="stylesheet" href="./css/components/statistics.css">
+    <link rel="stylesheet" href="./css/components/chart.css">
+    <link rel="stylesheet" href="./css/components/best-times.css">
     <link rel="stylesheet" href="./css/components/map.css">
+    <link rel="stylesheet" href="./css/components/footer.css">
 
     <!-- behaviour -->
     <script src="./config.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script src="./js/requester.js" ></script>
     <script src="./js/map.js" ></script>
+  
   </head>
   <body>
     <div class="container header">
@@ -46,20 +59,71 @@
         </div>
       </div>
       <div class="row">
-        <div class="header-group">
-          <p class="header-group-amount" >GRUPO (120 órgãos)</p>
-          <div class="rounded-info header-group-item"><p>Justiça Comercial</p></div>
-          <div class="rounded-info header-group-item"><p>1° Grau</p></div>
-          <div class="rounded-info header-group-item"><p>Competência Mista</p></div>
-          <div class="rounded-info header-group-item"><p>Justiça Comercial</p></div>
+        <div class="col-11 header-bottom">
+          <div class="header-bottom-group">
+            <p class="header-bottom-group-amount" >GRUPO (120 órgãos)</p>
+            <div class="rounded-info header-bottom-group-item"><p>Justiça Comercial</p></div>
+            <div class="rounded-info header-bottom-group-item"><p>1° Grau</p></div>
+            <div class="rounded-info header-bottom-group-item"><p>Competência Mista</p></div>
+            <div class="rounded-info header-bottom-group-item"><p>Justiça Comercial</p></div>
+          </div>
+        </div>
+        <!-- <div class="col-1 header-bottom-group-rank">
+          <p class="header-bottom-group-rank-number">19°</p>
+          <p class="header-bottom-group-rank-text">colocada</p>
+        </div> -->
+      </div>
+    </div>
+
+    <!-- rank -->
+    <div class="container card">
+      rank
+      <div id="bottleneck" class="row rank">
+        <div class="rank-movement">
+          
+        </div>
+        <div class="rank-table"></div>
+      </div>
+      <div id="best-moviments" class="row rank">
+        <div class="rank-movement">
+          
+        </div>
+        <div class="rank-table"></div>
+      </div>
+    </div>  
+
+    <!-- basic statistics -->
+    <div class="container statistics">
+      <div class="row">
+        <div class="card col-2">Pior Desempenho</div>
+        <div class="card col-2">Melhor Desempenho</div>
+        <div class="card col-2">Duração da Baixa do Processo</div>
+        <div class="card col-2">Movimentação Por Processo</div>
+        <div class="card col-1">Processos Julgados</div>
+      </div>
+    </div>
+
+    <!-- comparation chart -->
+    <div class="container chart card">
+      <div class="row">
+        <div id="chart"></div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div class="container footer">
+      <div class="row">
+        <div class="col-4 card best-times">
+        </div>
+        <div class="col-8 map">
+          <div class="map-title"><p>DESCRIÇÃO DO MAPA</p></div>
+          <div id="map"></div>
         </div>
       </div>
     </div>
 
-    <div class="container card">
-      <div class="card-title"><p>DESCRIÇÃO DO MAPA</p></div>
-      <div id="map"></div>
-    </div>
+    <!-- scripts -->
     <script src="./js/components.js" ></script>
+    <script src="./js/rank-chart.js" ></script>
   </body>
 </html>

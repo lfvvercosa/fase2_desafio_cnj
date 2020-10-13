@@ -48,20 +48,35 @@
   width: 7.4rem;
   border-radius: 50%;
 }
-.header-group {
+.header-bottom {
+  align-self: flex-end;
+  padding: 0;
+  padding-top: 3.2rem;
+}
+.header-bottom-group {
   display: flex;
   align-items: center;
-  padding-top: 2.5rem;
-  padding-bottom: 0.7rem;
+  margin-bottom: 3.3rem;
+  /* &-rank {
+    font-family: 'OpenSans-Semibold';
+    padding: 0.1rem;
+    &-number {
+      font-size: 4.5rem;
+      text-align: center;
+    }
+    &-text {
+      font-size: 2.25rem;
+    }
+  } */
 }
-.header-group-amount {
+.header-bottom-group-amount {
   font-family: OpenSans-Semibold;
   font-size: 2.2rem;
   color: #09253B;
   margin-right: 1rem;
   margin-bottom: 0;
 }
-.header-group-item p {
+.header-bottom-group-item p {
   font-family: OpenSans-Regular;
   font-size: 1.6rem;
   margin-right: 1rem;
