@@ -1,0 +1,45 @@
+.rank {
+  display: block;
+  height: 52.4rem;
+  &-worst {
+    height: 31rem;
+    padding-top: 3.5rem;
+  }
+  &-movements {
+    display: block;
+    height: 100%;
+    &-content {
+      height: 15rem;
+      width: 100%;
+      margin-top: 7.5rem;
+      .row {
+        width: 100%;
+        margin: 0;
+      }
+      &-item {
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        &-name {
+          display: inline;
+          margin: 0;
+        }
+        &-transaction {
+          display: flex;
+          justify-content: center;
+          &-text{
+
+          }
+          &-arrow {
+
+          }
+        }
+      }
+    }
+    &-coments {
+      text-align: center;
+    }
+  }
+  
+}
