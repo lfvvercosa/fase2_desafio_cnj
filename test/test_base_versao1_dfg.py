@@ -10,6 +10,7 @@ from pm4py.objects.conversion.log import converter as log_converter
 from pm4py.algo.discovery.dfg import algorithm as dfg_discovery
 from pm4py.statistics.traces.log import case_statistics
 from pm4py.algo.discovery.dfg import parameters
+from pm4py.visualization.dfg import visualizer as dfg_visualization
 
 from log.Log import Log
 from log.Log import INTENSE_FILTERING
@@ -17,10 +18,11 @@ from discovery.DFG import DFG
 import visualization.Visualizer as Visualizer
 
 
+
 # file_path = '/home/vercosa/Documentos/bases_desafio_cnj/'+\
 #             'sample/tjba_sample.csv'
 file_path = '/home/vercosa/Documentos/bases_desafio_cnj/'+\
-            'log_vara1.csv'
+            'log_vara3.csv'
 
 
 # datatypes = [('case:concept:name','S10'),
@@ -56,7 +58,7 @@ key = ['case:concept:name']
 i1 = df_log.set_index(key).index
 i2 = df_incomplete.set_index(key).index
 
-df_log = df_log[~i1.isin(i2)]
+# df_log = df_log[~i1.isin(i2)]
 df_log['case:concept:name'].nunique()
 
 df_log['time:timestamp'] = \
@@ -84,7 +86,7 @@ key = ['case:concept:name']
 i1 = df_log.set_index(key).index
 i2 = df_hist.set_index(key).index
 
-df_log = df_log[~i1.isin(i2)]
+# df_log = df_log[~i1.isin(i2)]
 df_log['case:concept:name'].nunique()
 
 df_time = df_log.copy()
@@ -113,7 +115,7 @@ key = ['case:concept:name']
 i1 = df_log.set_index(key).index
 i2 = df_time.set_index(key).index
 
-df_log = df_log[~i1.isin(i2)]
+# df_log = df_log[~i1.isin(i2)]
 
 df_log['case:concept:name'].nunique()
 
@@ -121,7 +123,15 @@ df_log['case:concept:name'].nunique()
 
 l = Log(df_log=df_log)
 l.filter_variants(1)
-dfg = DFG(l.log)
-Visualizer.dfg_visualizer(dfg.dfg, l.log)
+dfg = DFG(l.log,
+          parameters={parameters.Parameters.AGGREGATION_MEASURE:'mean'},
+          variant=dfg_discovery.Variants.PERFORMANCE)
+
+
+print(dfg.dfg)
+
+Visualizer.dfg_visualizer(dfg.dfg, 
+                          l.log,
+                          variant=dfg_visualization.Variants.PERFORMANCE)
 
 print('teste')
