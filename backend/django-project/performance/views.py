@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from .models import Vara
-from .serializers import VaraSerializer
+from .models import Vara, VaraList
+from .serializers import VaraSerializer, VaraListSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, \
                                       permission_classes
@@ -24,16 +24,27 @@ def home(request):
 @api_view(["GET"])
 @permission_classes((AllowAny,))
 def varas_list(request):
-    return Response('lista de varas', HTTP_200_OK)
+    try:
+        vara_list = Vara.objects.all()
+        res = [VaraListSerializer(vr).data for vr in vara_list]
+        return Response(res, HTTP_200_OK)
+    except Vara.DoesNotExist as e:
+        return Response(str(e), HTTP_404_NOT_FOUND)
+    except Exception as e:
+        return Response(str(e), HTTP_400_BAD_REQUEST)
 
 @csrf_exempt
 @api_view(["GET"])
 @permission_classes((AllowAny,))
 def vara_details(request, vara_id):
-    return Response(f'Detalhes da vara {vara_id}', HTTP_200_OK)
-    # vara = Vara.objects.get(id=vara_id)
-    # res = VaraSerializer(vara).data
-    # return Response(res, HTTP_200_OK)
+    try:
+        vara = Vara.objects.get(vara_id=vara_id)
+        res = VaraSerializer(vara).data
+        return Response(res, HTTP_200_OK)
+    except Vara.DoesNotExist as e:
+        return Response(str(e), HTTP_404_NOT_FOUND)
+    except Exception as e:
+        return Response(str(e), HTTP_400_BAD_REQUEST)
 
 @csrf_exempt
 @api_view(["GET"])
