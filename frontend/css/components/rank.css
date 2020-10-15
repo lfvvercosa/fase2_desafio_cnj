@@ -1,10 +1,11 @@
 .rank {
   display: block;
-  height: 52.4rem;
+  height: 63rem;
 }
 .rank-worst {
   height: 31rem;
   padding-top: 3.5rem;
+  margin-bottom: 3rem;
 }
 .rank-movements {
   display: block;
@@ -35,6 +36,84 @@
 }
 .rank-movements-coments {
   text-align: center;
+}
+.rank-table-tabs {
+  display: flex;
+}
+.rank-table-tabs-item {
+  height: 3.5rem;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "OpenSans-Regular";
+  font-size: 1.4rem;
+}
+.rank-table-tabs-item-selected {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  border: solid 1px;
+}
+.rank-table-title {
+  text-align: center;
+  background-color: #DCDCDC;
+  border: solid 1px;
+  border-top-left-radius: 0.35rem;
+  border-top-right-radius: 0.35rem;
+}
+.rank-table-title table {
+  width: 100%;
+  font-family: "OpenSans-SemiBold";
+  font-size: 1.8rem;
+}
+.rank-table-title-index {
+  width: 10%;
+}
+.rank-table-title-name {
+  text-align: left;
+  width: 30%;
+}
+.rank-table-title-duration {
+  width: 15%;
+}
+.rank-table-title-comments {
+  text-align: left;
+  width: 45%;
+}
+.rank-table-content {
+  text-align: center;
+  border: solid 1px;
+  border-bottom-left-radius: 0.35rem;
+  border-bottom-right-radius: 0.35rem;
+}
+.rank-table-content table {
+  width: 100%;
+  font-family: "OpenSans-Regular";
+  font-size: 1.4rem;
+}
+.rank-table-content-odd {
+  background-color: #ffffff;
+}
+.rank-table-content-even {
+  background-color: #f6f6f6;
+}
+.rank-table-content-index {
+  width: 10%;
+  text-align: center;
+  font-family: "OpenSans-Bold";
+  font-size: 1.4rem;
+}
+.rank-table-content-name {
+  text-align: left;
+  width: 30%;
+}
+.rank-table-content-duration {
+  width: 15%;
+  text-align: center;
+}
+.rank-table-content-comments {
+  text-align: left;
+  width: 45%;
 }
 
 /*# sourceMappingURL=rank.css.map */

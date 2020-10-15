@@ -1,9 +1,10 @@
 .rank {
   display: block;
-  height: 52.4rem;
+  height: 63rem;
   &-worst {
     height: 31rem;
     padding-top: 3.5rem;
+    margin-bottom: 3rem;
   }
   &-movements {
     display: block;
@@ -41,5 +42,84 @@
       text-align: center;
     }
   }
-  
+  &-table {
+    &-tabs {
+      display: flex;
+      &-item {
+        height: 3.5rem;
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'OpenSans-Regular';
+        font-size: 1.4rem;
+        &-selected {
+          border-top-left-radius: 0.25rem;
+          border-top-right-radius: 0.25rem;
+          border: solid 1px;
+        }
+      }
+    }
+    &-title {
+      text-align: center;
+      background-color: #DCDCDC;
+      border: solid 1px;
+      border-top-left-radius: 0.35rem;
+      border-top-right-radius: 0.35rem;
+      table {
+        width: 100%;
+        font-family: 'OpenSans-SemiBold';
+        font-size: 1.8rem;
+      }
+      &-index {
+        width: 10%;
+      }
+      &-name {
+        text-align: left;
+        width: 30%;
+      }
+      &-duration {
+        width: 15%;
+      }
+      &-comments {
+        text-align: left;
+        width: 45%;
+      }
+    }
+    &-content {
+      text-align: center;
+      border: solid 1px;
+      border-bottom-left-radius: 0.35rem;
+      border-bottom-right-radius: 0.35rem;
+      table {
+        width: 100%;
+        font-family: 'OpenSans-Regular';
+        font-size: 1.4rem;
+      }
+      &-odd {
+        background-color: #ffffff;
+      }
+      &-even {
+        background-color: #f6f6f6;
+      }
+      &-index {
+        width: 10%;
+        text-align: center;
+        font-family: 'OpenSans-Bold';
+        font-size: 1.4rem;
+      }
+      &-name {
+        text-align: left;
+        width: 30%;
+      }
+      &-duration {
+        width: 15%;
+        text-align: center;
+      }
+      &-comments {
+        text-align: left;
+        width: 45%;
+      }
+    }
+  }
 }
