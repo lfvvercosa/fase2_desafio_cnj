@@ -7,18 +7,18 @@ urlpatterns = [
     path('', views.home),
 
     # Varas
-    path('api/v1/varas/', views.lista_varas),
-    path('api/v1/varas/<int:vara_id>/', views.detalhes_vara),
-    path('api/v1/varas/melhoresVarasNaEtapa/', views.melhores_varas_na_etapa),
+    path('api/v1/varas/', views.varas_list),
+    path('api/v1/varas/<int:vara_id>/', views.vara_details),
+    path('api/v1/varas/bestVarasOnStep/', views.best_varas_on_step),
 
     # Etapas
-    path('api/v1/etapas/melhoresEtapas/', views.melhores_etapas),
-    path('api/v1/etapas/pioresEtapas/', views.piores_etapas),
+    path('api/v1/steps/bestSteps/', views.best_steps),
+    path('api/v1/steps/worstSteps/', views.worst_steps),
 
     # Processos
-    path('api/v1/processos/melhoresVaras/', views.melhores_varas),
+    path('api/v1/processes/bestVaras/', views.best_varas),
 
     # Comentarios
-    path('api/v1/comentarios/', views.lista_comentarios),
-    path('api/v1/comentarios/<int:identificador>/', views.comentario),
+    path('api/v1/comments/', views.comments_list),
+    path('api/v1/comments/<int:comment_id>/', views.comment),
 ]

@@ -23,29 +23,27 @@ def home(request):
 @csrf_exempt
 @api_view(["GET"])
 @permission_classes((AllowAny,))
-def lista_varas(request):
+def varas_list(request):
     return Response('lista de varas', HTTP_200_OK)
 
 @csrf_exempt
 @api_view(["GET"])
 @permission_classes((AllowAny,))
-def detalhes_vara(request, vara_id):
+def vara_details(request, vara_id):
     return Response(f'Detalhes da vara {vara_id}', HTTP_200_OK)
-    vara = Vara.objects.get(id=vara_id)
-
-    res = VaraSerializer(vara).data
-
-    return Response(res, HTTP_200_OK)
+    # vara = Vara.objects.get(id=vara_id)
+    # res = VaraSerializer(vara).data
+    # return Response(res, HTTP_200_OK)
 
 @csrf_exempt
 @api_view(["GET"])
 @permission_classes((AllowAny,))
-def melhores_varas_na_etapa(request):
-    identificador = request.GET.get('identificador', None)
-    numeroDeVaras = request.GET.get('numeroDeVaras', None)
+def best_varas_on_step(request):
+    step_id = request.GET.get('step_id', None)
+    amount_of_varas = request.GET.get('amount_of_varas', None)
     res = {
-        'identificador': identificador,
-        'numeroDeVaras': numeroDeVaras
+        'step_id': step_id,
+        'amount_of_varas': amount_of_varas
     }
     return Response(res, HTTP_200_OK)
 
@@ -54,24 +52,24 @@ def melhores_varas_na_etapa(request):
 @csrf_exempt
 @api_view(["GET"])
 @permission_classes((AllowAny,))
-def melhores_etapas(request):
-    identificador = request.GET.get('identificador', None)
-    numeroDeEtapas = request.GET.get('numeroDeEtapas', None)
+def best_steps(request):
+    vara_id = request.GET.get('vara_id', None)
+    amount_of_steps = request.GET.get('amount_of_steps', None)
     res = {
-        'identificador': identificador,
-        'numeroDeEtapas': numeroDeEtapas
+        'vara_id': vara_id,
+        'amount_of_steps': amount_of_steps
     }
     return Response(res, HTTP_200_OK)
 
 @csrf_exempt
 @api_view(["GET"])
 @permission_classes((AllowAny,))
-def piores_etapas(request):
-    identificador = request.GET.get('identificador', None)
-    numeroDeEtapas = request.GET.get('numeroDeEtapas', None)
+def worst_steps(request):
+    vara_id = request.GET.get('vara_id', None)
+    amount_of_steps = request.GET.get('amount_of_steps', None)
     res = {
-        'identificador': identificador,
-        'numeroDeEtapas': numeroDeEtapas
+        'vara_id': vara_id,
+        'amount_of_steps': amount_of_steps
     }
     return Response(res, HTTP_200_OK)
 
@@ -80,12 +78,12 @@ def piores_etapas(request):
 @csrf_exempt
 @api_view(["GET"])
 @permission_classes((AllowAny,))
-def melhores_varas(request):
-    identificador = request.GET.get('identificador', None)
-    numeroDeVaras = request.GET.get('numeroDeVaras', None)
+def best_varas(request):
+    step_id = request.GET.get('step_id', None)
+    amount_of_varas = request.GET.get('amount_of_varas', None)
     res = {
-        'identificador': identificador,
-        'numeroDeVaras': numeroDeVaras
+        'step_id': step_id,
+        'amount_of_varas': amount_of_varas
     }
     return Response(res, HTTP_200_OK)
 
@@ -94,11 +92,11 @@ def melhores_varas(request):
 @csrf_exempt
 @api_view(["GET"])
 @permission_classes((AllowAny,))
-def lista_comentarios(request):
+def comments_list(request):
     return Response('Lista comentarios', HTTP_200_OK)
 
 @csrf_exempt
 @api_view(["GET"])
 @permission_classes((AllowAny,))
-def comentario(request, identificador):
-    return Response(f'Detalhes do comentario {identificador}', HTTP_200_OK)
+def comment(request, comment_id):
+    return Response(f'Detalhes do comentario {comment_id}', HTTP_200_OK)
