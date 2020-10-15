@@ -130,3 +130,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Backend files
+backend/django-project/panorama/settings.py
+backend/django-project/myenv/
+
