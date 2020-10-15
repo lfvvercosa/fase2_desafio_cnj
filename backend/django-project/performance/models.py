@@ -23,7 +23,7 @@ class Vara(models.Model):
     finished_processes = models.IntegerField(default=None)
     movements = models.IntegerField(default=None)
 
-    group_id = models.ForeignKey(Group, on_delete=models.CASCADE) # [ref: > grupos.identificador]
+    group_id = models.ForeignKey(Group, on_delete=models.CASCADE)
 
     time_macrostep_1 = models.IntegerField(default=None)
     time_macrostep_2 = models.IntegerField(default=None)
@@ -36,6 +36,27 @@ class Vara(models.Model):
 
 
 class VaraList(models.Model):
-    vara_id = models.ForeignKey(Vara, on_delete=models.CASCADE) # models.BigIntegerField()
+    vara_id = models.ForeignKey(Vara, on_delete=models.CASCADE)
     name = models.TextField(max_length=255, blank=False, default=None)
+
+
+class StepConfiguration(models.Model):
+  step_id = models.BigIntegerField(primary_key=True)
+  origin = models.TextField(max_length=255, blank=False, default=None)
+  destination = models.TextField(max_length=255, blank=False, default=None)
+
+
+class Comments(models.Model):
+  comment_id = models.BigIntegerField(primary_key=True)
+  comment = models.TextField(max_length=500, blank=False, default=None)
+
+
+class Steps(models.Model):
+  step_id = models.ForeignKey(StepConfiguration, on_delete=models.CASCADE)
+  vara_id = models.ForeignKey(Vara, on_delete=models.CASCADE)
+  min_time = models.IntegerField(default=None)
+  med_time = models.IntegerField(default=None)
+  max_time = models.IntegerField(default=None)
+  frequency = models.IntegerField(default=None)
+  comment_id = models.ForeignKey(Comments, on_delete=models.CASCADE)
 

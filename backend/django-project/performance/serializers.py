@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Vara, VaraList
+from .models import Vara, VaraList, StepConfiguration, Comments, Steps
 
 
 class VaraListSerializer(serializers.ModelSerializer):
@@ -23,3 +23,24 @@ class VaraSerializer(serializers.ModelSerializer):
                   'days_finish_process',
                   'latitude',
                   'longitude']
+
+class StepConfigurationSerializer(serializers.ModelSerializer):
+    class Meta:
+      model = StepConfiguration
+      fields = ['step_id', 'origin', 'destination']
+
+class CommentsSerializer(serializers.ModelSerializer):
+    class Meta:
+      model = Comments
+      fields = ['comment_id', 'comentario']
+
+class StepsSerializer(serializers.ModelSerializer):
+    class Meta:
+      model = Steps
+      fields = ['step_id',
+                'vara_id',
+                'min_time',
+                'med_time',
+                'max_time',
+                'frequency',
+                'comment_id']
