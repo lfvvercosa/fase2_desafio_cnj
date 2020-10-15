@@ -32,7 +32,7 @@ class StepConfigurationSerializer(serializers.ModelSerializer):
 class CommentsSerializer(serializers.ModelSerializer):
     class Meta:
       model = Comments
-      fields = ['comment_id', 'comentario']
+      fields = ['comment_id', 'comment']
 
 class StepsSerializer(serializers.ModelSerializer):
     class Meta:

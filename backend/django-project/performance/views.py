@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from .models import Vara, VaraList
-from .serializers import VaraSerializer, VaraListSerializer
+from .models import Vara, StepConfiguration, Comments, Steps
+from .serializers import VaraSerializer, VaraListSerializer, StepConfigurationSerializer, CommentsSerializer, StepsSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, \
                                       permission_classes
@@ -104,10 +104,24 @@ def best_varas(request):
 @api_view(["GET"])
 @permission_classes((AllowAny,))
 def comments_list(request):
-    return Response('Lista comentarios', HTTP_200_OK)
+    try:
+        comm_list = Comments.objects.all()
+        res = [CommentsSerializer(cl).data for cl in comm_list]
+        return Response(res, HTTP_200_OK)
+    except Comments.DoesNotExist as e:
+        return Response(str(e), HTTP_404_NOT_FOUND)
+    except Exception as e:
+        return Response(str(e), HTTP_400_BAD_REQUEST)
 
 @csrf_exempt
 @api_view(["GET"])
 @permission_classes((AllowAny,))
 def comment(request, comment_id):
-    return Response(f'Detalhes do comentario {comment_id}', HTTP_200_OK)
+    try:
+        comm = Comments.objects.get(comment_id=comment_id)
+        res = CommentsSerializer(comm).data
+        return Response(res, HTTP_200_OK)
+    except Comments.DoesNotExist as e:
+        return Response(str(e), HTTP_404_NOT_FOUND)
+    except Exception as e:
+        return Response(str(e), HTTP_400_BAD_REQUEST)
