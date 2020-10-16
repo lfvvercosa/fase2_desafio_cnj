@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from .models import Vara, StepConfiguration, Comments, Steps
-from .serializers import VaraSerializer, VaraListSerializer, StepConfigurationSerializer, CommentsSerializer, StepsSerializer
+from .models import Group, Vara, StepConfiguration, Comments, Steps
+from .serializers import GroupSerializer, VaraSerializer, VaraListSerializer, StepConfigurationSerializer, CommentsSerializer, StepsSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, \
                                       permission_classes
@@ -39,8 +39,13 @@ def varas_list(request):
 def vara_details(request, vara_id):
     try:
         vara = Vara.objects.get(vara_id=vara_id)
-        res = VaraSerializer(vara).data
-        return Response(res, HTTP_200_OK)
+        vara_res = VaraSerializer(vara).data
+        group_id = vara_res['group_id']
+        group = Group.objects.get(group_id=group_id)
+        group_res = GroupSerializer(group).data
+        vara_res['group'] = group_res
+        vara_res.pop('group_id')
+        return Response(vara_res, HTTP_200_OK)
     except Vara.DoesNotExist as e:
         return Response(str(e), HTTP_404_NOT_FOUND)
     except Exception as e:

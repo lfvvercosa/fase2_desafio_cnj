@@ -1,6 +1,19 @@
 from rest_framework import serializers
-from .models import Vara, VaraList, StepConfiguration, Comments, Steps
+from .models import Group, Vara, VaraList, StepConfiguration, Comments, Steps
 
+
+class GroupSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Group
+        fields = ['group_id',
+                  'competences',
+                  'justice',
+                  'grade',
+                  'court',
+                  'court_class',
+                  'subject',
+                  'judging_body',
+                  'amount_of_varas']
 
 class VaraListSerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,14 +28,8 @@ class VaraSerializer(serializers.ModelSerializer):
                   'ranking',
                   'finished_processes',
                   'movements',
-                  'group_id',
-                  'time_macrostep_1',
-                  'time_macrostep_2',
-                  'time_macrostep_3',
-                  'time_macrostep_4',
                   'days_finish_process',
-                  'latitude',
-                  'longitude']
+                  'group_id']
 
 class StepConfigurationSerializer(serializers.ModelSerializer):
     class Meta:
