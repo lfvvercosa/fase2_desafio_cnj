@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from .models import Group, Vara, StepConfiguration, Comments, Steps
-from .serializers import GroupSerializer, VaraSerializer, VaraListSerializer, StepConfigurationSerializer, CommentsSerializer, StepsSerializer
+from .serializers import GroupSerializer, VaraSerializer, VaraDetailsSerializer, VaraListSerializer,\
+    StepConfigurationSerializer, CommentsSerializer, StepsSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, \
                                       permission_classes
@@ -39,7 +40,7 @@ def varas_list(request):
 def vara_details(request, vara_id):
     try:
         vara = Vara.objects.get(vara_id=vara_id)
-        vara_res = VaraSerializer(vara).data
+        vara_res = VaraDetailsSerializer(vara).data
         group_id = vara_res['group_id']
         group = Group.objects.get(group_id=group_id)
         group_res = GroupSerializer(group).data
@@ -153,13 +154,19 @@ def worst_steps(request):
 @api_view(["GET"])
 @permission_classes((AllowAny,))
 def best_varas(request):
-    step_id = request.GET.get('step_id', None)
-    amount_of_varas = request.GET.get('amount_of_varas', None)
-    res = {
-        'step_id': step_id,
-        'amount_of_varas': amount_of_varas
-    }
-    return Response(res, HTTP_200_OK)
+    try:
+        step_id = request.GET.get('step_id', None)
+        amount_of_varas = int(request.GET.get('amount_of_varas', 10))
+        vara_obj_list = Vara.objects.order_by('days_finish_process')[:amount_of_varas]
+        res_list = []
+        for vara_obj in vara_obj_list.all():
+            vara = VaraSerializer(vara_obj).data
+            res_list.append(vara)
+        return Response(res_list, HTTP_200_OK)
+    except Vara.DoesNotExist as e:
+        return Response('Error getting vara. ' + str(e), HTTP_404_NOT_FOUND)
+    except Exception as e:
+        return Response(str(e), HTTP_400_BAD_REQUEST)
 
 
 # Comentarios

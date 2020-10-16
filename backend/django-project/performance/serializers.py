@@ -20,7 +20,7 @@ class VaraListSerializer(serializers.ModelSerializer):
         model = VaraList
         fields = ['vara_id', 'name']
 
-class VaraSerializer(serializers.ModelSerializer):
+class VaraDetailsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vara
         fields = ['vara_id',
@@ -30,6 +30,19 @@ class VaraSerializer(serializers.ModelSerializer):
                   'movements',
                   'days_finish_process',
                   'group_id']
+
+class VaraSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Vara
+        fields = ['vara_id',
+                  'name',
+                  'time_macrostep_1',
+                  'time_macrostep_2',
+                  'time_macrostep_3',
+                  'time_macrostep_4',
+                  'days_finish_process',
+                  'latitude',
+                  'longitude']
 
 class StepConfigurationSerializer(serializers.ModelSerializer):
     class Meta:
