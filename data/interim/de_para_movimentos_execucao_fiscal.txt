@@ -1,0 +1,24 @@
+
+DE:PARA dos Movimentos
+
+
+DISTRIBUIÇÃO
+	codigo movimento = 26
+CITAÇÃO
+	breadscrum = 14:48:12284
+APRECIAÇÃO DE TUTELA DE URGENCIA OU MEDIDA LIMINAR
+	codigo movimento = 332 - concessao -> antecipacao de tutela
+	codigo movimento = 785 - nao-concessao -> antecipação de tutela
+	codigo movimento = 889 - concessao em parte -> antecipaçao de tutela
+AUDIÊNCIA
+	breadscrum = 14:48:970
+JULGAMENTO/SENTENÇA
+	breadscrum = 1:193
+REMESSA PARA INSTÂNCIA SUPERIOR 
+	codigo movimento = 123 (tem que olhar o complemento, pois esse movimento tambem pode ser utilizado para remessa interna: contadoria, etc)
+TRÂNSITO EM JULGADO
+	codigo movimento = 848
+BAIXA / ARQUIVAMENTO
+	codigo movimento = 22 - baixa, 246 - arquivamento definitivo
+
+DESPACHO (breadscrum: 1:11009), DECISÃO (breadscrum: 1:3)
