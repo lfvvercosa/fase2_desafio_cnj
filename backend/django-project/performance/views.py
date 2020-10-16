@@ -55,13 +55,35 @@ def vara_details(request, vara_id):
 @api_view(["GET"])
 @permission_classes((AllowAny,))
 def best_varas_on_step(request):
-    step_id = request.GET.get('step_id', None)
-    amount_of_varas = request.GET.get('amount_of_varas', None)
-    res = {
-        'step_id': step_id,
-        'amount_of_varas': amount_of_varas
-    }
-    return Response(res, HTTP_200_OK)
+    try:
+        step_id = request.GET.get('step_id', None)
+        amount_of_varas = int(request.GET.get('amount_of_varas', 10))
+        step_objects = Steps.objects.filter(step_id=step_id).order_by('med_time')[:amount_of_varas]
+        res_steps = []
+        for step in step_objects.all():
+            step_dict = StepsSerializer(step).data
+            res_dict = {
+                'vara_id': step_dict['vara_id'],
+                'med_time': step_dict['med_time']
+            }
+            # Get vara info
+            vara_obj = Vara.objects.get(vara_id=res_dict['vara_id'])
+            vara = VaraSerializer(vara_obj).data
+            res_dict['vara_name'] = vara['name']
+            # Get comment info
+            comment_obj = Comments.objects.get(comment_id=step_dict['comment_id'])
+            comment = CommentsSerializer(comment_obj).data
+            res_dict['comment'] = comment['comment']
+            res_steps.append(res_dict)
+        return Response(res_steps, HTTP_200_OK)
+    except Steps.DoesNotExist as e:
+        return Response('Error getting steps. ' + str(e), HTTP_404_NOT_FOUND)
+    except Vara.DoesNotExist as e:
+        return Response('Error getting vara. ' + str(e), HTTP_404_NOT_FOUND)
+    except Comments.DoesNotExist as e:
+        return Response('Error getting comment. ' + str(e), HTTP_404_NOT_FOUND)
+    except Exception as e:
+        return Response(str(e), HTTP_400_BAD_REQUEST)
 
 
 # Etapas
