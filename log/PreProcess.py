@@ -4,17 +4,20 @@ from utils.System import DEBUG
 
 class PreProcess():
     def __init__(self, 
-                 file_location,
+                 file_location=None,
+                 df=None,
                  datatypes={'case:concept:name': str,
                             'time:timestamp'   : str},
                  sep=';',
                  engine='python'):
 
-        self.df_log = pd.read_csv(file_location,
-                                  dtype=datatypes,
-                                  sep=sep, 
-                                  engine=engine)
-    
+        if df is None:
+            self.df_log = pd.read_csv(file_location,
+                                    dtype=datatypes,
+                                    sep=sep, 
+                                    engine=engine)
+        else:
+            self.df_log = df
 
     def select_desired_columns(self, l=['case:concept:name',
                                         'concept:name',
@@ -50,6 +53,8 @@ class PreProcess():
                 pd.to_datetime(self.df_log['time:timestamp'], 
                                utc=True, 
                                format='%Y%m%d%H%M%S')
+
+        self.df_log = self.df_log.sort_values('time:timestamp')
 
 
     def filter_outlier_movements(self, lower=0.05, upper=0.95):
