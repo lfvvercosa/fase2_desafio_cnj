@@ -12,9 +12,13 @@ df_log = pd.read_csv(file_path,
                      sep=';', 
                      engine='python')
 
+print('####################')
+print('check distincts')
+print('####################')
 
-# check distincts
 df_log['case:tribunal'].unique().tolist()
+len(df_log['case:tribunal'].unique().tolist())
+
 df_log['case:grau'].unique().tolist()
 
 df_log['concept:name'].unique().tolist()
@@ -59,31 +63,48 @@ df_sim['numero_varas'] = df_sim['varas'].str.len()
 df_sim = df_sim.sort_values(by='numero_varas')
 
 df_sim.to_csv(path_or_buf='/home/vercosa/Documentos/bases_desafio_cnj/'+\
-                          'varas_por_assuntos.csv')
+                          'versao2/varas_por_assuntos.csv')
 
 
 # check number of process by vara
 df_proc = df_log[['case: orgao', 'case:concept:name']].drop_duplicates()
 df_proc = df_proc.groupby('case: orgao').count().sort_values(by='case:concept:name')
 df_proc = df_proc.rename(columns={'case:concept:name':'process_count'})
+df_proc.reset_index(level=0, inplace=True)
 df_proc.to_csv(path_or_buf='/home/vercosa/Documentos/bases_desafio_cnj/'+\
-                          'processos_por_vara.csv')
+                          'versao2/processos_por_vara.csv')
 
 
 # find number of process from varas of category 68
-l = df_sim[df_sim['numero_varas'] == 68]['varas'].tolist()[0]
-df_cat68 = pd.DataFrame(l, columns=['case: orgao'])
-df_cat68 = df_cat68.merge(df_proc, on='case: orgao', how='left')
-df_cat68 = df_cat68.sort_values(by='process_count')
-df_cat68.to_csv(path_or_buf='/home/vercosa/Documentos/bases_desafio_cnj/'+\
-                          'processos_grupo_68.csv')
+# l = df_sim[df_sim['numero_varas'] == 68]['varas'].tolist()[0]
+# df_cat68 = pd.DataFrame(l, columns=['case: orgao'])
+# df_cat68 = df_cat68.merge(df_proc, on='case: orgao', how='left')
+# df_cat68 = df_cat68.sort_values(by='process_count')
+# df_cat68.to_csv(path_or_buf='/home/vercosa/Documentos/bases_desafio_cnj/'+\
+#                           'processos_grupo_68.csv')
 
 
-# find number of process from varas of category 523
-l = df_sim[df_sim['numero_varas'] == 523]['varas'].tolist()[0]
-df_cat68 = pd.DataFrame(l, columns=['case: orgao'])
-df_cat68 = df_cat68.merge(df_proc, on='case: orgao', how='left')
-df_cat68 = df_cat68.sort_values(by='process_count')
-df_cat68.to_csv(path_or_buf='/home/vercosa/Documentos/bases_desafio_cnj/'+\
-                          'processos_grupo_523.csv')
+# find number of process from varas of category 510
+l = df_sim[df_sim['numero_varas'] == 510]['varas'].tolist()[0]
+df_cat = pd.DataFrame(l, columns=['case: orgao'])
+df_cat = df_cat.merge(df_proc, on='case: orgao', how='left')
+df_cat = df_cat.sort_values(by='process_count')
+df_cat.to_csv(path_or_buf='/home/vercosa/Documentos/bases_desafio_cnj/'+\
+                          'versao2/processos_grupo_510.csv', sep=';')
+
+# find varas that contain '6017' as assunto of its processes
+# df_cat = df_log[['case: orgao', 'case: codigo assunto_final']]
+# df_cat = df_cat.drop_duplicates(['case: orgao'])
+# df_cat['case: codigo assunto_final'] = \
+#     df_cat['case: codigo assunto_final'].astype(str)
+# # df_cat = df_cat[df_cat['case: codigo assunto_final'].str.contains('6017')]
+# df_cat = df_cat[['case: orgao']]
+# df_cat = df_cat.merge(df_proc, on='case: orgao', how='left')
+# df_cat = df_cat.sort_values(by='process_count')
+
+
+
+df_proc.to_csv(path_or_buf='/home/vercosa/Documentos/bases_desafio_cnj/'+\
+                          'processos_grupo_all.csv', 
+              sep=';')
 

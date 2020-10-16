@@ -36,4 +36,15 @@ df_vara3.to_csv(path_or_buf='/home/vercosa/Documentos/bases_desafio_cnj/'+\
                             'log_vara3.csv', sep=';', index=False)
 
 
+vara1 = 'V DOS FEITOS DE REL DE CONS CIV E COMERCIAIS DE WENCESLAU GUIMARAES'
+vara2 = '1ª V DOS FEITOS DE REL DE CONS CIV E COMERCIAIS DE SANTANA'
+
+df_temp = df_log[df_log['case: orgao'] == vara1]
+df_temp.to_csv(path_or_buf='/home/vercosa/Documentos/bases_desafio_cnj/'+\
+                            'log_vara_1.csv', sep=';', index=False)
+
+df_temp = df_log[df_log['case: orgao'] == vara2]
+df_temp.to_csv(path_or_buf='/home/vercosa/Documentos/bases_desafio_cnj/'+\
+                            'log_vara_2.csv', sep=';', index=False)
+
 
