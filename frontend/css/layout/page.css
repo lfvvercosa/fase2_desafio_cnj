@@ -19,5 +19,9 @@ body {
   font-family: "OpenSans-Regular";
   src: url("../../resources/fonts/Open_Sans/OpenSans-Regular.ttf");
 }
+@font-face {
+  font-family: "OpenSans-Light";
+  src: url("../../resources/fonts/Open_Sans/OpenSans-Light.ttf");
+}
 
 /*# sourceMappingURL=page.css.map */
