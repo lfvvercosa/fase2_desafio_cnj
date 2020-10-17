@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Map</title>
+    <title>Desafio CNJ</title>
     <!-- html5 meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="./css/components/header.css">
     <link rel="stylesheet" href="./css/components/rounded-info.css">
     <link rel="stylesheet" href="./css/components/card.css">
+    <link rel="stylesheet" href="./css/components/menu.css">
     <link rel="stylesheet" href="./css/components/rank.css">
     <link rel="stylesheet" href="./css/components/statistics.css">
     <link rel="stylesheet" href="./css/components/chart.css">
@@ -39,323 +40,343 @@
   
   </head>
   <body>
-
+    
     <!-- header -->
-    <div class="container header">
+    <div class="container">
       <div class="row">
-        <div class="col-10 header-left">
-          <h6 class="header-left-welcome">bem vindo a</h6>
-          <h1 class="header-left-court">VARA ÚNICA DE ANAJAS</h1>
+        <div class="col-1 position">
+          <p class="position-number">19ª</p>
+          <p class="position-text">colocada</p>
         </div>
-        <div class="col-2 header-right">
-          <div class="header-right-text">
-            <div>
-              <p class="header-right-text-username">ANTONIO</p>
-              <p class="header-right-text-position">juiz/Desembargador</p>
-            </div>
-          </div>
-          <div class="header-right-photo">
-            <img src="https://www.melhoresfilmes.com.br/dimg/?w=165&amp;h=220&amp;mode=crop&amp;url=https%3A%2F%2Fwww.melhoresfilmes.com.br%2Fimg%2Factors%2F6493.jpg"
-              alt="Antonio" width="100%" height="100%">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-11 header-bottom">
-          <div class="header-bottom-group">
-            <p class="header-bottom-group-amount" >GRUPO (120 órgãos)</p>
-            <div class="rounded-info header-bottom-group-item"><p>Justiça Comercial</p></div>
-            <div class="rounded-info header-bottom-group-item"><p>1° Grau</p></div>
-            <div class="rounded-info header-bottom-group-item"><p>Competência Mista</p></div>
-            <div class="rounded-info header-bottom-group-item"><p>Justiça Comercial</p></div>
-          </div>
-        </div>
-        <!-- <div class="col-1 header-bottom-group-rank">
-          <p class="header-bottom-group-rank-number">19°</p>
-          <p class="header-bottom-group-rank-text">colocada</p>
-        </div> -->
-      </div>
-    </div>
-
-    <!-- rank -->
-    <div class="container rank card">
-      <div id="rank-worst" class="row rank-worst">
-        <div class="col-5 rank-movements">
-          <p>GARGALOS EM DESTAQUE</p>
-          <div class="container rank-movements-content">
+        <div class="col-11">
+          <div class="container header">
             <div class="row">
-              <!-- first item -->
-              <div class="col-4 rank-movements-content-item">
-                <div class="rounded-info rank-movements-content-item-name">MANDADO</div>
-                <div class="rank-movements-content-item-transaction">
-                  <div class="rank-movements-content-item-transaction-text">
-                    <p>13</p>
-                    <p>3 meses</p>
-                  </div>
-                  <div class="transaction-arrow"><img src=""></div>
-                </div>
-                <div class="rounded-info rank-movements-content-item-name">RECEBIMENTO</div>
+              <div class="col-10 header-left">
+                <h6 class="header-left-welcome">bem vindo a</h6>
+                <h1 class="header-left-court">VARA ÚNICA DE ANAJAS</h1>
               </div>
-              <!-- second item -->
-              <div class="col-4 rank-movements-content-item">
-                <div class="rounded-info rank-movements-content-item-name">MANDADO</div>
-                <div class="rank-movements-content-item-transaction">
-                  <div class="rank-movements-content-item-transaction-text">
-                    <p>13</p>
-                    <p>3 meses</p>
+              <div class="col-2 header-right">
+                <div class="header-right-text">
+                  <div>
+                    <p class="header-right-text-username">ANTONIO</p>
+                    <p class="header-right-text-position">juiz/Desembargador</p>
                   </div>
-                  <div class="transaction-arrow"><img src=""></div>
                 </div>
-                <div class="rounded-info rank-movements-content-item-name">RECEBIMENTO</div>
-              </div>
-              <!-- third item -->
-              <div class="col-4 rank-movements-content-item">
-                <div class="rounded-info rank-movements-content-item-name">MANDADO</div>
-                <div class="rank-movements-content-item-transaction">
-                  <div class="rank-movements-content-item-transaction-text">
-                    <p>13</p>
-                    <p>3 meses</p>
-                  </div>
-                  <div class="transaction-arrow"><img src=""></div>
+                <div class="header-right-photo">
+                  <img src="https://www.melhoresfilmes.com.br/dimg/?w=165&amp;h=220&amp;mode=crop&amp;url=https%3A%2F%2Fwww.melhoresfilmes.com.br%2Fimg%2Factors%2F6493.jpg"
+                    alt="Antonio" width="100%" height="100%">
                 </div>
-                <div class="rounded-info rank-movements-content-item-name">RECEBIMENTO</div>
               </div>
             </div>
-          </div>
-          <div class="rank-movements-coments">
-            ESCREVER UM COMENTÁRIO
-          </div>
-        </div>
-        <div class="col-7 rank-table">
-          <div class="rank-table-tabs">
-            <div id="table-bottleneck-tab1" class="rank-table-tabs-item rank-table-tabs-item-selected">Mandado-Recebimento</div>
-            <div id="table-bottleneck-tab2" class="rank-table-tabs-item">Mandado-Recebimento</div>
-            <div id="table-bottleneck-tab3" class="rank-table-tabs-item">Mandado-Recebimento</div>
-          </div>
-          <div class="rank-table-title">
-            <table>
-              <tr>
-                <th class="rank-table-title-index">#</th>
-                <th class="rank-table-title-name">Nome</th>
-                <th class="rank-table-title-duration">Duração</th>
-                <th class="rank-table-title-comments">Comentários</th>
-              </tr>
-            </table>
-          </div>
-          <div class="rank-table-content">
-            <table>
-              <tr class="rank-table-content-odd">
-                <th class="rank-table-content-index">1</th>
-                <th class="rank-table-content-name">woefinewnofw</th>
-                <th class="rank-table-content-duration">1 meses</th>
-                <th class="rank-table-content-comments">winfgowef wenfiwnfoei weion</th>
-              </tr>
-              <tr class="rank-table-content-even">
-                <th class="rank-table-content-index">2</th>
-                <th class="rank-table-content-name">woefinewnofw</th>
-                <th class="rank-table-content-duration">3 meses</th>
-                <th class="rank-table-content-comments">winfgowef weion</th>
-              </tr>
-              <tr>
-                <th class="rank-table-content-index">3</th>
-                <th class="rank-table-content-name">woiefowof</th>
-                <th class="rank-table-content-duration">12 meses</th>
-                <th class="rank-table-content-comments">winfgowef wefwe weion</th>
-              </tr>
-              <tr class="rank-table-content-even">
-                <th class="rank-table-content-index">4</th>
-                <th class="rank-table-content-name">woefinewnofw</th>
-                <th class="rank-table-content-duration">5 meses</th>
-                <th class="rank-table-content-comments">winfgowef fwnifnwo weion</th>
-              </tr>
-              <tr class="rank-table-content-odd">
-                <th class="rank-table-content-index">5</th>
-                <th class="rank-table-content-name"></th>
-                <th class="rank-table-content-duration"></th>
-                <th class="rank-table-content-comments"></th>
-              </tr>
-              <tr class="rank-table-content-even">
-                <th class="rank-table-content-index">6</th>
-                <th class="rank-table-content-name"></th>
-                <th class="rank-table-content-duration"></th>
-                <th class="rank-table-content-comments"></th>
-              </tr>
-              <tr class="rank-table-content-odd">
-                <th class="rank-table-content-index">7</th>
-                <th class="rank-table-content-name"></th>
-                <th class="rank-table-content-duration"></th>
-                <th class="rank-table-content-comments"></th>
-              </tr>
-              <tr class="rank-table-content-even">
-                <th class="rank-table-content-index">8</th>
-                <th class="rank-table-content-name"></th>
-                <th class="rank-table-content-duration"></th>
-                <th class="rank-table-content-comments"></th>
-              </tr>
-              <tr class="rank-table-content-odd">
-                <th class="rank-table-content-index">9</th>
-                <th class="rank-table-content-name"></th>
-                <th class="rank-table-content-duration"></th>
-                <th class="rank-table-content-comments"></th>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-      <div id="rank-best" class="row">
-        <div class="col-5 rank-movement-list">
-          <p>ETAPAS EM DESTAQUE</p>
-          <div class="container rank-movements-content">
             <div class="row">
-              <!-- first item -->
-              <div class="col-4 rank-movements-content-item">
-                <div class="rounded-info rank-movements-content-item-name">MANDADO</div>
-                <div class="rank-movements-content-item-transaction">
-                  <div class="rank-movements-content-item-transaction-text">
-                    <p>13</p>
-                    <p>3 meses</p>
-                  </div>
-                  <div class="transaction-arrow"><img src=""></div>
+              <div class="col-11 header-bottom">
+                <div class="header-bottom-group">
+                  <p class="header-bottom-group-amount" >GRUPO (120 órgãos)</p>
+                  <div class="rounded-info header-bottom-group-item"><p>Justiça Comercial</p></div>
+                  <div class="rounded-info header-bottom-group-item"><p>1° Grau</p></div>
+                  <div class="rounded-info header-bottom-group-item"><p>Competência Mista</p></div>
+                  <div class="rounded-info header-bottom-group-item"><p>Justiça Comercial</p></div>
                 </div>
-                <div class="rounded-info rank-movements-content-item-name">RECEBIMENTO</div>
-              </div>
-              <!-- second item -->
-              <div class="col-4 rank-movements-content-item">
-                <div class="rounded-info rank-movements-content-item-name">MANDADO</div>
-                <div class="rank-movements-content-item-transaction">
-                  <div class="rank-movements-content-item-transaction-text">
-                    <p>13</p>
-                    <p>3 meses</p>
-                  </div>
-                  <div class="transaction-arrow"><img src=""></div>
-                </div>
-                <div class="rounded-info rank-movements-content-item-name">RECEBIMENTO</div>
-              </div>
-              <!-- third item -->
-              <div class="col-4 rank-movements-content-item">
-                <div class="rounded-info rank-movements-content-item-name">MANDADO</div>
-                <div class="rank-movements-content-item-transaction">
-                  <div class="rank-movements-content-item-transaction-text">
-                    <p>13</p>
-                    <p>3 meses</p>
-                  </div>
-                  <div class="transaction-arrow"><img src=""></div>
-                </div>
-                <div class="rounded-info rank-movements-content-item-name">RECEBIMENTO</div>
               </div>
             </div>
           </div>
-          <div class="rank-movements-coments">
-            ESCREVER UM COMENTÁRIO
-          </div>
-        </div>
-        <div class="col-7 rank-table">
-          <div class="rank-table-tabs">
-            <div id="table-bottleneck-tab1" class="rank-table-tabs-item rank-table-tabs-item-selected">Mandado-Recebimento</div>
-            <div id="table-bottleneck-tab2" class="rank-table-tabs-item">Mandado-Recebimento</div>
-            <div id="table-bottleneck-tab3" class="rank-table-tabs-item">Mandado-Recebimento</div>
-          </div>
-          <div class="rank-table-title">
-            <table>
-              <tr>
-                <th class="rank-table-content-index">#</th>
-                <th class="rank-table-content-name">Nome</th>
-                <th class="rank-table-content-duration">Duração</th>
-                <th class="rank-table-content-comments">Comentários</th>
-              </tr>
-            </table>
-          </div>
-          <div class="rank-table-content">
-            <table>
-              <tr class="rank-table-content-odd">
-                <th class="rank-table-content-index">1</th>
-                <th class="rank-table-content-name">woefinewnofw</th>
-                <th class="rank-table-content-duration">1 meses</th>
-                <th class="rank-table-content-comments">winfgowef fwnifnwo </th>
-              </tr>
-              <tr class="rank-table-content-even">
-                <th class="rank-table-content-index">2</th>
-                <th class="rank-table-content-name">woefinewnofw</th>
-                <th class="rank-table-content-duration">3 meses</th>
-                <th class="rank-table-content-comments">winfgowef</th>
-              </tr>
-              <tr>
-                <th class="rank-table-content-index">3</th>
-                <th class="rank-table-content-name">woiefowof</th>
-                <th class="rank-table-content-duration">12 meses</th>
-                <th class="rank-table-content-comments">winfgowef wefwe</th>
-              </tr>
-              <tr class="rank-table-content-even">
-                <th class="rank-table-content-index">4</th>
-                <th class="rank-table-content-name">woefinewnofw</th>
-                <th class="rank-table-content-duration">5 meses</th>
-                <th class="rank-table-content-comments">winfgowef fwnifnwo</th>
-              </tr>
-              <tr class="rank-table-content-odd">
-                <th class="rank-table-content-index">5</th>
-                <th class="rank-table-content-name"></th>
-                <th class="rank-table-content-duration"></th>
-                <th class="rank-table-content-comments"></th>
-              </tr>
-              <tr class="rank-table-content-even">
-                <th class="rank-table-content-index">6</th>
-                <th class="rank-table-content-name"></th>
-                <th class="rank-table-content-duration"></th>
-                <th class="rank-table-content-comments"></th>
-              </tr>
-              <tr class="rank-table-content-odd">
-                <th class="rank-table-content-index">7</th>
-                <th class="rank-table-content-name"></th>
-                <th class="rank-table-content-duration"></th>
-                <th class="rank-table-content-comments"></th>
-              </tr>
-              <tr class="rank-table-content-even">
-                <th class="rank-table-content-index">8</th>
-                <th class="rank-table-content-name"></th>
-                <th class="rank-table-content-duration"></th>
-                <th class="rank-table-content-comments"></th>
-              </tr>
-              <tr class="rank-table-content-odd">
-                <th class="rank-table-content-index">9</th>
-                <th class="rank-table-content-name"></th>
-                <th class="rank-table-content-duration"></th>
-                <th class="rank-table-content-comments"></th>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>  
-
-    <!-- basic statistics -->
-    <div class="container statistics">
-      <div class="row">
-        <div class="card col-2">Pior Desempenho</div>
-        <div class="card col-2">Melhor Desempenho</div>
-        <div class="card col-2">Duração da Baixa do Processo</div>
-        <div class="card col-2">Movimentação Por Processo</div>
-        <div class="card col-1">Processos Julgados</div>
-      </div>
-    </div>
-
-    <!-- comparation chart -->
-    <div class="container chart card">
-      <div class="row">
-        <div id="chart"></div>
-      </div>
-    </div>
-
-    <!-- footer -->
-    <div class="container footer">
-      <div class="row">
-        <div class="col-4 card best-times">
-        </div>
-        <div class="col-8 map">
-          <div class="map-title"><p>DESCRIÇÃO DO MAPA</p></div>
-          <div id="map"></div>
         </div>
       </div>
     </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="menu col-1">
+          <div class="menu-content">
+
+          </div>
+          
+        </div>
+        <div class="col-11">
+          <!-- rank -->
+          <div class="container rank card">
+            <div id="rank-worst" class="row rank-worst">
+              <div class="col-5 rank-movements">
+                <p>GARGALOS EM DESTAQUE</p>
+                <div class="container rank-movements-content">
+                  <div class="row">
+                    <!-- first item -->
+                    <div class="col-4 rank-movements-content-item">
+                      <div class="rounded-info rank-movements-content-item-name">MANDADO</div>
+                      <div class="rank-movements-content-item-transaction">
+                        <div class="rank-movements-content-item-transaction-text">
+                          <p>13</p>
+                          <p>3 meses</p>
+                        </div>
+                        <div class="transaction-arrow"><img src=""></div>
+                      </div>
+                      <div class="rounded-info rank-movements-content-item-name">RECEBIMENTO</div>
+                    </div>
+                    <!-- second item -->
+                    <div class="col-4 rank-movements-content-item">
+                      <div class="rounded-info rank-movements-content-item-name">MANDADO</div>
+                      <div class="rank-movements-content-item-transaction">
+                        <div class="rank-movements-content-item-transaction-text">
+                          <p>13</p>
+                          <p>3 meses</p>
+                        </div>
+                        <div class="transaction-arrow"><img src=""></div>
+                      </div>
+                      <div class="rounded-info rank-movements-content-item-name">RECEBIMENTO</div>
+                    </div>
+                    <!-- third item -->
+                    <div class="col-4 rank-movements-content-item">
+                      <div class="rounded-info rank-movements-content-item-name">MANDADO</div>
+                      <div class="rank-movements-content-item-transaction">
+                        <div class="rank-movements-content-item-transaction-text">
+                          <p>13</p>
+                          <p>3 meses</p>
+                        </div>
+                        <div class="transaction-arrow"><img src=""></div>
+                      </div>
+                      <div class="rounded-info rank-movements-content-item-name">RECEBIMENTO</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rank-movements-coments">
+                  ESCREVER UM COMENTÁRIO
+                </div>
+              </div>
+              <div class="col-7 rank-table">
+                <div class="rank-table-tabs">
+                  <div id="table-bottleneck-tab1" class="rank-table-tabs-item rank-table-tabs-item-selected">Mandado-Recebimento</div>
+                  <div id="table-bottleneck-tab2" class="rank-table-tabs-item">Mandado-Recebimento</div>
+                  <div id="table-bottleneck-tab3" class="rank-table-tabs-item">Mandado-Recebimento</div>
+                </div>
+                <div class="rank-table-title">
+                  <table>
+                    <tr>
+                      <th class="rank-table-title-index">#</th>
+                      <th class="rank-table-title-name">Nome</th>
+                      <th class="rank-table-title-duration">Duração</th>
+                      <th class="rank-table-title-comments">Comentários</th>
+                    </tr>
+                  </table>
+                </div>
+                <div class="rank-table-content">
+                  <table>
+                    <tr class="rank-table-content-odd">
+                      <th class="rank-table-content-index">1</th>
+                      <th class="rank-table-content-name">woefinewnofw</th>
+                      <th class="rank-table-content-duration">1 meses</th>
+                      <th class="rank-table-content-comments">winfgowef wenfiwnfoei weion</th>
+                    </tr>
+                    <tr class="rank-table-content-even">
+                      <th class="rank-table-content-index">2</th>
+                      <th class="rank-table-content-name">woefinewnofw</th>
+                      <th class="rank-table-content-duration">3 meses</th>
+                      <th class="rank-table-content-comments">winfgowef weion</th>
+                    </tr>
+                    <tr>
+                      <th class="rank-table-content-index">3</th>
+                      <th class="rank-table-content-name">woiefowof</th>
+                      <th class="rank-table-content-duration">12 meses</th>
+                      <th class="rank-table-content-comments">winfgowef wefwe weion</th>
+                    </tr>
+                    <tr class="rank-table-content-even">
+                      <th class="rank-table-content-index">4</th>
+                      <th class="rank-table-content-name">woefinewnofw</th>
+                      <th class="rank-table-content-duration">5 meses</th>
+                      <th class="rank-table-content-comments">winfgowef fwnifnwo weion</th>
+                    </tr>
+                    <tr class="rank-table-content-odd">
+                      <th class="rank-table-content-index">5</th>
+                      <th class="rank-table-content-name"></th>
+                      <th class="rank-table-content-duration"></th>
+                      <th class="rank-table-content-comments"></th>
+                    </tr>
+                    <tr class="rank-table-content-even">
+                      <th class="rank-table-content-index">6</th>
+                      <th class="rank-table-content-name"></th>
+                      <th class="rank-table-content-duration"></th>
+                      <th class="rank-table-content-comments"></th>
+                    </tr>
+                    <tr class="rank-table-content-odd">
+                      <th class="rank-table-content-index">7</th>
+                      <th class="rank-table-content-name"></th>
+                      <th class="rank-table-content-duration"></th>
+                      <th class="rank-table-content-comments"></th>
+                    </tr>
+                    <tr class="rank-table-content-even">
+                      <th class="rank-table-content-index">8</th>
+                      <th class="rank-table-content-name"></th>
+                      <th class="rank-table-content-duration"></th>
+                      <th class="rank-table-content-comments"></th>
+                    </tr>
+                    <tr class="rank-table-content-odd">
+                      <th class="rank-table-content-index">9</th>
+                      <th class="rank-table-content-name"></th>
+                      <th class="rank-table-content-duration"></th>
+                      <th class="rank-table-content-comments"></th>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div id="rank-best" class="row">
+              <div class="col-5 rank-movement-list">
+                <p>ETAPAS EM DESTAQUE</p>
+                <div class="container rank-movements-content">
+                  <div class="row">
+                    <!-- first item -->
+                    <div class="col-4 rank-movements-content-item">
+                      <div class="rounded-info rank-movements-content-item-name">MANDADO</div>
+                      <div class="rank-movements-content-item-transaction">
+                        <div class="rank-movements-content-item-transaction-text">
+                          <p>13</p>
+                          <p>3 meses</p>
+                        </div>
+                        <div class="transaction-arrow"><img src=""></div>
+                      </div>
+                      <div class="rounded-info rank-movements-content-item-name">RECEBIMENTO</div>
+                    </div>
+                    <!-- second item -->
+                    <div class="col-4 rank-movements-content-item">
+                      <div class="rounded-info rank-movements-content-item-name">MANDADO</div>
+                      <div class="rank-movements-content-item-transaction">
+                        <div class="rank-movements-content-item-transaction-text">
+                          <p>13</p>
+                          <p>3 meses</p>
+                        </div>
+                        <div class="transaction-arrow"><img src=""></div>
+                      </div>
+                      <div class="rounded-info rank-movements-content-item-name">RECEBIMENTO</div>
+                    </div>
+                    <!-- third item -->
+                    <div class="col-4 rank-movements-content-item">
+                      <div class="rounded-info rank-movements-content-item-name">MANDADO</div>
+                      <div class="rank-movements-content-item-transaction">
+                        <div class="rank-movements-content-item-transaction-text">
+                          <p>13</p>
+                          <p>3 meses</p>
+                        </div>
+                        <div class="transaction-arrow"><img src=""></div>
+                      </div>
+                      <div class="rounded-info rank-movements-content-item-name">RECEBIMENTO</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rank-movements-coments">
+                  ESCREVER UM COMENTÁRIO
+                </div>
+              </div>
+              <div class="col-7 rank-table">
+                <div class="rank-table-tabs">
+                  <div id="table-bottleneck-tab1" class="rank-table-tabs-item rank-table-tabs-item-selected">Mandado-Recebimento</div>
+                  <div id="table-bottleneck-tab2" class="rank-table-tabs-item">Mandado-Recebimento</div>
+                  <div id="table-bottleneck-tab3" class="rank-table-tabs-item">Mandado-Recebimento</div>
+                </div>
+                <div class="rank-table-title">
+                  <table>
+                    <tr>
+                      <th class="rank-table-content-index">#</th>
+                      <th class="rank-table-content-name">Nome</th>
+                      <th class="rank-table-content-duration">Duração</th>
+                      <th class="rank-table-content-comments">Comentários</th>
+                    </tr>
+                  </table>
+                </div>
+                <div class="rank-table-content">
+                  <table>
+                    <tr class="rank-table-content-odd">
+                      <th class="rank-table-content-index">1</th>
+                      <th class="rank-table-content-name">woefinewnofw</th>
+                      <th class="rank-table-content-duration">1 meses</th>
+                      <th class="rank-table-content-comments">winfgowef fwnifnwo </th>
+                    </tr>
+                    <tr class="rank-table-content-even">
+                      <th class="rank-table-content-index">2</th>
+                      <th class="rank-table-content-name">woefinewnofw</th>
+                      <th class="rank-table-content-duration">3 meses</th>
+                      <th class="rank-table-content-comments">winfgowef</th>
+                    </tr>
+                    <tr>
+                      <th class="rank-table-content-index">3</th>
+                      <th class="rank-table-content-name">woiefowof</th>
+                      <th class="rank-table-content-duration">12 meses</th>
+                      <th class="rank-table-content-comments">winfgowef wefwe</th>
+                    </tr>
+                    <tr class="rank-table-content-even">
+                      <th class="rank-table-content-index">4</th>
+                      <th class="rank-table-content-name">woefinewnofw</th>
+                      <th class="rank-table-content-duration">5 meses</th>
+                      <th class="rank-table-content-comments">winfgowef fwnifnwo</th>
+                    </tr>
+                    <tr class="rank-table-content-odd">
+                      <th class="rank-table-content-index">5</th>
+                      <th class="rank-table-content-name"></th>
+                      <th class="rank-table-content-duration"></th>
+                      <th class="rank-table-content-comments"></th>
+                    </tr>
+                    <tr class="rank-table-content-even">
+                      <th class="rank-table-content-index">6</th>
+                      <th class="rank-table-content-name"></th>
+                      <th class="rank-table-content-duration"></th>
+                      <th class="rank-table-content-comments"></th>
+                    </tr>
+                    <tr class="rank-table-content-odd">
+                      <th class="rank-table-content-index">7</th>
+                      <th class="rank-table-content-name"></th>
+                      <th class="rank-table-content-duration"></th>
+                      <th class="rank-table-content-comments"></th>
+                    </tr>
+                    <tr class="rank-table-content-even">
+                      <th class="rank-table-content-index">8</th>
+                      <th class="rank-table-content-name"></th>
+                      <th class="rank-table-content-duration"></th>
+                      <th class="rank-table-content-comments"></th>
+                    </tr>
+                    <tr class="rank-table-content-odd">
+                      <th class="rank-table-content-index">9</th>
+                      <th class="rank-table-content-name"></th>
+                      <th class="rank-table-content-duration"></th>
+                      <th class="rank-table-content-comments"></th>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- basic statistics -->
+            <div class="container statistics">
+              <div class="row">
+                <div class="card col-2">Pior Desempenho</div>
+                <div class="card col-2">Melhor Desempenho</div>
+                <div class="card col-2">Duração da Baixa do Processo</div>
+                <div class="card col-2">Movimentação Por Processo</div>
+                <div class="card col-1">Processos Julgados</div>
+              </div>
+            </div>
+
+            <!-- comparation chart -->
+            <div class="container chart card">
+              <div class="row">
+                <div id="chart"></div>
+              </div>
+            </div>
+
+            <!-- footer -->
+            <div class="container footer">
+              <div class="row">
+                <div class="col-4 card best-times">
+                </div>
+                <div class="col-8 map">
+                  <div class="map-title"><p>DESCRIÇÃO DO MAPA</p></div>
+                  <div id="map"></div>
+                </div>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+
+    
 
     <!-- scripts -->
     <script src="./js/components.js" ></script>

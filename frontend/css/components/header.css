@@ -1,3 +1,25 @@
+.position {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 5rem;
+  text-align: center;
+}
+.position .row {
+  margin: 0;
+}
+.position-number {
+  font-family: "OpenSans-Bold";
+  font-size: 4rem;
+  margin: 0;
+  height: 4.7rem;
+}
+.position-text {
+  text-align: center;
+  font-family: "OpenSans-Regular";
+  font-size: 1.2rem;
+  margin: 0;
+}
+
 .header {
   padding-left: 0;
   padding-right: 0;
