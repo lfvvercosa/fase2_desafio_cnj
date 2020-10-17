@@ -1,7 +1,5 @@
-#map {
-  height: 100%;
-  width: 100%;
-  margin: auto;
+.map {
+  margin: 0;
   .row {
     height: 100%;
   }
@@ -10,11 +8,19 @@
     height: 3rem;
     display: flex;
     align-items: center;
-    margin-bottom: 0;
+    margin-bottom: 1rem;
     p {
+      font-family: 'OpenSans-Bold';
+      font-size: 2.4rem;
       margin: 0;
     }
   }
+}
+
+#map {
+  height: 90%;
+  width: 100%;
+  border-radius: .7rem;
 }
 
 .gm-svpc, .gmnoprint, .gm-fullscreen-control {
