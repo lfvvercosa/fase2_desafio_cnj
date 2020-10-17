@@ -1,0 +1,23 @@
+.control {
+  height: 10rem;
+  background-color: white;
+}
+.control .row {
+  height: 100%;
+  margin: 0;
+}
+.control-title {
+  font-family: "OpenSans-Bold";
+  font-size: 2.4rem;
+  display: flex;
+  align-items: center;
+}
+.control-list .row {
+  align-items: center;
+}
+.control-list-item {
+  display: flex;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=control.css.map */
