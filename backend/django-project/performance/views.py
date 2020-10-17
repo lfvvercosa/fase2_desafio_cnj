@@ -58,10 +58,23 @@ def vara_details(request, vara_id):
 def best_varas_on_step(request):
     try:
         step_id = request.GET.get('step_id', None)
+        vara_id = request.GET.get('vara_id', None)
         amount_of_varas = int(request.GET.get('amount_of_varas', 10))
-        step_objects = Steps.objects.filter(step_id=step_id).order_by('med_time')[:amount_of_varas]
+        all_step_objects = Steps.objects.filter(step_id=step_id).order_by('med_time')
+
+        first_objs = all_step_objects[:max(amount_of_varas - 5, 1)]
+        focused_vara_index = list(all_step_objects.all()).index(Steps.objects.get(step_id=step_id,vara_id=vara_id))
+        min_index_to_get = max(0, focused_vara_index-2)
+        max_index_to_get = focused_vara_index + 3
+        last_objs = all_step_objects[min_index_to_get:max_index_to_get]
+        objs = first_objs.union(last_objs).distinct()
+        if amount_of_varas > len(objs):
+            objs = objs.union(all_step_objects[:amount_of_varas]).distinct()
+
+        objs = objs.order_by('med_time')
+
         res_steps = []
-        for step in step_objects.all():
+        for step in objs.all():
             step_dict = StepsSerializer(step).data
             res_dict = {
                 'vara_id': step_dict['vara_id'],
