@@ -155,11 +155,23 @@ def worst_steps(request):
 @permission_classes((AllowAny,))
 def best_varas(request):
     try:
-        step_id = request.GET.get('step_id', None)
+        vara_id = request.GET.get('vara_id', None)
         amount_of_varas = int(request.GET.get('amount_of_varas', 10))
-        vara_obj_list = Vara.objects.order_by('days_finish_process')[:amount_of_varas]
+        all_vara_obj_list = Vara.objects.order_by('days_finish_process')
+
+        first_objs = all_vara_obj_list[:max(amount_of_varas - 5, 1)]
+        focused_vara_index = list(all_vara_obj_list.all()).index(Vara.objects.get(vara_id=vara_id))
+        min_index_to_get = max(0, focused_vara_index-2)
+        max_index_to_get = focused_vara_index + 3
+        last_objs = all_vara_obj_list[min_index_to_get:max_index_to_get]
+        objs = first_objs.union(last_objs).distinct()
+        if amount_of_varas > len(objs):
+            objs = objs.union(all_vara_obj_list[:amount_of_varas]).distinct()
+
+        objs = objs.order_by('days_finish_process')
+
         res_list = []
-        for vara_obj in vara_obj_list.all():
+        for vara_obj in objs.all():
             vara = VaraSerializer(vara_obj).data
             res_list.append(vara)
         return Response(res_list, HTTP_200_OK)
