@@ -1,0 +1,971 @@
+{
+	"info": {
+		"_postman_id": "7559f807-0fae-4c9c-a1c3-4443cdc8b9a0",
+		"name": "CNJ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Varas",
+			"item": [
+				{
+					"name": "varas list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e150b34e-05c9-47fb-81c7-a53f495c676c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/varas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"varas",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "varas list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/varas/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"varas",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 15 Oct 2020 02:28:53 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "223"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"vara_id\": 1,\n        \"name\": \"sample name 1\"\n    },\n    {\n        \"vara_id\": 2,\n        \"name\": \"sample name 2\"\n    },\n    {\n        \"vara_id\": 3,\n        \"name\": \"sample name 3\"\n    },\n    {\n        \"vara_id\": 4,\n        \"name\": \"sample name 4\"\n    },\n    {\n        \"vara_id\": 5,\n        \"name\": \"sample name 5\"\n    },\n    {\n        \"vara_id\": 6,\n        \"name\": \"sample name 6\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "varas details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a3858899-b8d4-4b6f-8782-6883a3ab9b8e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/varas/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"varas",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "varas details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/varas/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"varas",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 16 Oct 2020 01:02:48 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "355"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"vara_id\": 4,\n    \"name\": \"sample name 4\",\n    \"ranking\": 1,\n    \"finished_processes\": 35,\n    \"movements\": 17,\n    \"days_finish_process\": 10,\n    \"group\": {\n        \"group_id\": 2,\n        \"competences\": 2,\n        \"justice\": \"sample justice 2\",\n        \"grade\": \"sample grade 2\",\n        \"court\": \"sample court 2\",\n        \"court_class\": \"sample court class 2\",\n        \"subject\": \"sample subject 2\",\n        \"judging_body\": \"sample judging body 2\",\n        \"amount_of_varas\": 3\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "bestVarasOnStep",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "784f916c-2b20-49bf-8feb-5c80f09925b7",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/varas/bestVarasOnStep/?step_id=1&amount_of_varas=10&vara_id=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"varas",
+								"bestVarasOnStep",
+								""
+							],
+							"query": [
+								{
+									"key": "step_id",
+									"value": "1"
+								},
+								{
+									"key": "amount_of_varas",
+									"value": "10"
+								},
+								{
+									"key": "vara_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "bestVarasOnStep",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/varas/bestVarasOnStep/?step_id=1&amount_of_varas=10&vara_id=3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"varas",
+										"bestVarasOnStep",
+										""
+									],
+									"query": [
+										{
+											"key": "step_id",
+											"value": "1"
+										},
+										{
+											"key": "amount_of_varas",
+											"value": "10"
+										},
+										{
+											"key": "vara_id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 17 Oct 2020 04:00:55 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "511"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"vara_id\": 1,\n        \"med_time\": 15,\n        \"vara_name\": \"sample name 1\",\n        \"comment\": \"sample comment 1\"\n    },\n    {\n        \"vara_id\": 3,\n        \"med_time\": 16,\n        \"vara_name\": \"sample name 3\",\n        \"comment\": \"sample comment 3\"\n    },\n    {\n        \"vara_id\": 2,\n        \"med_time\": 16,\n        \"vara_name\": \"sample name 2\",\n        \"comment\": \"sample comment 2\"\n    },\n    {\n        \"vara_id\": 4,\n        \"med_time\": 18,\n        \"vara_name\": \"sample name 4\",\n        \"comment\": \"sample comment 1\"\n    },\n    {\n        \"vara_id\": 5,\n        \"med_time\": 20,\n        \"vara_name\": \"sample name 5\",\n        \"comment\": \"sample comment 2\"\n    },\n    {\n        \"vara_id\": 6,\n        \"med_time\": 21,\n        \"vara_name\": \"sample name 6\",\n        \"comment\": \"sample comment 3\"\n    }\n]"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Steps",
+			"item": [
+				{
+					"name": "bestSteps",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "394fc478-64ab-417b-82e8-bb293a4678bc",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/steps/bestSteps/?vara_id=1&amount_of_steps=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"steps",
+								"bestSteps",
+								""
+							],
+							"query": [
+								{
+									"key": "vara_id",
+									"value": "1"
+								},
+								{
+									"key": "amount_of_steps",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "bestSteps",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/steps/bestSteps/?vara_id=1&amount_of_steps=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"steps",
+										"bestSteps",
+										""
+									],
+									"query": [
+										{
+											"key": "vara_id",
+											"value": "1"
+										},
+										{
+											"key": "amount_of_steps",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 16 Oct 2020 01:58:34 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "325"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"step_id\": 1,\n        \"med_time\": 15,\n        \"frequency\": 101,\n        \"origin\": \"sample origin 1\",\n        \"destination\": \"sample destination 1\"\n    },\n    {\n        \"step_id\": 2,\n        \"med_time\": 25,\n        \"frequency\": 201,\n        \"origin\": \"sample origin 2\",\n        \"destination\": \"sample destination 2\"\n    },\n    {\n        \"step_id\": 3,\n        \"med_time\": 35,\n        \"frequency\": 301,\n        \"origin\": \"sample origin 3\",\n        \"destination\": \"sample destination 3\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "worstSteps",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8154e6b3-06a8-4c5e-87fd-1f20d08b092d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/steps/worstSteps/?vara_id=1&amount_of_steps=100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"steps",
+								"worstSteps",
+								""
+							],
+							"query": [
+								{
+									"key": "vara_id",
+									"value": "1"
+								},
+								{
+									"key": "amount_of_steps",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "worstSteps",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/steps/worstSteps/?vara_id=1&amount_of_steps=100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"steps",
+										"worstSteps",
+										""
+									],
+									"query": [
+										{
+											"key": "vara_id",
+											"value": "1"
+										},
+										{
+											"key": "amount_of_steps",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 16 Oct 2020 02:03:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "OPTIONS, GET"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "325"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"step_id\": 3,\n        \"med_time\": 35,\n        \"frequency\": 301,\n        \"origin\": \"sample origin 3\",\n        \"destination\": \"sample destination 3\"\n    },\n    {\n        \"step_id\": 2,\n        \"med_time\": 25,\n        \"frequency\": 201,\n        \"origin\": \"sample origin 2\",\n        \"destination\": \"sample destination 2\"\n    },\n    {\n        \"step_id\": 1,\n        \"med_time\": 15,\n        \"frequency\": 101,\n        \"origin\": \"sample origin 1\",\n        \"destination\": \"sample destination 1\"\n    }\n]"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Processes",
+			"item": [
+				{
+					"name": "bestVaras",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "40ef46d1-ce07-450e-928c-6a6998de510e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/processes/bestVaras/?vara_id=3&amount_of_varas=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"processes",
+								"bestVaras",
+								""
+							],
+							"query": [
+								{
+									"key": "vara_id",
+									"value": "3"
+								},
+								{
+									"key": "amount_of_varas",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "bestVaras",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/processes/bestVaras/?vara_id=3&amount_of_varas=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"processes",
+										"bestVaras",
+										""
+									],
+									"query": [
+										{
+											"key": "vara_id",
+											"value": "3"
+										},
+										{
+											"key": "amount_of_varas",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 17 Oct 2020 04:02:36 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1117"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"vara_id\": 4,\n        \"name\": \"sample name 4\",\n        \"time_macrostep_1\": 1,\n        \"time_macrostep_2\": 2,\n        \"time_macrostep_3\": 3,\n        \"time_macrostep_4\": 4,\n        \"days_finish_process\": 10,\n        \"latitude\": -25.4567,\n        \"longitude\": 35.1234\n    },\n    {\n        \"vara_id\": 1,\n        \"name\": \"sample name 1\",\n        \"time_macrostep_1\": 1,\n        \"time_macrostep_2\": 2,\n        \"time_macrostep_3\": 3,\n        \"time_macrostep_4\": 4,\n        \"days_finish_process\": 10,\n        \"latitude\": -15.4567,\n        \"longitude\": 25.1234\n    },\n    {\n        \"vara_id\": 5,\n        \"name\": \"sample name 5\",\n        \"time_macrostep_1\": 2,\n        \"time_macrostep_2\": 3,\n        \"time_macrostep_3\": 4,\n        \"time_macrostep_4\": 5,\n        \"days_finish_process\": 14,\n        \"latitude\": -26.4567,\n        \"longitude\": 36.1234\n    },\n    {\n        \"vara_id\": 2,\n        \"name\": \"sample name 2\",\n        \"time_macrostep_1\": 2,\n        \"time_macrostep_2\": 3,\n        \"time_macrostep_3\": 4,\n        \"time_macrostep_4\": 5,\n        \"days_finish_process\": 14,\n        \"latitude\": -16.4567,\n        \"longitude\": 26.1234\n    },\n    {\n        \"vara_id\": 3,\n        \"name\": \"sample name 3\",\n        \"time_macrostep_1\": 3,\n        \"time_macrostep_2\": 4,\n        \"time_macrostep_3\": 5,\n        \"time_macrostep_4\": 6,\n        \"days_finish_process\": 18,\n        \"latitude\": -17.4567,\n        \"longitude\": 27.1234\n    },\n    {\n        \"vara_id\": 6,\n        \"name\": \"sample name 6\",\n        \"time_macrostep_1\": 3,\n        \"time_macrostep_2\": 4,\n        \"time_macrostep_3\": 5,\n        \"time_macrostep_4\": 6,\n        \"days_finish_process\": 18,\n        \"latitude\": -27.4567,\n        \"longitude\": 37.1234\n    }\n]"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "comments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "84e7750f-ee0b-40ee-9454-60a1074eb892",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/comments/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"comments",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "comments",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/comments/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"comments",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 15 Oct 2020 03:01:46 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "OPTIONS, GET"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "231"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"comment_id\": 1,\n        \"comment\": \"sample comment 1\"\n    },\n    {\n        \"comment_id\": 2,\n        \"comment\": \"sample comment 2\"\n    },\n    {\n        \"comment_id\": 3,\n        \"comment\": \"sample comment 3\"\n    },\n    {\n        \"comment_id\": 4,\n        \"comment\": \"sample comment 4\"\n    },\n    {\n        \"comment_id\": 5,\n        \"comment\": \"sample comment 5\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "specific comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1fe8c02d-7e9d-4ede-87a1-2b4bccac26ae",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/comments/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"comments",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "specific comment",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/comments/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"comments",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 15 Oct 2020 03:03:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "OPTIONS, GET"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"comment_id\": 3,\n    \"comment\": \"sample comment 3\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "home",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b23eb089-4799-493b-9a64-af65e08f4f7d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
