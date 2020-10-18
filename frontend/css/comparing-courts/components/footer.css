@@ -1,0 +1,23 @@
+.footer {
+  margin-top: 7rem;
+}
+.footer-comments-title {
+  font-family: "OpenSans-Bold";
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+}
+.footer-comments-content {
+  font-family: "OpenSans-Regular";
+  font-size: 2rem;
+  color: #f6f6f6;
+  background-color: #09253b;
+  height: 91%;
+  padding: 2rem 1.3rem;
+}
+.footer-table-title {
+  font-family: "OpenSans-Bold";
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+}
+
+/*# sourceMappingURL=footer.css.map */

@@ -1,0 +1,112 @@
+.position {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-align: center;
+  background-image: url("../../resources/images/medalha.svg");
+  background-repeat: no-repeat;
+}
+.position .row {
+  margin: 0;
+}
+.position-container {
+  height: 16rem;
+  padding-top: 86%;
+}
+.position-container div {
+  margin: 0;
+  height: 3.5rem;
+}
+.position-number {
+  font-family: "OpenSans-Bold";
+  font-size: 3rem;
+  margin: 0;
+}
+.position-text {
+  text-align: center;
+  font-family: "OpenSans-Regular";
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.header {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 3.5rem;
+}
+.header .row {
+  margin: 0;
+}
+.header-left {
+  padding: 0;
+}
+.header-left-welcome {
+  font-family: "OpenSans-Regular";
+  font-size: 1.4rem;
+}
+.header-left-court {
+  font-family: "OpenSans-Semibold";
+  font-size: 4rem;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  justify-content: flex-end;
+}
+.header-right-text {
+  height: auto;
+  margin-right: 2.3rem;
+  margin-left: 3.7rem;
+}
+.header-right-text-username {
+  font-family: "OpenSans-Semibold";
+  font-size: 2.2rem;
+}
+.header-right-text-position {
+  font-family: "OpenSans-Regular";
+  font-size: 1.6rem;
+}
+.header-right-text div {
+  height: auto;
+  display: block;
+}
+.header-right-text div p {
+  margin: 0;
+}
+.header-right-photo img {
+  height: 7.1rem;
+  width: 7.4rem;
+  border-radius: 50%;
+}
+.header-bottom {
+  align-self: flex-end;
+  padding: 0;
+  padding-top: 3.2rem;
+}
+.header-bottom-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3.3rem;
+}
+.header-bottom-group-amount {
+  font-family: OpenSans-Semibold;
+  font-size: 2.2rem;
+  color: #09253B;
+  margin-right: 1rem;
+  margin-bottom: 0;
+}
+.header-bottom-group-item {
+  background-color: white;
+}
+.header-bottom-group-item p {
+  font-family: OpenSans-Regular;
+  font-size: 1.6rem;
+  margin-right: 1rem;
+  margin-bottom: 0;
+}
+
+.page-padding-bottom {
+  padding-bottom: 10rem;
+}
+
+/*# sourceMappingURL=header.css.map */

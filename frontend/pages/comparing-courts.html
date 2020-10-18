@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Desafio CNJ</title>
+    <!-- html5 meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <!-- style -->
+    <link rel="stylesheet" href="../css/layout/page.css">
+    <link rel="stylesheet" href="../css/layout/header.css">
+    <link rel="stylesheet" href="../css/index/components/rounded-info.css">
+    <link rel="stylesheet" href="../css/index/components/card.css">
+    <link rel="stylesheet" href="../css/index/components/menu.css">
+    <link rel="stylesheet" href="../css/index/components/rank.css">
+    <link rel="stylesheet" href="../css/comparing-courts/components/control.css">
+    <link rel="stylesheet" href="../css/comparing-courts/components/graphs.css">
+    <link rel="stylesheet" href="../css/comparing-courts/components/footer.css">
+
+    <!-- behaviour -->
+
+  </head>
+  <body>
+
+    <!-- header -->
+    <div class="container">
+      <div class="row">
+        <div class="col-1 position">
+          <div class="position-container">
+            <div id="position-number" class="position-number"></div>
+            <div class="position-text">colocada</div>
+          </div>
+        </div>
+        <div class="col-11">
+          <div class="container header">
+            <div class="row">
+              <div class="col-10 header-left">
+                <h6 class="header-left-welcome">bem vindo a</h6>
+                <h1 id="court-name" class="header-left-court"></h1>
+              </div>
+              <div class="col-2 header-right">
+                <div class="header-right-text">
+                  <div>
+                    <p id="username" class="header-right-text-username"></p>
+                    <p id="user-position" class="header-right-text-position"></p>
+                  </div>
+                </div>
+                <div class="header-right-photo">
+                  <img id="user-photo" src="https://www.melhoresfilmes.com.br/dimg/?w=165&amp;h=220&amp;mode=crop&amp;url=https%3A%2F%2Fwww.melhoresfilmes.com.br%2Fimg%2Factors%2F6493.jpg"
+                    alt="Antonio" width="100%" height="100%">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-11 header-bottom">
+                <div class="header-bottom-group">
+                  <p id="group-amount" class="header-bottom-group-amount"></p>
+                  <div class="rounded-info header-bottom-group-item"><p id="group-el-1"></p></div>
+                  <div class="rounded-info header-bottom-group-item"><p id="group-el-2"></p></div>
+                  <div class="rounded-info header-bottom-group-item"><p id="group-el-3"></p></div>
+                  <div class="rounded-info header-bottom-group-item"><p id="group-el-4"></p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container page-padding-bottom">
+      <div class="row">
+        <div class="menu col-1">
+          <div class="menu-content">
+            <object class="menu-content-icon-selected" type="image/svg+xml" data="http://s3-us-west-2.amazonaws.com/s.cdpn.io/3/icon-bike-black.svg"></object>
+            <!-- <object id="menu-home" class="menu-content-icon-selected" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/home.svg"></object>
+            <object id="menu-chart" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/chart.svg"></object>
+            <object id="menu-info" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/info.svg"></object>
+            <object id="menu-search" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/search.svg"></object>
+            <object id="menu-sitemap" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/sitemap.svg"></object>
+            <object id="menu-file" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/file.svg"></object> -->
+          </div>
+        </div>
+        <div class="col-11 card">
+          <div class="container control">
+            <div class="row">
+              <div class="col-4 control-title">GARGALOS EM DESTAQUE</div>
+              <div class="col-8 control-list">
+                <div class="row">
+                  <div class="col-4 control-list-item">
+                    <p class="control-list-item-name">ZOOM</p>
+                    <div class="control-list-item-controller">
+                      <input type="range" class="control-list-item-controller-input"/>
+                      <div class="control-list-item-controller-value">100%</div>
+                    </div>
+                  </div>
+                  <div class="col-4 control-list-item">
+                    <p class="control-list-item-name">QUANTIDADE DE TAREFAS</p>
+                    <div class="control-list-item-controller">
+                      <input type="range" class="control-list-item-controller-input"/>
+                      <div class="control-list-item-controller-value">100%</div>
+                    </div>
+                  </div>
+                  <div class="col-4 control-list-item">
+                    <p class="control-list-item-name">REPETIÇÃO DE TAREFAS</p>
+                    <div class="control-list-item-controller">
+                      <input type="range" class="control-list-item-controller-input"/>
+                      <div class="control-list-item-controller-value">100%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container graphs"></div>
+          <div class="container footer">
+            <div class="row">
+              <div class="col-5 footer-comments">
+                <div class="footer-comments-title">SUGESTÃO DE MELHORIA</div>
+                <div id="comments" class="footer-comments-content"></div>
+              </div>
+              <div class="col-7 footer-table">
+                <div class="footer-table-title">RANKING DAS VARAS E SEUS RESULTADOS</div>
+                <div class="rank-table">
+                  <div class="rank-table-tabs">
+                    <div id="table-best-tab1" class="rank-table-tabs-item rank-table-tabs-item-selected"></div>
+                    <div id="table-best-tab2" class="rank-table-tabs-item"></div>
+                    <div id="table-best-tab3" class="rank-table-tabs-item"></div>
+                  </div>
+                  <div class="rank-table-title">
+                    <table>
+                      <tr>
+                        <th class="rank-table-content-index">#</th>
+                        <th class="rank-table-content-name">Nome</th>
+                        <th class="rank-table-content-duration">Duração</th>
+                        <th class="rank-table-content-comments">Comentários</th>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="rank-table-content">
+                    <table>
+                      <tr class="rank-table-content-odd">
+                        <th id="table-best-row-1-index" class="rank-table-content-index">1</th>
+                        <th id="table-best-row-1-name" class="rank-table-content-name"></th>
+                        <th id="table-best-row-1-duration" class="rank-table-content-duration"></th>
+                        <th id="table-best-row-1-comments" class="rank-table-content-comments"></th>
+                      </tr>
+                      <tr class="rank-table-content-even">
+                        <th id="table-best-row-2-index" class="rank-table-content-index">2</th>
+                        <th id="table-best-row-2-name" class="rank-table-content-name"></th>
+                        <th id="table-best-row-2-duration" class="rank-table-content-duration"></th>
+                        <th id="table-best-row-2-comments" class="rank-table-content-comments"></th>
+                      </tr>
+                      <tr>
+                        <th id="table-best-row-3-index" class="rank-table-content-index">3</th>
+                        <th id="table-best-row-3-name" class="rank-table-content-name"></th>
+                        <th id="table-best-row-3-duration" class="rank-table-content-duration"></th>
+                        <th id="table-best-row-3-comments" class="rank-table-content-comments"></th>
+                      </tr>
+                      <tr class="rank-table-content-even">
+                        <th id="table-best-row-4-index" class="rank-table-content-index">4</th>
+                        <th id="table-best-row-4-name" class="rank-table-content-name"></th>
+                        <th id="table-best-row-4-duration" class="rank-table-content-duration"></th>
+                        <th id="table-best-row-4-comments" class="rank-table-content-comments"></th>
+                      </tr>
+                      <tr class="rank-table-content-odd">
+                        <th id="table-best-row-5-index" class="rank-table-content-index">5</th>
+                        <th id="table-best-row-5-name" class="rank-table-content-name"></th>
+                        <th id="table-best-row-5-duration" class="rank-table-content-duration"></th>
+                        <th id="table-best-row-5-comments" class="rank-table-content-comments"></th>
+                      </tr>
+                      <tr class="rank-table-content-even">
+                        <th id="table-best-row-6-index" class="rank-table-content-index">6</th>
+                        <th id="table-best-row-6-name" class="rank-table-content-name"></th>
+                        <th id="table-best-row-6-duration" class="rank-table-content-duration"></th>
+                        <th id="table-best-row-6-comments" class="rank-table-content-comments"></th>
+                      </tr>
+                      <tr class="rank-table-content-odd">
+                        <th id="table-best-row-7-index" class="rank-table-content-index">7</th>
+                        <th id="table-best-row-7-name" class="rank-table-content-name"></th>
+                        <th id="table-best-row-7-duration" class="rank-table-content-duration"></th>
+                        <th id="table-best-row-7-comments" class="rank-table-content-comments"></th>
+                      </tr>
+                      <tr class="rank-table-content-even">
+                        <th id="table-best-row-8-index" class="rank-table-content-index">8</th>
+                        <th id="table-best-row-8-name" class="rank-table-content-name"></th>
+                        <th id="table-best-row-8-duration" class="rank-table-content-duration"></th>
+                        <th id="table-best-row-8-comments" class="rank-table-content-comments"></th>
+                      </tr>
+                      <tr class="rank-table-content-odd">
+                        <th id="table-best-row-9-index" class="rank-table-content-index">9</th>
+                        <th id="table-best-row-9-name" class="rank-table-content-name"></th>
+                        <th id="table-best-row-9-duration" class="rank-table-content-duration"></th>
+                        <th id="table-best-row-9-comments" class="rank-table-content-comments"></th>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- scripts -->
+    <script src="../js/header.js" ></script>
+    <script src="../js/comparing-courts.js" ></script>
+    <script src="../js/components.js" ></script>
+    <script src="../js/requester.js" ></script>
+  </body>
+</html>

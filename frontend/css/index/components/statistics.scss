@@ -1,0 +1,50 @@
+.statistics{
+  height: 23rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  div {
+    height: 19rem;
+    padding: 0;
+    padding-right: 1rem;
+    background-color: transparent;
+    div {
+      background-color: white;
+    }
+  }
+  &-len4 {
+    width: 24%;
+  }  
+  &-len3 {
+    width: 22%;
+  }
+  &-len2 {
+    width: 20%;
+  }
+  &-len1 {
+    width: 14%;
+    padding-right: 0 !important;
+  }
+  &-card {
+    .card {
+      padding: 2rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    &-title {
+      font-family: 'OpenSans-Bold';
+      font-size: 1.8rem;
+      height: auto !important;
+    } 
+    &-value {
+      font-family: 'OpenSans-Bold';
+      font-size: 2.7rem;
+      margin-top: 3rem;
+    }
+    &-info {
+      font-family: 'OpenSans-Light';
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+  }
+}

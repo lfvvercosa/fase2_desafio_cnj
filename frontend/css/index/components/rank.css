@@ -1,0 +1,181 @@
+.rank {
+  display: block;
+  height: 87rem;
+  padding: 0;
+}
+.rank-worst {
+  height: 50%;
+  padding-top: 3.5rem;
+  margin: 0;
+}
+.rank-best {
+  margin-top: 3rem;
+  margin: 0;
+  padding-top: 3rem;
+}
+.rank-movements {
+  display: block;
+  height: 100%;
+}
+.rank-movements-title {
+  font-family: "OpenSans-Bold";
+  font-size: 2.4rem;
+}
+.rank-movements-content {
+  height: 15rem;
+  width: 100%;
+  margin-top: 8.5rem;
+}
+.rank-movements-content .row {
+  width: 100%;
+  margin: 0;
+}
+.rank-movements-content-item {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+}
+.rank-movements-content-item-name {
+  display: inline;
+  margin: 0;
+  font-family: "OpenSans-SemiBold";
+  font-size: 1.4rem;
+}
+.rank-movements-content-item-transaction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rank-movements-content-item-transaction-text {
+  font-family: "OpenSans-Regular";
+  position: absolute;
+  left: 20%;
+  top: 34%;
+}
+.rank-movements-content-item-transaction-text p {
+  margin: 0;
+}
+.rank-movements-content-item-transaction-text-number {
+  font-size: 1.5rem;
+}
+.rank-movements-content-item-transaction-text-time {
+  font-size: 1.1rem;
+}
+.rank-movements-content-item-transaction-arrow img {
+  height: 11rem;
+}
+.rank-movements-coments {
+  text-align: center;
+  padding-top: 5.5rem;
+  display: flex;
+  justify-content: center;
+}
+.rank-movements-coments-box {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  background-color: #CCE5FF;
+  border-radius: 0.7rem;
+  justify-content: center;
+  width: 48%;
+}
+.rank-movements-coments-box p {
+  font-size: 1.5rem;
+  font-family: "OpenSans-SemiBold";
+  margin: 0;
+}
+.rank-table {
+  padding-left: 0;
+}
+.rank-table-tabs {
+  display: flex;
+}
+.rank-table-tabs-item {
+  height: 3.5rem;
+  width: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "OpenSans-Regular";
+  font-size: 1.4rem;
+  color: #6c6c6b;
+}
+.rank-table-tabs-item-selected {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  border: solid 1px;
+  border-color: #b0afaf;
+}
+.rank-table-title {
+  text-align: center;
+  background-color: #DCDCDC;
+  border: solid 1px;
+  border-top-left-radius: 0.35rem;
+  border-top-right-radius: 0.35rem;
+  border-color: #b0afaf;
+}
+.rank-table-title table {
+  width: 100%;
+  font-family: "OpenSans-SemiBold";
+  font-size: 1.8rem;
+}
+.rank-table-title table tr {
+  height: 3.5rem;
+}
+.rank-table-title-index {
+  width: 10%;
+}
+.rank-table-title-name {
+  text-align: left;
+  width: 30%;
+}
+.rank-table-title-duration {
+  width: 15%;
+}
+.rank-table-title-comments {
+  text-align: left;
+  width: 45%;
+}
+.rank-table-content {
+  text-align: center;
+  border: solid 1px;
+  border-bottom-left-radius: 0.35rem;
+  border-bottom-right-radius: 0.35rem;
+  border-color: #b0afaf;
+}
+.rank-table-content table {
+  width: 100%;
+  font-family: "OpenSans-Regular";
+  font-size: 1.4rem;
+}
+.rank-table-content table tr {
+  height: 3.5rem;
+}
+.rank-table-content-odd {
+  background-color: #ffffff;
+}
+.rank-table-content-even {
+  background-color: #f6f6f6;
+}
+.rank-table-content-index {
+  width: 10%;
+  text-align: center;
+  font-family: "OpenSans-Bold";
+  font-size: 1.4rem;
+}
+.rank-table-content-name {
+  text-align: left;
+  width: 30%;
+}
+.rank-table-content-duration {
+  width: 15%;
+  text-align: center;
+}
+.rank-table-content-comments {
+  text-align: left;
+  width: 45%;
+}
+
+/*# sourceMappingURL=rank.css.map */
