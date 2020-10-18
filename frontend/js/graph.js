@@ -216,7 +216,7 @@ function setEdgeType(){
 
 function setNodePosition(node, parent, pos, squareWidth, elementsSpace, rootPositionX){
   if(!node.x || !node.y){
-    var rowHeight = 0.2
+    var rowHeight = 0.25
     if(node.id == 'n'+0){
       node.x = rootPositionX
     }
@@ -310,16 +310,3 @@ sRight = new sigma({
 var dragListener = sigma.plugins.dragNodes(sLeft, sLeft.renderers[0])
 
 var dragListener = sigma.plugins.dragNodes(sRight, sRight.renderers[0])
-
-/* dragListener.bind('startdrag', function(event) {
-  console.log(event)
-})
-dragListener.bind('drag', function(event) {
-  console.log(event)
-})
-dragListener.bind('drop', function(event) {
-  console.log(event)
-})
-dragListener.bind('dragend', function(event) {
-  console.log(event)
-}) */
