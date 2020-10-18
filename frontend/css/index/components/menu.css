@@ -1,16 +1,14 @@
-.menu {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
 .menu-content {
   background-color: white;
   height: 65rem;
+  padding: 1rem;
 }
 .menu-content object {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
-  padding: 2rem;
   filter: invert(64%) sepia(41%) saturate(20%) hue-rotate(328deg) brightness(99%) contrast(100%);
 }
 .menu-content-icon-selected {
