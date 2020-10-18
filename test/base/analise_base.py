@@ -72,7 +72,7 @@ df_proc = df_proc.groupby('case: orgao').count().sort_values(by='case:concept:na
 df_proc = df_proc.rename(columns={'case:concept:name':'process_count'})
 df_proc.reset_index(level=0, inplace=True)
 df_proc.to_csv(path_or_buf='/home/vercosa/Documentos/bases_desafio_cnj/'+\
-                          'versao2/processos_por_vara.csv')
+                          'processos_por_vara.csv')
 
 
 # find number of process from varas of category 68

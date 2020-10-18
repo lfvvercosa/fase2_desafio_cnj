@@ -2,23 +2,52 @@
 DE:PARA dos Movimentos
 
 
-DISTRIBUIÇÃO
-	codigo movimento = 26
-CITAÇÃO
-	breadscrum = 14:48:12284
-APRECIAÇÃO DE TUTELA DE URGENCIA OU MEDIDA LIMINAR
-	codigo movimento = 332 - concessao -> antecipacao de tutela
-	codigo movimento = 785 - nao-concessao -> antecipação de tutela
-	codigo movimento = 889 - concessao em parte -> antecipaçao de tutela
-AUDIÊNCIA
-	breadscrum = 14:48:970
-JULGAMENTO/SENTENÇA
-	breadscrum = 1:193
-REMESSA PARA INSTÂNCIA SUPERIOR 
-	codigo movimento = 123 (tem que olhar o complemento, pois esse movimento tambem pode ser utilizado para remessa interna: contadoria, etc)
-TRÂNSITO EM JULGADO
-	codigo movimento = 848
-BAIXA / ARQUIVAMENTO
-	codigo movimento = 22 - baixa, 246 - arquivamento definitivo
 
-DESPACHO (breadscrum: 1:11009), DECISÃO (breadscrum: 1:3)
+######### Total Varas: 1700 ########
+
+DISTRIBUIÇÃO                                         : 1341    varas
+CITAÇÃO                                              : 26      varas
+TRÂNSITO EM JULGADO                                  : 926     varas
+BAIXA                                                : 918     varas
+ARQUIVAMENTO                                         : 1327    varas
+REMESSA                                              : 1201    varas
+APRECIAÇÃO DE TUTELA DE URGENCIA OU MEDIDA LIMINAR   : 96      varas
+AUDIÊNCIA                                            : 155     varas
+
+
+########### Os que vão entrar agora no teste ###########
+
+DISTRIBUIÇÃO
+TRÂNSITO EM JULGADO
+BAIXA/ARQUIVAMENTO
+REMESSA
+
+
+
+
+JULGAMENTO/SENTENÇA (breadscrum = 1:193)
+DESPACHO (breadscrum: 1:11009)
+DECISÃO (breadscrum: 1:3)
+
+DISTRIBUIÇÃO
+    codigo movimento = 26
+
+CITAÇÃO
+    breadscrum = 14:48:12284
+
+
+APRECIAÇÃO DE TUTELA DE URGENCIA OU MEDIDA LIMINAR
+    codigo movimento = 332 - concessao -> antecipacao de tutela
+    codigo movimento = 785 - nao-concessao -> antecipação de tutela
+    codigo movimento = 889 - concessao em parte -> antecipaçao de tutela
+AUDIÊNCIA
+    breadscrum = 14:48:970
+
+REMESSA PARA INSTÂNCIA SUPERIOR 
+    codigo movimento = 123 (tem que olhar o complemento, pois esse movimento tambem pode ser utilizado para remessa interna: contadoria, etc)
+TRÂNSITO EM JULGADO
+    codigo movimento = 848
+BAIXA / ARQUIVAMENTO
+    codigo movimento = 22 - baixa, 
+                       246 - arquivamento definitivo
+
