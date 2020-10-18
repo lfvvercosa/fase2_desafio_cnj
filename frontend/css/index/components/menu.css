@@ -7,10 +7,10 @@
   height: 65rem;
 }
 .menu-content div {
-  height: 8.8%;
+  height: 12%;
   background-repeat: no-repeat;
   background-position: center;
-  padding: 1rem;
+  padding: 3rem;
 }
 .menu-content-home {
   background-image: url("../../../resources/images/icons/Icon awesome-home.svg");
