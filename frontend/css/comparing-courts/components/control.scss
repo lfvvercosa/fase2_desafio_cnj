@@ -16,8 +16,26 @@
       align-items: center;
     }
     &-item {
-      display: flex;
-      justify-content: center;
+      display: block;
+      &-name {
+        font-family: 'OpenSans-Semibold';
+        font-size: 1.8rem;
+        margin: 0;
+      }
+      &-controller {
+        display: flex;
+        padding-top: 1rem;
+        &-input{
+          width: 80%;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+        &-value {
+          font-family: 'OpenSans-Regular';
+          font-size: 1.6rem;
+          padding-left: 1rem;
+        }
+      }
     }
   }
 }

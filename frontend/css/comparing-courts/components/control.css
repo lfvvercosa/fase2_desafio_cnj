@@ -16,8 +16,26 @@
   align-items: center;
 }
 .control-list-item {
+  display: block;
+}
+.control-list-item-name {
+  font-family: "OpenSans-Semibold";
+  font-size: 1.8rem;
+  margin: 0;
+}
+.control-list-item-controller {
   display: flex;
-  justify-content: center;
+  padding-top: 1rem;
+}
+.control-list-item-controller-input {
+  width: 80%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.control-list-item-controller-value {
+  font-family: "OpenSans-Regular";
+  font-size: 1.6rem;
+  padding-left: 1rem;
 }
 
 /*# sourceMappingURL=control.css.map */
