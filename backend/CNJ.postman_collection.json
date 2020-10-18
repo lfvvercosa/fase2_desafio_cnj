@@ -230,7 +230,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/v1/varas/bestVarasOnStep/?step_id=2&amount_of_varas=10",
+							"raw": "http://localhost:8000/api/v1/varas/bestVarasOnStep/?step_id=1&amount_of_varas=10&vara_id=3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -246,11 +246,15 @@
 							"query": [
 								{
 									"key": "step_id",
-									"value": "2"
+									"value": "1"
 								},
 								{
 									"key": "amount_of_varas",
 									"value": "10"
+								},
+								{
+									"key": "vara_id",
+									"value": "3"
 								}
 							]
 						}
@@ -262,7 +266,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8000/api/v1/varas/bestVarasOnStep/?step_id=2&amount_of_varas=10",
+									"raw": "http://localhost:8000/api/v1/varas/bestVarasOnStep/?step_id=1&amount_of_varas=10&vara_id=3",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -278,11 +282,15 @@
 									"query": [
 										{
 											"key": "step_id",
-											"value": "2"
+											"value": "1"
 										},
 										{
 											"key": "amount_of_varas",
 											"value": "10"
+										},
+										{
+											"key": "vara_id",
+											"value": "3"
 										}
 									]
 								}
@@ -293,7 +301,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Fri, 16 Oct 2020 01:42:48 GMT"
+									"value": "Sat, 17 Oct 2020 04:00:55 GMT"
 								},
 								{
 									"key": "Server",
@@ -309,7 +317,7 @@
 								},
 								{
 									"key": "Allow",
-									"value": "OPTIONS, GET"
+									"value": "GET, OPTIONS"
 								},
 								{
 									"key": "X-Frame-Options",
@@ -317,7 +325,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "256"
+									"value": "511"
 								},
 								{
 									"key": "X-Content-Type-Options",
@@ -329,7 +337,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"vara_id\": 1,\n        \"med_time\": 25,\n        \"vara_name\": \"sample name 1\",\n        \"comment\": \"sample comment 2\"\n    },\n    {\n        \"vara_id\": 2,\n        \"med_time\": 26,\n        \"vara_name\": \"sample name 2\",\n        \"comment\": \"sample comment 3\"\n    },\n    {\n        \"vara_id\": 3,\n        \"med_time\": 26,\n        \"vara_name\": \"sample name 3\",\n        \"comment\": \"sample comment 1\"\n    }\n]"
+							"body": "[\n    {\n        \"vara_id\": 1,\n        \"med_time\": 15,\n        \"vara_name\": \"sample name 1\",\n        \"comment\": \"sample comment 1\"\n    },\n    {\n        \"vara_id\": 3,\n        \"med_time\": 16,\n        \"vara_name\": \"sample name 3\",\n        \"comment\": \"sample comment 3\"\n    },\n    {\n        \"vara_id\": 2,\n        \"med_time\": 16,\n        \"vara_name\": \"sample name 2\",\n        \"comment\": \"sample comment 2\"\n    },\n    {\n        \"vara_id\": 4,\n        \"med_time\": 18,\n        \"vara_name\": \"sample name 4\",\n        \"comment\": \"sample comment 1\"\n    },\n    {\n        \"vara_id\": 5,\n        \"med_time\": 20,\n        \"vara_name\": \"sample name 5\",\n        \"comment\": \"sample comment 2\"\n    },\n    {\n        \"vara_id\": 6,\n        \"med_time\": 21,\n        \"vara_name\": \"sample name 6\",\n        \"comment\": \"sample comment 3\"\n    }\n]"
 						}
 					]
 				}
@@ -611,7 +619,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/v1/processes/bestVaras/?step_id=16&amount_of_varas=10",
+							"raw": "http://localhost:8000/api/v1/processes/bestVaras/?vara_id=3&amount_of_varas=10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -626,8 +634,8 @@
 							],
 							"query": [
 								{
-									"key": "step_id",
-									"value": "16"
+									"key": "vara_id",
+									"value": "3"
 								},
 								{
 									"key": "amount_of_varas",
@@ -643,7 +651,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8000/api/v1/processes/bestVaras/?step_id=16&amount_of_varas=10",
+									"raw": "http://localhost:8000/api/v1/processes/bestVaras/?vara_id=3&amount_of_varas=10",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -658,8 +666,8 @@
 									],
 									"query": [
 										{
-											"key": "step_id",
-											"value": "16"
+											"key": "vara_id",
+											"value": "3"
 										},
 										{
 											"key": "amount_of_varas",
@@ -674,7 +682,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Fri, 16 Oct 2020 02:15:38 GMT"
+									"value": "Sat, 17 Oct 2020 04:02:36 GMT"
 								},
 								{
 									"key": "Server",
@@ -690,7 +698,7 @@
 								},
 								{
 									"key": "Allow",
-									"value": "OPTIONS, GET"
+									"value": "GET, OPTIONS"
 								},
 								{
 									"key": "X-Frame-Options",
@@ -710,7 +718,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"vara_id\": 1,\n        \"name\": \"sample name 1\",\n        \"time_macrostep_1\": 1,\n        \"time_macrostep_2\": 2,\n        \"time_macrostep_3\": 3,\n        \"time_macrostep_4\": 4,\n        \"days_finish_process\": 10,\n        \"latitude\": -15.4567,\n        \"longitude\": 25.1234\n    },\n    {\n        \"vara_id\": 4,\n        \"name\": \"sample name 4\",\n        \"time_macrostep_1\": 1,\n        \"time_macrostep_2\": 2,\n        \"time_macrostep_3\": 3,\n        \"time_macrostep_4\": 4,\n        \"days_finish_process\": 10,\n        \"latitude\": -25.4567,\n        \"longitude\": 35.1234\n    },\n    {\n        \"vara_id\": 2,\n        \"name\": \"sample name 2\",\n        \"time_macrostep_1\": 2,\n        \"time_macrostep_2\": 3,\n        \"time_macrostep_3\": 4,\n        \"time_macrostep_4\": 5,\n        \"days_finish_process\": 14,\n        \"latitude\": -16.4567,\n        \"longitude\": 26.1234\n    },\n    {\n        \"vara_id\": 5,\n        \"name\": \"sample name 5\",\n        \"time_macrostep_1\": 2,\n        \"time_macrostep_2\": 3,\n        \"time_macrostep_3\": 4,\n        \"time_macrostep_4\": 5,\n        \"days_finish_process\": 14,\n        \"latitude\": -26.4567,\n        \"longitude\": 36.1234\n    },\n    {\n        \"vara_id\": 3,\n        \"name\": \"sample name 3\",\n        \"time_macrostep_1\": 3,\n        \"time_macrostep_2\": 4,\n        \"time_macrostep_3\": 5,\n        \"time_macrostep_4\": 6,\n        \"days_finish_process\": 18,\n        \"latitude\": -17.4567,\n        \"longitude\": 27.1234\n    },\n    {\n        \"vara_id\": 6,\n        \"name\": \"sample name 6\",\n        \"time_macrostep_1\": 3,\n        \"time_macrostep_2\": 4,\n        \"time_macrostep_3\": 5,\n        \"time_macrostep_4\": 6,\n        \"days_finish_process\": 18,\n        \"latitude\": -27.4567,\n        \"longitude\": 37.1234\n    }\n]"
+							"body": "[\n    {\n        \"vara_id\": 4,\n        \"name\": \"sample name 4\",\n        \"time_macrostep_1\": 1,\n        \"time_macrostep_2\": 2,\n        \"time_macrostep_3\": 3,\n        \"time_macrostep_4\": 4,\n        \"days_finish_process\": 10,\n        \"latitude\": -25.4567,\n        \"longitude\": 35.1234\n    },\n    {\n        \"vara_id\": 1,\n        \"name\": \"sample name 1\",\n        \"time_macrostep_1\": 1,\n        \"time_macrostep_2\": 2,\n        \"time_macrostep_3\": 3,\n        \"time_macrostep_4\": 4,\n        \"days_finish_process\": 10,\n        \"latitude\": -15.4567,\n        \"longitude\": 25.1234\n    },\n    {\n        \"vara_id\": 5,\n        \"name\": \"sample name 5\",\n        \"time_macrostep_1\": 2,\n        \"time_macrostep_2\": 3,\n        \"time_macrostep_3\": 4,\n        \"time_macrostep_4\": 5,\n        \"days_finish_process\": 14,\n        \"latitude\": -26.4567,\n        \"longitude\": 36.1234\n    },\n    {\n        \"vara_id\": 2,\n        \"name\": \"sample name 2\",\n        \"time_macrostep_1\": 2,\n        \"time_macrostep_2\": 3,\n        \"time_macrostep_3\": 4,\n        \"time_macrostep_4\": 5,\n        \"days_finish_process\": 14,\n        \"latitude\": -16.4567,\n        \"longitude\": 26.1234\n    },\n    {\n        \"vara_id\": 3,\n        \"name\": \"sample name 3\",\n        \"time_macrostep_1\": 3,\n        \"time_macrostep_2\": 4,\n        \"time_macrostep_3\": 5,\n        \"time_macrostep_4\": 6,\n        \"days_finish_process\": 18,\n        \"latitude\": -17.4567,\n        \"longitude\": 27.1234\n    },\n    {\n        \"vara_id\": 6,\n        \"name\": \"sample name 6\",\n        \"time_macrostep_1\": 3,\n        \"time_macrostep_2\": 4,\n        \"time_macrostep_3\": 5,\n        \"time_macrostep_4\": 6,\n        \"days_finish_process\": 18,\n        \"latitude\": -27.4567,\n        \"longitude\": 37.1234\n    }\n]"
 						}
 					]
 				}
