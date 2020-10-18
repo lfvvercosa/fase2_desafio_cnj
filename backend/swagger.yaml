@@ -70,7 +70,7 @@ paths:
           description: "Serviço indisponível"
       security:
       - api_key: []
-  /varas/{identificador}/compareGraphWith/{identificador2}:
+  /varas/{identificador}/compareGraphWith/{identificador2}/{is_time}:
     get:
       tags:
       - "varas"
@@ -89,6 +89,12 @@ paths:
       - name: "identificador2"
         in: "path"
         description: "Identificador da vara 2"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "is_time"
+        in: "path"
+        description: "Se for '1' retorna tempo da aresta, se for '0' retorna a frequência da aresta"
         required: true
         type: "integer"
         format: "int64"
@@ -527,9 +533,9 @@ definitions:
                 description: "Nó de destino"
                 example: "Julgamento"
               peso:
-                type: "string"
+                type: "integer"
                 description: "Peso da aresta"
-                example: "3M"
+                example: 89
          
 securityDefinitions:
   api_key:
