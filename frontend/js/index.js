@@ -8,10 +8,10 @@ function setRankComponent() {
 }
 
 function setBottleneckRankComponent() {
-  //bottleneck-mov-1-source MANDADO
-  //bottleneck-mov-1-position 13°
-  //bottleneck-mov-1-description 3 meses
-  //bottleneck-mov-1-dest RECEBIMENTO
+  $('#bottleneck-mov-1-source').html('MANDADO')
+  $('#bottleneck-mov-1-position').html('13'+'°')
+  $('#bottleneck-mov-1-description').html('3 meses')
+  $('#bottleneck-mov-1-dest').html('RECEBIMENTO')
 
   //bottleneck-mov-2-source
   //bottleneck-mov-2-position
@@ -24,13 +24,13 @@ function setBottleneckRankComponent() {
   //bottleneck-mov-3-dest
 
   //bottoleneck table
-  //table-bottleneck-tab1 Mandado-Recebimento
+  $('#table-bottleneck-tab1').html('Mandado-Recebimento')
   //table-bottleneck-tab2 
   //table-bottleneck-tab3 
 
-  //table-bottleneck-row-1-name
-  //table-bottleneck-row-1-duration
-  //table-bottleneck-row-1-comments
+  $('#table-bottleneck-row-1-name').html('wefnweonfewnfo')
+  $('#table-bottleneck-row-1-duration').html('3 meses')
+  $('#table-bottleneck-row-1-comments').html('wenfwfoni fwfnwenfiowen woifnwoif')
 
   //table-bottleneck-row-2-name
   //table-bottleneck-row-2-duration
@@ -127,6 +127,10 @@ function setBestRankComponent() {
 
 function setStatisticsComponent(){
   //worst
+  $('#statistics-wrost-title-1').html('Pior')
+  $('#statistics-wrost-title-2').html('Desempenho')
+  $('#statistics-wrost-value').html('DEFESA')
+  $('#statistics-wrost-position').html('19'+'° de 120 varas')
   //statistics-wrost-title-1
   //statistics-wrost-title-2
   //statistics-wrost-value 
@@ -157,7 +161,7 @@ function setStatisticsComponent(){
 }
 
 function setFooterRankComponent() {
-  //best-time-1
+  $('#best-time-1').html('enwniofnioeffwe')
   //best-time-2
   //best-time-3
   //best-time-4
