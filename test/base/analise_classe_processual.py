@@ -29,3 +29,4 @@ df_group = df_group.groupby('dadosBasicos.orgaoJulgador.nomeOrgao')\
 df_group['numero_classes'] = df_group['classes'].str.len()
 
 df_group = df_group.sort_values(by='numero_classes')
+
