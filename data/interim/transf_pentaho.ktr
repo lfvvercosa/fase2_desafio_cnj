@@ -459,11 +459,6 @@
     </hop>
     <hop>
       <from>Proc Ended 22- 246</from>
-      <to>Select values 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Proc Ended 22- 246</from>
       <to>False 2</to>
       <enabled>Y</enabled>
     </hop>
@@ -508,11 +503,6 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Select values 4</from>
-      <to>Sort case</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Filter Grau</from>
       <to>Replace Cod Mov</to>
       <enabled>Y</enabled>
@@ -520,16 +510,6 @@
     <hop>
       <from>Replace Cod Mov</from>
       <to>Concat Cod Nac</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>copy_2</from>
-      <to>Select values 9</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Select values 9</from>
-      <to>Sort case 5</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -558,38 +538,13 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Concat Subject</from>
-      <to>Limp Cod Subject</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>copy_3</from>
-      <to>Select values 8</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>copy_3</from>
-      <to>Select values 5</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Group by</from>
-      <to>Unique rows 2 2 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Ren. Fields 3</from>
       <to>Cut date</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Meta-data Year</from>
-      <to>Filter Grau 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Select values 8</from>
-      <to>Concat Subject</to>
+      <to>Filter Classe, Grau and Ano</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -598,43 +553,13 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Meta-data cod</from>
-      <to>Unique rows </to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Sort case 3</from>
-      <to>Merge case</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Sort case 2</from>
-      <to>Group by</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Cut date</from>
       <to>Meta-data Year</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Unique rows </from>
-      <to>Sort case 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Unique rows 2 2 2</from>
-      <to>Meta-data</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>dados_basicos</from>
       <to>Ren. Fields 3</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Unique rows</from>
-      <to>Sort case 3</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -653,38 +578,133 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Filter Grau 2</from>
+      <from>Filter Classe, Grau and Ano</from>
       <to>False 3</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Merge join 2</from>
-      <to>Output CSV</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Limp Cod Subject</from>
-      <to>Meta-data cod</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Filter Grau 2</from>
-      <to>copy_3</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Meta-data</from>
-      <to>Merge case</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Merge case</from>
-      <to>Sort case 4</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Sort case 4</from>
       <to>Merge case 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 4</from>
+      <to>Filter movements</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter movements</from>
+      <to>Sort case</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter movements</from>
+      <to>Dummy (do nothing)</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>copy_3 2</from>
+      <to>Proc Not Reativ</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 2</from>
+      <to>Merge join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 2 2</from>
+      <to>Unique case 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique case 2</from>
+      <to>Sort rows 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Proc Ended 22- 246</from>
+      <to>Select values 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>copy_2</from>
+      <to>Concat fields</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Concat fields</from>
+      <to>Select values 9</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 9</from>
+      <to>Unique case 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique case 3</from>
+      <to>Sort case 5</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Merge join 2</from>
+      <to>Sort case 6 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort case 6 2</from>
+      <to>Merge join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Merge join 2</from>
+      <to>copy_3 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Proc Not Reativ</from>
+      <to>Select values 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Proc Not Reativ</from>
+      <to>copy_1 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Merge join</from>
+      <to>IS NULL</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>IS NULL</from>
+      <to>False 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>IS NULL</from>
+      <to>Select values 2 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 2 3</from>
+      <to>Unique case 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique case 2 2</from>
+      <to>Output CSV</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique rows</from>
+      <to>Sort case 4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter Classe, Grau and Ano</from>
+      <to>Select values 5</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -769,13 +789,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>416</xloc>
+      <xloc>368</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Concat Subject</name>
+    <name>Concat fields</name>
     <type>ConcatFields</type>
     <description/>
     <distribute>Y</distribute>
@@ -785,7 +805,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <separator/>
+    <separator>-</separator>
     <enclosure>"</enclosure>
     <enclosure_forced>N</enclosure_forced>
     <enclosure_fix_disabled>N</enclosure_fix_disabled>
@@ -801,7 +821,7 @@
     <file>
       <name>file</name>
       <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
       <extention>txt</extention>
       <append>N</append>
       <split>N</split>
@@ -817,8 +837,8 @@
     </file>
     <fields>
       <field>
-        <name>assunto.codigoPaiNacional</name>
-        <type>String</type>
+        <name>case: orgao</name>
+        <type>None</type>
         <format/>
         <currency/>
         <decimal/>
@@ -829,8 +849,8 @@
         <precision>-1</precision>
       </field>
       <field>
-        <name>assunto.codigoNacional</name>
-        <type>String</type>
+        <name>siglaTribunal</name>
+        <type>None</type>
         <format/>
         <currency/>
         <decimal/>
@@ -842,7 +862,7 @@
       </field>
     </fields>
     <ConcatFields>
-      <targetFieldName>case: codigo assunto</targetFieldName>
+      <targetFieldName>case: orgao_mun</targetFieldName>
       <targetFieldLength>0</targetFieldLength>
       <removeSelectedFields>N</removeSelectedFields>
     </ConcatFields>
@@ -855,8 +875,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>512</xloc>
-      <yloc>592</yloc>
+      <xloc>976</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -888,8 +908,33 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
-      <yloc>528</yloc>
+      <xloc>208</xloc>
+      <yloc>464</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Dummy (do nothing)</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>512</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -938,8 +983,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>864</xloc>
-      <yloc>192</yloc>
+      <xloc>960</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -963,8 +1008,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>336</xloc>
-      <yloc>432</yloc>
+      <xloc>400</xloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1035,7 +1080,7 @@
     </GUI>
   </step>
   <step>
-    <name>Filter Grau 2</name>
+    <name>Filter Classe, Grau and Ano</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -1045,7 +1090,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <send_true_to>copy_3</send_true_to>
+    <send_true_to>Select values 5</send_true_to>
     <send_false_to>False 3</send_false_to>
     <compare>
       <condition>
@@ -1110,7 +1155,7 @@
                 <value>
                   <name>constant</name>
                   <type>Integer</type>
-                  <text>2000</text>
+                  <text>2010</text>
                   <length>-1</length>
                   <precision>0</precision>
                   <isnull>N</isnull>
@@ -1131,14 +1176,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>336</xloc>
-      <yloc>528</yloc>
+      <xloc>400</xloc>
+      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Group by</name>
-    <type>GroupBy</type>
+    <name>Filter movements</name>
+    <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1147,27 +1192,179 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <all_rows>N</all_rows>
-    <ignore_aggregate>N</ignore_aggregate>
-    <field_ignore/>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>grp</prefix>
-    <add_linenr>N</add_linenr>
-    <linenr_fieldname/>
-    <give_back_row>N</give_back_row>
-    <group>
-      <field>
-        <name>case:concept:name</name>
-      </field>
-    </group>
-    <fields>
-      <field>
-        <aggregate>case: codigo assunto_final</aggregate>
-        <subject>case: codigo assunto</subject>
-        <type>CONCAT_COMMA</type>
-        <valuefield/>
-      </field>
-    </fields>
+    <send_true_to>Dummy (do nothing)</send_true_to>
+    <send_false_to>Sort case</send_false_to>
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <conditions>
+          <condition>
+            <negated>N</negated>
+            <leftvalue>concept:name_cod</leftvalue>
+            <function>=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>Integer</type>
+              <text>85</text>
+              <length>-1</length>
+              <precision>0</precision>
+              <isnull>N</isnull>
+              <mask>####0;-####0</mask>
+            </value>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>OR</operator>
+            <conditions>
+              <condition>
+                <negated>N</negated>
+                <leftvalue>concept:name_cod</leftvalue>
+                <function>=</function>
+                <rightvalue/>
+                <value>
+                  <name>constant</name>
+                  <type>Integer</type>
+                  <text>132</text>
+                  <length>-1</length>
+                  <precision>0</precision>
+                  <isnull>N</isnull>
+                  <mask>####0;-####0</mask>
+                </value>
+              </condition>
+              <condition>
+                <negated>N</negated>
+                <operator>OR</operator>
+                <leftvalue>concept:name_cod</leftvalue>
+                <function>=</function>
+                <rightvalue/>
+                <value>
+                  <name>constant</name>
+                  <type>Integer</type>
+                  <text>581</text>
+                  <length>-1</length>
+                  <precision>0</precision>
+                  <isnull>N</isnull>
+                  <mask>####0;-####0</mask>
+                </value>
+              </condition>
+            </conditions>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>OR</operator>
+            <leftvalue>concept:name_cod</leftvalue>
+            <function>=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>Integer</type>
+              <text>979</text>
+              <length>-1</length>
+              <precision>0</precision>
+              <isnull>N</isnull>
+              <mask>####0;-####0</mask>
+            </value>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>OR</operator>
+            <leftvalue>concept:name_cod</leftvalue>
+            <function>=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>Integer</type>
+              <text>981</text>
+              <length>-1</length>
+              <precision>0</precision>
+              <isnull>N</isnull>
+              <mask>####0;-####0</mask>
+            </value>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>OR</operator>
+            <leftvalue>concept:name_cod</leftvalue>
+            <function>=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>Integer</type>
+              <text>12271</text>
+              <length>-1</length>
+              <precision>0</precision>
+              <isnull>N</isnull>
+              <mask>####0;-####0</mask>
+            </value>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>OR</operator>
+            <leftvalue>concept:name_cod</leftvalue>
+            <function>=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>Integer</type>
+              <text>160</text>
+              <length>-1</length>
+              <precision>0</precision>
+              <isnull>N</isnull>
+              <mask>####0;-####0</mask>
+            </value>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>OR</operator>
+            <leftvalue>concept:name_cod</leftvalue>
+            <function>=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>Integer</type>
+              <text>12270</text>
+              <length>-1</length>
+              <precision>0</precision>
+              <isnull>N</isnull>
+              <mask>####0;-####0</mask>
+            </value>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>OR</operator>
+            <leftvalue>concept:name_cod</leftvalue>
+            <function>=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>Integer</type>
+              <text>977</text>
+              <length>-1</length>
+              <precision>0</precision>
+              <isnull>N</isnull>
+              <mask>####0;-####0</mask>
+            </value>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>OR</operator>
+            <leftvalue>concept:name_cod</leftvalue>
+            <function>=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>Integer</type>
+              <text>115</text>
+              <length>-1</length>
+              <precision>0</precision>
+              <isnull>N</isnull>
+              <mask>####0;-####0</mask>
+            </value>
+          </condition>
+        </conditions>
+      </condition>
+    </compare>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -1177,81 +1374,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>928</xloc>
-      <yloc>592</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Limp Cod Subject</name>
-    <type>ReplaceString</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <in_stream_name>case: codigo assunto</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>.0</replace_string>
-        <replace_by_string/>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-        <is_unicode>no</is_unicode>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>608</xloc>
-      <yloc>592</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Merge case</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <join_type>INNER</join_type>
-    <step1>Sort case 3</step1>
-    <step2>Meta-data</step2>
-    <keys_1>
-      <key>case:concept:name</key>
-    </keys_1>
-    <keys_2>
-      <key>case:concept:name</key>
-    </keys_2>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>672</xloc>
-      <yloc>432</yloc>
+      <xloc>512</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1318,8 +1442,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>752</xloc>
-      <yloc>64</yloc>
+      <xloc>800</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1352,70 +1476,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1152</xloc>
-      <yloc>144</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Meta-data</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <select_unspecified>N</select_unspecified>
-      <meta>
-        <name>case:concept:name</name>
-        <rename>case:concept:name</rename>
-        <type>String</type>
-        <length>15</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>case: codigo assunto_final</name>
-        <rename>case: codigo assunto_final</rename>
-        <type>String</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>800</xloc>
-      <yloc>432</yloc>
+      <xloc>1296</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1504,62 +1566,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>256</xloc>
-      <yloc>528</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Meta-data cod</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>case:concept:name</name>
-      </field>
-      <field>
-        <name>case: codigo assunto</name>
-      </field>
-      <field>
-        <name>assunto.principal</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-      <meta>
-        <name>case: codigo assunto</name>
-        <rename>case: codigo assunto</rename>
-        <type>Integer</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>704</xloc>
-      <yloc>592</yloc>
+      <xloc>288</xloc>
+      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1582,13 +1590,13 @@
     <footer>N</footer>
     <format>DOS</format>
     <compression>None</compression>
-    <encoding>windows-1252</encoding>
+    <encoding>ISO-8859-1</encoding>
     <endedLine/>
     <fileNameInField>N</fileNameInField>
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>C:/Users/rbcir/Documents/Pdi Scripts/version_1</name>
+      <name>C:/Users/rbcir/Documents/Pdi Scripts/version_4</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
       <extention>csv</extention>
@@ -1607,30 +1615,6 @@
     <fields>
       <field>
         <name>case:concept:name</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>case:tribunal</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>case:grau</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -1678,7 +1662,7 @@
         <precision>-1</precision>
       </field>
       <field>
-        <name>case: ano</name>
+        <name>case: orgao_mun</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -1690,55 +1674,7 @@
         <precision>-1</precision>
       </field>
       <field>
-        <name>case: codigo assunto_final</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>case: orgao</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>case: procEI</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>case: valor</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>case: numero</name>
+        <name>case: municipio</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -1759,8 +1695,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1264</xloc>
-      <yloc>144</yloc>
+      <xloc>2048</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1824,8 +1760,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>864</xloc>
-      <yloc>304</yloc>
+      <xloc>960</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1963,15 +1899,19 @@
       </field>
       <field>
         <name>assunto.codigoPaiNacional</name>
+        <rename/>
       </field>
       <field>
         <name>assunto.codigoNacional</name>
+        <rename/>
       </field>
       <field>
         <name>assunto.descricao</name>
+        <rename/>
       </field>
       <field>
         <name>assunto.principal</name>
+        <rename/>
       </field>
       <field>
         <name>dadosBasicos.valorCausa</name>
@@ -2003,6 +1943,7 @@
       </field>
       <field>
         <name>indice</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -2015,8 +1956,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>112</xloc>
-      <yloc>528</yloc>
+      <xloc>128</xloc>
+      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2066,7 +2007,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>320</xloc>
+      <xloc>288</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2085,6 +2026,7 @@
     <fields>
       <field>
         <name>case:concept:name</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -2097,8 +2039,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>976</xloc>
-      <yloc>304</yloc>
+      <xloc>1072</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2116,9 +2058,11 @@
     <fields>
       <field>
         <name>cod_item</name>
+        <rename/>
       </field>
       <field>
         <name>cod_item_pai</name>
+        <rename/>
       </field>
       <field>
         <name>nome</name>
@@ -2323,7 +2267,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>512</xloc>
+      <xloc>432</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2342,33 +2286,43 @@
     <fields>
       <field>
         <name>case:concept:name</name>
+        <rename/>
       </field>
       <field>
         <name>case: numero</name>
+        <rename/>
       </field>
       <field>
         <name>case: valor</name>
+        <rename/>
       </field>
       <field>
         <name>case: data ajuiz</name>
+        <rename/>
       </field>
       <field>
         <name>case: procEI</name>
+        <rename/>
       </field>
       <field>
         <name>case: orgao</name>
+        <rename/>
       </field>
       <field>
         <name>case: municipio</name>
+        <rename/>
       </field>
       <field>
         <name>case: classe</name>
+        <rename/>
       </field>
       <field>
         <name>case: grau</name>
+        <rename/>
       </field>
       <field>
         <name>case: ano</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
       <meta>
@@ -2551,48 +2505,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>416</xloc>
-      <yloc>432</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Select values 8</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>case:concept:name</name>
-      </field>
-      <field>
-        <name>assunto.codigoPaiNacional</name>
-      </field>
-      <field>
-        <name>assunto.codigoNacional</name>
-      </field>
-      <field>
-        <name>assunto.principal</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>416</xloc>
-      <yloc>592</yloc>
+      <xloc>512</xloc>
+      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2610,48 +2524,27 @@
     <fields>
       <field>
         <name>case:concept:name</name>
-      </field>
-      <field>
-        <name>siglaTribunal</name>
-        <rename>case:tribunal</rename>
-      </field>
-      <field>
-        <name>grau</name>
-        <rename>case:grau</rename>
+        <rename/>
       </field>
       <field>
         <name>concept:name</name>
+        <rename/>
       </field>
       <field>
         <name>concept:name_cod</name>
+        <rename/>
       </field>
       <field>
         <name>movimento.dataHora</name>
         <rename>time:timestamp</rename>
       </field>
       <field>
-        <name>case: ano</name>
-      </field>
-      <field>
-        <name>case: classe</name>
-      </field>
-      <field>
-        <name>case: codigo assunto_final</name>
+        <name>case: orgao_mun</name>
+        <rename/>
       </field>
       <field>
         <name>case: municipio</name>
-      </field>
-      <field>
-        <name>case: numero</name>
-      </field>
-      <field>
-        <name>case: orgao</name>
-      </field>
-      <field>
-        <name>case: procEI</name>
-      </field>
-      <field>
-        <name>case: valor</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -2664,7 +2557,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1024</xloc>
+      <xloc>1040</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2712,90 +2605,6 @@
     </GUI>
   </step>
   <step>
-    <name>Sort case 2</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>case:concept:name</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>848</xloc>
-      <yloc>592</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Sort case 3</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>case:concept:name</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>576</xloc>
-      <yloc>432</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>Sort case 4</name>
     <type>SortRows</type>
     <description/>
@@ -2833,7 +2642,7 @@
     </remotesteps>
     <GUI>
       <xloc>672</xloc>
-      <yloc>352</yloc>
+      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2874,7 +2683,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1152</xloc>
+      <xloc>1216</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2916,8 +2725,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1152</xloc>
-      <yloc>304</yloc>
+      <xloc>1216</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2958,7 +2767,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>528</xloc>
+      <xloc>720</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
@@ -3000,8 +2809,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>672</xloc>
-      <yloc>144</yloc>
+      <xloc>752</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -3055,8 +2864,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1072</xloc>
-      <yloc>304</yloc>
+      <xloc>1152</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -3085,68 +2894,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>432</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Unique rows </name>
-    <type>Unique</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <count_rows>N</count_rows>
-    <count_field/>
-    <reject_duplicate_row>N</reject_duplicate_row>
-    <error_description/>
-    <fields>      </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>784</xloc>
-      <yloc>592</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Unique rows 2 2 2</name>
-    <type>Unique</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <count_rows>N</count_rows>
-    <count_field/>
-    <reject_duplicate_row>N</reject_duplicate_row>
-    <error_description/>
-    <fields>      </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>928</xloc>
-      <yloc>432</yloc>
+      <xloc>592</xloc>
+      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -3170,8 +2919,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>752</xloc>
-      <yloc>304</yloc>
+      <xloc>864</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -3195,33 +2944,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>880</xloc>
+      <xloc>864</xloc>
       <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>copy_3</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>416</xloc>
-      <yloc>528</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -3580,7 +3304,7 @@
     </remotesteps>
     <GUI>
       <xloc>32</xloc>
-      <yloc>528</yloc>
+      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -3607,7 +3331,7 @@
     <add_filename_result>N</add_filename_result>
     <parallel>N</parallel>
     <newline_possible>N</newline_possible>
-    <encoding/>
+    <encoding>UTF-8</encoding>
     <fields>
       <field>
         <name>index</name>
@@ -4369,7 +4093,7 @@
     <add_filename_result>N</add_filename_result>
     <parallel>N</parallel>
     <newline_possible>N</newline_possible>
-    <encoding>UTF-8</encoding>
+    <encoding>ISO-8859-1</encoding>
     <fields>
       <field>
         <name>Field_000</name>
@@ -4625,6 +4349,473 @@
     <GUI>
       <xloc>32</xloc>
       <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>copy_3 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1360</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Proc Not Reativ</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <send_true_to>Select values 2 2</send_true_to>
+    <send_false_to>copy_1 2 2</send_false_to>
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <conditions>
+          <condition>
+            <negated>N</negated>
+            <operator>AND</operator>
+            <leftvalue>concept:name_cod</leftvalue>
+            <function>=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>Integer</type>
+              <text>849</text>
+              <length>-1</length>
+              <precision>0</precision>
+              <isnull>N</isnull>
+              <mask>####0;-####0</mask>
+            </value>
+          </condition>
+        </conditions>
+      </condition>
+    </compare>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1440</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>copy_1 2 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1440</xloc>
+      <yloc>352</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Merge join</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>FULL OUTER</join_type>
+    <step1>Sort case 6 2</step1>
+    <step2>Sort rows 2</step2>
+    <keys_1>
+      <key>case:concept:name</key>
+    </keys_1>
+    <keys_2>
+      <key>case:concept:name</key>
+    </keys_2>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1712</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort rows 2</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>case:concept:name</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1664</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values 2 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>case:concept:name</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1536</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Unique case 2</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <count_field/>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <error_description/>
+    <fields>      </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1600</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Unique case 3</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <count_field/>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <error_description/>
+    <fields>      </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1136</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort case 6 2</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>case:concept:name</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1488</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>IS NULL</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <send_true_to>Select values 2 3</send_true_to>
+    <send_false_to>Unique rows 2</send_false_to>
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <conditions>
+          <condition>
+            <negated>N</negated>
+            <operator>AND</operator>
+            <leftvalue>case:concept:name_2</leftvalue>
+            <function>IS NULL</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>Integer</type>
+              <text/>
+              <length>-1</length>
+              <precision>0</precision>
+              <isnull>Y</isnull>
+              <mask>####0;-####0</mask>
+            </value>
+          </condition>
+        </conditions>
+      </condition>
+    </compare>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1792</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>False 2 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1792</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values 2 3</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>case:concept:name</name>
+        <rename/>
+      </field>
+      <field>
+        <name>concept:name</name>
+        <rename/>
+      </field>
+      <field>
+        <name>concept:name_cod</name>
+        <rename/>
+      </field>
+      <field>
+        <name>time:timestamp</name>
+        <rename/>
+      </field>
+      <field>
+        <name>case: orgao_mun</name>
+        <rename/>
+      </field>
+      <field>
+        <name>case: municipio</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1888</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Unique case 2 2</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <count_field/>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <error_description/>
+    <fields>      </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1968</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
