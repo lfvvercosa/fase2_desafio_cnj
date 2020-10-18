@@ -4,29 +4,15 @@
   &-content {
     background-color: white;
     height: 65rem;
-    div {
-      height: 12%;
+    object {
       background-repeat: no-repeat;
       background-position: center;
-      padding: 3rem;
+      width: 100%;
+      padding: 2rem;
+      filter: invert(64%) sepia(41%) saturate(20%) hue-rotate(328deg) brightness(99%) contrast(100%);
     }
-    &-home {
-      background-image: url("../../../resources/images/icons/Icon\ awesome-home.svg")
-    }
-    &-chart {
-      background-image: url("../../../resources/images/icons/Icon\ awesome-chart-bar.svg")
-    }
-    &-info {
-      background-image: url("../../../resources/images/icons/Icon\ awesome-info-circle.svg")
-    }
-    &-search {
-      background-image: url("../../../resources/images/icons/Icon\ awesome-search.svg")
-    }
-    &-sitemap {
-      background-image: url("../../../resources/images/icons/Icon\ awesome-sitemap.svg")
-    }
-    &-file {
-      background-image: url("../../../resources/images/icons/Icon\ awesome-file-alt.svg")
+    &-icon-selected {
+      filter: invert(60%) sepia(96%) saturate(486%) hue-rotate(175deg) brightness(87%) contrast(91%) !important;
     }
   }
 }

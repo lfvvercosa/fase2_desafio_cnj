@@ -6,29 +6,15 @@
   background-color: white;
   height: 65rem;
 }
-.menu-content div {
-  height: 12%;
+.menu-content object {
   background-repeat: no-repeat;
   background-position: center;
-  padding: 3rem;
+  width: 100%;
+  padding: 2rem;
+  filter: invert(64%) sepia(41%) saturate(20%) hue-rotate(328deg) brightness(99%) contrast(100%);
 }
-.menu-content-home {
-  background-image: url("../../../resources/images/icons/Icon awesome-home.svg");
-}
-.menu-content-chart {
-  background-image: url("../../../resources/images/icons/Icon awesome-chart-bar.svg");
-}
-.menu-content-info {
-  background-image: url("../../../resources/images/icons/Icon awesome-info-circle.svg");
-}
-.menu-content-search {
-  background-image: url("../../../resources/images/icons/Icon awesome-search.svg");
-}
-.menu-content-sitemap {
-  background-image: url("../../../resources/images/icons/Icon awesome-sitemap.svg");
-}
-.menu-content-file {
-  background-image: url("../../../resources/images/icons/Icon awesome-file-alt.svg");
+.menu-content-icon-selected {
+  filter: invert(60%) sepia(96%) saturate(486%) hue-rotate(175deg) brightness(87%) contrast(91%) !important;
 }
 
 /*# sourceMappingURL=menu.css.map */
