@@ -6,5 +6,29 @@
   background-color: white;
   height: 65rem;
 }
+.menu-content div {
+  height: 8.8%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1rem;
+}
+.menu-content-home {
+  background-image: url("../../../resources/images/icons/Icon awesome-home.svg");
+}
+.menu-content-chart {
+  background-image: url("../../../resources/images/icons/Icon awesome-chart-bar.svg");
+}
+.menu-content-info {
+  background-image: url("../../../resources/images/icons/Icon awesome-info-circle.svg");
+}
+.menu-content-search {
+  background-image: url("../../../resources/images/icons/Icon awesome-search.svg");
+}
+.menu-content-sitemap {
+  background-image: url("../../../resources/images/icons/Icon awesome-sitemap.svg");
+}
+.menu-content-file {
+  background-image: url("../../../resources/images/icons/Icon awesome-file-alt.svg");
+}
 
 /*# sourceMappingURL=menu.css.map */

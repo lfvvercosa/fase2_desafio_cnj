@@ -4,6 +4,29 @@
   &-content {
     background-color: white;
     height: 65rem;
-
+    div {
+      height: 8.8%;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 1rem;
+    }
+    &-home {
+      background-image: url("../../../resources/images/icons/Icon\ awesome-home.svg")
+    }
+    &-chart {
+      background-image: url("../../../resources/images/icons/Icon\ awesome-chart-bar.svg")
+    }
+    &-info {
+      background-image: url("../../../resources/images/icons/Icon\ awesome-info-circle.svg")
+    }
+    &-search {
+      background-image: url("../../../resources/images/icons/Icon\ awesome-search.svg")
+    }
+    &-sitemap {
+      background-image: url("../../../resources/images/icons/Icon\ awesome-sitemap.svg")
+    }
+    &-file {
+      background-image: url("../../../resources/images/icons/Icon\ awesome-file-alt.svg")
+    }
   }
 }
