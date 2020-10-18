@@ -70,6 +70,41 @@ paths:
           description: "Serviço indisponível"
       security:
       - api_key: []
+  /varas/{identificador}/compareGraphWith/{identificador2}:
+    get:
+      tags:
+      - "varas"
+      summary: "Retorna grafo da vara 'identificador' e da vara 'identificador2'"
+      description: "Retorna grafo da vara 'identificador' e da vara 'identificador2'"
+      operationId: "getGraphsVaras"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "identificador"
+        in: "path"
+        description: "Identificador da vara 1"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "identificador2"
+        in: "path"
+        description: "Identificador da vara 2"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/grafos"
+        "400":
+          description: "Parâmetros inválidos"
+        "404":
+          description: "Identificador de vara inválido"
+        "503":
+          description: "Serviço indisponível"
+      security:
+      - api_key: []
   /varas/melhoresVarasNaEtapa:
     get:
       tags:
@@ -465,6 +500,37 @@ definitions:
         type: "string"
         description: "Comentário"
         example: "Implementei um sistema de organização de fluxo de processo"
+  grafos:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+        identificador_vara:
+          type: "integer"
+          format: "int64"
+          description: "Identificador da vara"
+          example: 3
+        root:
+          type: "string"
+          description: "Nó raiz do grafo"
+          example: "Distribuição"
+        arestas:
+          type: "array"
+          items:
+            properties:
+              origem:
+                type: "string"
+                description: "Nó de origem"
+                example: "Distribuição"
+              destino:
+                type: "string"
+                description: "Nó de destino"
+                example: "Julgamento"
+              peso:
+                type: "string"
+                description: "Peso da aresta"
+                example: "3M"
+         
 securityDefinitions:
   api_key:
     type: "apiKey"
