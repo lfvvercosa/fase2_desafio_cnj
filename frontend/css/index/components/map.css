@@ -1,5 +1,6 @@
 .map {
   margin: 0;
+  padding-right: 0;
 }
 .map .row {
   height: 100%;

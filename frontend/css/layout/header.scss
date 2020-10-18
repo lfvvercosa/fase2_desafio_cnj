@@ -1,21 +1,29 @@
 .position {
   padding-left: 2rem;
   padding-right: 2rem;
-  padding-top: 5rem;
   text-align: center;
+  background-image: url('../../resources/images/medalha.svg');
+  background-repeat: no-repeat;
   .row {
     margin: 0;
   }
+  &-container {
+    height: 16rem;
+    padding-top: 86%;
+    div {
+      margin: 0;
+      height: 3.5rem;
+    }
+  }
   &-number {
     font-family: 'OpenSans-Bold';
-    font-size: 4.0rem;
+    font-size: 3.0rem;
     margin: 0;
-    height: 4.7rem;
   }
   &-text {
     text-align: center;
     font-family: 'OpenSans-Regular';
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     margin: 0;
   }
 }
