@@ -8,7 +8,7 @@
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
@@ -104,15 +104,15 @@
             <div class="row">
               <div class="col-5 footer-comments">
                 <div class="footer-comments-title">SUGESTÃO DE MELHORIA</div>
-                <div class="footer-comments-content">winwifiwoe wefinwof fwwienfwinfio fwwienfiwenfwnfw wfeionweoifnwiofw efweiunfiwenf wfiuwenfinwe fwiofnweifne </div>
+                <div id="comments" class="footer-comments-content"></div>
               </div>
               <div class="col-7 footer-table">
                 <div class="footer-table-title">RANKING DAS VARAS E SEUS RESULTADOS</div>
                 <div class="rank-table">
                   <div class="rank-table-tabs">
-                    <div id="table-bottleneck-tab1" class="rank-table-tabs-item rank-table-tabs-item-selected">Mandado-Recebimento</div>
-                    <div id="table-bottleneck-tab2" class="rank-table-tabs-item">Mandado-Recebimento</div>
-                    <div id="table-bottleneck-tab3" class="rank-table-tabs-item">Mandado-Recebimento</div>
+                    <div id="table-best-tab1" class="rank-table-tabs-item rank-table-tabs-item-selected"></div>
+                    <div id="table-best-tab2" class="rank-table-tabs-item"></div>
+                    <div id="table-best-tab3" class="rank-table-tabs-item"></div>
                   </div>
                   <div class="rank-table-title">
                     <table>
@@ -127,61 +127,61 @@
                   <div class="rank-table-content">
                     <table>
                       <tr class="rank-table-content-odd">
-                        <th class="rank-table-content-index">1</th>
-                        <th class="rank-table-content-name">woefinewnofw</th>
-                        <th class="rank-table-content-duration">1 meses</th>
-                        <th class="rank-table-content-comments">winfgowef fwnifnwo </th>
+                        <th id="table-best-row-1-index" class="rank-table-content-index">1</th>
+                        <th id="table-best-row-1-name" class="rank-table-content-name"></th>
+                        <th id="table-best-row-1-duration" class="rank-table-content-duration"></th>
+                        <th id="table-best-row-1-comments" class="rank-table-content-comments"></th>
                       </tr>
                       <tr class="rank-table-content-even">
-                        <th class="rank-table-content-index">2</th>
-                        <th class="rank-table-content-name">woefinewnofw</th>
-                        <th class="rank-table-content-duration">3 meses</th>
-                        <th class="rank-table-content-comments">winfgowef</th>
+                        <th id="table-best-row-2-index" class="rank-table-content-index">2</th>
+                        <th id="table-best-row-2-name" class="rank-table-content-name"></th>
+                        <th id="table-best-row-2-duration" class="rank-table-content-duration"></th>
+                        <th id="table-best-row-2-comments" class="rank-table-content-comments"></th>
                       </tr>
                       <tr>
-                        <th class="rank-table-content-index">3</th>
-                        <th class="rank-table-content-name">woiefowof</th>
-                        <th class="rank-table-content-duration">12 meses</th>
-                        <th class="rank-table-content-comments">winfgowef wefwe</th>
+                        <th id="table-best-row-3-index" class="rank-table-content-index">3</th>
+                        <th id="table-best-row-3-name" class="rank-table-content-name"></th>
+                        <th id="table-best-row-3-duration" class="rank-table-content-duration"></th>
+                        <th id="table-best-row-3-comments" class="rank-table-content-comments"></th>
                       </tr>
                       <tr class="rank-table-content-even">
-                        <th class="rank-table-content-index">4</th>
-                        <th class="rank-table-content-name">woefinewnofw</th>
-                        <th class="rank-table-content-duration">5 meses</th>
-                        <th class="rank-table-content-comments">winfgowef fwnifnwo</th>
+                        <th id="table-best-row-4-index" class="rank-table-content-index">4</th>
+                        <th id="table-best-row-4-name" class="rank-table-content-name"></th>
+                        <th id="table-best-row-4-duration" class="rank-table-content-duration"></th>
+                        <th id="table-best-row-4-comments" class="rank-table-content-comments"></th>
                       </tr>
                       <tr class="rank-table-content-odd">
-                        <th class="rank-table-content-index">5</th>
-                        <th class="rank-table-content-name"></th>
-                        <th class="rank-table-content-duration"></th>
-                        <th class="rank-table-content-comments"></th>
+                        <th id="table-best-row-5-index" class="rank-table-content-index">5</th>
+                        <th id="table-best-row-5-name" class="rank-table-content-name"></th>
+                        <th id="table-best-row-5-duration" class="rank-table-content-duration"></th>
+                        <th id="table-best-row-5-comments" class="rank-table-content-comments"></th>
                       </tr>
                       <tr class="rank-table-content-even">
-                        <th class="rank-table-content-index">6</th>
-                        <th class="rank-table-content-name"></th>
-                        <th class="rank-table-content-duration"></th>
-                        <th class="rank-table-content-comments"></th>
+                        <th id="table-best-row-6-index" class="rank-table-content-index">6</th>
+                        <th id="table-best-row-6-name" class="rank-table-content-name"></th>
+                        <th id="table-best-row-6-duration" class="rank-table-content-duration"></th>
+                        <th id="table-best-row-6-comments" class="rank-table-content-comments"></th>
                       </tr>
                       <tr class="rank-table-content-odd">
-                        <th class="rank-table-content-index">7</th>
-                        <th class="rank-table-content-name"></th>
-                        <th class="rank-table-content-duration"></th>
-                        <th class="rank-table-content-comments"></th>
+                        <th id="table-best-row-7-index" class="rank-table-content-index">7</th>
+                        <th id="table-best-row-7-name" class="rank-table-content-name"></th>
+                        <th id="table-best-row-7-duration" class="rank-table-content-duration"></th>
+                        <th id="table-best-row-7-comments" class="rank-table-content-comments"></th>
                       </tr>
                       <tr class="rank-table-content-even">
-                        <th class="rank-table-content-index">8</th>
-                        <th class="rank-table-content-name"></th>
-                        <th class="rank-table-content-duration"></th>
-                        <th class="rank-table-content-comments"></th>
+                        <th id="table-best-row-8-index" class="rank-table-content-index">8</th>
+                        <th id="table-best-row-8-name" class="rank-table-content-name"></th>
+                        <th id="table-best-row-8-duration" class="rank-table-content-duration"></th>
+                        <th id="table-best-row-8-comments" class="rank-table-content-comments"></th>
                       </tr>
                       <tr class="rank-table-content-odd">
-                        <th class="rank-table-content-index">9</th>
-                        <th class="rank-table-content-name"></th>
-                        <th class="rank-table-content-duration"></th>
-                        <th class="rank-table-content-comments"></th>
+                        <th id="table-best-row-9-index" class="rank-table-content-index">9</th>
+                        <th id="table-best-row-9-name" class="rank-table-content-name"></th>
+                        <th id="table-best-row-9-duration" class="rank-table-content-duration"></th>
+                        <th id="table-best-row-9-comments" class="rank-table-content-comments"></th>
                       </tr>
                     </table>
-                  </div>  
+                  </div>
                 </div>
               </div>
             </div>

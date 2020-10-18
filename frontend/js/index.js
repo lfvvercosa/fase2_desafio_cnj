@@ -87,7 +87,7 @@ function setBottleneckRankComponent() {
 }
 
 function setBestRankComponent() {
-//best movements component
+  //best movements component
   //best-mov-1-source
   //best-mov-1-position
   //best-mov-1-description
