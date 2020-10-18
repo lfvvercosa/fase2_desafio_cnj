@@ -14,4 +14,4 @@ function getVaras() {
   });
 }
 
-//getVaras()
+getVaras()

@@ -49,18 +49,21 @@
 }
 .rank-movements-content-item-transaction-text {
   font-family: "OpenSans-Regular";
+  position: absolute;
+  left: 20%;
+  top: 34%;
 }
 .rank-movements-content-item-transaction-text p {
   margin: 0;
 }
 .rank-movements-content-item-transaction-text-number {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 .rank-movements-content-item-transaction-text-time {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
 }
 .rank-movements-content-item-transaction-arrow img {
-  height: 8rem;
+  height: 11rem;
 }
 .rank-movements-coments {
   text-align: center;

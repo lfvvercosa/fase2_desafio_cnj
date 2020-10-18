@@ -44,19 +44,22 @@
           align-items: center;
           &-text{
             font-family: 'OpenSans-Regular';
+            position: absolute;
+            left: 20%;
+            top: 34%;
             p {
               margin: 0;
             }
             &-number {
-              font-size: 1.8rem;
+              font-size: 1.5rem;
             }
             &-time {
-              font-size: 1.4rem;
+              font-size: 1.1rem;
             }
           }
           &-arrow {
             img {
-              height: 8rem;
+              height: 11rem;
             }
           }
         }
