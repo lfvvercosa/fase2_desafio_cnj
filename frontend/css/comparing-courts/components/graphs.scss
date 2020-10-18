@@ -1,4 +1,28 @@
-.graphs {
-  height: 60.0rem;
-  background-color: red;
+.graph-container {
+  height: 60rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  div {
+    height: 100%;
+  }
+  &-left {
+    width: 45%;
+  }
+  &-separator {
+    width: 1px;
+    border: solid 1px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  &-right {
+    width: 45%;
+  }
+}
+
+.sigma-edges, .sigma-scene, .sigma-mouse {
+  width: 100%;
+  height: 60rem;
+  display: block;
+  text-align: center;
 }
