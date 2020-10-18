@@ -1,5 +1,5 @@
 .graph-container {
-  height: 60rem;
+  height: 75rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,7 +8,16 @@
   height: 100%;
 }
 .graph-container-left {
-  width: 45%;
+  width: 49%;
+}
+.graph-container-left-name {
+  font-family: "OpenSans-Semibold";
+  font-size: 2rem;
+  height: auto !important;
+}
+.graph-container-left-content {
+  padding-top: 3rem;
+  height: 90% !important;
 }
 .graph-container-separator {
   width: 1px;
@@ -17,7 +26,22 @@
   margin-right: 1rem;
 }
 .graph-container-right {
-  width: 45%;
+  width: 49%;
+}
+.graph-container-right-title {
+  height: auto !important;
+  font-family: "OpenSans-Regular";
+  font-size: 2rem;
+  color: #b0afaf;
+}
+.graph-container-right-name {
+  height: auto !important;
+  font-family: "OpenSans-Semibold";
+  font-size: 2rem;
+}
+.graph-container-right-content {
+  padding-top: 3rem;
+  height: 90% !important;
 }
 
 .sigma-edges, .sigma-scene, .sigma-mouse {
@@ -25,6 +49,11 @@
   height: 60rem;
   display: block;
   text-align: center;
+}
+
+.rank-movements-coments {
+  padding-top: 0 !important;
+  margin-top: 3rem !important;
 }
 
 /*# sourceMappingURL=graphs.css.map */

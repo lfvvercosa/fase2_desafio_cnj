@@ -3,7 +3,8 @@ setCommentsComponent()
 setTableComponent()
 
 function setGraphsComponent() {
-
+  //graph-container-left-court
+  //graph-container-right-court
 }
 
 function setCommentsComponent() {

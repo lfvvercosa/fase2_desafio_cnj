@@ -75,7 +75,7 @@
 .rank-movements-coments-box {
   display: flex;
   align-items: center;
-  height: 4rem;
+  height: 4rem !important;
   background-color: #CCE5FF;
   border-radius: 0.7rem;
   justify-content: center;
