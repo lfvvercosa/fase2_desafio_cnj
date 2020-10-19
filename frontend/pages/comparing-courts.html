@@ -23,6 +23,57 @@
     <link rel="stylesheet" href="../css/comparing-courts/components/graphs.css">
     <link rel="stylesheet" href="../css/comparing-courts/components/footer.css">
 
+    <!-- sigma -->
+    <script src="../libs/sigma.js-1.2.1/src/sigma.core.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/conrad.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/utils/sigma.utils.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/utils/sigma.polyfills.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/sigma.settings.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/classes/sigma.classes.dispatcher.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/classes/sigma.classes.configurable.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/classes/sigma.classes.graph.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/classes/sigma.classes.camera.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/classes/sigma.classes.quad.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/classes/sigma.classes.edgequad.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/captors/sigma.captors.mouse.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/captors/sigma.captors.touch.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/sigma.renderers.canvas.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/sigma.renderers.webgl.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/sigma.renderers.svg.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/sigma.renderers.def.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/webgl/sigma.webgl.nodes.def.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/webgl/sigma.webgl.nodes.fast.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/webgl/sigma.webgl.edges.def.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/webgl/sigma.webgl.edges.fast.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/webgl/sigma.webgl.edges.arrow.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/canvas/sigma.canvas.labels.def.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/canvas/sigma.canvas.hovers.def.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/canvas/sigma.canvas.nodes.def.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/canvas/sigma.canvas.edges.def.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/canvas/sigma.canvas.edges.curve.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/canvas/sigma.canvas.edges.arrow.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/canvas/sigma.canvas.edges.curvedArrow.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/canvas/sigma.canvas.edgehovers.def.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/canvas/sigma.canvas.edgehovers.curve.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/canvas/sigma.canvas.extremities.def.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/svg/sigma.svg.utils.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/svg/sigma.svg.nodes.def.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/svg/sigma.svg.edges.def.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/svg/sigma.svg.edges.curve.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/svg/sigma.svg.labels.def.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/renderers/svg/sigma.svg.hovers.def.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/middlewares/sigma.middlewares.rescale.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/middlewares/sigma.middlewares.copy.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/misc/sigma.misc.animation.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/misc/sigma.misc.bindEvents.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/misc/sigma.misc.bindDOMEvents.js"></script>
+    <script src="../libs/sigma.js-1.2.1/src/misc/sigma.misc.drawHovers.js"></script>
+    <!-- <script srclibs/="../tests/test1.js"></script> -->
+
+    <script src="../libs/sigma.js-1.2.1/plugins/sigma.plugins.dragNodes/sigma.plugins.dragNodes.js"></script>
+
     <!-- behaviour -->
 
   </head>
@@ -77,13 +128,12 @@
       <div class="row">
         <div class="menu col-1">
           <div class="menu-content">
-            <object class="menu-content-icon-selected" type="image/svg+xml" data="http://s3-us-west-2.amazonaws.com/s.cdpn.io/3/icon-bike-black.svg"></object>
-            <!-- <object id="menu-home" class="menu-content-icon-selected" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/home.svg"></object>
+            <object id="menu-home" class="menu-content-icon-selected" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/home.svg"></object>
             <object id="menu-chart" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/chart.svg"></object>
             <object id="menu-info" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/info.svg"></object>
             <object id="menu-search" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/search.svg"></object>
             <object id="menu-sitemap" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/sitemap.svg"></object>
-            <object id="menu-file" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/file.svg"></object> -->
+            <object id="menu-file" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/file.svg"></object>
           </div>
         </div>
         <div class="col-11 card">
@@ -117,7 +167,11 @@
               </div>
             </div>
           </div>
-          <div class="container graphs"></div>
+          <div class="container graph-container">
+            <div id="graph-container-left" class="graph-container-left"></div>
+            <div class="graph-container-separator"></div>
+            <div id="graph-container-right" class="graph-container-right"></div>
+          </div>
           <div class="container footer">
             <div class="row">
               <div class="col-5 footer-comments">
@@ -212,6 +266,7 @@
     <script src="../js/header.js" ></script>
     <script src="../js/comparing-courts.js" ></script>
     <script src="../js/components.js" ></script>
+    <script src="../js/graph.js" ></script>
     <script src="../js/requester.js" ></script>
   </body>
 </html>
