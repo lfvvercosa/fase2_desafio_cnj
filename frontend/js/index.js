@@ -8,25 +8,27 @@ function setRankComponent() {
 }
 
 function setBottleneckRankComponent() {
-  $('#bottleneck-mov-1-source').html('MANDADO')
+  getVaraByID((json)=>{
+    $('#bottleneck-mov-1-source').html(json.worst_steps[0].origin)
+    $('#bottleneck-mov-1-description').html(json.worst_steps[0].med_time)
+    $('#bottleneck-mov-1-dest').html(json.worst_steps[0].destination)
+
+    $('#bottleneck-mov-2-source').html(json.worst_steps[1].origin)
+    $('#bottleneck-mov-2-description').html(json.worst_steps[1].med_time)
+    $('#bottleneck-mov-2-dest').html(json.worst_steps[1].destination)
+
+    $('#bottleneck-mov-3-source').html(json.worst_steps[2].origin)
+    $('#bottleneck-mov-3-description').html(json.worst_steps[2].med_time)
+    $('#bottleneck-mov-3-dest').html(json.worst_steps[2].destination)
+
+    //bottoleneck table
+    $('#table-bottleneck-tab1').html(json.worst_steps[0].origin + '-' + json.worst_steps[0].destination)
+    $('#table-bottleneck-tab2').html(json.worst_steps[1].origin + '-' + json.worst_steps[1].destination)
+    $('#table-bottleneck-tab3').html(json.worst_steps[2].origin + '-' + json.worst_steps[2].destination)
+  })
   $('#bottleneck-mov-1-position').html('13'+'°')
-  $('#bottleneck-mov-1-description').html('3 meses')
-  $('#bottleneck-mov-1-dest').html('RECEBIMENTO')
-
-  //bottleneck-mov-2-source
-  //bottleneck-mov-2-position
-  //bottleneck-mov-2-description
-  //bottleneck-mov-2-dest
-
-  //bottleneck-mov-3-source
-  //bottleneck-mov-3-position
-  //bottleneck-mov-3-description
-  //bottleneck-mov-3-dest
-
-  //bottoleneck table
-  $('#table-bottleneck-tab1').html('Mandado-Recebimento')
-  //table-bottleneck-tab2 
-  //table-bottleneck-tab3 
+  $('#bottleneck-mov-2-position').html('13'+'°')
+  $('#bottleneck-mov-3-position').html('13'+'°')
 
   $('#table-bottleneck-row-1-name').html('wefnweonfewnfo')
   $('#table-bottleneck-row-1-duration').html('3 meses')
@@ -127,8 +129,7 @@ function setBestRankComponent() {
 
 function setStatisticsComponent(){
   //worst
-  $('#statistics-wrost-title-1').html('Pior')
-  $('#statistics-wrost-title-2').html('Desempenho')
+  $('#statistics-wrost-title-1').html('Pior <br>Desempenho')
   $('#statistics-wrost-value').html('DEFESA')
   $('#statistics-wrost-position').html('19'+'° de 120 varas')
   //statistics-wrost-title-1
@@ -161,7 +162,7 @@ function setStatisticsComponent(){
 }
 
 function setFooterRankComponent() {
-  $('#best-time-1').html('enwniofnioeffwe')
+  // $('#best-time-1').html('')
   //best-time-2
   //best-time-3
   //best-time-4

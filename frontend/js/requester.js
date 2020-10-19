@@ -10,8 +10,16 @@ function getCourtList(){
 function getVaras() {
   var url = urlBase + 'varas'
   jQuery.get(url, (data)=>{
-      console.log(data)
+    console.log(data)
   });
 }
 
-getVaras()
+function getVaraByID(callback) {
+  var id = 1
+  var url = urlBase + 'varas/' + id
+  jQuery.get(url, (data)=>{
+    console.log(data)
+    callback(data)
+  });
+}
+
