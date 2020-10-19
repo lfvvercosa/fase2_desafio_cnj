@@ -17,9 +17,9 @@ function setTableComponent() {
   //table-best-tab2
   //table-best-tab3
 
-  $('#table-best-row-1-name').html('wefnweonfewnfo')
+  $('#table-best-row-1-name').html('Awesome Metal Keyboard')
   $('#table-best-row-1-duration').html('3 meses')
-  $('#table-best-row-1-comments').html('wenfwfoni fwfnwenfiowen woifnwoif')
+  $('#table-best-row-1-comments').html('Nihil officia fuga consequatur omnis. Animi qui quia quis vel perspiciatis neque velit. Corrupti omnis sint.')
   
   //table-best-row-2-name
   //table-best-row-2-duration

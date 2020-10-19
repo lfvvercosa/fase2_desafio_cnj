@@ -1,84 +1,97 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Desafio CNJ</title>
-    <!-- html5 meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<head>
+  <title>Desafio CNJ</title>
+  <!-- html5 meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- d3 -->
-    <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
 
-    <!-- c3js -->
-    <link href="./resources/c3/c3.min.css" rel="stylesheet">
-    <script src="./resources/c3/c3.min.js"></script>
+  <!-- d3 -->
+  <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
 
-    <!-- style -->
-    <link rel="stylesheet" href="./css/layout/page.css">
-    <link rel="stylesheet" href="./css/layout/header.css">
-    <link rel="stylesheet" href="./css/index/components/rounded-info.css">
-    <link rel="stylesheet" href="./css/index/components/card.css">
-    <link rel="stylesheet" href="./css/index/components/menu.css">
-    <link rel="stylesheet" href="./css/index/components/rank.css">
-    <link rel="stylesheet" href="./css/index/components/statistics.css">
-    <link rel="stylesheet" href="./css/index/components/chart.css">
-    <link rel="stylesheet" href="./css/index/components/best-times.css">
-    <link rel="stylesheet" href="./css/index/components/map.css">
-    <link rel="stylesheet" href="./css/index/components/footer.css">
+  <!-- c3js -->
+  <link href="./resources/c3/c3.min.css" rel="stylesheet">
+  <script src="./resources/c3/c3.min.js"></script>
 
-    <!-- behaviour -->
-    <script src="./config.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script src="./js/requester.js" ></script>
-    <script src="./js/map.js" ></script>
-  
-  </head>
-  <body>
-    
+  <!-- style -->
+  <link rel="stylesheet" href="./css/layout/page.css">
+  <link rel="stylesheet" href="./css/layout/header.css">
+  <link rel="stylesheet" href="./css/index/components/rounded-info.css">
+  <link rel="stylesheet" href="./css/index/components/card.css">
+  <link rel="stylesheet" href="./css/index/components/menu.css">
+  <link rel="stylesheet" href="./css/index/components/rank.css">
+  <link rel="stylesheet" href="./css/index/components/statistics.css">
+  <link rel="stylesheet" href="./css/index/components/chart.css">
+  <link rel="stylesheet" href="./css/index/components/best-times.css">
+  <link rel="stylesheet" href="./css/index/components/map.css">
+  <link rel="stylesheet" href="./css/index/components/footer.css">
+
+  <!-- behaviour -->
+  <script src="./config.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script src="./js/requester.js"></script>
+  <script src="./js/map.js"></script>
+
+</head>
+
+<body>
+
+  <div class="col-12 col-md-10 mx-auto pb-5">
     <!-- header -->
-    <div class="container">
-      <div class="row">
-        <div class="col-1 position">
-          <div class="position-container">
-            <div id="position-number" class="position-number"></div>
-            <div class="position-text">colocada</div>
-          </div>
+    <div class="row">
+      <div class="col-1 position">
+        <div class="position-container">
+          <div id="position-number" class="position-number"></div>
+          <div class="position-text">colocada</div>
         </div>
-        <div class="col-11">
-          <div class="container header">
-            <div class="row">
-              <div class="col-10 header-left">
-                <h6 class="header-left-welcome">bem vindo a</h6>
-                <h1 id="court-name" class="header-left-court"></h1>
+      </div>
+      <div class="col-11">
+        <div class="header">
+          <div class="row">
+            <div class="col-10 header-left">
+              <h6 class="header-left-welcome">bem vindo a</h6>
+              <h1 id="court-name" class="header-left-court"></h1>
+            </div>
+            <div class="col-2 header-right">
+              <div class="header-right-text">
+                <div>
+                  <p id="username" class="header-right-text-username"></p>
+                  <p id="user-position" class="header-right-text-position"></p>
+                </div>
               </div>
-              <div class="col-2 header-right">
-                <div class="header-right-text">
-                  <div>
-                    <p id="username" class="header-right-text-username"></p>
-                    <p id="user-position" class="header-right-text-position"></p>
-                  </div>
-                </div>
-                <div class="header-right-photo">
-                  <img id="user-photo" src="https://www.melhoresfilmes.com.br/dimg/?w=165&amp;h=220&amp;mode=crop&amp;url=https%3A%2F%2Fwww.melhoresfilmes.com.br%2Fimg%2Factors%2F6493.jpg"
-                    alt="Antonio" width="100%" height="100%">
-                </div>
+              <div class="header-right-photo">
+                <img id="user-photo"
+                  src="https://www.melhoresfilmes.com.br/dimg/?w=165&amp;h=220&amp;mode=crop&amp;url=https%3A%2F%2Fwww.melhoresfilmes.com.br%2Fimg%2Factors%2F6493.jpg"
+                  alt="Antonio" width="100%" height="100%">
               </div>
             </div>
-            <div class="row">
-              <div class="col-11 header-bottom">
-                <div class="header-bottom-group">
-                  <p id="group-amount" class="header-bottom-group-amount"></p>
-                  <div class="rounded-info header-bottom-group-item"><p id="group-el-1"></p></div>
-                  <div class="rounded-info header-bottom-group-item"><p id="group-el-2"></p></div>
-                  <div class="rounded-info header-bottom-group-item"><p id="group-el-3"></p></div>
-                  <div class="rounded-info header-bottom-group-item"><p id="group-el-4"></p></div>
-                </div>
+          </div>
+          <div class="header-bottom">
+            <div class="header-bottom-group">
+              <p id="group-amount" class="header-bottom-group-amount"></p>
+              <div class="rounded-info header-bottom-group-item">
+                <p id="group-el-1"></p>
+              </div>
+              <div class="rounded-info header-bottom-group-item">
+                <p id="group-el-2"></p>
+              </div>
+              <div class="rounded-info header-bottom-group-item">
+                <p id="group-el-3"></p>
+              </div>
+              <div class="rounded-info header-bottom-group-item">
+                <p id="group-el-4"></p>
               </div>
             </div>
           </div>
@@ -86,36 +99,40 @@
       </div>
     </div>
 
-    <div class="container page-padding-bottom">
-      <div class="row">
-        <div class="menu col-1">
-          <div class="menu-content">
-            <object class="menu-content-icon-selected" type="image/svg+xml" data="http://s3-us-west-2.amazonaws.com/s.cdpn.io/3/icon-bike-black.svg"></object>
-            <!-- <object id="menu-home" class="menu-content-icon-selected" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/home.svg"></object>
-            <object id="menu-chart" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/chart.svg"></object>
-            <object id="menu-info" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/info.svg"></object>
-            <object id="menu-search" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/search.svg"></object>
-            <object id="menu-sitemap" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/sitemap.svg"></object>
-            <object id="menu-file" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/file.svg"></object> -->
-          </div>
+    <div class="row">
+      <div class="menu col-1">
+        <div class="menu-content">
+          <object class="menu-content-icon-selected" type="image/svg+xml" data="http://s3-us-west-2.amazonaws.com/s.cdpn.io/3/icon-bike-black.svg"></object>
+          <object id="menu-home" class="menu-content-icon-selected" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/home.svg"></object>
+          <object id="menu-chart" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/chart.svg"></object>
+          <object id="menu-info" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/info.svg"></object>
+          <object id="menu-search" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/search.svg"></object>
+          <object id="menu-sitemap" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/sitemap.svg"></object>
+          <object id="menu-file" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/file.svg"></object>
         </div>
-        <div class="col-11">
+      </div>
+      <div class="col-11">
+        <div class="row ml-0 mr-0">
           <!-- rank -->
-          <div class="container rank card">
+          <div class="rank card">
+            <p class="rank-movements-title">GARGALOS EM DESTAQUE</p>
             <div id="rank-worst" class="row rank-worst">
               <div class="col-6 rank-movements">
-                <p class="rank-movements-title">GARGALOS EM DESTAQUE</p>
-                <div class="container rank-movements-content">
+                <div class="rank-movements-content">
                   <div class="row">
                     <!-- first item -->
                     <div class="col-4 rank-movements-content-item">
                       <div id="bottleneck-mov-1-source" class="rounded-info rank-movements-content-item-name"></div>
                       <div class="rank-movements-content-item-transaction">
                         <div class="rank-movements-content-item-transaction-text">
-                          <p id="bottleneck-mov-1-position" class="rank-movements-content-item-transaction-text-number"></p>
-                          <p id="bottleneck-mov-1-description" class="rank-movements-content-item-transaction-text-time"></p>
+                          <p id="bottleneck-mov-1-position" class="rank-movements-content-item-transaction-text-number">
+                          </p>
+                          <p id="bottleneck-mov-1-description"
+                            class="rank-movements-content-item-transaction-text-time">
+                          </p>
                         </div>
-                        <div class="rank-movements-content-item-transaction-arrow"><img src="./resources/images/arrows/arrow-1.svg"></div>
+                        <div class="rank-movements-content-item-transaction-arrow"><img
+                            src="./resources/images/arrows/arrow-1.svg"></div>
                       </div>
                       <div id="bottleneck-mov-1-dest" class="rounded-info rank-movements-content-item-name"></div>
                     </div>
@@ -124,10 +141,14 @@
                       <div id="bottleneck-mov-2-source" class="rounded-info rank-movements-content-item-name"></div>
                       <div class="rank-movements-content-item-transaction">
                         <div class="rank-movements-content-item-transaction-text">
-                          <p id="bottleneck-mov-2-position" class="rank-movements-content-item-transaction-text-number"></p>
-                          <p id="bottleneck-mov-2-description" class="rank-movements-content-item-transaction-text-time"></p>
+                          <p id="bottleneck-mov-2-position" class="rank-movements-content-item-transaction-text-number">
+                          </p>
+                          <p id="bottleneck-mov-2-description"
+                            class="rank-movements-content-item-transaction-text-time">
+                          </p>
                         </div>
-                        <div class="rank-movements-content-item-transaction-arrow"><img src="./resources/images/arrows/arrow-1.svg"></div>
+                        <div class="rank-movements-content-item-transaction-arrow"><img
+                            src="./resources/images/arrows/arrow-1.svg"></div>
                       </div>
                       <div id="bottleneck-mov-2-dest" class="rounded-info rank-movements-content-item-name"></div>
                     </div>
@@ -136,10 +157,14 @@
                       <div id="bottleneck-mov-3-source" class="rounded-info rank-movements-content-item-name"></div>
                       <div class="rank-movements-content-item-transaction">
                         <div class="rank-movements-content-item-transaction-text">
-                          <p id="bottleneck-mov-3-position" class="rank-movements-content-item-transaction-text-number"></p>
-                          <p id="bottleneck-mov-3-description" class="rank-movements-content-item-transaction-text-time"></p>
+                          <p id="bottleneck-mov-3-position" class="rank-movements-content-item-transaction-text-number">
+                          </p>
+                          <p id="bottleneck-mov-3-description"
+                            class="rank-movements-content-item-transaction-text-time">
+                          </p>
                         </div>
-                        <div class="rank-movements-content-item-transaction-arrow"><img src="./resources/images/arrows/arrow-1.svg"></div>
+                        <div class="rank-movements-content-item-transaction-arrow"><img
+                            src="./resources/images/arrows/arrow-1.svg"></div>
                       </div>
                       <div id="bottleneck-mov-1-dest" class="rounded-info rank-movements-content-item-name"></div>
                     </div>
@@ -159,69 +184,71 @@
                 </div>
                 <div class="rank-table-title">
                   <table>
-                    <tr>
-                      <th class="rank-table-title-index">#</th>
-                      <th class="rank-table-title-name">Nome</th>
-                      <th class="rank-table-title-duration">Duração</th>
-                      <th class="rank-table-title-comments">Comentários</th>
-                    </tr>
+                    <thead>
+                      <tr>
+                        <th class="rank-table-title-index">#</th>
+                        <th class="rank-table-title-name">Nome</th>
+                        <th class="rank-table-title-duration">Duração</th>
+                        <th class="rank-table-title-comments">Comentários</th>
+                      </tr>
+                    </thead>
                   </table>
                 </div>
                 <div class="rank-table-content">
                   <table>
                     <tr class="rank-table-content-odd">
-                      <th id="table-bottleneck-row-1-index" class="rank-table-content-index">1</th>
-                      <th id="table-bottleneck-row-1-name" class="rank-table-content-name"></th>
-                      <th id="table-bottleneck-row-1-duration" class="rank-table-content-duration"></th>
-                      <th id="table-bottleneck-row-1-comments" class="rank-table-content-comments"></th>
+                      <td id="table-bottleneck-row-1-index" class="rank-table-content-index">1</td>
+                      <td id="table-bottleneck-row-1-name" class="rank-table-content-name"></td>
+                      <td id="table-bottleneck-row-1-duration" class="rank-table-content-duration"></td>
+                      <td id="table-bottleneck-row-1-comments" class="rank-table-content-comments"></td>
                     </tr>
                     <tr class="rank-table-content-even">
-                      <th id="table-bottleneck-row-2-index" class="rank-table-content-index">2</th>
-                      <th id="table-bottleneck-row-2-name" class="rank-table-content-name"></th>
-                      <th id="table-bottleneck-row-2-duration" class="rank-table-content-duration"></th>
-                      <th id="table-bottleneck-row-2-comments" class="rank-table-content-comments"></th>
+                      <td id="table-bottleneck-row-2-index" class="rank-table-content-index">2</td>
+                      <td id="table-bottleneck-row-2-name" class="rank-table-content-name"></td>
+                      <td id="table-bottleneck-row-2-duration" class="rank-table-content-duration"></td>
+                      <td id="table-bottleneck-row-2-comments" class="rank-table-content-comments"></td>
                     </tr>
                     <tr>
-                      <th id="table-bottleneck-row-3-index" class="rank-table-content-index">3</th>
-                      <th id="table-bottleneck-row-3-name" class="rank-table-content-name"></th>
-                      <th id="table-bottleneck-row-3-duration" class="rank-table-content-duration"></th>
-                      <th id="table-bottleneck-row-3-comments" class="rank-table-content-comments"></th>
+                      <td id="table-bottleneck-row-3-index" class="rank-table-content-index">3</td>
+                      <td id="table-bottleneck-row-3-name" class="rank-table-content-name"></td>
+                      <td id="table-bottleneck-row-3-duration" class="rank-table-content-duration"></td>
+                      <td id="table-bottleneck-row-3-comments" class="rank-table-content-comments"></td>
                     </tr>
                     <tr class="rank-table-content-even">
-                      <th id="table-bottleneck-row-4-index" class="rank-table-content-index">4</th>
-                      <th id="table-bottleneck-row-4-name" class="rank-table-content-name"></th>
-                      <th id="table-bottleneck-row-4-duration" class="rank-table-content-duration"></th>
-                      <th id="table-bottleneck-row-4-comments" class="rank-table-content-comments"></th>
+                      <td id="table-bottleneck-row-4-index" class="rank-table-content-index">4</td>
+                      <td id="table-bottleneck-row-4-name" class="rank-table-content-name"></td>
+                      <td id="table-bottleneck-row-4-duration" class="rank-table-content-duration"></td>
+                      <td id="table-bottleneck-row-4-comments" class="rank-table-content-comments"></td>
                     </tr>
                     <tr class="rank-table-content-odd">
-                      <th id="table-bottleneck-row-5-index" class="rank-table-content-index">5</th>
-                      <th id="table-bottleneck-row-5-name" class="rank-table-content-name"></th>
-                      <th id="table-bottleneck-row-5-duration" class="rank-table-content-duration"></th>
-                      <th id="table-bottleneck-row-5-comments" class="rank-table-content-comments"></th>
+                      <td id="table-bottleneck-row-5-index" class="rank-table-content-index">5</td>
+                      <td id="table-bottleneck-row-5-name" class="rank-table-content-name"></td>
+                      <td id="table-bottleneck-row-5-duration" class="rank-table-content-duration"></td>
+                      <td id="table-bottleneck-row-5-comments" class="rank-table-content-comments"></td>
                     </tr>
                     <tr class="rank-table-content-even">
-                      <th class="rank-table-content-6-index">6</th>
-                      <th class="rank-table-content-6-name"></th>
-                      <th class="rank-table-content-6-duration"></th>
-                      <th class="rank-table-content-6-comments"></th>
+                      <td class="rank-table-content-6-index">6</td>
+                      <td class="rank-table-content-6-name"></td>
+                      <td class="rank-table-content-6-duration"></td>
+                      <td class="rank-table-content-6-comments"></td>
                     </tr>
                     <tr class="rank-table-content-odd">
-                      <th id="table-bottleneck-row-7-index" class="rank-table-content-index">7</th>
-                      <th id="table-bottleneck-row-7-name" class="rank-table-content-name"></th>
-                      <th id="table-bottleneck-row-7-duration" class="rank-table-content-duration"></th>
-                      <th id="table-bottleneck-row-7-comments" class="rank-table-content-comments"></th>
+                      <td id="table-bottleneck-row-7-index" class="rank-table-content-index">7</td>
+                      <td id="table-bottleneck-row-7-name" class="rank-table-content-name"></td>
+                      <td id="table-bottleneck-row-7-duration" class="rank-table-content-duration"></td>
+                      <td id="table-bottleneck-row-7-comments" class="rank-table-content-comments"></td>
                     </tr>
                     <tr class="rank-table-content-even">
-                      <th id="table-bottleneck-row-8-index" class="rank-table-content-index">8</th>
-                      <th id="table-bottleneck-row-8-name" class="rank-table-content-name"></th>
-                      <th id="table-bottleneck-row-8-duration" class="rank-table-content-duration"></th>
-                      <th id="table-bottleneck-row-8-comments" class="rank-table-content-comments"></th>
+                      <td id="table-bottleneck-row-8-index" class="rank-table-content-index">8</td>
+                      <td id="table-bottleneck-row-8-name" class="rank-table-content-name"></td>
+                      <td id="table-bottleneck-row-8-duration" class="rank-table-content-duration"></td>
+                      <td id="table-bottleneck-row-8-comments" class="rank-table-content-comments"></td>
                     </tr>
                     <tr class="rank-table-content-odd">
-                      <th id="table-bottleneck-row-9-index" class="rank-table-content-index">9</th>
-                      <th id="table-bottleneck-row-9-name" class="rank-table-content-name"></th>
-                      <th id="table-bottleneck-row-9-duration" class="rank-table-content-duration"></th>
-                      <th id="table-bottleneck-row-9-comments" class="rank-table-content-comments"></th>
+                      <td id="table-bottleneck-row-9-index" class="rank-table-content-index">9</td>
+                      <td id="table-bottleneck-row-9-name" class="rank-table-content-name"></td>
+                      <td id="table-bottleneck-row-9-duration" class="rank-table-content-duration"></td>
+                      <td id="table-bottleneck-row-9-comments" class="rank-table-content-comments"></td>
                     </tr>
                   </table>
                 </div>
@@ -230,7 +257,7 @@
             <div id="rank-best" class="row rank-best">
               <div class="col-6 rank-movement-list">
                 <p class="rank-movements-title">ETAPAS EM DESTAQUE</p>
-                <div class="container rank-movements-content">
+                <div class="rank-movements-content">
                   <div class="row">
                     <!-- first item -->
                     <div class="col-4 rank-movements-content-item">
@@ -238,9 +265,11 @@
                       <div class="rank-movements-content-item-transaction">
                         <div class="rank-movements-content-item-transaction-text">
                           <p id="best-mov-1-position" class="rank-movements-content-item-transaction-text-number"></p>
-                          <p id="best-mov-1-description" class="rank-movements-content-item-transaction-text-time"></p>
+                          <p id="best-mov-1-description" class="rank-movements-content-item-transaction-text-time">
+                          </p>
                         </div>
-                        <div class="rank-movements-content-item-transaction-arrow"><img src="./resources/images/arrows/arrow-1.svg"></div>
+                        <div class="rank-movements-content-item-transaction-arrow"><img
+                            src="./resources/images/arrows/arrow-1.svg"></div>
                       </div>
                       <div id="best-mov-1-dest" class="rounded-info rank-movements-content-item-name"></div>
                     </div>
@@ -250,9 +279,11 @@
                       <div class="rank-movements-content-item-transaction">
                         <div class="rank-movements-content-item-transaction-text">
                           <p id="best-mov-2-position" class="rank-movements-content-item-transaction-text-number"></p>
-                          <p id="best-mov-2-description" class="rank-movements-content-item-transaction-text-time"></p>
+                          <p id="best-mov-2-description" class="rank-movements-content-item-transaction-text-time">
+                          </p>
                         </div>
-                        <div class="rank-movements-content-item-transaction-arrow"><img src="./resources/images/arrows/arrow-1.svg"></div>
+                        <div class="rank-movements-content-item-transaction-arrow"><img
+                            src="./resources/images/arrows/arrow-1.svg"></div>
                       </div>
                       <div id="best-mov-2-dest" class="rounded-info rank-movements-content-item-name"></div>
                     </div>
@@ -262,9 +293,11 @@
                       <div class="rank-movements-content-item-transaction">
                         <div class="rank-movements-content-item-transaction-text">
                           <p id="best-mov-3-position" class="rank-movements-content-item-transaction-text-number"></p>
-                          <p id="best-mov-3-description" class="rank-movements-content-item-transaction-text-time"></p>
+                          <p id="best-mov-3-description" class="rank-movements-content-item-transaction-text-time">
+                          </p>
                         </div>
-                        <div class="rank-movements-content-item-transaction-arrow"><img src="./resources/images/arrows/arrow-1.svg"></div>
+                        <div class="rank-movements-content-item-transaction-arrow"><img
+                            src="./resources/images/arrows/arrow-1.svg"></div>
                       </div>
                       <div id="best-move-3-dest" class="rounded-info rank-movements-content-item-name"></div>
                     </div>
@@ -354,97 +387,100 @@
             </div>
           </div>
 
-            <!-- basic statistics -->
-            <div class="container statistics">
-              <div class="statistics-len4 statistics-card"><div class="card">
+          <!-- basic statistics -->
+          <div class="statistics w-100">
+            <div class="statistics-len5 statistics-card">
+              <div class="card">
                 <div id="statistics-wrost-title-1" class="statistics-card-title"></div>
                 <div id="statistics-wrost-title-2" class="statistics-card-title"></div>
                 <div id="statistics-wrost-value" class="statistics-card-value"></div>
                 <div id="statistics-wrost-position" class="statistics-card-info"></div>
-              </div></div>
-              <div class="statistics-len4 statistics-card"><div class="card">
+              </div>
+            </div>
+            <div class="statistics-len4 statistics-card">
+              <div class="card">
                 <div id="statistics-best-title-1" class="statistics-card-title"></div>
                 <div id="statistics-best-title-2" class="statistics-card-title"></div>
                 <div id="statistics-best-value" class="statistics-card-value"></div>
                 <div id="statistics-best-position" class="statistics-card-info"></div>
-              </div></div>
-              <div class="statistics-len3 statistics-card"><div class="card">
+              </div>
+            </div>
+            <div class="statistics-len3 statistics-card">
+              <div class="card">
                 <div id="statistics-duration-title-1" class="statistics-card-title"></div>
                 <div id="statistics-duration-title-2" class="statistics-card-title"></div>
                 <div id="statistics-duration-value" class="statistics-card-value"></div>
                 <div id="statistics-duration-position" class="statistics-card-info"></div>
-              </div></div>
-              <div class="statistics-len2 statistics-card"><div class="card">
+              </div>
+            </div>
+            <div class="statistics-len2 statistics-card">
+              <div class="card">
                 <div id="statistics-moves-title-1" class="statistics-card-title"></div>
                 <div id="statistics-moves-title-2" class="statistics-card-title"></div>
                 <div id="statistics-moves-value" class="statistics-card-value"></div>
-              </div></div>
-              <div class="statistics-len1 statistics-card"><div class="card">
+              </div>
+            </div>
+            <div class="statistics-len1 statistics-card">
+              <div class="card">
                 <div id="statistics-finished-title-1" class="statistics-card-title"></div>
                 <div id="statistics-finished-title-2" class="statistics-card-title"></div>
                 <div id="statistics-finished-value" class="statistics-card-value"></div>
                 <div id="statistics-finished-position" class="statistics-card-info"></div>
-              </div></div>
-            </div>
-
-            <!-- comparation chart -->
-            <div class="container chart card">
-              <div class="row">
-                <div id="chart"></div>
               </div>
             </div>
+          </div>
 
-            <!-- footer -->
-            <div class="container footer">
-              <div class="row">
-                <div class="col-4 card best-times">
-                  <div class="best-times-title">
-                    RANKING DOS MELHORES TEMPOS
-                  </div>
-                  <div class="best-times-info">
-                    Abaixo a lista das varas com melhores tempos das macro etapas dos processos
-                  </div>
-                  <div class="best-times-line">
-                  </div>
-                  <div id="best-time-1" class="best-times-item">
-                  </div>
-                  <div id="best-time-2" class="best-times-item">
-                  </div>
-                  <div id="best-time-3" class="best-times-item">
-                  </div>
-                  <div id="best-time-4" class="best-times-item">
-                  </div>
-                  <div id="best-time-5" class="best-times-item">
-                  </div>
-
-                  <div class="best-times-item-separator"></div>
-
-                  <div id="best-time-6" class="best-times-item">
-                  </div>
-                  <div id="best-time-7" class="best-times-item">
-                  </div>
-                  <div id="best-time-8" class="best-times-item">
-                  </div>
-                  <div id="best-time-9" class="best-times-item">
-                  </div>
-                  <div id="best-time-10" class="best-times-item">
-                  </div>
-                  
-                </div>
-                <div class="col-8 map">
-                  <div class="map-title"><p>MAPA DA REGIÃO</p></div>
-                  <div id="map"></div>
-                </div>
-              </div>
+          <!-- comparation chart -->
+          <div class="chart card">
+            <div class="chart-title">Média de tempo processual</div>
+            <div class="row">
+              <div id="chart"></div>
             </div>
+          </div>
+
+          <!-- footer -->
+          <div class="w-100"></div>
+          <div class="col-4 card best-times">
+            <div class="best-times-title">
+              RANKING DOS MELHORES TEMPOS
+            </div>
+            <div class="best-times-info">
+              Abaixo a lista das varas com melhores tempos das macro etapas dos processos
+            </div>
+            <ol class="best-units">
+              <li id="best-time-1" class="best-times-item">13ª Vara Cível de Belém</li>
+              <li id="best-time-2" class="best-times-item">1ª Vara da Infância e da Juventude de Belém</li>
+              <li id="best-time-3" class="best-times-item">4ª Vara da Infância e da Juventude de Belém</li>
+              <li id="best-time-4" class="best-times-item">Comarca de Curionópolis</li>
+              <li id="best-time-5" class="best-times-item">Comarca de Salvaterra</li>
+            </ol>
+            <div class="best-times-item-separator"></div>
+            <ol start="11">
+              <li id="best-time-6" class="best-times-item">Corregedoria do Interior Vara de Execução de Penas e Medidas
+                Alternativas</li>
+              <li id="best-time-7" class="best-times-item">Vara da Infância e da Juventude de Altamira</li>
+              <li id="best-time-8" class="best-times-item">Vara da Infância e Juventude Distrital de Icoaraci</li>
+              <li id="best-time-9" class="best-times-item">Vara da Infância e Juventude Distrital de Olinda e Recife
+              </li>
+              <li id="best-time-10" class="best-times-item">Fórum Rodolfo Aureliano</li>
+            </ol>
+          </div>
+          <div class="col-8 map">
+            <div class="map-title">
+              <p>MAPA DA REGIÃO</p>
+            </div>
+            <div id="map"></div>
+          </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- scripts -->
-    <script src="./js/header.js" ></script>
-    <script src="./js/index.js" ></script>
-    <script src="./js/components.js" ></script>
-    <script src="./js/rank-chart.js" ></script>
-  </body>
+  <!-- scripts -->
+  <script src="./js/header.js"></script>
+  <script src="./js/index.js"></script>
+  <script src="./js/components.js"></script>
+  <script src="./js/rank-chart.js"></script>
+</body>
+
 </html>

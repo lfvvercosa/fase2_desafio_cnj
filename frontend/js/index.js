@@ -127,8 +127,7 @@ function setBestRankComponent() {
 
 function setStatisticsComponent(){
   //worst
-  $('#statistics-wrost-title-1').html('Pior')
-  $('#statistics-wrost-title-2').html('Desempenho')
+  $('#statistics-wrost-title-1').html('Pior <br>Desempenho')
   $('#statistics-wrost-value').html('DEFESA')
   $('#statistics-wrost-position').html('19'+'° de 120 varas')
   //statistics-wrost-title-1
@@ -161,7 +160,7 @@ function setStatisticsComponent(){
 }
 
 function setFooterRankComponent() {
-  $('#best-time-1').html('enwniofnioeffwe')
+  // $('#best-time-1').html('')
   //best-time-2
   //best-time-3
   //best-time-4

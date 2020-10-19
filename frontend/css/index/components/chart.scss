@@ -1,12 +1,18 @@
 .chart {
-  height: 54.9rem;
-  margin-bottom: 4.2rem;
-  padding: 0.5rem;
+  height: auto;
+  padding: 1rem;
+  &-title {
+    font-family: "OpenSans-Bold";
+    font-size: 1.5rem;
+    padding: 0 1rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+  }
   .row {
     height: 100%;
     #chart {
-      max-height: 54.9rem;
-      height: 100%;
+      height: auto;
+      padding: 1rem;
     }
   }
 }
