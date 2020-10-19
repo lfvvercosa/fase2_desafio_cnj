@@ -1,0 +1,26 @@
+.map {
+  margin: 0;
+  padding-right: 0;
+  .row {
+    height: 100%;
+  }
+  &-title {
+    font-family: 'OpenSans-Bold';
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    p {
+    
+      margin: 0;
+    }
+  }
+}
+
+#map {
+  min-height: 50rem;
+  width: 100%;
+    border-radius: 0.5rem;;
+}
+
+.gm-svpc, .gmnoprint, .gm-fullscreen-control {
+  display: none;
+}
