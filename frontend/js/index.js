@@ -8,26 +8,29 @@ function setRankComponent() {
 }
 
 function setBottleneckRankComponent() {
-  $('#bottleneck-mov-1-source').html('MANDADO')
+  getVaraByID((json)=>{
+    $('#bottleneck-mov-1-source').html(json.worst_steps[0].origin)
+    $('#bottleneck-mov-1-description').html(json.worst_steps[0].med_time)
+    $('#bottleneck-mov-1-dest').html(json.worst_steps[0].destination)
+
+    $('#bottleneck-mov-2-source').html(json.worst_steps[1].origin)
+    $('#bottleneck-mov-2-description').html(json.worst_steps[1].med_time)
+    $('#bottleneck-mov-2-dest').html(json.worst_steps[1].destination)
+
+    $('#bottleneck-mov-3-source').html(json.worst_steps[2].origin)
+    $('#bottleneck-mov-3-description').html(json.worst_steps[2].med_time)
+    $('#bottleneck-mov-3-dest').html(json.worst_steps[2].destination)
+
+    //bottoleneck table
+    $('#table-bottleneck-tab1').html(json.worst_steps[0].origin + '-' + json.worst_steps[0].destination)
+    $('#table-bottleneck-tab2').html(json.worst_steps[1].origin + '-' + json.worst_steps[1].destination)
+    $('#table-bottleneck-tab3').html(json.worst_steps[2].origin + '-' + json.worst_steps[2].destination)
+  })
   $('#bottleneck-mov-1-position').html('13'+'°')
-  $('#bottleneck-mov-1-description').html('3 meses')
-  $('#bottleneck-mov-1-dest').html('RECEBIMENTO')
-
-  //bottleneck-mov-2-source
-  //bottleneck-mov-2-position
-  //bottleneck-mov-2-description
-  //bottleneck-mov-2-dest
-
-  //bottleneck-mov-3-source
-  //bottleneck-mov-3-position
-  //bottleneck-mov-3-description
-  //bottleneck-mov-3-dest
+  $('#bottleneck-mov-2-position').html('13'+'°')
+  $('#bottleneck-mov-3-position').html('13'+'°')
 
   //bottoleneck table
-  $('#table-bottleneck-tab1').html('Mandado-Recebimento')
-  //table-bottleneck-tab2 
-  //table-bottleneck-tab3 
-
   $('#table-bottleneck-row-1-name').html('wefnweonfewnfo')
   $('#table-bottleneck-row-1-duration').html('3 meses')
   $('#table-bottleneck-row-1-comments').html('wenfwfoni fwfnwenfiowen woifnwoif')
@@ -67,27 +70,31 @@ function setBottleneckRankComponent() {
 }
 
 function setBestRankComponent() {
+  getVaraByID((json)=>{
+    //best movements component
+    $('#best-mov-1-source').html(json.best_steps[0].origin)
+    $('#best-mov-1-description').html(json.best_steps[0].med_time)
+    $('#best-mov-1-dest').html(json.best_steps[0].destination)
+
+    $('#best-mov-2-source').html(json.best_steps[1].origin)
+    $('#best-mov-2-description').html(json.best_steps[1].med_time)
+    $('#best-mov-2-dest').html(json.best_steps[1].destination)
+
+    $('#best-mov-3-source').html(json.best_steps[2].origin)
+    $('#best-mov-3-description').html(json.best_steps[2].med_time)
+    $('#best-mov-3-dest').html(json.best_steps[2].destination)
+
+    //best movements table
+    $('#table-best-tab1').html(json.best_steps[0].origin + '-' + json.best_steps[0].destination)
+    $('#table-best-tab2').html(json.best_steps[1].origin + '-' + json.best_steps[1].destination)
+    $('#table-best-tab3').html(json.best_steps[2].origin + '-' + json.best_steps[2].destination)
+  })
   //best movements component
-  //best-mov-1-source
   //best-mov-1-position
-  //best-mov-1-description
-  //best-mov-1-dest
-
-  //best-mov-2-source
   //best-mov-2-position
-  //best-mov-2-description
-  //best-mov-2-dest
-
-  //best-mov-3-source
   //best-mov-3-position
-  //best-mov-3-description
-  //best-mov-3-dest
 
   //best movements table
-  //table-best-tab1 Mandado-Recebimento
-  //table-best-tab2
-  //table-best-tab3
-
   //table-best-row-1-name
   //table-best-row-1-duration
   //table-best-row-1-comments
@@ -126,37 +133,37 @@ function setBestRankComponent() {
 }
 
 function setStatisticsComponent(){
-  //worst
-  $('#statistics-wrost-title-1').html('Pior <br>Desempenho')
-  $('#statistics-wrost-value').html('DEFESA')
-  $('#statistics-wrost-position').html('19'+'° de 120 varas')
-  //statistics-wrost-title-1
-  //statistics-wrost-title-2
-  //statistics-wrost-value 
-  //statistics-wrost-position 
+  getVaraByID((json)=> {
+    //worst
+    $('#statistics-wrost-title-1').html('Pior <br>desempenho')
+    $('#statistics-wrost-value').html(json.worst_steps[0].origin)
+    $('#statistics-wrost-position').html('19' + '° de 120 varas')
+    //statistics-wrost-title-2
+    //statistics-wrost-position
 
-  //best
-  //statistics-best-title-1
-  //statistics-best-title-2
-  //statistics-best-value 
-  //statistics-best-position
+    //best
+    $('#statistics-best-title-1').html('Melhor <br>desempenho')
+    $('#statistics-best-value').html(json.best_steps[0].origin)
+    //statistics-best-title-2
+    //statistics-best-position
 
-  //duration
-  //statistics-duration-title-1
-  //statistics-duration-title-2
-  //statistics-duration-value 
-  //statistics-duration-position
+    //duration
+    $('#statistics-duration-title-1').html('Duração da <br>baixa do processo')
+    $('#statistics-duration-value').html(json.days_finish_process)
+    //statistics-duration-title-2
+    //statistics-duration-position
 
-  //movements
-  //statistics-moves-title-1
-  //statistics-moves-title-2
-  //statistics-moves-value 
+    //movements
+    $('#statistics-moves-title-1').html('Movimentação <br>por processo')
+    $('#statistics-moves-value').html(json.movements)
+    //statistics-moves-title-2
 
-  //finished
-  //statistics-finished-title-1
-  //statistics-finished-title-2
-  //statistics-finished-value 
-  //statistics-finished-position
+    //finished
+    $('#statistics-finished-title-1').html('Processos <br>julgados')
+    $('#statistics-finished-value').html(json.finished_processes)
+    //statistics-finished-title-2
+    //statistics-finished-position
+  })
 }
 
 function setFooterRankComponent() {
