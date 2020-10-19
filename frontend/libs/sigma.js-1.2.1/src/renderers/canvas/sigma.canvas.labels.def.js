@@ -27,7 +27,7 @@
 
     fontSize = (settings('labelSize') === 'fixed') ?
       settings('defaultLabelSize') :
-      settings('labelSizeRatio') * size;
+      settings('labelSizeRatio') * size/7;
 
     context.font = (settings('fontStyle') ? settings('fontStyle') + ' ' : '') +
       fontSize + 'px ' + settings('font');
@@ -37,7 +37,7 @@
 
     context.fillText(
       node.label,
-      Math.round(node[prefix + 'x'] - size ),
+      Math.round(node[prefix + 'x'] - size + size/4),
       Math.round(node[prefix + 'y'] - size + fontSize )
     );
   };

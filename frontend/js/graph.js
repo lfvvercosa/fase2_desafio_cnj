@@ -3,16 +3,34 @@ sigma.canvas.nodes.square = function(node, context, settings) {
   var prefix = settings('prefix') || '',
       size = node[prefix + 'size']
 
-  context.fillStyle = node.color || settings('defaultNodeColor')
+  var gradient = context.createLinearGradient(node[prefix+'x']-size,
+   node[prefix+'y']-size, node[prefix+'x']-size, node[prefix+'y']+size/2.8)
+  gradient.addColorStop(0, "white")
+  gradient.addColorStop(0.1, "#CDCDCD")
+  gradient.addColorStop(0.6, "#A9A9A9")
+  gradient.addColorStop(1, "#A9A9A9")
+  
+
+  context.fillStyle = gradient
+
   context.beginPath()
-  context.rect(
+  context.fillRect(
     node[prefix + 'x'] - size,
     node[prefix + 'y'] - size,
-    2*size,
-    size
+    1.7*size,
+    size/2.8
   )
-
   context.closePath()
+
+  context.fillStyle = "#0C0C0C"
+
+  context.beginPath()
+  context.strokeRect(node[prefix + 'x'] - size,
+  node[prefix + 'y'] - size,
+  1.7*size,
+  size/2.8)
+  context.closePath()
+  
   context.fill()
 }
 
@@ -170,7 +188,7 @@ function createGraphViewStructure(){
   var rootNode = getNode(root)
   setHorizontalCount(rootNode, [])
 
-  var squareWidth = 0.133
+  var squareWidth = 0.25
   var elementsSpace = squareWidth/4
   var rootPositionX = 0.5
 
@@ -298,10 +316,11 @@ sRight = new sigma({
     edgeLabelSize: 'proportional',
     batchEdgesDrawing: true,
     maxEdgeSize: 4,
-    maxNodeSize: 40,
+    maxNodeSize: 60,
     nodesPowRatio: 0,
     edgesPowRatio: 0,
-    zoomingRatio: 1
+    zoomingRatio: 1,
+    labelSize: ""
   }
 })
 
