@@ -178,14 +178,17 @@ function setStatisticsComponent(){
 }
 
 function setFooterRankComponent() {
-  // $('#best-time-1').html('')
-  //best-time-2
-  //best-time-3
-  //best-time-4
-  //best-time-5
-  //best-time-6
-  //best-time-7
-  //best-time-8
-  //best-time-9
-  //best-time-10
+    var vara_id = 1
+    getBestVaras(vara_id, 10, (json)=>{
+        $('#best-time-1').html('1º - ' + json[0].name)
+        $('#best-time-2').html('2º - ' + json[1].name)
+        $('#best-time-3').html('3º - ' + json[2].name)
+        $('#best-time-4').html('4º - ' + json[3].name)
+        $('#best-time-5').html('5º - ' + json[4].name)
+        $('#best-time-6').html('6º - ' + json[5].name)
+        $('#best-time-7').html('7º - ' + json[6].name)
+        $('#best-time-8').html('8º - ' + json[7].name)
+        $('#best-time-9').html('9º - ' + json[8].name)
+        $('#best-time-10').html('10º - ' + json[9].name)
+    })
 }
