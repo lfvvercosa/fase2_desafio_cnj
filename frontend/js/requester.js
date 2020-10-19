@@ -29,3 +29,11 @@ function getBestVarasOnStep(step_id, vara_id, amount_of_varas, callback) {
     callback(data)
   });
 }
+
+function getBestVaras(vara_id, amount_of_varas, callback) {
+  var url = urlBase + 'processes/bestVaras/?vara_id=' + vara_id + '&amount_of_varas=' + amount_of_varas
+  jQuery.get(url, (data)=>{
+    console.log(data)
+    callback(data)
+  });
+}
