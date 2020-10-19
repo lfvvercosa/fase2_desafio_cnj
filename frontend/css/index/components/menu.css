@@ -1,0 +1,33 @@
+.menu-content {
+  background-color: white;
+  /* height: 65rem; */
+  /* padding: 1rem; */
+  display: flex;
+  align-items: stretch;
+  height: auto;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+}
+.menu-content object {
+  /* padding-top: 0.5rem; */
+  /* padding-bottom: 0.5rem; */
+  padding: 1rem;
+  min-height: 4rem;
+  border-left: 10px solid transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+  width: 100%;
+  filter: invert(64%) sepia(41%) saturate(20%) hue-rotate(328deg)
+  brightness(99%) contrast(100%);
+}
+.menu-content-icon-selected {
+  border-left: 10px solid #51A2D6;
+  filter: invert(60%) sepia(96%) saturate(486%) hue-rotate(175deg)
+    brightness(87%) contrast(91%) !important;
+}
+
+/*# sourceMappingURL=menu.css.map */

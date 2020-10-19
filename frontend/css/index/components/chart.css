@@ -1,0 +1,22 @@
+.chart {
+  height: auto;
+  margin-bottom: 4.2rem;
+  padding: 1rem;
+}
+.chart-title {
+  font-family: "OpenSans-Bold";
+  font-size: 1.5rem;
+  padding: 0 1rem;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+
+}
+.chart .row {
+  height: 100%;
+}
+.chart .row #chart {
+  max-height: auto;
+  height: 100%;
+}
+
+/*# sourceMappingURL=chart.css.map */
