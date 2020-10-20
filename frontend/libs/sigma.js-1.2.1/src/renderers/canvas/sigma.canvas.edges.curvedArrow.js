@@ -14,24 +14,74 @@
    */
   sigma.canvas.edges.curvedArrow =
     function(edge, source, target, context, settings) {
-    var color = edge.color,
-        prefix = settings('prefix') || '',
-        edgeColor = settings('edgeColor'),
-        defaultNodeColor = settings('defaultNodeColor'),
-        defaultEdgeColor = settings('defaultEdgeColor'),
-        cp = {},
-        size = edge[prefix + 'size'] || 1,
-        tSize = target[prefix + 'size'],
-        sX = source[prefix + 'x'],
-        sY = source[prefix + 'y'],
-        tX = target[prefix + 'x'],
-        tY = target[prefix + 'y'],
-        aSize = Math.max(size * 2.5, settings('minArrowSize')),
-        d,
-        aX,
-        aY,
-        vX,
-        vY;
+      var color = edge.color,
+          prefix = settings('prefix') || '',
+          edgeColor = settings('edgeColor'),
+          defaultNodeColor = settings('defaultNodeColor'),
+          defaultEdgeColor = settings('defaultEdgeColor'),
+          cp = {},
+          size = edge[prefix + 'size'] || 1,
+          tSize = target[prefix + 'size'],
+          sX = source[prefix + 'x'],
+          sY = source[prefix + 'y'],
+          tX = target[prefix + 'x'],
+          tY = target[prefix + 'y'],
+          beta = Math.atan2(tY-sY, tX-sX),
+          bAngle = beta * 180 / Math.PI,
+          aSize = Math.max(size * 2.5, settings('minArrowSize')),
+          d,
+          aX,
+          aY,
+          vX,
+          vY;
+        
+      if(bAngle < 0)
+        bAngle += 360
+      
+      if(bAngle != 90 || bAngle != 180){
+        if(bAngle >= 0 && bAngle < 90){
+          console.log('1')
+          var aAngle = 90 - bAngle,
+          alfa = aAngle*Math.PI/180,
+          l = size*(1/Math.abs(Math.cos(alfa)) - 1)
+          tSize += l*4
+          tX = tX + l*Math.abs(Math.cos(beta))
+          tY = tY - l*Math.abs(Math.sin(beta))
+        }
+        else if(bAngle >= 90 && bAngle < 180) {
+          console.log('2')
+          var aAngle = 180 - bAngle,
+          alfa = aAngle*Math.PI/180,
+          l = size*(1/Math.abs(Math.cos(alfa)) - 1)
+          tSize += l*4
+          tX = tX - l*Math.abs(Math.cos(beta))
+          tY = tY - l*Math.abs(Math.sin(beta))
+        }
+        else if(bAngle >= 180 && bAngle < 270) {
+          console.log('3')
+          var aAngle = 270 - bAngle,
+          alfa = aAngle*Math.PI/180,
+          l = size*(1/Math.abs(Math.cos(alfa)) - 1)
+          tSize += l*4
+          tX = tX - l*Math.abs(Math.cos(beta))
+          tY = tY + l*Math.abs(Math.sin(beta))
+        }
+        else if(bAngle >= 270 && bAngle < 360) {
+          console.log('4')
+          var aAngle = 360 - bAngle,
+          alfa = aAngle*Math.PI/180,
+          l = size*(1/Math.abs(Math.cos(alfa)) - 1)
+          tSize += l*4
+          tX = tX + l*Math.abs(Math.cos(beta))
+          tY = tY - l*Math.abs(Math.sin(beta))
+        }    
+        else {
+          console.log('5 - '+bAngle)
+        }
+      }
+      else {
+        console.log('6 - '+bAngle)
+      }
 
     cp = (source.id === target.id) ?
       sigma.utils.getSelfLoopControlPoints(sX, sY, tSize) :
@@ -65,7 +115,7 @@
           break;
       }
 
-    context.strokeStyle = color;
+    context.strokeStYle = color;
     context.lineWidth = size;
     context.beginPath();
     context.moveTo(sX, sY);
@@ -76,7 +126,7 @@
     }
     context.stroke();
 
-    context.fillStyle = color;
+    context.fillStYle = color;
     context.beginPath();
     context.moveTo(aX + vX, aY + vY);
     context.lineTo(aX + vY * 0.6, aY - vX * 0.6);
