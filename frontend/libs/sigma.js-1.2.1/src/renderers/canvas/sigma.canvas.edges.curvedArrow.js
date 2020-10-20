@@ -21,7 +21,7 @@
           defaultEdgeColor = settings('defaultEdgeColor'),
           cp = {},
           size = edge[prefix + 'size'] || 1,
-          tSize = target[prefix + 'size'],
+          tSize = 0,//target[prefix + 'size'],
           sX = source[prefix + 'x'],
           sY = source[prefix + 'y'],
           tX = target[prefix + 'x'],
@@ -34,55 +34,10 @@
           aY,
           vX,
           vY;
-        
-      if(bAngle < 0)
-        bAngle += 360
-      
-      if(bAngle != 90 || bAngle != 180){
-        if(bAngle >= 0 && bAngle < 90){
-          console.log('1')
-          var aAngle = 90 - bAngle,
-          alfa = aAngle*Math.PI/180,
-          l = size*(1/Math.abs(Math.cos(alfa)) - 1)
-          tSize += l*4
-          tX = tX + l*Math.abs(Math.cos(beta))
-          tY = tY - l*Math.abs(Math.sin(beta))
-        }
-        else if(bAngle >= 90 && bAngle < 180) {
-          console.log('2')
-          var aAngle = 180 - bAngle,
-          alfa = aAngle*Math.PI/180,
-          l = size*(1/Math.abs(Math.cos(alfa)) - 1)
-          tSize += l*4
-          tX = tX - l*Math.abs(Math.cos(beta))
-          tY = tY - l*Math.abs(Math.sin(beta))
-        }
-        else if(bAngle >= 180 && bAngle < 270) {
-          console.log('3')
-          var aAngle = 270 - bAngle,
-          alfa = aAngle*Math.PI/180,
-          l = size*(1/Math.abs(Math.cos(alfa)) - 1)
-          tSize += l*4
-          tX = tX - l*Math.abs(Math.cos(beta))
-          tY = tY + l*Math.abs(Math.sin(beta))
-        }
-        else if(bAngle >= 270 && bAngle < 360) {
-          console.log('4')
-          var aAngle = 360 - bAngle,
-          alfa = aAngle*Math.PI/180,
-          l = size*(1/Math.abs(Math.cos(alfa)) - 1)
-          tSize += l*4
-          tX = tX + l*Math.abs(Math.cos(beta))
-          tY = tY - l*Math.abs(Math.sin(beta))
-        }    
-        else {
-          console.log('5 - '+bAngle)
-        }
-      }
-      else {
-        console.log('6 - '+bAngle)
-      }
 
+    var width = source[prefix + 'size'] * 2
+    var height = source[prefix+ 'size'] * 2
+      
     cp = (source.id === target.id) ?
       sigma.utils.getSelfLoopControlPoints(sX, sY, tSize) :
       sigma.utils.getQuadraticControlPoint(sX, sY, tX, tY);
@@ -93,13 +48,31 @@
       aY = cp.y1 + (tY - cp.y1) * (d - aSize - tSize) / d;
       vX = (tX - cp.x1) * aSize / d;
       vY = (tY - cp.y1) * aSize / d;
+      while((aX + vX >= tX - target[prefix + 'size'] && aX + vX <= tX - target[prefix + 'size'] + width)
+      && (aY + vY >= tY - height/8 && aY + vY <= tY - height/8 + height/4)) {
+        aX = cp.x + (tX - cp.x) * (d - aSize - tSize) / d;
+        aY = cp.y + (tY - cp.y) * (d - aSize - tSize) / d;
+        vX = (tX - cp.x) * aSize / d;
+        vY = (tY - cp.y) * aSize / d;
+        tSize += 1
+      }
     }
     else {
       d = Math.sqrt(Math.pow(tX - cp.x, 2) + Math.pow(tY - cp.y, 2));
+      
       aX = cp.x + (tX - cp.x) * (d - aSize - tSize) / d;
       aY = cp.y + (tY - cp.y) * (d - aSize - tSize) / d;
       vX = (tX - cp.x) * aSize / d;
       vY = (tY - cp.y) * aSize / d;
+
+      while((aX + vX >= tX - target[prefix + 'size'] && aX + vX <= tX - target[prefix + 'size'] + width)
+      && (aY + vY >= tY - height/8 && aY + vY <= tY - height/8 + height/4)) {
+        aX = cp.x + (tX - cp.x) * (d - aSize - tSize) / d;
+        aY = cp.y + (tY - cp.y) * (d - aSize - tSize) / d;
+        vX = (tX - cp.x) * aSize / d;
+        vY = (tY - cp.y) * aSize / d;
+        tSize += 1
+      }
     }
 
     if (!color)

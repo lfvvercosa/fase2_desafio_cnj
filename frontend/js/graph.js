@@ -7,42 +7,42 @@ sigma.canvas.nodes.square = function(node, context, settings) {
   var height = size * 2//size/2.8
 
   var gradient = context.createLinearGradient(
-    node[prefix+'x'],// - width/2,
-    node[prefix+'y'],// - height/2,
-    node[prefix+'x'],// - width/2,
-    node[prefix+'y'] + size)// + height/2)
+    node[prefix+'x'] - size,
+    node[prefix+'y'] - height/8,
+    node[prefix+'x'] - size,
+    node[prefix+'y'] + height/4)
   
   gradient.addColorStop(0, "white")
-  gradient.addColorStop(0.1, "#CDCDCD")
+  gradient.addColorStop(0.3, "#CDCDCD")
   gradient.addColorStop(0.6, "#A9A9A9")
   gradient.addColorStop(1, "#A9A9A9")
   
-  //context.fillStyle = gradient
+  context.fillStyle = gradient
   
-  /* context.beginPath()
+  context.beginPath()
   context.fillRect(
-    node[prefix + 'x'],// - width/2,
-    node[prefix + 'y'],// - height/2,
+    node[prefix + 'x'] - size,
+    node[prefix + 'y'] - height/8,
     width,
-    height    
+    height/4    
   )
   context.closePath()
 
   context.fillStyle = "#0C0C0C"
-*/
+
   context.beginPath()
   context.strokeRect(
-    node[prefix + 'x'] - width/2,
-    node[prefix + 'y'] - height/2,
+    node[prefix + 'x'] - size,
+    node[prefix + 'y'] - height/8,
     width,
-    height)
+    height/4)
   context.closePath() 
 
-  context.fillStyle = "#000000"
+  /* context.fillStyle = "#000000"
   context.beginPath()
   context.arc(node[prefix + 'x'], node[prefix + 'y'], size, 0, 2 * Math.PI)
   context.stroke()
-  context.closePath()
+  context.closePath() */
 }
 
 /**
@@ -199,7 +199,7 @@ function createGraphViewStructure(){
   var rootNode = getNode(root)
   setHorizontalCount(rootNode, [])
 
-  var squareWidth = 0.25
+  var squareWidth = 0.15
   var elementsSpace = squareWidth/4
   var rootPositionX = 0.5
 
@@ -245,7 +245,7 @@ function setEdgeType(){
 
 function setNodePosition(node, parent, pos, squareWidth, elementsSpace, rootPositionX){
   if(!node.x || !node.y){
-    var rowHeight = 0.25
+    var rowHeight = 0.35
     if(node.id == 'n'+0){
       node.x = rootPositionX
     }
