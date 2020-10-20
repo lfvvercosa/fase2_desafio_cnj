@@ -118,7 +118,7 @@ Conforme descrito na sessão [Definição do Problema](#definicao_problema), a s
 A ideia geral é fornecer uma plataforma onde o Juiz / Desembargador possa consultar a produtividade, identificar os problemas de sua unidade judiciária, bem como obter insigths sobre como incrementar sua produtividade através da comparação e troca de experiência com outras unidades judiciárias semelhantes a sua.
 
 #### Arquitetura geral
-<img src='/reports/figures/solucao_geral.png'>
+<img src='/reports/figures/Solucao_geral.png'>
 
 >**Solução: Painel de Tempos e Produtividade**
 Com esta interface o Juiz / Desembargador poderá acompanhar o desempenho da sua unidade judiciária em relação a outras unidades judiciárias semelhantes, em relação as dimensões: tempo e produtividade. Nesta solução será possível:
@@ -228,7 +228,29 @@ A escolha da variável ASSUNTO RAIZ, mostrou-se interessante pois de forma simpl
     
 O terceiro direcionamento **"Comparar com base nos recursos disponíveis"** devera ser implementado na segunda etapa do Hackathon.
 
+## Avaliação
+Uma parte importante da metodologia CRISP-DM é a validação do modelo gerado com os usuários especialistas para que o mesmo possa ser melhorado. Durante esta fase, é comum, voltarmos para qualquer fase da metodologia, não somente para a fase de ENTENDIMENTO DO NEGÓCIO como a imagem do CRISP-DM demonstra, uma vez que sua representação é meramente didática.
 
+### Feedback dos especialistas
+Para facilitar a avaliação dos resultados gerados pelos diversos modelos gerados, foi desenvolvida (ainda em draft) uma interface interna para que o usuário possa justamente com o Cientista de Dados, visualizar graficamente os grupos criados (diagrama de dispersão), bem como os dados que o compõe: Unidade Judiciária, Justiça, Grau, e as variáveis utilizadas para clusterização. 
+
+<img src='/reports/figures/analise_cluster.png'>
+
+> Com opções previstas de escolher o critério e filtrar os clusters
+<img src='/reports/figures/filtro_cluster.png'>
+
+### Redefinição / Otimização do modelo
+Conforme o feedback ou insigth do Especialista e do Cientista de Dados, pode ser necessário a redefinição de novos FILTROS, AGRUPAMENTOS ou ainda ESCOLHA DE NOVAS VARIÁVEIS DE CLUSTERIZAÇÃO. Não raro a depender do resultado:
+> Uma nova fonte de dados pode ser necessária para enriquecer os dados e por consequencia talvez melhorar o resultado da clusterização.
+
+> Uma melhoria ou ajuste na etapa de pré-processamento (limpeza, agregação) dos dados seja necessária. 
+
+> A escolha de outro algoritmo de clusterização mais eficiente e aderente as características dos dados.
+
+> Ou em algumas situações, será neessário apenas uma otimização no parâmetro do algoritimo de clusterização
+
+Especificamente para o nosso caso, ajustamos os parâmetros eps e num_sample do algoritmo utilizado: DBScan.
+<img src='/reports/figures/otimizar_dbscan.png'>
 ## Bibliotecas utilizadas
 ### PM4Py
 PM4Py é a plataforma de mineração de processos de código aberto líder escrita em Python.
