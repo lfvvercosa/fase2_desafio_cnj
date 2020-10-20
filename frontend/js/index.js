@@ -8,7 +8,6 @@ function setRankComponent() {
 }
 
 function setBottleneckRankComponent() {
-  var vara_id = 1
   getVaraByID(vara_id, (json)=>{
     $('#bottleneck-mov-1-source').html(json.worst_steps[0].origin)
     $('#bottleneck-mov-1-description').html(json.worst_steps[0].med_time)
@@ -75,7 +74,7 @@ function setBottleneckRankComponent() {
 }
 
 function setBestRankComponent() {
-  var vara_id = 1
+  
   getVaraByID(vara_id,(json)=>{
     //best movements component
     $('#best-mov-1-source').html(json.best_steps[0].origin)
@@ -144,7 +143,6 @@ function setBestRankComponent() {
 }
 
 function setStatisticsComponent(){
-  var vara_id = 1
   getVaraByID(vara_id, (json)=> {
     //worst
     $('#statistics-wrost-title-1').html('Pior <br>desempenho')
@@ -178,7 +176,6 @@ function setStatisticsComponent(){
 }
 
 function setFooterRankComponent() {
-    var vara_id = 1
     getBestVaras(vara_id, 10, (json)=>{
         $('#best-time-1').html('1º - ' + json[0].name)
         $('#best-time-2').html('2º - ' + json[1].name)

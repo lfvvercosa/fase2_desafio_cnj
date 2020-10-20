@@ -17,4 +17,4 @@ function setGroupInfoWidth(){
   }
 }
 
-setGroupInfoWidth()
+//setGroupInfoWidth()

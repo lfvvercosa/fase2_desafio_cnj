@@ -8,13 +8,21 @@ function getCourtList(){
 }
 
 function getVaras() {
+  if(courts.length > 0)
+    return courts
   var url = urlBase + 'varas'
   jQuery.get(url, (data)=>{
     console.log(data)
+    courts = data
   });
 }
 
 function getVaraByID(vara_id, callback) {
+  var courtFromCache = court_details.find(c=>c.id == vara_id)
+  if(courtFromCache) {
+    callback(courtFromCache)
+    return
+  }
   var url = urlBase + 'varas/' + vara_id
   jQuery.get(url, (data)=>{
     console.log(data)

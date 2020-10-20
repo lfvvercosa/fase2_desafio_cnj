@@ -1,20 +1,24 @@
 setHeaderComponent()
 
 function setHeaderComponent() {
-  //position
-  $('#position-number').html('18ª')
   
-  //court-name
-  $('#court-name').html('VARA ÚNICA DE ANAJAS')
-  
-  //user
-  $('#username').text('ANTONIO')
-  $('#user-position').text('juiz/Desembargador')
+  getVaraByID(vara_id, (json)=>{
+    //position
+    console.log(JSON.stringify(json))
 
-  //group
-  $('#group-amount').text('GRUPO (120 órgãos)')
-  $('#group-el-1').text('Justiça Comercial')
+    $('#position-number').html(json.ranking+'ª')
+    
+    //court-name
+    $('#court-name').html(json.name)
+    
+    //user
+    $('#username').text('ANTONIO')
+    $('#user-position').text('juiz/Desembargador')
+
+    //group
+    $('#group-amount').text('GRUPO ('+json.group.amount_of_varas+' órgãos)')
+  })
+  $('#group-el-1').text('Justiça Estadual')
   $('#group-el-2').text('1° Grau')
-  $('#group-el-3').text('Competência Mista')
-  $('#group-el-4').text('Justiça Comercial')
+  $('#group-el-3').text('Execução Fiscal')
 }
