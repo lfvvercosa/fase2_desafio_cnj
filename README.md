@@ -36,7 +36,7 @@ O CRISP-DM (CRoss-Industry Standard Process for Data Mining) é uma metodologia 
 importantes e freqüentes entre as fases, enquanto o círculo externo simboliza a natureza cíclica de mineração de dados em si e ilustra que as lições aprendidas durante o processo de mineração de dados e da solução implantada pode desencadear novas questões de negócios, muitas vezes mais focadas.
 
 <img src='reports/figures/CRISP-DM.png'>
-![CRISP-DM](reports/figures/CRISP-DM.png)
+![CRISP-DM](/reports/figures/CRISP-DM.png)
 
 
 ## Bibliotecas utilizadas
