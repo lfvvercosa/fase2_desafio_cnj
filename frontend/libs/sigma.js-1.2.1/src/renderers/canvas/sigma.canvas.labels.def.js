@@ -27,7 +27,7 @@
 
     fontSize = (settings('labelSize') === 'fixed') ?
       settings('defaultLabelSize') :
-      settings('labelSizeRatio') * size/7;
+      settings('labelSizeRatio') * size/6;
 
     context.font = (settings('fontStyle') ? settings('fontStyle') + ' ' : '') +
       fontSize + 'px ' + settings('font');

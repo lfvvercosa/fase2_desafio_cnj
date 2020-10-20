@@ -306,7 +306,7 @@ sLeft = new sigma({
     edgeLabelSize: 'proportional',
     batchEdgesDrawing: true,
     maxEdgeSize: 4,
-    maxNodeSize: 60,
+    maxNodeSize: 50,
     nodesPowRatio: 0,
     edgesPowRatio: 0,
     zoomingRatio: 1,
@@ -328,7 +328,7 @@ sRight = new sigma({
     edgeLabelSize: 'proportional',
     batchEdgesDrawing: true,
     maxEdgeSize: 4,
-    maxNodeSize: 60,
+    maxNodeSize: 50,
     nodesPowRatio: 0,
     edgesPowRatio: 0,
     zoomingRatio: 1,
@@ -341,3 +341,43 @@ sRight = new sigma({
 var dragListener = sigma.plugins.dragNodes(sLeft, sLeft.renderers[0])
 
 var dragListener = sigma.plugins.dragNodes(sRight, sRight.renderers[0])
+
+var noverlapListenerLeft = sLeft.configNoverlap({
+  nodeMargin: 0.1,
+  scaleNodes: 1.05,
+  gridSize: 75,
+  easing: 'quadraticInOut', // animation transition function
+  duration: 10   // animation duration. Long here for the purposes of this example only
+});
+// Bind the events:
+noverlapListenerLeft.bind('start stop interpolate', function(e) {
+  console.log(e.type);
+  if(e.type === 'start') {
+    console.time('noverlap');
+  }
+  if(e.type === 'interpolate') {
+    console.timeEnd('noverlap');
+  }
+});
+
+var noverlapListenerRight = sRight.configNoverlap({
+  nodeMargin: 0.1,
+  scaleNodes: 1.05,
+  gridSize: 75,
+  easing: 'quadraticInOut', // animation transition function
+  duration: 10  // animation duration. Long here for the purposes of this example only
+});
+// Bind the events:
+noverlapListenerRight.bind('start stop interpolate', function(e) {
+  console.log(e.type);
+  if(e.type === 'start') {
+    console.time('noverlap');
+  }
+  if(e.type === 'interpolate') {
+    console.timeEnd('noverlap');
+  }
+});
+
+// Start the layout:
+sLeft.startNoverlap();
+sRight.startNoverlap();
