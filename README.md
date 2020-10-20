@@ -29,7 +29,15 @@ Projeto do Desafio de Process Mining do Hackaton CNJ
     ├── requirements.txt                <- O arquivo de requisitos para reproduzir o ambiente de análise, por ex. gerado com `pip freeze > requirements.txt`
     ├── README.md                       <- README principal para os desenvolvedores deste projeto.
     └── .gitignore                      <- Arquivos ignorados pelo git.
-    
+
+## Bibliotecas utilizadas
+### PM4Py
+PM4Py é a plataforma de mineração de processos de código aberto líder escrita em Python.
+
+>$ pip install pm4py
+
+## Como executar o projeto   
+ 
 ## Metodologia do Projeto
 
 O CRISP-DM (CRoss-Industry Standard Process for Data Mining) é uma metodologia de mineração de dados abrangente e um modelo de processo que auxilia a qualquer um - novatos a especialistas em mineração de dados - com um plano completo para conduzir um projeto de mineração de dados. CRISP-DM divide o ciclo de vida de um projeto de mineração de dados em seis fases: compreensão do negócio, compreensão de dados, preparação de dados, modelagem, avaliação e implantação. A Figura abaixo mostra as fases do CRISP-DM. As setas indicam as dependências mais
@@ -251,11 +259,4 @@ Conforme o feedback ou insigth do Especialista e do Cientista de Dados, pode ser
 
 Especificamente para o nosso caso, ajustamos os parâmetros eps e num_sample do algoritmo utilizado: DBScan.
 <img src='/reports/figures/otimizar_dbscan.png'>
-## Bibliotecas utilizadas
-### PM4Py
-PM4Py é a plataforma de mineração de processos de código aberto líder escrita em Python.
-
->$ pip install pm4py
-
-# Como executar o projeto
 
