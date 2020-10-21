@@ -193,13 +193,12 @@ Foram removidos do log instâncias de processo com dados inconsistentes como dat
 ### Transformações realizadas
 
 #### Criação de campo (breadscrum) nas tabelas auxiliares do SGT: Classe, Assunto e Movimento
-Levando em consideração o [SGT - Sistema de Gestão de Tabelas Processuais Unificadas](https://www.cnj.jus.br/sgt/consulta_publica_classes.php) do CNJ, podemos perceber que os assuntos, classes processuais e movimentos estão organizados em uma hierarquia. Definimos como RAIZ, o item (assunto, classe ou movimento) no primeiro nível da hierarquia a qual pertence o item em questão. 
+Levando em consideração o [SGT - Sistema de Gestão de Tabelas Processuais Unificadas](https://www.cnj.jus.br/sgt/consulta_publica_classes.php) do CNJ, podemos perceber que os assuntos, classes processuais e movimentos estão organizados em uma hierarquia. Os seguintes mapeamentos de classes filhas em classes pais foram realizadas nesse projeto:
 
-> Tomemos como exemplo o assunto: 7619 - Consórcio, que possui a seguinte hierarquia:<br>
->* 1156 - Direito do consumidor
-  * 7771 - Contratos de consumo
-   * 7619 - Consórcio <br>
-> Teríamos como Assunto Raiz o "1156 - Direito do consumidor".
+* Movimentos filhos de Decisão foram mapeados para Decisão
+* Movimentos filhos de Despacho foram mapeados para Despacho
+* Movimentos filhos de Julgamento foram mapeados para Julgamento
+* Movimentos de Baixa ou Arquivamento foram mapeados para Baixa/Arquivamento
 
 Essa informação foi importante para a simplificação do modelo, contorno da restrição quanto a capacidade de processamento dos dados (devido ao grande volume) e principalmente para simplificação das tarefas do fluxo (agrupamento de movimentos).
 
@@ -224,7 +223,28 @@ A ideia geral é fornecer uma plataforma onde o Juiz / Desembargador possa consu
 <img src='/reports/figures/Solucao_geral.png'>
 
 #### Solução: Painel de Tempos e Produtividade
-Com esta interface o Juiz / Desembargador poderá acompanhar o desempenho da sua unidade judiciária em relação a outras unidades judiciárias semelhantes, em relação as dimensões: tempo e produtividade. Nesta solução será possível:
+Com esta interface o Juiz / Desembargador poderá acompanhar o desempenho da sua unidade judiciária em relação a outras unidades judiciárias semelhantes, em relação as dimensões: tempo e produtividade.
+
+<img src='/reports/figures/solucao_1.png'>
+<img src='/reports/figures/solucao_2.png'>
+
+A seguir, descrição dos principais componentes desta solução enumerados na figura acima.
+
+* Posição Geral
+    * Colocação geral de sua unidade judicial em relação ao seu grupo. Essa colocação é medida como o tempo médio em dias que os processos da unidade judicial demoram para serem baixados ou arquivados.
+* Grupo da Unidade Judiciária
+    * O grupo da unidade judicial é calculado utilizando algoritmos inteligentes de clusterização. Nossa clusterização em particular, leva em conta a frequência dos Assuntos e Classes processuais dos processos julgados em cada unidade judicial. Foram selecionadas uma vara de cada grupo para exemplificação.
+* Identificação dos gargalos
+    * Maiores gargalos, em dias, da unidade judicial. Os gargalos se referem às macroetapas do processo mapeadas no tópico Transformações Realizadas.
+* Pontos de destaque
+    * Menores gargalos, em dias, da unidade judicial. Ou seja, as etapas em que a unidade judicial é mais eficiente.
+* Feedbacks / Insights
+    * Contém ranking das varas do mesmo grupo da unidade judicial, com relação aos Pontos de destaque e gargalos. Exemplo: Se o maior gargalo da unidade judicial em questão é "Julgamento" -> "Baixa Definitiva", então o ranking conterá as melhores unidades judiciais na transição "Julgamento" -> "Baixa Definitiva". Além disso, o ranking também contém comentários dos juízes das outras varas compartilhando estratégias e insights sobre a eficiência de sua unidade judicial na transição.
+* Estatísticas desempenho
+    * Destacam o pior e menor gargalo da unidade judicial referente às macroetapas. 
+   
+
+
 * Identificar a posição geral de sua unidade judicial em relação ao seu grupo (sobre o prisma de variáveis a serem configuradas: tempo, produtividade, etc.)
 * Identificar os gargalos da sua unidade (comparação de macroatividades, configuráveis, comuns a todas as unidades judiciárias, como por exemplo: DISTRIBUIÇÃO -> SENTENÇA, SENTENÇA -> BAIXA), e consultar insigths de como melhorar seu desempenho.
 * Identificar os pontos de destaque de sua unidade em relação as macroetapas
@@ -232,8 +252,7 @@ Com esta interface o Juiz / Desembargador poderá acompanhar o desempenho da sua
 * Acompanhar a média de tempos processuais por macroetapa das 10 melhores unidades judiciárias de seu grupo.
 * Localizar geograficamente as unidades judiciárias semelhantes a sua.
 
-<img src='/reports/figures/solucao_1.png'>
-<img src='/reports/figures/solucao_2.png'>
+
 
 
 
