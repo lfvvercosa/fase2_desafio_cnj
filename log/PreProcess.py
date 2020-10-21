@@ -1,4 +1,5 @@
 import pandas as pd
+import re
 from utils.System import DEBUG
 
 
@@ -22,7 +23,9 @@ class PreProcess():
     def select_desired_columns(self, l=['case:concept:name',
                                         'concept:name',
                                         'concept:name_cod',
-                                        'time:timestamp']):
+                                        'case: orgao_mun',
+                                        'time:timestamp',
+                                        'case: municipio']):
 
         self.df_log = self.df_log[l]
 
@@ -111,4 +114,44 @@ class PreProcess():
             after = self.df_log['case:concept:name'].nunique()
             print('trace time outliers filtered: ', (before - after))
             print('total traces after: ', after)
+
+
+    def map_movements(self, movement_path):
+        df_mov = pd.read_csv(movement_path,
+                     engine='python')
+        df_mov = df_mov[['breadscrum', 'cod_item', 'nome']]
+        df_mov = df_mov.rename(columns={'cod_item':'concept:name_cod'})
+
+        # change movements names
+        reg = '\:(.*?)\:'                
+        df_mov['father_mov_code']  = df_mov['breadscrum'].str.\
+                                        findall(reg, flags=re.I).str[0]
+        df_mov['father_mov_code'].fillna(df_mov['concept:name_cod'], 
+                                        inplace=True)
+        df_mov['father_mov_code'] = df_mov['father_mov_code'].astype(int)
+        df_mov.loc[((df_mov['concept:name_cod'] == 22) |
+                    (df_mov['concept:name_cod'] == 246)),\
+                    'nome'] = 'Baixa/Arquivamento'
+        # change 'Magistrado' movimentos to uppest father
+        df_mov.loc[(df_mov['father_mov_code'] == 193),\
+                    'nome'] = 'Julgamento'
+        df_mov.loc[(df_mov['father_mov_code'] == 11009),\
+                    'nome'] = 'Despacho'
+        df_mov.loc[(df_mov['father_mov_code'] == 3),\
+                    'nome'] = 'Decisão'
+        
+        len_before = len(self.df_log)
+
+        self.df_log = self.df_log.merge(df_mov[['concept:name_cod', 'nome']], 
+                            on='concept:name_cod', 
+                            how='left')
+
+        len_after = len(self.df_log)
+
+        if(DEBUG):
+            print('number of lines diff: ', str(len_after - len_before))
+
+        self.df_log.drop('concept:name', inplace=True, axis=1)
+        self.df_log = self.df_log.rename(columns={'nome':'concept:name'})
+
 
