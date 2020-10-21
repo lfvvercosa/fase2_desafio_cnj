@@ -261,7 +261,7 @@ A seguir, descrição dos principais componentes desta solução enumerados nas 
 * **Ranking das unidades judiciárias**
     * Exibe as top cinco unidades judiciais por tempo médio de duração de processo, a unidade judicial analisada e seus vizinhos imediatos acima e abaixo.
 
-**OBS**: É possível alternar para uma vara de outro grupo clicando na medalha localizada no canto superior esquerdo.
+**Curiosidade**: É possível alternar para uma vara de outro grupo clicando na medalha localizada no canto superior esquerdo.
 
 ## Entrada produção
 Optamos por utiliza o Heroku (plataforma em nuvem como um serviço que suporta várias linguagens de programação) para disponibilizar nossa aplicação.
