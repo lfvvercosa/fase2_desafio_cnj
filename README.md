@@ -238,8 +238,8 @@ Para a feature de identificação e comparação de gargalos entre as unidades j
 >**Macro-Etapas (Marcos):**
 >* DISTRIBUIÇÃO
   * Código de movimento = 26
->* CITAÇÃO
-  * Breadscrum = 14:48:1228 (qualquer movimento com essa hierarquia)
+> * CITAÇÃO
+>  * Breadscrum = 14:48:1228 (qualquer movimento com essa hierarquia)
 >* APRECIAÇÃO DE TUTELA DE URGENCIA OU MEDIDA LIMINAR
 >  * Código de movimento = 332 - concessao -> antecipacao de tutela
 >  * Código de movimento = 785 - nao-concessao -> antecipação de tutela
