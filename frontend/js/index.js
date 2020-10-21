@@ -26,47 +26,29 @@ function setBottleneckRankComponent() {
     $('#table-bottleneck-tab2').html(json.worst_steps[1].origin + '-' + json.worst_steps[1].destination)
     $('#table-bottleneck-tab3').html(json.worst_steps[2].origin + '-' + json.worst_steps[2].destination)
 
-    // Best varas on worst step 1
-    getBestVarasOnStep(json.worst_steps[0].step_id,
-        vara_id,
-        10,
-        (json2)=>{
-          $('#table-bottleneck-row-1-name').html(json2[0].vara_name)
-          $('#table-bottleneck-row-1-duration').html(json2[0].med_time)
-          $('#table-bottleneck-row-1-comments').html(json2[0].comment)
+    $('#table-bottleneck-tab1').click(function(){
+      setBottleneckTable(json, vara_id, 0)
+      $('#table-bottleneck-tab2').removeClass('rank-table-tabs-item-selected')
+      $('#table-bottleneck-tab3').removeClass('rank-table-tabs-item-selected')
+      $('#table-bottleneck-tab1').addClass('rank-table-tabs-item-selected')
+    })
 
-          $('#table-bottleneck-row-2-name').html(json2[1].vara_name)
-          $('#table-bottleneck-row-2-duration').html(json2[1].med_time)
-          $('#table-bottleneck-row-2-comments').html(json2[1].comment)
+    $('#table-bottleneck-tab2').click(function(){
+      setBottleneckTable(json, vara_id, 1)
+      $('#table-bottleneck-tab1').removeClass('rank-table-tabs-item-selected')
+      $('#table-bottleneck-tab3').removeClass('rank-table-tabs-item-selected')
+      $('#table-bottleneck-tab2').addClass('rank-table-tabs-item-selected')
+    })
 
-          $('#table-bottleneck-row-3-name').html(json2[2].vara_name)
-          $('#table-bottleneck-row-3-duration').html(json2[2].med_time)
-          $('#table-bottleneck-row-3-comments').html(json2[2].comment)
+    $('#table-bottleneck-tab3').click(function(){
+      setBottleneckTable(json, vara_id, 2)
+      $('#table-bottleneck-tab1').removeClass('rank-table-tabs-item-selected')
+      $('#table-bottleneck-tab2').removeClass('rank-table-tabs-item-selected')
+      $('#table-bottleneck-tab3').addClass('rank-table-tabs-item-selected')
+    })
 
-          $('#table-bottleneck-row-4-name').html(json2[3].vara_name)
-          $('#table-bottleneck-row-4-duration').html(json2[3].med_time)
-          $('#table-bottleneck-row-4-comments').html(json2[3].comment)
-
-          $('#table-bottleneck-row-5-name').html(json2[4].vara_name)
-          $('#table-bottleneck-row-5-duration').html(json2[4].med_time)
-          $('#table-bottleneck-row-5-comments').html(json2[4].comment)
-
-          $('#table-bottleneck-row-6-name').html(json2[5].vara_name)
-          $('#table-bottleneck-row-6-duration').html(json2[5].med_time)
-          $('#table-bottleneck-row-6-comments').html(json2[5].comment)
-
-          $('#table-bottleneck-row-7-name').html(json2[6].vara_name)
-          $('#table-bottleneck-row-7-duration').html(json2[6].med_time)
-          $('#table-bottleneck-row-7-comments').html(json2[6].comment)
-
-          $('#table-bottleneck-row-8-name').html(json2[7].vara_name)
-          $('#table-bottleneck-row-8-duration').html(json2[7].med_time)
-          $('#table-bottleneck-row-8-comments').html(json2[7].comment)
-
-          $('#table-bottleneck-row-9-name').html(json2[8].vara_name)
-          $('#table-bottleneck-row-9-duration').html(json2[8].med_time)
-          $('#table-bottleneck-row-9-comments').html(json2[8].comment)
-        })
+    setBottleneckTable(json, vara_id, 0)    
+    
   })
   $('#bottleneck-mov-1-position').html('13'+'°')
   $('#bottleneck-mov-2-position').html('13'+'°')
@@ -94,47 +76,29 @@ function setBestRankComponent() {
     $('#table-best-tab2').html(json.best_steps[1].origin + '-' + json.best_steps[1].destination)
     $('#table-best-tab3').html(json.best_steps[2].origin + '-' + json.best_steps[2].destination)
 
-    // Best varas on best step 1
-    getBestVarasOnStep(json.best_steps[0].step_id,
-        vara_id,
-        10,
-        (json2)=>{
-          $('#table-best-row-1-name').html(json2[0].vara_name)
-          $('#table-best-row-1-duration').html(json2[0].med_time)
-          $('#table-best-row-1-comments').html(json2[0].comment)
+    setBestTable(json, vara_id, 0)  
+    
+    $('#table-best-tab1').click(function(){
+      setBestTable(json, vara_id, 0)
+      $('#table-best-tab2').removeClass('rank-table-tabs-item-selected')
+      $('#table-best-tab3').removeClass('rank-table-tabs-item-selected')
+      $('#table-best-tab1').addClass('rank-table-tabs-item-selected')
+    })
 
-          $('#table-best-row-2-name').html(json2[1].vara_name)
-          $('#table-best-row-2-duration').html(json2[1].med_time)
-          $('#table-best-row-2-comments').html(json2[1].comment)
+    $('#table-best-tab2').click(function(){
+      setBestTable(json, vara_id, 1)
+      $('#table-best-tab1').removeClass('rank-table-tabs-item-selected')
+      $('#table-best-tab3').removeClass('rank-table-tabs-item-selected')
+      $('#table-best-tab2').addClass('rank-table-tabs-item-selected')
+    })
 
-          $('#table-best-row-3-name').html(json2[2].vara_name)
-          $('#table-best-row-3-duration').html(json2[2].med_time)
-          $('#table-best-row-3-comments').html(json2[2].comment)
+    $('#table-best-tab3').click(function(){
+      setBestTable(json, vara_id, 2)
+      $('#table-best-tab1').removeClass('rank-table-tabs-item-selected')
+      $('#table-best-tab2').removeClass('rank-table-tabs-item-selected')
+      $('#table-best-tab3').addClass('rank-table-tabs-item-selected')
+    })
 
-          $('#table-best-row-4-name').html(json2[3].vara_name)
-          $('#table-best-row-4-duration').html(json2[3].med_time)
-          $('#table-best-row-4-comments').html(json2[3].comment)
-
-          $('#table-best-row-5-name').html(json2[4].vara_name)
-          $('#table-best-row-5-duration').html(json2[4].med_time)
-          $('#table-best-row-5-comments').html(json2[4].comment)
-
-          $('#table-best-row-6-name').html(json2[5].vara_name)
-          $('#table-best-row-6-duration').html(json2[5].med_time)
-          $('#table-best-row-6-comments').html(json2[5].comment)
-
-          $('#table-best-row-7-name').html(json2[6].vara_name)
-          $('#table-best-row-7-duration').html(json2[6].med_time)
-          $('#table-best-row-7-comments').html(json2[6].comment)
-
-          $('#table-best-row-8-name').html(json2[7].vara_name)
-          $('#table-best-row-8-duration').html(json2[7].med_time)
-          $('#table-best-row-8-comments').html(json2[7].comment)
-
-          $('#table-best-row-9-name').html(json2[8].vara_name)
-          $('#table-best-row-9-duration').html(json2[8].med_time)
-          $('#table-best-row-9-comments').html(json2[8].comment)
-        })
   })
   //best movements component
   //best-mov-1-position
@@ -187,5 +151,92 @@ function setFooterRankComponent() {
         $('#best-time-8').html('8º - ' + json[7].name)
         $('#best-time-9').html('9º - ' + json[8].name)
         $('#best-time-10').html('10º - ' + json[9].name)
+    })
+}
+
+function setBottleneckTable(json, vara_id, step){
+  getBestVarasOnStep(json.worst_steps[step].step_id,
+    vara_id,
+    10,
+    (json2)=>{
+      $('#table-bottleneck-row-1-name').html(json2[0].vara_name)
+      $('#table-bottleneck-row-1-duration').html(json2[0].med_time)
+      $('#table-bottleneck-row-1-comments').html(json2[0].comment)
+
+      $('#table-bottleneck-row-2-name').html(json2[1].vara_name)
+      $('#table-bottleneck-row-2-duration').html(json2[1].med_time)
+      $('#table-bottleneck-row-2-comments').html(json2[1].comment)
+
+      $('#table-bottleneck-row-3-name').html(json2[2].vara_name)
+      $('#table-bottleneck-row-3-duration').html(json2[2].med_time)
+      $('#table-bottleneck-row-3-comments').html(json2[2].comment)
+
+      $('#table-bottleneck-row-4-name').html(json2[3].vara_name)
+      $('#table-bottleneck-row-4-duration').html(json2[3].med_time)
+      $('#table-bottleneck-row-4-comments').html(json2[3].comment)
+
+      $('#table-bottleneck-row-5-name').html(json2[4].vara_name)
+      $('#table-bottleneck-row-5-duration').html(json2[4].med_time)
+      $('#table-bottleneck-row-5-comments').html(json2[4].comment)
+
+      $('#table-bottleneck-row-6-name').html(json2[5].vara_name)
+      $('#table-bottleneck-row-6-duration').html(json2[5].med_time)
+      $('#table-bottleneck-row-6-comments').html(json2[5].comment)
+
+      $('#table-bottleneck-row-7-name').html(json2[6].vara_name)
+      $('#table-bottleneck-row-7-duration').html(json2[6].med_time)
+      $('#table-bottleneck-row-7-comments').html(json2[6].comment)
+
+      $('#table-bottleneck-row-8-name').html(json2[7].vara_name)
+      $('#table-bottleneck-row-8-duration').html(json2[7].med_time)
+      $('#table-bottleneck-row-8-comments').html(json2[7].comment)
+
+      $('#table-bottleneck-row-9-name').html(json2[8].vara_name)
+      $('#table-bottleneck-row-9-duration').html(json2[8].med_time)
+      $('#table-bottleneck-row-9-comments').html(json2[8].comment)
+    })
+}
+
+function setBestTable(json, vara_id, step){
+  // Best varas on best step 1
+  getBestVarasOnStep(json.best_steps[step].step_id,
+    vara_id,
+    10,
+    (json2)=>{
+      $('#table-best-row-1-name').html(json2[0].vara_name)
+      $('#table-best-row-1-duration').html(json2[0].med_time)
+      $('#table-best-row-1-comments').html(json2[0].comment)
+
+      $('#table-best-row-2-name').html(json2[1].vara_name)
+      $('#table-best-row-2-duration').html(json2[1].med_time)
+      $('#table-best-row-2-comments').html(json2[1].comment)
+
+      $('#table-best-row-3-name').html(json2[2].vara_name)
+      $('#table-best-row-3-duration').html(json2[2].med_time)
+      $('#table-best-row-3-comments').html(json2[2].comment)
+
+      $('#table-best-row-4-name').html(json2[3].vara_name)
+      $('#table-best-row-4-duration').html(json2[3].med_time)
+      $('#table-best-row-4-comments').html(json2[3].comment)
+
+      $('#table-best-row-5-name').html(json2[4].vara_name)
+      $('#table-best-row-5-duration').html(json2[4].med_time)
+      $('#table-best-row-5-comments').html(json2[4].comment)
+
+      $('#table-best-row-6-name').html(json2[5].vara_name)
+      $('#table-best-row-6-duration').html(json2[5].med_time)
+      $('#table-best-row-6-comments').html(json2[5].comment)
+
+      $('#table-best-row-7-name').html(json2[6].vara_name)
+      $('#table-best-row-7-duration').html(json2[6].med_time)
+      $('#table-best-row-7-comments').html(json2[6].comment)
+
+      $('#table-best-row-8-name').html(json2[7].vara_name)
+      $('#table-best-row-8-duration').html(json2[7].med_time)
+      $('#table-best-row-8-comments').html(json2[7].comment)
+
+      $('#table-best-row-9-name').html(json2[8].vara_name)
+      $('#table-best-row-9-duration').html(json2[8].med_time)
+      $('#table-best-row-9-comments').html(json2[8].comment)
     })
 }

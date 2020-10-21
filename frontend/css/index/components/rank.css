@@ -102,6 +102,9 @@
   font-size: 1.4rem;
   color: #6c6c6b;
 }
+.rank-table-tabs-item:hover {
+  cursor: pointer;
+}
 .rank-table-tabs-item-selected {
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
