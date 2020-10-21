@@ -130,16 +130,16 @@ Quando do recebimento dos dados e após estudar a estrutura dos arquivos, elabor
 Para nossa surpressa, os arquivos abaixo não obedeciam a estrutura de dados definidos pela organização (optamos por não considerar esses dados nesse momento e tratá-los num momento posterior):
 
 >* processos-tjgo_5.json
-* processos-tjgo_6.json
-* processos-tjms_4.json
-* processos-tjrj_10.json
-* processos-tjrj_11.json
-* processos-tjrj_12.json
-* processos-tjrj_5.json
-* processos-tjrj_6.json
-* processos-tjrj_7.json
-* processos-tjrj_8.json
-* processos-tjrj_9.json
+>* processos-tjgo_6.json
+>* processos-tjms_4.json
+>* processos-tjrj_10.json
+>* processos-tjrj_11.json
+>* processos-tjrj_12.json
+>* processos-tjrj_5.json
+>* processos-tjrj_6.json
+>* processos-tjrj_7.json
+>* processos-tjrj_8.json
+>* processos-tjrj_9.json
 
 <a id="preparacao_dados"></a>
 ## Preparação dos dados
