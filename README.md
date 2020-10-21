@@ -1,4 +1,4 @@
-<img src='/reportsfigures/logo.png' width="400">
+<img src='/reports/figures/logo.png' width="200">
 
 <h1 align=center>Projeto: Hackathon CNJ Inova - DESAFIO 1</h1>
 # Projeto: Hackathon CNJ Inova - DESAFIO 1
