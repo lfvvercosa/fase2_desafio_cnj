@@ -12,7 +12,6 @@ function getVaras() {
     return courts
   var url = urlBase + 'varas'
   jQuery.get(url, (data)=>{
-    console.log(data)
     courts = data
   });
 }
@@ -25,7 +24,6 @@ function getVaraByID(vara_id, callback) {
   }
   var url = urlBase + 'varas/' + vara_id
   jQuery.get(url, (data)=>{
-    console.log(data)
     callback(data)
   });
 }
@@ -33,7 +31,6 @@ function getVaraByID(vara_id, callback) {
 function getBestVarasOnStep(step_id, vara_id, amount_of_varas, callback) {
   var url = urlBase + 'varas/bestVarasOnStep/?step_id=' + step_id + '&amount_of_varas=' + amount_of_varas + '&vara_id=' + vara_id
   jQuery.get(url, (data)=>{
-    console.log(data)
     callback(data)
   });
 }
@@ -41,7 +38,6 @@ function getBestVarasOnStep(step_id, vara_id, amount_of_varas, callback) {
 function getBestVaras(vara_id, amount_of_varas, callback) {
   var url = urlBase + 'processes/bestVaras/?vara_id=' + vara_id + '&amount_of_varas=' + amount_of_varas
   jQuery.get(url, (data)=>{
-    console.log(data)
     callback(data)
   });
 }

@@ -4,8 +4,6 @@ function setHeaderComponent() {
   
   getVaraByID(vara_id, (json)=>{
     //position
-    console.log(JSON.stringify(json))
-
     $('#position-number').html(json.ranking+'ª')
     
     //court-name
