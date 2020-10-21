@@ -180,8 +180,12 @@ Abaixo seguem algumas transformações realizadas a partir de algumas ideias (si
 
 ### Filtros
 Conforme vimos na sessão [Entendimento do Negócio](#entendimento_negocio),o escopo do projeto foi delimitado quanto a _oportunidades de melhoria de tempos e produtividades_ **nas unidades judiciárias de EXECUÇÃO FISCAL** (<font color=red>pois são as principais responsáveis pela alta taxa de congestionamento do Poder Judiciário</font>, conforme relatório do CNJ [Justiça em Números 2020]( https://www.cnj.jus.br/pesquisas-judiciarias/justica-em-numeros/))
-Abaixo outros filtros realizados nos dados ao longo do projeto:
-  * **Filtro nos movimentos:** Para realizar a tarefa de discovery do processo (descoberta da sequencia de atividades executadas) a partir do log de movimentos, consideramos apenas os processos que tiveram movimentação de início (Distribuição) e movimento de término (Baixa ou Arquivamento definitivo) compreendidos entre os anos de 2000 e 2020.
+Abaixo outros filtros realizados nos dados ao longo do projeto:  
+  * **Filtro nos processos:** Só foram considerados processos:
+    *  Movimentação de início (Distribuição) e movimento de término (Baixa ou Arquivamento definitivo) compreendidos entre os anos de 2000 e 2020.
+    *  Processos com classe "Execução Fiscal"
+    *  Grau 1
+    *  Que continham o movimento "Distribuição" e não continham o movimento "Reativação"
 
 ### Limpeza dos dados
 Foram removidos do log instâncias de processo com dados inconsistentes como datas, campos nulos ou zerados.
@@ -222,19 +226,11 @@ A ideia geral é fornecer uma plataforma onde o Juiz / Desembargador possa consu
 >**Solução: Painel de Tempos e Produtividade**
 Com esta interface o Juiz / Desembargador poderá acompanhar o desempenho da sua unidade judiciária em relação a outras unidades judiciárias semelhantes, em relação as dimensões: tempo e produtividade. Nesta solução será possível:
 * Identificar a posição geral de sua unidade judicial em relação ao seu grupo (sobre o prisma de variáveis a serem configuradas: tempo, produtividade, etc.)
-* Identificar os gargalos da sua unidade (comparação de macro atividades, configuráveis, comuns a todas as unidades judiciárias, como por exemplo: DISTRIBUIÇÃO -> SENTENÇA, SENTENÇA -> BAIXA), e consultar insigths de como melhorar seu desempenho.
-* Identificar os pontos de destaque de sua unidade em relação as macro etapas
+* Identificar os gargalos da sua unidade (comparação de macroatividades, configuráveis, comuns a todas as unidades judiciárias, como por exemplo: DISTRIBUIÇÃO -> SENTENÇA, SENTENÇA -> BAIXA), e consultar insigths de como melhorar seu desempenho.
+* Identificar os pontos de destaque de sua unidade em relação as macroetapas
 * Acompanhar estatísticas de desempenho e estatísticas de fluxo
-* Acompanhar a média de tempos processuais por macro etapa das 10 melhores unidades judiciárias de seu grupo.
+* Acompanhar a média de tempos processuais por macroetapa das 10 melhores unidades judiciárias de seu grupo.
 * Localizar geograficamente as unidades judiciárias semelhantes a sua.
-
->**Solução: Configuração dos critérios -**
-Com essa ferramenta o Pesquisador do CNJ poderá criar, testar e configurar novos critérios de agrupamento, analisando o impacto da combinação de parâmetros de filtragem, agrupamento e clusterização no resultado dos grupos criados. Permitindo que estudos sejam realizados no sentido de aprimorar os critérios de comparação entre unidades judiciárias semelhantes.
-
->**<font color=gray>Solução: API - Integração</font>**<br>
-><font color=gray> **PJE - Configuração de alarmes para tempos processuais -** Com a análise do TRACE (sequencia de atividades) dos processos da unidade judiciária, temos condições de predizer o tempo esperado que um determinado processo a partir de sua tarefa atual, chegue a uma determinada tarefa (normalmente a tarefa de término do processo, que pode ser JULGAMENTO, TRANSITO EM JULGADO, BAIXA / ARQUIVAMENTO DEFINITIVO ou qualquer outra tarefa desejada). Com base nessa infomação é possível:
-* Exibir nas telas do PJE (por exemplo: autos do processo), o tempo esperado para conclusão do processo.
-* Exibir mensagem de alertas que notifiquem ao usuário interno do PJE (servidores e magistrados) quando um determinado processo estiver perto de atrasar ou já tiver atrasado.</font>
 
 #### Solução: Painel de Tempos e Produtividade
 <img src='/reports/figures/solucao_1.png'>
