@@ -349,16 +349,6 @@ var noverlapListenerLeft = sLeft.configNoverlap({
   easing: 'quadraticInOut', // animation transition function
   duration: 10   // animation duration. Long here for the purposes of this example only
 });
-// Bind the events:
-noverlapListenerLeft.bind('start stop interpolate', function(e) {
-  console.log(e.type);
-  if(e.type === 'start') {
-    console.time('noverlap');
-  }
-  if(e.type === 'interpolate') {
-    console.timeEnd('noverlap');
-  }
-});
 
 var noverlapListenerRight = sRight.configNoverlap({
   nodeMargin: 0.1,
@@ -366,16 +356,6 @@ var noverlapListenerRight = sRight.configNoverlap({
   gridSize: 75,
   easing: 'quadraticInOut', // animation transition function
   duration: 10  // animation duration. Long here for the purposes of this example only
-});
-// Bind the events:
-noverlapListenerRight.bind('start stop interpolate', function(e) {
-  console.log(e.type);
-  if(e.type === 'start') {
-    console.time('noverlap');
-  }
-  if(e.type === 'interpolate') {
-    console.timeEnd('noverlap');
-  }
 });
 
 // Start the layout:

@@ -8,7 +8,6 @@ var bestVarasOnStep = []
 function changeId() {
   var number = Math.round(Math.random() * (selectableIds.length-1))
   vara_id = selectableIds[number]
-  console.log('id is '+number)
   saveCache()
 }
 
