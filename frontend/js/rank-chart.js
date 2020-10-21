@@ -54,6 +54,14 @@ getBestVaras(vara_id, 10, (result)=>{
             format: {
                 title: function (d) { return result[d].name; }
             }
+        },
+        axis: {
+          y: {
+            label: {
+              text: 'número de dias',
+              position: 'outer-middle'
+            }
+          }
         }
       });
 })
