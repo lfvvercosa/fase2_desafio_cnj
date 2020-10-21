@@ -264,6 +264,7 @@ A seguir, descrição dos principais componentes desta solução enumerados nas 
 Optamos por utiliza o Heroku (plataforma em nuvem como um serviço que suporta várias linguagens de programação) para disponibilizar nossa aplicação.
 
 >**Acesso a solução:** http://desafio-cnj-frontend.herokuapp.com/
+>**Apresentação da solução:** 
 
 ## Próximos passos
 
@@ -272,8 +273,8 @@ Com essa ferramenta o Pesquisador do CNJ poderá criar, testar e configurar novo
 
 >**Solução: Configuração dos critérios -**
 Com a análise do TRACE (sequencia de atividades) dos processos da unidade judiciária, temos condições de predizer o tempo esperado que um determinado processo a partir de sua tarefa atual, chegue a uma determinada tarefa (normalmente a tarefa de término do processo, que pode ser JULGAMENTO, TRANSITO EM JULGADO, BAIXA / ARQUIVAMENTO DEFINITIVO ou qualquer outra tarefa desejada). Com base nessa infomação é possível:
-* Exibir nas telas do PJE (por exemplo: autos do processo), o tempo esperado para conclusão do processo.
-* Exibir mensagem de alertas que notifiquem ao usuário interno do PJE (servidores e magistrados) quando um determinado processo estiver perto de atrasar ou já tiver atrasado.
+>* Exibir nas telas do PJE (por exemplo: autos do processo), o tempo esperado para conclusão do processo.
+>* Exibir mensagem de alertas que notifiquem ao usuário interno do PJE (servidores e magistrados) quando um determinado processo estiver perto de atrasar ou já tiver atrasado.
 
 
 
