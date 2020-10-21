@@ -7,7 +7,7 @@ Projeto do Desafio de Process Mining do Hackaton CNJ
 
 ## Organizacao do Projeto 
 
-### git: lfvvercosa/desafio_cnj
+### git: https://github.com/lfvvercosa/desafio_cnj
 
 ------------
     ├── data
@@ -66,6 +66,8 @@ Scikit-learn is a machine learning python library
 
 Nosso time subiu os servidores do backend e do front-end na plataforma gratuira Heroku. Dessa forma, é possível acessar nossa solução, batizada de Panorama, utilizando o seguinte endereço web:
     http://desafio-cnj-frontend.herokuapp.com/
+    
+É importante destacar limitação da versão gratuita da plataforma Heroku. Ela restringe o número de conexões máximas ao banco de dados, sendo assim, após extendido uso, o banco de dados pode ficar indisponível por alguns minutos. 
 
 No mais, listamos aqui os principais passos para executar nossa solução do início:
 
@@ -262,3 +264,17 @@ A seguir, descrição dos principais componentes desta solução enumerados nas 
 Optamos por utiliza o Heroku (plataforma em nuvem como um serviço que suporta várias linguagens de programação) para disponibilizar nossa aplicação.
 
 >**Acesso a solução:** http://desafio-cnj-frontend.herokuapp.com/
+
+## Próximos passos
+
+>**Solução: Configuração dos critérios -**
+Com essa ferramenta o Pesquisador do CNJ poderá criar, testar e configurar novos critérios de agrupamento, analisando o impacto da combinação de parâmetros de filtragem, agrupamento e clusterização no resultado dos grupos criados. Permitindo que estudos sejam realizados no sentido de aprimorar os critérios de comparação entre unidades judiciárias semelhantes.
+
+>**<font color=gray>Solução: API - Integração</font>**<br>
+><font color=gray> **PJE - Configuração de alarmes para tempos processuais -** Com a análise do TRACE (sequencia de atividades) dos processos da unidade judiciária, temos condições de predizer o tempo esperado que um determinado processo a partir de sua tarefa atual, chegue a uma determinada tarefa (normalmente a tarefa de término do processo, que pode ser JULGAMENTO, TRANSITO EM JULGADO, BAIXA / ARQUIVAMENTO DEFINITIVO ou qualquer outra tarefa desejada). Com base nessa infomação é possível:
+* Exibir nas telas do PJE (por exemplo: autos do processo), o tempo esperado para conclusão do processo.
+* Exibir mensagem de alertas que notifiquem ao usuário interno do PJE (servidores e magistrados) quando um determinado processo estiver perto de atrasar ou já tiver atrasado.</font>
+
+#### Solução: Criação, análise e configuração dos critérios
+Abaixo podemos consultar algumas telas utilizadas para criar, configurar os critérios e realizar a análise dos grupos obtidos. 
+<img src='/reports/figures/tela_grupo.png'>
