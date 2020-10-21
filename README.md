@@ -55,8 +55,8 @@ Nosso time subiu os servidores do backend e do front-end na plataforma gratuira 
 
 No mais, listamos aqui os principais passos para executar nossa solução do início:
 
-    * Instalação do banco de dados PostgreSQL
-        * teste
+Markup : * Instalação do banco de dados PostgreSQL
+            * teste
 
 ## Metodologia do Projeto
 
