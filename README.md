@@ -239,20 +239,20 @@ Para a feature de identificação e comparação de gargalos entre as unidades j
 >* DISTRIBUIÇÃO
 >   * Código de movimento = 26
 > * CITAÇÃO
->  * Breadscrum = 14:48:1228 (qualquer movimento com essa hierarquia)
+>   * Breadscrum = 14:48:1228 (qualquer movimento com essa hierarquia)
 > * APRECIAÇÃO DE TUTELA DE URGENCIA OU MEDIDA LIMINAR
-    >  * Código de movimento = 332 - concessao -> antecipacao de tutela
->  * Código de movimento = 785 - nao-concessao -> antecipação de tutela
->  * Código de movimento = 889 - concessao em parte -> antecipaçao de tutela
->* AUDIÊNCIA
->  * Breadscrum = 14:48:970 (qualquer movimento com essa hierarquia)
->* JULGAMENTO/SENTENÇA
->  * Breadscrum = 1:193 (qualquer movimento com essa hierarquia)
->* TRÂNSITO EM JULGADO
->  * Código de movimento = 848
->* BAIXA / ARQUIVAMENTO
->  * Código de movimento = 22 - baixa
->  * Código de movimento = 246 - arquivamento definitivo
+>   * Código de movimento = 332 - concessao -> antecipacao de tutela
+>   * Código de movimento = 785 - nao-concessao -> antecipação de tutela
+>   * Código de movimento = 889 - concessao em parte -> antecipaçao de tutela
+> * AUDIÊNCIA
+>   * Breadscrum = 14:48:970 (qualquer movimento com essa hierarquia)
+> * JULGAMENTO/SENTENÇA
+>   * Breadscrum = 1:193 (qualquer movimento com essa hierarquia)
+> * TRÂNSITO EM JULGADO
+>   * Código de movimento = 848
+> * BAIXA / ARQUIVAMENTO
+>   * Código de movimento = 22 - baixa
+>   * Código de movimento = 246 - arquivamento definitivo
 
 A seguir, descrição dos principais componentes desta solução enumerados nas figuras acima.
 
