@@ -339,9 +339,9 @@ Considerando que as variáveis utilizadas possuem escalas distintas e para que t
 >Faz-se necessário a definição do termo RAIZ (utilizado tanto para assunto, como para Classe processual). Levando em consideração o SGT (Sistema de Gestão de Tabelas Processuais Unificadas)  do CNJ (disponível em https://www.cnj.jus.br/sgt/consulta_publica_classes.php), podemos perceber que os assuntos, classes processuais e movimentos estão organizados em uma hierarquia. Definimos como RAIZ, o item (assunto, classe ou movimento) no primeiro nível da hierarquia a qual pertence o item em questão. 
 
 > Tomemos como exemplo o assunto: 7619 - Consórcio, que possui a seguinte hierarquia:<br>
->* 1156 - Direito do consumidor
-  * 7771 - Contratos de consumo
-   * 7619 - Consórcio <br>
+> * 1156 - Direito do consumidor
+>   * 7771 - Contratos de consumo
+>   * 7619 - Consórcio <br>
 > Teríamos como Assunto Raiz o "1156 - Direito do consumidor".
 
 #### DEFINIÇÃO DO CRITÉRIO DE AGRUPAMENTO DAS UNIDADES JUDICIÁRIAS SEMELHANTES
