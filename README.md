@@ -341,7 +341,7 @@ Considerando que as variáveis utilizadas possuem escalas distintas e para que t
 > Tomemos como exemplo o assunto: 7619 - Consórcio, que possui a seguinte hierarquia:<br>
 > * 1156 - Direito do consumidor
 >   * 7771 - Contratos de consumo
->   * 7619 - Consórcio <br>
+>     * 7619 - Consórcio <br>
 > Teríamos como Assunto Raiz o "1156 - Direito do consumidor".
 
 #### DEFINIÇÃO DO CRITÉRIO DE AGRUPAMENTO DAS UNIDADES JUDICIÁRIAS SEMELHANTES
