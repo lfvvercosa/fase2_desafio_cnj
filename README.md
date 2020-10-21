@@ -35,7 +35,7 @@ Projeto do Desafio de Process Mining do Hackaton CNJ
     ├── tabelas.dbdiagram               <- Definição das tabelas do banco de dados
     └── .gitignore                      <- Arquivos ignorados pelo git
     
-### git: gabriel-bandeira/backend-desafio-cnj
+### git: https://github.com/gabriel-bandeira/backend-desafio-cnj
 
 ------------
     ├── panorama                        
