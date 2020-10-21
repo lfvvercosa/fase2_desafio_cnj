@@ -13,8 +13,8 @@ function addMapToDocument(){
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 6,
-    center: new google.maps.LatLng(-7.9184546, -34.8209559),
+    zoom: 4,
+    center: new google.maps.LatLng(-11.6182046,-50.6699791),
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     gestureHandling: 'none',
     zoomControl: false
@@ -22,9 +22,9 @@ function initMap() {
 
   var infowindow = new google.maps.InfoWindow();
 
-  var locations = getCourtList()
-
-  populateMap(map, infowindow, locations)
+  getCourtList((locations)=>{
+    populateMap(map, infowindow, locations)
+  })
 }
 
 function populateMap(map, infowindow, locations) {
