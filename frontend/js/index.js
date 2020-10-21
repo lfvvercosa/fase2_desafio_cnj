@@ -10,16 +10,19 @@ function setRankComponent() {
 function setBottleneckRankComponent() {
   getVaraByID(vara_id, (json)=>{
     $('#bottleneck-mov-1-source').html(json.worst_steps[0].origin)
-    $('#bottleneck-mov-1-description').html(json.worst_steps[0].med_time)
+    $('#bottleneck-mov-1-description').html(json.worst_steps[0].med_time + ' dias')
     $('#bottleneck-mov-1-dest').html(json.worst_steps[0].destination)
+    $('#bottleneck-mov-1-position').html(json.worst_steps[0].ranking+'°')
 
     $('#bottleneck-mov-2-source').html(json.worst_steps[1].origin)
-    $('#bottleneck-mov-2-description').html(json.worst_steps[1].med_time)
+    $('#bottleneck-mov-2-description').html(json.worst_steps[1].med_time + ' dias')
     $('#bottleneck-mov-2-dest').html(json.worst_steps[1].destination)
+    $('#bottleneck-mov-2-position').html(json.worst_steps[1].ranking+'°')
 
     $('#bottleneck-mov-3-source').html(json.worst_steps[2].origin)
-    $('#bottleneck-mov-3-description').html(json.worst_steps[2].med_time)
+    $('#bottleneck-mov-3-description').html(json.worst_steps[2].med_time + ' dias')
     $('#bottleneck-mov-3-dest').html(json.worst_steps[2].destination)
+    $('#bottleneck-mov-3-position').html(json.worst_steps[2].ranking+'°')
 
     setBottleneckTable(json, vara_id, 0)  
 
@@ -49,9 +52,6 @@ function setBottleneckRankComponent() {
       $('#table-bottleneck-tab3').addClass('rank-table-tabs-item-selected')
     })
   })
-  $('#bottleneck-mov-1-position').html('13'+'°')
-  $('#bottleneck-mov-2-position').html('13'+'°')
-  $('#bottleneck-mov-3-position').html('13'+'°')
 }
 
 function setBestRankComponent() {
@@ -59,16 +59,19 @@ function setBestRankComponent() {
   getVaraByID(vara_id,(json)=>{
     //best movements component
     $('#best-mov-1-source').html(json.best_steps[0].origin)
-    $('#best-mov-1-description').html(json.best_steps[0].med_time)
+    $('#best-mov-1-description').html(json.best_steps[0].med_time + ' dias')
     $('#best-mov-1-dest').html(json.best_steps[0].destination)
+    $('#best-mov-1-position').html(json.best_steps[0].ranking+'°')
 
     $('#best-mov-2-source').html(json.best_steps[1].origin)
-    $('#best-mov-2-description').html(json.best_steps[1].med_time)
+    $('#best-mov-2-description').html(json.best_steps[1].med_time + ' dias')
     $('#best-mov-2-dest').html(json.best_steps[1].destination)
+    $('#best-mov-2-position').html(json.best_steps[1].ranking+'°')
 
     $('#best-mov-3-source').html(json.best_steps[2].origin)
-    $('#best-mov-3-description').html(json.best_steps[2].med_time)
+    $('#best-mov-3-description').html(json.best_steps[2].med_time + ' dias')
     $('#best-mov-3-dest').html(json.best_steps[2].destination)
+    $('#best-mov-3-position').html(json.best_steps[2].ranking+'°')
 
     //best movements table
     $('#table-best-tab1').html(json.best_steps[0].origin + '-' + json.best_steps[0].destination)
@@ -97,12 +100,7 @@ function setBestRankComponent() {
       $('#table-best-tab2').removeClass('rank-table-tabs-item-selected')
       $('#table-best-tab3').addClass('rank-table-tabs-item-selected')
     })
-
   })
-  //best movements component
-  //best-mov-1-position
-  //best-mov-2-position
-  //best-mov-3-position
 }
 
 function setStatisticsComponent(){
