@@ -55,8 +55,19 @@ Nosso time subiu os servidores do backend e do front-end na plataforma gratuira 
 
 No mais, listamos aqui os principais passos para executar nossa solução do início:
 
-* Instalação do banco de dados PostgreSQL
-    * teste
+1. Utilização de sistema operacional Linux
+2. Instalação do banco de dados PostgreSQL
+    2.1 Seguir tutorial: https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-14-04
+    2.2 Criar banco de dados chamado 'panorama', usuário 'panorama' e senha 'panorama'
+3. Instalação do backend Django
+    3.1 O projeto do backend está disponível em: git: gabriel-bandeira/backend-desafio-cnj
+    3.2 Instalar dependências utilizando o comando 'pip install -r requirements.txt'
+    3.3 Executar script MacroSteps.py em: git: lfvvercosa/desafio_cnj para geração dos jsons
+    3.4 Popular o banco de dados com o jsons gerados utilizando o comando 'python manage.py loaddata <nome_do_json>'
+    3.5 Executar o backend com o comando 'python manage.py runserver'
+4. Instalação do front-end
+    
+
 
 ## Metodologia do Projeto
 
