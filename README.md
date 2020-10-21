@@ -223,7 +223,7 @@ A ideia geral é fornecer uma plataforma onde o Juiz / Desembargador possa consu
 #### Arquitetura geral
 <img src='/reports/figures/Solucao_geral.png'>
 
->**Solução: Painel de Tempos e Produtividade**
+#### Solução: Painel de Tempos e Produtividade
 Com esta interface o Juiz / Desembargador poderá acompanhar o desempenho da sua unidade judiciária em relação a outras unidades judiciárias semelhantes, em relação as dimensões: tempo e produtividade. Nesta solução será possível:
 * Identificar a posição geral de sua unidade judicial em relação ao seu grupo (sobre o prisma de variáveis a serem configuradas: tempo, produtividade, etc.)
 * Identificar os gargalos da sua unidade (comparação de macroatividades, configuráveis, comuns a todas as unidades judiciárias, como por exemplo: DISTRIBUIÇÃO -> SENTENÇA, SENTENÇA -> BAIXA), e consultar insigths de como melhorar seu desempenho.
@@ -232,13 +232,10 @@ Com esta interface o Juiz / Desembargador poderá acompanhar o desempenho da sua
 * Acompanhar a média de tempos processuais por macroetapa das 10 melhores unidades judiciárias de seu grupo.
 * Localizar geograficamente as unidades judiciárias semelhantes a sua.
 
-#### Solução: Painel de Tempos e Produtividade
 <img src='/reports/figures/solucao_1.png'>
 <img src='/reports/figures/solucao_2.png'>
 
-#### Solução: Criação, análise e configuração dos critérios
-Abaixo podemos consultar algumas telas utilizadas para criar, configurar os critérios e realizar a análise dos grupos obtidos. 
-<img src='/reports/figures/tela_grupo.png'>
+
 
 ### Modelagem do Critério de Agrupamento das Unidades Judiciárias
 
