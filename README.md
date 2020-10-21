@@ -230,18 +230,24 @@ Com esta interface o Juiz / Desembargador poderá acompanhar o desempenho da sua
 
 A seguir, descrição dos principais componentes desta solução enumerados na figura acima.
 
-* Posição Geral
+* **Posição Geral
     * Colocação geral de sua unidade judicial em relação ao seu grupo. Essa colocação é medida como o tempo médio em dias que os processos da unidade judicial demoram para serem baixados ou arquivados.
-* Grupo da Unidade Judiciária
+* **Grupo da Unidade Judiciária
     * O grupo da unidade judicial é calculado utilizando algoritmos inteligentes de clusterização. Nossa clusterização em particular, leva em conta a frequência dos Assuntos e Classes processuais dos processos julgados em cada unidade judicial. Foram selecionadas uma vara de cada grupo para exemplificação.
-* Identificação dos gargalos
+* **Identificação dos gargalos
     * Maiores gargalos, em dias, da unidade judicial. Os gargalos se referem às macroetapas do processo mapeadas no tópico Transformações Realizadas.
-* Pontos de destaque
+* **Pontos de destaque
     * Menores gargalos, em dias, da unidade judicial. Ou seja, as etapas em que a unidade judicial é mais eficiente.
-* Feedbacks / Insights
+* **Feedbacks / Insights
     * Contém ranking das varas do mesmo grupo da unidade judicial, com relação aos Pontos de destaque e gargalos. Exemplo: Se o maior gargalo da unidade judicial em questão é "Julgamento" -> "Baixa Definitiva", então o ranking conterá as melhores unidades judiciais na transição "Julgamento" -> "Baixa Definitiva". Além disso, o ranking também contém comentários dos juízes das outras varas compartilhando estratégias e insights sobre a eficiência de sua unidade judicial na transição.
-* Estatísticas desempenho
-    * Destacam o pior e menor gargalo da unidade judicial referente às macroetapas. 
+* **Estatísticas desempenho
+    * Destacam o pior e menor gargalo da unidade judicial referente às macroetapas.
+* **Estatísticas do fluxo
+    * Destacam a duração média da baixa do processo em dias, movimentação média do processo e total de processos julgados
+* **Média dos tempos processuais
+    * Exibem o tempo médio dos processos em cada macroetapa. São exibidas as top cinco unidades judiciais por tempo médio de duração de processo, a unidade judicial analisada e seus vizinhos imediatos acima e abaixo. Uma observação importante é que o tempo total exibido não reflete necessariamente o tempo médio de duração do processo, visto que nem todas as instâncias de processo passam pelas mesmas macroetapas.
+* **Localização Unidades Semelhantes
+    
    
 
 
