@@ -268,7 +268,7 @@ Optamos por utiliza o Heroku (plataforma em nuvem como um serviço que suporta v
 
 >**Acesso a solução:** http://desafio-cnj-frontend.herokuapp.com/
 
->**Apresentação da solução:** 
+>**Apresentação da solução:**  https://youtu.be/EBU2PZM2J54
 
 ## Próximos passos
 
