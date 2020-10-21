@@ -159,41 +159,17 @@ function setBottleneckTable(json, vara_id, step){
     vara_id,
     10,
     (json2)=>{
-      $('#table-bottleneck-row-1-name').html(json2[0].vara_name)
-      $('#table-bottleneck-row-1-duration').html(json2[0].med_time)
-      $('#table-bottleneck-row-1-comments').html(json2[0].comment)
-
-      $('#table-bottleneck-row-2-name').html(json2[1].vara_name)
-      $('#table-bottleneck-row-2-duration').html(json2[1].med_time)
-      $('#table-bottleneck-row-2-comments').html(json2[1].comment)
-
-      $('#table-bottleneck-row-3-name').html(json2[2].vara_name)
-      $('#table-bottleneck-row-3-duration').html(json2[2].med_time)
-      $('#table-bottleneck-row-3-comments').html(json2[2].comment)
-
-      $('#table-bottleneck-row-4-name').html(json2[3].vara_name)
-      $('#table-bottleneck-row-4-duration').html(json2[3].med_time)
-      $('#table-bottleneck-row-4-comments').html(json2[3].comment)
-
-      $('#table-bottleneck-row-5-name').html(json2[4].vara_name)
-      $('#table-bottleneck-row-5-duration').html(json2[4].med_time)
-      $('#table-bottleneck-row-5-comments').html(json2[4].comment)
-
-      $('#table-bottleneck-row-6-name').html(json2[5].vara_name)
-      $('#table-bottleneck-row-6-duration').html(json2[5].med_time)
-      $('#table-bottleneck-row-6-comments').html(json2[5].comment)
-
-      $('#table-bottleneck-row-7-name').html(json2[6].vara_name)
-      $('#table-bottleneck-row-7-duration').html(json2[6].med_time)
-      $('#table-bottleneck-row-7-comments').html(json2[6].comment)
-
-      $('#table-bottleneck-row-8-name').html(json2[7].vara_name)
-      $('#table-bottleneck-row-8-duration').html(json2[7].med_time)
-      $('#table-bottleneck-row-8-comments').html(json2[7].comment)
-
-      $('#table-bottleneck-row-9-name').html(json2[8].vara_name)
-      $('#table-bottleneck-row-9-duration').html(json2[8].med_time)
-      $('#table-bottleneck-row-9-comments').html(json2[8].comment)
+      bestVarasOnStep = json2
+      for(var i=0; i < 10; i++){
+        $('#table-bottleneck-row-'+(i+1)+'-name').html(bestVarasOnStep[i].vara_name)
+        $('#table-bottleneck-row-'+(i+1)+'-duration').html(bestVarasOnStep[i].med_time)
+        $('#table-bottleneck-row-'+(i+1)+'-comments').html(bestVarasOnStep[i].comment)
+        $('#table-bottleneck-row-'+(i+1)).click(function(e){
+          var index = e.currentTarget.id.replace('table-bottleneck-row-', '')
+          comparing_id = bestVarasOnStep[index-1].vara_id
+          window.location.replace("http://desafio-cnj-frontend.herokuapp.com/pages/comparing-courts.html");
+        })
+      }
     })
 }
 
@@ -203,40 +179,15 @@ function setBestTable(json, vara_id, step){
     vara_id,
     10,
     (json2)=>{
-      $('#table-best-row-1-name').html(json2[0].vara_name)
-      $('#table-best-row-1-duration').html(json2[0].med_time)
-      $('#table-best-row-1-comments').html(json2[0].comment)
-
-      $('#table-best-row-2-name').html(json2[1].vara_name)
-      $('#table-best-row-2-duration').html(json2[1].med_time)
-      $('#table-best-row-2-comments').html(json2[1].comment)
-
-      $('#table-best-row-3-name').html(json2[2].vara_name)
-      $('#table-best-row-3-duration').html(json2[2].med_time)
-      $('#table-best-row-3-comments').html(json2[2].comment)
-
-      $('#table-best-row-4-name').html(json2[3].vara_name)
-      $('#table-best-row-4-duration').html(json2[3].med_time)
-      $('#table-best-row-4-comments').html(json2[3].comment)
-
-      $('#table-best-row-5-name').html(json2[4].vara_name)
-      $('#table-best-row-5-duration').html(json2[4].med_time)
-      $('#table-best-row-5-comments').html(json2[4].comment)
-
-      $('#table-best-row-6-name').html(json2[5].vara_name)
-      $('#table-best-row-6-duration').html(json2[5].med_time)
-      $('#table-best-row-6-comments').html(json2[5].comment)
-
-      $('#table-best-row-7-name').html(json2[6].vara_name)
-      $('#table-best-row-7-duration').html(json2[6].med_time)
-      $('#table-best-row-7-comments').html(json2[6].comment)
-
-      $('#table-best-row-8-name').html(json2[7].vara_name)
-      $('#table-best-row-8-duration').html(json2[7].med_time)
-      $('#table-best-row-8-comments').html(json2[7].comment)
-
-      $('#table-best-row-9-name').html(json2[8].vara_name)
-      $('#table-best-row-9-duration').html(json2[8].med_time)
-      $('#table-best-row-9-comments').html(json2[8].comment)
+      for(var i=0; i < 10; i++){
+        $('#table-best-row-'+(i+1)+'-name').html(json2[i].vara_name)
+        $('#table-best-row-'+(i+1)+'-duration').html(json2[i].med_time)
+        $('#table-best-row-'+(i+1)+'-comments').html(json2[i].comment)
+        $('#table-best-row-'+(i+1)).click(function(){
+          var index = e.currentTarget.id.replace('table-best-row-', '')
+          comparing_id = json2[index-1].vara_id
+          window.location.replace("http://desafio-cnj-frontend.herokuapp.com/pages/comparing-courts.html");
+        })
+      }
     })
 }

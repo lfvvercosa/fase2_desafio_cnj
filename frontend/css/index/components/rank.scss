@@ -154,6 +154,9 @@
         tr {
           height: 3.5rem;
           display: flex;
+          &:hover {
+            cursor: pointer;
+          }
           th {
             display: block;
             height: 2rem;
