@@ -1,7 +1,6 @@
 <div align="center"><img img src='/reports/figures/logo.png' width="200"></div> 
 
 <h1 align=center>Projeto: Hackathon CNJ Inova - DESAFIO 1</h1>
-# Projeto: Hackathon CNJ Inova - DESAFIO 1
 
 ## O projeto
 Projeto do Desafio de Process Mining do Hackaton CNJ
