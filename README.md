@@ -1,4 +1,6 @@
-# Projeto: Hackathon CNJ Inova - DESAFIO 1
+<div align="center"><img img src='/reports/figures/logo.png' width="200"></div> 
+
+<h1 align=center>Projeto: Hackathon CNJ Inova - DESAFIO 1</h1>
 
 ## O projeto
 Projeto do Desafio de Process Mining do Hackaton CNJ
@@ -114,6 +116,73 @@ A principal fonte de dados para o Hackathon serão os dados básicos e movimenta
 * **[IBGE - Instituto Brasileiro de Geografia e Estatística](https://www.ibge.gov.br/explica/codigos-dos-municipios.php)** - Para obtenção de informações quanto aos municípios brasileiros.
 * **[SGT - Sistema de Gestão das Tabelas Processuais Unificadas](https://www.cnj.jus.br/sgt/consulta_publica_assuntos.php)** - Para obtenção dos "depara" dos assuntos, classes e movimentos processuais
 * **[CNJ - Conselho Nacional de Justiça](https://paineis.cnj.jus.br/QvAJAXZfc/opendoc.htm?document=qvw_l%2FPainelCNJ.qvw&host=QVS%40neodimio03&anonymous=true&sheet=shResumoDespFT)** - Consulta aos paineis da justiça para obtenção de dados referentes a produtividade e demais informações sobre a justiça.
+
+<a id="entendimento_dados"></a>
+## Entendimento dos dados
+Antes de receber os arquivos de dados (json), fizemos uso dos seguintes documentos (disponibilizados pelo Hackathon) para conhecer e entender a estrutura e conteúdo dos dados.
+* **Informacoes Complementares CNJ Inova - Desafios e Dados.pdf**.
+* **Glossário-Datajud-Processos** 
+
+Quando do recebimento dos dados e após estudar a estrutura dos arquivos, elaboramos um script em python para extração e normalização dos dados e criação de dois DataFrame (um para dadosBasicos e outro para as movimentacoes) para realizarmos a exploração dos dados referentes a Justiça Estadual.
+
+<img src='/reports/figures/leitura_dados.png'>
+
+Para nossa surpressa, os arquivos abaixo não obedeciam a estrutura de dados definidos pela organização (optamos por não considerar esses dados nesse momento e tratá-los num momento posterior):
+
+>* processos-tjgo_5.json
+>* processos-tjgo_6.json
+>* processos-tjms_4.json
+>* processos-tjrj_10.json
+>* processos-tjrj_11.json
+>* processos-tjrj_12.json
+>* processos-tjrj_5.json
+>* processos-tjrj_6.json
+>* processos-tjrj_7.json
+>* processos-tjrj_8.json
+>* processos-tjrj_9.json
+
+<a id="preparacao_dados"></a>
+## Preparação dos dados
+De posse dos dois arquivos .csv rodamos um fluxo de ETL na ferramenta Pentaho para limpeza, tratamento e enriquecimento dos dados (depara das classes, assuntos e movimentacoes processuais).
+
+<img src='/reports/figures/pentaho.png'>
+
+Abaixo seguem algumas transformações realizadas a partir de algumas ideias (simplificações e criação de features) e necessidades identificadas durante o projeto.
+
+### Filtros
+Conforme vimos na sessão [Entendimento do Negócio](#entendimento_negocio),o escopo do projeto foi delimitado quanto a _oportunidades de melhoria de tempos e produtividades_ **nas unidades judiciárias de EXECUÇÃO FISCAL** (<font color=red>pois são as principais responsáveis pela alta taxa de congestionamento do Poder Judiciário</font>, conforme relatório do CNJ [Justiça em Números 2020]( https://www.cnj.jus.br/pesquisas-judiciarias/justica-em-numeros/))
+Abaixo outros filtos realizados nos dados ao longo do projeto:
+> **Filtro nos órgãos jugladores:** Escopo delimitado para órgãos julgadores que tivessem um dos termos: "fiscal" ou "fazenda".
+> **Filtro nos movimentos:** Para realizar a tarefa de discovery do processo (descoberta da sequencia de atividades executadas) a partir do log de movimentos, consideramos apenas os processos que tiveram movimentação de início (Distribuição) e movimento de término (Baixa ou Arquivamento definitivo) compreendidos entre os anos de 2000 e 2015.
+> **Assunto:** Processos que não apresentavam código de assunto ou código de assunto igual a 0 (zero) foram desconsiderados devido a feature de clusterização por assunto.
+> **Nome dos Órgãos Julgadores:** Órgãos julgadores sem nome não foram considerados.
+
+### Limpeza dos dados
+Abaixo listamos algumas das inconsistências encontradas nos dados e a correção ou solução de contorno.
+* **Formatos diversos de data:** Aparentemente o campo da data de ajuizamento (dadosBasicos.dataAjuizamento),  possuia mais de uma formatação de data. Fizemos a correção deixando o formato: dd/mm/aaaa hh:mi.
+* **Código Orgao Julgador x Nome Órgão Julgador:** Encontramos diversos codigo de órgão julgador zerado (valor 0), alguns nomes de órgão julgadores diferentes sendo referenciados pelo mesmo código de órgão julgador.
+* **Formato do encoding do campo Nome do Órgão Julgador:** Caracteres especiais foram encontrados no nome dos órgãos julgadores. Utilizamos o encoding = 'utf-8' para resolver essa questão.
+
+### Transformações realizadas
+
+#### Criação de campo (breadscrum) nas tabelas auxiliares do SGT: Classe, Assunto e Movimento
+Levando em consideração o [SGT - Sistema de Gestão de Tabelas Processuais Unificadas](https://www.cnj.jus.br/sgt/consulta_publica_classes.php) do CNJ, podemos perceber que os assuntos, classes processuais e movimentos estão organizados em uma hierarquia. Definimos como RAIZ, o item (assunto, classe ou movimento) no primeiro nível da hierarquia a qual pertence o item em questão. 
+
+> Tomemos como exemplo o assunto: 7619 - Consórcio, que possui a seguinte hierarquia:<br>
+>* 1156 - Direito do consumidor
+  * 7771 - Contratos de consumo
+   * 7619 - Consórcio <br>
+> Teríamos como Assunto Raiz o "1156 - Direito do consumidor".
+
+Essa informação foi importante para a simplificação do modelo, contorno da restrição quanto a capacidade de processamento dos dados (devido ao grande volume) e principalmente para simplificação das tarefas do fluxo (agrupamento de movimentos).
+<img src='figures/etl_breadscrum.png'>
+
+#### Sumarização das variáveis ASSUNTO RAIZ, CLASSE RAIZ
+Uma feature utilizada para clusterização das unidades judiciárias foi o sumarização (count) das variáveis ASSUNTO e CLASSE processual, encontradas nas estruturas: dadosBasicos.assunto e dadosBasicos.classeProcessual contabilizando as ocorrências em cada unidade judiciária
+<img src='/reports/figures/grupo_assunto.png'>
+Para depois serem transformados em coluna (aumento das dimensões)
+<img src='/reports/figures/analise_criterios.png'> <br>
+
 
 ## Modelagem
 
@@ -260,3 +329,7 @@ Conforme o feedback ou insigth do Especialista e do Cientista de Dados, pode ser
 Especificamente para o nosso caso, ajustamos os parâmetros eps e num_sample do algoritmo utilizado: DBScan.
 <img src='/reports/figures/otimizar_dbscan.png'>
 
+## Entrada produção
+Optamos por utiliza o Heroku (plataforma em nuvem como um serviço que suporta várias linguagens de programação) para disponibilizar nossa aplicação.
+
+>**Acesso a solução:** http://desafio-cnj-frontend.herokuapp.com/
