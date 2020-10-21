@@ -71,24 +71,24 @@ No mais, listamos aqui os principais passos para executar nossa solução do in�
 
 1. Utilização de sistema operacional Linux
 2. Instalação do banco de dados PostgreSQL
-    2.1 Seguir tutorial: https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-14-04
-    2.2 Criar banco de dados chamado 'panorama', usuário 'panorama' e senha 'panorama'
+    1. Seguir tutorial: https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-14-04
+    2. Criar banco de dados chamado 'panorama', usuário 'panorama' e senha 'panorama'
 3. Instalação do backend Django
-    3.1 O projeto do backend está disponível em: git: gabriel-bandeira/backend-desafio-cnj
-    3.2 Instalar dependências utilizando o comando 'pip install -r requirements.txt'
-    3.3 Executar script MacroSteps.py em: git: lfvvercosa/desafio_cnj para geração dos jsons
-    3.4 Popular o banco de dados com o jsons presentes na pasta Fixtures utilizando o comando 'python manage.py loaddata <nome_do_json>' na seguinte ordem:
-        3.4.1 base5_comments.json
-        3.4.2 base5_groups.json
-        3.4.3 base5_varas.json
-        3.4.4 base5_steps_config.json
-        3.4.5 base5_steps.json
-    3.5 Executar o backend com o comando 'python manage.py runserver'
+    1. O projeto do backend está disponível em: git: gabriel-bandeira/backend-desafio-cnj
+    2. Instalar dependências utilizando o comando 'pip install -r requirements.txt'
+    3. Executar script MacroSteps.py em: git: lfvvercosa/desafio_cnj para geração dos jsons
+    4. Popular o banco de dados com o jsons presentes na pasta Fixtures utilizando o comando 'python manage.py loaddata <nome_do_json>' na seguinte ordem:
+        1. base5_comments.json
+        2. base5_groups.json
+        3. base5_varas.json
+        4. base5_steps_config.json
+        5. base5_steps.json
+    5. Executar o backend com o comando 'python manage.py runserver'
 4. Instalação do front-end
-    4.1 Instalar o Node.js
-    4.2 executar Npm install
-    4.3 executar Npm run start
-    4.4 abrir endereço localhost:9000 no browser
+    1. Instalar o Node.js
+    2. executar Npm install
+    3. executar Npm run start
+    4. abrir endereço localhost:9000 no browser
 
 
 ## Metodologia do Projeto
