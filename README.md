@@ -237,11 +237,11 @@ Com esta interface o Juiz / Desembargador poderá acompanhar o desempenho da sua
 Para a feature de identificação e comparação de gargalos entre as unidades judiciárias, fizemos uma simplificação nos fluxos processuais, criado o conceito de Macro-Etapas (Marcos), segundo a seguinte condificação (que será configurável pelo usuário):
 >**Macro-Etapas (Marcos):**
 >* DISTRIBUIÇÃO
-  * Código de movimento = 26
+>   * Código de movimento = 26
 > * CITAÇÃO
 >  * Breadscrum = 14:48:1228 (qualquer movimento com essa hierarquia)
->* APRECIAÇÃO DE TUTELA DE URGENCIA OU MEDIDA LIMINAR
->  * Código de movimento = 332 - concessao -> antecipacao de tutela
+> * APRECIAÇÃO DE TUTELA DE URGENCIA OU MEDIDA LIMINAR
+    >  * Código de movimento = 332 - concessao -> antecipacao de tutela
 >  * Código de movimento = 785 - nao-concessao -> antecipação de tutela
 >  * Código de movimento = 889 - concessao em parte -> antecipaçao de tutela
 >* AUDIÊNCIA
