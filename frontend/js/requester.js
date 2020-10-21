@@ -35,6 +35,7 @@ function getVaraByID(vara_id, callback) {
   }
   var url = urlBase + 'varas/' + vara_id
   jQuery.get(url, (data)=>{
+    court_details = data
     callback(data)
   });
 }
@@ -42,6 +43,7 @@ function getVaraByID(vara_id, callback) {
 function getBestVarasOnStep(step_id, vara_id, amount_of_varas, callback) {
   var url = urlBase + 'varas/bestVarasOnStep/?step_id=' + step_id + '&amount_of_varas=' + amount_of_varas + '&vara_id=' + vara_id
   jQuery.get(url, (data)=>{
+    bestVarasOnStep = data
     callback(data)
   });
 }

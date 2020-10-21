@@ -1,5 +1,4 @@
 getBestVaras(vara_id, 10, (result)=>{
-    console.log('=== '+JSON.stringify(result))
     var groups = ['distribuição','conclusão','despacho','decisão','julgamento','trânsito em julgado','baixa ou arquivamento']
     var time_distribuicao = ["distribuição"]
     var time_conclusao = ["conclusão"]
@@ -9,17 +8,6 @@ getBestVaras(vara_id, 10, (result)=>{
     var time_transito_em_julgado = ["trânsito em julgado"]
     var time_baixa_ou_arquivamento = ["baixa ou arquivamento"]
     result.forEach(json => {
-        /* if(time_distribuicao.length == 0){
-            time_distribuicao.push(json.name)
-            time_conclusao.push(json.name)
-            time_despacho.push(json.name)
-            time_decisao.push(json.name)
-            time_julgamento.push(json.name)
-            time_transito_em_julgado.push(json.name)
-            time_baixa_ou_arquivamento.push(json.name)
-        } */
-
-
         if(json.time_distribuicao && json.time_distribuicao != null)
             time_distribuicao.push(json.time_distribuicao)
         else
