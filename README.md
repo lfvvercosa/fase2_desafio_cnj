@@ -93,8 +93,7 @@ No mais, listamos aqui os principais passos para executar nossa solução do in�
 
 ## Metodologia do Projeto
 
-O CRISP-DM (CRoss-Industry Standard Process for Data Mining) é uma metodologia de mineração de dados abrangente e um modelo de processo que auxilia a qualquer um - novatos a especialistas em mineração de dados - com um plano completo para conduzir um projeto de mineração de dados. CRISP-DM divide o ciclo de vida de um projeto de mineração de dados em seis fases: compreensão do negócio, compreensão de dados, preparação de dados, modelagem, avaliação e implantação. A Figura abaixo mostra as fases do CRISP-DM. As setas indicam as dependências mais
-importantes e freqüentes entre as fases, enquanto o círculo externo simboliza a natureza cíclica de mineração de dados em si e ilustra que as lições aprendidas durante o processo de mineração de dados e da solução implantada pode desencadear novas questões de negócios, muitas vezes mais focadas.
+Em nosso projeto nós utilizamos a metodologia CRISP-DM (CRoss-Industry Standard Process for Data Mining). Ela é uma metodologia de mineração de dados capaz de transformar os dados da empresa em conhecimento e informações de gerenciamento. CRISP-DM divide o ciclo de vida de um projeto de mineração de dados em seis fases: compreensão do negócio, compreensão de dados, preparação de dados, modelagem, avaliação e implantação. A Figura abaixo ilustra as fases do CRISP-DM. A seguir discutimos brevemente como abordamos cada uma dessas etapas.
 
 <img src='/reports/figures/crisp-dm.png'>
 
