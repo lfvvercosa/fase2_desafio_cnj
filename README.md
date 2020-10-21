@@ -156,11 +156,7 @@ Antes de receber os arquivos de dados (json), fizemos uso dos seguintes document
 * **Informacoes Complementares CNJ Inova - Desafios e Dados.pdf**.
 * **Glossário-Datajud-Processos** 
 
-Quando do recebimento dos dados e após estudar a estrutura dos arquivos, elaboramos script para extração e normalização dos dados. Elaboramos duas tabelas: a primeira com os dados básicos das Unidades Judiciárias e outra contendo informações detalhadas das movimentações dos processos.
-
-<img src='/reports/figures/leitura_dados.png'>
-
-Entretanto, notamos que os arquivos abaixo não obedeciam a estrutura de dados definidos pela organização (optamos por não considerar esses dados nesse momento):
+Quando do recebimento dos dados e após estudar a estrutura dos arquivos, elaboramos script para extração e normalização dos dados. Elaboramos duas tabelas: a primeira com os dados básicos das Unidades Judiciárias e outra contendo informações detalhadas das movimentações dos processos. Entretanto, notamos que os arquivos abaixo não obedeciam a estrutura de dados definidos pela organização (optamos por não considerar esses dados nesse momento):
 
 >* processos-tjgo_5.json
 >* processos-tjgo_6.json
