@@ -46,9 +46,6 @@ function setBottleneckRankComponent() {
       $('#table-bottleneck-tab2').removeClass('rank-table-tabs-item-selected')
       $('#table-bottleneck-tab3').addClass('rank-table-tabs-item-selected')
     })
-
-    setBottleneckTable(json, vara_id, 0)    
-    
   })
   $('#bottleneck-mov-1-position').html('13'+'°')
   $('#bottleneck-mov-2-position').html('13'+'°')
