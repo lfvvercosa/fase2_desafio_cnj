@@ -155,6 +155,12 @@
 }
 .rank-table-content table tr {
   height: 3.5rem;
+  display: flex;
+}
+.rank-table-content table tr th {
+  display: block;
+  height: 2rem;
+  overflow: hidden;
 }
 .rank-table-content-odd {
   background-color: #ffffff;

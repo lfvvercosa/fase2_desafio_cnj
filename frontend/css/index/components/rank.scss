@@ -153,6 +153,12 @@
         font-size: 1.4rem;
         tr {
           height: 3.5rem;
+          display: flex;
+          th {
+            display: block;
+            height: 2rem;
+            overflow: hidden;
+          }
         }
       }
       &-odd {
