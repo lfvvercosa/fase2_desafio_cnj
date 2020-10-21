@@ -5,9 +5,8 @@
 ## O projeto
 Projeto do Desafio de Process Mining do Hackaton CNJ
 
-## Organizacao do Projeto
+## Organizacao do Projeto (git: lfvvercosa/desafio_cnj)
 ------------
-    ├── backend                         <- Arquivos dos serviços utilizados pela aplicação
     ├── data
     │   ├── external                    <- Dados obtidos de terceiros (não CNJ) 
     │   ├── interim                     <- Dados intermediários que sofreram alguma transformação.
@@ -15,31 +14,50 @@ Projeto do Desafio de Process Mining do Hackaton CNJ
     │   ├── processed                   <- Conjuntos de dados canônicos para modelagem.
     │   └── raw                         <- Dados originais, brutos (não processados).
     ├── frontend                        <- Arquivos referentes a interface da aplicação
-    ├── models                          <- Modelos treinados e serializados, previsões de modelos ou resumos de modelos
     ├── notebooks                       <- Jupyter notebooks. A convenção de nomenclatura é um número (para ordenação
     ├── references                      <- Dicionários de dados, manuais e todos os outros materiais explicativos.
     ├── reports                         <- Análise gerada como HTML, PDF, LaTeX, etc.
     │   └── figures                     <- Gráficos e figuras gerados para serem usados em relatórios
     ├── src                             <- Código-fonte para uso neste projeto.
     │   ├── data                        <- Scripts para criação ou geração dos dados
-    │   ├── discovery                   <- Scripts para descoberta dos processos
-    │   ├── features                    <- Scripts para transformar dados brutos em recursos para modelagem
-    │   ├── models                      <- Scripts para treinar modelos e, em seguida, usar modelos treinados para fazer previsões
-    │   └── visualization               <- Scripts para criar visualizações exploratórias e orientadas a resultados
-    ├── test                            <- Testes realizados durante o projeto
-    ├── utils                           <- Bibliotecas uteis ao projeto
-    ├── requirements.txt                <- O arquivo de requisitos para reproduzir o ambiente de análise, por ex. gerado com `pip freeze > requirements.txt`
-    ├── README.md                       <- README principal para os desenvolvedores deste projeto.
-    └── .gitignore                      <- Arquivos ignorados pelo git.
+    ├── log                             <- Modelos utilizados na etapa de pré-processamento
+    ├── visualization                   <- Modelos utilizados na etapa de pré-processamento
+    ├── process                         <- Modelos utilizados na etapa de pré-processamento
+    │   ├── CreateJSONDB.py             <- Script para geração de .json's para popular o banco de dados do backend
+    │   ├── MacroSteps.py               <- Classe responsável pela criação das macroetapas
+    ├── test                            <- Scripts de testes realizados durante o projeto
+    ├── utils                           <- Classes úteis à etapa de pré-processamento
+    ├── README.md                       <- README principal contendo a descrição das principais etapas e arquivos do projeto
+    ├── swagger.yaml                    <- Definição dos endpoints do backend (o backend está no repósitorio git: gabriel-bandeira/backend-desafio-cnj)
+    ├── tabelas.dbdiagram               <- Definição das tabelas do banco de dados
+    └── .gitignore                      <- Arquivos ignorados pelo git
+    
 
-## Bibliotecas utilizadas
+## Bibliotecas e Framework utilizados
+
 ### PM4Py
 PM4Py é a plataforma de mineração de processos de código aberto líder escrita em Python.
-
 >$ pip install pm4py
 
+### Django
+Django é um framework web em python que encoraga desenvolvimento rápido e limpo.
+>$ pip install Django
+
+### Scikit-learn
+Scikit-learn is a machine learning python library
+>$ pip install -U scikit-learn
+
+
 ## Como executar o projeto   
- 
+
+Nosso time subiu os servidores do backend e do front-end na plataforma gratuira Heroku. Dessa forma, é possível acessar nossa solução, batizada de Panorama, utilizando o seguinte endereço web:
+    http://desafio-cnj-frontend.herokuapp.com/
+
+No mais, listamos aqui os principais passos para executar nossa solução do início:
+
+    - Instalação do banco de dados PostgreSQL
+        - teste
+
 ## Metodologia do Projeto
 
 O CRISP-DM (CRoss-Industry Standard Process for Data Mining) é uma metodologia de mineração de dados abrangente e um modelo de processo que auxilia a qualquer um - novatos a especialistas em mineração de dados - com um plano completo para conduzir um projeto de mineração de dados. CRISP-DM divide o ciclo de vida de um projeto de mineração de dados em seis fases: compreensão do negócio, compreensão de dados, preparação de dados, modelagem, avaliação e implantação. A Figura abaixo mostra as fases do CRISP-DM. As setas indicam as dependências mais
