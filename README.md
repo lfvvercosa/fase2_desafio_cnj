@@ -67,7 +67,9 @@ Scikit-learn is a machine learning python library
 Nosso time subiu os servidores do backend e do front-end na plataforma gratuira Heroku. Dessa forma, é possível acessar nossa solução, batizada de Panorama, utilizando o seguinte endereço web:
     http://desafio-cnj-frontend.herokuapp.com/
     
-É importante destacar limitação da versão gratuita da plataforma Heroku. Ela restringe o número de conexões máximas ao banco de dados, sendo assim, após extendido uso, o banco de dados pode ficar indisponível por alguns minutos. 
+**OBS(1)**: É importante destacar limitação da versão gratuita da plataforma Heroku. Ela restringe o número de conexões máximas ao banco de dados, sendo assim, após extendido uso, o banco de dados pode ficar indisponível por alguns minutos. 
+
+**OBS(2)**: O primeiro acesso à solução será geralmente mais lento que os seguintes, pois o banco de dados entra em modo hibernação na plataforma Heroku, após algum tempo de inatividade.
 
 No mais, listamos aqui os principais passos para executar nossa solução do início:
 
@@ -256,9 +258,10 @@ A seguir, descrição dos principais componentes desta solução enumerados nas 
     * (Não implementado) Exibe o fluxo dos macroprocessos da unidade judicial de melhor colocação. A ideia é que o juiz possa comparar o seu processo visualmente com o da melhor vara de seu grupo.
 * **Sugestões de melhoria**
     * Sugestões de melhorias no processo como um todo fornecidas pelo juiz da vara comparada.
-* **Rankind das unidades judiciárias**
+* **Ranking das unidades judiciárias**
     * Exibe as top cinco unidades judiciais por tempo médio de duração de processo, a unidade judicial analisada e seus vizinhos imediatos acima e abaixo.
 
+**OBS**: É possível alternar para uma vara de outro grupo clicando na medalha localizada no canto superior esquerdo.
 
 ## Entrada produção
 Optamos por utiliza o Heroku (plataforma em nuvem como um serviço que suporta várias linguagens de programação) para disponibilizar nossa aplicação.
