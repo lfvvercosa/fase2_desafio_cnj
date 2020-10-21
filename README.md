@@ -181,15 +181,10 @@ Abaixo seguem algumas transformações realizadas a partir de algumas ideias (si
 ### Filtros
 Conforme vimos na sessão [Entendimento do Negócio](#entendimento_negocio),o escopo do projeto foi delimitado quanto a _oportunidades de melhoria de tempos e produtividades_ **nas unidades judiciárias de EXECUÇÃO FISCAL** (<font color=red>pois são as principais responsáveis pela alta taxa de congestionamento do Poder Judiciário</font>, conforme relatório do CNJ [Justiça em Números 2020]( https://www.cnj.jus.br/pesquisas-judiciarias/justica-em-numeros/))
 Abaixo outros filtros realizados nos dados ao longo do projeto:
-  * **Filtro nos movimentos:** Para realizar a tarefa de discovery do processo (descoberta da sequencia de atividades executadas) a partir do log de movimentos, consideramos apenas os processos que tiveram movimentação de início (Distribuição) e movimento de término (Baixa ou Arquivamento definitivo) compreendidos entre os anos de 2000 e 2015.
-  * **Assunto:** Processos que não apresentavam código de assunto ou código de assunto igual a 0 (zero) foram desconsiderados devido a feature de clusterização por assunto.
-  * **Nome dos Órgãos Julgadores:** Órgãos julgadores sem nome não foram considerados.
+  * **Filtro nos movimentos:** Para realizar a tarefa de discovery do processo (descoberta da sequencia de atividades executadas) a partir do log de movimentos, consideramos apenas os processos que tiveram movimentação de início (Distribuição) e movimento de término (Baixa ou Arquivamento definitivo) compreendidos entre os anos de 2000 e 2020.
 
 ### Limpeza dos dados
-Abaixo listamos algumas das inconsistências encontradas nos dados e a correção ou solução de contorno.
-* **Formatos diversos de data:** Aparentemente o campo da data de ajuizamento (dadosBasicos.dataAjuizamento),  possuia mais de uma formatação de data. Fizemos a correção deixando o formato: dd/mm/aaaa hh:mi.
-* **Código Orgao Julgador x Nome Órgão Julgador:** Encontramos diversos codigo de órgão julgador zerado (valor 0), alguns nomes de órgão julgadores diferentes sendo referenciados pelo mesmo código de órgão julgador.
-* **Formato do encoding do campo Nome do Órgão Julgador:** Caracteres especiais foram encontrados no nome dos órgãos julgadores. Utilizamos o encoding = 'utf-8' para resolver essa questão.
+Foram removidos do log instâncias de processo com dados inconsistentes como datas, campos nulos ou zerados.
 
 ### Transformações realizadas
 
@@ -203,10 +198,9 @@ Levando em consideração o [SGT - Sistema de Gestão de Tabelas Processuais Uni
 > Teríamos como Assunto Raiz o "1156 - Direito do consumidor".
 
 Essa informação foi importante para a simplificação do modelo, contorno da restrição quanto a capacidade de processamento dos dados (devido ao grande volume) e principalmente para simplificação das tarefas do fluxo (agrupamento de movimentos).
-<img src='figures/etl_breadscrum.png'>
 
 #### Sumarização das variáveis ASSUNTO RAIZ, CLASSE RAIZ
-Uma feature utilizada para clusterização das unidades judiciárias foi o sumarização (count) das variáveis ASSUNTO e CLASSE processual, encontradas nas estruturas: dadosBasicos.assunto e dadosBasicos.classeProcessual contabilizando as ocorrências em cada unidade judiciária
+Os dados utilizados para a etapa de clusterização das unidades judiciárias foram as variáveis ASSUNTO e CLASSE processual, encontradas nas estruturas: dadosBasicos.assunto e dadosBasicos.classeProcessual. Nós contabilizamos as ocorrências de cada ASSUNTO e CLASSE processual nas unidade judiciárias.
 <img src='/reports/figures/grupo_assunto.png'>
 Para depois serem transformados em coluna (aumento das dimensões)
 <img src='/reports/figures/analise_criterios.png'> <br>
