@@ -107,7 +107,7 @@ A primeira etapa do modelo CRISP-DM é o entendimento do negócio, abaixo descre
 
 Outro material particularmente interessante, disponibilizado pelo Hackathon foi o Estudos CNJ casos e relatos - personas.pdf, do qual pudemos extrair algumas necessidades dos usuários:
 
-Após esse primeiro entendimento do desafio e das necessidades dos usuários, mergulhamos no entendimento do negócio em sí, para tanto conversamos com algumas pessoas atuantes no direito (advogados, servidores), fizemos diversas pesquisas na internet e também utilizamos como referência o relatório: [**Justiça em números 2020**](https://www.cnj.jus.br/pesquisas-judiciarias/justica-em-numeros/) do CNJ, no qual reproduzimos abaixo algumas informações importantes, extraídas do documento citado, para entendimento da justiça no Brasil.
+Após esse primeiro entendimento do desafio e das necessidades dos usuários, mergulhamos no entendimento do negócio em sí, para tanto conversamos com algumas pessoas atuantes no direito (advogados, servidores), fizemos diversas pesquisas na internet e também utilizamos como referência o relatório: [**Justiça em números 2020**](https://www.cnj.jus.br/pesquisas-judiciarias/justica-em-numeros/) do CNJ, no qual reproduzimos abaixo algumas informações importantes ao projeto.
 
 ### O poder judiciário
 O Poder Judiciário brasileiro divide-se em cinco ramos: Justiça Estadual, Justiça do Trabalho, Justiça Federal,
@@ -119,26 +119,9 @@ quatro tribunais superiores: STJ, STM, TSE e TST.
 ### justiça Estadual
 <img src='/reports/figures/justiça.png'>
 
-### justiça do Trabalho
-<img src='/reports/figures/justiça_trabalho.png'>
-
-### Justiça Federal
-<img src='/reports/figures/justiça_federal.png'>
-
-### Justiça Eleitoral
-<img src='/reports/figures/justiça_eleitoral.png'>
-
-### Justiça Militar (Estadual e da União)
-<img src='/reports/figures/justiça_militar_estadual.png'>
-<img src='/reports/figures/justiça_militar_uniao.png'>
-
-### Justiça Tribunais Superiores
-<img src='/reports/figures/justiça_tribunais.png'>
-<img src='/reports/figures/justiça_tribunais2.png'>
-
 <a id="definicao_problema"></a>
 ### Definição do problema
-Analisando os documentos disponibilizados pelo Hackathon: **DESAFIO ENAP - CNJ INOVA Briefing.pdf** e **Estudos CNJ casos e relatos - personas.pdf** pudemos entender melhor o contexto geral do problema e as necessidades dos principais Stakeholders envolvidos. Diante de tantas possibilidades, decidimos restringir o escopo do projeto para atender essencialmente as necessidades identificadas da **persona do JUIZ/DESEMBARGADOR**, que:
+Analisando os documentos disponibilizados pelo Hackathon: **DESAFIO ENAP - CNJ INOVA Briefing.pdf** e **Estudos CNJ casos e relatos - personas.pdf** pudemos entender melhor o contexto geral do problema e as necessidades dos principais Stakeholders envolvidos. Decidimos restringir o escopo do projeto para atender essencialmente as necessidades identificadas da **persona do JUIZ/DESEMBARGADOR**, que:
 > Cuida, atualmente, de uma vara com <font color=red>80.000 processos</font>, sendo a maioria físicos, sente que sua equipe está motivada e quer gerar resultados, mas diante da quantidade de **processos pendentes de julgamento** e da administração da sua unidade judiciária, **vê-se absolutamente sem tempo**.
 
 > Desejos:<br>
@@ -161,10 +144,10 @@ Através da formalização do problema, pudemos identificar vários sub-problema
 * Definir um critério de agrupamento de unidades judiciárias semelhantes levando em consideração as competências, situação atual e os recursos disponíveis da unidade judiciária
 
 
-### Busca dos dados
-A principal fonte de dados para o Hackathon serão os dados básicos e movimentações processuais contidos no banco de dados unificado do CNJ, referenciado como DataJud, que será disponibilizado no formato Json, conforme informações apresentadas no [Webinar - dados](https://youtu.be/VBDGxGxgTPw). Adicionalmente identificamos as possíveis fontes de dados:
+### Fontes de dados
+A principal fonte de dados para o Hackathon foram os dados básicos e movimentações processuais contidos no banco de dados unificado do CNJ, referenciado como DataJud, que será disponibilizado no formato Json, conforme informações apresentadas no [Webinar - dados](https://youtu.be/VBDGxGxgTPw). Adicionalmente identificamos as possíveis fontes de dados:
 * **[IBGE - Instituto Brasileiro de Geografia e Estatística](https://www.ibge.gov.br/explica/codigos-dos-municipios.php)** - Para obtenção de informações quanto aos municípios brasileiros.
-* **[SGT - Sistema de Gestão das Tabelas Processuais Unificadas](https://www.cnj.jus.br/sgt/consulta_publica_assuntos.php)** - Para obtenção dos "depara" dos assuntos, classes e movimentos processuais
+* **[SGT - Sistema de Gestão das Tabelas Processuais Unificadas](https://www.cnj.jus.br/sgt/consulta_publica_assuntos.php)** - Para obtenção dos "de-para" dos assuntos, classes e movimentos processuais
 * **[CNJ - Conselho Nacional de Justiça](https://paineis.cnj.jus.br/QvAJAXZfc/opendoc.htm?document=qvw_l%2FPainelCNJ.qvw&host=QVS%40neodimio03&anonymous=true&sheet=shResumoDespFT)** - Consulta aos paineis da justiça para obtenção de dados referentes a produtividade e demais informações sobre a justiça.
 
 <a id="entendimento_dados"></a>
@@ -173,11 +156,11 @@ Antes de receber os arquivos de dados (json), fizemos uso dos seguintes document
 * **Informacoes Complementares CNJ Inova - Desafios e Dados.pdf**.
 * **Glossário-Datajud-Processos** 
 
-Quando do recebimento dos dados e após estudar a estrutura dos arquivos, elaboramos um script em python para extração e normalização dos dados e criação de dois DataFrame (um para dadosBasicos e outro para as movimentacoes) para realizarmos a exploração dos dados referentes a Justiça Estadual.
+Quando do recebimento dos dados e após estudar a estrutura dos arquivos, elaboramos script para extração e normalização dos dados. Elaboramos duas tabelas: a primeira com os dados básicos das Unidades Judiciárias e outra contendo informações detalhadas das movimentações dos processos.
 
 <img src='/reports/figures/leitura_dados.png'>
 
-Para nossa surpressa, os arquivos abaixo não obedeciam a estrutura de dados definidos pela organização (optamos por não considerar esses dados nesse momento e tratá-los num momento posterior):
+Entretanto, notamos que os arquivos abaixo não obedeciam a estrutura de dados definidos pela organização (optamos por não considerar esses dados nesse momento):
 
 >* processos-tjgo_5.json
 >* processos-tjgo_6.json
@@ -201,11 +184,10 @@ Abaixo seguem algumas transformações realizadas a partir de algumas ideias (si
 
 ### Filtros
 Conforme vimos na sessão [Entendimento do Negócio](#entendimento_negocio),o escopo do projeto foi delimitado quanto a _oportunidades de melhoria de tempos e produtividades_ **nas unidades judiciárias de EXECUÇÃO FISCAL** (<font color=red>pois são as principais responsáveis pela alta taxa de congestionamento do Poder Judiciário</font>, conforme relatório do CNJ [Justiça em Números 2020]( https://www.cnj.jus.br/pesquisas-judiciarias/justica-em-numeros/))
-Abaixo outros filtos realizados nos dados ao longo do projeto:
-> **Filtro nos órgãos jugladores:** Escopo delimitado para órgãos julgadores que tivessem um dos termos: "fiscal" ou "fazenda".
-> **Filtro nos movimentos:** Para realizar a tarefa de discovery do processo (descoberta da sequencia de atividades executadas) a partir do log de movimentos, consideramos apenas os processos que tiveram movimentação de início (Distribuição) e movimento de término (Baixa ou Arquivamento definitivo) compreendidos entre os anos de 2000 e 2015.
-> **Assunto:** Processos que não apresentavam código de assunto ou código de assunto igual a 0 (zero) foram desconsiderados devido a feature de clusterização por assunto.
-> **Nome dos Órgãos Julgadores:** Órgãos julgadores sem nome não foram considerados.
+Abaixo outros filtros realizados nos dados ao longo do projeto:
+  * **Filtro nos movimentos:** Para realizar a tarefa de discovery do processo (descoberta da sequencia de atividades executadas) a partir do log de movimentos, consideramos apenas os processos que tiveram movimentação de início (Distribuição) e movimento de término (Baixa ou Arquivamento definitivo) compreendidos entre os anos de 2000 e 2015.
+  * **Assunto:** Processos que não apresentavam código de assunto ou código de assunto igual a 0 (zero) foram desconsiderados devido a feature de clusterização por assunto.
+  * **Nome dos Órgãos Julgadores:** Órgãos julgadores sem nome não foram considerados.
 
 ### Limpeza dos dados
 Abaixo listamos algumas das inconsistências encontradas nos dados e a correção ou solução de contorno.
