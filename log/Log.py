@@ -2,6 +2,7 @@ from pm4py.objects.log.importer.xes import importer as xes_importer
 from pm4py.statistics.traces.log import case_statistics
 from pm4py.algo.filtering.log.variants import variants_filter
 from pm4py.objects.conversion.log import converter as log_converter
+from pm4py.statistics.traces.log import case_statistics
 
 
 LOW_FILTERING = 1
@@ -31,4 +32,13 @@ class Log():
             [v['variant'] for v in variants_count \
                   if v['count']/total_traces >= filter_threshold]
         self.log = variants_filter.apply(self.log, desired_variants)
+
+
+    def median_time(self):
+        median_case_duration = case_statistics.\
+            get_median_caseduration(self.log, parameters={
+            case_statistics.Parameters.TIMESTAMP_KEY: "time:timestamp"
+            })
+            
+        return median_case_duration
 
