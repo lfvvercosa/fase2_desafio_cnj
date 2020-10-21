@@ -270,11 +270,10 @@ Optamos por utiliza o Heroku (plataforma em nuvem como um serviço que suporta v
 >**Solução: Configuração dos critérios -**
 Com essa ferramenta o Pesquisador do CNJ poderá criar, testar e configurar novos critérios de agrupamento, analisando o impacto da combinação de parâmetros de filtragem, agrupamento e clusterização no resultado dos grupos criados. Permitindo que estudos sejam realizados no sentido de aprimorar os critérios de comparação entre unidades judiciárias semelhantes.
 
->**<font color=gray>Solução: API - Integração</font>**<br>
-><font color=gray> **PJE - Configuração de alarmes para tempos processuais -** Com a análise do TRACE (sequencia de atividades) dos processos da unidade judiciária, temos condições de predizer o tempo esperado que um determinado processo a partir de sua tarefa atual, chegue a uma determinada tarefa (normalmente a tarefa de término do processo, que pode ser JULGAMENTO, TRANSITO EM JULGADO, BAIXA / ARQUIVAMENTO DEFINITIVO ou qualquer outra tarefa desejada). Com base nessa infomação é possível:
+>**Solução: Configuração dos critérios -**
+Com a análise do TRACE (sequencia de atividades) dos processos da unidade judiciária, temos condições de predizer o tempo esperado que um determinado processo a partir de sua tarefa atual, chegue a uma determinada tarefa (normalmente a tarefa de término do processo, que pode ser JULGAMENTO, TRANSITO EM JULGADO, BAIXA / ARQUIVAMENTO DEFINITIVO ou qualquer outra tarefa desejada). Com base nessa infomação é possível:
 * Exibir nas telas do PJE (por exemplo: autos do processo), o tempo esperado para conclusão do processo.
-* Exibir mensagem de alertas que notifiquem ao usuário interno do PJE (servidores e magistrados) quando um determinado processo estiver perto de atrasar ou já tiver atrasado.</font>
+* Exibir mensagem de alertas que notifiquem ao usuário interno do PJE (servidores e magistrados) quando um determinado processo estiver perto de atrasar ou já tiver atrasado.
 
-#### Solução: Criação, análise e configuração dos critérios
-Abaixo podemos consultar algumas telas utilizadas para criar, configurar os critérios e realizar a análise dos grupos obtidos. 
-<img src='/reports/figures/tela_grupo.png'>
+
+
