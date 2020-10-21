@@ -5,7 +5,10 @@
 ## O projeto
 Projeto do Desafio de Process Mining do Hackaton CNJ
 
-## Organizacao do Projeto (git: lfvvercosa/desafio_cnj)
+## Organizacao do Projeto 
+
+### git: lfvvercosa/desafio_cnj
+
 ------------
     ├── data
     │   ├── external                    <- Dados obtidos de terceiros (não CNJ) 
@@ -32,6 +35,17 @@ Projeto do Desafio de Process Mining do Hackaton CNJ
     ├── tabelas.dbdiagram               <- Definição das tabelas do banco de dados
     └── .gitignore                      <- Arquivos ignorados pelo git
     
+### git: gabriel-bandeira/backend-desafio-cnj
+
+------------
+    ├── panorama                        
+    │   ├── settings.py                 <- Arquivo de configurações
+    │   ├── urls.py                     <- Endpoints do banco de dados
+    ├── performance                     <- App django da aplicação
+    │   ├── models.py                   <- Modelos django do banco de dados
+    │   ├── urls.py                     <- Endpoints do banco de dados
+    │   ├── views.py                    <- Views django referentes aos endpoints
+    ├── requirements.txt                <- Especifica dependências do Django a serem instaladas com o comando 'pip'
 
 ## Bibliotecas e Framework utilizados
 
@@ -63,10 +77,18 @@ No mais, listamos aqui os principais passos para executar nossa solução do in�
     3.1 O projeto do backend está disponível em: git: gabriel-bandeira/backend-desafio-cnj
     3.2 Instalar dependências utilizando o comando 'pip install -r requirements.txt'
     3.3 Executar script MacroSteps.py em: git: lfvvercosa/desafio_cnj para geração dos jsons
-    3.4 Popular o banco de dados com o jsons gerados utilizando o comando 'python manage.py loaddata <nome_do_json>'
+    3.4 Popular o banco de dados com o jsons presentes na pasta Fixtures utilizando o comando 'python manage.py loaddata <nome_do_json>' na seguinte ordem:
+        3.4.1 base5_comments.json
+        3.4.2 base5_groups.json
+        3.4.3 base5_varas.json
+        3.4.4 base5_steps_config.json
+        3.4.5 base5_steps.json
     3.5 Executar o backend com o comando 'python manage.py runserver'
 4. Instalação do front-end
-    
+    4.1 Instalar o Node.js
+    4.2 executar Npm install
+    4.3 executar Npm run start
+    4.4 abrir endereço localhost:9000 no browser
 
 
 ## Metodologia do Projeto
