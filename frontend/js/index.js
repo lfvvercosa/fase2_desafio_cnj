@@ -21,6 +21,8 @@ function setBottleneckRankComponent() {
     $('#bottleneck-mov-3-description').html(json.worst_steps[2].med_time)
     $('#bottleneck-mov-3-dest').html(json.worst_steps[2].destination)
 
+    setBottleneckTable(json, vara_id, 0)  
+
     //bottoleneck table
     $('#table-bottleneck-tab1').html(json.worst_steps[0].origin + '-' + json.worst_steps[0].destination)
     $('#table-bottleneck-tab2').html(json.worst_steps[1].origin + '-' + json.worst_steps[1].destination)
