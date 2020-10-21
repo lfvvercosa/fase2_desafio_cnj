@@ -94,6 +94,8 @@ No mais, listamos aqui os principais passos para executar nossa solução do in�
     3. executar Npm run start
     4. abrir endereço localhost:9000 no browser
 
+## Roadmap
+<img src='/reports/figures/roadmap.png'>
 
 ## Metodologia do Projeto
 
@@ -231,6 +233,26 @@ Com esta interface o Juiz / Desembargador poderá acompanhar o desempenho da sua
 
 <img src='/reports/figures/solucao_1.png'>
 <img src='/reports/figures/solucao_2.png'>
+
+Para a feature de identificação e comparação de gargalos entre as unidades judiciárias, fizemos uma simplificação nos fluxos processuais, criado o conceito de Macro-Etapas (Marcos), segundo a seguinte condificação (que será configurável pelo usuário):
+>**Macro-Etapas (Marcos):**
+>* DISTRIBUIÇÃO
+>  * Código de movimento = 26
+>* CITAÇÃO
+>  * Breadscrum = 14:48:1228 (qualquer movimento com essa hierarquia)
+>* APRECIAÇÃO DE TUTELA DE URGENCIA OU MEDIDA LIMINAR
+>  * Código de movimento = 332 - concessao -> antecipacao de tutela
+>  * Código de movimento = 785 - nao-concessao -> antecipação de tutela
+>  * Código de movimento = 889 - concessao em parte -> antecipaçao de tutela
+>* AUDIÊNCIA
+>  * Breadscrum = 14:48:970 (qualquer movimento com essa hierarquia)
+>* JULGAMENTO/SENTENÇA
+>  * Breadscrum = 1:193 (qualquer movimento com essa hierarquia)
+>* TRÂNSITO EM JULGADO
+>  * Código de movimento = 848
+>* BAIXA / ARQUIVAMENTO
+>  * Código de movimento = 22 - baixa
+>  * Código de movimento = 246 - arquivamento definitivo
 
 A seguir, descrição dos principais componentes desta solução enumerados nas figuras acima.
 
