@@ -1,50 +1,55 @@
 .statistics {
-  height: 23rem;
-  padding: 0;
+  padding: 3rem 0;
   display: flex;
   align-items: center;
+  align-items: stretch;
+  justify-content: space-between;
 }
-.statistics div {
-  height: 19rem;
+
+.statistics > div {
   padding: 0;
   padding-right: 1rem;
   background-color: transparent;
 }
-.statistics div div {
-  background-color: white;
+
+.statistics-len5 div {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f8d7da;
 }
-.statistics-len4 {
-  width: 24%;
+
+.statistics-len4 div {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
 }
-.statistics-len3 {
-  width: 22%;
-}
-.statistics-len2 {
-  width: 20%;
-}
+
 .statistics-len1 {
-  width: 14%;
   padding-right: 0 !important;
 }
+
 .statistics-card .card {
-  padding: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
 .statistics-card-title {
   font-family: "OpenSans-Bold";
-  font-size: 1.8rem;
+  font-size: 1rem;
   height: auto !important;
+  text-transform: uppercase;
 }
+
 .statistics-card-value {
   font-family: "OpenSans-Bold";
-  font-size: 2.7rem;
-  margin-top: 3rem;
+  font-size: 2.75rem;
 }
+
 .statistics-card-info {
   font-family: "OpenSans-Light";
-  font-size: 1.2rem;
-  margin-top: 1rem;
+  font-size: 0.75rem;
 }
 
 /*# sourceMappingURL=statistics.css.map */

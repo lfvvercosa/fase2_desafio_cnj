@@ -1,49 +1,48 @@
 .position {
-  padding-left: 2rem;
-  padding-right: 2rem;
   text-align: center;
-  background-image: url('../../resources/images/medalha.svg');
-  background-repeat: no-repeat;
-  .row {
-    margin: 0;
-  }
-  &-container {
-    height: 16rem;
-    padding-top: 86%;
-    div {
-      margin: 0;
-      height: 3.5rem;
-    }
+  background: transparent url("../../resources/images/medalha.svg") center
+    bottom no-repeat;
+
+  height: 150px;
+  background-size: cover;
+  display: flex;
+ &-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
   }
   &-number {
     font-family: 'OpenSans-Bold';
-    font-size: 3.0rem;
+    font-size: 2.5rem;
     margin: 0;
   }
   &-text {
     text-align: center;
-    font-family: 'OpenSans-Regular';
-    font-size: 0.9rem;
-    margin: 0;
+    font-size: 0.625rem;
+    // margin: 0;
+    text-transform: uppercase;
+    position: relative;
+    margin-top: -.5rem !important;
   }
 }
 
 .header {
   padding-left: 0;
   padding-right: 0;
-  padding-top: 3.5rem;
+  padding-top: 1.875rem;
   .row {
     margin: 0;
   }
   &-left {
     padding: 0;
     &-welcome {
-       font-family: 'OpenSans-Regular';
-       font-size: 1.4rem; 
+      font-size: 0.875rem;
     }
-    &-court{
-      font-family: 'OpenSans-Semibold';
-      font-size: 4rem;
+    &-court {
+      font-family: "OpenSans-Semibold";
+      font-size: 2.5rem;
     }
   }
   &-right {
@@ -56,12 +55,10 @@
       margin-right: 2.3rem;
       margin-left: 3.7rem;
       &-username {
-        font-family: 'OpenSans-Semibold';
-        font-size: 2.2rem;
+        font-family: "OpenSans-Semibold";
+        font-size: 1.375rem;
       }
       &-position {
-        font-family: 'OpenSans-Regular';
-        font-size: 1.6rem;
       }
       div {
         height: auto;
@@ -70,41 +67,38 @@
           margin: 0;
         }
       }
-      
     }
     &-photo {
       img {
-        height: 7.1rem;
-        width: 7.4rem;
-        border-radius: 50%;
+        height: 4.625rem;
+        width: 4.625rem;
+        border-radius: 100%;
+        object-fit: cover;
       }
     }
   }
-  &-bottom{
+  &-bottom {
     align-self: flex-end;
     padding: 0;
     padding-top: 3.2rem;
     &-group {
       display: flex;
       align-items: center;
-      margin-bottom: 3.3rem;
+      margin-bottom: 2rem;
       &-amount {
-        width: 100%;
-        height: 100%;
         font-family: OpenSans-Semibold;
-        font-size: 2.2rem;
-        color: #09253B;
+        font-size: 1.375rem;
+        min-width: 220px !important;
+        color: #09253b;
         margin-right: 1rem;
         margin-bottom: 0;
       }
       &-item {
         background-color: white;
-         p{
-           font-family: OpenSans-Regular;
-           font-size: 1.6rem;
+        p {
           margin-right: 1rem;
           margin-bottom: 0;
-         }
+        }
       }
     }
   }
