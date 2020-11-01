@@ -1,13 +1,11 @@
 .statistics {
-  padding: 3rem 0;
-  display: flex;
-  align-items: center;
-  align-items: stretch;
-  justify-content: space-between;
+  // padding: 3rem 0;
+  // display: flex;
+  // align-items: center;
+  // align-items: stretch;
+  // justify-content: space-between;
 }
 .statistics > div {
-  padding: 0;
-  padding-right: 1rem;
   background-color: transparent;
 }
 
@@ -29,15 +27,13 @@
 .statistics-len2 {
 }
 
-.statistics-len1 {
-  padding-right: 0 !important;
-}
-
 .statistics-card .card {
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 250px;
+
 }
 
 .statistics-card-title {
@@ -49,7 +45,7 @@
 
 .statistics-card-value {
   font-family: "OpenSans-Bold";
-  font-size: 2.75rem;
+  font-size: 1.75rem;
 }
 
 .statistics-card-info {

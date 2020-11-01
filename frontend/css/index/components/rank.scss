@@ -1,7 +1,8 @@
 .rank {
   display: block;
   height: auto;
-  padding: 1.25rem 0;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 
   &-best,
   &-worst {
@@ -87,15 +88,10 @@
       display: flex;
       justify-content: center;  
       &-box {
-        display: flex;
-        align-items: center;
-        height: 4rem;
+        padding: 1rem 2rem;
         background-color: #cce5ff;
-        border-radius: 0.5rem;;
-        justify-content: center;
-        width: 48%;
+        border-radius: 0.5rem;
         p {
-          font-size: 1.5rem;
           font-family: 'OpenSans-SemiBold';
           margin: 0;
         }

@@ -1,9 +1,11 @@
 .rank {
   display: block;
   height: auto;
-  padding: 1.25rem 0;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
-.rank-best, .rank-worst {
+.rank-best,
+.rank-worst {
   padding-top: 2rem;
 }
 .rank-worst {
@@ -29,24 +31,22 @@
 }
 .rank-movements-content .row {
   width: 100%;
-  margin: 0;
 }
 .rank-movements-content-item {
-  display: block;
-  height: 100%;
-  width: 100%;
   text-align: center;
-  padding: 0;
 }
 .rank-movements-content-item-name {
-  display: inline-block;
-  margin: 0;
-  font-family: "OpenSans-SemiBold";
-  font-size: 1.125rem;
-  background: #fff;
+  font-size: 1rem;
   z-index: 2;
   position: relative;
-  min-height: 2.875rem;
+  color: #fff;
+  background: #0d97d5;
+  padding: 1rem;
+  border-radius: 2rem;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .rank-movements-content-item-transaction {
   display: flex;
@@ -56,9 +56,10 @@
 .rank-movements-content-item-transaction-text {
   position: absolute;
   left: 0;
-  top: 40%;
-  width: 50%;
-  text-align: right;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  background: #fff;
   padding-right: 0.5rem;
 }
 .rank-movements-content-item-transaction-text p {
@@ -72,6 +73,7 @@
 }
 .rank-movements-content-item-transaction-arrow img {
   height: 11rem;
+  margin-top: -1px;
 }
 .rank-movements-coments {
   text-align: center;
@@ -80,16 +82,11 @@
   justify-content: center;
 }
 .rank-movements-coments-box {
-  display: flex;
-  align-items: center;
-  height: 4rem;
+  padding: 1rem 2rem;
   background-color: #cce5ff;
   border-radius: 0.5rem;
-  justify-content: center;
-  width: 48%;
 }
 .rank-movements-coments-box p {
-  font-size: 1.5rem;
   font-family: "OpenSans-SemiBold";
   margin: 0;
 }

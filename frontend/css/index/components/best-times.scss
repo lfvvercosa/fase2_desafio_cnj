@@ -1,21 +1,38 @@
 .best-times {
-  padding-top: 1rem;
-  padding-left: 1rem;
+  height: auto;
+  padding: 0;
   &-title {
     font-family: "OpenSans-Bold";
     font-size: 1.5rem;
   }
 
-  &-ol {
+  & > div {
     margin: 0;
     padding-left: 0;
     list-style: none;
-    li {
-      padding: 0.5rem 0;
-      margin: 0;
+  }
+  &-item {
+    padding: 0.5rem 0;
+    margin: 0;
+    font-size: 0.875rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+
+    &:nth-of-type(even) {
+      background-color: rgba(241, 241, 241, 0.5);
+    }
+    &:last-of-type {
+      border-radius: 0 0 0.5rem 0.5rem;
+    }
+    &:nth-child(6n) {
+      border-top: 1px dotted #b0afaf;
+    }
+    &.current {
+      font-weight: bold;
     }
   }
-
   &-info {
     padding: 1rem 0;
     font-size: 1rem;
