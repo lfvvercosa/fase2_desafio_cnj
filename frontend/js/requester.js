@@ -54,3 +54,10 @@ function getBestVaras(vara_id, amount_of_varas, callback) {
     callback(data)
   });
 }
+
+function getGraphData(vara_id_1, vara_id_2, callback) {
+  var url = urlBase + 'varas/' + vara_id_1 + '/compareGraphWith/' + vara_id_2 + '/1'
+  jQuery.get(url, (data)=>{
+    callback(data)
+  });
+}
