@@ -22,7 +22,7 @@
   flex-direction: column;
 }
 .rank-movements-title {
-  font-family: "OpenSans-Bold";
+    font-weight: 600;
   font-size: 1.5rem;
   padding: 0 1rem;
 }
@@ -87,7 +87,7 @@
   border-radius: 0.5rem;
 }
 .rank-movements-coments-box p {
-  font-family: "OpenSans-SemiBold";
+  font-weight: 600;
   margin: 0;
 }
 .rank-table {
@@ -95,9 +95,9 @@
 }
 .rank-table-tabs {
   display: flex;
+  margin-bottom: 0.5rem;
 }
 .rank-table-tabs-item {
-  width: 33%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,10 +109,10 @@
   cursor: pointer;
 }
 .rank-table-tabs-item-selected {
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
-  border: solid 1px #b0afaf;
-  border-bottom: 0;
+  border-radius: 0.25rem;
+  background: #0d97d5;
+  color: #fff;
+  font-weight: bold;
 }
 .rank-table-title {
   text-align: center;
@@ -124,13 +124,19 @@
 }
 .rank-table-title table {
   width: 100%;
-  font-family: "OpenSans-SemiBold";
+  font-weight: 600;
 }
 .rank-table-title table th {
   font-size: 1.125rem;
 }
 .rank-table-title table tr {
-  height: 3.5rem;
+  /* height: 3.5rem; */
+}
+.rank-table-content tr td {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 1px;
 }
 .rank-table-title-index {
   width: 10%;
@@ -156,17 +162,17 @@
 .rank-table-content table {
   width: 100%;
 }
-.rank-table-content table tr {
+/* .rank-table-content table tr {
   height: 3.5rem;
   display: flex;
-}
+} */
 .rank-table-content table tr:hover {
   cursor: pointer;
 }
 .rank-table-content table tr th {
-  display: block;
+  /* display: block;
   height: 1.5rem;
-  overflow: hidden;
+  overflow: hidden; */
 }
 .rank-table-content-odd {
   background-color: #ffffff;

@@ -1,0 +1,7 @@
+.info {
+  opacity: 0.8;
+  &:hover,
+  &:focus {
+    color: var(--blue);
+  }
+}

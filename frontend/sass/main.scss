@@ -1,0 +1,17 @@
+//sass --watch --style compressed main.scss:main.css
+
+@import "bootstrap";
+@import "c3";
+@import "select2";
+
+@import "page";
+@import "header";
+@import "filter";
+@import "map";
+@import "chart";
+// @import "card";
+// @import "ranking";
+// @import "statistics";
+// @import "index/components/chart";
+// @import "index/components/best-times";
+// @import "index/components/footer";

@@ -8,11 +8,11 @@ body {
 }
 
 @font-face {
-  font-family: "OpenSans-Bold";
+    font-weight: 600;
   src: url("../../resources/fonts/Open_Sans/OpenSans-Bold.ttf");
 }
 @font-face {
-  font-family: "OpenSans-Semibold";
+  font-weight: 600;
   src: url("../../resources/fonts/Open_Sans/OpenSans-SemiBold.ttf");
 }
 @font-face {

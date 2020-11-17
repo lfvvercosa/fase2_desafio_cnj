@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sobre | Desafio CNJ</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.2/js/all.min.js"
+        integrity="sha512-IqeQ6271Vq75Nf4OOwCEYi4tIAyT2J7vtKrmOU9WCezb+YkxqAu+igEi2CuLEnA7cqtvFDHsQhXbpZXx/evxrw=="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./sass/main.css">
+</head>
+
+<body>
+    <main>
+        <div id="medal" class="position">
+            <div class="position-title"> Tempo e Eficiência </div>
+            <div class="position-container">
+                <div id="position-number" class="position-number"> <i class="fas fa-circle-notch fa-spin"></i> </div>
+                <div class="position-text">colocada</div>
+            </div>
+        </div>
+        <div class="col-12 col-md-10">
+            <header class="header">
+                <div class="header-info">
+                    <h6 class="header-welcome">bem-vindo à</h6>
+                    <h1 id="court-name" class="header-company"></h1>
+                </div>
+                <div class="w-100 d-block d-md-none pb-3 pb-md-0"></div>
+                <div class="header-user">
+                    <div class="row">
+                        <div class="judge-info">
+                            <p id="username" class="judge-username"></p>
+                            <p id="user-position" class="judge-position"></p>
+                        </div>
+                        <div class="col-4"> <img id="user-photo"
+                                src="https://www.melhoresfilmes.com.br/dimg/?w=165&amp;h=220&amp;mode=crop&amp;url=https%3A%2F%2Fwww.melhoresfilmes.com.br%2Fimg%2Factors%2F6493.jpg"
+                                class="judge-photo" alt="Antonio"> </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="w-100 d-block d-md-none pb-3 pb-md-0"></div>
+        <nav class="menu">
+            <ul>
+                <li><i class="fa-2x fas fa-home" data-toggle="tooltip" title="Página Inicial"></i></li>
+                <li><i class="fa-2x far fa-comments" data-toggle="tooltip"
+                        title="Comentários sobre sua Unidade Jurídica"></i></li>
+                <li class="active"><i class="fa-2x fas fa-info-circle" data-toggle="tooltip"
+                        title="Informações sobre o projeto"></i>
+                </li>
+                <li><i class="fa-2x fas fa-laptop-code" data-toggle="tooltip" title="Equipe Panorama"></i></li>
+            </ul>
+        </nav>
+        <section class="main-content">
+            <div class="row">
+                <div class="card col-12 col-md-8 about-content">
+                    <p><img src="https://raw.githubusercontent.com/lfvvercosa/desafio_cnj/master/reports/figures/logo.png"
+                            alt="Panorama"></p>
+                    <h1 class="code-line" data-line-start=2 data-line-end=3><a
+                            id="Projeto_Hackathon_CNJ_Inova__DESAFIO_1h1_2"></a>Projeto: Hackathon CNJ Inova - DESAFIO
+                    </h1>
+                    <div class="my-4 border rounded embed-responsive embed-responsive-16by9"> <iframe
+                            class="embed-responsive-item" src="https://www.youtube.com/embed/EBU2PZM2J54"
+                            allowfullscreen></iframe> </div>
+                    <h2 class="code-line" data-line-start=4 data-line-end=5><a id="O_projeto_4"></a>O projeto</h2>
+                    <p>Projeto do Desafio de Process Mining do Hackaton CNJ </p>
+                    <h3 class="code-line" data-line-start=7 data-line-end=8><a
+                            id="Organizacao_do_Projeto_7"></a>Organizacao
+                        do Projeto </h3>
+                    <h4 class="code-line" data-line-start=9 data-line-end=10><a id="FrontEnd_9"></a>Front-End</h4>
+                    <p>git: <a
+                            href="https://github.com/lfvvercosa/desafio_cnj">https://github.com/lfvvercosa/desafio_cnj</a>
+                    </p>
+                    <hr>
+                    <pre><code>├── data
+        │   ├── external                    <- Dados obtidos de terceiros (não CNJ) 
+        │   ├── interim                     <- Dados intermediários que sofreram alguma transformação.
+        │   ├── log                         <- Dados referentes aos logs.
+        │   ├── processed                   <- Conjuntos de dados canônicos para modelagem.
+        │   └── raw                         <- Dados originais, brutos (não processados).
+        ├── frontend                        <- Arquivos referentes a interface da aplicação
+        ├── notebooks                       <- Jupyter notebooks. A convenção de nomenclatura é um número (para ordenação
+        ├── references                      <- Dicionários de dados, manuais e todos os outros materiais explicativos.
+        ├── reports                         <- Análise gerada como HTML, PDF, LaTeX, etc.
+        │   └── figures                     <- Gráficos e figuras gerados para serem usados em relatórios
+        ├── src                             <- Código-fonte para uso neste projeto.
+        │   ├── data                        <- Scripts para criação ou geração dos dados
+        ├── log                             <- Modelos utilizados na etapa de pré-processamento
+        ├── visualization                   <- Modelos utilizados na etapa de pré-processamento
+        ├── process                         <- Modelos utilizados na etapa de pré-processamento
+        │   ├── CreateJSONDB.py             <- Script para geração de .json's para popular o banco de dados do backend
+        │   ├── MacroSteps.py               <- Classe responsável pela criação das macroetapas
+        ├── test                            <- Scripts de testes realizados durante o projeto
+        ├── utils                           <- Classes úteis à etapa de pré-processamento
+        ├── README.md                       <- README principal contendo a descrição das principais etapas e arquivos do projeto
+        ├── swagger.yaml                    <- Definição dos endpoints do backend (o backend está no repósitorio git: gabriel-bandeira/backend-desafio-cnj)
+        ├── tabelas.dbdiagram               <- Definição das tabelas do banco de dados
+        └── .gitignore                      <- Arquivos ignorados pelo git
+        </code></pre>
+                    <h4 class="code-line" data-line-start=38 data-line-end=39><a id="BackEnd_38"></a>Back-End</h4>
+                    <p>git: <a
+                            href="https://github.com/gabriel-bandeira/backend-desafio-cnj">https://github.com/gabriel-bandeira/backend-desafio-cnj</a>
+                    </p>
+                    <pre><code>├── panorama                        
+        │   ├── settings.py                 <- Arquivo de configurações
+        │   ├── urls.py                     <- Endpoints do banco de dados
+        ├── performance                     <- App django da aplicação
+        │   ├── models.py                   <- Modelos django do banco de dados
+        │   ├── urls.py                     <- Endpoints do banco de dados
+        │   ├── views.py                    <- Views django referentes aos endpoints
+        ├── requirements.txt                <- Especifica dependências do Django a serem instaladas com o comando 'pip'
+        </code></pre>
+                    <h2 class="code-line" data-line-start=50 data-line-end=51><a
+                            id="Bibliotecas_e_Framework_utilizados_50"></a>Bibliotecas e Framework utilizados</h2>
+                    <p><strong>PM4Py</strong>: PM4Py é a plataforma de mineração de processos de código aberto líder
+                        escrita
+                        em Python.<br><code>$ pip install pm4py</code> </p>
+                    <p><strong>Django</strong>: Django é um framework web em python que encoraga desenvolvimento rápido
+                        e
+                        limpo.<br><code>$ pip install Django</code> </p>
+                    <p><strong>Scikit-learn</strong>: Scikit-learn is a machine learning python
+                        library<br><code>$ pip install -U scikit-learn</code> </p>
+                    <h2 class="code-line" data-line-start=61 data-line-end=62><a
+                            id="Como_executar_o_projeto_61"></a>Como
+                        executar o projeto </h2>
+                    <p>Nosso time subiu os servidores do backend e do front-end na plataforma gratuira Heroku. Dessa
+                        forma,
+                        é possível acessar nossa solução, batizada de Panorama, utilizando o seguinte endereço web: <a
+                            href="https://desafio-cnj-frontend.herokuapp.com/">http://desafio-cnj-frontend.herokuapp.com/</a>
+                    </p>
+                    <ol>
+                        <li>É importante destacar limitação da versão gratuita da plataforma Heroku. Ela restringe o
+                            número
+                            de conexões máximas ao banco de dados, sendo assim, após extendido uso, o banco de dados
+                            pode
+                            ficar indisponível por alguns minutos. </li>
+                        <li>O primeiro acesso à solução será geralmente mais lento que os seguintes, pois o banco de
+                            dados
+                            entra em modo hibernação na plataforma Heroku, após algum tempo de inatividade. </li>
+                    </ol>
+                    <p>No mais, listamos aqui os principais passos para executar nossa solução do início: </p>
+                    <ol>
+                        <li>Utilização de sistema operacional Linux </li>
+                        <li> Instalação do banco de dados PostgreSQL <ol>
+                                <li>Seguir tutorial: <a
+                                        href="https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-14-04">https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-14-04</a>
+                                </li>
+                                <li>Criar banco de dados chamado <code>panorama</code>, usuário <code>panorama</code> e
+                                    senha <code>panorama</code> </li>
+                            </ol>
+                        </li>
+                        <li> Instalação do backend Django <ol>
+                                <li>O projeto do backend está disponível em: git: gabriel-bandeira/backend-desafio-cnj
+                                </li>
+                                <li>Instalar dependências utilizando o comando
+                                    <code>pip install -r requirements.txt</code>
+                                </li>
+                                <li>Executar script <a href="http://MacroSteps.py">MacroSteps.py</a> em:
+                                    <code>git: lfvvercosa/desafio_cnj</code> para geração dos jsons </li>
+                                <li> Popular o banco de dados com o jsons presentes na pasta Fixtures utilizando o
+                                    comando
+                                    <code>python manage.py loaddata <nome_do_json></code> na seguinte ordem: <ol>
+                                        <li> base5_comments.json </li>
+                                        <li>base5_groups.json </li>
+                                        <li>base5_varas.json </li>
+                                        <li> base5_steps_config.json </li>
+                                        <li>base5_steps.json </li>
+                                    </ol>
+                                </li>
+                                <li>Executar o backend com o comando <code>python manage.py runserver</code> </li>
+                            </ol>
+                        </li>
+                        <li> Instalação do front-end <ol>
+                                <li>Instalar o Node.js</li>
+                                <li>executar Npm install</li>
+                                <li>executar Npm run start </li>
+                                <li>abrir endereço localhost:9000 no browser </li>
+                            </ol>
+                        </li>
+                    </ol>
+                    <h2 class="code-line" data-line-start=90 data-line-end=91><a id="Roadmap_90"></a>Roadmap</h2>
+                    <p><img src="https://raw.githubusercontent.com/lfvvercosa/desafio_cnj/master/reports/figures/roadmap.png"
+                            alt="Roadmap"></p>
+                    <h2 class="code-line" data-line-start=93 data-line-end=94><a
+                            id="Metodologia_do_Projeto_93"></a>Metodologia do Projeto </h2>
+                    <p>Em nosso projeto nós utilizamos a metodologia CRISP-DM (CRoss-Industry Standard Process for Data
+                        Mining). Ela é uma metodologia de mineração de dados capaz de transformar os dados da empresa em
+                        conhecimento e informações de gerenciamento. CRISP-DM divide o ciclo de vida de um projeto de
+                        mineração de dados em seis fases: compreensão do negócio, compreensão de dados, preparação de
+                        dados,
+                        modelagem, avaliação e implantação. A Figura abaixo ilustra as fases do CRISP-DM. A seguir
+                        discutimos brevemente como abordamos cada uma dessas etapas. </p>
+                    <p><img src="https://raw.githubusercontent.com/lfvvercosa/desafio_cnj/master/reports/figures/crisp-dm.png"
+                            alt="Metodologia"></p>
+                    <h2 class="code-line" data-line-start=99 data-line-end=100><a
+                            id="Entendimento_do_Negcio_99"></a>Entendimento do Negócio</h2>
+                    <p>A primeira etapa do modelo CRISP-DM é o entendimento do negócio, abaixo descrevemos um briefing
+                        do
+                        desafio extraído do documento oficial do Hackathon: DESAFIO ENAP - CNJ INOVA Briefing.pdf </p>
+                    <p><strong>Desafio:</strong> Como podemos, a partir da base do DataJud, identificar padrões e
+                        comparar o
+                        andamento de processos em cada unidade judiciária do Brasil, levando em consideração as
+                        peculiaridades locais e o nível de comlexidade, em razão da competência e da matéria do direito?
+                    </p>
+                    <p><strong>Complemento:</strong> judiciárias, nas diferentes localidades e regiões do Brasil. A
+                        consequência direta é a dificuldade em proporcionar transparência, tanto interna quanto externa,
+                        necessária aos dados que são produzidos pelas unidades judiciárias, e a impossibilidade de
+                        gerenciar
+                        soluções para os gargalos, que não conseguem ser devidamente identificados. </p>
+                    <p>Outro material particularmente interessante, disponibilizado pelo Hackathon foi o Estudos CNJ
+                        casos e
+                        relatos - personas.pdf, do qual pudemos extrair algumas necessidades dos usuários: </p>
+                    <p>Após esse primeiro entendimento do desafio e das necessidades dos usuários, mergulhamos no
+                        entendimento do negócio em sí, para tanto conversamos com algumas pessoas atuantes no direito
+                        (advogados, servidores), fizemos diversas pesquisas na internet e também utilizamos como
+                        referência
+                        o relatório: <a
+                            href="https://www.cnj.jus.br/pesquisas-judiciarias/justica-em-numeros/"><strong>Justiça em
+                                números 2020</strong></a> do CNJ, no qual reproduzimos abaixo algumas informações
+                        importantes ao projeto. </p>
+                    <h3 class="code-line" data-line-start=110 data-line-end=111><a id="O_poder_judicirio_110"></a>O
+                        poder
+                        judiciário </h3>
+                    <p>O Poder Judiciário brasileiro divide-se em cinco ramos: Justiça Estadual, Justiça do Trabalho,
+                        Justiça Federal, Justiça Eleitoral e Justiça Militar. Cada um desses ramos possui órgãos, que
+                        são
+                        organizados em instâncias. Também fazem parte do Judiciário os tribunais superiores, o Supremo
+                        Tribunal Federal e o Conselho Nacional de Justiça, que, como citado, por possuírem seus próprios
+                        relatórios e estatísticas e, portanto, não serão abordados neste diagnóstico. </p>
+                    <p>Diante disso, segue sumário explicativo das competências e da estrutura de cada segmento de
+                        justiça e
+                        dos quatro tribunais superiores: STJ, STM, TSE e TST. </p>
+                    <h3 class="code-line" data-line-start=115 data-line-end=116><a id="Justia_Estadual_115"></a>Justiça
+                        Estadual </h3>
+                    <p><img src="https://raw.githubusercontent.com/lfvvercosa/desafio_cnj/master/reports/figures/justi%C3%A7a.png"
+                            alt="Jutiça Estadual"></p>
+                    <h3 class="code-line" data-line-start=118 data-line-end=119><a
+                            id="Definio_do_problema_118"></a>Definição do problema </h3>
+                    <p>Analisando os documentos disponibilizados pelo Hackathon: <strong>DESAFIO ENAP - CNJ INOVA
+                            Briefing.pdf</strong> e <strong>Estudos CNJ casos e relatos - personas.pdf</strong> pudemos
+                        entender melhor o contexto geral do problema e as necessidades dos principais Stakeholders
+                        envolvidos. Decidimos restringir o escopo do projeto para atender essencialmente as necessidades
+                        identificadas da <strong>persona do JUIZ/DESEMBARGADOR</strong>, que: </p>
+                    <blockquote>
+                        <p>Cuida, atualmente, de uma vara com 80.000 processos, sendo a maioria físicos, sente que sua
+                            equipe está motivada e quer gerar resultados, mas diante da quantidade de <strong>processos
+                                pendentes de julgamento</strong> e da administração da sua unidade judiciária,
+                            <strong>vê-se
+                                absolutamente sem tempo</strong>. </p>
+                    </blockquote>
+                    <h4 class="code-line" data-line-start=123 data-line-end=124><a id="Desejos_123"></a>Desejos:</h4>
+                    <ul>
+                        <li>Entender <strong>onde estão os problemas da sua unidade judiciária</strong> para poder
+                            consertá-los e incrementar sua produtividade>. </li>
+                        <li>Quer que sua produtividade fosse <strong>comparada com seus semelhantes</strong>, levando em
+                            consideração as competências, a situação atual e os recursos disponíveis. </li>
+                        <li><strong>Receber relatórios estatísticos</strong> que o norteiam sobre o desenvolvimento dos
+                            julgados, para saber se sua equipe está produzindo bem gostaria também de melhorar a triagem
+                            dos
+                            processos, por meio de melhor cadastramento, para poder otimizar seus julgados pelo
+                            julgamento
+                            “em bloco”. </li>
+                    </ul>
+                    <h4 class="code-line" data-line-start=128 data-line-end=129><a id="Dores_128"></a>Dores:</h4>
+                    <ul>
+                        <li><strong>Comparam sua unidade judiciária</strong> com outras que ** desempenham funções
+                            diferentes** </li>
+                        <li>Os processos que chegam até ele frequentemente mal cadastrados e com dados equivocados que o
+                            forçam a buscar dados na petição inicial para sanear o cadastramento. (DESAFIO 2). </li>
+                    </ul>
+                    <p>Nesse sentido, formalizamos o problema como: </p>
+                    <h4 class="code-line" data-line-start=134 data-line-end=135><a id="PROBLEMA_134"></a>PROBLEMA:</h4>
+                    <p>Os Juizes e Desembargadores não possuem uma ferramenta que possa auxiliá-los a incrementar sua
+                        produtividade, identificando onde estão os problemas de sua unidade e sugerindo ações para
+                        corrigi-los ou minimizá-los. </p>
+                    <p>Através da formalização do problema, pudemos identificar vários sub-problemas (desafios) que
+                        deveriam
+                        ser endereçados para que o problema pudesse ser resolvido. </p>
+                    <ul>
+                        <li>Identificar indicadores de produtividade relevantes </li>
+                        <li>Definir uma forma de simplificar e comparar os processos de unidades distintas </li>
+                        <li>Definir um critério de agrupamento de unidades judiciárias semelhantes levando em
+                            consideração
+                            as competências, situação atual e os recursos disponíveis da unidade judiciária </li>
+                    </ul>
+                    <h3 class="code-line" data-line-start=144 data-line-end=145><a id="Fontes_de_dados_144"></a>Fontes
+                        de
+                        dados </h3>
+                    <p>A principal fonte de dados para o Hackathon foram os dados básicos e movimentações processuais
+                        contidos no banco de dados unificado do CNJ, referenciado como DataJud, que será disponibilizado
+                        no
+                        formato Json, conforme informações apresentadas no <a
+                            href="https://youtu.be/VBDGxGxgTPw">Webinar -
+                            dados</a>. Adicionalmente identificamos as possíveis fontes de dados: </p>
+                    <ul>
+                        <li><a href="https://www.ibge.gov.br/explica/codigos-dos-municipios.php">IBGE - Instituto
+                                Brasileiro
+                                de Geografia e Estatística</a> - Para obtenção de informações quanto aos municípios
+                            brasileiros. </li>
+                        <li><a href="https://www.cnj.jus.br/sgt/consulta_publica_assuntos.php">SGT - Sistema de Gestão
+                                das
+                                Tabelas Processuais Unificadas</a> - Para obtenção dos “de-para” dos assuntos, classes e
+                            movimentos processuais </li>
+                        <li><a
+                                href="https://paineis.cnj.jus.br/QvAJAXZfc/opendoc.htm?document=qvw_l%2FPainelCNJ.qvw&amp;host=QVS%40neodimio03&amp;anonymous=true&amp;sheet=shResumoDespFT">CNJ
+                                - Conselho Nacional de Justiça</a> - Consulta aos paineis da justiça para obtenção de
+                            dados
+                            referentes a produtividade e demais informações sobre a justiça. </li>
+                    </ul>
+                    <h2 class="code-line" data-line-start=150 data-line-end=151><a
+                            id="Entendimento_dos_dados_150"></a>Entendimento dos dados</h2>
+                    <p>Antes de receber os arquivos de dados (json), fizemos uso dos seguintes documentos
+                        (disponibilizados
+                        pelo Hackathon) para conhecer e entender a estrutura e conteúdo dos dados. </p>
+                    <ul>
+                        <li>Informacoes Complementares CNJ Inova - Desafios e Dados.pdf. </li>
+                        <li>Glossário-Datajud-Processos</li>
+                    </ul>
+                    <p>Quando do recebimento dos dados e após estudar a estrutura dos arquivos, elaboramos script para
+                        extração e normalização dos dados. Elaboramos duas tabelas: a primeira com os dados básicos das
+                        Unidades Judiciárias e outra contendo informações detalhadas das movimentações dos processos.
+                        Entretanto, notamos que os arquivos abaixo não obedeciam a estrutura de dados definidos pela
+                        organização (optamos por não considerar esses dados nesse momento): </p>
+                    <pre><code   >processos-tjgo_5.json
+        processos-tjgo_6.json
+        processos-tjms_4.json
+        processos-tjrj_10.json
+        processos-tjrj_11.json
+        processos-tjrj_12.json
+        processos-tjrj_5.json
+        processos-tjrj_6.json
+        processos-tjrj_7.json
+        processos-tjrj_8.json
+        processos-tjrj_9.json
+        </code></pre>
+                    <h2 class="code-line" data-line-start=171 data-line-end=172><a
+                            id="Preparao_dos_dados_171"></a>Preparação dos dados </h2>
+                    <p>De posse dos dois arquivos .csv rodamos um fluxo de ETL na ferramenta Pentaho para limpeza,
+                        tratamento e enriquecimento dos dados (depara das classes, assuntos e movimentacoes
+                        processuais).
+                    </p>
+                    <p><img src="https://raw.githubusercontent.com/lfvvercosa/desafio_cnj/master/reports/figures/pentaho.png"
+                            alt="Pentaho"></p>
+                    <p>Abaixo seguem algumas transformações realizadas a partir de algumas ideias (simplificações e
+                        criação
+                        de features) e necessidades identificadas durante o projeto. </p>
+                    <h3 class="code-line" data-line-start=178 data-line-end=179><a id="Filtros_178"></a>Filtros</h3>
+                    <p>Conforme vimos na sessão <a href="#entendimento_negocio">Entendimento do Negócio</a>,o escopo do
+                        projeto foi delimitado quanto a <em>oportunidades de melhoria de tempos e produtividades</em>
+                        <strong>nas unidades judiciárias de EXECUÇÃO FISCAL</strong> (pois são as principais
+                        responsáveis
+                        pela alta taxa de congestionamento do Poder Judiciário, conforme relatório do CNJ <a
+                            href="https://www.cnj.jus.br/pesquisas-judiciarias/justica-em-numeros/">Justiça em Números
+                            2020</a>) </p>
+                    <p>Abaixo outros filtros realizados nos dados ao longo do projeto:<br><strong>Filtro nos
+                            processos:</strong> Só foram considerados processos: </p>
+                    <ul>
+                        <li>Movimentação de início (Distribuição) e movimento de término (Baixa ou Arquivamento
+                            definitivo)
+                            compreendidos entre os anos de 2000 e 2020. </li>
+                        <li>Processos com classe “Execução Fiscal” </li>
+                        <li>Grau 1</li>
+                        <li>Que continham o movimento “Distribuição” e não continham o movimento “Reativação” </li>
+                    </ul>
+                    <h3 class="code-line" data-line-start=189 data-line-end=190><a
+                            id="Limpeza_dos_dados_189"></a>Limpeza
+                        dos dados </h3>
+                    <p>Foram removidos do log instâncias de processo com dados inconsistentes como datas, campos nulos
+                        ou
+                        zerados. </p>
+                    <h3 class="code-line" data-line-start=192 data-line-end=193><a
+                            id="Transformaes_realizadas_192"></a>Transformações realizadas</h3>
+                    <h4 class="code-line" data-line-start=194 data-line-end=195><a
+                            id="Criao_de_campo_breadscrum_nas_tabelas_auxiliares_do_SGT_Classe_Assunto_e_Movimento_194"></a>Criação
+                        de campo (breadscrum) nas tabelas auxiliares do SGT: Classe, Assunto e Movimento </h4>
+                    <p>Levando em consideração o <a href="https://www.cnj.jus.br/sgt/consulta_publica_classes.php">SGT -
+                            Sistema de Gestão de Tabelas Processuais Unificadas</a> do CNJ, podemos perceber que os
+                        assuntos, classes processuais e movimentos estão organizados em uma hierarquia. Os seguintes
+                        mapeamentos de classes filhas em classes pais foram realizadas nesse projeto: </p>
+                    <ul>
+                        <li>Movimentos filhos de Decisão foram mapeados para Decisão </li>
+                        <li>Movimentos filhos de Despacho foram mapeados para Despacho </li>
+                        <li>Movimentos filhos de Julgamento foram mapeados para Julgamento </li>
+                        <li>Movimentos de Baixa ou Arquivamento foram mapeados para Baixa/Arquivamento </li>
+                    </ul>
+                    <p>Essa informação foi importante para a simplificação do modelo, contorno da restrição quanto a
+                        capacidade de processamento dos dados (devido ao grande volume) e principalmente para
+                        simplificação
+                        das tarefas do fluxo (agrupamento de movimentos). </p>
+                    <h4 class="code-line" data-line-start=204 data-line-end=205><a
+                            id="Sumarizao_das_variveis_ASSUNTO_RAIZ_CLASSE_RAIZ_204"></a>Sumarização das variáveis
+                        ASSUNTO
+                        RAIZ, CLASSE RAIZ </h4>
+                    <p>Os dados utilizados para a etapa de clusterização das unidades judiciárias foram as variáveis
+                        ASSUNTO
+                        e CLASSE processual, encontradas nas estruturas: dadosBasicos.assunto e
+                        dadosBasicos.classeProcessual. Nós contabilizamos as ocorrências de cada ASSUNTO e CLASSE
+                        processual
+                        nas unidade judiciárias. </p><img
+                        src="https://raw.githubusercontent.com/lfvvercosa/desafio_cnj/master/reports/figures/grupo_assunto.png"
+                        alt="">
+                    <p>Para depois serem transformados em coluna (aumento das dimensões)</p><img
+                        src="https://raw.githubusercontent.com/lfvvercosa/desafio_cnj/master/reports/figures/analise_criterios.png"
+                        alt="">
+                    <h2 class="code-line" data-line-start=211 data-line-end=212><a id="Modelagem_211"></a>Modelagem</h2>
+                    <h3 class="code-line" data-line-start=213 data-line-end=214><a
+                            id="Modelagem_da_Soluo_213"></a>Modelagem
+                        da Solução </h3>
+                    <p>Conforme descrito na sessão <a href="#definicao_problema">Definição do Problema</a>, a solução
+                        basicamente atenderá as necessidades da <strong>persona do JUIZ/DESEMBARGADOR</strong>,
+                        formalizada
+                        no problema abaixo: </p>
+                    <blockquote>
+                        <p><strong>PROBLEMA:</strong> Os Juizes e Desembargadores não possuem uma ferramenta que possa
+                            auxiliá-los a incrementar sua produtividade, identificando onde estão os problemas de sua
+                            unidade e sugerindo ações para corrigi-los ou minimizá-los. </p>
+                    </blockquote>
+                    <p>A ideia geral é fornecer uma plataforma onde o Juiz / Desembargador possa consultar a
+                        produtividade,
+                        identificar os problemas de sua unidade judiciária, bem como obter insigths sobre como
+                        incrementar
+                        sua produtividade através da comparação e troca de experiência com outras unidades judiciárias
+                        semelhantes a sua. </p>
+                    <h4 class="code-line" data-line-start=221 data-line-end=222><a
+                            id="Arquitetura_geral_221"></a>Arquitetura geral </h4> <img
+                        src="https://raw.githubusercontent.com/lfvvercosa/desafio_cnj/master/reports/figures/Solucao_geral.png"
+                        alt="">
+                    <h4 class="code-line" data-line-start=224 data-line-end=225><a
+                            id="Soluo_Painel_de_Tempos_e_Produtividade_224"></a>Solução: Painel de Tempos e
+                        Produtividade
+                    </h4>
+                    <p>Com esta interface o Juiz / Desembargador poderá acompanhar o desempenho da sua unidade
+                        judiciária em
+                        relação a outras unidades judiciárias semelhantes, em relação as dimensões: tempo e
+                        produtividade.
+                    </p><img
+                        src="https://raw.githubusercontent.com/lfvvercosa/desafio_cnj/master/reports/figures/solucao_1.png"
+                        alt=""> <img
+                        src="https://raw.githubusercontent.com/lfvvercosa/desafio_cnj/master/reports/figures/solucao_2.png"
+                        alt="">
+                    <p>Para a feature de identificação e comparação de gargalos entre as unidades judiciárias, fizemos
+                        uma
+                        simplificação nos fluxos processuais, criado o conceito de Macro-Etapas (Marcos), segundo a
+                        seguinte
+                        condificação (que será configurável pelo usuário): </p>
+                    <blockquote>
+                        <p><strong>Macro-Etapas (Marcos):</strong> </p>
+                        <ul>
+                            <li> DISTRIBUIÇÃO <ul>
+                                    <li>Código de movimento=26 </li>
+                                </ul>
+                            </li>
+                            <li> CITAÇÃO <ul>
+                                    <li>Breadscrum=14:48:1228 (qualquer movimento com essa hierarquia) </li>
+                                </ul>
+                            </li>
+                            <li> APRECIAÇÃO DE TUTELA DE URGENCIA OU MEDIDA LIMINAR <ul>
+                                    <li>Código de movimento=332 - concessao -> antecipacao de tutela </li>
+                                    <li>Código de movimento=785 - nao-concessao -> antecipação de tutela </li>
+                                    <li>Código de movimento=889 - concessao em parte -> antecipaçao de tutela </li>
+                                </ul>
+                            </li>
+                            <li> AUDIÊNCIA <ul>
+                                    <li>Breadscrum=14:48:970 (qualquer movimento com essa hierarquia) </li>
+                                </ul>
+                            </li>
+                            <li> JULGAMENTO/SENTENÇA <ul>
+                                    <li>Breadscrum=1:193 (qualquer movimento com essa hierarquia) </li>
+                                </ul>
+                            </li>
+                            <li> TRÂNSITO EM JULGADO <ul>
+                                    <li>Código de movimento=848 </li>
+                                </ul>
+                            </li>
+                            <li> BAIXA / ARQUIVAMENTO <ul>
+                                    <li>Código de movimento=22 - baixa </li>
+                                    <li>Código de movimento=246 - arquivamento definitivo </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </blockquote>
+                    <p>A seguir, descrição dos principais componentes desta solução enumerados nas figuras acima. </p>
+                    <ul>
+                        <li> <strong>Posição Geral</strong>
+                            <ul>
+                                <li>Colocação geral de sua unidade judicial em relação ao seu grupo. Essa colocação é
+                                    medida
+                                    como o tempo médio em dias que os processos da unidade judicial demoram para serem
+                                    baixados ou arquivados. </li>
+                            </ul>
+                        </li>
+                        <li> <strong>Grupo da Unidade Judiciária</strong>
+                            <ul>
+                                <li>O grupo da unidade judicial é calculado utilizando algoritmos inteligentes de
+                                    clusterização. Nossa clusterização em particular, leva em conta a frequência dos
+                                    Assuntos e Classes processuais dos processos julgados em cada unidade judicial.
+                                    Foram
+                                    selecionadas uma vara de cada grupo para exemplificação. </li>
+                            </ul>
+                        </li>
+                        <li> <strong>Identificação dos gargalos</strong>
+                            <ul>
+                                <li>Maiores gargalos, em dias, da unidade judicial. Os gargalos se referem às
+                                    macroetapas do
+                                    processo mapeadas no tópico Transformações Realizadas. </li>
+                            </ul>
+                        </li>
+                        <li> <strong>Pontos de destaque</strong>
+                            <ul>
+                                <li>Menores gargalos, em dias, da unidade judicial. Ou seja, as etapas em que a unidade
+                                    judicial é mais eficiente. </li>
+                            </ul>
+                        </li>
+                        <li> <strong>Feedbacks / Insights</strong>
+                            <ul>
+                                <li>Contém ranking das varas do mesmo grupo da unidade judicial, com relação aos Pontos
+                                    de
+                                    destaque e gargalos. Exemplo: Se o maior gargalo da unidade judicial em questão é
+                                    “Julgamento” -> “Baixa Definitiva”, então o ranking conterá as melhores unidades
+                                    judiciais na transição “Julgamento” -> “Baixa Definitiva”. Além disso, o ranking
+                                    também
+                                    contém comentários dos juízes das outras varas compartilhando estratégias e insights
+                                    sobre a eficiência de sua unidade judicial na transição. </li>
+                            </ul>
+                        </li>
+                        <li> <strong>Estatísticas desempenho</strong>
+                            <ul>
+                                <li>Destacam o pior e menor gargalo da unidade judicial referente às macroetapas. </li>
+                            </ul>
+                        </li>
+                        <li> <strong>Estatísticas do fluxo</strong>
+                            <ul>
+                                <li>Destacam a duração média da baixa do processo em dias, movimentação média do
+                                    processo e
+                                    total de processos julgados </li>
+                            </ul>
+                        </li>
+                        <li> <strong>Média dos tempos processuais</strong>
+                            <ul>
+                                <li>Exibem o tempo médio dos processos em cada macroetapa. São exibidas as top cinco
+                                    unidades judiciais por tempo médio de duração de processo, a unidade judicial
+                                    analisada
+                                    e seus vizinhos imediatos acima e abaixo. Uma observação importante é que o tempo
+                                    total
+                                    exibido não reflete necessariamente o tempo médio de duração do processo, visto que
+                                    nem
+                                    todas as instâncias de processo passam pelas mesmas macroetapas. </li>
+                            </ul>
+                        </li>
+                        <li> <strong>Localização Unidades Semelhantes</strong>
+                            <ul>
+                                <li>Exibe as top cinco unidades judiciais por tempo médio de duração de processo, a
+                                    unidade
+                                    judicial analisada e seus vizinhos imediatos acima e abaixo. Além disso, destaca a
+                                    localização dessas unidades judiciais no mapa do Brasil. </li>
+                            </ul>
+                        </li>
+                        <li> <strong>Meu processo</strong>
+                            <ul>
+                                <li>(Não implementado) Exibe o fluxo dos macroprocessos da unidade judicial em formato
+                                    de
+                                    grafo. O peso das arestas representa a frequência das transições ou o tempo em dias.
+                                </li>
+                            </ul>
+                        </li>
+                        <li> <strong>Melhor processo do meu grupo</strong>
+                            <ul>
+                                <li>(Não implementado) Exibe o fluxo dos macroprocessos da unidade judicial de melhor
+                                    colocação. A ideia é que o juiz possa comparar o seu processo visualmente com o da
+                                    melhor vara de seu grupo. </li>
+                            </ul>
+                        </li>
+                        <li> <strong>Sugestões de melhoria</strong>
+                            <ul>
+                                <li>Sugestões de melhorias no processo como um todo fornecidas pelo juiz da vara
+                                    comparada.
+                                </li>
+                            </ul>
+                        </li>
+                        <li> <strong>Ranking das unidades judiciárias</strong>
+                            <ul>
+                                <li>Exibe as top cinco unidades judiciais por tempo médio de duração de processo, a
+                                    unidade
+                                    judicial analisada e seus vizinhos imediatos acima e abaixo. </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p><strong>Curiosidade</strong>: É possível alternar para uma vara de outro grupo clicando na
+                        medalha
+                        localizada no canto superior esquerdo. </p>
+                    <h4 class="code-line" data-line-start=281 data-line-end=282><a
+                            id="Soluo_Criao_anlise_e_configurao_dos_critrios_281"></a>Solução: Criação, análise e
+                        configuração dos critérios </h4>
+                    <p>Abaixo podemos consultar algumas telas utilizadas para criar, configurar os critérios e realizar
+                        a
+                        análise dos grupos obtidos. </p><img
+                        src="https://raw.githubusercontent.com/lfvvercosa/desafio_cnj/master/reports/figures/tela_grupo.png"
+                        alt="">
+                    <h3 class="code-line" data-line-start=285 data-line-end=286><a
+                            id="Modelagem_do_Critrio_de_Agrupamento_das_Unidades_Judicirias_285"></a>Modelagem do
+                        Critério
+                        de Agrupamento das Unidades Judiciárias </h3>
+                    <p>Antes de propor possíveis critérios de agrupamento, faz-se necessário revisitar o documento das
+                        personas, do qual extraímos o trecho abaixo com alguns insigths sobre o possível critério de
+                        agrupamento das unidades judiciárias semelhantes. </p>
+                    <blockquote>
+                        <p>“…Gostaria de entender onde estão os problemas da sua unidade judiciária para poder
+                            consertá-los
+                            e incrementar sua produtividade.<br>Antônio fica muito irritado quando comparam sua unidade
+                            judiciária com outras que desempenham funções diferentes. <em>Gostaria que sua produtividade
+                                fosse comparada com seus semelhantes</em> , levando em consideração as competências, a
+                            situação atual e os recursos disponíveis…” <strong>RELATO 1 - JUIZ / DESEMBARGADOR.</strong>
+                        </p>
+                    </blockquote>
+                    <p>Com base nas informações extraídas no texto acima, podemos perceber 3 macro direcionamentos para
+                        os
+                        critérios: competência, situação atual e recursos disponíveis. Abaixo elencamos como endereçamos
+                        cada questão referente a cada tópico. </p>
+                    <ul>
+                        <li> <strong>Comparar com base na competência</strong>=Poderíamos utilizar o campo:
+                            dadosBasicos.competencia, disponibilizado no json, contudo, percebemos conforme relatado na
+                            sessão de <a href="#entendimento_dados">entendimento dos dados</a>, que a variedade e
+                            inexistência de um depara relacionado as competências inviabilizaria a utilização desse
+                            campo
+                            para tal finalidade. No entanto, através de consultas a especialistas do direito,
+                            identificamos
+                            que as competências são configuradas por cada Tribunal, normalmente com base na associação
+                            das
+                            informações de <strong>classe processual</strong> e <strong>assunto</strong>, campos
+                            disponíveis
+                            no json do DataJud. <p>
+                        </li>
+                        <li> <strong>Comparar com base na situação atual:</strong> Como levantado na sessão do <a
+                                href="#entendimento_dados">entendimento dos dados</a>, existe uma base de dados do CNJ
+                            onde
+                            aproximadamente <a
+                                href="https://www.cnj.jus.br/pesquisas-judiciarias/justica-em-numeros/documentos-justica-em-numeros/">638
+                                variáveis</a> relacionadas aos tribunais são catalogadas e disponibilizadas para
+                            consulta.
+                            Dessa base de dados identificamos algumas variáveis candidatas: Estoque, Casos novos e casos
+                            pendentes, que poderiam ser utilizadas como referência a situação atual da UNIDADE
+                            JUDICIÁRIA.
+                            <p>
+                        </li>
+                        <li><strong>Comparar com base nos recursos disponíveis:</strong> Com relação aos recursos
+                            disponíveis, também podemos utilizar as variáveis: força de trabalho de servidores e
+                            magistrados, uma das <a
+                                href="https://www.cnj.jus.br/pesquisas-judiciarias/justica-em-numeros/documentos-justica-em-numeros/">638
+                                variáveis</a> disponibilizadas pelo CNJ que poderiam ser utilizadas como referência aos
+                            recursos disponíveis da UNIDADE JUDICIÁRIA </li>
+                    </ul>
+                    <blockquote>
+                        <p><strong>OBSERVAÇÃO:</strong> Um ponto de atenção é que o código das unidades judiciárias das
+                            variáveis citadas do CNJ não correspondem aos códigos das unidades do arquivo json, nesse
+                            sentido deve-se verificar a possibilidade de cruzar as informações através do nome das
+                            unidades
+                            judiciárias. </p>
+                    </blockquote>
+                    <p>Disponibilizar uma ferramenta que permita ao usuário interno (<strong>Equipe de pesquisa do
+                            CNJ</strong>) criar e testar novos critérios de agrupamento de unidades judiciárias, faz
+                        parte
+                        do escopo de entregas da nossa solução. Com essa ferramenta será possível analisar o impacto de
+                        diversas configurações sobre possíveis agrupamentos, que poderão ser salvos e carregados para
+                        futura
+                        análise. </p>
+                    <p>A criação, análise e teste de novos possíveis cenários passa por 3 etapas: FILTRO, AGRUPAMENTO e
+                        CLUSTERIZAÇÃO (agrupamento através de variáveis numéricas). Ao menos uma das três fases deve ser
+                        configurada. </p>
+                    <p>A arquitetura básica do processo de crição de novos critérios de agrupamento está demonstrada na
+                        imagem abaixo: </p><img
+                        src="https://raw.githubusercontent.com/lfvvercosa/desafio_cnj/master/reports/figures/arquitetura_criterio.png"
+                        alt="">
+                    <p><strong>1ª Etapa: Filtro</strong><br>Nesta etapa podemos definir o escopo inicial do critério,
+                        segundo as variáveis de <strong>Justiça</strong>, <strong>Grau</strong>, <strong>Assunto
+                            Raiz</strong> e <strong>Classe processual Raiz</strong> em qualquer combinação. Podemos
+                        definir
+                        diversas combinações de critérios, como por exemplo: </p>
+                    <blockquote>
+                        <p><strong>Somente uma Justiça (sem grau):</strong> Filtrar somente as unidades da Justiça
+                            Estadual
+                            sem levar em consideração o grau </p>
+                    </blockquote>
+                    <blockquote>
+                        <p><strong>Duas ou mais Justiças (com grau):</strong> Filtrar a Justiça Estadual e Federal, do
+                            1º e
+                            2º graus. </p>
+                    </blockquote>
+                    <blockquote>
+                        <p><strong>Assunto Raiz:</strong> Filtrar na Justiça Estadual, os assuntos: “899 - Direito
+                            Civil” e
+                            “1156 - Direito do Consumidor” </p>
+                    </blockquote>
+                    <blockquote>
+                        <p><strong>Classe processual Raiz:</strong> Filtrar na Justiça Federal, as classes “2:1106 -
+                            Processo de Conhecimento” </p>
+                    </blockquote>
+                    <p><strong>2ª Etapa: Agrupamento</strong><br>Esta etapa refere-se ao primeiro nível de agrupamento
+                        realizado para construção dos critérios. Na fase anterior, restringimos as unidades judiciárias
+                        que
+                        fariam parte do critério, já nesta etapa, podemos ou não informar como as unidades judiciárias
+                        serão
+                        agrupadas segundo variáveis categóricas (não numéricas), tais como <strong>Justiça</strong> e
+                        <strong>Grau</strong>. Ao final desta etapa já teríamos as unidades agrupadas. Contudo, como
+                        iremos
+                        observar na próxima etapa, o agrupamento das unidades judiciárias apenas por Justiça Estadual e
+                        1º
+                        grau (por exemplo) muito provavelmente não será um critério de agrupamento justo para as
+                        unidades,
+                        por não considerar a <strong>MATÉRIA</strong> e <strong>COMPETENCIA</strong> das unidades. Neste
+                        sentido, podemos utilizar a 3ª etapa para criar o segundo nível de agrupamento dentro do nível
+                        criado nesta etapa (Justiça Estadual + 1º grau). </p>
+                    <p><strong>3ª Etapa: Clusterização</strong><br>Clusterizar é o termo utilizado para criar grupos de
+                        objetos semelhantes a partir de variáveis numéricas. </p>
+                    <blockquote>
+                        <p>Para a clusterização (3º etapa) utilizamos a técnica estatística de análise multivariada
+                            denominada análise de componentes principais. A partir da sua aplicação, passa a ser
+                            possível
+                            reduzir o número de dimensõe em análise (quantidade de variáveis escolhidas na 3ª etapa) de
+                            modo
+                            que um número pequeno de componentes (digamos, 1, 2 ou até 3, a depender da quantidade de
+                            variáveis em análise) consegue explicar uma proporção satisfatória da variância
+                            populacional, ou
+                            seja, cerca de 80% a 90% dos dados. </p>
+                    </blockquote>
+                    <ul>
+                        <li><strong>Análise de Componentes Principais (ACP)</strong><br>Trata-se de método de análise
+                            multivariada, utilizada para resumir grande número de variáveis em poucas dimensões. É uma
+                            tentativa de compreender relações complexas impossíveis de serem trabalhadas com métodos
+                            univariados ou bivariados, permitindo, assim, visualizações gráficas e análises mais
+                            aprofundadas por parte do pesquisador. <em>Fonte: <a
+                                    href="https://www.cnj.jus.br/pesquisas-judiciarias/justica-em-numeros/">Justiça em
+                                    Números 2020</a>)</em> </li>
+                    </ul>
+                    <p>Considerando que as variáveis utilizadas possuem escalas distintas e para que todas pudessem ter
+                        o
+                        mesmo peso de influência no modelo, faz-se necessário uma etapa de “Escala / normalização” das
+                        variáveis, que se resume à substituição da matriz de covariância pela de correlação.<br>Dentre
+                        as
+                        variáveis numéricas que podemos combinar e utilizar nesta etapa, podemos citar: Assunto (Raiz ou
+                        não), Classe processual (Raiz ou não), e qualquer combinação das <a
+                            href="https://www.cnj.jus.br/pesquisas-judiciarias/justica-em-numeros/documentos-justica-em-numeros/">638
+                            variáveis</a> disponibilizadas pelo CNJ. </p>
+                    <blockquote>
+                        <p>Faz-se necessário a definição do termo RAIZ (utilizado tanto para assunto, como para Classe
+                            processual). Levando em consideração o SGT (Sistema de Gestão de Tabelas Processuais
+                            Unificadas)
+                            do CNJ (disponível em <a
+                                href="https://www.cnj.jus.br/sgt/consulta_publica_classes.php">https://www.cnj.jus.br/sgt/consulta_publica_classes.php</a>),
+                            podemos perceber que os assuntos, classes processuais e movimentos estão organizados em uma
+                            hierarquia. Definimos como RAIZ, o item (assunto, classe ou movimento) no primeiro nível da
+                            hierarquia a qual pertence o item em questão. </p>
+                    </blockquote>
+                    <blockquote>
+                        <p>Tomemos como exemplo o assunto: 7619 - Consórcio, que possui a seguinte hierarquia: </p>
+                        <ul>
+                            <li> 1156 - Direito do consumidor <ul>
+                                    <li> 7771 - Contratos de consumo <ul>
+                                            <li>7619 - Consórcio<br>Teríamos como Assunto Raiz o “1156 - Direito do
+                                                consumidor”. </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </blockquote>
+                    <h4 class="code-line" data-line-start=340 data-line-end=341><a
+                            id="DEFINIO_DO_CRITRIO_DE_AGRUPAMENTO_DAS_UNIDADES_JUDICIRIAS_SEMELHANTES_340"></a>DEFINIÇÃO
+                        DO
+                        CRITÉRIO DE AGRUPAMENTO DAS UNIDADES JUDICIÁRIAS SEMELHANTES </h4>
+                    <p>O agrupamento das unidades judiciárias tem por objetivo criar parâmetros de comparação de forma a
+                        respeitar as características distintas existentes de cada unidade judiciária, bem como suas
+                        semelhanças, considerando o ramo de justiça, grau, matéria, competência, situação atual e
+                        recursos
+                        disponíveis. </p>
+                    <p>Devido a restrições de tempo (entrega da primeira versão funcional - Primeira etapa do hackathon)
+                        e
+                        capacidade computacional (devido ao grande volume de dados), optamos por restringir o máximo
+                        possível os critérios de agrupamento, de modo que a solução pudesse ser demonstrada (factível) e
+                        ao
+                        mesmo tempo insigths importantes pudessem ser extraídos. </p>
+                    <p>Nesse sentido, o escopo do projeto, conforme vimos na sessão <a
+                            href="#entendimento_negocio">Entendimento do Negócio</a>, foi delimitado quanto a
+                        <em>oportunidades de melhoria de tempos e produtividades</em> <strong>nas unidades judiciárias
+                            de
+                            EXECUÇÃO FISCAL</strong> (pois são as principais responsáveis pela alta taxa de
+                        congestionamento
+                        do Poder Judiciário, conforme relatório do CNJ <a
+                            href="https://www.cnj.jus.br/pesquisas-judiciarias/justica-em-numeros/">Justiça em Números
+                            2020</a>)<br><img
+                            src="https://raw.githubusercontent.com/lfvvercosa/desafio_cnj/master/reports/figures/execucao_fiscal.png"
+                            alt=""> </p>
+                    <p>Desta forma, a definição simplificada do critério que veremos a seguir, tem como objetivo apenas
+                        demonstrar a capacidade e viabilidade da ferramenta e não de exaurir e aprofundar a combinação
+                        de
+                        parâmetros, de modo a extrair o melhor agrupamento das unidades judiciárias. Trata-se portanto,
+                        de
+                        uma PROVA DE CONCEITO da capacidade da ferramenta em questão. </p>
+                    <p>As configurações SIMPLIFICADAS utilizadas em cada etapa foram: </p>
+                    <p><strong>1ª Etapa: Filtro -</strong> No âmbito da JUSTIÇA ESTADUAL. </p>
+                    <p><strong>2ª Etapa: Agrupamento -</strong> No âmbito do 1º GRAU<br><img
+                            src="https://raw.githubusercontent.com/lfvvercosa/desafio_cnj/master/reports/figures/fiscal_fazenda.png"
+                            alt="grupo_assunto"> </p>
+                    <p><strong>3ª Etapa: Clusterização -</strong> Variável ASSUNTO RAIZ.<br>A escolha da variável
+                        ASSUNTO
+                        RAIZ, mostrou-se interessante pois de forma simplificada, endereça a questão de comparar MATÉRIA
+                        e
+                        de certa forma COMPETÊNCIA (uma vez que a competência normalmente é definida pela composição da
+                        CLASSE PROCESSUAL e ASSUNTO), dessa forma o <em>primeiro direcionamento</em> <strong>“Comparar
+                            com
+                            base na competência”</strong> seria atendido. </p>
+                    <p>Para endereçar o <em>segundo direcionamento</em> <strong>“Comparar com base na situação
+                            atual”</strong> (também de forma indireta), fizemos uma transformação na variável ASSUNTO
+                        RAIZ,
+                        contabilizando as ocorrências em cada unidade judiciária </p>
+                    <p><img src="https://raw.githubusercontent.com/lfvvercosa/desafio_cnj/master/reports/figures/grupo_assunto.png"
+                            alt="Grupo dos assuntos"><br><img
+                            src="https://raw.githubusercontent.com/lfvvercosa/desafio_cnj/master/reports/figures/analise_criterios.png"
+                            alt="Analise dos critérios"> </p>
+                    <p>Para depois serem transformados em coluna (aumento das dimensões) </p>
+                    <p>Logo em seguinda a etapa de Escalar / Padronizar os dados foi executada e o algoritmo de
+                        clusterização DBSCan foi utilizado para obter os grupos de cada unidade judiciária.<br><img
+                            src="https://raw.githubusercontent.com/lfvvercosa/desafio_cnj/master/reports/figures/dbscan.png"
+                            alt="DBScan"> </p>
+                    <p>O terceiro direcionamento <strong>“Comparar com base nos recursos disponíveis”</strong> devera
+                        ser
+                        implementado na segunda etapa do Hackathon. </p>
+                    <h2 class="code-line" data-line-start=372 data-line-end=373><a id="Avaliao_372"></a>Avaliação</h2>
+                    <p>Uma parte importante da metodologia CRISP-DM é a validação do modelo gerado com os usuários
+                        especialistas para que o mesmo possa ser melhorado. Durante esta fase, é comum, voltarmos para
+                        qualquer fase da metodologia, não somente para a fase de ENTENDIMENTO DO NEGÓCIO como a imagem
+                        do
+                        CRISP-DM demonstra, uma vez que sua representação é meramente didática. </p>
+                    <h3 class="code-line" data-line-start=375 data-line-end=376><a
+                            id="Feedback_dos_especialistas_375"></a>Feedback dos especialistas</h3>
+                    <p>Para facilitar a avaliação dos resultados gerados pelos diversos modelos gerados, foi
+                        desenvolvida
+                        (ainda em draft) uma interface interna para que o usuário possa justamente com o Cientista de
+                        Dados,
+                        visualizar graficamente os grupos criados (diagrama de dispersão), bem como os dados que o
+                        compõe:
+                        Unidade Judiciária, Justiça, Grau, e as variáveis utilizadas para clusterização. </p>
+                    <p><img src="https://raw.githubusercontent.com/lfvvercosa/desafio_cnj/master/reports/figures/analise_cluster.png"
+                            alt="Analise Cluster"></p>
+                    <p>Com opções previstas de escolher o critério e filtrar os clusters<br><img
+                            src="https://raw.githubusercontent.com/lfvvercosa/desafio_cnj/master/reports/figures/filtro_cluster.png"
+                            alt="Filtro Cluster"> </p>
+                    <h3 class="code-line" data-line-start=383 data-line-end=384><a
+                            id="Redefinio__Otimizao_do_modelo_383"></a>Redefinição / Otimização do modelo</h3>
+                    <p>Conforme o feedback ou insigth do Especialista e do Cientista de Dados, pode ser necessário a
+                        redefinição de novos FILTROS, AGRUPAMENTOS ou ainda ESCOLHA DE NOVAS VARIÁVEIS DE CLUSTERIZAÇÃO.
+                        Não
+                        raro a depender do resultado: </p>
+                    <ul>
+                        <li>Uma nova fonte de dados pode ser necessária para enriquecer os dados e por consequencia
+                            talvez
+                            melhorar o resultado da clusterização. </li>
+                        <li>Uma melhoria ou ajuste na etapa de pré-processamento (limpeza, agregação) dos dados seja
+                            necessária. </li>
+                        <li>A escolha de outro algoritmo de clusterização mais eficiente e aderente as características
+                            dos
+                            dados. </li>
+                        <li>Ou em algumas situações, será neessário apenas uma otimização no parâmetro do algoritimo de
+                            clusterização </li>
+                    </ul>
+                    <p>Especificamente para o nosso caso, ajustamos os parâmetros eps e num_sample do algoritmo
+                        utilizado:
+                        DBScan. </p><img
+                        src="https://raw.githubusercontent.com/lfvvercosa/desafio_cnj/master/reports/figures/otimizar_dbscan.png"
+                        alt="Otimizar DBScan">
+                    <h2 class="code-line" data-line-start=395 data-line-end=396><a id="Entrada_produo_395"></a>Entrada
+                        produção </h2>
+                    <p>Optamos por utiliza o Heroku (plataforma em nuvem como um serviço que suporta várias linguagens
+                        de
+                        programação) para disponibilizar nossa aplicação. </p>
+                    <ul>
+                        <li><strong>Acesso a solução:</strong> <a
+                                href="https://desafio-cnj-frontend.herokuapp.com/">http://desafio-cnj-frontend.herokuapp.com/</a>
+                        </li>
+                        <li><strong>Apresentação da solução:</strong> <a
+                                href="https://youtu.be/EBU2PZM2J54">https://youtu.be/EBU2PZM2J54</a> </li>
+                    </ul>
+                    <h2 class="code-line" data-line-start=401 data-line-end=402><a id="Prximos_passos_401"></a>Próximos
+                        passos </h2>
+                    <ol>
+                        <li><strong>Solução: Configuração dos critérios -</strong>: Com essa ferramenta o Pesquisador do
+                            CNJ
+                            poderá criar, testar e configurar novos critérios de agrupamento, analisando o impacto da
+                            combinação de parâmetros de filtragem, agrupamento e clusterização no resultado dos grupos
+                            criados. Permitindo que estudos sejam realizados no sentido de aprimorar os critérios de
+                            comparação entre unidades judiciárias semelhantes. </li>
+                        <li> <strong>Solução: Configuração dos critérios -</strong>: Com a análise do TRACE (sequencia
+                            de
+                            atividades) dos processos da unidade judiciária, temos condições de predizer o tempo
+                            esperado
+                            que um determinado processo a partir de sua tarefa atual, chegue a uma determinada tarefa
+                            (normalmente a tarefa de término do processo, que pode ser JULGAMENTO, TRANSITO EM JULGADO,
+                            BAIXA / ARQUIVAMENTO DEFINITIVO ou qualquer outra tarefa desejada). Com base nessa infomação
+                            é
+                            possível: <ul>
+                                <li>Exibir nas telas do PJE (por exemplo: autos do processo), o tempo esperado para
+                                    conclusão do processo. </li>
+                                <li>Exibir mensagem de alertas que notifiquem ao usuário interno do PJE (servidores e
+                                    magistrados) quando um determinado processo estiver perto de atrasar ou já tiver
+                                    atrasado. </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+<style>
+    .list-group {
+    font-size: small;
+    }
+    
+    .list-group li {
+        padding: 6px !important;
+    }
+</style>
+                <nav class=" col-12 col-md-4 border-right">
+                    <ul class="sticky-top list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">O projeto</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Organização do projeto</a></li>
+                        
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Bibliotecas e Framework utilizados</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Como executar o projeto</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Roadmap</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Metodologia do Projeto</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Entendimento do Negócio</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">O poder judiciário</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Justiça Estadual</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Definição do problema</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Fonte de dados</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Entendimento dos dados</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Preparação dos dados</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Filtros</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Limpeza dos dados</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Transformações realizadas</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Modelagem</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Arquitetura geral</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Solução: Painel de Tempo e Produtividade</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Solução: Criação, análise e configuração dos critérios</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Modelagem do Critério de Agrupamento</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Definição do critério de agrupamento</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Avaliação</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Feedback dos especialistas</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Redefinição/Otimização do Modelo</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Entrada Produção</a></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#o-projeto">Próximos passos</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -24,7 +24,7 @@
     justify-content: center;
     flex-direction: column;
     &-title {
-      font-family: "OpenSans-Bold";
+        font-weight: 600;
       font-size: 1.5rem;
       padding: 0 1rem;
     }
@@ -45,13 +45,12 @@
         &-name {
           display: inline-block;
           margin: 0;
-          font-family: "OpenSans-SemiBold";
+            font-weight: 600;
           font-size: 1.125rem;
           background: #fff;
           z-index: 2;
           position: relative;
-  min-height: 2.875rem;
-
+          min-height: 2.875rem;
         }
         &-transaction {
           display: flex;
@@ -86,13 +85,13 @@
       text-align: center;
       padding-top: 1.5rem;
       display: flex;
-      justify-content: center;  
+      justify-content: center;
       &-box {
         padding: 1rem 2rem;
         background-color: #cce5ff;
         border-radius: 0.5rem;
         p {
-          font-family: 'OpenSans-SemiBold';
+            font-weight: 600;
           margin: 0;
         }
       }
@@ -103,13 +102,14 @@
     &-tabs {
       display: flex;
       &-item {
-        width: 33%;
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 1rem;
         font-size: 0.875rem;
         color: #6c6c6b;
+        margin-bottom: 0.5rem;
+
         &:hover {
           cursor: pointer;
         }
@@ -130,12 +130,12 @@
       border-color: #b0afaf;
       table {
         width: 100%;
-        font-family: "OpenSans-SemiBold";
+          font-weight: 600;
         th {
           font-size: 1.125rem;
         }
         tr {
-          height: 3.5rem;
+          // height: 3.5rem;
         }
       }
       &-index {
@@ -162,15 +162,15 @@
       table {
         width: 100%;
         tr {
-          height: 3.5rem;
-          display: flex;
+          // height: 3.5rem;
+          // display: flex;
           &:hover {
             cursor: pointer;
           }
           th {
-            display: block;
-            height: 1.5rem;
-            overflow: hidden;
+            // display: block;
+            // height: 1.5rem;
+            // overflow: hidden;
           }
         }
       }

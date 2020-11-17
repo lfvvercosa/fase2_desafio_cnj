@@ -1,12 +1,12 @@
 getBestVaras(vara_id, 10, (result)=>{
-    var groups = ['distribuição','conclusão','despacho','decisão','julgamento','trânsito em julgado','baixa ou arquivamento']
-    var time_distribuicao = ["distribuição"]
-    var time_conclusao = ["conclusão"]
-    var time_despacho = ["despacho"]
-    var time_decisao = ["decisão"]
-    var time_julgamento = ["julgamento"]
-    var time_transito_em_julgado = ["trânsito em julgado"]
-    var time_baixa_ou_arquivamento = ["baixa ou arquivamento"]
+    var groups = ['Distribuição','Conclusão','Despacho','Decisão','Julgamento','Trânsito em julgado','Baixa ou arquivamento']
+    var time_distribuicao = ["Distribuição"]
+    var time_conclusao = ["Conclusão"]
+    var time_despacho = ["Despacho"]
+    var time_decisao = ["Decisão"]
+    var time_julgamento = ["Julgamento"]
+    var time_transito_em_julgado = ["Trânsito em julgado"]
+    var time_baixa_ou_arquivamento = ["Baixa ou arquivamento"]
     result.forEach(json => {
         if(json.time_distribuicao && json.time_distribuicao != null)
             time_distribuicao.push(json.time_distribuicao)
@@ -58,7 +58,7 @@ getBestVaras(vara_id, 10, (result)=>{
         axis: {
           y: {
             label: {
-              text: 'número de dias',
+              text: 'Número de dias',
               position: 'outer-middle'
             }
           }

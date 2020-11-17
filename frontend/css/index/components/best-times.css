@@ -3,7 +3,7 @@
   height: auto;
 }
 .best-times-title {
-  font-family: "OpenSans-Bold";
+    font-weight: 600;
   font-size: 1.5rem;
   padding: 1rem;
 }

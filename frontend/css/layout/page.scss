@@ -8,21 +8,21 @@ body {
 }
 
 @font-face {
-  font-family: 'OpenSans-Bold';
-  src: url('../../resources/fonts/Open_Sans/OpenSans-Bold.ttf');
+  font-weight: 600;
+  src: url('../../resources/fonts/Open_Sans/OpenSans-Semibold.ttf');
 }
 
 @font-face {
-  font-family: 'OpenSans-Semibold';
+  font-weight: 600;
   src: url('../../resources/fonts/Open_Sans/OpenSans-SemiBold.ttf');
 }
 
 @font-face {
-  font-family: 'OpenSans-Regular';
+  font-weight: 400;
   src: url('../../resources/fonts/Open_Sans/OpenSans-Regular.ttf')
 }
 
 @font-face {
-  font-family: 'OpenSans-Light';
+  font-weight: 300;
   src: url('../../resources/fonts/Open_Sans/OpenSans-Light.ttf')
 }

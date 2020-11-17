@@ -118,7 +118,7 @@ function setStatisticsComponent(){
     //statistics-best-title-2
 
     //duration
-    $('#statistics-duration-title-1').html('Duração da <br>baixa do processo')
+    $('#statistics-duration-title-1').html('Baixa do processo')
     $('#statistics-duration-value').html(json.days_finish_process + ' dias')
     $('#statistics-duration-position').html('1' + '° de ' + json.group.amount_of_varas + ' varas')
     //statistics-duration-title-2

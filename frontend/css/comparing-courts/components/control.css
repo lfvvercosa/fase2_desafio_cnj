@@ -7,7 +7,7 @@
   margin: 0;
 }
 .control-title {
-  font-family: "OpenSans-Bold";
+    font-weight: 600;
   font-size: 2.4rem;
   display: flex;
   align-items: center;
@@ -20,7 +20,7 @@
   display: block;
 }
 .control-list-item-name {
-  font-family: "OpenSans-Semibold";
+  font-weight: 600;
   font-size: 1.8rem;
   margin: 0;
 }

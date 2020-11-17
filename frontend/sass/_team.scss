@@ -1,0 +1,39 @@
+.team {
+  &-list {
+    @extend .row;
+    @extend .d-flex;
+    @extend .align-items-stretch;
+    @extend .list-unstyled;
+    @extend .list-inline;
+
+    li {
+      @extend .text-center;
+      @extend .col-12;
+      @extend .col-md-4;
+      & > div {
+        @extend .rounded;
+        @extend .border;
+        @extend .p-4;
+        height: 100%;
+      }
+      p {
+        margin-bottom: 0;
+        font-size: 85%;
+      }
+      img {
+        @extend .w-50;
+        @extend .rounded-circle;
+        @extend .img-thumbnail;
+      }
+      strong {
+        
+        @extend .text-center;
+        @extend .border-bottom;
+        @extend .d-block;
+        @extend .pt-3;
+        @extend .mb-3;
+        @extend .pb-2;
+      }
+    }
+  }
+}
