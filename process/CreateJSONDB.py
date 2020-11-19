@@ -18,8 +18,9 @@ path_clusters = '/home/vercosa/Insync/doutorado/hackaton_cnj/'+\
 file_path = '/home/vercosa/Documentos/bases_desafio_cnj/'+\
             'versao5/version_5.csv'
 
-# file_dados_basicos = '/home/vercosa/Documentos/bases_desafio_cnj/'+\
-#                      'dados_basicos_estadual/df_dadosbasicos_justica_estadual.csv'
+# file_path = '/home/vercosa/Documentos/bases_desafio_cnj/'+\
+#              'versao6/resultado_1_0_null.csv'
+
 
 movement_path = '/home/vercosa/Insync/doutorado/hackaton_cnj/' + \
                 'projeto_git/desafio_cnj/data/interim/df_movimentos.csv'
@@ -35,12 +36,34 @@ datatypes = {'case:concept:name': str,
              'time:timestamp'   : str}
 
 
-df_log = pd.read_csv(file_path,
-                     dtype=datatypes,
-                     sep=';', 
-                     engine='python')
+# df_log = pd.read_csv(file_path,
+#                      dtype=datatypes,
+#                      sep=';', 
+#                      engine='python')
 
+pp = PreProcess(file_location=file_path)
+pp.select_desired_columns()
+pp.filter_outlier_timestamp()
+pp.map_movements(movement_path)
 
+df_log = pp.df_log
+
+# filter last movement to "Baixa/Arquivamento"
+
+df_last = df_log.groupby('case:concept:name', as_index=False).\
+    agg({'time:timestamp':'max', 'concept:name':'last'})
+
+df_last = df_last[df_last['concept:name'] == 'Baixa/Arquivamento']\
+    [['case:concept:name']]
+
+keys = ['case:concept:name']
+
+i1 = df_log.set_index(keys).index
+i2 = df_last.set_index(keys).index
+
+df_log = df_log[i1.isin(i2)]
+
+# calc df_proc (used for filtering out "Varas" with few process instance)
 
 df_proc = df_log[['case: orgao_mun', 'case:concept:name']].drop_duplicates()
 df_proc = df_proc.groupby('case: orgao_mun').count().\
@@ -53,26 +76,23 @@ df_proc['case: orgao_mun'] = df_proc['case: orgao_mun'].\
     str.replace(' - ','-')
 df_proc['case: orgao_mun'] = df_proc['case: orgao_mun'].\
     str.replace('-',' - ')
-df_proc = df_proc[df_proc['process_count'] >= 50]
-
-
-
-
+df_proc = df_proc[df_proc['process_count'] >= 25]
 
 
 # check how many encoding errors
-l1 = [x for x in df_proc['case: orgao_mun'].unique().tolist()] 
-l2 = [x for x in df_proc['case: orgao_mun'].unique().tolist()] 
-l2 = [x.encode('latin-1', errors='ignore').decode('latin-1') for x in l2]
+# l1 = [x for x in df_proc['case: orgao_mun'].unique().tolist()] 
+# l2 = [x for x in df_proc['case: orgao_mun'].unique().tolist()] 
+# l2 = [x.encode('latin-1', errors='ignore').decode('latin-1') for x in l2]
 
-count = 0 
+# count = 0 
 
-for i in range(len(l1)): 
-    if l1[i] == l2[i]: 
-        count += 1 
+# for i in range(len(l1)): 
+#     if l1[i] == l2[i]: 
+#         count += 1 
 
-count
+# count
 
+# clustering
 
 df_clusters = pd.read_csv(path_clusters,
                         sep=';',
@@ -96,7 +116,7 @@ df_temp = df_proc.groupby(alg).count().sort_values(by='case: orgao_mun')
 df_temp
 
 df_temp.to_csv(path_or_buf='/home/vercosa/Documentos/bases_desafio_cnj/'+\
-                           '/versao5/grupos_cluster.csv', sep=';')
+                           '/versao6/grupos_cluster.csv', sep=';')
 
 
 # create 'grupos' json
@@ -125,7 +145,8 @@ group1 = {
         'competences': 1116,
         'subject': 'Execução Fiscal',
         'method': 'TSNE + DBSCAN',
-        'amount_of_varas': 51
+        # some groups might not enter, calculate later
+        # 'amount_of_varas': 51
     }
 }
 
@@ -139,7 +160,7 @@ group2 = {
         'competences': 1116,
         'subject': 'Execução Fiscal',
         'method': 'TSNE + DBSCAN',
-        'amount_of_varas': 12
+        # 'amount_of_varas': 12
     }
 }
 
@@ -153,18 +174,9 @@ group3 = {
         'competences': 1116,
         'subject': 'Execução Fiscal',
         'method': 'TSNE + DBSCAN',
-        'amount_of_varas': 14
+        # 'amount_of_varas': 14
     }
 }
-
-json_group.append(group1)
-json_group.append(group2)
-json_group.append(group3)
-
-with open('/home/vercosa/Insync/doutorado/hackaton_cnj/backend_git/'+\
-          'backend-desafio-cnj/Fixtures/base5_groups.json', 'w') as f:
-          json.dump(json_group, f)
-
 
 
 # create cadastro_etapas objects
@@ -173,14 +185,16 @@ with open('/home/vercosa/Insync/doutorado/hackaton_cnj/backend_git/'+\
     # destination
 
 macrosteps = [
-              
-              'Distribuição', 
+              'Audiência',
+              'Citação',
               'Conclusão',
               'Despacho',
               'Decisão',
+              'Distribuição', 
               'Julgamento',
               'Trânsito em julgado', 
-              'Baixa/Arquivamento',  
+              'Baixa/Arquivamento',
+              'Outros',
              ]
 
 json_step_config = []
@@ -248,30 +262,67 @@ for c in comments_list:
 
 varas_dict = {}
 
-varas_dict[256] = df_proc[(df_proc['TSNE'] == 256)]\
+varas_dict[98] = df_proc[(df_proc['TSNE'] == 98)]\
                     ['case: orgao_mun'].tolist()
-
+                    
 varas_dict[111] = df_proc[(df_proc['TSNE'] == 111)]\
                     ['case: orgao_mun'].tolist()
 
-varas_dict[98] = df_proc[(df_proc['TSNE'] == 98)]\
+varas_dict[256] = df_proc[(df_proc['TSNE'] == 256)]\
                     ['case: orgao_mun'].tolist()
 
 
-pp = PreProcess(file_location=file_path)
-pp.select_desired_columns()
-pp.filter_outlier_timestamp()
-pp.map_movements(movement_path)
+# pp = PreProcess(file_location=file_path)
+# pp.select_desired_columns()
+# pp.filter_outlier_timestamp()
+# pp.map_movements(movement_path)
 
-df_log = pp.df_log
+
+# df_log = pp.df_log
+
+
+# filter first movement to "Distribuição"
+
+
+# df_first = df_log.groupby('case:concept:name', as_index=False).\
+#     agg({'time:timestamp':'min', 'concept:name':'first'})
+
+# df_first.groupby('concept:name', as_index=False).count().\
+#     sort_values(by='case:concept:name', ascending=False)
+
+# df_first = df_first[df_first['concept:name'] == 'Distribuição']\
+#     [['case:concept:name']]
+
+# keys = ['case:concept:name']
+
+# i1 = df_log.set_index(keys).index
+# i2 = df_first.set_index(keys).index
+
+# df_log = df_log[i1.isin(i2)]
+
+
+# filter out non-macrosteps movements
+
+# df_macrosteps = pd.DataFrame(macrosteps, columns=['concept:name'])
+
+# keys = ['concept:name']
+
+# i1 = df_log.set_index(keys).index
+# i2 = df_macrosteps.set_index(keys).index
+
+# df_log = df_log[i1.isin(i2)]
+
+
+# df_log = pp.df_log
+
+#### get latitude and longitude
+
 df_log['case: orgao_mun'] = df_log['case: orgao_mun'].str.upper()
 df_log['case: orgao_mun'] = df_log['case: orgao_mun'].str.replace('"','')
 df_log['case: orgao_mun'] = df_log['case: orgao_mun'].\
     str.replace(' - ','-')
 df_log['case: orgao_mun'] = df_log['case: orgao_mun'].\
     str.replace('-',' - ')
-
-# get latitude and longitude
 
 df_lat_long = pd.read_csv(lat_long_path)
 df_lat_long = df_lat_long[['codigo_ibge', 'latitude', 'longitude']]
@@ -288,17 +339,32 @@ vara_id_count = 20
 step_id_count = 20
 number_of_skips = {}
 ranking_varas = {}
+amount_of_varas = {}
 
 for group in varas_dict:
 
     number_of_skips[group] = 0
     ranking_varas[group] = {}
 
+    print('current group: ' + str(group))
+
     for vara in varas_dict[group]:
 
         json_vara_aux = {'model':'performance.Vara',
                         'pk':vara_id_count,
-                        'fields':{}
+                        'fields':{
+                            'time_distribuicao':-1,
+                            'time_conclusao':-1,
+                            'time_despacho':-1,
+                            'time_decisao':-1,
+                            'time_julgamento':-1,
+                            'time_transito_em_julgado':-1,
+                            'time_baixa_ou_arquivamento':-1,
+                            'time_audiencia':-1,
+                            'time_citacao':-1,
+                            'time_outros':-1,
+                        },
+
                         }
 
         vara_id = vara_id_count
@@ -344,7 +410,7 @@ for group in varas_dict:
         json_vara_aux['fields']['days_finish_process'] = days_finish_process
         ranking_varas[group][vara_id] = days_finish_process
 
-        if movements > 5 and days_finish_process > 0:
+        if movements > 3 and days_finish_process > 0:
 
             ms = MacroSteps(log.log, macrosteps)
             macrosteps_result = ms.calc_macrosteps()
@@ -364,33 +430,50 @@ for group in varas_dict:
             for m in macrosteps_result:
                 if m == 'Distribuição':
                     json_vara_aux['fields']['time_distribuicao'] = \
-                        int(macrosteps_result[m])
+                        macrosteps_result[m]
 
                 if m == 'Conclusão':
                     json_vara_aux['fields']['time_conclusao'] = \
-                        int(macrosteps_result[m])
+                        macrosteps_result[m]
 
                 if m == 'Despacho':
                     json_vara_aux['fields']['time_despacho'] = \
-                        int(macrosteps_result[m])
+                        macrosteps_result[m]
 
                 if m == 'Decisão':
                     json_vara_aux['fields']['time_decisao'] = \
-                        int(macrosteps_result[m])
+                        macrosteps_result[m]
 
                 if m == 'Julgamento':
                     json_vara_aux['fields']['time_julgamento'] = \
-                        int(macrosteps_result[m])
-
-                if m == 'Trânsito':
+                        macrosteps_result[m]
+    
+                if m == 'Trânsito em julgado':
                     json_vara_aux['fields']['time_transito_em_julgado'] = \
-                        int(macrosteps_result[m])
+                        macrosteps_result[m]
 
-                if m == 'Baixa':
+                if m == 'Baixa/Arquivamento':
                     json_vara_aux['fields']['time_baixa_ou_arquivamento'] = \
-                        int(macrosteps_result[m])
+                        macrosteps_result[m]
+                
+                if m == 'Audiência':
+                    json_vara_aux['fields']['time_audiencia'] = \
+                        macrosteps_result[m]
+
+                if m == 'Citação':
+                    json_vara_aux['fields']['time_citacao'] = \
+                        macrosteps_result[m]
+
+                if m == 'Outros':
+                    json_vara_aux['fields']['time_outros'] = \
+                        macrosteps_result[m]
         
             json_vara.append(json_vara_aux)
+
+            if group not in amount_of_varas:
+                amount_of_varas[group] = 0
+            
+            amount_of_varas[group] += 1
 
             # create json Steps
 
@@ -441,6 +524,8 @@ for group in varas_dict:
             number_of_skips[group] += 1
 
 
+print('total skips: ' + str(number_of_skips))
+
 # add ranking
 
 for group in ranking_varas:
@@ -455,7 +540,17 @@ for vara in json_vara:
         list(ranking_varas[vara['fields']['group_id']]).\
             index(vara['pk']) + 1
 
+group1['fields']['amount_of_varas'] = amount_of_varas[group1['pk']]
+group2['fields']['amount_of_varas'] = amount_of_varas[group2['pk']]
+group3['fields']['amount_of_varas'] = amount_of_varas[group3['pk']]
 
+json_group.append(group1)
+json_group.append(group2)
+json_group.append(group3)
+
+with open('/home/vercosa/Insync/doutorado/hackaton_cnj/backend_git/'+\
+          'backend-desafio-cnj/Fixtures/base5_groups.json', 'w') as f:
+          json.dump(json_group, f)
 
 with open('/home/vercosa/Insync/doutorado/hackaton_cnj/backend_git/'+\
           'backend-desafio-cnj/Fixtures/base5_varas.json', 'w') as f:

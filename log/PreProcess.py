@@ -34,7 +34,7 @@ class PreProcess():
         
         df_incomplete = self.df_log[['case:concept:name', 'time:timestamp']]
         df_incomplete['year'] = df_incomplete['time:timestamp'].str[:4].astype(int)
-        df_incomplete = df_incomplete[(df_incomplete['year'] < 1900) | \
+        df_incomplete = df_incomplete[(df_incomplete['year'] < 2000) | \
                                     (df_incomplete['year'] > 2020)]
         df_incomplete = df_incomplete.drop_duplicates(subset=['case:concept:name'])
         
@@ -132,6 +132,7 @@ class PreProcess():
         df_mov.loc[((df_mov['concept:name_cod'] == 22) |
                     (df_mov['concept:name_cod'] == 246)),\
                     'nome'] = 'Baixa/Arquivamento'
+        
         # change 'Magistrado' movimentos to uppest father
         df_mov.loc[(df_mov['father_mov_code'] == 193),\
                     'nome'] = 'Julgamento'
@@ -139,6 +140,14 @@ class PreProcess():
                     'nome'] = 'Despacho'
         df_mov.loc[(df_mov['father_mov_code'] == 3),\
                     'nome'] = 'Decisão'
+        
+        # change 'Citação' childs to 'Citação'
+        df_mov.loc[df_mov['breadscrum'].str.\
+            contains('14:48:12284'), 'nome'] = 'Citação' 
+        
+        # change 'Audiência' childs to 'Audiência'
+        df_mov.loc[df_mov['breadscrum'].str.\
+            contains('14:48:970'), 'nome'] = 'Audiência'
         
         len_before = len(self.df_log)
 

@@ -1,5 +1,6 @@
 import statistics
 import networkx as nx
+import matplotlib.pyplot as plt
 
 from log.Log import Log
 from log.PreProcess import PreProcess
@@ -39,7 +40,7 @@ class MacroSteps():
             time = activ['time:timestamp']
 
             if idx == 0 and name not in macrosteps:
-                orig = ('Distribuição', activ['time:timestamp'])
+                orig = ('Outros', activ['time:timestamp'])
 
             if name in macrosteps:
                 macrosteps.remove(name)
@@ -152,6 +153,90 @@ class MacroSteps():
         return time_most_freq
     
 
+    def filter_less_frequent_activ(self, G_freq, percent=0.05):
+        less_freq = []
+        dict_freq = nx.get_edge_attributes(G_freq,'weight')
+        total_freq = sum(list(dict_freq.values()))
+
+        for key in dict_freq:
+            if dict_freq[key]/total_freq < percent:
+                less_freq.append(key)
+
+        return less_freq
+
+
+    def filter_instantaneous_transitions(self, G_time):
+        filt = []
+        dict_time = nx.get_edge_attributes(G_time,'weight')
+
+        for key in dict_time:
+            if dict_time[key] == 0.0:
+                filt.append(key)
+
+        return filt    
+
+
+    def remove_keys(self, my_dict, l):
+        for k in l:
+            my_dict.pop(k, None)
+
+        return my_dict
+
+
+    def get_time_percentage_activ(self, G_time, less_freq):
+        time_percent_macrosteps = {}
+        instant_transit = self.filter_instantaneous_transitions(G_time)
+
+        # print('less_freq: ', str(less_freq))
+        # print('')
+        # print('instant_transit: ', str(instant_transit))
+        # print('')
+
+        edge_times = nx.get_edge_attributes(G_time,'weight')
+        edge_times = self.remove_keys(edge_times, less_freq)
+        edge_times = self.remove_keys(edge_times, instant_transit)
+
+        # rebuild the Graph
+        weighted_edges = []
+
+        for key in edge_times:
+            weighted_edges.append((key[0], key[1], edge_times[key]))
+
+        G = nx.DiGraph()
+        G.add_weighted_edges_from(weighted_edges)
+        nodes = list(G.nodes)
+
+        # print('edge_times: ', str(edge_times))
+        # print('')
+
+        # print('nodes: ', str(nodes))
+        # print('')
+        
+        for n in nodes:
+            node_edges = G.out_edges(n)
+            total_edges = len(node_edges)
+
+            if total_edges > 0:
+                time_percent_macrosteps[n] = 0
+
+                for e in node_edges:
+                    time_percent_macrosteps[n] += edge_times[e]
+                time_percent_macrosteps[n] /= total_edges
+        
+        # print('time_macrosteps: ', str(time_percent_macrosteps))
+
+        total_time = sum(list(time_percent_macrosteps.values()))
+
+        for key in time_percent_macrosteps:
+            time_percent_macrosteps[key] = \
+                round((time_percent_macrosteps[key] / total_time) * 100,2)
+        
+        # print('')
+        # print('time_pecent_macrosteps: ', str(time_percent_macrosteps))
+
+        return time_percent_macrosteps
+
+
     def calc_macrosteps(self):
         
         macro_trace_freq = self.find_all_macro_trace(self.log, 
@@ -161,30 +246,38 @@ class MacroSteps():
                                                      self.macrosteps, 
                                                      freq=False) 
 
-        time_macrosteps = {}
+        # time_macrosteps = {}
 
         if(DEBUG):
             print('macro_trace_freq: ', str(macro_trace_freq))
         
-        G = self.create_macro_graph(macro_trace_freq)
+        G_freq = self.create_macro_graph(macro_trace_freq)
+        G_time = self.create_macro_graph(macro_trace_time)
 
-        # nx.draw(G, with_labels = True)
+        # pos=nx.spring_layout(G)
+        # pos=nx.get_node_attributes(G,'pos')
+        # nx.draw(G, with_labels = True, pos=pos)
+        # labels = nx.get_edge_attributes(G,'weight')
+        # nx.draw_networkx_edge_labels(G,pos,edge_labels=labels)
         # plt.show()
 
-        path_number = self.graph_most_frequent_path(G)
+        # path_number = self.graph_most_frequent_path(G)
 
-        time_edges = self.get_time_most_freq_path(G, 
-                                                  path_number, 
-                                                  macro_trace_time)
+        # time_edges = self.get_time_most_freq_path(G, 
+        #                                           path_number, 
+        #                                           macro_trace_time)
 
+        # if(DEBUG):
+        #     print('time edges: ', str(time_edges))
 
-
-        if(DEBUG):
-            print('time edges: ', str(time_edges))
-
-        for key in time_edges:
-            time_macrosteps[key.split(' -> ')[0]] = time_edges[key]
+        # for key in time_edges:
+        #     time_macrosteps[key.split(' -> ')[0]] = time_edges[key]
         
+        less_freq = \
+            self.filter_less_frequent_activ(G_freq, percent=0.05)
+        time_macrosteps =  \
+            self.get_time_percentage_activ(G_time, less_freq)
+
         return time_macrosteps
 
 
