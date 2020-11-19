@@ -29,6 +29,25 @@ paths:
       summary: "Lista de grupos"
       description: "Retorna todos os grupos cadastrados, com informação de ID, nome, assuntos e classes mais frequentes. Também retorna informações das varas do grupo."
       operationId: "getGrupos"
+      parameters:
+      - name: "justica"
+        in: "query"
+        description: "Identificador do tipo justica para filtrar"
+        required: false
+        type: "integer"
+        format: "int64"
+      - name: "grau"
+        in: "query"
+        description: "Identificador do grau de justica para filtrar"
+        required: false
+        type: "integer"
+        format: "int64"
+      - name: "classe_processual"
+        in: "query"
+        description: "Identificador da classe processual para filtrar"
+        required: false
+        type: "integer"
+        format: "int64"
       produces:
       - "application/json"
       responses:
@@ -501,7 +520,7 @@ definitions:
                 type: "number"
                 description: "Longitude"
                 example: -34.23094
-                
+
   grupo:
     type: "object"
     properties:
@@ -516,40 +535,9 @@ definitions:
         description: "Tempo médio das varas do grupo"
         example: 1100
       tempoOutrasVaras:
-        type: "object"
-        properties:
-          nome:
-            type: "string"
-            description: "Outras varas"
-            example: "Outras Unidades Judiciárias"
-          tempo:
-            type: "integer"
-            description: "Tempo médio de baixa de processo em dias"
-            example: 890
-      processoGeral:
-        items:
-          type: "object"
-          properties:
-            root:
-              type: "string"
-              description: "Nó raiz do grafo"
-              example: "Distribuição"
-            arestas:
-              type: "array"
-              items:
-                properties:
-                  origem:
-                    type: "string"
-                    description: "Nó de origem"
-                    example: "Distribuição"
-                  destino:
-                    type: "string"
-                    description: "Nó de destino"
-                    example: "Julgamento"
-                  peso:
-                    type: "integer"
-                    description: "Frequência média"
-                    example: 34
+        type: "integer"
+        description: "Tempo médio de baixa de processo em dias"
+        example: 890
       varasEmAlerta:
         type: "array"
         items:
@@ -564,6 +552,10 @@ definitions:
               type: "string"
               description: "Nome da vara"
               example: "Única de Anajás (TJPA)"
+            tribunal:
+              type: "string"
+              description: "Nome do tribunal onde ta a vara"
+              example: "TJPA"
             tempo:
               type: "integer"
               description: "Tempo médio de baixa de processo em dias"
@@ -610,6 +602,10 @@ definitions:
               type: "string"
               description: "Melhor etapa processual da vara"
               example: "Julgamento"
+            tribunal:
+              type: "string"
+              description: "Tribunal onde esta a vara"
+              example: "TJPA"
             porcentagemMacroetapas:
               type: "array"
               items:
@@ -686,6 +682,10 @@ definitions:
               type: "string"
               description: "Melhor etapa processual da vara"
               example: "Audiência"
+            tribunal:
+              type: "string"
+              description: "Tribunal onde esta a vara"
+              example: "TJPA"
             porcentagemMacroetapas:
               type: "array"
               items:
