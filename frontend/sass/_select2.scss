@@ -14,7 +14,7 @@
   -webkit-user-select: none;
 }
 .select2-container .select2-selection--single .select2-selection__rendered {
-  display: block;
+  display: inline;
   padding-left: 8px;
   padding-right: 20px;
   overflow: hidden;
@@ -249,7 +249,7 @@
   //   background-color: #e4e4e4;
   //   border: 1px solid #aaa;
   //   border-radius: 4px;
-  display: inline-block;
+  @extend .d-inline-block;
   margin-left: 5px;
   margin-top: 5px;
   //   padding: 0;

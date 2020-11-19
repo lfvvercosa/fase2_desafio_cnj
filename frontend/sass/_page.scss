@@ -100,3 +100,13 @@ iframe {
   height: calc(100% - 56px);
   width: 100%;;
 }
+
+
+.secao-titulo {
+  font-size: 1.5rem;
+  @extend .mb-3;
+  @extend .font-weight-bold;
+  @extend .text-uppercase;
+  @extend .d-flex;
+  @extend .justify-content-between;
+}

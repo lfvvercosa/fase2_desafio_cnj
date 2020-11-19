@@ -40,7 +40,8 @@
     @extend .flex-column;
     @extend .shadow-sm;
     @extend .rounded;
-    @extend .align-items-start;
+    @extend .align-items-center;
+    @extend .justify-content-center;
 
     background-color: #fff;
     padding: 1rem !important;
@@ -63,6 +64,8 @@
   &-select {
     @extend .col-md-6;
     @extend .col-lg-3;
+    @extend .mb-3;
+    @extend .mb-md-0;
     .select {
       @extend .w-100;
     }
@@ -73,8 +76,96 @@
   &-button {
     button {
       @extend .btn;
-
       @extend .btn-outline-primary;
+    }
+
+    &-configuracao {
+      button {
+        @extend .btn-outline-secondary;
+        border-color: transparent;
+      }
+    }
+  }
+}
+.collapse {
+  &-configuracoes {
+    @extend .w-100;
+    strong {
+      @extend .pr-md-3;
+      @extend .pr-0;
+      @extend .pb-2;
+      @extend .d-inline-block;
+      @extend .h3;
+    }
+    .card {
+      @extend .bg-light;
+      @extend .p-3;
+    }
+    .form-check-input {
+      position: relative;
+      @extend .ml-0;
+    }
+    .btn-group-toggle {
+      label {
+        @extend .btn;
+        @extend .btn-outline-primary;
+      }
+    }
+    .configuracao {
+      &-classe,
+      &-assunto,
+      &-periodo {
+        @extend .col-12;
+        @extend .col-md;
+        @extend .form-group;
+
+        input {
+          &[type="range"] {
+            @extend .col-9;
+            @extend .px-0;
+          }
+          &[type="number"] {
+            @extend .offset-1;
+            @extend .form-control;
+            text-align: center;
+          }
+        }
+      }
+
+      &-classe {
+      }
+    }
+    sup {
+      @extend .text-danger;
+    }
+    small {
+      @extend .small;
+      @extend .d-block;
+      @extend .text-muted;
+      @extend .text-right;
+      @extend .pb-2;
+    }
+  }
+}
+.configuracao {
+  &-periodo {
+    .select-group {
+      // @extend .rounded;
+      @extend .d-flex;
+      select {
+        @extend .form-control;
+        @extend .rounded-0;
+        width: 50%;
+        &:first-of-type {
+          @extend .rounded-left;
+          @extend .border-left;
+          border-right-width: 0;
+        }
+        &:last-of-type {
+          @extend .rounded-right;
+          @extend .border-right;
+        }
+      }
     }
   }
 }
