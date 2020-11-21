@@ -4,13 +4,12 @@
 
 html,
 body {
-  // @extend .m-0;
-  // @extend .p-0;
-  // font-size: 14px;
   line-height: 1.5;
   font-family: "Open Sans", sans-serif;
   background-color: #f6f6f6;
-
+}
+body {
+  @extend .py-3;
   @extend .pb-5;
 }
 button {
@@ -22,22 +21,11 @@ main {
   @extend .col-12;
   @extend .col-md-10;
   @extend .mx-auto;
-  img {
-    // @extend .img-fluid;
-    // @extend .d-block;
-    // @extend .w-100;
-    // @extend .mx-auto;
-    // @extend .rounded;
-  }
 }
 
 .content {
   @extend .w-100;
-  // @extend .mx-0;
-
   @extend .row;
-  // @extend .col-12;
-  // @extend .col-md-10;
 }
 
 .migalha-pao {
@@ -62,7 +50,7 @@ main {
       @extend .text-center;
       font-size: small;
       text-transform: lowercase;
-      &:first-of-type{
+      &:first-of-type {
         @extend .pl-0;
       }
       &.secao-titulo {
@@ -95,12 +83,10 @@ main {
   margin-top: 1rem;
 }
 
-
 iframe {
   height: calc(100% - 56px);
-  width: 100%;;
+  width: 100%;
 }
-
 
 .secao-titulo {
   font-size: 1.5rem;

@@ -1,23 +1,19 @@
 .best-times {
-  height: auto;
-  padding: 0;
+  @extend .col-12;
+  @extend .col-6;
+  @extend .col-lg-4;
+  @extend .mb-3;
+  @extend .mb-md-0;
+  
   &-title {
-      font-weight: 600;
-    font-size: 1.5rem;
+    @extend .secao-titulo;
   }
 
-  & > div {
-    margin: 0;
-    padding-left: 0;
-    list-style: none;
-  }
   &-item {
     padding: 0.5rem 0;
-    margin: 0;
+    @extend .m-0;
     font-size: 0.875rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    @extend .text-truncate;
     width: 100%;
 
     &:nth-of-type(even) {
@@ -39,20 +35,26 @@
     margin-bottom: 1rem;
     border-bottom: 1px solid #b0afaf;
   }
-  // &-line{
-  //   height: 1px;
-  //   width: 100%;
-  //   border:none;
-  //   border-top:1px solid #b0afaf;
-  //   margin-top: 2rem;
-  // }
+
   &-item {
-    // font-size: 1.6rem;
-    // margin-top: 2rem;
     &-separator {
       border-top: 1px dotted #b0afaf;
       height: 1px;
       margin: 1rem 0;
+    }
+  }
+  &-mapa {
+    @extend .row;
+    @extend .align-items-stretch;
+    .mapa {
+      @extend .col-12;
+      @extend .col-6;
+      @extend .col-lg-8;
+      @extend .mb-0;
+      #map {
+        height: calc(100% - 60px);
+        @extend .rounded;
+      }
     }
   }
 }

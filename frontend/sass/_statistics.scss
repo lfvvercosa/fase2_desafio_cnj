@@ -1,16 +1,15 @@
 .statistics {
   @extend .row;
-  @extend .mb-0;
   @extend .d-flex;
-  @extend .align-items-center;
+  @extend .flex-wrap;
   @extend .justify-content-between;
-  @extend .list-unstyled;
+  & > div {
+    padding-bottom: 1rem;
+  }
   &-card {
     @extend .align-items-stretch;
     @extend .col-12;
     @extend .col-md;
-    @extend .mb-4;
-    @extend .mb-md-0;
     justify-content: space-between;
     .card {
       @extend .d-flex;
@@ -33,6 +32,8 @@
       font-weight: 600;
       font-size: 1.5rem;
       line-height: 1;
+      @extend .w-100;
+      @extend .text-truncate;
     }
     &-title {
       font-weight: 600;
