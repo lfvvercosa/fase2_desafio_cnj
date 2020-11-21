@@ -1,0 +1,60 @@
+.chart {
+  &-box {
+    @extend .col-12;
+    @extend .col-md-6;
+    @extend .mb-3;
+
+    & > div {
+      @extend .rounded;
+      @extend .p-3;
+      @extend .shadow-sm;
+      background: #fff;
+      height: 100%;
+    }
+  }
+  &-container {
+    @extend .col-md-12;
+
+    table {
+      @extend .table;
+      @extend .text-center;
+
+      @extend .table-bordered;
+      @extend .table-sm;
+      thead {
+        @extend .thead-dark;
+        th {
+          padding: 0.75rem;
+        }
+      }
+
+      tbody {
+        tr {
+          &:nth-child(-n + 6) {
+            @extend .table-info;
+          }
+          &:nth-child(n + 7) {
+            @extend .table-danger;
+          }
+          td {
+          }
+          &.table-title,
+          &.ellipses {
+            td {
+              @extend .text-uppercase;
+              font-weight: bold;
+              border-width: 0;
+              background-color: #fff !important;
+            }
+          }
+          &.table-title {
+            @extend .text-left;
+          }
+          &.ellipses {
+            @extend .p-4;
+          }
+        }
+      }
+    }
+  }
+}

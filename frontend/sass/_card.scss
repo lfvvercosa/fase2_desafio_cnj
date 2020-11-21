@@ -1,0 +1,7 @@
+.card {
+  @extend .p-4;
+  @extend .w-100;
+  @extend .shadow-sm;
+  @extend .rounded;
+  height: auto;
+}

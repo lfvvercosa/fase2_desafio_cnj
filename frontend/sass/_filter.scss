@@ -1,0 +1,171 @@
+// .header-filter {
+//   @extend .list-inline;
+//   @extend .list-unstyled;
+//   @extend .w-100;
+//   @extend .mb-0;
+//   @extend .py-0;
+//   @extend .py-md-4;
+//   & li {
+//     @extend .py-3;
+//     @extend .pl-3;
+//     @extend .pr-0;
+//     @extend .d-md-inline-block;
+//     @extend .d-block;
+//     span {
+//       &:first-of-type {
+//         @extend .mb-3;
+//         @extend .mb-md-0;
+//       }
+//     }
+//     &:first-of-type span {
+//       font-weight: 600;
+//     }
+//     &:nth-of-type(n + 2) span {
+//       border-radius: 3rem;
+//       border: solid 1px;
+//       padding: 0.5rem 1.375rem;
+//       font-size: 0.9rem;
+//       background: #fff;
+//     }
+//   }
+// }
+//CSS NOVO
+
+.filtro {
+  &-form {
+    @extend .row;
+    @extend .mx-auto;
+    @extend .d-flex;
+    @extend .flex-md-row;
+    @extend .flex-column;
+    @extend .shadow-sm;
+    @extend .rounded;
+    @extend .align-items-center;
+    @extend .justify-content-center;
+
+    background-color: #fff;
+    padding: 1rem !important;
+    @extend .my-3;
+    @extend .w-100;
+  }
+  &-select,
+  &-label {
+    @extend .pb-md-0;
+    @extend .px-md-3;
+    @extend .mb-0;
+    @extend .pb-3;
+    @extend .px-0;
+    @extend .col;
+  }
+  &-label {
+    @extend .text-center;
+    @extend .text-md-right;
+  }
+  &-select {
+    @extend .col-md-6;
+    @extend .col-lg-3;
+    @extend .mb-3;
+    @extend .mb-md-0;
+    .select {
+      @extend .w-100;
+    }
+  }
+  &-info {
+    padding: 0.375rem 0.75rem;
+  }
+  &-button {
+    button {
+      @extend .btn;
+      @extend .btn-outline-primary;
+    }
+
+    &-configuracao {
+      button {
+        @extend .btn-outline-secondary;
+        border-color: transparent;
+      }
+    }
+  }
+}
+.collapse {
+  &-configuracoes {
+    @extend .w-100;
+    strong {
+      @extend .pr-md-3;
+      @extend .pr-0;
+      @extend .pb-2;
+      @extend .d-inline-block;
+      @extend .h3;
+    }
+    .card {
+      @extend .bg-light;
+      @extend .p-3;
+    }
+    .form-check-input {
+      position: relative;
+      @extend .ml-0;
+    }
+    .btn-group-toggle {
+      label {
+        @extend .btn;
+        @extend .btn-outline-primary;
+      }
+    }
+    .configuracao {
+      &-classe,
+      &-assunto,
+      &-periodo {
+        @extend .col-12;
+        @extend .col-md;
+        @extend .form-group;
+
+        input {
+          &[type="range"] {
+            @extend .col-9;
+            @extend .px-0;
+          }
+          &[type="number"] {
+            @extend .offset-1;
+            @extend .form-control;
+            text-align: center;
+          }
+        }
+      }
+
+      &-classe {
+      }
+    }
+    sup {
+      @extend .text-danger;
+    }
+    small {
+      @extend .small;
+      @extend .d-block;
+      @extend .text-muted;
+      @extend .text-right;
+      @extend .pb-2;
+    }
+  }
+}
+.configuracao {
+  &-periodo {
+    .select-group {
+      // @extend .rounded;
+      @extend .d-flex;
+      select {
+        @extend .form-control;
+        @extend .rounded-0;
+        width: 50%;
+        &:first-of-type {
+          @extend .rounded-left;
+          @extend .border-left;
+          border-right-width: 0;
+        }
+        &:last-of-type {
+          @extend .rounded-right;
+          @extend .border-right;
+        }
+      }
+    }
+  }
+}

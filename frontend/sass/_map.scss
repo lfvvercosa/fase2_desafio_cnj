@@ -1,0 +1,22 @@
+// .map {
+//   .row {
+//     height: 100%;
+//   }
+//
+// }
+
+#map {
+  height: 375px;
+  // width: 100%;
+  //     border-radius: 0.5rem;;
+}
+
+// .gm-svpc, .gmnoprint, .gm-fullscreen-control {
+//   display: none;
+// }
+
+.mapa {
+  @extend .col-12;
+  @extend .mb-3;
+  @extend .col-md-6;
+}

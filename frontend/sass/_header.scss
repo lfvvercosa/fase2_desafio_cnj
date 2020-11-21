@@ -1,0 +1,80 @@
+.header {
+  @extend .px-0;
+  @extend .pt-4;
+  @extend .row;
+  &-info {
+    @extend .col-md-8;
+    @extend .col-12;
+  }
+  &-welcome {
+    font-size: 0.875rem;
+  }
+
+  &-company {
+    font-weight: 600;
+    font-size: 2.5rem;
+  }
+  &-user {
+    @extend .col-12;
+    @extend .col-md-4;
+    @extend .d-flex;
+    @extend .align-items-center;
+    @extend .justify-content-end;
+  }
+}
+
+.judge {
+  &-info {
+    @extend .col-8;
+    @extend .text-md-right;
+    @extend .text-center;
+  }
+  &-username {
+    font-weight: 600;
+    font-size: 1.375rem;
+    @extend .text-capitalize;
+  }
+  &-position {
+    margin-bottom: 0;
+    @extend .text-capitalize;
+  }
+  &-photo {
+    height: 4.625rem;
+    width: 4.625rem;
+    @extend .rounded-circle;
+    object-fit: cover;
+  }
+}
+nav.menu,
+.header,
+.position#medal {
+  @extend .d-none;
+}
+
+// CSS NOVO
+.site {
+  &-header {
+    @extend .d-flex;
+    @extend .align-items-stretch;
+    @extend .flex-column;
+    @extend .flex-md-row;
+    @extend .w-100;
+    @extend .rounded;
+    @extend .p-3;
+    @extend .mb-3;
+    background-color: #0a243b;
+  }
+  &-logo {
+    @extend .mr-md-3;
+    @extend .ml-0;
+    width: 300px;
+  }
+  &-modulo {
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+}

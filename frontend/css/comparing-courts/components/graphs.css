@@ -11,7 +11,7 @@
   width: 49%;
 }
 .graph-container-left-name {
-  font-family: "OpenSans-Semibold";
+  font-weight: 600;
   font-size: 2rem;
   height: auto !important;
 }
@@ -36,7 +36,7 @@
 }
 .graph-container-right-name {
   height: auto !important;
-  font-family: "OpenSans-Semibold";
+  font-weight: 600;
   font-size: 2rem;
 }
 .graph-container-right-content {

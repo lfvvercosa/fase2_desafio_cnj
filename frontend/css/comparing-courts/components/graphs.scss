@@ -9,7 +9,7 @@
   &-left {
     width: 49%;
     &-name {
-      font-family: 'OpenSans-Semibold';
+      font-weight: 600;
       font-size: 2.0rem;
       height: auto !important;
     }
@@ -28,13 +28,13 @@
     width: 49%;
     &-title{
       height: auto !important;
-      font-family: 'OpenSans-Regular';
+      font-weight: 400;
       font-size: 2.0rem;
       color: #b0afaf;
     }
     &-name{
       height: auto !important;
-      font-family: 'OpenSans-Semibold';
+      font-weight: 600;
       font-size: 2.0rem;
     }
     &-content {

@@ -1,0 +1,51 @@
+// .position {
+//   @extend .d-flex;
+//   @extend .flex-column;
+//   @extend .align-items-center;
+//   @extend .text-center;
+//   @extend .justify-content-between;
+//   @extend .col-12;
+//   @extend .col-md-2;
+//   background: transparent url("../resources/images/medalha.svg") center -3rem
+//     no-repeat;
+//   background-size: contain;
+//   height: 245px;
+//   &:hover,
+//   &:focus {
+//     cursor: pointer;
+//   }
+
+//   &-title {
+//     @extend .text-uppercase;
+//     @extend .rounded;
+//     @extend .border-top-0;
+//     @extend .border;
+//     @extend .rounded-bottom;
+//     padding: 0.5rem;
+//     font-weight: 600;
+//     background: #fff;
+//     width: 160px;
+//   }
+//   &-container {
+//     @extend .d-flex;
+//     @extend .align-items-center;
+//     @extend .flex-column;
+//     @extend .justify-content-end;
+//     @extend .mx-auto;
+
+//     @extend .w-100;
+//     padding-bottom: 4rem;
+//   }
+//   &-number {
+//     font-weight: 600;
+//     font-size: 4rem;
+//     @extend .m-0;
+//   }
+//   &-text {
+//     font-size: 0.625rem;
+//     @extend .text-uppercase;
+//     background: rgba(255, 255, 255, 0.5);
+//     padding: 0.25rem 0.3rem;
+//     margin-top: -0.5rem !important;
+//   }
+// }

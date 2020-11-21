@@ -3,7 +3,7 @@
   padding: 1rem;
 }
 .header-bottom li:first-of-type span {
-  font-family: "OpenSans-Semibold";
+  font-weight: 600;
 }
 .header-bottom li:nth-of-type(n + 2) span {
   border-radius: 3rem;

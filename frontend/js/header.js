@@ -13,7 +13,7 @@ function setHeaderComponent() {
     $('#court-name').html(json.name)
     
     //user
-    $('#username').text('ANTONIO')
+    $('#username').text('Antônio')
     $('#user-position').text('juiz/Desembargador')
 
     //group
@@ -28,12 +28,12 @@ function setHeaderComponent() {
     document.location.reload();
   })
   $('#medal').hover(function(){
-    $('#position-number').html('Mudar de Vara')
-    $('#position-number').css('font-size', '1.7rem')
-    $('.position-text').html('')
+    // $('#position-number').html('Mudar aa Vara')
+    $('#position-number').addClass('mudar-vara')
+    $('.position-text').html('Mudar de vara')
   }, function(){
     $('#position-number').html(court_details.ranking+'ª')
-    $('#position-number').css('font-size', '3rem')
+    // $('#position-number').css('font-size', '3rem')
     $('.position-text').html('colocada')
   }) 
-}
+};

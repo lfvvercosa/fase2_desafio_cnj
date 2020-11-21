@@ -2,7 +2,7 @@
   margin-top: 7rem;
 }
 .footer-comments-title {
-  font-family: "OpenSans-Bold";
+    font-weight: 600;
   font-size: 2.4rem;
   margin-bottom: 0.5rem;
 }
@@ -14,7 +14,7 @@
   padding: 2rem 1.3rem;
 }
 .footer-table-title {
-  font-family: "OpenSans-Bold";
+    font-weight: 600;
   font-size: 2.4rem;
   margin-bottom: 0.5rem;
 }
