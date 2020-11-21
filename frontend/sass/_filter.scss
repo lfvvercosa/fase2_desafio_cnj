@@ -71,7 +71,12 @@
     }
   }
   &-info {
-    padding: 0.375rem 0.75rem;
+    @extend .info;
+    width: 36px;
+    height: 36px;
+    @extend .d-flex;
+    @extend .align-items-center;
+    @extend .justify-content-center;
   }
   &-button {
     button {

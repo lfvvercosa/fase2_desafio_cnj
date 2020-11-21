@@ -14,7 +14,8 @@
   }
   &-container {
     @extend .col-md-12;
-
+    @extend .px-0;
+ 
     table {
       @extend .table;
       @extend .text-center;

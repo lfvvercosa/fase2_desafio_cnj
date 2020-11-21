@@ -1,0 +1,88 @@
+  <fieldset class="collapse collapse-configuracoes" id="configuracoes">
+                <div class="card">
+                    <legend>Configurações
+                        <button type="button" data-toggle="collapse" title="Fechar configurações" data-target="#configuracoes" aria-expanded="false" aria-controls="configuracoes" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                    </legend>
+
+                <div class="row">
+                    <div class="col-12 col-md-8">
+                        <strong class="w-100">Tipo de justiça</strong>
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn" class="justica-estadual"><input type="checkbox" name="configuracao-justica" id="justica-estadual">Estadual</label>
+                            <label class="btn" class="justica-federal"><input type="checkbox" name="configuracao-justica" id="justica-federal">Federal</label>
+                            <label class="btn" class="justica-militar"><input type="checkbox" name="configuracao-justica" id="justica-militar">Militar</label>
+                            <label class="btn" class="justica-trabalho"><input type="checkbox" name="configuracao-justica" id="justica-trabalho">Trabalho</label>
+                            <label class="btn" class="justica-trubunais"><input type="checkbox" name="configuracao-justica" id="justica-trubunais">Trubunais superiores</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <strong class="w-100">Graus</strong>
+
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn" class="grau-1"><input type="checkbox" name="configuracao-grau" id="justica-grau-1">1º grau</label>
+                            <label class="btn" class="grau-2"><input type="checkbox" name="configuracao-grau" id="justica-grau-2">2º grau</label>
+                            <label class="btn" class="grau-3"><input type="checkbox" name="configuracao-grau" id="justica-grau-3">3º grau</label>
+                        </div>
+                    </div>
+                    <div class="py-2 w-100"></div>
+                    <strong class="col-12">Critérios de Clusterização</strong>
+                    
+                    <div class="configuracao-assunto">
+                        <label for="configuracao-assunto">
+                            <input class="form-check-input" id="configuracao-assunto" type="checkbox" value=""> Assunto
+                            <sup>*</sup>
+                        </label>
+                        <div class="d-flex">
+                            <input type="range" min="0" max="100" oninput="rangeCriterioAssuntos(this)" value="0">
+                            <input type="number" readonly value="0">
+                        </div>
+                    </div>
+                    <div class="configuracao-classe">
+                        <label for="configuracao-classe">
+                            <input class="form-check-input" for="configuracao-classe" type="checkbox" value=""> Classe
+                            processual <sup>*</sup>
+                        </label>
+                        <div class="d-flex">
+                            <input type="range" min="0" max="100" oninput="rangeCriterioClasse(this)" value="0">
+                            <input type="number" readonly value="0">
+                        </div>
+                    </div>
+                    <div class="configuracao-periodo">
+                        <label for="configuracao-periodo">
+                            Período
+                            processual <sup>*</sup>
+                        </label>
+                        <div class="select-group">
+                            <select  data-toggle="tooltip" title="Selecione o período incial" name="" id="">
+                                <option value="">1970</option>
+                                <option value="">1980</option>
+                                <option value="">1990</option>
+                            </select>
+                            
+                            <select data-toggle="tooltip" title="Selecione o período final" name="" id="">
+                                <option value="">2000</option>
+                                <option value="">2010</option>
+                                <option value="">2020</option>
+                            </select>
+                            
+                        </div>
+                    </div>
+                    <div class="py-2 w-100"></div>
+                    <div class="w-100 d-flex justify-content-center">
+                        <button type="reset" class="mx-3 btn btn-outline-secondary"><i class="fas mr-3 fa-eraser"></i>Restaurar ao padrão</button>
+                        <button type="submit" class="mx-3 btn btn-outline-primary"><i class="fas fa-filter mr-3"></i> Aplicar configurações</button>
+                    </div>
+
+                </div>
+                <small><sup>*</sup> Nível hierárquico</small>
+                </div>
+                <div class="w-100 mb-3"></div>
+            </fieldset>
+
+            <div class="filtro-button filtro-button-configuracao">
+                <button type="button" data-toggle="collapse" title="Abrir configurações" data-target="#configuracoes" aria-expanded="false" aria-controls="configuracoes">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
