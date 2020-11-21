@@ -61,3 +61,17 @@ function getGraphData(vara_id_1, vara_id_2, callback) {
     callback(data)
   });
 }
+
+function getGroups(callback) {
+  var url = urlBase + 'grupos/'
+  jQuery.get(url, (data)=>{
+    callback(data)
+  });
+}
+
+function getBestCourts(groupId, callback) {
+  var url = urlBase + 'grupos/'+groupId
+  jQuery.get(url, (data)=>{
+    callback(data)
+  });
+}

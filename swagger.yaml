@@ -1,0 +1,873 @@
+# abrir o site https://editor.swagger.io/ e colar este arquivo
+swagger: "2.0"
+info:
+  description: "Backend endpoints for CNJ Hackathon"
+  version: "1.0.0"
+  title: "Equipe 4"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "swagger.io"
+basePath: "/api/v1"
+tags:
+- name: "varas"
+  description: "Informações gerais sobre processos"
+- name: "etapas"
+  description: "Informações de tempo médio e ranking de etapas"
+- name: "processos"
+  description: "Tempo e ranking de processos completos"
+- name: "comentarios"
+  description: "Comentários dos juízes sobre etapas"
+- name: "grupos"
+schemes:
+- "http"
+paths:
+  /grupos:
+    get:
+      tags:
+      - "grupos"
+      summary: "Lista de grupos"
+      description: "Retorna todos os grupos cadastrados, com informação de ID, nome, assuntos e classes mais frequentes. Também retorna informações das varas do grupo."
+      operationId: "getGrupos"
+      parameters:
+      - name: "justica"
+        in: "query"
+        description: "Identificador do tipo justica para filtrar"
+        required: false
+        type: "integer"
+        format: "int64"
+      - name: "grau"
+        in: "query"
+        description: "Identificador do grau de justica para filtrar"
+        required: false
+        type: "integer"
+        format: "int64"
+      - name: "classe_processual"
+        in: "query"
+        description: "Identificador da classe processual para filtrar"
+        required: false
+        type: "integer"
+        format: "int64"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/grupos"
+        "404":
+          description: "Varas não encontradas"
+        "503":
+          description: "Serviço indisponível"
+      security:
+      - api_key: []
+  /grupos/{identificador}:
+    get:
+      tags:
+      - "grupos"
+      summary: "Informações detalhadas das varas do grupo especificado"
+      description: "Retorna informações detalhadas das varas do grupo especificado. As informações são: melhores e piores varas, macroetapas, varas em alerta e processo geral"
+      operationId: "getGrupoById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "identificador"
+        in: "path"
+        description: "Identificador do grupo a buscar os detalhes"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/grupo"
+        "400":
+          description: "Parâmetros inválidos"
+        "404":
+          description: "Identificador de vara inválido"
+        "503":
+          description: "Serviço indisponível"
+      security:
+      - api_key: []
+  /varas:
+    get:
+      tags:
+      - "varas"
+      summary: "Lista de varas"
+      description: "Retorna todas as varas cadastradas, com informação de ID e nome"
+      operationId: "getVaras"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/varas"
+        "404":
+          description: "Varas não encontradas"
+        "503":
+          description: "Serviço indisponível"
+      security:
+      - api_key: []
+  /varas/{identificador}:
+    get:
+      tags:
+      - "varas"
+      summary: "Informações detalhadas da vara especificada"
+      description: "Retorna as informações detalhadas da vara especificada. Contendo ID, nome, identificador do grupo e as informações de criação do grupo (grau, competência, etc)."
+      operationId: "getVaraById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "identificador"
+        in: "path"
+        description: "Identificador da vara a buscar os detalhes"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/vara"
+        "400":
+          description: "Parâmetros inválidos"
+        "404":
+          description: "Identificador de vara inválido"
+        "503":
+          description: "Serviço indisponível"
+      security:
+      - api_key: []
+  /varas/{identificador}/compareGraphWith/{identificador2}:
+    get:
+      tags:
+      - "varas"
+      summary: "Retorna grafo da vara 'identificador' e da vara 'identificador2'"
+      description: "Retorna grafo da vara 'identificador' e da vara 'identificador2'"
+      operationId: "getGraphsVaras"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "identificador"
+        in: "path"
+        description: "Identificador da vara 1"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "identificador2"
+        in: "path"
+        description: "Identificador da vara 2"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/grafos"
+        "400":
+          description: "Parâmetros inválidos"
+        "404":
+          description: "Identificador de vara inválido"
+        "503":
+          description: "Serviço indisponível"
+      security:
+      - api_key: []
+  /varas/melhoresVarasNaEtapa:
+    get:
+      tags:
+      - "varas"
+      summary: "Melhores varas do grupo na etapa"
+      description: "Retorna as {numeroDeVaras} melhores varas do grupo na etapa especificada"
+      operationId: "getMelhoresVarasNaEtapa"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "identificador"
+        in: "query"
+        description: "Identificador da etapa a buscar as informações detalhadas das melhores varas"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "numeroDeVaras"
+        in: "query"
+        description: "Quantidade de etapas a retornar"
+        required: false
+        type: "integer"
+        format: "int64"
+        default: 10
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/melhoresVaraNaEtapa"
+        "400":
+          description: "Parâmetros inválidos"
+        "404":
+          description: "Identificador de vara inválido"
+        "503":
+          description: "Serviço indisponível"
+      security:
+      - api_key: []
+  /etapas/melhoresEtapas:
+    get:
+      tags:
+      - "etapas"
+      summary: "Melhores etapas da vara"
+      description: "Retorna as {numeroDeEtapas} melhores etapas em comparação as mesmas etapas em outras varas do mesmo grupo."
+      operationId: "getMelhoresEtapas"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "identificador"
+        in: "query"
+        description: "Identificador da vara a buscar as melhores etapas"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "numeroDeEtapas"
+        in: "query"
+        description: "Quantidade de etapas a retornar"
+        required: false
+        type: "integer"
+        format: "int64"
+        default: 10
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/etapa"
+        "400":
+          description: "Parâmetros inválidos"
+        "404":
+          description: "Identificador de vara inválido"
+        "503":
+          description: "Serviço indisponível"
+      security:
+      - api_key: []
+  /etapas/pioresEtapas:
+    get:
+      tags:
+      - "etapas"
+      summary: "Piores etapas da vara"
+      description: "Retorna as {numeroDeEtapas} piores etapas em comparação as mesmas etapas em outras varas do mesmo grupo."
+      operationId: "getPioresEtapas"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "identificador"
+        in: "query"
+        description: "Identificador da vara a buscar as piores etapas"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "numeroDeEtapas"
+        in: "query"
+        description: "Quantidade de etapas a retornar"
+        required: false
+        type: "integer"
+        format: "int64"
+        default: 10
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/etapa"
+        "400":
+          description: "Parâmetros inválidos"
+        "404":
+          description: "Identificador de vara inválido"
+        "503":
+          description: "Serviço indisponível"
+      security:
+      - api_key: []
+  /processos/melhoresVaras:
+    get:
+      tags:
+      - "processos"
+      summary: "Informações das melhores varas"
+      description: "Retorna informações das melhores varas em relação a tempo de fechar os processos"
+      operationId: "getMelhoresVaras"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "identificador"
+        in: "query"
+        description: "Identificador da vara em foco"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "numeroDeVaras"
+        in: "query"
+        description: "Quantidade de varas a retornar (incluindo a vara em foco)"
+        required: false
+        type: "integer"
+        format: "int64"
+        default: 10
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/melhoresVaras"
+        "400":
+          description: "Parâmetros inválidos"
+        "404":
+          description: "Identificador de vara inválido"
+        "503":
+          description: "Serviço indisponível"
+      security:
+      - api_key: []
+  /comentarios:
+    get:
+      tags:
+      - "comentarios"
+      summary: "Todos comentários disponíveis"
+      description: "Retorna todos comentários cadastrados"
+      operationId: "getComentarios"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/comentarios"
+        "400":
+          description: "Parâmetros inválidos"
+        "503":
+          description: "Serviço indisponível"
+      security:
+      - api_key: []
+  /comentarios/{identificador}:
+    get:
+      tags:
+      - "comentarios"
+      summary: "Comentário pelo identificador"
+      description: "Retorna o comentário identificado pelo {identificador}"
+      operationId: "getComentarioPorIdentificador"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "identificador"
+        in: "path"
+        description: "Identificador do comentário"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/comentarios"
+        "400":
+          description: "Parâmetros inválidos"
+        "404":
+          description: "Identificador inválido"
+        "503":
+          description: "Serviço indisponível"
+      security:
+      - api_key: []
+definitions:
+  melhoresVaras:
+    type: "object"
+    properties:
+      varas:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            colocacao:
+              type: "integer"
+              format: "int64"
+              description: "Colocação da vara dentro do grupo em termos de tempo de fechamento de processo"
+              example: 1
+            identificador:
+              type: "integer"
+              format: "int64"
+              description: "Identificador da vara"
+              example: 258
+            vara:
+              type: "string"
+              description: "Nome da vara"
+              example: "Única de Anajás"
+            tempo_macroetapa_1:
+              type: "integer"
+              format: "int64"
+              description: "Tempo que a vara precisa, em média, para fechar a macroetapa 1, em dias"
+              example: 12
+            tempo_macroetapa_2:
+              type: "integer"
+              format: "int64"
+              description: "Tempo que a vara precisa, em média, para fechar a macroetapa 2, em dias"
+              example: 20
+            tempo_macroetapa_3:
+              type: "integer"
+              format: "int64"
+              description: "Tempo que a vara precisa, em média, para fechar a macroetapa 3, em dias"
+              example: 7
+            tempo_macroetapa_4:
+              type: "integer"
+              format: "int64"
+              description: "Tempo que a vara precisa, em média, para fechar a macroetapa 4, em dias"
+              example: 15
+            latitude:
+              type: "string"
+              description: "Latitude da localização da vara"
+              example: "-23.528052"
+            longitude:
+              type: "string"
+              description: "Longitude da localização da vara"
+              example: "-46.6867552"
+  etapa:
+    type: "object"
+    properties:
+      identificador:
+        type: "integer"
+        format: "int64"
+        description: "Identificador da etapa dentro do grupo"
+        example: 325
+      etapa_atual:
+        type: "string"
+        description: "Nome da etapa atual"
+        example: "Julgamento"
+      proxima_etapa:
+        type: "string"
+        description: "Próxima etapa a ser realizada depois da atual"
+        example: "Admissão"
+      qtd_dias:
+        type: "integer"
+        format: "int64"
+        description: "Quantidade de dias entre a etapa atual e a próxima"
+        example: 60
+      ranking:
+        type: "integer"
+        format: "int64"
+        description: "Colocação em termos de tempo para realizar esta etapa específica dentro do grupo atual"
+        example: 8
+  grupos:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+        identificador:
+          type: "integer"
+          description: "Identificador único para o grupo"
+          example: 20
+        total_varas:
+          type: "integer"
+          description: "Número de varas do grupo"
+          example: 51
+        varas_em_alerta:
+          type: "integer"
+          description: "Número de varas em alerta"
+          example: 2
+        assuntos_frequentes:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              assunto:
+                type: "string"
+                description: "Nome do assunto"
+                example: "Direito Civíl"
+              frequencia:
+                type: "number"
+                description: "Frequência percentual"
+                example: 22.3
+        classes_frequentes:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              classe:
+                type: "string"
+                description: "Nome do assunto"
+                example: "Processo Cível e do Trabalho"
+              frequencia:
+                type: "number"
+                description: "Frequência percentual"
+                example: 35.9
+        varas:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              nome:
+                type: "string"
+                description: "Nome da vara"
+                example: "Vara Única de Anajás"
+              tempo:
+                type: "integer"
+                description: "Tempo médio de baixa de processo em dias"
+                example: 1207
+              latitude:
+                type: "number"
+                description: "Latitude"
+                example: -8.12094
+              longitude:
+                type: "number"
+                description: "Longitude"
+                example: -34.23094
+
+  grupo:
+    type: "object"
+    properties:
+      numero_varas:
+        type: "integer"
+        format: "int64"
+        description: "Número de varas do grupo"
+        example: 56
+      tempo_medio:
+        type: "integer"
+        format: "int64"
+        description: "Tempo médio das varas do grupo"
+        example: 1100
+      tempoOutrasVaras:
+        type: "integer"
+        description: "Tempo médio de baixa de processo em dias"
+        example: 890
+      varasEmAlerta:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            identificador:
+              type: "integer"
+              format: "int64"
+              description: "Identificador único para a vara"
+              example: 60
+            nome:
+              type: "string"
+              description: "Nome da vara"
+              example: "Única de Anajás (TJPA)"
+            tribunal:
+              type: "string"
+              description: "Nome do tribunal onde ta a vara"
+              example: "TJPA"
+            tempo:
+              type: "integer"
+              description: "Tempo médio de baixa de processo em dias"
+              example: 1207
+              
+      melhoresVaras:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            identificador:
+              type: "integer"
+              format: "int64"
+              description: "Identificador único para a vara"
+              example: 57
+            ranking:
+              type: "integer"
+              format: "int64"
+              description: "Colocação da vara no grupo"
+              example: 1
+            nome:
+              type: "string"
+              description: "Nome da vara"
+              example: "Única de Roraima"
+            tempo:
+              type: "integer"
+              description: "Tempo médio de baixa de processo em dias"
+              example: 690
+            movimentos:
+              type: "integer"
+              format: "int64"
+              description: "Número médio de movimentos dos processos da vara"
+              example: 32
+            processos:
+              type: "integer"
+              format: "int64"
+              description: "Número de processos baixados no período selecionado"
+              example: 67
+            melhorEtapa:
+              type: "string"
+              description: "Melhor etapa processual da vara"
+              example: "Distribuição"
+            piorEtapa:
+              type: "string"
+              description: "Melhor etapa processual da vara"
+              example: "Julgamento"
+            tribunal:
+              type: "string"
+              description: "Tribunal onde esta a vara"
+              example: "TJPA"
+            porcentagemMacroetapas:
+              type: "array"
+              items:
+                type: "object"
+                properties:
+                  time_distribuicao:
+                    type: "number"
+                    example: 3.5
+                  time_conclusao:
+                    type: "number"
+                    example: 0.09
+                  time_despacho:
+                    type: "number"
+                    example: 49.35
+                  time_decisao:
+                    type: "number"
+                    example: 36.28
+                  time_julgamento:
+                    type: "number"
+                    example: 9.9
+                  time_transito_em_julgado:
+                    type: "number"
+                    example: 0
+                  time_baixa_ou_arquivamento:
+                    type: "number"
+                    example: 22.47
+                  time_citacao:
+                    type: "number"
+                    example: 0
+                  time_audiencia:
+                    type: "number"
+                    example: 0
+                  time_outros:
+                    type: "number"
+                    example: 0
+      pioresVaras:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            identificador:
+              type: "integer"
+              format: "int64"
+              description: "Identificador único para a vara"
+              example: 57
+            ranking:
+              type: "integer"
+              format: "int64"
+              description: "Colocação da vara no grupo"
+              example: 53
+            nome:
+              type: "string"
+              description: "Nome da vara"
+              example: "1ª de TJAC"
+            tempo:
+              type: "integer"
+              description: "Tempo médio de baixa de processo em dias"
+              example: 1207
+            movimentos:
+              type: "integer"
+              format: "int64"
+              description: "Número médio de movimentos dos processos da vara"
+              example: 43
+            processos:
+              type: "integer"
+              format: "int64"
+              description: "Número de processos baixados no período selecionado"
+              example: 47
+            melhorEtapa:
+              type: "string"
+              description: "Melhor etapa processual da vara"
+              example: "Conclusão"
+            piorEtapa:
+              type: "string"
+              description: "Melhor etapa processual da vara"
+              example: "Audiência"
+            tribunal:
+              type: "string"
+              description: "Tribunal onde esta a vara"
+              example: "TJPA"
+            porcentagemMacroetapas:
+              type: "array"
+              items:
+                type: "object"
+                properties:
+                  time_distribuicao:
+                    type: "number"
+                    example: 3.5
+                  time_conclusao:
+                    type: "number"
+                    example: 0.09
+                  time_despacho:
+                    type: "number"
+                    example: 49.35
+                  time_decisao:
+                    type: "number"
+                    example: 36.28
+                  time_julgamento:
+                    type: "number"
+                    example: 9.9
+                  time_transito_em_julgado:
+                    type: "number"
+                    example: 0
+                  time_baixa_ou_arquivamento:
+                    type: "number"
+                    example: 22.47
+                  time_citacao:
+                    type: "number"
+                    example: 0
+                  time_audiencia:
+                    type: "number"
+                    example: 0
+                  time_outros:
+                    type: "number"
+                    example: 0
+      
+  varas:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+        identificador:
+          type: "integer"
+          format: "int64"
+          description: "Identificador único para a vara"
+          example: 60
+        vara:
+          type: "string"
+          description: "Nome da vara"
+          example: "Única de Anajás (TJPA)"
+  vara:
+    type: "object"
+    properties:
+      vara:
+        type: "string"
+        description: "Nome da vara"
+        example: "Única de Anajás (TJPA)"
+      colocacao:
+        type: "integer"
+        format: "int64"
+        description: "Colocação da vara em relação às demais do mesmo grupo"
+        example: 19
+      processos_julgados:
+        type: "integer"
+        format: "int64"
+        description: "Quantidade de processos julgados no último mês"
+        example: 54
+      dias_baixa_processo:
+        type: "integer"
+        format: "int64"
+        description: "Número de dias da baixa dos processos"
+        example: 300
+      movimentacoes:
+        type: "integer"
+        format: "int64"
+        description: "Quantidade média de movimentações por processo"
+        example: 20
+      grupo:
+        type: "object"
+        description: "Informações do grupo em que a vara se encontra"
+        properties:
+          identificador:
+            type: "integer"
+            format: "int64"
+            description: "Identificador do grupo em que a vara se encontra"
+            example: 15
+          justica:
+            type: "string"
+            example: "Justiça estadual"
+          grau:
+            type: "string"
+            example: "1º grau"
+          tribunal:
+            type: "string"
+            example: ""
+          classe_judicial:
+            type: "string"
+            example: ""
+          assunto:
+            type: "string"
+            example: ""
+          orgao_julgador:
+            type: "string"
+            example: ""
+          quantidade_de_varas:
+            type: "integer"
+            format: "int64"
+            description: "Quantidade de varas no grupo"
+            example: 45
+  melhoresVaraNaEtapa:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+        identificador:
+          type: "integer"
+          format: "int64"
+          description: "Identificador único para a vara"
+          example: 60
+        colocacao:
+          type: "integer"
+          format: "int64"
+          description: "Colocação da Vara dentro do grupo para a etapa especificada"
+          example: 60
+        vara:
+          type: "string"
+          description: "Nome da vara"
+          example: "Única de Anajás (TJPA)"
+        duracao:
+          type: "integer"
+          format: "int64"
+          description: "Duração da etapa na vara, em dias"
+          example: 60
+        comentario:
+          type: "string"
+          description: "Último comentário daquela vara para a etapa atual"
+          example: "Compramos sistema para organização interna"
+  comentarios:
+    type: "object"
+    properties:
+      identificador:
+        type: "integer"
+        format: "int64"
+        description: "Identificador do comentário"
+        example: 325
+      comentario:
+        type: "string"
+        description: "Comentário"
+        example: "Implementei um sistema de organização de fluxo de processo"
+  grafos:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+        identificador_vara:
+          type: "integer"
+          format: "int64"
+          description: "Identificador da vara"
+          example: 3
+        root:
+          type: "string"
+          description: "Nó raiz do grafo"
+          example: "Distribuição"
+        arestas:
+          type: "array"
+          items:
+            properties:
+              origem:
+                type: "string"
+                description: "Nó de origem"
+                example: "Distribuição"
+              destino:
+                type: "string"
+                description: "Nó de destino"
+                example: "Julgamento"
+              peso:
+                type: "string"
+                description: "Peso da aresta"
+                example: "3M"
+         
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "api_key"
+    in: "header"
