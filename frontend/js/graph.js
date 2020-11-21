@@ -46,8 +46,6 @@ var i,
     },
     layers = [],
     drawnNodesAtLayer = []
-    height = 600,
-    width = 800,
     root = undefined
 
 getGraphData(42, 43, generateGraph)
@@ -70,9 +68,9 @@ function generateGraph(data){
       })
       if(edge.origem == data[0].root){
         root = edge.origem
-        console.log('root is '+root + "("+edge.origem+")")
+        //console.log('root is '+root + "("+edge.origem+")")
       }
-      console.log(edge.origem)
+      //console.log(edge.origem)
     }
     if(!getNode(edge.destino)){
       g.nodes.push({
@@ -86,9 +84,9 @@ function generateGraph(data){
       })
       if(edge.destino == data[0].root){
         root = edge.destino
-        console.log('root is '+root + "("+edge.destino+")")
+        //console.log('root is '+root + "("+edge.destino+")")
       }
-      console.log(edge.destino)
+      //console.log(edge.destino)
     }
   }
 
@@ -110,7 +108,7 @@ function generateGraph(data){
       tNode.parents.push(edge.origem)
       //console.log('parents of ' + target + ' = '+tNode.parents)
     }
-    console.log(edge.origem+"-"+edge.destino) 
+    //console.log(edge.origem+"-"+edge.destino) 
   }
 
   createGraphViewStructure()
@@ -162,11 +160,11 @@ function generateGraph(data){
   })
 
   // Initialize the dragNodes plugin:
-  var dragListener = sigma.plugins.dragNodes(sLeft, sLeft.renderers[0])
+  sigma.plugins.dragNodes(sLeft, sLeft.renderers[0])
 
-  var dragListener = sigma.plugins.dragNodes(sRight, sRight.renderers[0])
+  sigma.plugins.dragNodes(sRight, sRight.renderers[0])
 
-  var noverlapListenerLeft = sLeft.configNoverlap({
+  /* var noverlapListenerLeft = sLeft.configNoverlap({
     nodeMargin: 0.1,
     scaleNodes: 1.05,
     gridSize: 75,
@@ -180,11 +178,11 @@ function generateGraph(data){
     gridSize: 75,
     easing: 'quadraticInOut', // animation transition function
     duration: 10  // animation duration. Long here for the purposes of this example only
-  });
+  }); */
 
   // Start the layout:
-  sLeft.startNoverlap();
-  sRight.startNoverlap();
+  //sLeft.startNoverlap();
+  //sRight.startNoverlap();
   
 
   function getNode(id){
@@ -232,13 +230,13 @@ function generateGraph(data){
     for(var i=0; i<drawnNodesAtLayer.length;i++)
       drawnNodesAtLayer[i] = 0
 
-    for(var i=0; i<layers.length; i++)
-      console.log("mapLyers: "+i+" - "+layers[i])
+    //for(var i=0; i<layers.length; i++)
+      //console.log("mapLyers: "+i+" - "+layers[i])
   }
 
   function setHorizontalCount(node, visited){
     visited.push(node.id)
-    console.log('marking '+node.id+" as visited")
+    //console.log('marking '+node.id+" as visited")
     var hCount = 0
     node.children.forEach(c=>{
       if(!visited.includes(c) && getNode(c).layer == node.layer+1){
@@ -326,11 +324,9 @@ function generateGraph(data){
         node.x = start + pos * step
       }
       node.y = node.layer*(rowHeight)
-      node.x = rootPositionX
-      console.log("setNodePosition: nodeId = "+node.id+", horizontalCount = "+node.horizontalCount
+      /* console.log("setNodePosition: nodeId = "+node.id+", horizontalCount = "+node.horizontalCount
       +", totalParentSpace = "+totalParentSpace+", start = "+start+", pos = "+pos
-      +", drawn at layer "+(node.layer)+" = "+drawnNodesAtLayer[node.layer])
-      
+      +", drawn at layer "+(node.layer)+" = "+drawnNodesAtLayer[node.layer]) */
     }
   }
 
