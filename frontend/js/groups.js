@@ -75,6 +75,8 @@ function selectGroup(group) {
     worstCourts = data.pioresVaras
 
     fillMovementsChart()
+
+    fillMap()
   })
 }
 
@@ -189,4 +191,12 @@ function fillMovementTimes(json) {
       time_outros.push(getValidValue(json.outros))
   else
       time_outros.push(0)
+}
+
+function fillMap() {
+  var locations = []
+  selectedGroup.varas.forEach((vara)=>{
+    locations.push([vara.nome, vara.latitude, vara.longitude])  
+  })
+  populateMap(map, infowindow, locations)
 }
