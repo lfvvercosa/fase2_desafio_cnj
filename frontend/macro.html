@@ -25,7 +25,7 @@
         </header>
         <form class="filtro-form">
 
-            <fieldset class="collapse collapse-configuracoes" id="configuracoes">
+            <!-- <fieldset class="collapse collapse-configuracoes" id="configuracoes">
                 <div class="card">
                     <legend>Configurações
                         <button type="button" data-toggle="collapse" title="Fechar configurações" data-target="#configuracoes" aria-expanded="false" aria-controls="configuracoes" class="close" aria-label="Close">
@@ -37,20 +37,20 @@
                     <div class="col-12 col-md-8">
                         <strong class="w-100">Tipo de justiça</strong>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn" class="justica-estadual"><input type="checkbox" name="configuracao-justica" id="justica-estadual">Estadual</label>
-                            <label class="btn" class="justica-federal"><input type="checkbox" name="configuracao-justica" id="justica-federal">Federal</label>
-                            <label class="btn" class="justica-militar"><input type="checkbox" name="configuracao-justica" id="justica-militar">Militar</label>
-                            <label class="btn" class="justica-trabalho"><input type="checkbox" name="configuracao-justica" id="justica-trabalho">Trabalho</label>
-                            <label class="btn" class="justica-trubunais"><input type="checkbox" name="configuracao-justica" id="justica-trubunais">Trubunais superiores</label>
+                          <label class="btn justica-estadual"><input type="checkbox" checked name="configuracao-justica" id="justica-estadual">Estadual</label>
+                            <label class="btn disabled justica-federal"><input type="checkbox" disabled name="configuracao-justica" id="justica-federal">Federal</label>
+                            <label class="btn disabled justica-militar"><input type="checkbox" disabled name="configuracao-justica" id="justica-militar">Militar</label>
+                            <label class="btn disabled justica-trabalho"><input type="checkbox" disabled name="configuracao-justica" id="justica-trabalho">Trabalho</label>
+                            <label class="btn disabled justica-trubunais"><input type="checkbox" disabled name="configuracao-justica" id="justica-trubunais">Trubunais superiores</label>
                         </div>
                     </div>
                     <div class="col-12 col-md-4">
                         <strong class="w-100">Graus</strong>
 
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn" class="grau-1"><input type="checkbox" name="configuracao-grau" id="justica-grau-1">1º grau</label>
-                            <label class="btn" class="grau-2"><input type="checkbox" name="configuracao-grau" id="justica-grau-2">2º grau</label>
-                            <label class="btn" class="grau-3"><input type="checkbox" name="configuracao-grau" id="justica-grau-3">3º grau</label>
+                          <label class="btn grau-1"><input type="checkbox" name="configuracao-grau" checked id="justica-grau-1">1º grau</label>
+                            <label class="btn disabled grau-2"><input type="checkbox" name="configuracao-grau" disabled id="justica-grau-2">2º grau</label>
+                            <label class="btn disabled grau-3"><input type="checkbox" name="configuracao-grau" disabled id="justica-grau-3">3º grau</label>
                         </div>
                     </div>
                     <div class="py-2 w-100"></div>
@@ -62,17 +62,17 @@
                             <sup>*</sup>
                         </label>
                         <div class="d-flex">
-                            <input type="range" min="0" max="100" oninput="rangeCriterioAssuntos(this)" value="0">
-                            <input type="number" readonly value="0">
+                            <input type="range" disabled min="0" max="100" oninput="rangeCriterioAssuntos(this)" value="0">
+                            <input type="number"  value="0">
                         </div>
                     </div>
                     <div class="configuracao-classe">
                         <label for="configuracao-classe">
-                            <input class="form-check-input" for="configuracao-classe" type="checkbox" value=""> Classe
+                            <input class="form-check-input disabled" for="configuracao-classe" disabled type="checkbox" value=""> Classe
                             processual <sup>*</sup>
                         </label>
                         <div class="d-flex">
-                            <input type="range" min="0" max="100" oninput="rangeCriterioClasse(this)" value="0">
+                            <input type="range" class="disabled" disabled min="0" max="100" oninput="rangeCriterioClasse(this)" value="0">
                             <input type="number" readonly value="0">
                         </div>
                     </div>
@@ -112,10 +112,17 @@
                 <button type="button" data-toggle="collapse" title="Abrir configurações" data-target="#configuracoes" aria-expanded="false" aria-controls="configuracoes">
                     <i class="fas fa-cog"></i>
                 </button>
-            </div>
+            </div> -->
             <label class="filtro-label" for="filter-cluster">Filtros de agrupamento:</label>
             <div class="filtro-select">
-                <select id="filter-cluster" class="select select-assuntos" name="cluster[]" multiple="multiple">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn justica-estadual"><input type="checkbox" checked name="configuracao-justica" id="justica-estadual">Justiça Estadual</label>
+                      <!-- <label class="btn disabled justica-federal"><input type="checkbox" disabled name="configuracao-justica" id="justica-federal">Federal</label>
+                      <label class="btn disabled justica-militar"><input type="checkbox" disabled name="configuracao-justica" id="justica-militar">Militar</label>
+                      <label class="btn disabled justica-trabalho"><input type="checkbox" disabled name="configuracao-justica" id="justica-trabalho">Trabalho</label>
+                      <label class="btn disabled justica-trubunais"><input type="checkbox" disabled name="configuracao-justica" id="justica-trubunais">Trubunais superiores</label> -->
+                  </div>
+                <!-- <select id="filter-cluster" class="select select-assuntos" name="cluster[]" multiple="multiple">
                     <option value="1">assunto 1</option>
                     <option value="2">assunto 2</option>
                     <option value="3">assunto 3</option>
@@ -126,10 +133,10 @@
                     <option value="8">assunto 8</option>
                     <option value="9">assunto 9</option>
                     <option value="10">assunto 10</option>
-                </select>
+                </select> -->
             </div>
             <div class="filtro-select">
-                <select class="select select-classes" name="classes[]" multiple="multiple">
+                <!-- <select class="select select-classes" name="classes[]" multiple="multiple">
                     <option value="1">classe 1</option>
                     <option value="2">classe 2</option>
                     <option value="3">classe 3</option>
@@ -140,7 +147,12 @@
                     <option value="8">classe 8</option>
                     <option value="9">classe 9</option>
                     <option value="10">classe 10</option>
-                </select>
+                </select> -->
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn grau-1"><input type="checkbox" name="configuracao-grau" checked id="justica-grau-1">1º grau</label>
+                      <!-- <label class="btn disabled grau-2"><input type="checkbox" name="configuracao-grau" disabled id="justica-grau-2">2º grau</label> -->
+                      <!-- <label class="btn disabled grau-3"><input type="checkbox" name="configuracao-grau" disabled id="justica-grau-3">3º grau</label> -->
+                  </div>
             </div>
             <div class="filtro-select">
                 <select class="select select-filtro" name="filtros[]" multiple="multiple">
@@ -171,6 +183,18 @@
             </ol>
         </nav>
         <div class="content">
+
+            <div class="chart-box chart-container">
+                <div>
+                    <div class="secao-titulo">
+                        Alertas por grupos
+                    </div>
+                    <div id="chart"></div>
+                </div>
+            </div>
+            <div class="w-100"></div>
+
+            
             <div class="chart-box">
                 <div>
                     <div class="secao-titulo">
@@ -204,16 +228,9 @@
                     <div id="classes-frequentes"></div>
                 </div>
             </div>
-            <div class="w-100"></div>
-
-            <div class="chart-box chart-container">
-                <div>
-                    <div class="secao-titulo">
-                        Tempo X Frequência
-                    </div>
-                    <div id="chart"></div>
-                </div>
-            </div>
+            
+            
+   
         </div>
         </section>
     </main>
