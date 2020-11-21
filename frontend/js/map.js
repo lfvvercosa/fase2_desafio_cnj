@@ -1,3 +1,5 @@
+var infowindow = undefined
+var map = undefined
 
 function addMapToDocument(){
   var googleMapBaseUrl = "https://maps.googleapis.com/maps/api/js"
@@ -12,7 +14,7 @@ function addMapToDocument(){
 }
 
 function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     zoom: 4,
     center: new google.maps.LatLng(-11.6182046,-50.6699791),
     mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -20,11 +22,8 @@ function initMap() {
     zoomControl: false
   });
 
-  var infowindow = new google.maps.InfoWindow();
+  infowindow = new google.maps.InfoWindow();
 
-  getCourtList((locations)=>{
-    populateMap(map, infowindow, locations)
-  })
 }
 
 function populateMap(map, infowindow, locations) {

@@ -1,6 +1,6 @@
 var urlBase = 'http://backend-cnj-time4.herokuapp.com/api/v1/'
 
-function getCourtList(callback){
+function getCourtLocations(callback){
     getBestVaras(vara_id, 10, (json) => {
     var locations = [
         [json[0].name, json[0].latitude, json[0].longitude, 1],

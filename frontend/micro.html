@@ -31,6 +31,7 @@
     <script src="./js/requester.js"></script>
     <script src="./js/header.js"></script>
     <script src="./js/components.js"></script>
+    <script src="./js/map.js"></script>
     <script src="./js/groups.js"></script>
 </head>
 
@@ -49,11 +50,6 @@
             </ol>
         </nav>
         <div class="content">
-            <ul class="grupo-descricao">
-                <li id="group_name" class="secao-titulo"><i class="alerta-uj fas fa-circle"></i></li>
-                <li id="group_members"></li>
-                <li id="group_time"></li>
-            </ul>
             <div class="w-100"></div>
 
             <div class="chart-box chart-container">
@@ -66,6 +62,12 @@
             </div>
 
             <div class="w-100"></div>
+
+            <ul class="grupo-descricao">
+                <li id="group_name" class="secao-titulo"><i class="alerta-uj fas fa-circle"></i></li>
+                <li id="group_members"></li>
+                <li id="group_time"></li>
+            </ul>
 
             <div class="chart-box chart-container">
                 <div>
@@ -100,77 +102,29 @@
 
             <div class="w-100"></div>
 
+            <div class="chart-box chart-container">
+                <div>
+                    <div class="secao-titulo">
+                        Tempo X Frequência
+                    </div>
+                    <div id="chart"></div>
+                </div>
+            </div>
             
+            <div class="col-12 col-sm-6 col-md-6 col-lg-12">
+                <div class="map">
+                  <div class="map-title">
+                    <p>MAPA DA REGIÃO</p>
+                  </div>
+                  <div id="map"></div>
+                </div>
+              </div>
+
         </div>
         </section>
     </main>
 
-    
-    
-    <!-- SELECT 2 -->
-
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-            $('[data-toggle="popover"]').popover({
-                trigger: 'hover'
-
-            });
-
-            $('.select-assuntos').select2({
-                placeholder: 'Selecione o(s) critério(s)',
-                multiple: true
-            });
-            $('.select-classes').select2({
-                placeholder: 'Selecione a(s) classe(s)',
-                multiple: true
-            });
-            $('.select-filtro').select2({
-                placeholder: 'Selecione o(s) filtros(s)',
-                multiple: true
-            });
-
-            var chart = c3.generate({
-                data: {
-                    columns: [
-                        ['data1', 30, 200, 100, 400, 150, 250],
-                        ['data2', 50, 20, 10, 40, 15, 25]
-                    ],
-                    types: {
-                        data1: 'bar',
-                    }
-                },
-                axis: {
-                    rotated: true
-                }, bindto: '#varas-alertas'
-
-            });
-            var chart = c3.generate({
-                data: {
-                    columns: [
-                        ['data1', 30],
-                        ['data2', 40],
-                        ['data3', 40],
-                        ['data4', 10],
-                        ['data5', 20],
-                        ['data6', 10]
-                    ],
-                    type: 'pie'
-                }, bindto: '#classes-frequentes'
-            });
-            
-      
-            $().button('toggle')	
-          });
-    </script>
-
-
-
-
-
-
-
+    <div class="w-100 d-block pb-5"></div>
 </body>
 
 </html>
