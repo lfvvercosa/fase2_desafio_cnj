@@ -49,11 +49,6 @@
             </ol>
         </nav>
         <div class="content">
-            <ul class="grupo-descricao">
-                <li id="group_name" class="secao-titulo"><i class="alerta-uj fas fa-circle"></i></li>
-                <li id="group_members"></li>
-                <li id="group_time"></li>
-            </ul>
             <div class="w-100"></div>
 
             <div class="chart-box chart-container">
@@ -66,6 +61,12 @@
             </div>
 
             <div class="w-100"></div>
+
+            <ul class="grupo-descricao">
+                <li id="group_name" class="secao-titulo"><i class="alerta-uj fas fa-circle"></i></li>
+                <li id="group_members"></li>
+                <li id="group_time"></li>
+            </ul>
 
             <div class="chart-box chart-container">
                 <div>
@@ -100,6 +101,14 @@
 
             <div class="w-100"></div>
 
+            <div class="chart-box chart-container">
+                <div>
+                    <div class="secao-titulo">
+                        Tempo X Frequência
+                    </div>
+                    <div id="chart"></div>
+                </div>
+            </div>
             
         </div>
         </section>
@@ -159,18 +168,9 @@
                     type: 'pie'
                 }, bindto: '#classes-frequentes'
             });
-            
-      
             $().button('toggle')	
           });
     </script>
-
-
-
-
-
-
-
 </body>
 
 </html>
