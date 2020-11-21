@@ -73,20 +73,24 @@ function selectGroup(group) {
     $("#rank_courts").append('<tr class="table-title"><td colspan="7">Varas com os piores tempos de conclução de processo</td></tr>')
     fillRankTable(data.pioresVaras)
     worstCourts = data.pioresVaras
+    
+    fillCourtFilter()
 
     fillMovementsChart()
 
     fillMap()
+
   })
 }
 
-function fillRankTable(courts) {
-  var i = 0
+function fillRankTable(courts, filter) {
   courts.forEach(court => {
-    var row = "<tr><td>"+court.ranking+"</td><td>"+court.nome+"</td><th>+"+court.tribunal+
-    "</th><td>"+court.tempo+" dias</td><td>"+court.movimentos+"</td><td>"
-    +court.processos+"</td><td>"+court.melhorEtapa+"</td><td>"+court.piorEtapa+"</td></tr>"
-    $("#rank_courts").append(row);
+    if(!filter || filter == "" || (filter == court.tribunal)) {
+      var row = "<tr><td>"+court.ranking+"</td><td>"+court.nome+"</td><th>+"+court.tribunal+
+      "</th><td>"+court.tempo+" dias</td><td>"+court.movimentos+"</td><td>"
+      +court.processos+"</td><td>"+court.melhorEtapa+"</td><td>"+court.piorEtapa+"</td></tr>"
+      $("#rank_courts").append(row);
+    }
   });
 }
 
@@ -199,4 +203,30 @@ function fillMap() {
     locations.push([vara.nome, vara.latitude, vara.longitude])  
   })
   populateMap(map, infowindow, locations)
+}
+
+function fillCourtFilter() {
+  $('#cboTribunal').html('<option value=""></option>')
+  var selector = $('#cboTribunal')
+  var courts = ['TJPE', "TJPB", "TJBA"]
+  var i = 0;
+  //var selector = $('#cboTribunal')
+  courts.forEach((court) => {
+    $('#cboTribunal').append('<option value="'+court+'">'+court+'</option>')
+  })
+}
+
+function filterCourt() {
+  var selector = $('#cboTribunal')[0]
+  var court =  selector.options[selector.selectedIndex].value
+  $("#rank_courts").html("")
+
+  //best 
+  $("#rank_courts").append('<tr class="table-title"><td colspan="7">Varas com os melhores tempos de conclução de processo</td></tr>');
+  fillRankTable(bestCourts, court)
+  //separator
+  $("#rank_courts").append('<tr class="ellipses"><td colspan="7"><i class="fas fa-ellipsis-v"></i></td></tr>');
+  //worst
+  $("#rank_courts").append('<tr class="table-title"><td colspan="7">Varas com os piores tempos de conclução de processo</td></tr>')
+  fillRankTable(worstCourts, court)
 }
