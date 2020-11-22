@@ -98,7 +98,28 @@
             <div class="filtro-button">
                 <button><i class="fas fa-search"></i> Filtrar</button>
             </div>
+
+            <div class="filtro-button todos-grupos">
+              <button type="button" data-toggle="collapse" title="Visualizar todos os grupos"
+                  data-target="#todos-grupos" aria-expanded="false" aria-controls="todos-grupos">
+                  <i class="fas fa-exclamation-triangle"></i>
+                  Visualizar todos os grupos
+              </button>
+              <section class="chart-box chart-container collapse collapse-grupos" id="todos-grupos">
+                  <div id="chart_alerts" class="c3" style="max-height: 320px; position: relative;">
+
+                  </div>
+            </section>
+              
+          </div>
         </form>
+
+        <ul class="grupo-descricao">
+          <li class="secao-titulo"><span id="group_name"></span><i class="alerta-uj  fas fa-circle"></i></li>
+          <li>Membros<strong id="group_members"></strong></li>
+          <li>Tempo<strong id="group_time"></strong></li>
+        </ul>
+
         <!-- FILTRO -->
         <section class="tabela tabela-alerta-sugeridos tabela-container">
             <div class="card">
@@ -106,23 +127,13 @@
                     <div class="secao-titulo">
                         Alertas sugeridos
                     </div>
-                    <div class="filtro-button todos-grupos">
-                        <button type="button" data-toggle="collapse" title="Visualizar todos os grupos"
-                            data-target="#todos-grupos" aria-expanded="false" aria-controls="todos-grupos">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            Visualizar todos os grupos
-
-                        </button>
-                    </div>
                 </div>
-                <section class="chart-box chart-container collapse collapse-grupos" id="todos-grupos">
+                <section class="chart-box chart-container collapse collapse-grupos">
                     <div class="card">
                         <div class="secao-titulo">
                             Alertas por grupos
                         </div>
-                        <div id="chart_alerts" class="c3" style="max-height: 320px; position: relative;">
-
-                        </div>
+                        
                     </div>
                 </section>
                 <div class="table-responsive">
@@ -219,12 +230,6 @@
                 </div>
             </div>
         </div>
-
-        <ul class="grupo-descricao">
-            <li class="secao-titulo"><span id="group_name"></span><i class="alerta-uj  fas fa-circle"></i></li>
-            <li>Membros<strong id="group_members"></strong></li>
-            <li>Tempo<strong id="group_time"></strong></li>
-        </ul>
 
         <div class="chart-box chart-container">
             <div class="card">
