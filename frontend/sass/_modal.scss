@@ -9,6 +9,16 @@
       @extend .btn-outline-info;
     }
   }
+  &-body-editavel {
+    @extend .border;
+    @extend .p-3;
+    @extend .rounded;
+    background: #eee;
+    &:active, &:focus{
+      background: #fff;
+      font-weight: bold;
+    }
+  }
   &-dialog {
     @extend .modal-xl;
     @extend .modal-dialog-centered;
