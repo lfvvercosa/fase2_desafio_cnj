@@ -1,57 +1,159 @@
-setRankComponent()
+readCache()
+setRankComponent($('#toggle-switch'))
 setStatisticsComponent()
 setFooterRankComponent()
 
-function setRankComponent() {
-  setBottleneckRankComponent()
-  setBestRankComponent()
-}
-
-function setBottleneckRankComponent() {
+function setRankComponent(checkBox) {
+  var isBottleNeck = !checkBox.checked
   getVaraByID(vara_id, (json)=>{
-    $('#bottleneck-mov-1-source').html(json.worst_steps[0].origin)
-    $('#bottleneck-mov-1-description').html(json.worst_steps[0].med_time + ' dias')
-    $('#bottleneck-mov-1-dest').html(json.worst_steps[0].destination)
-    $('#bottleneck-mov-1-position').html(json.worst_steps[0].ranking+'°')
+    var i = 0
+    var steps = isBottleNeck ? json.worst_steps : json.best_steps
+    var container =  $('.diagnosis').html('')
+      
+    if(!isBottleNeck){
+      container.removeClass('diagnosis-gargalos')
+      container.addClass('diagnosis-destaques')
+    }
+    else {
+      container.removeClass('diagnosis-destaques')
+      container.addClass('diagnosis-gargalos')
+    }
+    
+    steps.forEach(step =>{
+      //console.log(step)
+      var origin = step.origin
+      var destination = step.destination
+      var time = step.med_time + ' dias'
+      var position = step.ranking
+      var container = $('.diagnosis')
+      //button
+      container.append('<button id= "button_'+i+'" class="btn-header" type="button" data-toggle="collapse" data-target="#diagnostico_'+i+'" aria-expanded="false" aria-controls="diagnostico_'+i+'" />')
+      container = $('#button_'+i)
+      container.append('<div id="table-responsive_'+i+'" class="table-responsive">')
+      container = $('#table-responsive_'+i)
+      container.append('<table id="diagnosis-table_'+i+'" class="diagnosis-table">')
+      container = $('#diagnosis-table_'+i)
+      container.append('<tr id="row_'+i+'">')
+      container = $('#row_'+i)
+      container.append('<td id="origin_'+i+'"><i class="fas '+'fa-users'+'"></i>')
+      container = $('#origin_'+i)
+      container.append('<p class="mb-0">'+origin+'</p>')
+      container = $('#row_'+i)
+      container.append('<td class="arrow"><i class="fas fa-long-arrow-alt-right"></i></td>')
+      container.append('<td id="destination_'+i+'"><i class="fas '+'fa-balance-scale'+'"></i>')
+      container = $('#destination_'+i)
+      container.append('<p class="m-0">'+destination+'</p>')
+      container = $('#row_'+i)
+      container.append('<td id="time_'+i+'">')
+      container = $('#time_'+i)
+      container.append('<p class="m-0"><strong>'+time+'</strong><br>Duração</p>')
+      container = $('#row_'+i)
+      container.append('<td id="position_'+i+'"><strong>'+position+'º</strong><br>Posição')
+      container = $('#position_'+i)
+      container.append('<small id="small_'+i+'">')
+      cotainer = $('#small_'+i)
+      container.append('<span data-toggle="popover" title="Popover title" data-content="And heres some amazing content. Its very engaging. Right?">')
+      container.append('<i class="fas fa-info-circle" style="font-size: 1rem">')
+      container = $('#row_'+i)
+      container.append('<td id="occurrences_'+i+'">')
+      container = $('#occurrences_'+i)
+      container.append('<p class="m-0"><strong>'+65+'</strong><br>Ocorrêcias</p>')
+      container = $('#row_'+i)
+      container.append('<td class="chevron"><i class="fas fa-chevron-up"></i></td>')
 
-    $('#bottleneck-mov-2-source').html(json.worst_steps[1].origin)
-    $('#bottleneck-mov-2-description').html(json.worst_steps[1].med_time + ' dias')
-    $('#bottleneck-mov-2-dest').html(json.worst_steps[1].destination)
-    $('#bottleneck-mov-2-position').html(json.worst_steps[1].ranking+'°')
+      //comments
 
-    $('#bottleneck-mov-3-source').html(json.worst_steps[2].origin)
-    $('#bottleneck-mov-3-description').html(json.worst_steps[2].med_time + ' dias')
-    $('#bottleneck-mov-3-dest').html(json.worst_steps[2].destination)
-    $('#bottleneck-mov-3-position').html(json.worst_steps[2].ranking+'°')
-
-    setBottleneckTable(json, vara_id, 0)  
-
-    //bottoleneck table
-    $('#table-bottleneck-tab1').html(json.worst_steps[0].origin + '-' + json.worst_steps[0].destination)
-    $('#table-bottleneck-tab2').html(json.worst_steps[1].origin + '-' + json.worst_steps[1].destination)
-    $('#table-bottleneck-tab3').html(json.worst_steps[2].origin + '-' + json.worst_steps[2].destination)
-
-    $('#table-bottleneck-tab1').click(function(){
-      setBottleneckTable(json, vara_id, 0)
-      $('#table-bottleneck-tab2').removeClass('rank-table-tabs-item-selected')
-      $('#table-bottleneck-tab3').removeClass('rank-table-tabs-item-selected')
-      $('#table-bottleneck-tab1').addClass('rank-table-tabs-item-selected')
-    })
-
-    $('#table-bottleneck-tab2').click(function(){
-      setBottleneckTable(json, vara_id, 1)
-      $('#table-bottleneck-tab1').removeClass('rank-table-tabs-item-selected')
-      $('#table-bottleneck-tab3').removeClass('rank-table-tabs-item-selected')
-      $('#table-bottleneck-tab2').addClass('rank-table-tabs-item-selected')
-    })
-
-    $('#table-bottleneck-tab3').click(function(){
-      setBottleneckTable(json, vara_id, 2)
-      $('#table-bottleneck-tab1').removeClass('rank-table-tabs-item-selected')
-      $('#table-bottleneck-tab2').removeClass('rank-table-tabs-item-selected')
-      $('#table-bottleneck-tab3').addClass('rank-table-tabs-item-selected')
+      container = $('.diagnosis')
+      container.append('<div class="collapse" id="diagnostico_'+i+'">')
+      container = $('#diagnostico_'+i)
+      container.append('<div id="diagnosis-comments-div_'+i+'" class="diagnosis-comments">')
+      container = $('#diagnosis-comments-div_'+i)
+      container.append('<table id="diagnosis-comments_'+i+'">')
+      container = $('#diagnosis-comments_'+i)
+      if(i == 0){
+        container.append('<thead id="thread_'+i+'">')
+        container = $('#thread_'+i)
+        container.append('<tr id="diagnosis-comments-title">')
+        container = $('#diagnosis-comments-title')
+        container.append('<th>Comentário mais curtido</th>')
+        container.append('<th style="min-width: 200px;">Unidade jurídico </th>')
+        container.append('<th style="min-width: 100px;">Duração</th>')
+        //container.append('<th style="min-width: 100px;">Curtidas</th>')
+        //container.append('<th style="min-width: 100px;">Comentários</th>')
+        container = $('#diagnosis-comments_'+i)
+      }
+      container.append('<tbody id="tbody-comments_'+i+'">')
+      loadComments(i, container, step)  
+      i++
     })
   })
+}
+
+function loadComments(i, container, step) {
+  getBestVarasOnStep(step.step_id,
+    vara_id,
+    3,
+    (json2)=>{
+      //console.log(json2.slice(0,3))
+      bestVarasOnStep = json2.slice(0.3)
+      for(var j=0; j < bestVarasOnStep.length; j++){
+        container = $('#tbody-comments_'+i)
+        container.append('<tr id="comment_'+i+'_'+j+'">')
+        container = $('#comment_'+i+'_'+j)
+        container.append('<td id="td_comment_'+i+'_'+j+'">')
+        container = $('#td_comment_'+i+'_'+j)
+        container.append('<div id="comment_text_'+i+'_'+j+'" class="w-100">')
+        container = $('#comment_text_'+i+'_'+j)
+        container.append('<p>'+bestVarasOnStep[j].comment)
+        container = $('#comment_'+i+'_'+j)
+        container.append('<td id="name_'+i+'_'+j+'">')
+        container = $('#name_'+i+'_'+j)
+        container.append('<span>'+bestVarasOnStep[j].vara_name+'</span>')
+        container = $('#comment_'+i+'_'+j)
+        container.append('<td class="text-center">'+bestVarasOnStep[j].med_time+' dias</td>')
+        //container = $('#comment_'+i+'_'+j)
+        //container.append('<td id="like_'+i+'_'+j+'" >')
+        //container = $('$#like_'+i+'_'+j)
+        
+        container = $('#comment_'+i+'_'+j)
+        container.vara_id = bestVarasOnStep[j].vara_id
+        container.click(function(e){
+          comparing_id = e.currentTarget.vara_id
+          saveCache()
+          window.location.replace("http://desafio-cnj-frontend.herokuapp.com/pages/comparing-courts.html");
+        })
+      }
+    })
+                /*<td>
+                  <button class="ranking-like" type="button">
+                    <input id="toggle-heart-1" type="checkbox" />
+                    <label for="toggle-heart-1">
+                      <i class="far fa-heart heart-empty"></i>
+                      <i class="fas fa-heart heart-full"></i>
+                    </label>
+                  </button>
+                  <small class="d-block text-truncate"> 12 curtidas</small>
+
+                </td>
+                <td>
+                  <button class="ranking-chat">
+                    <input id="toggle-comment-1" type="checkbox" />
+                    <label for="toggle-comment-1">
+
+                      <i class="far fa-comments comments-empty"></i>
+                      <i class="fas fa-comments comments-full"></i>
+                    </label>
+                  </button>
+                  <small class="d-block text-truncate"> 12 respostas</small>
+
+                </td>
+
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div> */
 }
 
 function setBestRankComponent() {

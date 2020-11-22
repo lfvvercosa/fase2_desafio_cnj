@@ -83,10 +83,15 @@ function selectGroup(group) {
 function fillRankTable(courts, filter) {
   courts.forEach(court => {
     if(!filter || filter == "" || (filter == court.tribunal)) {
-      var row = "<tr><td>"+court.ranking+"</td><td>"+court.nome+"</td><th>+"+court.tribunal+
+      var row = "<tr id="+court.identificador+"><td>"+court.ranking+"</td><td>"+court.nome+"</td><th>"+court.tribunal+
       "</th><td>"+court.tempo+" dias</td><td>"+court.movimentos+"</td><td>"
       +court.processos+"</td><td>"+court.melhorEtapa+"</td><td>"+court.piorEtapa+"</td></tr>"
       $("#rank_courts").append(row);
+      $('#'+court.identificador).click(e=>{
+        vara_id = e.currentTarget.id
+        saveCache()
+        window.location.replace("file:///home/fernando/Development/web/fase2_desafio_cnj/frontend/index.html");       
+      }) 
     }
   });
 }

@@ -2,7 +2,7 @@ var selectableIds = [20, 34, 85]
 var vara_id = -1
 var comparing_id = -1
 courts = []
-court_details = []
+court_details = undefined
 var bestVarasOnStep = []
 
 function changeId() {

@@ -28,9 +28,8 @@ function getVaras() {
 }
 
 function getVaraByID(vara_id, callback) {
-  var courtFromCache = court_details.find(c=>c.id == vara_id)
-  if(courtFromCache) {
-    callback(courtFromCache)
+  if(court_details){
+    callback(court_details)
     return
   }
   var url = urlBase + 'varas/' + vara_id
