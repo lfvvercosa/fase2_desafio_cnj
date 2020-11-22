@@ -64,13 +64,13 @@ function selectGroup(group) {
     $("#rank_courts").append('<tr class="table-title"><td colspan="7">Varas com os melhores tempos de conclução de processo</td></tr>');
     bestCourts = data.varas.slice(0,5)
     console.log(bestCourts[0])
-    fillRankTable(bestCourts)
+    fillRankTable(bestCourts, "", false)
     //separator
     $("#rank_courts").append('<tr class="ellipses"><td colspan="7"><i class="fas fa-ellipsis-v"></i></td></tr>');
     //worst
     $("#rank_courts").append('<tr class="table-title"><td colspan="7">Varas com os piores tempos de conclução de processo</td></tr>')
     worstCourts = data.varas.slice(data.varas.length-5, data.varas.length)
-    fillRankTable(worstCourts)
+    fillRankTable(worstCourts, "", true)
     
     fillCourtFilter()
 
@@ -81,17 +81,18 @@ function selectGroup(group) {
   })
 }
 
-function fillRankTable(courts, filter) {
+function fillRankTable(courts, filter, isBottleNeck) {
+  var colorClass = isBottleNeck ? 'uj-alerta' : 'uj-destaque'
   courts.forEach(court => {
     if(!filter || filter == "" || (filter == court.tribunal)) {
-      var row = "<tr id="+court.vara_id+"><td>"+court.ranking+"</td><td>"+court.name+"</td><th>"+court.tribunal+
+      var row = "<tr class="+colorClass+" id="+court.vara_id+"><td>"+court.ranking+"</td><td>"+court.name+"</td><th>"+court.tribunal+
       "</th><td>"+court.days_finish_process+" dias</td><td>"+court.movements+"</td><td>"
       +court.finished_processes+"</td><td>"+court.melhorEtapa+"</td><td>"+court.piorEtapa+"</td></tr>"
       $("#rank_courts").append(row);
       $('#'+court.vara_id).click(e=>{
         vara_id = e.currentTarget.id
         saveCache()
-        window.location.replace("file:///home/fernando/Development/web/fase2_desafio_cnj/frontend/index.html");       
+        window.location.replace("file:///home/fernando/Development/web/fase2_desafio_cnj/frontend/index_fernando.html");       
       }) 
     }
   });
@@ -228,10 +229,10 @@ function filterCourt() {
 
   //best 
   $("#rank_courts").append('<tr class="table-title"><td colspan="7">Varas com os melhores tempos de conclução de processo</td></tr>');
-  fillRankTable(bestCourts, court)
+  fillRankTable(bestCourts, court, false)
   //separator
   $("#rank_courts").append('<tr class="ellipses"><td colspan="7"><i class="fas fa-ellipsis-v"></i></td></tr>');
   //worst
   $("#rank_courts").append('<tr class="table-title"><td colspan="7">Varas com os piores tempos de conclução de processo</td></tr>')
-  fillRankTable(worstCourts, court)
+  fillRankTable(worstCourts, court, true)
 }
