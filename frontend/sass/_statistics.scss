@@ -3,9 +3,7 @@
   @extend .d-flex;
   @extend .flex-wrap;
   @extend .justify-content-between;
-  & > div {
-    padding-bottom: 1rem;
-  }
+ 
   &-card {
     @extend .align-items-stretch;
     @extend .col-12;

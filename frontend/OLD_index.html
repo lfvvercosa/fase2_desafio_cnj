@@ -125,7 +125,7 @@
           <div class="steps-toggle">
             <div class="steps-option text-danger">Gargalos</div>
             <div class="steps-switch">
-              <input type="checkbox" class="d-none" id="toggle-switch" onclick='setRankComponent(this)'>
+              <input type="checkbox" class="d-none" id="toggle-switch">
               <label for="toggle-switch">
                 <i class="switch fas fa-toggle-on"></i>
               </label>
@@ -141,7 +141,7 @@
             </span>
           </div>
         </div>
-        <!-- <ul class="ranking-options ranking-options-gargalos ">
+        <ul class="ranking-options ranking-options-gargalos ">
           <li><button><span data-toggle="tooltip" title="Citação" class="ranking-options-icon"><i
                   class="fas fa-quote-right"></i></span></p></button></li>
           <li><button><span data-toggle="tooltip" title="Decisão" class="ranking-options-icon"><i
@@ -162,11 +162,201 @@
                   class="far fa-check-circle"></i></span></p></button></li>
           <li><button><span data-toggle="tooltip" title="Despacho" class="ranking-options-icon"><i
                   class="fas fa-pen-nib"></i></span></p></button></li>
-        </ul> -->
-        <div class="diagnosis">
+        </ul>
+        <div class="diagnosis diagnosis-gargalos">
+          <button class="btn-header" type="button" data-toggle="collapse" data-target="#diagnostico-1"
+            aria-expanded="false" aria-controls="diagnostico-1">
+            <div class="table-responsive">
+              <table class="diagnosis-table">
+                <tr>
+                  <td><i class="fas fa-users"></i>
+                    <p class="mb-0">Audiência</p>
+                  </td>
+                  <td class="arrow"><i class="fas fa-long-arrow-alt-right"></i></td>
+                  <td><i class="fas fa-balance-scale"></i>
+                    <p class="m-0">Julgamento</p>
+                  </td>
+                  <td>
+                    <p class="m-0"><strong>35 dias</strong><br>Duração</p>
+                  </td>
+                  <td><strong>15º</strong><br>Posição
+                    <small>
+                      <span data-toggle="popover" title="Popover title"
+                        data-content="And here's some amazing content. It's very engaging. Right?">
+                        <i class="fas fa-info-circle" style="font-size: 1rem"></i>
+                      </span>
+                    </small>
+                  </td>
+                  <td>
+                    <p class="m-0"><strong>65</strong><br>Quantidade de ocorrêcia: </p>
+                  </td>
+                  <td class="chevron"><i class="fas fa-chevron-up"></i></td>
+
+                </tr>
+              </table>
+            </div>
+          </button>
+          <div class="collapse" id="diagnostico-1">
+            <div class="diagnosis-comments">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Comentário mais curtido</th>
+                    <th style="min-width: 200px;">Unidade jurídico </th>
+                    <th style="min-width: 100px;">
+                      Duração
+                    </th>
+                    <th style="min-width: 100px;">Curtidas</th>
+                    <th style="min-width: 100px;">Comentários</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="w-100">
+                        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi possimus commodi delectus
+                          molestias
+                          magnam soluta porro rerum cumque aut, quidem facilis temporibus dolore aliquid eaque animi id
+                          incidunt! Recusandae, tempora.</p>
+                      </div>
+
+                      <button type="button" data-backdrop="static" data-keyboard="false" class="comment-replay"
+                        data-toggle="modal" data-target="#comment-replay">
+                        Launch demo modal
+                      </button>
+                    </td>
+                    <td>
+                      <span data-toggle="popover" title="Informações de contato" data-content="E-mail: alagoinhas1vcivel@tjba.jus.br 
+/ Telefone: (75) 3423-8952 ">
+                        1ª Vara Cível e Comercial e de Registros Públicos
+                      </span>
+                    </td>
+                    <td class="text-center">11 dias</td>
+                    <td>
+                      <button class="ranking-like" type="button">
+                        <input id="toggle-heart-1" type="checkbox" />
+                        <label for="toggle-heart-1">
+                          <i class="far fa-heart heart-empty"></i>
+                          <i class="fas fa-heart heart-full"></i>
+                        </label>
+                      </button>
+                      <small class="d-block text-truncate"> 12 curtidas</small>
+
+                    </td>
+                    <td>
+                      <button class="ranking-chat">
+                        <input id="toggle-comment-1" type="checkbox" />
+                        <label for="toggle-comment-1">
+
+                          <i class="far fa-comments comments-empty"></i>
+                          <i class="fas fa-comments comments-full"></i>
+                        </label>
+                      </button>
+                      <small class="d-block text-truncate"> 12 respostas</small>
+
+                    </td>
+
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="w-100">
+                        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi possimus commodi delectus
+                          molestias
+                          magnam soluta porro rerum cumque aut, quidem facilis temporibus dolore aliquid eaque animi id
+                          incidunt! Recusandae, tempora.</p>
+                      </div>
+
+                      <button type="button" data-backdrop="static" data-keyboard="false" class="comment-replay"
+                        data-toggle="modal" data-target="#comment-replay">
+                        Launch demo modal
+                      </button>
+                    </td>
+                    <td>
+                      <span data-toggle="popover" title="Informações de contato" data-content="E-mail: alagoinhas1vcivel@tjba.jus.br 
+/ Telefone: (75) 3423-8952 ">
+                        1ª Vara Cível e Comercial e de Registros Públicos
+                      </span>
+                    </td>
+                    <td class="text-center">11 dias</td>
+                    <td>
+                      <button class="ranking-like" type="button">
+                        <input id="toggle-heart-1" type="checkbox" />
+                        <label for="toggle-heart-1">
+                          <i class="far fa-heart heart-empty"></i>
+                          <i class="fas fa-heart heart-full"></i>
+                        </label>
+                      </button>
+                      <small class="d-block text-truncate"> 12 curtidas</small>
+
+                    </td>
+                    <td>
+                      <button class="ranking-chat">
+                        <input id="toggle-comment-1" type="checkbox" />
+                        <label for="toggle-comment-1">
+
+                          <i class="far fa-comments comments-empty"></i>
+                          <i class="fas fa-comments comments-full"></i>
+                        </label>
+                      </button>
+                      <small class="d-block text-truncate"> 12 respostas</small>
+
+                    </td>
+
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="w-100">
+                        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi possimus commodi delectus
+                          molestias
+                          magnam soluta porro rerum cumque aut, quidem facilis temporibus dolore aliquid eaque animi id
+                          incidunt! Recusandae, tempora.</p>
+                      </div>
+
+                      <button type="button" data-backdrop="static" data-keyboard="false" class="comment-replay"
+                        data-toggle="modal" data-target="#comment-replay">
+                        Launch demo modal
+                      </button>
+                    </td>
+                    <td>
+                      <span data-toggle="popover" title="Informações de contato" data-content="E-mail: alagoinhas1vcivel@tjba.jus.br 
+/ Telefone: (75) 3423-8952 ">
+                        1ª Vara Cível e Comercial e de Registros Públicos
+                      </span>
+                    </td>
+                    <td class="text-center">11 dias</td>
+                    <td>
+                      <button class="ranking-like" type="button">
+                        <input id="toggle-heart-1" type="checkbox" />
+                        <label for="toggle-heart-1">
+                          <i class="far fa-heart heart-empty"></i>
+                          <i class="fas fa-heart heart-full"></i>
+                        </label>
+                      </button>
+                      <small class="d-block text-truncate"> 12 curtidas</small>
+
+                    </td>
+                    <td>
+                      <button class="ranking-chat">
+                        <input id="toggle-comment-1" type="checkbox" />
+                        <label for="toggle-comment-1">
+
+                          <i class="far fa-comments comments-empty"></i>
+                          <i class="fas fa-comments comments-full"></i>
+                        </label>
+                      </button>
+                      <small class="d-block text-truncate"> 12 respostas</small>
+
+                    </td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
         </div>
 
-        <!-- <div class="diagnosis diagnosis-destaques">
+        <div class="diagnosis diagnosis-destaques">
           <button class="btn-header" type="button" data-toggle="collapse" data-target="#diagnostico-2"
             aria-expanded="false" aria-controls="diagnostico-2">
             <div class="table-responsive">
@@ -252,7 +442,7 @@
                 </tbody>
               </table>
             </div>
-          </div> -->
+          </div>
 
         </div>
       </div>

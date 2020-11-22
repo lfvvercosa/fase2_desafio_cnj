@@ -10,12 +10,7 @@
       @extend .text-center;
       @extend .col-12;
       @extend .col-md-4;
-      & > div {
-        @extend .rounded;
-        @extend .border;
-        @extend .p-4;
-        height: 100%;
-      }
+     
       p {
         margin-bottom: 0;
         font-size: 85%;

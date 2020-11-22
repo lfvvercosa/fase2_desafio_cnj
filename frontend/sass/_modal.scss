@@ -1,0 +1,31 @@
+.modal {
+  &-button {
+    @extend .btn;
+    @extend .btn-sm;
+    &-warning {
+      @extend .btn-outline-danger;
+    }
+    &-award {
+      @extend .btn-outline-info;
+    }
+  }
+  &-body-editavel {
+    @extend .border;
+    @extend .p-3;
+    @extend .rounded;
+    background: #eee;
+    &:active, &:focus{
+      background: #fff;
+      font-weight: bold;
+    }
+  }
+  &-dialog {
+    @extend .modal-xl;
+    @extend .modal-dialog-centered;
+    @extend .modal-dialog-scrollable;
+  }
+  &-footer {
+    @extend .d-flex;
+    @extend .justify-content-between;
+  }
+}

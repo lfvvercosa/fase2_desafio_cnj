@@ -62,14 +62,14 @@ function selectGroup(group) {
     $("#rank_courts").html("")
     //best 
     $("#rank_courts").append('<tr class="table-title"><td colspan="7">Varas com os melhores tempos de conclução de processo</td></tr>');
-    fillRankTable(data.melhoresVaras)
-    bestCourts = data.melhoresVaras
+    bestCourts = data.varas.slice(0,5)
+    fillRankTable(bestCourts)
     //separator
     $("#rank_courts").append('<tr class="ellipses"><td colspan="7"><i class="fas fa-ellipsis-v"></i></td></tr>');
     //worst
     $("#rank_courts").append('<tr class="table-title"><td colspan="7">Varas com os piores tempos de conclução de processo</td></tr>')
-    fillRankTable(data.pioresVaras)
-    worstCourts = data.pioresVaras
+    worstCourts = data.varas.slice(data.varas.length-5, data.varas.length)
+    fillRankTable(worstCourts)
     
     fillCourtFilter()
 
@@ -108,16 +108,12 @@ function fillMovementsChart() {
   time_citacao = ["Citação"]
   time_outros = ["Outros"]
 
-  bestCourts.slice(0,5).forEach(vara => {
-    vara.porcentagemMacroetapas.forEach(json => {
-      fillMovementTimes(json)
-    });
+  bestCourts.forEach(vara => {
+      fillMovementTimes(vara)
   })
 
-  worstCourts.slice(0,5).forEach(vara => {
-    vara.porcentagemMacroetapas.forEach(json => {
-      fillMovementTimes(json)
-    });
+  worstCourts.forEach(vara => {
+      fillMovementTimes(vara)
   })
   
   c3.generate({
@@ -136,7 +132,7 @@ function fillMovementsChart() {
       },
       tooltip: {
           format: {
-              title: function (d) { return d < 5 ? bestCourts.slice(0,5)[d].nome : worstCourts.slice(0,5)[d-5].nome }
+              title: function (d) { return d < 5 ? bestCourts[d].nome : worstCourts[d-5].nome }
           }
       },
       axis: {
