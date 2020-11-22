@@ -1,0 +1,21 @@
+.modal {
+  &-button {
+    @extend .btn;
+    @extend .btn-sm;
+    &-warning {
+      @extend .btn-outline-danger;
+    }
+    &-award {
+      @extend .btn-outline-info;
+    }
+  }
+  &-dialog {
+    @extend .modal-xl;
+    @extend .modal-dialog-centered;
+    @extend .modal-dialog-scrollable;
+  }
+  &-footer {
+    @extend .d-flex;
+    @extend .justify-content-between;
+  }
+}

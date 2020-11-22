@@ -22,11 +22,10 @@ main {
   @extend .col-md-10;
   @extend .mx-auto;
 }
-
-.content {
-  @extend .w-100;
-  @extend .row;
+svg {
+  @extend .img-fluid;
 }
+
 
 .migalha-pao {
   ol {
@@ -40,6 +39,7 @@ main {
 .grupo {
   &-descricao {
     @extend .col-12;
+    @extend .mb-0;
     @extend .list-inline;
     @extend .list-unstyled;
 
@@ -81,11 +81,6 @@ main {
   font-size: 1rem;
   position: absolute;
   margin-top: 1rem;
-}
-
-iframe {
-  height: calc(100% - 56px);
-  width: 100%;
 }
 
 .secao-titulo {
