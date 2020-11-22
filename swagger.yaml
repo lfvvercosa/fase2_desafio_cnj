@@ -360,6 +360,79 @@ paths:
           description: "Serviço indisponível"
       security:
       - api_key: []
+  /comentarios/create:
+    post:
+      tags:
+      - "comentarios"
+      summary: "Cria novo comentário"
+      description: "Cria novo comentário para step de uma vara"
+      operationId: "createComentario"
+      produces:
+      - "string"
+      parameters:
+        - in: "body"
+          name: "step"
+          schema:
+            type: object
+            properties:
+              vara_id:
+                type: integer
+                example: 20
+              step_id:
+                type: integer
+                example: 98
+              comment:
+                type: string
+                example: "Meu comentário"
+      responses:
+        "200": 
+          description: "success"
+          
+        "400":
+          description: "Parâmetros inválidos"
+        "404":
+          description: "Identificador inválido"
+        "503":
+          description: "Serviço indisponível"
+      security:
+      - api_key: []
+  /comentarios/getMyComment/{step_id}&{vara_id}:
+    get:
+      tags:
+      - "comentarios"
+      summary: "Retorna comentário"
+      description: "Retorna o comentário identificado por step_id e vara_id"
+      operationId: "getMeuComentario"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "step_id"
+        in: "path"
+        description: "Identificador de step"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "vara_id"
+        in: "path"
+        description: "Identificador de vara"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/comentarios"
+        "400":
+          description: "Parâmetros inválidos"
+        "404":
+          description: "Identificador inválido"
+        "503":
+          description: "Serviço indisponível"
+      security:
+      - api_key: []
 definitions:
   melhoresVaras:
     type: "object"
