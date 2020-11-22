@@ -59,16 +59,13 @@ function selectGroup(group) {
   $('#group_time').html('Tempo ' + selectedGroup.total_varas)
 
   getBestCourts(selectedGroup.identificador, (data)=>{
-    
     $("#rank_courts").html("")
-
     //best 
     $("#rank_courts").append('<tr class="table-title"><td colspan="7">Varas com os melhores tempos de conclução de processo</td></tr>');
     fillRankTable(data.melhoresVaras)
     bestCourts = data.melhoresVaras
     //separator
     $("#rank_courts").append('<tr class="ellipses"><td colspan="7"><i class="fas fa-ellipsis-v"></i></td></tr>');
-    
     //worst
     $("#rank_courts").append('<tr class="table-title"><td colspan="7">Varas com os piores tempos de conclução de processo</td></tr>')
     fillRankTable(data.pioresVaras)
@@ -207,10 +204,15 @@ function fillMap() {
 
 function fillCourtFilter() {
   $('#cboTribunal').html('<option value=""></option>')
-  var selector = $('#cboTribunal')
-  var courts = ['TJPE', "TJPB", "TJBA"]
-  var i = 0;
-  //var selector = $('#cboTribunal')
+  var courts = []
+  bestCourts.forEach(court => {
+    if(court.tribunal && !courts.includes(court.tribunal))
+      courts.push(court.tribunal)
+  });
+  worstCourts.forEach(court => {
+    if(court.tribunal && !courts.includes(court.tribunal))
+      courts.push(court.tribunal)
+  });
   courts.forEach((court) => {
     $('#cboTribunal').append('<option value="'+court+'">'+court+'</option>')
   })
