@@ -55,13 +55,14 @@
         <!-- NAV -->
         <!-- FILTRO -->
         <form class="filtro-form">
-            <!-- INFO -->
-            <div class="filtro-info" data-toggle="popover" title="Como pesquisar"
+            <div class="filtro-selectors">
+                <!-- INFO -->
+                <div class="filtro-info" data-toggle="popover" title="Como pesquisar"
                 data-content="Para iniciar sua pesquisa, basta clicar nos filtros disponíveis e digitar os termos para o sistema exibir mais rapidamente as opções existentes">
                 <i class="fas fa-info"></i>
-            </div>
-            <!-- SELECTS -->
-            <div class="filtros">
+                </div>
+                <!-- SELECTS -->
+                <div class="filtros">
                 <label class="filtro-label" for="filter-cluster">Informações desejadas:</label>
                 <div class="filtro-select">
                     <select class="select select-assuntos" name="cluster[]" readonly disabled id="filter-cluster">
@@ -87,16 +88,14 @@
                     </select>
                 </div>
                 <div class="filtro-select">
-                    <select class="select select-grupo" name="grupo[]" multiple="multiple">
-                        <option value="grupo-1">Nome do grupo 1</option>
-                        <option value="grupo-2">Nome do grupo 2</option>
-                        <option value="grupo-3">Nome do grupo 3</option>
+                    <select id="cboGroup" class="select select-grupo" onchange="selectGroupById(this)">
                     </select>
                 </div>
-            </div>
-            <!-- BOTAO -->
-            <div class="filtro-button">
-                <button><i class="fas fa-search"></i> Filtrar</button>
+                </div>
+                <!-- BOTAO -->
+                <div class="filtro-button d-none">
+                    <button><i class="fas fa-search"></i> Filtrar</button>
+                </div>
             </div>
 
             <div class="filtro-button todos-grupos">

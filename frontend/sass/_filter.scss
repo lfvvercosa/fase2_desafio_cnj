@@ -1,11 +1,18 @@
 .filtro {
   &-form {
     @extend .card;
-    @extend .d-flex;
     @extend .flex-md-row;
     @extend .flex-column;
     @extend .align-items-center;
     @extend .justify-content-between;
+    @extend .d-block;
+    &-selectors {
+      @extend .d-flex;
+      @extend .flex-md-row;
+      @extend .flex-column;
+      @extend .align-items-center;
+      @extend .justify-content-between;
+    }
     .filtros {
       @extend .d-flex;
       @extend .flex-grow-1;

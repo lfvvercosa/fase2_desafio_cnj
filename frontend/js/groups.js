@@ -17,6 +17,9 @@ var time_outros = undefined
 
 getGroups((data)=>{
   groups = data
+  console.log(data)
+  fillCboGroupFilter()
+
   c3.generate({
     data: {
         columns: [getDataColumns()],
@@ -25,10 +28,6 @@ getGroups((data)=>{
         },
         onclick: function(d, element) {
           selectGroup(groups[d.x])
-        },
-        onmouseover: function(d) {
-          if(d.x)
-            selectGroup(d.x)
         }
     },
     axis: {
@@ -52,6 +51,12 @@ function getDataColumns(){
   return columns
 }
 
+function selectGroupById(selector) {
+  var id = selector.options[selector.selectedIndex].value
+  console.log(id)
+  selectGroup(groups.find((g)=>g.identificador == id))
+}
+
 function selectGroup(group) {
   selectedGroup = group
   $('#group_name').html('Grupo ' + selectedGroup.identificador)
@@ -63,7 +68,6 @@ function selectGroup(group) {
     //best 
     $("#rank_courts").append('<tr class="table-title"><td colspan="7">Varas com os melhores tempos de conclução de processo</td></tr>');
     bestCourts = data.varas.slice(0,5)
-    console.log(bestCourts[0])
     fillRankTable(bestCourts, "", false)
     //separator
     $("#rank_courts").append('<tr class="ellipses"><td colspan="7"><i class="fas fa-ellipsis-v"></i></td></tr>');
@@ -83,17 +87,23 @@ function selectGroup(group) {
 
 function fillRankTable(courts, filter, isBottleNeck) {
   var colorClass = isBottleNeck ? 'uj-alerta' : 'uj-destaque'
+  var buttonClass = isBottleNeck ? 'warning' : 'award'
+  var icon = isBottleNeck ? 'bullhorn' : 'bullhorn'
   courts.forEach(court => {
-    if(!filter || filter == "" || (filter == court.tribunal)) {
+    if(!filter || filter == "Todos" || (filter == court.tribunal)) {
       var row = "<tr class="+colorClass+" id="+court.vara_id+"><td>"+court.ranking+"</td><td>"+court.name+"</td><th>"+court.tribunal+
       "</th><td>"+court.days_finish_process+" dias</td><td>"+court.movements+"</td><td>"
-      +court.finished_processes+"</td><td>"+court.melhorEtapa+"</td><td>"+court.piorEtapa+"</td></tr>"
+      +court.finished_processes+"</td><td>"+court.melhorEtapa+"</td><td>"+court.piorEtapa+"</td>"
+      +'<td><button class="modal-button modal-button-'+buttonClass+'" type="button" data-toggle="tooltip"'
+      +'title="Enviar alerta para este tribunal><span data-toggle="modal" data-target="#alertasSugeridos">'
+      +'<i class="fas fa-'+icon+'"></i></span></button></td></tr>'
+      
       $("#rank_courts").append(row);
-      $('#'+court.vara_id).click(e=>{
+      /* $('#'+court.vara_id).click(e=>{
         vara_id = e.currentTarget.id
         saveCache()
-        window.location.replace("file:///home/fernando/Development/web/fase2_desafio_cnj/frontend/index_fernando.html");       
-      }) 
+        window.location.replace("file:///home/fernando/Development/web/fase2_desafio_cnj/frontend/vara.html");       
+      })  */
     }
   });
 }
@@ -199,15 +209,22 @@ function fillMovementTimes(json) {
 
 function fillMap() {
   var locations = []
-  console.log(selectedGroup)
   selectedGroup.varas.forEach((vara)=>{
     locations.push([vara.nome, vara.latitude, vara.longitude])  
   })
   populateMap(map, infowindow, locations)
 }
 
+function fillCboGroupFilter() {
+  $('#cboGroup').html('<option value=""></option>')
+  groups.forEach((group) => {
+    $('#cboGroup').append('<option value="'+group.identificador+'">'+group.identificador+'</option>')
+  })
+}
+
 function fillCourtFilter() {
-  $('#cboTribunal').html('<option value=""></option>')
+  $('#cboTribunal').html('')
+  $('#cboTribunal').append('<option value="Todos">Todos</option>')
   var courts = []
   bestCourts.forEach(court => {
     if(court.tribunal && !courts.includes(court.tribunal))
