@@ -40,8 +40,9 @@ var warning_outros = undefined
 
 getGroups((data)=>{
   groups = data
+  console.log(data)
   fillCboGroupFilter()
-
+  
   c3.generate({
     data: {
         columns: [getDataColumns()],
@@ -83,6 +84,8 @@ function selectGroup(group) {
   $('#group_name').html('Grupo ' + selectedGroup.identificador)
   $('#group_members').html('Membros ' + selectedGroup.total_varas)
   $('#group_time').html('Tempo ' + selectedGroup.total_varas)
+
+  fillCboClassFilter()
 
   getCourtsFromGroup(selectedGroup.identificador, (data)=>{
     $("#rank_courts").html("")
@@ -210,9 +213,12 @@ function fillMovementsChart() {
       axis: {
         y: {
           label: {
-            text: 'Número de dias',
+            text: 'Porcentagem',
             position: 'outer-middle'
-          }
+          },
+          max: 100,
+          min: 0,
+          padding: {top: 0, bottom: 0}
         },
       },
       bindto: '#chart_best'
@@ -255,9 +261,12 @@ function fillMovementsChart() {
       axis: {
         y: {
           label: {
-            text: 'Número de dias',
+            text: 'Porcentagem',
             position: 'outer-middle'
-          }
+          },
+          max: 100,
+          min: 0,
+          padding: {top: 0, bottom: 0}
         }
       },
       bindto: '#chart_worst'
@@ -362,6 +371,14 @@ function fillMap() {
     locations.push([vara.nome, vara.latitude, vara.longitude])  
   })
   populateMap(map, infowindow, locations)
+}
+
+function fillCboClassFilter() {
+  $('#cboClass').html('<option value=""></option>')
+  console.log(Object.keys(selectedGroup.classes_frequentes))
+  Object.keys(selectedGroup.classes_frequentes).forEach((classe) => {
+    $('#cboClass').append('<option value="'+classe+'">'+classe+'</option>')
+  })
 }
 
 function fillCboGroupFilter() {

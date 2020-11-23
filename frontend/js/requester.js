@@ -61,8 +61,10 @@ function getGraphData(vara_id_1, vara_id_2, callback) {
   });
 }
 
-function getGroups(callback) {
-  var url = urlBase + 'grupos/'
+function getGroups(callback, classeProcessual) {
+  var url = urlBase + 'grupos'
+  if(classeProcessual)
+    url += '?classeProcessual='+classeProcessual
   jQuery.get(url, (data)=>{
     callback(data)
   });
