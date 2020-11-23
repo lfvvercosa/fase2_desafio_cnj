@@ -103,6 +103,7 @@ function setNeighborsChart(result) {
     var time_citacao = ["Citação"]
     var time_outros = ["Outros"]
     var neighbors = findNeighbors(result)
+    console.log(neighbors)
     neighbors.forEach(json => {
         if(json.time_distribuicao && json.time_distribuicao != null)
             time_distribuicao.push(getValidValue(json.time_distribuicao))
