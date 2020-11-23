@@ -135,3 +135,4 @@ dmypy.json
 backend/django-project/panorama/settings.py
 backend/django-project/myenv/
 
+data/interim/\.*
