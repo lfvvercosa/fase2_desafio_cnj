@@ -224,7 +224,7 @@ function findNeighbors(result) {
             else
                 return result.slice(pos-2, pos+1)
         }
-        else if(right == 2){
+        else if(right >= 2){
             return result.slice(pos-2, pos+3)
         }
     }
