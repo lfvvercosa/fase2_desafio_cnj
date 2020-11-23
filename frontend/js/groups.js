@@ -79,6 +79,8 @@ function selectGroupById(selector) {
 
 function selectGroup(group) {
   selectedGroup = group
+  saveCache()
+  readCache()
   $('#group_name').html('Grupo ' + selectedGroup.identificador)
   $('#group_members').html('Membros ' + selectedGroup.total_varas)
   $('#group_time').html('Tempo ' + selectedGroup.total_varas)
@@ -127,47 +129,53 @@ function fillRankTable(courts, filter, isBottleNeck, tableName) {
       +'<i class="fas fa-'+icon+'"></i></span></button></td></tr>'
       
       tableComponent.append(row);
-
+      var urlBase = window.location.href
       $('#'+tableName+'_rank_'+court.vara_id).click(e=>{
         vara_id = e.currentTarget.id
         saveCache()
-        window.location.replace("http://desafio-cnj-frontend.herokuapp.com/vara.html");       
+        window.location.replace(urlBase+"vara.html");       
       })
 
       $('#'+tableName+'_name_'+court.vara_id).click(e=>{
-        vara_id = e.currentTarget.id
+        var index = e.currentTarget.id.lastIndexOf('_') + 1
+        vara_id = e.currentTarget.id.substring(index)
         saveCache()
-        window.location.replace("http://desafio-cnj-frontend.herokuapp.com/vara.html");       
+        window.location.replace(urlBase+"vara.html");       
       })
 
       $('#'+tableName+'_days_'+court.vara_id).click(e=>{
-        vara_id = e.currentTarget.id
+        var index = e.currentTarget.id.lastIndexOf('_') + 1
+        vara_id = e.currentTarget.id.substring(index)
         saveCache()
-        window.location.replace("http://desafio-cnj-frontend.herokuapp.com/vara.html");       
+        window.location.replace(urlBase+"vara.html");       
       })
       
       $('#'+tableName+'_movements_'+court.vara_id).click(e=>{
-        vara_id = e.currentTarget.id
+        var index = e.currentTarget.id.lastIndexOf('_') + 1
+        vara_id = e.currentTarget.id.substring(index)
         saveCache()
-        window.location.replace("http://desafio-cnj-frontend.herokuapp.com/vara.html");       
+        window.location.replace(urlBase+"vara.html");       
       })
 
       $('#'+tableName+'_processes_'+court.vara_id).click(e=>{
-        vara_id = e.currentTarget.id
+        var index = e.currentTarget.id.lastIndexOf('_') + 1
+        vara_id = e.currentTarget.id.substring(index)
         saveCache()
-        window.location.replace("http://desafio-cnj-frontend.herokuapp.com/vara.html");       
+        window.location.replace(urlBase+"vara.html");       
       })
 
-      $('#'+tableName+'_best_movements'+court.vara_id).click(e=>{
-        vara_id = e.currentTarget.id
+      $('#'+tableName+'_best_movements_'+court.vara_id).click(e=>{
+        var index = e.currentTarget.id.lastIndexOf('_') + 1
+        vara_id = e.currentTarget.id.substring(index)
         saveCache()
-        window.location.replace("http://desafio-cnj-frontend.herokuapp.com/vara.html");       
+        window.location.replace(urlBase+"vara.html");       
       })
 
       $('#'+tableName+'_worst_movements_'+court.vara_id).click(e=>{
-        vara_id = e.currentTarget.id
+        var index = e.currentTarget.id.lastIndexOf('_') + 1
+        vara_id = e.currentTarget.id.substring(index)
         saveCache()
-        window.location.replace("http://desafio-cnj-frontend.herokuapp.com/vara.html");       
+        window.location.replace(urlBase+"vara.html");       
       })
     }
   });
