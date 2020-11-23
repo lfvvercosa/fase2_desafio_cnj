@@ -1,5 +1,3 @@
-var groups = undefined
-var selectedGroup = undefined
 var bestCourts = undefined
 var worstCourts = undefined
 var warningCourts = undefined
@@ -133,43 +131,43 @@ function fillRankTable(courts, filter, isBottleNeck, tableName) {
       $('#'+tableName+'_rank_'+court.vara_id).click(e=>{
         vara_id = e.currentTarget.id
         saveCache()
-        window.location.replace("file:///home/fernando/Development/web/fase2_desafio_cnj/frontend/vara.html");       
+        window.location.replace("http://desafio-cnj-frontend.herokuapp.com/vara.html");       
       })
 
       $('#'+tableName+'_name_'+court.vara_id).click(e=>{
         vara_id = e.currentTarget.id
         saveCache()
-        window.location.replace("file:///home/fernando/Development/web/fase2_desafio_cnj/frontend/vara.html");       
+        window.location.replace("http://desafio-cnj-frontend.herokuapp.com/vara.html");       
       })
 
       $('#'+tableName+'_days_'+court.vara_id).click(e=>{
         vara_id = e.currentTarget.id
         saveCache()
-        window.location.replace("file:///home/fernando/Development/web/fase2_desafio_cnj/frontend/vara.html");       
+        window.location.replace("http://desafio-cnj-frontend.herokuapp.com/vara.html");       
       })
       
       $('#'+tableName+'_movements_'+court.vara_id).click(e=>{
         vara_id = e.currentTarget.id
         saveCache()
-        window.location.replace("file:///home/fernando/Development/web/fase2_desafio_cnj/frontend/vara.html");       
+        window.location.replace("http://desafio-cnj-frontend.herokuapp.com/vara.html");       
       })
 
       $('#'+tableName+'_processes_'+court.vara_id).click(e=>{
         vara_id = e.currentTarget.id
         saveCache()
-        window.location.replace("file:///home/fernando/Development/web/fase2_desafio_cnj/frontend/vara.html");       
+        window.location.replace("http://desafio-cnj-frontend.herokuapp.com/vara.html");       
       })
 
       $('#'+tableName+'_best_movements'+court.vara_id).click(e=>{
         vara_id = e.currentTarget.id
         saveCache()
-        window.location.replace("file:///home/fernando/Development/web/fase2_desafio_cnj/frontend/vara.html");       
+        window.location.replace("http://desafio-cnj-frontend.herokuapp.com/vara.html");       
       })
 
       $('#'+tableName+'_worst_movements_'+court.vara_id).click(e=>{
         vara_id = e.currentTarget.id
         saveCache()
-        window.location.replace("file:///home/fernando/Development/web/fase2_desafio_cnj/frontend/vara.html");       
+        window.location.replace("http://desafio-cnj-frontend.herokuapp.com/vara.html");       
       })
     }
   });

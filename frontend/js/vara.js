@@ -113,11 +113,11 @@ function loadComments(i, container, step) {
         
         container = $('#comment_'+i+'_'+j)
         container.vara_id = bestVarasOnStep[j].vara_id
-        container.click(function(e){
+        /* container.click(function(e){
           comparing_id = e.currentTarget.vara_id
           saveCache()
           window.location.replace("http://desafio-cnj-frontend.herokuapp.com/pages/comparing-courts.html");
-        })
+        }) */
       }
     })
                 /*<td>

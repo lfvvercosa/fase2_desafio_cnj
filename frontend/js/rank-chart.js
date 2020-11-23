@@ -1,5 +1,6 @@
 
-getBestVaras(vara_id, 10, (result)=>{
+console.log(selectedGroup)
+getBestVaras(vara_id, selectedGroup.varas.length, (result)=>{
     var groups = ['Distribuição','Conclusão','Despacho','Decisão','Julgamento','Trânsito em julgado','Baixa ou arquivamento', 'Audiencia', 'Citação', 'Outros']
     var time_distribuicao = ["Distribuição"]
     var time_conclusao = ["Conclusão"]
@@ -11,6 +12,7 @@ getBestVaras(vara_id, 10, (result)=>{
     var time_audiencia = ["Audiencia"]
     var time_citacao = ["Citação"]
     var time_outros = ["Outros"]
+    result = result.slice(0,20)
     result.forEach(json => {
         if(json.time_distribuicao && json.time_distribuicao != null)
             time_distribuicao.push(getValidValue(json.time_distribuicao))
@@ -53,7 +55,7 @@ getBestVaras(vara_id, 10, (result)=>{
         else
             time_outros.push(0)
     });
-    var chart = c3.generate({
+    c3.generate({
         data: {
             columns: [time_distribuicao, time_conclusao, time_despacho, time_decisao,
                 time_julgamento, time_transito_em_julgado, time_baixa_ou_arquivamento, time_audiencia
@@ -75,11 +77,15 @@ getBestVaras(vara_id, 10, (result)=>{
         axis: {
           y: {
             label: {
-              text: 'Número de dias',
+              text: 'Porcentagem',
               position: 'outer-middle'
-            }
+            },
+            max: 100,
+            min: 0,
+            padding: {top: 0, bottom: 0}
           }
-        }
+        },
+        bindto: "#chart_best"
       });
 })
 
