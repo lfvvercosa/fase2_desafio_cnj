@@ -198,6 +198,11 @@ function findNeighbors(result) {
     
     var left = pos
     var right = len - pos - 1
+    console.log(result)
+    console.log(result[pos])
+    console.log('pos = '+pos)
+    console.log('left = '+left)
+    console.log('right = '+right)
 
     if(left >= 2) {
         if(right == 0) {
