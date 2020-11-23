@@ -2,6 +2,8 @@ import pandas as pd
 import json
 import random
 import math
+import matplotlib.pyplot as plt
+import numpy as np
 
 from log.Log import Log
 from log.PreProcess import PreProcess
@@ -15,11 +17,14 @@ path_clusters = '/home/vercosa/Insync/doutorado/hackaton_cnj/'+\
               'projeto_git/desafio_cnj/data/interim/'+\
               'clusterizacao_varas.csv'
 
-file_path = '/home/vercosa/Documentos/bases_desafio_cnj/'+\
-            'versao5/version_5.csv'
+# file_path = '/home/vercosa/Documentos/bases_desafio_cnj/'+\
+#             'versao5/version_5.csv'
 
 # file_path = '/home/vercosa/Documentos/bases_desafio_cnj/'+\
-#              'versao6/resultado_1_0_null.csv'
+#             'versao6/resultado_1_classe_0_null.csv'
+
+file_path = '/home/vercosa/Documentos/bases_desafio_cnj/'+\
+             'versao7/movimento_estadual_G1_filtered.csv'
 
 
 movement_path = '/home/vercosa/Insync/doutorado/hackaton_cnj/' + \
@@ -35,6 +40,17 @@ comments_path = '/home/vercosa/Insync/doutorado/hackaton_cnj/' + \
 datatypes = {'case:concept:name': str,
              'time:timestamp'   : str}
 
+classes_map_path = '/home/vercosa/Documentos/bases_desafio_cnj/'+\
+                           '/versao7/classes_mapping.csv'
+
+assuntos_map_path = '/home/vercosa/Documentos/bases_desafio_cnj/'+\
+                           '/versao7/assuntos_mapping.csv'
+
+assuntos_aux = '/home/vercosa/Insync/doutorado/hackaton_cnj/' + \
+             'projeto_git/desafio_cnj/data/interim/df_assuntos.csv'
+
+classes_aux = '/home/vercosa/Insync/doutorado/hackaton_cnj/' + \
+             'projeto_git/desafio_cnj/data/interim/df_classes.csv'
 
 # df_log = pd.read_csv(file_path,
 #                      dtype=datatypes,
@@ -116,7 +132,192 @@ df_temp = df_proc.groupby(alg).count().sort_values(by='case: orgao_mun')
 df_temp
 
 df_temp.to_csv(path_or_buf='/home/vercosa/Documentos/bases_desafio_cnj/'+\
-                           '/versao6/grupos_cluster.csv', sep=';')
+                           '/versao7/grupos_cluster.csv', sep=';')
+
+
+# Obtain most frequent classes of processes
+
+df_selected = df_clusters[['case: orgao_mun', 'TSNE']]
+df_selected = df_selected[(df_selected['TSNE'] == 111) |
+                          (df_selected['TSNE'] == 98) |
+                          (df_selected['TSNE'] == 256)]
+
+df_class_map = pd.read_csv(classes_map_path,
+                           dtype=datatypes,
+                           sep=';',
+                           engine='python')
+
+df_selected = df_selected.\
+                merge(df_class_map, on='case: orgao_mun', how='left')
+
+df_selected = df_selected[df_selected['case: classe_root'].notna()]
+df_selected['case: classe_root'] = \
+    df_selected['case: classe_root'].astype(int)
+
+# filter 'varas' with less than 25 processes
+df_filter = df_selected.groupby('case: orgao_mun', as_index=False).count()
+df_filter = df_filter[df_filter['TSNE'] >= 25][['case: orgao_mun']]
+
+key = ['case: orgao_mun']
+i1 = df_selected.set_index(key).index
+i2 = df_filter.set_index(key).index
+
+df_selected = df_selected[i1.isin(i2)]
+
+# get most frequent
+
+df_selected = df_selected.\
+    groupby(['case: orgao_mun', 'case: classe_root'], as_index=False).\
+    agg({'case:concept:name':'count', 'TSNE':'first'})
+df_selected = df_selected.rename(columns={'case:concept:name': 'count'})
+
+df_aux = df_selected.groupby('case: orgao_mun', as_index=False).\
+    agg({'count':'sum'})
+df_aux = df_aux.rename(columns={'count': 'total'})
+
+df_selected = df_selected.merge(df_aux, on='case: orgao_mun', how='left')
+df_selected['classe_percent'] = \
+    (df_selected['count'] / df_selected['total']) * 100
+df_selected['classe_percent'] = df_selected['classe_percent'].round(2)
+
+df_aux = df_selected.drop_duplicates('case: orgao_mun').\
+    groupby('TSNE', as_index=False).count()
+df_aux = df_aux[['TSNE', 'total']]
+
+df_selected = df_selected.groupby(['TSNE','case: classe_root'], \
+    as_index=False).agg({'classe_percent':'sum'})
+
+df_selected = df_selected.merge(df_aux, on='TSNE', how='left')
+df_selected['classe_percent'] = df_selected['classe_percent'] \
+    / df_selected['total']
+df_selected['classe_percent'] = df_selected['classe_percent'].round(2)
+
+
+# mapping of classe code to name
+
+df_temp = pd.read_csv(classes_aux,
+                      sep=',',
+                      engine='python')
+df_temp = df_temp[['breadscrum', 'nome']]
+df_temp = df_temp.rename(columns={'breadscrum':'case: classe_root'})
+
+df_selected['case: classe_root'] = \
+    df_selected['case: classe_root'].astype(str)
+
+df_selected = \
+    df_selected.merge(df_temp, on='case: classe_root', how='left')
+
+df_selected = \
+    df_selected.drop(['case: classe_root', 'total'], axis=1)
+
+# create json
+
+json_classe_grupos = {}
+
+for index, row in df_selected.iterrows():
+    if row['TSNE'] not in json_classe_grupos:
+        json_classe_grupos[row['TSNE']] = {}
+    json_classe_grupos[row['TSNE']][row['nome']] = \
+        row['classe_percent']
+
+
+# Obtain most frequent assuntos of processes
+
+df_selected2 = df_clusters[['case: orgao_mun', 'TSNE']]
+df_selected2 = df_selected2[(df_selected2['TSNE'] == 111) |
+                          (df_selected2['TSNE'] == 98) |
+                          (df_selected2['TSNE'] == 256)]
+
+df_assunto_map = pd.read_csv(assuntos_map_path,
+                           dtype=datatypes,
+                           sep=';',
+                           engine='python')
+
+df_assunto_map = \
+    df_assunto_map[~df_assunto_map['case: orgao_mun'].isna()]
+
+df_selected2 = df_selected2.\
+                merge(df_assunto_map, on='case: orgao_mun', how='left')
+
+df_selected2 = df_selected2[df_selected2['case: assunto_root'].notna()]
+df_selected2['case: assunto_root'] = \
+    df_selected2['case: assunto_root'].astype(int)
+
+# filter 'varas' with less than 25 processes
+df_filter = df_selected2.groupby('case: orgao_mun', as_index=False).count()
+df_filter = df_filter[df_filter['TSNE'] >= 25][['case: orgao_mun']]
+
+key = ['case: orgao_mun']
+i1 = df_selected2.set_index(key).index
+i2 = df_filter.set_index(key).index
+
+df_selected2 = df_selected2[i1.isin(i2)]
+
+# get most frequent
+
+# count assunto by vara
+
+df_selected2 = df_selected2.\
+    groupby(['case: orgao_mun', 'case: assunto_root'], as_index=False).\
+    agg({'case:concept:name':'count', 'TSNE':'first'})
+df_selected2 = df_selected2.rename(columns={'case:concept:name': 'count'})
+
+# get total processses
+
+df_aux = df_selected2.groupby('case: orgao_mun', as_index=False).\
+    agg({'count':'sum'})
+df_aux = df_aux.rename(columns={'count': 'total'})
+
+# merge total in df_selected2
+
+df_selected2 = df_selected2.merge(df_aux, on='case: orgao_mun', how='left')
+df_selected2['classe_percent'] = \
+    (df_selected2['count'] / df_selected2['total']) * 100
+df_selected2['classe_percent'] = df_selected2['classe_percent'].round(2)
+
+# get total varas by group
+
+df_aux = df_selected2.drop_duplicates('case: orgao_mun').\
+    groupby('TSNE', as_index=False).count()
+df_aux = df_aux[['TSNE', 'total']]
+
+# get mean of each assunto among varas
+
+df_selected2 = df_selected2.groupby(['TSNE','case: assunto_root'], \
+    as_index=False).agg({'classe_percent':'sum'})
+
+df_selected2 = df_selected2.merge(df_aux, on='TSNE', how='left')
+df_selected2['classe_percent'] = df_selected2['classe_percent'] \
+    / df_selected2['total']
+df_selected2['classe_percent'] = df_selected2['classe_percent'].round(2)
+
+# mapping of assunto code to name
+
+df_temp = pd.read_csv(assuntos_aux,
+                      sep=',',
+                      engine='python')
+df_temp = df_temp[['breadscrum', 'nome']]
+df_temp = df_temp.rename(columns={'breadscrum':'case: assunto_root'})
+
+df_selected2['case: assunto_root'] = \
+    df_selected2['case: assunto_root'].astype(str)
+
+df_selected2 = \
+    df_selected2.merge(df_temp, on='case: assunto_root', how='left')
+
+df_selected2 = \
+    df_selected2.drop(['case: assunto_root', 'total'], axis=1)
+
+# create json
+
+json_assuntos_grupos = {}
+
+for index, row in df_selected2.iterrows():
+    if row['TSNE'] not in json_assuntos_grupos:
+        json_assuntos_grupos[row['TSNE']] = {}
+    json_assuntos_grupos[row['TSNE']][row['nome']] = \
+        row['classe_percent']
+
 
 
 # create 'grupos' json
@@ -145,6 +346,8 @@ group1 = {
         'competences': 1116,
         'subject': 'Execução Fiscal',
         'method': 'TSNE + DBSCAN',
+        'frequent_subjects': json_assuntos_grupos[111],
+        'frequent_classes': json_classe_grupos[111]
         # some groups might not enter, calculate later
         # 'amount_of_varas': 51
     }
@@ -160,6 +363,8 @@ group2 = {
         'competences': 1116,
         'subject': 'Execução Fiscal',
         'method': 'TSNE + DBSCAN',
+        'frequent_subjects': json_assuntos_grupos[98],
+        'frequent_classes': json_classe_grupos[98]
         # 'amount_of_varas': 12
     }
 }
@@ -174,6 +379,8 @@ group3 = {
         'competences': 1116,
         'subject': 'Execução Fiscal',
         'method': 'TSNE + DBSCAN',
+        'frequent_subjects': json_assuntos_grupos[256],
+        'frequent_classes': json_classe_grupos[256]
         # 'amount_of_varas': 14
     }
 }
@@ -340,6 +547,7 @@ step_id_count = 20
 number_of_skips = {}
 ranking_varas = {}
 amount_of_varas = {}
+
 
 for group in varas_dict:
 
@@ -525,6 +733,43 @@ for group in varas_dict:
 
 
 print('total skips: ' + str(number_of_skips))
+
+# check times distribution
+
+for k in ranking_varas:
+    print('group is: ' + str(k))
+    print('number of varas: ' +str(amount_of_varas[k]))
+
+    times = np.array(list(ranking_varas[k].values()))
+    print('times: ' + str(times))
+
+    quantile1 = np.percentile(times, 25)
+    quantile3 = np.percentile(times, 75)
+    upper_bound = quantile3 + (0.5*quantile3)
+    lower_bound = quantile1 - (-1.5*quantile1)
+    std = np.std(times)
+    mean = np.mean(times)
+
+    print('quantile3: ' + str(quantile3))
+    print('upper_bound: ' + str(upper_bound))
+    print('quantile1: ' + str(quantile1))
+    print('lower_bound: ' + str(lower_bound))
+    print('upper std: ' + str(mean + 1.5 * std))
+    print('lower std: ' + str(mean - 1.5 * std))
+    print('std: ' +str(std))
+    print('mean: ' +str(mean))
+
+
+    outliers_up = [x for x in times if x > mean + 1.5 * std]
+    outliers_down = [x for x in times if x < mean - 1.5 * std]
+
+    print('outlier up times: ' + str(outliers_up))
+    print('outlier down times: ' + str(outliers_down))
+
+
+    # plt.hist(times, bins=int(amount_of_varas[k]))
+    # plt.show()
+
 
 # add ranking
 
