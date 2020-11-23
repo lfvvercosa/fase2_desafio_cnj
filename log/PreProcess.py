@@ -19,6 +19,20 @@ class PreProcess():
                                     engine=engine)
         else:
             self.df_log = df
+        
+        self.remove_null_timestamp()
+
+    
+    def remove_null_timestamp(self):
+        number_of_nulls = \
+            len(self.df_log[self.df_log['time:timestamp'].isna()].index)
+
+        if DEBUG and number_of_nulls > 0:
+            print('removing ' + str(number_of_nulls) + \
+                ' rows with null timestamp')
+
+        self.df_log = self.df_log[~self.df_log['time:timestamp'].isna()]
+
 
     def select_desired_columns(self, l=['case:concept:name',
                                         'concept:name',
