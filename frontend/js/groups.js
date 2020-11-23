@@ -84,8 +84,9 @@ function selectGroup(group) {
   $('#group_members').html('Membros ' + selectedGroup.total_varas)
   $('#group_time').html('Tempo ' + selectedGroup.total_varas)
 
-  getBestCourts(selectedGroup.identificador, (data)=>{
+  getCourtsFromGroup(selectedGroup.identificador, (data)=>{
     $("#rank_courts").html("")
+    $("#rank_courts_warning").html("")
     //best 
     $("#rank_courts").append('<tr class="table-title"><td colspan="7">Varas com os melhores tempos de conclução de processo</td></tr>');
     bestCourts = data.varas.slice(0,5)
@@ -95,12 +96,12 @@ function selectGroup(group) {
     //worst
     $("#rank_courts").append('<tr class="table-title"><td colspan="7">Varas com os piores tempos de conclução de processo</td></tr>')
     worstCourts = data.varas.slice(data.varas.length-5, data.varas.length)
-
-    warningCourts = data.varasEmAlerta
-
-    console.log(warningCourts)
-
     fillRankTable(worstCourts, "", true, "worst")
+    //warning
+    //$("#rank_courts_warning").
+    console.log(data.varasEmAlerta)
+    warningCourts = data.varasEmAlerta
+    fillRankTable(warningCourts, "", true, "warning")
     
     fillCourtFilter()
 
@@ -112,21 +113,28 @@ function selectGroup(group) {
 }
 
 function fillRankTable(courts, filter, isBottleNeck, tableName) {
+  var tableComponent = tableName == "warning" ? $('#rank_courts_warning') : $('#rank_courts')
   var colorClass = isBottleNeck ? 'uj-alerta' : 'uj-destaque'
   var buttonClass = isBottleNeck ? 'warning' : 'award'
   var icon = isBottleNeck ? 'bullhorn' : 'bullhorn'
   courts.forEach(court => {
     if(!filter || filter == "Todos" || (filter == court.tribunal)) {
-      var row = '<tr class='+colorClass+'><td id='+tableName+'_rank_'+court.vara_id+'>'+court.ranking+'</td><td>'+court.name+'</td><th>'+court.tribunal+
+      var row = '<tr class='+colorClass+'><td id='+tableName+'_rank_'+court.vara_id+'>'+court.ranking+'</td><td id='+tableName+'_name_'+court.vara_id+'>'+court.name+'</td><th>'+court.tribunal+
       '</th><td id='+tableName+'_days_'+court.vara_id+'>'+court.days_finish_process+' dias</td><td id='+tableName+'_movements_'+court.vara_id+'>'+court.movements+'</td><td id='+tableName+'_processes_'+court.vara_id+'>'
       +court.finished_processes+'</td><td id='+tableName+'_best_movements_'+court.vara_id+'>'+court.melhorEtapa+'</td><td id='+tableName+'_worst_movements_'+court.vara_id+'>'+court.piorEtapa+'</td>'
       +'<td><button class="modal-button modal-button-'+buttonClass+'" type=button data-toggle=tooltip'
       +' title="Enviar alerta para este tribunal"><span data-toggle=modal data-target=#alertasSugeridos>'
       +'<i class="fas fa-'+icon+'"></i></span></button></td></tr>'
       
-      $("#rank_courts").append(row);
+      tableComponent.append(row);
 
       $('#'+tableName+'_rank_'+court.vara_id).click(e=>{
+        vara_id = e.currentTarget.id
+        saveCache()
+        window.location.replace("file:///home/fernando/Development/web/fase2_desafio_cnj/frontend/vara.html");       
+      })
+
+      $('#'+tableName+'_name_'+court.vara_id).click(e=>{
         vara_id = e.currentTarget.id
         saveCache()
         window.location.replace("file:///home/fernando/Development/web/fase2_desafio_cnj/frontend/vara.html");       

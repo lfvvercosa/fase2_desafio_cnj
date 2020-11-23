@@ -68,7 +68,7 @@ function getGroups(callback) {
   });
 }
 
-function getBestCourts(groupId, callback) {
+function getCourtsFromGroup(groupId, callback) {
   var url = urlBase + 'grupos/'+groupId
   jQuery.get(url, (data)=>{
     callback(data)
