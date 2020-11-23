@@ -31,7 +31,6 @@
     <script src="./js/header.js"></script>
     <script src="./js/components.js"></script>
     <script src="./js/map.js"></script>
-    <script src="./js/groups.js"></script>
     <script src="./js/table.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
@@ -233,9 +232,18 @@
         <div class="chart-box chart-container">
             <div class="card">
                 <div class="secao-titulo">
-                    Tempo X Frequência
+                    Unidades Jurídicas - Melhor Desempenho
                 </div>
-                <div id="chart"></div>
+                <div id="chart_best" class="c3"></div>
+            </div>
+        </div>
+
+        <div class="chart-box chart-container">
+            <div class="card">
+                <div class="secao-titulo">
+                    Unidades Jurídicas - Pior Desempenho
+                </div>
+                <div id="chart_worst" class="c3"></div>
             </div>
         </div>
         <div class="mapa mapa-container">
@@ -315,7 +323,7 @@
             Aviso ao tribunal enviado com sucesso
         </div>
     </div> -->
-
+    <script src="./js/groups.js"></script>
 </body>
 
 </html>
