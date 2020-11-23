@@ -99,7 +99,6 @@ function selectGroup(group) {
     fillRankTable(worstCourts, "", true, "worst")
     //warning
     //$("#rank_courts_warning").
-    console.log(data.varasEmAlerta)
     warningCourts = data.varasEmAlerta
     fillRankTable(warningCourts, "", true, "warning")
     
@@ -205,7 +204,7 @@ function fillMovementsChart() {
       },
       tooltip: {
           format: {
-              title: function (d) { return bestCourts[d].nome }
+              title: function (d) { return bestCourts[d].name }
           }
       },
       axis: {
@@ -250,7 +249,7 @@ function fillMovementsChart() {
       },
       tooltip: {
           format: {
-              title: function (d) { return worstCourts[d].nome }
+              title: function (d) { return worstCourts[d].name }
           }
       },
       axis: {
