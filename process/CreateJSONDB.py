@@ -14,8 +14,8 @@ from process.MacroSteps import MacroSteps
 
 
 path_clusters = '/home/vercosa/Insync/doutorado/hackaton_cnj/'+\
-              'projeto_git/desafio_cnj/data/interim/'+\
-              'clusterizacao_varas.csv'
+                'fase2_git/repositorio_fase_2/fase2_desafio_cnj/'+\
+                'data/interim/clusterizacao.csv'
 
 # file_path = '/home/vercosa/Documentos/bases_desafio_cnj/'+\
 #             'versao5/version_5.csv'
@@ -27,15 +27,17 @@ file_path = '/home/vercosa/Documentos/bases_desafio_cnj/'+\
              'versao7/movimento_estadual_G1_filtered.csv'
 
 
-movement_path = '/home/vercosa/Insync/doutorado/hackaton_cnj/' + \
-                'projeto_git/desafio_cnj/data/interim/df_movimentos.csv'
+movement_path = '/home/vercosa/Insync/doutorado/hackaton_cnj/'+\
+                'fase2_git/repositorio_fase_2/fase2_desafio_cnj/'+\
+                'data/interim/df_movimentos.csv'
 
 lat_long_path = '/home/vercosa/Insync/doutorado/hackaton_cnj/' + \
                 'projeto_git/desafio_cnj/data/interim/' + \
                 'municipios_lat_long.csv'
 
-comments_path = '/home/vercosa/Insync/doutorado/hackaton_cnj/' + \
-                'projeto_git/desafio_cnj/data/interim/praticas.csv'
+comments_path = '/home/vercosa/Insync/doutorado/hackaton_cnj/'+\
+                'fase2_git/repositorio_fase_2/fase2_desafio_cnj/'+\
+                'data/interim/praticas.csv'
 
 datatypes = {'case:concept:name': str,
              'time:timestamp'   : str}
@@ -46,11 +48,13 @@ classes_map_path = '/home/vercosa/Documentos/bases_desafio_cnj/'+\
 assuntos_map_path = '/home/vercosa/Documentos/bases_desafio_cnj/'+\
                            '/versao7/assuntos_mapping.csv'
 
-assuntos_aux = '/home/vercosa/Insync/doutorado/hackaton_cnj/' + \
-             'projeto_git/desafio_cnj/data/interim/df_assuntos.csv'
+assuntos_aux = '/home/vercosa/Insync/doutorado/hackaton_cnj/'+\
+                'fase2_git/repositorio_fase_2/fase2_desafio_cnj/'+\
+                'data/interim/df_assuntos.csv'
 
-classes_aux = '/home/vercosa/Insync/doutorado/hackaton_cnj/' + \
-             'projeto_git/desafio_cnj/data/interim/df_classes.csv'
+classes_aux = '/home/vercosa/Insync/doutorado/hackaton_cnj/'+\
+                'fase2_git/repositorio_fase_2/fase2_desafio_cnj/'+\
+                'data/interim/df_classes.csv'
 
 # df_log = pd.read_csv(file_path,
 #                      dtype=datatypes,
@@ -114,14 +118,16 @@ df_clusters = pd.read_csv(path_clusters,
                         sep=';',
                         engine='python')
 
-df_clusters['Orgao Julgador'] = df_clusters['Orgao Julgador'].str.upper()
-df_clusters = df_clusters.rename(columns={'Orgao Julgador':'case: orgao_mun'})
+# df_clusters['Orgao Julgador'] = df_clusters['Orgao Julgador'].str.upper()
+# df_clusters = df_clusters.rename(columns={'Orgao Julgador':'case: orgao_mun'})
+
+df_clusters['case: orgao_mun'] = df_clusters['case: orgao_mun'].str.upper()
 df_clusters['case: orgao_mun'] = df_clusters['case: orgao_mun'].\
     str.replace(' - ','-')
 df_clusters['case: orgao_mun'] = df_clusters['case: orgao_mun'].\
     str.replace('-',' - ')
 
-alg = 'TSNE'
+alg = 'cluster'
 
 df_clusters_alg = df_clusters[['case: orgao_mun', alg]]
 
@@ -137,10 +143,13 @@ df_temp.to_csv(path_or_buf='/home/vercosa/Documentos/bases_desafio_cnj/'+\
 
 # Obtain most frequent classes of processes
 
-df_selected = df_clusters[['case: orgao_mun', 'TSNE']]
-df_selected = df_selected[(df_selected['TSNE'] == 111) |
-                          (df_selected['TSNE'] == 98) |
-                          (df_selected['TSNE'] == 256)]
+df_selected = df_clusters[['case: orgao_mun', alg]]
+df_selected = df_selected[(df_selected[alg] == 0) |
+                          (df_selected[alg] == 1) |
+                          (df_selected[alg] == 2) |
+                          (df_selected[alg] == 3) |
+                          (df_selected[alg] == 4) \
+                          ]
 
 df_class_map = pd.read_csv(classes_map_path,
                            dtype=datatypes,
@@ -156,7 +165,7 @@ df_selected['case: classe_root'] = \
 
 # filter 'varas' with less than 25 processes
 df_filter = df_selected.groupby('case: orgao_mun', as_index=False).count()
-df_filter = df_filter[df_filter['TSNE'] >= 25][['case: orgao_mun']]
+df_filter = df_filter[df_filter[alg] >= 25][['case: orgao_mun']]
 
 key = ['case: orgao_mun']
 i1 = df_selected.set_index(key).index
@@ -168,7 +177,7 @@ df_selected = df_selected[i1.isin(i2)]
 
 df_selected = df_selected.\
     groupby(['case: orgao_mun', 'case: classe_root'], as_index=False).\
-    agg({'case:concept:name':'count', 'TSNE':'first'})
+    agg({'case:concept:name':'count', alg:'first'})
 df_selected = df_selected.rename(columns={'case:concept:name': 'count'})
 
 df_aux = df_selected.groupby('case: orgao_mun', as_index=False).\
@@ -181,13 +190,13 @@ df_selected['classe_percent'] = \
 df_selected['classe_percent'] = df_selected['classe_percent'].round(2)
 
 df_aux = df_selected.drop_duplicates('case: orgao_mun').\
-    groupby('TSNE', as_index=False).count()
-df_aux = df_aux[['TSNE', 'total']]
+    groupby(alg, as_index=False).count()
+df_aux = df_aux[[alg, 'total']]
 
-df_selected = df_selected.groupby(['TSNE','case: classe_root'], \
+df_selected = df_selected.groupby([alg,'case: classe_root'], \
     as_index=False).agg({'classe_percent':'sum'})
 
-df_selected = df_selected.merge(df_aux, on='TSNE', how='left')
+df_selected = df_selected.merge(df_aux, on=alg, how='left')
 df_selected['classe_percent'] = df_selected['classe_percent'] \
     / df_selected['total']
 df_selected['classe_percent'] = df_selected['classe_percent'].round(2)
@@ -215,18 +224,21 @@ df_selected = \
 json_classe_grupos = {}
 
 for index, row in df_selected.iterrows():
-    if row['TSNE'] not in json_classe_grupos:
-        json_classe_grupos[row['TSNE']] = {}
-    json_classe_grupos[row['TSNE']][row['nome']] = \
+    if row[alg] not in json_classe_grupos:
+        json_classe_grupos[row[alg]] = {}
+    json_classe_grupos[row[alg]][row['nome']] = \
         row['classe_percent']
 
 
 # Obtain most frequent assuntos of processes
 
-df_selected2 = df_clusters[['case: orgao_mun', 'TSNE']]
-df_selected2 = df_selected2[(df_selected2['TSNE'] == 111) |
-                          (df_selected2['TSNE'] == 98) |
-                          (df_selected2['TSNE'] == 256)]
+df_selected2 = df_clusters[['case: orgao_mun', alg]]
+df_selected2 = df_selected2[(df_selected2[alg] == 0) |
+                            (df_selected2[alg] == 1) |
+                            (df_selected2[alg] == 2) |
+                            (df_selected2[alg] == 3) |
+                            (df_selected2[alg] == 4) \
+                          ]
 
 df_assunto_map = pd.read_csv(assuntos_map_path,
                            dtype=datatypes,
@@ -245,7 +257,7 @@ df_selected2['case: assunto_root'] = \
 
 # filter 'varas' with less than 25 processes
 df_filter = df_selected2.groupby('case: orgao_mun', as_index=False).count()
-df_filter = df_filter[df_filter['TSNE'] >= 25][['case: orgao_mun']]
+df_filter = df_filter[df_filter[alg] >= 25][['case: orgao_mun']]
 
 key = ['case: orgao_mun']
 i1 = df_selected2.set_index(key).index
@@ -259,7 +271,7 @@ df_selected2 = df_selected2[i1.isin(i2)]
 
 df_selected2 = df_selected2.\
     groupby(['case: orgao_mun', 'case: assunto_root'], as_index=False).\
-    agg({'case:concept:name':'count', 'TSNE':'first'})
+    agg({'case:concept:name':'count', alg:'first'})
 df_selected2 = df_selected2.rename(columns={'case:concept:name': 'count'})
 
 # get total processses
@@ -278,15 +290,15 @@ df_selected2['classe_percent'] = df_selected2['classe_percent'].round(2)
 # get total varas by group
 
 df_aux = df_selected2.drop_duplicates('case: orgao_mun').\
-    groupby('TSNE', as_index=False).count()
-df_aux = df_aux[['TSNE', 'total']]
+    groupby(alg, as_index=False).count()
+df_aux = df_aux[[alg, 'total']]
 
 # get mean of each assunto among varas
 
-df_selected2 = df_selected2.groupby(['TSNE','case: assunto_root'], \
+df_selected2 = df_selected2.groupby([alg,'case: assunto_root'], \
     as_index=False).agg({'classe_percent':'sum'})
 
-df_selected2 = df_selected2.merge(df_aux, on='TSNE', how='left')
+df_selected2 = df_selected2.merge(df_aux, on=alg, how='left')
 df_selected2['classe_percent'] = df_selected2['classe_percent'] \
     / df_selected2['total']
 df_selected2['classe_percent'] = df_selected2['classe_percent'].round(2)
@@ -313,9 +325,9 @@ df_selected2 = \
 json_assuntos_grupos = {}
 
 for index, row in df_selected2.iterrows():
-    if row['TSNE'] not in json_assuntos_grupos:
-        json_assuntos_grupos[row['TSNE']] = {}
-    json_assuntos_grupos[row['TSNE']][row['nome']] = \
+    if row[alg] not in json_assuntos_grupos:
+        json_assuntos_grupos[row[alg]] = {}
+    json_assuntos_grupos[row[alg]][row['nome']] = \
         row['classe_percent']
 
 
@@ -336,55 +348,110 @@ for index, row in df_selected2.iterrows():
 
 json_group = []
 
-group1 = {
-    'pk':111,
+group0 = {
+    'pk':0,
     'model':'performance.Group',
     'fields':{
-        'group_id': 111,
+        'group_id': 0,
         'justice': 'states',
         'grade': 'G1',
-        'competences': 1116,
-        'subject': 'Execução Fiscal',
-        'method': 'TSNE + DBSCAN',
-        'frequent_subjects': json_assuntos_grupos[111],
-        'frequent_classes': json_classe_grupos[111]
-        # some groups might not enter, calculate later
-        # 'amount_of_varas': 51
+        'competences': None,
+        'subject': None,
+        'method': 'DBSCAN',
+        'frequent_subjects': json_assuntos_grupos[0],
+        'frequent_classes': json_classe_grupos[0]
+    }
+}
+
+group1 = {
+    'pk':1,
+    'model':'performance.Group',
+    'fields':{
+        'group_id': 1,
+        'justice': 'states',
+        'grade': 'G1',
+        'competences': None,
+        'subject': None,
+        'method': 'DBSCAN',
+        'frequent_subjects': json_assuntos_grupos[1],
+        'frequent_classes': json_classe_grupos[1]
     }
 }
 
 group2 = {
-    'pk':98,
+    'pk':2,
     'model':'performance.Group',
     'fields':{
-        'group_id': 98,
+        'group_id': 2,
         'justice': 'states',
         'grade': 'G1',
-        'competences': 1116,
-        'subject': 'Execução Fiscal',
-        'method': 'TSNE + DBSCAN',
-        'frequent_subjects': json_assuntos_grupos[98],
-        'frequent_classes': json_classe_grupos[98]
-        # 'amount_of_varas': 12
+        'competences': None,
+        'subject': None,
+        'method': 'DBSCAN',
+        'frequent_subjects': json_assuntos_grupos[2],
+        'frequent_classes': json_classe_grupos[2]
     }
 }
 
 group3 = {
-    'pk':256,
+    'pk':3,
     'model':'performance.Group',
     'fields':{
-        'group_id': 256,
+        'group_id': 3,
         'justice': 'states',
         'grade': 'G1',
-        'competences': 1116,
-        'subject': 'Execução Fiscal',
-        'method': 'TSNE + DBSCAN',
-        'frequent_subjects': json_assuntos_grupos[256],
-        'frequent_classes': json_classe_grupos[256]
-        # 'amount_of_varas': 14
+        'competences': None,
+        'subject': None,
+        'method': 'DBSCAN',
+        'frequent_subjects': json_assuntos_grupos[3],
+        'frequent_classes': json_classe_grupos[3]
     }
 }
 
+group4 = {
+    'pk':4,
+    'model':'performance.Group',
+    'fields':{
+        'group_id': 4,
+        'justice': 'states',
+        'grade': 'G1',
+        'competences': None,
+        'subject': None,
+        'method': 'DBSCAN',
+        'frequent_subjects': json_assuntos_grupos[4],
+        'frequent_classes': json_classe_grupos[4]
+    }
+}
+
+# group5 = {
+#     'pk':5,
+#     'model':'performance.Group',
+#     'fields':{
+#         'group_id': 5,
+#         'justice': 'states',
+#         'grade': 'G1',
+#         'competences': None,
+#         'subject': None,
+#         'method': 'DBSCAN',
+#         'frequent_subjects': json_assuntos_grupos[5],
+#         'frequent_classes': json_classe_grupos[5]
+#     }
+# }
+
+# group6 = {
+#     'pk':6,
+#     'model':'performance.Group',
+#     'fields':{
+#         'group_id': 6,
+#         'justice': 'states',
+#         'grade': 'G1',
+#         'competences': None,
+#         'subject': None,
+#         'method': 'DBSCAN',
+#         'frequent_subjects': json_assuntos_grupos[6],
+#         'frequent_classes': json_classe_grupos[6]
+#     }
+# }
 
 # create cadastro_etapas objects
     # step_id
@@ -462,23 +529,28 @@ for c in comments_list:
 
 
 # selected groups
-    # 256
-    # 98
-    # 111
-
+    # 0
+    # 1
+    # 2
+    # 3
+    # 4
 
 varas_dict = {}
 
-varas_dict[98] = df_proc[(df_proc['TSNE'] == 98)]\
+varas_dict[0] = df_proc[(df_proc[alg] == 0)]\
                     ['case: orgao_mun'].tolist()
                     
-varas_dict[111] = df_proc[(df_proc['TSNE'] == 111)]\
+varas_dict[1] = df_proc[(df_proc[alg] == 1)]\
                     ['case: orgao_mun'].tolist()
 
-varas_dict[256] = df_proc[(df_proc['TSNE'] == 256)]\
+varas_dict[2] = df_proc[(df_proc[alg] == 2)]\
                     ['case: orgao_mun'].tolist()
 
+varas_dict[3] = df_proc[(df_proc[alg] == 3)]\
+                    ['case: orgao_mun'].tolist()
 
+varas_dict[4] = df_proc[(df_proc[alg] == 4)]\
+                    ['case: orgao_mun'].tolist()                    
 # pp = PreProcess(file_location=file_path)
 # pp.select_desired_columns()
 # pp.filter_outlier_timestamp()
@@ -767,8 +839,8 @@ for k in ranking_varas:
     print('outlier down times: ' + str(outliers_down))
 
 
-    # plt.hist(times, bins=int(amount_of_varas[k]))
-    # plt.show()
+    plt.hist(times, bins=int(amount_of_varas[k]))
+    plt.show()
 
 
 # add ranking
@@ -785,13 +857,22 @@ for vara in json_vara:
         list(ranking_varas[vara['fields']['group_id']]).\
             index(vara['pk']) + 1
 
+group0['fields']['amount_of_varas'] = amount_of_varas[group0['pk']]
 group1['fields']['amount_of_varas'] = amount_of_varas[group1['pk']]
 group2['fields']['amount_of_varas'] = amount_of_varas[group2['pk']]
 group3['fields']['amount_of_varas'] = amount_of_varas[group3['pk']]
+group4['fields']['amount_of_varas'] = amount_of_varas[group4['pk']]
+# group5['fields']['amount_of_varas'] = amount_of_varas[group5['pk']]
+# group6['fields']['amount_of_varas'] = amount_of_varas[group6['pk']]
 
+json_group.append(group0)
 json_group.append(group1)
 json_group.append(group2)
 json_group.append(group3)
+json_group.append(group4)
+# json_group.append(group5)
+# json_group.append(group6)
+
 
 with open('/home/vercosa/Insync/doutorado/hackaton_cnj/backend_git/'+\
           'backend-desafio-cnj/Fixtures/base5_groups.json', 'w') as f:
