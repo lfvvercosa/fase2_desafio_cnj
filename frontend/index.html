@@ -108,7 +108,7 @@
         </section>
         <ul class="grupo-descricao">
             <li class="secao-titulo"><span id="group_name"></span><i class="alerta-uj  fas fa-circle"></i></li>
-            <li>Unidades em alerta<strong id="group_members"></strong></li>
+            <li>Membros<strong id="group_members"></strong></li>
             <li>Tempo médio de processo<strong id="group_time"></strong></li>
         </ul>
 
@@ -117,7 +117,7 @@
             <div class="card">
                 <div class="table-header">
                     <div class="secao-titulo">
-                        Unidades em alerta
+                        Unidades Judiciárias em alerta
                     </div>
                 </div>
                 <section class="chart-box chart-container collapse collapse-grupos">
@@ -133,18 +133,20 @@
                         <thead>
                             <tr>
                                 <th rowspan="2">#</th>
-                                <th style="width: 45%" rowspan="2">Unidade jurídica</th>
+                                <th style="width: 45%" rowspan="2">Unidade Judiciária</th>
                                 <th rowspan="2">Tribunal</th>
                                 <th style="width: 90px" rowspan="2">Tempo</th>
-                                <th colspan="2">Quantidade</th>
+                                <!-- <th colspan="2">Quantidade</th> -->
+                                <th rowspan="2">Movimentação média</th>
+                                <th rowspan="2">Processos</th>
                                 <th colspan="2">Etapas</th>
                                 <th style="width: 70px" rowspan="2"><span data-toggle="tooltip"
-                                        title="Enviar alerta para a Unidade Jurídica">Alerta</span></th>
+                                        title="Enviar alerta para a Unidade Judiciária">Alerta</span></th>
 
                             </tr>
                             <tr>
-                                <th>Movimentos</th>
-                                <th>Processos</th>
+                                <!-- <th>Movimentos</th> -->
+                                <!-- <th>Processos</th> -->
                                 <th>Melhor</th>
                                 <th>Pior</th>
                             </tr>
@@ -155,55 +157,61 @@
                 </div>
             </div>
         </section>
-        <div class="tabela tabela-container">
-            <div class="card">
-                <div class="table-header">
-                    <div class="secao-titulo">
-                        Melhores e Piores Unidades juridicas
+        <section>
+            <div class="tabela tabela-container">
+                <div class="card">
+                    <div class="table-header">
+                        <div class="secao-titulo">
+                            Melhores e Piores Unidades Judiciárias
+                        </div>
+                        <div>
+                            <select id="cboTribunal" onchange="filterCourt()" class="selectTribunal" data-toggle="tooltip"
+                                title="Selecione o tribunal">
+                                <option selected value="0">Todos os tribunais</option>
+                            </select>
+                            <button onclick="download_table_as_csv('rank_courts_table');" class="csv">
+                                <i class="fas fa-file-export"></i> CSV
+                            </button>
+                        </div>
                     </div>
-                    <div>
-                        <select id="cboTribunal" onchange="filterCourt()" class="selectTribunal" data-toggle="tooltip"
-                            title="Selecione o tribunal">
-                            <option selected value="0">Todos os tribunais</option>
-                        </select>
-                        <button onclick="download_table_as_csv('rank_courts_table');" class="csv">
-                            <i class="fas fa-file-export"></i> CSV
-                        </button>
-                    </div>
-                </div>
-                <div class="table-responsive">
-                    <table id="rank_courts_table">
-                        <thead>
-                            <tr>
-                                <th rowspan="2">#</th>
-                                <th style="width: 45%" rowspan="2">Unidade jurídica</th>
-                                <th rowspan="2">Tribunal</th>
-                                <th style="width: 90px" rowspan="2">Tempo</th>
-                                <th colspan="2">Quantidade</th>
-                                <th colspan="2">Etapas</th>
-                                <th style="width: 70px" rowspan="2"><span data-toggle="tooltip"
-                                        title="Enviar mensagem para a Unidade Jurídica">Aviso</span></th>
+                    <div class="table-responsive">
+                        <table id="rank_courts_table">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">#</th>
+                                    <th style="width: 45%" rowspan="2">Unidade Judiciária</th>
+                                    <th rowspan="2">Tribunal</th>
+                                    <th style="width: 90px" rowspan="2">Tempo</th>
+                                    <!-- <th colspan="2">Quantidade</th> -->
+                                    <th rowspan="2">Movimentação média</th>
+                                    <th rowspan="2">Processos</th>
+                                    <th colspan="2">Etapas</th>
+                                    <th style="width: 70px" rowspan="2"><span data-toggle="tooltip"
+                                            title="Enviar mensagem para a Unidade Judiciária">Aviso</span></th>
 
-                            </tr>
-                            <tr>
-                                <th>Movimentos</th>
-                                <th>Processos</th>
-                                <th>Melhor</th>
-                                <th>Pior</th>
-                            </tr>
-                        </thead>
-                        <tbody id="rank_courts">
-                        </tbody>
-                    </table>
+                                </tr>
+                                <tr>
+                                    <!-- <th>Movimentos</th> -->
+                                    <!-- <th>Processos</th> -->
+                                    <th>Melhor</th>
+                                    <th>Pior</th>
+                                </tr>
+                            </thead>
+                            <tbody id="rank_courts">
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
+        </section>
+        <div class="secao-titulo">
+            Tempo percentual das macroetapas
         </div>
-
         <div class="row">
             <div class="chart-box">
                 <div class="card">
-                    <div class="secao-titulo">
-                        Unidades Jurídicas com melhor desempenho
+                    <div class="secao-titulo" style="font-size:1rem;">
+                        Unidades de melhor desempenho
                     </div>
                     <div id="chart_best" class="c3"></div>
                 </div>
@@ -211,8 +219,8 @@
 
             <div class="chart-box">
                 <div class="card">
-                    <div class="secao-titulo">
-                        Unidades Jurídicas com pior desempenho
+                    <div class="secao-titulo" style="font-size:1rem;">
+                        Unidades de pior desempenho
                     </div>
                     <div id="chart_worst" class="c3"></div>
                 </div>
@@ -220,9 +228,9 @@
         </div>
         <div class="mapa mapa-container">
             <div class="secao-titulo">
-                Unidades jurídicas do grupo
+                Unidades Judiciárias do grupo
             </div>
-            <div id="map"></div>
+            <div id="map" style="height: 500px;"></div>
         </div>
 
     </main>
