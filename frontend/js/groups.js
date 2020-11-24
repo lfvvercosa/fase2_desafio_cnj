@@ -38,7 +38,7 @@ var warning_outros = undefined
 
 getGroups((data)=>{
   groups = data
-  console.log(data)
+
   fillCboGroupFilter()
   
   c3.generate({
@@ -81,9 +81,9 @@ function selectGroup(group) {
   selectedGroup = group
   saveCache()
   readCache()
-  $('#group_name').html('Grupo ' + selectedGroup.identificador)
-  $('#group_members').html(+ selectedGroup.total_varas)
-  $('#group_time').html(+ selectedGroup.total_varas)
+  $('#group_name').html(selectedGroup.group_name)
+  $('#group_members').html(selectedGroup.total_varas)
+  $('#group_time').html(Math.round(selectedGroup.tempo_medio) + " dias")
 
   fillCboClassFilter()
 
@@ -91,13 +91,13 @@ function selectGroup(group) {
     $("#rank_courts").html("")
     $("#rank_courts_warning").html("")
     //best 
-    $("#rank_courts").append('<tr class="table-title"><td colspan="9">Varas com os melhores tempos de conclução de processo</td></tr>');
+    $("#rank_courts").append('<tr class="table-title"><td colspan="9">Unidades Judiciárias com os melhores tempos de conclusão de processo</td></tr>');
     bestCourts = data.varas.slice(0,5)
     fillRankTable(bestCourts, "", false, "best")
     //separator
     $("#rank_courts").append('<tr class="ellipses"><td colspan="9"><i class="fas fa-ellipsis-v"></i></td></tr>');
     //worst
-    $("#rank_courts").append('<tr class="table-title"><td colspan="9">Varas com os piores tempos de conclução de processo</td></tr>')
+    $("#rank_courts").append('<tr class="table-title"><td colspan="9">Unidades Judiciárias com os piores tempos de conclusão de processo</td></tr>')
     worstCourts = data.varas.slice(data.varas.length-5, data.varas.length)
     fillRankTable(worstCourts, "", true, "worst")
     //warning
@@ -127,7 +127,7 @@ function fillRankTable(courts, filter, isBottleNeck, tableName) {
       +'<td><button class="modal-button modal-button-'+buttonClass+'" type=button data-toggle=tooltip'
       +' title="Enviar alerta para este tribunal"><span data-toggle=modal data-target=#alertasSugeridos>'
       +'<i class="fas AAAAAAAAAAAAA fa-'+icon+'"></i></span></button></td></tr>'
-      
+            
       tableComponent.append(row);
       var urlBase = window.location.href
       $('#'+tableName+'_rank_'+court.vara_id).click(e=>{
@@ -192,6 +192,7 @@ function fillMovementsChart() {
   best_audiencia = ["Audiencia"]
   best_citacao = ["Citação"]
   best_outros = ["Outros"]
+
 
   bestCourts.forEach(vara => {
       fillBestMovementTimes(vara)
@@ -286,6 +287,8 @@ function getValidValue(value) {
 }
 
 function fillBestMovementTimes(json) {
+
+
   if(json.time_distribuicao && json.time_distribuicao != null)
     best_distribuicao.push(getValidValue(json.time_distribuicao))
   else
@@ -314,16 +317,16 @@ function fillBestMovementTimes(json) {
     best_baixa_ou_arquivamento.push(getValidValue(json.time_baixa_ou_arquivamento))
   else
     best_baixa_ou_arquivamento.push(0)
-  if(json.time_audiencia && json.audiencia != null)
-    best_audiencia.push(getValidValue(json.audiencia))
+  if(json.time_audiencia && json.time_audiencia != null)
+    best_audiencia.push(getValidValue(json.time_audiencia))
   else
     best_audiencia.push(0)
-  if(json.time_citacao && json.citacao != null)
-    best_citacao.push(getValidValue(json.citacao))
+  if(json.time_citacao && json.time_citacao != null)
+    best_citacao.push(getValidValue(json.time_citacao))
   else
     best_citacao.push(0)
-  if(json.time_outros && json.outros!= null)
-    best_outros.push(getValidValue(json.outros))
+  if(json.time_outros && json.time_outros != null)
+    best_outros.push(getValidValue(json.time_outros))
   else
     best_outros.push(0)
 }
@@ -357,16 +360,16 @@ function fillWorstMovementTimes(json) {
     worst_baixa_ou_arquivamento.push(getValidValue(json.time_baixa_ou_arquivamento))
   else
     worst_baixa_ou_arquivamento.push(0)
-  if(json.time_audiencia && json.audiencia != null)
-    worst_audiencia.push(getValidValue(json.audiencia))
+  if(json.time_audiencia && json.time_audiencia != null)
+    worst_audiencia.push(getValidValue(json.time_audiencia))
   else
     worst_audiencia.push(0)
-  if(json.time_citacao && json.citacao != null)
-    worst_citacao.push(getValidValue(json.citacao))
+  if(json.time_citacao && json.time_citacao != null)
+    worst_citacao.push(getValidValue(json.time_citacao))
   else
     worst_citacao.push(0)
-  if(json.time_outros && json.outros!= null)
-    worst_outros.push(getValidValue(json.outros))
+  if(json.time_outros && json.time_outros!= null)
+    worst_outros.push(getValidValue(json.time_outros))
   else
     worst_outros.push(0)
 }
@@ -374,8 +377,10 @@ function fillWorstMovementTimes(json) {
 function fillMap() {
   var locations = []
   selectedGroup.varas.forEach((vara)=>{
-    locations.push([vara.nome, vara.latitude, vara.longitude])  
+    locations.push([vara.name, vara.latitude, vara.longitude])  
   })
+  console.log("### location is ")
+  console.log(locations)
   populateMap(map, infowindow, locations)
 }
 
@@ -390,7 +395,7 @@ function fillCboClassFilter() {
 function fillCboGroupFilter() {
   $('#cboGroup').html('<option value=""></option>')
   groups.forEach((group) => {
-    $('#cboGroup').append('<option value="'+group.identificador+'">'+group.identificador+'</option>')
+    $('#cboGroup').append('<option value="'+group.identificador+'">'+group.group_name+'</option>')
   })
 }
 
@@ -417,11 +422,11 @@ function filterCourt() {
   $("#rank_courts").html("")
 
   //best 
-  $("#rank_courts").append('<tr class="table-title"><td colspan="9">Varas com os melhores tempos de conclução de processo</td></tr>');
+  $("#rank_courts").append('<tr class="table-title"><td colspan="9">Unidades Judiciárias com os melhores tempos de conclução de processo</td></tr>');
   fillRankTable(bestCourts, court, false, "best")
   //separator
   $("#rank_courts").append('<tr class="ellipses"><td colspan="9"><i class="fas fa-ellipsis-v"></i></td></tr>');
   //worst
-  $("#rank_courts").append('<tr class="table-title"><td colspan="9">Varas com os piores tempos de conclução de processo</td></tr>')
+  $("#rank_courts").append('<tr class="table-title"><td colspan="9">Unidades Judiciárias com os piores tempos de conclução de processo</td></tr>')
   fillRankTable(worstCourts, court, true, "worst")
 }
