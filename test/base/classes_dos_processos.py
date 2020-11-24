@@ -45,3 +45,5 @@ df_map.to_csv(path_or_buf='/home/vercosa/Documentos/bases_desafio_cnj/'+\
                            '/versao7/classes_mapping.csv', 
               sep=';', 
               index=False)
+
+
