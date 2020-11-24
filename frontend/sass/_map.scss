@@ -1,5 +1,6 @@
 #map {
   height: 375px;
+  @extend .rounded;
 }
 
 .mapa {

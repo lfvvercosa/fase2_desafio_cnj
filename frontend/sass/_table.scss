@@ -8,6 +8,24 @@ table {
     @extend .thead-dark;
     th {
       padding: 0.75rem;
+      vertical-align: middle !important;
+    }
+  }
+  tbody {
+    tr {
+      td {
+        &:nth-of-type(2) {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          max-width: 1px;
+          text-align: left;
+        }
+        &:hover,
+        &:focus {
+          cursor: pointer;
+        }
+      }
     }
   }
 }
@@ -76,6 +94,13 @@ table#rank_courts_table {
     tr {
       &.uj-destaque {
         @extend .table-info;
+        &:nth-child(even) {
+          &,
+          & td,
+          & th {
+            background: rgba(189, 228, 235, 0.3) !important;
+          }
+        }
         button {
           @extend .text-info;
         }
@@ -85,23 +110,29 @@ table#rank_courts_table {
         button {
           @extend .text-danger;
         }
+        &:nth-child(even) {
+          &,
+          & td,
+          & th {
+            background: rgba(245, 199, 203, 0.3) !important;
+          }
+        }
       }
-      td {
-      }
+
       &.table-title,
       &.ellipses {
         td {
           @extend .text-uppercase;
           font-weight: bold;
-          border-width: 0;
+          border-width: 0 1px;
           background-color: #fff !important;
+          @extend .text-center;
+          &.ellipses {
+            td {
+              padding: 1rem 0;
+            }
+          }
         }
-      }
-      &.table-title {
-        @extend .text-left;
-      }
-      &.ellipses {
-        @extend .p-4;
       }
     }
   }

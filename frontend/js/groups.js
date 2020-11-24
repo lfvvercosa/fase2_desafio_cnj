@@ -82,8 +82,8 @@ function selectGroup(group) {
   saveCache()
   readCache()
   $('#group_name').html('Grupo ' + selectedGroup.identificador)
-  $('#group_members').html('Membros ' + selectedGroup.total_varas)
-  $('#group_time').html('Tempo ' + selectedGroup.total_varas)
+  $('#group_members').html(+ selectedGroup.total_varas)
+  $('#group_time').html(+ selectedGroup.total_varas)
 
   fillCboClassFilter()
 
@@ -91,13 +91,13 @@ function selectGroup(group) {
     $("#rank_courts").html("")
     $("#rank_courts_warning").html("")
     //best 
-    $("#rank_courts").append('<tr class="table-title"><td colspan="7">Varas com os melhores tempos de conclução de processo</td></tr>');
+    $("#rank_courts").append('<tr class="table-title"><td colspan="9">Varas com os melhores tempos de conclução de processo</td></tr>');
     bestCourts = data.varas.slice(0,5)
     fillRankTable(bestCourts, "", false, "best")
     //separator
-    $("#rank_courts").append('<tr class="ellipses"><td colspan="7"><i class="fas fa-ellipsis-v"></i></td></tr>');
+    $("#rank_courts").append('<tr class="ellipses"><td colspan="9"><i class="fas fa-ellipsis-v"></i></td></tr>');
     //worst
-    $("#rank_courts").append('<tr class="table-title"><td colspan="7">Varas com os piores tempos de conclução de processo</td></tr>')
+    $("#rank_courts").append('<tr class="table-title"><td colspan="9">Varas com os piores tempos de conclução de processo</td></tr>')
     worstCourts = data.varas.slice(data.varas.length-5, data.varas.length)
     fillRankTable(worstCourts, "", true, "worst")
     //warning
@@ -118,64 +118,64 @@ function fillRankTable(courts, filter, isBottleNeck, tableName) {
   var tableComponent = tableName == "warning" ? $('#rank_courts_warning') : $('#rank_courts')
   var colorClass = isBottleNeck ? 'uj-alerta' : 'uj-destaque'
   var buttonClass = isBottleNeck ? 'warning' : 'award'
-  var icon = isBottleNeck ? 'bullhorn' : 'bullhorn'
+  var icon = isBottleNeck ? 'bullhorn' : 'award'
   courts.forEach(court => {
     if(!filter || filter == "Todos" || (filter == court.tribunal)) {
-      var row = '<tr class='+colorClass+'><td id='+tableName+'_rank_'+court.vara_id+'>'+court.ranking+'</td><td id='+tableName+'_name_'+court.vara_id+'>'+court.name+'</td><th>'+court.tribunal+
+      var row = '<tr class='+colorClass+'><td id='+tableName+'_rank_'+court.vara_id+'>'+court.ranking+'</td><td class="uj-nome" id='+tableName+'_name_'+court.vara_id+' title="'+court.name+'">'+court.name+'"</td><th>'+court.tribunal+
       '</th><td id='+tableName+'_days_'+court.vara_id+'>'+court.days_finish_process+' dias</td><td id='+tableName+'_movements_'+court.vara_id+'>'+court.movements+'</td><td id='+tableName+'_processes_'+court.vara_id+'>'
       +court.finished_processes+'</td><td id='+tableName+'_best_movements_'+court.vara_id+'>'+court.melhorEtapa+'</td><td id='+tableName+'_worst_movements_'+court.vara_id+'>'+court.piorEtapa+'</td>'
       +'<td><button class="modal-button modal-button-'+buttonClass+'" type=button data-toggle=tooltip'
       +' title="Enviar alerta para este tribunal"><span data-toggle=modal data-target=#alertasSugeridos>'
-      +'<i class="fas fa-'+icon+'"></i></span></button></td></tr>'
+      +'<i class="fas AAAAAAAAAAAAA fa-'+icon+'"></i></span></button></td></tr>'
       
       tableComponent.append(row);
       var urlBase = window.location.href
       $('#'+tableName+'_rank_'+court.vara_id).click(e=>{
         vara_id = e.currentTarget.id
         saveCache()
-        window.location.replace(urlBase+"vara.html");       
+        window.location.replace(urlBase+"/vara.html");       
       })
 
       $('#'+tableName+'_name_'+court.vara_id).click(e=>{
         var index = e.currentTarget.id.lastIndexOf('_') + 1
         vara_id = e.currentTarget.id.substring(index)
         saveCache()
-        window.location.replace(urlBase+"vara.html");       
+        window.location.replace(urlBase+"/vara.html");       
       })
 
       $('#'+tableName+'_days_'+court.vara_id).click(e=>{
         var index = e.currentTarget.id.lastIndexOf('_') + 1
         vara_id = e.currentTarget.id.substring(index)
         saveCache()
-        window.location.replace(urlBase+"vara.html");       
+        window.location.replace(urlBase+"/vara.html");       
       })
       
       $('#'+tableName+'_movements_'+court.vara_id).click(e=>{
         var index = e.currentTarget.id.lastIndexOf('_') + 1
         vara_id = e.currentTarget.id.substring(index)
         saveCache()
-        window.location.replace(urlBase+"vara.html");       
+        window.location.replace(urlBase+"/vara.html");       
       })
 
       $('#'+tableName+'_processes_'+court.vara_id).click(e=>{
         var index = e.currentTarget.id.lastIndexOf('_') + 1
         vara_id = e.currentTarget.id.substring(index)
         saveCache()
-        window.location.replace(urlBase+"vara.html");       
+        window.location.replace(urlBase+"/vara.html");       
       })
 
       $('#'+tableName+'_best_movements_'+court.vara_id).click(e=>{
         var index = e.currentTarget.id.lastIndexOf('_') + 1
         vara_id = e.currentTarget.id.substring(index)
         saveCache()
-        window.location.replace(urlBase+"vara.html");       
+        window.location.replace(urlBase+"/vara.html");       
       })
 
       $('#'+tableName+'_worst_movements_'+court.vara_id).click(e=>{
         var index = e.currentTarget.id.lastIndexOf('_') + 1
         vara_id = e.currentTarget.id.substring(index)
         saveCache()
-        window.location.replace(urlBase+"vara.html");       
+        window.location.replace(urlBase+"/vara.html");       
       })
     }
   });
@@ -396,7 +396,7 @@ function fillCboGroupFilter() {
 
 function fillCourtFilter() {
   $('#cboTribunal').html('')
-  $('#cboTribunal').append('<option value="Todos">Todos</option>')
+  $('#cboTribunal').append('<option value="Todos">Exibir todos os tribunais</option>')
   var courts = []
   bestCourts.forEach(court => {
     if(court.tribunal && !courts.includes(court.tribunal))
@@ -417,11 +417,11 @@ function filterCourt() {
   $("#rank_courts").html("")
 
   //best 
-  $("#rank_courts").append('<tr class="table-title"><td colspan="7">Varas com os melhores tempos de conclução de processo</td></tr>');
+  $("#rank_courts").append('<tr class="table-title"><td colspan="9">Varas com os melhores tempos de conclução de processo</td></tr>');
   fillRankTable(bestCourts, court, false, "best")
   //separator
-  $("#rank_courts").append('<tr class="ellipses"><td colspan="7"><i class="fas fa-ellipsis-v"></i></td></tr>');
+  $("#rank_courts").append('<tr class="ellipses"><td colspan="9"><i class="fas fa-ellipsis-v"></i></td></tr>');
   //worst
-  $("#rank_courts").append('<tr class="table-title"><td colspan="7">Varas com os piores tempos de conclução de processo</td></tr>')
+  $("#rank_courts").append('<tr class="table-title"><td colspan="9">Varas com os piores tempos de conclução de processo</td></tr>')
   fillRankTable(worstCourts, court, true, "worst")
 }

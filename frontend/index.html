@@ -53,17 +53,16 @@
         </nav>
         <!-- NAV -->
         <!-- FILTRO -->
-        <form class="filtro-form">
-            <div class="filtro-selectors">
-                <!-- INFO -->
-                <div class="filtro-info" data-toggle="popover" title="Como pesquisar"
+        <form class="filtro-form filtro-selectors">
+            <!-- INFO -->
+            <div class="filtro-info" data-toggle="popover" title="Como pesquisar"
                 data-content="Para iniciar sua pesquisa, basta clicar nos filtros disponíveis e digitar os termos para o sistema exibir mais rapidamente as opções existentes">
                 <i class="fas fa-info"></i>
-                </div>
-                <!-- SELECTS -->
-                <div class="filtros">
+            </div>
+            <!-- SELECTS -->
+            <div class="filtros">
                 <label class="filtro-label" for="filter-cluster">Informações desejadas:</label>
-                <div class="filtro-select">
+                <div class="filtro-select filtro-select-assuntos">
                     <select class="select select-assuntos" name="cluster[]" readonly disabled id="filter-cluster">
                         <option select value="Justica Estadual">Justiça Estadual</option>
                         <option value="Justica Federal">Justiça Federal</option>
@@ -72,7 +71,7 @@
                         <option value="Trubunais Justica superiores">Justiça Trubunais superiores</option>
                     </select>
                 </div>
-                <div class="filtro-select">
+                <div class="filtro-select filtro-select-grau">
                     <select class="select select-grau" name="grau[]" readonly disabled>
                         <option select value="grau-1">1º Grau</option>
                         <option value="grau-2">2º Grau</option>
@@ -83,36 +82,34 @@
                     <select id="cboClass" class="select select-classe" name="classes[]" multiple="multiple">
                     </select>
                 </div>
-                <div class="filtro-select">
+                <div class="filtro-select filtro-select-grupo">
                     <select id="cboGroup" class="select select-grupo" onchange="selectGroupById(this)">
                     </select>
-                </div>
                 </div>
                 <!-- BOTAO -->
                 <div class="filtro-button d-none">
                     <button><i class="fas fa-search"></i> Filtrar</button>
                 </div>
+                <div class="filtro-button todos-grupos">
+                    <button type="button" data-toggle="collapse" title="Visualizar todos os grupos"
+                        data-target="#todos-grupos" aria-expanded="false" aria-controls="todos-grupos">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Todos os grupos
+                    </button>
+
+
+                </div>
             </div>
-
-            <div class="filtro-button todos-grupos">
-              <button type="button" data-toggle="collapse" title="Visualizar todos os grupos"
-                  data-target="#todos-grupos" aria-expanded="false" aria-controls="todos-grupos">
-                  <i class="fas fa-exclamation-triangle"></i>
-                  Visualizar todos os grupos
-              </button>
-              <section class="chart-box chart-container collapse collapse-grupos" id="todos-grupos">
-                  <div id="chart_alerts" class="c3" style="max-height: 320px; position: relative;">
-
-                  </div>
-            </section>
-              
-          </div>
         </form>
+        <section class="chart-box chart-container collapse collapse-grupos" id="todos-grupos">
+            <div id="chart_alerts" class="c3" style="max-height: 320px; position: relative;">
 
+            </div>
+        </section>
         <ul class="grupo-descricao">
-          <li class="secao-titulo"><span id="group_name"></span><i class="alerta-uj  fas fa-circle"></i></li>
-          <li>Membros<strong id="group_members"></strong></li>
-          <li>Tempo<strong id="group_time"></strong></li>
+            <li class="secao-titulo"><span id="group_name"></span><i class="alerta-uj  fas fa-circle"></i></li>
+            <li>Unidades em alerta<strong id="group_members"></strong></li>
+            <li>Tempo médio de processo<strong id="group_time"></strong></li>
         </ul>
 
         <!-- FILTRO -->
@@ -120,7 +117,7 @@
             <div class="card">
                 <div class="table-header">
                     <div class="secao-titulo">
-                        Alertas sugeridos
+                        Unidades em alerta
                     </div>
                 </div>
                 <section class="chart-box chart-container collapse collapse-grupos">
@@ -128,22 +125,28 @@
                         <div class="secao-titulo">
                             Alertas por grupos
                         </div>
-                        
+
                     </div>
                 </section>
                 <div class="table-responsive">
                     <table>
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Unidade jurídica</th>
-                                <th>Tribunal</th>
-                                <th>Tempo</th>
-                                <th>Movimento</th>
-                                <th>Processo</th>
+                                <th rowspan="2">#</th>
+                                <th style="width: 45%" rowspan="2">Unidade jurídica</th>
+                                <th rowspan="2">Tribunal</th>
+                                <th style="width: 90px" rowspan="2">Tempo</th>
+                                <th colspan="2">Quantidade</th>
+                                <th colspan="2">Etapas</th>
+                                <th style="width: 70px" rowspan="2"><span data-toggle="tooltip"
+                                        title="Enviar alerta para a Unidade Jurídica">Alerta</span></th>
+
+                            </tr>
+                            <tr>
+                                <th>Movimentos</th>
+                                <th>Processos</th>
                                 <th>Melhor</th>
                                 <th>Pior</th>
-                                <th>Avisos</th>
                             </tr>
                         </thead>
                         <tbody id="rank_courts_warning">
@@ -172,15 +175,21 @@
                     <table id="rank_courts_table">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Unidade jurídica</th>
-                                <th>Tribunal</th>
-                                <th>Tempo</th>
-                                <th>Movimento</th>
-                                <th>Processo</th>
+                                <th rowspan="2">#</th>
+                                <th style="width: 45%" rowspan="2">Unidade jurídica</th>
+                                <th rowspan="2">Tribunal</th>
+                                <th style="width: 90px" rowspan="2">Tempo</th>
+                                <th colspan="2">Quantidade</th>
+                                <th colspan="2">Etapas</th>
+                                <th style="width: 70px" rowspan="2"><span data-toggle="tooltip"
+                                        title="Enviar mensagem para a Unidade Jurídica">Aviso</span></th>
+
+                            </tr>
+                            <tr>
+                                <th>Movimentos</th>
+                                <th>Processos</th>
                                 <th>Melhor</th>
                                 <th>Pior</th>
-                                <th>Avisos</th>
                             </tr>
                         </thead>
                         <tbody id="rank_courts">
@@ -190,21 +199,23 @@
             </div>
         </div>
 
-        <div class="chart-box chart-container">
-            <div class="card">
-                <div class="secao-titulo">
-                    Unidades Jurídicas com melhor desempenho
+        <div class="row">
+            <div class="chart-box">
+                <div class="card">
+                    <div class="secao-titulo">
+                        Unidades Jurídicas com melhor desempenho
+                    </div>
+                    <div id="chart_best" class="c3"></div>
                 </div>
-                <div id="chart_best" class="c3"></div>
             </div>
-        </div>
 
-        <div class="chart-box chart-container">
-            <div class="card">
-                <div class="secao-titulo">
-                    Unidades Jurídicas com pior desempenho
+            <div class="chart-box">
+                <div class="card">
+                    <div class="secao-titulo">
+                        Unidades Jurídicas com pior desempenho
+                    </div>
+                    <div id="chart_worst" class="c3"></div>
                 </div>
-                <div id="chart_worst" class="c3"></div>
             </div>
         </div>
         <div class="mapa mapa-container">
@@ -261,7 +272,8 @@
                     </article>
                     <div class="row py-3">
                         <strong class="col-4 text-center text-md-right">Acesso ao aviso:</strong>
-                        <div class="col-8"><a href="www.panorama.com.br/xsvsrt" target="_blank">panorama.com.br/xsvsrt</a></div>
+                        <div class="col-8"><a href="www.panorama.com.br/xsvsrt"
+                                target="_blank">panorama.com.br/xsvsrt</a></div>
                     </div>
                 </div>
                 <div class="modal-footer show-toast">
