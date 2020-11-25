@@ -48,12 +48,12 @@ function setRankComponent(checkBox) {
       container = $('#diagnosis-table_' + i)
       container.append('<tr id="row_' + i + '">')
       container = $('#row_' + i)
-      container.append('<td class="origin" id="origin_' + i + '"><i class="fas ' + 'fa-users' + '"></i>')
+      container.append('<td class="origin" id="origin_' + i + '"><i class="fas ' + getIcon(origin) + '"></i>')
       container = $('#origin_' + i)
       container.append('<p class="mb-0">' + origin + '</p>')
       container = $('#row_' + i)
       container.append('<td class="arrow"><i class="fas fa-long-arrow-alt-right"></i></td>')
-      container.append('<td class="destination" id="destination_' + i + '"><i class="fas ' + 'fa-balance-scale' + '"></i>')
+      container.append('<td class="destination" id="destination_' + i + '"><i class="fas ' + getIcon(destination) + '"></i>')
       container = $('#destination_' + i)
       container.append('<p class="m-0">' + destination + '</p>')
       container = $('#row_' + i)
@@ -162,4 +162,22 @@ function setStatisticsComponent() {
     $('#statistics-finished-position').html('1' + '° de ' + json.group.amount_of_varas + ' varas')
     //statistics-finished-title-2
   })
+}
+
+function getIcon(origin) {
+  var movements = ['Distribuição','Conclusão','Despacho','Decisão','Julgamento','Trânsito em julgado','Baixa/Arquivamento', 'Audiencia', 'Citação', 'Outros']
+  console.log(origin)
+  switch(origin){
+    case movements[0] : return 'fa-users'
+    case movements[1] : return 'fa-users'
+    case movements[2] : return 'fa-users'
+    case movements[3] : return 'fa-users'
+    case movements[4] : return 'fa-users'
+    case movements[5] : return 'fa-users'
+    case movements[6] : return 'fa-users'
+    case movements[7] : return 'fa-users'
+    case movements[8] : return 'fa-users'
+    case movements[9] : return 'fa-users'
+    case movements[10] : return 'fa-users'
+  }
 }
