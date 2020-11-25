@@ -3,7 +3,7 @@ var bestCourts = undefined
 var worstCourts = undefined
 var warningCourts = undefined
 
-var movements = ['Distribuição','Conclusão','Despacho','Decisão','Julgamento','Trânsito em julgado','Baixa ou arquivamento', 'Audiencia', 'Citação', 'Outros']
+var movements = ['Distribuição','Conclusão','Despacho','Decisão','Julgamento','Trânsito em julgado','Baixa ou arquivamento', 'Audiencia', 'Citação', 'Apreciação inicial']
 var best_distribuicao = undefined
 var best_conclusao = undefined
 var best_despacho = undefined
@@ -118,6 +118,14 @@ function selectGroup(group) {
   })
 }
 
+function getStepName(step){
+  if(step == "Outros"){
+    return "Apreciação inicial"
+  }else{
+    return step
+  }
+}
+
 function fillRankTable(courts, filter, isBottleNeck, tableName) {
   var tableComponent = tableName == "warning" ? $('#rank_courts_warning') : $('#rank_courts')
   var colorClass = isBottleNeck ? 'uj-alerta' : 'uj-destaque'
@@ -125,11 +133,11 @@ function fillRankTable(courts, filter, isBottleNeck, tableName) {
   var icon = isBottleNeck ? 'bullhorn' : 'award'
   courts.forEach(court => {
     if(!filter || filter == "Todos" || (filter == court.tribunal)) {
-      var row = '<tr class='+colorClass+'><td id='+tableName+'_rank_'+court.vara_id+'>'+court.ranking+'</td><td class="uj-nome" id='+tableName+'_name_'+court.vara_id+' title="'+court.name+'">'+court.name+'"</td><th>'+court.tribunal+
+      var row = '<tr class='+colorClass+'><td id='+tableName+'_rank_'+court.vara_id+'>'+court.ranking+'</td><td class="uj-nome" id='+tableName+'_name_'+court.vara_id+' title="'+court.name+'">'+court.name+'</td><th>'+court.tribunal+
       '</th><td id='+tableName+'_days_'+court.vara_id+'>'+court.days_finish_process+' dias</td><td id='+tableName+'_movements_'+court.vara_id+'>'+court.movements+'</td><td id='+tableName+'_processes_'+court.vara_id+'>'
-      +court.finished_processes+'</td><td id='+tableName+'_best_movements_'+court.vara_id+'>'+court.melhorEtapa+'</td><td id='+tableName+'_worst_movements_'+court.vara_id+'>'+court.piorEtapa+'</td>'
+      +court.finished_processes+'</td><td id='+tableName+'_best_movements_'+court.vara_id+'>'+getStepName(court.melhorEtapa)+'</td><td id='+tableName+'_worst_movements_'+court.vara_id+'>'+getStepName(court.piorEtapa)+'</td>'
       +'<td><button class="modal-button modal-button-'+buttonClass+'" type=button data-toggle=tooltip'
-      +' title="Enviar alerta para este tribunal"><span id="'+court.vara_id+'" onclick="(configModal(this))" data-toggle=modal data-target=#alertasSugeridos>'
+      +' title="Enviar alerta para este tribunal"><span id="'+court.vara_id+'" onclick="configModal(this)" data-toggle=modal data-target=#alertasSugeridos>'
       +'<i class="fas AAAAAAAAAAAAA fa-'+icon+'"></i></span></button></td></tr>'
             
       tableComponent.append(row);
@@ -206,7 +214,7 @@ function fillMovementsChart() {
   best_baixa_ou_arquivamento = ["Baixa ou arquivamento"]
   best_audiencia = ["Audiencia"]
   best_citacao = ["Citação"]
-  best_outros = ["Outros"]
+  best_outros = ["Apreciação inicial"]
 
 
   bestCourts.forEach(vara => {
@@ -255,7 +263,7 @@ function fillMovementsChart() {
     worst_baixa_ou_arquivamento = ["Baixa ou arquivamento"]
     worst_audiencia = ["Audiencia"]
     worst_citacao = ["Citação"]
-    worst_outros = ["Outros"]
+    worst_outros = ["Apreciação inicial"]
 
     worstCourts.forEach(vara => {
       fillWorstMovementTimes(vara)
