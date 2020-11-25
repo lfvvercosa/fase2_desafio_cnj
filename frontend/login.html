@@ -28,13 +28,11 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script src="./js/cache.js"></script>
     <script src="./js/requester.js"></script>
-    <script src="./js/header.js"></script>
     <script src="./js/components.js"></script>
-    <script src="./js/map.js"></script>
-    <script src="./js/table.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
     <script src="./js/main.js"></script>
+    <script src="./js/login.js"></script>
 </head>
 
 <body class="login">
@@ -51,14 +49,14 @@
                 <label class="form-label" for="nome">Nome</label>
                 <div>
                     <input class="form-control" data-toggle="tooltip" title="Digite seu nome"
-                        placeholder="Digite seu nome" required type="text" autofocus id="nome">
+                        placeholder="Digite seu nome" required type="text" autofocus id="user_name">
                 </div>
             </div>
             <div class="form-group">
                 <label class="form-label" for="nome">Usuário</label>
                 <div>
                     <input class="form-control" data-toggle="tooltip" title="Digite seu usuário"
-                        placeholder="Digite seu usuário" required type="text" id="nome">
+                        placeholder="Digite seu usuário" required type="text" >
                 </div>
             </div>
 
@@ -80,12 +78,8 @@
             <div class="form-group">
                 <label class="form-label" for="ul">Unidade Jurídica</label>
                 <div>
-                    <select data-toggle="tooltip" title="Selecione sua unidade jurídica" class="form-control" id="ul">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                    <select id="varas_selector" on data-toggle="tooltip" title="Selecione sua unidade jurídica" class="form-control" id="ul">
+                        
                     </select>
                 </div>
             </div>
@@ -96,7 +90,7 @@
                         Privacidade</a></label>
             </div>
             <div class="form-button">
-                <button type="submit">Acessar<i class="ml-3 fas fa-chevron-right"></i></button>
+                <button  onclick="login()" type="submit">Acessar<i class="ml-3 fas fa-chevron-right"></i></button>
             </div>
         </form>
     </div>

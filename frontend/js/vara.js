@@ -1,6 +1,9 @@
 readCache()
+console.log(user)
 setRankComponent($('#toggle-switch'))
 setStatisticsComponent()
+
+var comment = {}
 
 function getStepName(step){
   if(step == "Outros"){
@@ -20,8 +23,6 @@ function setRankComponent(checkBox) {
 
     $('#vara_name').html(json.name)
     $('#vara_name2').html(json.name)
-    $('#vara_name3').html(json.name)
-    $('#vara_name4').html(json.name)
     $('#court_name').html(json.tribunal)
     $('#court_name2').html(json.tribunal)
     $('#group_name').html(selectedGroup.group_name)
@@ -96,7 +97,7 @@ function setRankComponent(checkBox) {
       container.append('<tr id="diagnosis-comments-title_' + i + '">')
       container = $('#diagnosis-comments-title_' + i)
       container.append('<th style="width: 50%">Comentário mais curtido</th>')
-      container.append('<th style="width: 30%">Unidade jurídico </th>')
+      container.append('<th style="width: 30%">Unidade Judiciária </th>')
       container.append('<th style="width: 15%;">Duração</th>')
       container.append('<th style="width: 5%;">Comentar</th>')
       container = $('#diagnosis-comments_' + i)
@@ -112,8 +113,7 @@ function loadComments(i, container, step) {
     vara_id,
     3,
     (json2) => {
-      //console.log(json2.slice(0,3))
-      bestVarasOnStep = json2.slice(0.3)
+      bestVarasOnStep = json2
       for (var j = 0; j < bestVarasOnStep.length; j++) {
         container = $('#tbody-comments_' + i)
         container.append('<tr id="comment_' + i + '_' + j + '">')
@@ -130,7 +130,7 @@ function loadComments(i, container, step) {
         container = $('#comment_' + i + '_' + j)
         container.append('<td class="text-center">' + bestVarasOnStep[j].med_time + ' dias</td>')
         container = $('#comment_'+i+'_'+j)
-        container.append('<td id="insert_comment_'+i+'_'+j+'" ><button class="modal-button modal-button-comment" type="button" data-toggle="tooltip" title="Responder ao comentário"><span data-toggle="modal" data-target="#comment-replay"><i class="fas fa-comments"></i></span></button>')
+        container.append('<td id="insert_comment_'+i+'_'+j+'" ><button class="modal-button modal-button-comment" type="button" data-toggle="tooltip" title="Responder ao comentário"><span id="'+step.step_id+';'+bestVarasOnStep[j].vara_id+ ';'+bestVarasOnStep[j].vara_name +'" onclick="configPopup(this)" data-toggle="modal" data-target="#comment-replay"><i  class="fas fa-comments"></i></span></button>')
         container = $('#insert_comment_'+i+'_'+j)
 
         container = $('#comment_' + i + '_' + j)
@@ -174,7 +174,6 @@ function setStatisticsComponent() {
 
 function getIcon(origin) {
   var movements = ['Distribuição','Conclusão','Despacho','Decisão','Julgamento','Trânsito em julgado','Baixa/Arquivamento', 'Audiência', 'Citação', 'Outros']
-  console.log(origin)
   switch(origin){
     case movements[0] : return 'fa-expand-arrows-alt'
     case movements[1] : return 'fa-check-circle'
@@ -187,4 +186,25 @@ function getIcon(origin) {
     case movements[8] : return 'fa-quote-right'
     case movements[9] : return 'fa-users'
   }
+}
+
+function send() {
+  var commentBody = $('#comment-body')[0].value
+  comment.comment = ""+commentBody
+  console.log(comment)
+  postComment(comment)
+  $('#comment-replay').modal('hide')
+}
+
+function configPopup(e) {
+  console.log(e)
+  console.log(e.id)
+  var info = e.id.split(';')
+  console.log(user)
+  var c = JSON.parse(user.court)
+  comment = {vara_id: c.vara_id, step_id: info[0], comment: ''}
+  console.log(comment)
+  $('#user_name').html(user.name)
+  $('#vara_name3').html(c.name)
+  $('#vara_name4').html(c.name)
 }

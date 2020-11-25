@@ -27,6 +27,13 @@ function getVaras() {
   });
 }
 
+function getVarasCallback(callback) {
+  var url = urlBase + 'varas'
+  jQuery.get(url, (data)=>{
+    callback(data)
+  });
+}
+
 function getVaraByID(vara_id, callback) {
   if(court_details){
     callback(court_details)
@@ -75,4 +82,18 @@ function getCourtsFromGroup(groupId, callback) {
   jQuery.get(url, (data)=>{
     callback(data)
   });
+}
+
+function postComment(comment) {
+  $.ajax({
+    type: "POST",
+    contentType: "application/json",
+    url: urlBase + 'comments/create',
+    data: JSON.stringify({
+      "vara_id": comment.vara_id,
+      "step_id": comment.step_id,
+      "comment": comment.comment
+    }),
+    dataType: 'json'
+ });
 }

@@ -182,14 +182,14 @@
         <div class="modal-body">
           <blockquote class="blockquote">
             <p id="comment_title"  class="mb-0"></p>
-            <footer class="blockquote-footer">Nome do funcionário, <cite id="vara_name4" title="Source Title"></cite></footer>
+            <footer class="blockquote-footer"><span id="user_name"></span>, <cite id="vara_name4" title="Source Title"></cite></footer>
           </blockquote>
 
 
           <form action="#">
             <fieldset class="form-group">
               <legend><label for="comment-reply-new">Escreva seu comentário</label></legend>
-              <textarea class="form-control" id="comment-reply-new" placeholder="Digite seu comentário aqui"
+              <textarea class="form-control" id="comment-body" placeholder="Digite seu comentário aqui"
                 rows="3"></textarea>
 
             </fieldset>
@@ -201,7 +201,7 @@
         </div>
         <div class="modal-footer d-flex justify-content-between">
           <button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary">Enviar comentário</button>
+          <button type="button" onclick="send()" class="btn btn-primary">Enviar comentário</button>
         </div>
       </div>
     </div>
