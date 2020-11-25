@@ -2,6 +2,14 @@ readCache()
 setRankComponent($('#toggle-switch'))
 setStatisticsComponent()
 
+function getStepName(step){
+  if(step == "Outros"){
+    return "Apreciação inicial"
+  }else{
+    return step
+  }
+}
+
 function setRankComponent(checkBox) {
   var isBottleNeck = checkBox == undefined || checkBox.checked == undefined || checkBox.checked
   getVaraByID(vara_id, (json) => {
@@ -33,8 +41,8 @@ function setRankComponent(checkBox) {
 
     steps.forEach(step => {
       //console.log(step)
-      var origin = step.origin
-      var destination = step.destination
+      var origin = getStepName(step.origin)
+      var destination = getStepName(step.destination)
       var time = step.med_time + ' dias'
       var position = step.ranking
       var frequency = step.frequency
@@ -135,13 +143,13 @@ function setStatisticsComponent() {
   getVaraByID(vara_id, (json) => {
     //worst
     $('#statistics-wrost-title-1').html('Etapa com  <br/>pior desempenho')
-    $('#statistics-wrost-value').html(json.worst_steps[0].origin)
+    $('#statistics-wrost-value').html(getStepName(json.worst_steps[0].origin))
     $('#statistics-wrost-position').html('1' + '° de ' + json.group.amount_of_varas + ' varas')
     //statistics-wrost-title-2
 
     //best
     $('#statistics-best-title-1').html('Etapa com <br/> melhor desempenho')
-    $('#statistics-best-value').html(json.best_steps[0].origin)
+    $('#statistics-best-value').html(getStepName(json.best_steps[0].origin))
     $('#statistics-best-position').html('1' + '° de ' + json.group.amount_of_varas + ' varas')
     //statistics-best-title-2
 
@@ -165,19 +173,18 @@ function setStatisticsComponent() {
 }
 
 function getIcon(origin) {
-  var movements = ['Distribuição','Conclusão','Despacho','Decisão','Julgamento','Trânsito em julgado','Baixa/Arquivamento', 'Audiencia', 'Citação', 'Outros']
+  var movements = ['Distribuição','Conclusão','Despacho','Decisão','Julgamento','Trânsito em julgado','Baixa/Arquivamento', 'Audiência', 'Citação', 'Outros']
   console.log(origin)
   switch(origin){
-    case movements[0] : return 'fa-users'
-    case movements[1] : return 'fa-users'
-    case movements[2] : return 'fa-users'
-    case movements[3] : return 'fa-users'
-    case movements[4] : return 'fa-users'
-    case movements[5] : return 'fa-users'
-    case movements[6] : return 'fa-users'
+    case movements[0] : return 'fa-expand-arrows-alt'
+    case movements[1] : return 'fa-check-circle'
+    case movements[2] : return 'fa-pen-fancy'
+    case movements[3] : return 'fa-brain'
+    case movements[4] : return 'fa-balance-scale'
+    case movements[5] : return 'fa-sign-out-alt'
+    case movements[6] : return 'fa-gavel'
     case movements[7] : return 'fa-users'
-    case movements[8] : return 'fa-users'
+    case movements[8] : return 'fa-quote-right'
     case movements[9] : return 'fa-users'
-    case movements[10] : return 'fa-users'
   }
 }
