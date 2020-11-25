@@ -53,27 +53,42 @@ function deleteMarkers() {
   markers = [];
 }
 
+// Filter out non-brazilian locations
+function isInsideBrazil(lat, long) {
+  if(long < -73.992222 || long > -34.791667) {
+    return false
+  }
+  if(lat > 5.272222 || lat < -33.750833) {
+    return false
+  }
+
+  return true
+}
+
 function populateMap(map, infowindow, locations) {
   var marker, i;
 
   deleteMarkers()
 
   for (i = 0; i < locations.length; i++) { 
-     
-    marker = new google.maps.Marker({
-      position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-      map: map
-    });
-
-    markers.push(marker)
-
-    google.maps.event.addListener(marker, 'click', (function(marker, i) {
-      
-      return function() {
-        infowindow.setContent(locations[i][0]);
-        infowindow.open(map, marker);
-      }
-    })(marker, i));
+    
+    if (isInsideBrazil(locations[i][1], locations[i][2])) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+  
+      markers.push(marker)
+  
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+    
   }
 }
 
