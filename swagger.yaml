@@ -307,7 +307,7 @@ paths:
           description: "Serviço indisponível"
       security:
       - api_key: []
-  /comentarios:
+  /comments:
     get:
       tags:
       - "comentarios"
@@ -329,7 +329,7 @@ paths:
           description: "Serviço indisponível"
       security:
       - api_key: []
-  /comentarios/{identificador}:
+  /comments/{identificador}:
     get:
       tags:
       - "comentarios"
@@ -360,7 +360,7 @@ paths:
           description: "Serviço indisponível"
       security:
       - api_key: []
-  /comentarios/create:
+  /commments/create:
     post:
       tags:
       - "comentarios"
@@ -396,7 +396,7 @@ paths:
           description: "Serviço indisponível"
       security:
       - api_key: []
-  /comentarios/getMyComment/{step_id}&{vara_id}:
+  /comments/getMyComment/{step_id}&{vara_id}:
     get:
       tags:
       - "comentarios"
