@@ -1,13 +1,27 @@
 readCache()
 setRankComponent($('#toggle-switch'))
 setStatisticsComponent()
-setFooterRankComponent()
 
 function setRankComponent(checkBox) {
   var isBottleNeck = !checkBox.checked
   getVaraByID(vara_id, (json) => {
+    console.log(json)
+    console.log(selectedGroup)
     var i = 0
     var steps = isBottleNeck ? json.worst_steps : json.best_steps
+
+    document.title = json.name
+
+    $('#vara_name').html(json.name)
+    $('#vara_name2').html(json.name)
+    $('#vara_name3').html(json.name)
+    $('#vara_name4').html(json.name)
+    $('#court_name').html(json.tribunal)
+    $('#court_name2').html(json.tribunal)
+    $('#group_name').html(selectedGroup.group_name)
+    $('#court_rank').html(json.ranking)
+    $('#comment_title').html('Que legal! Adicionar um comentário construtivo faz parte das boas práticas do CNJ')
+
     var container = $('.diagnosis').html('')
 
     if (!isBottleNeck) {
@@ -77,7 +91,7 @@ function setRankComponent(checkBox) {
       container.append('<th style="width: 50%">Comentário mais curtido</th>')
       container.append('<th style="width: 30%">Unidade jurídico </th>')
       container.append('<th style="width: 15%;">Duração</th>')
-      container.append('<th style="width: 5%;">Aviso</th>')
+      container.append('<th style="width: 5%;">Comentar</th>')
       container = $('#diagnosis-comments_' + i)
       container.append('<tbody id="tbody-comments_' + i + '">')
       loadComments(i, container, step)
@@ -109,97 +123,13 @@ function loadComments(i, container, step) {
         container = $('#comment_' + i + '_' + j)
         container.append('<td class="text-center">' + bestVarasOnStep[j].med_time + ' dias</td>')
         container = $('#comment_'+i+'_'+j)
-        container.append('<td id="like_'+i+'_'+j+'" ><button class="modal-button modal-button-comment" type="button" data-toggle="tooltip" title="Responder ao comentário"><span data-toggle="modal" data-target="#comment-replay"><i class="fas fa-comments"></i></span></button>')
-        container = $('$#like_'+i+'_'+j)
+        container.append('<td id="insert_comment_'+i+'_'+j+'" ><button class="modal-button modal-button-comment" type="button" data-toggle="tooltip" title="Responder ao comentário"><span data-toggle="modal" data-target="#comment-replay"><i class="fas fa-comments"></i></span></button>')
+        container = $('#insert_comment_'+i+'_'+j)
 
         container = $('#comment_' + i + '_' + j)
         container.vara_id = bestVarasOnStep[j].vara_id
-        /* container.click(function(e){
-          comparing_id = e.currentTarget.vara_id
-          saveCache()
-          window.location.replace("http://desafio-cnj-frontend.herokuapp.com/pages/comparing-courts.html");
-        }) */
       }
     })
-  /*<td>
-    <button class="ranking-like" type="button">
-      <input id="toggle-heart-1" type="checkbox" />
-      <label for="toggle-heart-1">
-        <i class="far fa-heart heart-empty"></i>
-        <i class="fas fa-heart heart-full"></i>
-      </label>
-    </button>
-    <small class="d-block text-truncate"> 12 curtidas</small>
-
-  </td>
-  <td>
-    <button class="ranking-chat">
-      <input id="toggle-comment-1" type="checkbox" />
-      <label for="toggle-comment-1">
-
-        <i class="far fa-comments comments-empty"></i>
-        <i class="fas fa-comments comments-full"></i>
-      </label>
-    </button>
-    <small class="d-block text-truncate"> 12 respostas</small>
-
-  </td>
-
-</tr>
- 
-</tbody>
-</table>
-</div>
-</div> */
-}
-
-function setBestRankComponent() {
-
-  getVaraByID(vara_id, (json) => {
-    //best movements component
-    $('#best-mov-1-source').html(json.best_steps[0].origin)
-    $('#best-mov-1-description').html(json.best_steps[0].med_time + ' dias')
-    $('#best-mov-1-dest').html(json.best_steps[0].destination)
-    $('#best-mov-1-position').html(json.best_steps[0].ranking + '°')
-
-    $('#best-mov-2-source').html(json.best_steps[1].origin)
-    $('#best-mov-2-description').html(json.best_steps[1].med_time + ' dias')
-    $('#best-mov-2-dest').html(json.best_steps[1].destination)
-    $('#best-mov-2-position').html(json.best_steps[1].ranking + '°')
-
-    $('#best-mov-3-source').html(json.best_steps[2].origin)
-    $('#best-mov-3-description').html(json.best_steps[2].med_time + ' dias')
-    $('#best-mov-3-dest').html(json.best_steps[2].destination)
-    $('#best-mov-3-position').html(json.best_steps[2].ranking + '°')
-
-    //best movements table
-    $('#table-best-tab1').html(json.best_steps[0].origin + '-' + json.best_steps[0].destination)
-    $('#table-best-tab2').html(json.best_steps[1].origin + '-' + json.best_steps[1].destination)
-    $('#table-best-tab3').html(json.best_steps[2].origin + '-' + json.best_steps[2].destination)
-
-    setBestTable(json, vara_id, 0)
-
-    $('#table-best-tab1').click(function () {
-      setBestTable(json, vara_id, 0)
-      $('#table-best-tab2').removeClass('rank-table-tabs-item-selected')
-      $('#table-best-tab3').removeClass('rank-table-tabs-item-selected')
-      $('#table-best-tab1').addClass('rank-table-tabs-item-selected')
-    })
-
-    $('#table-best-tab2').click(function () {
-      setBestTable(json, vara_id, 1)
-      $('#table-best-tab1').removeClass('rank-table-tabs-item-selected')
-      $('#table-best-tab3').removeClass('rank-table-tabs-item-selected')
-      $('#table-best-tab2').addClass('rank-table-tabs-item-selected')
-    })
-
-    $('#table-best-tab3').click(function () {
-      setBestTable(json, vara_id, 2)
-      $('#table-best-tab1').removeClass('rank-table-tabs-item-selected')
-      $('#table-best-tab2').removeClass('rank-table-tabs-item-selected')
-      $('#table-best-tab3').addClass('rank-table-tabs-item-selected')
-    })
-  })
 }
 
 function setStatisticsComponent() {
@@ -233,57 +163,4 @@ function setStatisticsComponent() {
     $('#statistics-finished-position').html('1' + '° de ' + json.group.amount_of_varas + ' varas')
     //statistics-finished-title-2
   })
-}
-
-function setFooterRankComponent() {
-  getBestVaras(vara_id, 10, (json) => {
-    $('#best-time-1').html('1º - ' + json[0].name)
-    $('#best-time-2').html('2º - ' + json[1].name)
-    $('#best-time-3').html('3º - ' + json[2].name)
-    $('#best-time-4').html('4º - ' + json[3].name)
-    $('#best-time-5').html('5º - ' + json[4].name)
-    $('#best-time-6').html('6º - ' + json[5].name)
-    $('#best-time-7').html('7º - ' + json[6].name)
-    $('#best-time-8').html('8º - ' + json[7].name)
-    $('#best-time-9').html('9º - ' + json[8].name)
-    $('#best-time-10').html('10º - ' + json[9].name)
-  })
-}
-
-function setBottleneckTable(json, vara_id, step) {
-  getBestVarasOnStep(json.worst_steps[step].step_id,
-    vara_id,
-    10,
-    (json2) => {
-      bestVarasOnStep = json2
-      for (var i = 0; i < 10; i++) {
-        $('#table-bottleneck-row-' + (i + 1) + '-name').html(bestVarasOnStep[i].vara_name)
-        $('#table-bottleneck-row-' + (i + 1) + '-duration').html(bestVarasOnStep[i].med_time)
-        $('#table-bottleneck-row-' + (i + 1) + '-comments').html(bestVarasOnStep[i].comment)
-        $('#table-bottleneck-row-' + (i + 1)).click(function (e) {
-          var index = e.currentTarget.id.replace('table-bottleneck-row-', '')
-          comparing_id = bestVarasOnStep[index - 1].vara_id
-          window.location.replace("http://desafio-cnj-frontend.herokuapp.com/pages/comparing-courts.html");
-        })
-      }
-    })
-}
-
-function setBestTable(json, vara_id, step) {
-  // Best varas on best step 1
-  getBestVarasOnStep(json.best_steps[step].step_id,
-    vara_id,
-    10,
-    (json2) => {
-      for (var i = 0; i < 10; i++) {
-        $('#table-best-row-' + (i + 1) + '-name').html(json2[i].vara_name)
-        $('#table-best-row-' + (i + 1) + '-duration').html(json2[i].med_time)
-        $('#table-best-row-' + (i + 1) + '-comments').html(json2[i].comment)
-        $('#table-best-row-' + (i + 1)).click(function () {
-          var index = e.currentTarget.id.replace('table-best-row-', '')
-          comparing_id = json2[index - 1].vara_id
-          window.location.replace("http://desafio-cnj-frontend.herokuapp.com/pages/comparing-courts.html");
-        })
-      }
-    })
 }

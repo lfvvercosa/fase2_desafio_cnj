@@ -133,49 +133,49 @@ function fillRankTable(courts, filter, isBottleNeck, tableName) {
       $('#'+tableName+'_rank_'+court.vara_id).click(e=>{
         vara_id = e.currentTarget.id
         saveCache()
-        window.location.replace(urlBase+"/vara.html");       
+        window.location.replace(urlBase+"vara.html");       
       })
 
       $('#'+tableName+'_name_'+court.vara_id).click(e=>{
         var index = e.currentTarget.id.lastIndexOf('_') + 1
         vara_id = e.currentTarget.id.substring(index)
         saveCache()
-        window.location.replace(urlBase+"/vara.html");       
+        window.location.replace(urlBase+"vara.html");       
       })
 
       $('#'+tableName+'_days_'+court.vara_id).click(e=>{
         var index = e.currentTarget.id.lastIndexOf('_') + 1
         vara_id = e.currentTarget.id.substring(index)
         saveCache()
-        window.location.replace(urlBase+"/vara.html");       
+        window.location.replace(urlBase+"vara.html");       
       })
       
       $('#'+tableName+'_movements_'+court.vara_id).click(e=>{
         var index = e.currentTarget.id.lastIndexOf('_') + 1
         vara_id = e.currentTarget.id.substring(index)
         saveCache()
-        window.location.replace(urlBase+"/vara.html");       
+        window.location.replace(urlBase+"vara.html");       
       })
 
       $('#'+tableName+'_processes_'+court.vara_id).click(e=>{
         var index = e.currentTarget.id.lastIndexOf('_') + 1
         vara_id = e.currentTarget.id.substring(index)
         saveCache()
-        window.location.replace(urlBase+"/vara.html");       
+        window.location.replace(urlBase+"vara.html");       
       })
 
       $('#'+tableName+'_best_movements_'+court.vara_id).click(e=>{
         var index = e.currentTarget.id.lastIndexOf('_') + 1
         vara_id = e.currentTarget.id.substring(index)
         saveCache()
-        window.location.replace(urlBase+"/vara.html");       
+        window.location.replace(urlBase+"vara.html");       
       })
 
       $('#'+tableName+'_worst_movements_'+court.vara_id).click(e=>{
         var index = e.currentTarget.id.lastIndexOf('_') + 1
         vara_id = e.currentTarget.id.substring(index)
         saveCache()
-        window.location.replace(urlBase+"/vara.html");       
+        window.location.replace(urlBase+"vara.html");       
       })
     }
   });
