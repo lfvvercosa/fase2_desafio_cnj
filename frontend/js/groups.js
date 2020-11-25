@@ -1,3 +1,4 @@
+var allCourts = undefined
 var bestCourts = undefined
 var worstCourts = undefined
 var warningCourts = undefined
@@ -88,6 +89,9 @@ function selectGroup(group) {
   fillCboClassFilter()
 
   getCourtsFromGroup(selectedGroup.identificador, (data)=>{
+
+    allCourts = data.varas
+
     $("#rank_courts").html("")
     $("#rank_courts_warning").html("")
     //best 
@@ -411,6 +415,7 @@ function fillCourtFilter() {
   $('#cboTribunal').html('')
   $('#cboTribunal').append('<option value="Todos">Exibir todos os tribunais</option>')
   var courts = []
+
   bestCourts.forEach(court => {
     if(court.tribunal && !courts.includes(court.tribunal))
       courts.push(court.tribunal)
@@ -429,12 +434,23 @@ function filterCourt() {
   var court =  selector.options[selector.selectedIndex].value
   $("#rank_courts").html("")
 
+  var filtered = allCourts.filter((c) => c.tribunal == court)
+
+  var filteredBestCourts = []
+  var filteredWorstCourts = []
+
+  var filterLen = filtered.length > 10 ? 5 : filtered.length/2
+
+  filteredBestCourts = filtered.slice(0,filterLen)
+  filteredWorstCourts = filtered.slice(filtered.length - filterLen, filtered.length)
+
+
   //best 
   $("#rank_courts").append('<tr class="table-title"><td colspan="9">Unidades Judiciárias com os melhores tempos de conclução de processo</td></tr>');
-  fillRankTable(bestCourts, court, false, "best")
+  fillRankTable(filteredBestCourts, court, false, "best")
   //separator
   $("#rank_courts").append('<tr class="ellipses"><td colspan="9"><i class="fas fa-ellipsis-v"></i></td></tr>');
   //worst
   $("#rank_courts").append('<tr class="table-title"><td colspan="9">Unidades Judiciárias com os piores tempos de conclução de processo</td></tr>')
-  fillRankTable(worstCourts, court, true, "worst")
+  fillRankTable(filteredWorstCourts, court, true, "worst")
 }

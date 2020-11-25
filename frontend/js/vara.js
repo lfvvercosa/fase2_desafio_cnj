@@ -3,10 +3,8 @@ setRankComponent($('#toggle-switch'))
 setStatisticsComponent()
 
 function setRankComponent(checkBox) {
-  var isBottleNeck = !checkBox.checked
+  var isBottleNeck = checkBox == undefined || checkBox.checked == undefined || checkBox.checked
   getVaraByID(vara_id, (json) => {
-    console.log(json)
-    console.log(selectedGroup)
     var i = 0
     var steps = isBottleNeck ? json.worst_steps : json.best_steps
 
