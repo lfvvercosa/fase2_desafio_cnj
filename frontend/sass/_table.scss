@@ -26,6 +26,13 @@ table {
           cursor: pointer;
         }
       }
+
+      // &:hover,
+      // &:focus {
+      //  th, td {
+      //     border: 1px solid red !important;
+      //   }
+      // }
     }
   }
 }
@@ -83,7 +90,7 @@ table {
   }
 }
 
-table#rank_courts_table {
+#rank_courts_table {
   @extend .table;
   @extend .text-center;
 
@@ -131,6 +138,14 @@ table#rank_courts_table {
             td {
               padding: 1rem 0;
             }
+          }
+        }
+      }
+      td {
+        button {
+          &:hover,
+          &:focus {
+            @extend .text-white;
           }
         }
       }

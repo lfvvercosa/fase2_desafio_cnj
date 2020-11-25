@@ -2,316 +2,142 @@
 <html>
 
 <head>
-  <title>Desafio CNJ</title>
+  <title>Fórum Desembargador Rodolfo Aureliano | Panorama CNJ</title>
   <!-- html5 meta tags -->
   <meta charset="utf-8">
+  <link rel="icon" sizes="32x32" href="./resources/images/favicon.jpg" />
+  <link rel="icon" sizes="192x192" href="./resources/images/favicon.jpg" />
+  <link rel="apple-touch-icon-precomposed" href="./resources/images/favicon.jpg" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.2/js/all.min.js"
     integrity="sha512-IqeQ6271Vq75Nf4OOwCEYi4tIAyT2J7vtKrmOU9WCezb+YkxqAu+igEi2CuLEnA7cqtvFDHsQhXbpZXx/evxrw=="
     crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="./sass/main.css">
 </head>
 
 <body>
-
   <main>
-    <div id="medal" class="position">
-      <div class="position-title">
-        Tempo e Eficiência
-      </div>
-      <div class="position-container">
-        <div id="position-number" class="position-number">
-          <!-- MUDAR VARA -->
-          <i class="fas fa-circle-notch fa-spin"></i>
-          <!-- MUDAR VARA -->
-        </div>
-        <div class="position-text">colocada</div>
-      </div>
-    </div>
-    <div class="col-12 col-md-10">
-      <header class="header">
-        <div class="header-info">
-          <h6 class="header-welcome">bem-vindo à</h6>
-          <h1 id="court-name" class="header-company"></h1>
-        </div>
-        <div class="w-100 d-block d-md-none pb-3 pb-md-0"></div>
-        <div class="header-user">
-          <div class="row">
-            <div class="judge-info">
-              <p id="username" class="judge-username"></p>
-              <p id="user-position" class="judge-position"></p>
-            </div>
-            <div class="col-4">
-              <img id="user-photo"
-                src="https://www.melhoresfilmes.com.br/dimg/?w=165&amp;h=220&amp;mode=crop&amp;url=https%3A%2F%2Fwww.melhoresfilmes.com.br%2Fimg%2Factors%2F6493.jpg"
-                class="judge-photo" alt="Antonio">
-            </div>
-          </div>
-        </div>
-        <div class="w-100 pb-4"></div>
-        <ul class="header-filter">
-          <li><span id="group-amount"></span></li>
-          <li><span id="group-el-1"></span></li>
-          <li><span id="group-el-2"></span></li>
-          <li><span id="group-el-3"></span></li>
-          <li><span>2000-2020</span></li>
-        </ul>
-      </header>
-    </div>
-    <div class="w-100 d-block d-md-none pb-3 pb-md-0"></div>
-    <nav class="menu">
-      <ul>
-        <li class="active"><i class="fa-2x fas fa-home" data-toggle="tooltip" title="Página Inicial"></i></li>
-        <li><i class="fa-2x far fa-comments" data-toggle="tooltip" title="Comentários sobre sua Unidade Judiciária"></i>
-        </li>
-        <li><i class="fa-2x fas fa-info-circle" data-toggle="tooltip" title="Informações sobre o projeto"></i></li>
-        <li><i class="fa-2x fas fa-laptop-code" data-toggle="tooltip" title="Equipe Panorama"></i></li>
-      </ul>
+    <header class="site-header">
+      <img src="resources/images/logo.png" alt="" class="site-logo">
+      <div class="site-modulo">Panorama</div>
+    </header>
+    <nav class="migalha-pao" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li><a data-toggle="tooltip" title="Retornar a tela inicial" href="index.html">Panorama CNJ</a></li>
+        <li>Nome do Grupo</li>
+        <li>Tribunal de Justica de Pernambuco</li>
+        <li class="active">Fórum Desembargador Rodolfo Aureliano</li>
+      </ol>
     </nav>
-    <section class="main-content">
+    <div class="titulo-pagina">
+      <div class="pagina-info">
+        <h1 class="tribunal-vara">Fórum Desembargador Rodolfo Aureliano</h1>
+        <span class="tribunal-nome">Tribunal de Justica de Pernambuco</span>
+        <hr class="my-2">
+        <p>
+          Desembargador Guerra Barreto, s/n - Ilha Joana Bezerra, Recife - PE, 50080-900
+        </p>
+        <ul>
+          <li>
+            <i class="fas fa-phone mr-2"></i>
+            <a href="tel:+518131810000" target="_blank">(81) 3181-0000</a>
+          </li>
+          <li>
+            <i class="fas fa-link mr-2"></i>
+            <a href="https://www.tjpe.jus.br/" target="_blank">https://www.tjpe.jus.br</a>
+          </li>
+        </ul>
+      </div>
+      <div class="pagina-posicao">
+        <span>35º</span>
+      </div>
 
-      <!-- basic statistics -->
-      <ul class="statistics">
-        <li class="statistics-len3 statistics-card">
-          <div class="card">
-            <div id="statistics-duration-title-1" class="statistics-card-title"></div>
-            <div id="statistics-duration-title-2" class="statistics-card-title"></div>
-            <div id="statistics-duration-value" class="statistics-card-value"></div>
+    </div>
+    <div class="my2" id="detalhes"></div>
+    <section class="statistics">
+      <div class="statistics-len3 statistics-card">
+        <div class="card">
+          <div id="statistics-duration-title-1" class="statistics-card-title"></div>
+          <div id="statistics-duration-title-2" class="statistics-card-title"></div>
+          <div id="statistics-duration-value" class="statistics-card-value"></div>
+        </div>
+      </div>
+      <div class="statistics-len2 statistics-card">
+        <div class="card">
+          <div id="statistics-moves-title-1" class="statistics-card-title"></div>
+          <div id="statistics-moves-title-2" class="statistics-card-title"></div>
+          <div id="statistics-moves-value" class="statistics-card-value"></div>
+        </div>
+      </div>
+      <div class="statistics-len1 statistics-card">
+        <div class="card">
+          <div id="statistics-finished-title-1" class="statistics-card-title"></div>
+          <div id="statistics-finished-title-2" class="statistics-card-title"></div>
+          <div id="statistics-finished-value" class="statistics-card-value"></div>
 
-            <div id="statistics-duration-position" class="statistics-card-info">&nbsp;</div>
-          </div>
-        </li>
-        <li class="statistics-len2 statistics-card">
-          <div class="card">
-            <div id="statistics-moves-title-1" class="statistics-card-title"></div>
-            <div id="statistics-moves-title-2" class="statistics-card-title"></div>
-            <div id="statistics-moves-value" class="statistics-card-value"></div>
-            <div id="statistics-duration-position" class="statistics-card-info">&nbsp;</div>
-          </div>
-        </li>
-        <li class="statistics-len1 statistics-card">
-          <div class="card">
-            <div id="statistics-finished-title-1" class="statistics-card-title"></div>
-            <div id="statistics-finished-title-2" class="statistics-card-title"></div>
-            <div id="statistics-finished-value" class="statistics-card-value"></div>
-            <div id="statistics-finished-position" class="statistics-card-info">&nbsp;</div>
-          </div>
-        </li>
+        </div>
+      </div>
 
-        <li class="statistics-len4 statistics-card">
-          <div class="card">
-            <div id="statistics-best-title-1" class="statistics-card-title"></div>
-            <div id="statistics-best-title-2" class="statistics-card-title"></div>
-            <div id="statistics-best-value" class="statistics-card-value"></div>
-            <div id="statistics-best-position" class="statistics-card-info"></div>
-          </div>
-        </li>
-        <li class="statistics-len5 statistics-card">
-          <div class="card">
-            <div id="statistics-wrost-title-1" class="statistics-card-title"></div>
-            <div id="statistics-wrost-title-2" class="statistics-card-title"></div>
-            <div id="statistics-wrost-value" class="statistics-card-value"></div>
-            <div id="statistics-wrost-position" class="statistics-card-info">&nbsp;</div>
-          </div>
-        </li>
-      </ul>
+      <div class="statistics-len4 statistics-card">
+        <div class="card">
+          <div id="statistics-best-title-1" class="statistics-card-title"></div>
+          <div id="statistics-best-title-2" class="statistics-card-title"></div>
+          <div id="statistics-best-value" class="statistics-card-value"></div>
+        </div>
+      </div>
+      <div class="statistics-len5 statistics-card">
+        <div class="card">
+          <div id="statistics-wrost-title-1" class="statistics-card-title"></div>
+          <div id="statistics-wrost-title-2" class="statistics-card-title"></div>
+          <div id="statistics-wrost-value" class="statistics-card-value"></div>
 
-      <div class="w-100 pb-4"></div>
-      <!-- rank -->
-      <div class="ranking">
-        <section class="title"></section>
+        </div>
+      </div>
+    </section>
+    <div class="ranking">
+      <header class="secao-header">
+        <section class="secao-titulo">Gestão de tramitação processual</section>
         <div class="steps">
           <div class="steps-toggle">
-            <div class="steps-option text-danger">Gargalos</div>
+            <div class="steps-option steps-option-destaques">Destaques</div>
             <div class="steps-switch">
-              <input type="checkbox" class="d-none" id="toggle-switch" onclick='setRankComponent(this)'>
+              <input type="checkbox" class="d-none" checked="true" id="toggle-switch" onclick='setRankComponent(this)'>
               <label for="toggle-switch">
                 <i class="switch fas fa-toggle-on"></i>
               </label>
+              <div class="steps-option steps-option-gargalos">Gargalos</div>
+
             </div>
-            <div class="steps-option text-info">Destaques</div>
-          </div>
-
-
-          <div class="info">
-            <span data-toggle="popover" title="Popover title"
-              data-content="And here's some amazing content. It's very engaging. Right?">
-              <i class="fas fa-info-circle"></i>
-            </span>
           </div>
         </div>
-        <!-- <ul class="ranking-options ranking-options-gargalos ">
-          <li><button><span data-toggle="tooltip" title="Citação" class="ranking-options-icon"><i
-                  class="fas fa-quote-right"></i></span></p></button></li>
-          <li><button><span data-toggle="tooltip" title="Decisão" class="ranking-options-icon"><i
-                  class="fas fa-brain"></i></span></p></button></li>
-          <li><button><span data-toggle="tooltip" title="Distribuição" class="ranking-options-icon"><i
-                  class="fas fa-expand-arrows-alt"></i></span></p></button></li>
-          <li><button><span data-toggle="tooltip" title="Arquivamento" class="ranking-options-icon"><i
-                  class="fas fa-archive"></i></span></p></button></li>
-          <li><button><span data-toggle="tooltip" title="Liminar" class="ranking-options-icon"><i
-                  class="fas fa-external-link-alt"></i></span></p></button></li>
-          <li><button><span data-toggle="tooltip" title="Transito em Julgamento" class="ranking-options-icon"><i
-                  class="fas fa-gavel"></i></span></p></button></li>
-          <li><button><span data-toggle="tooltip" title="Audiência" class="ranking-options-icon"><i
-                  class="fas fa-users"></i></span></p></button></li>
-          <li><button><span data-toggle="tooltip" title="Julgamento" class="ranking-options-icon"><i
-                  class="fas fa-balance-scale"></i></span></p></button></li>
-          <li><button><span data-toggle="tooltip" title="Conclusão" class="ranking-options-icon"><i
-                  class="far fa-check-circle"></i></span></p></button></li>
-          <li><button><span data-toggle="tooltip" title="Despacho" class="ranking-options-icon"><i
-                  class="fas fa-pen-nib"></i></span></p></button></li>
-        </ul> -->
-        <div class="diagnosis">
+        <div class="filtro-info" data-toggle="popover" title="Como pesquisar"
+          data-content="Para iniciar sua pesquisa, basta clicar nos filtros disponíveis e digitar os termos para o sistema exibir mais rapidamente as opções existentes">
+          <i class="fas fa-info"></i>
         </div>
-
-        <!-- <div class="diagnosis diagnosis-destaques">
-          <button class="btn-header" type="button" data-toggle="collapse" data-target="#diagnostico-2"
-            aria-expanded="false" aria-controls="diagnostico-2">
-            <div class="table-responsive">
-              <table class="diagnosis-table">
-                <tr>
-                  <td><i class="fas fa-users"></i>
-                    <p class="mb-0">Audiência</p>
-                  </td>
-                  <td class="arrow"><i class="fas fa-long-arrow-alt-right"></i></td>
-                  <td><i class="fas fa-balance-scale"></i>
-                    <p class="m-0">Julgamento</p>
-                  </td>
-                  <td>
-                    <p class="m-0"><strong>35 dias</strong><br>Duração</p>
-                  </td>
-                  <td><strong>15º</strong><br>Posição <small>
-                      <span data-toggle="popover" title="Popover title"
-                        data-content="And here's some amazing content. It's very engaging. Right?">
-                        <i class="fas fa-info-circle" style="font-size: 1rem"></i>
-                      </span>
-                    </small></td>
-                  <td>
-                    <p class="m-0"><strong>65</strong><br>Quantidade de ocorrêcia: </p>
-                  </td>
-                  <td class="chevron"><i class="fas fa-chevron-up"></i></td>
-
-                </tr>
-              </table>
-            </div>
-          </button>
-          <div class="collapse" id="diagnostico-2">
-            <div class="diagnosis-comments">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Comentário mais curtido</th>
-                    <th style="min-width: 200px;">Unidade jurídico </th>
-                    <th style="min-width: 100px;">
-                      Duração
-                    </th>
-                    <th style="min-width: 100px;"></th>
-                    <th style="min-width: 100px;"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi possimus commodi delectus molestias
-                      magnam soluta porro rerum cumque aut, quidem facilis temporibus dolore aliquid eaque animi id
-                      incidunt! Recusandae, tempora.
-                    </td>
-                    <td>
-                      <span data-toggle="popover" title="Informações de contato" data-content="E-mail: alagoinhas1vcivel@tjba.jus.br 
-/ Telefone: (75) 3423-8952 ">
-                        1ª Vara Cível e Comercial e de Registros Públicos
-                      </span>
-                    </td>
-                    <td class="text-center">11 dias</td>
-                    <td>
-
-                      <button class="ranking-like" type="button">
-                        <input id="toggle-heart-2" type="checkbox" />
-                        <label for="toggle-heart-2">
-                          <i class="far fa-heart mb-0 heart-empty"></i>
-                          <i class="fas fa-heart mb-0 heart-full"></i>
-                        </label> <br>
-                      </button>
-                      <small class="d-block text-truncate"> 12 curtidas</small>
-                    </td>
-                    <td>
-                      <button class="ranking-chat">
-                        <input id="toggle-comment-2" type="checkbox" />
-                        <label for="toggle-comment-2">
-
-                          <i class="far fa-comments mb-0 comments-empty"></i>
-                          <i class="fas fa-comments mb-0 comments-full"></i>
-                        </label>
-                      </button>
-                      <small class="d-block text-truncate"> 12 respostas</small>
-                    </td>
-
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div> -->
-
-        </div>
+      </header>
+      <div class="diagnosis">
       </div>
-      <div class="w-100 pb-4"></div>
-      <!-- comparation chart -->
-      <div class="chart-box chart-container">
+    </div>
+    <div class="row">
+      <div class="chart-box">
         <div class="card">
-            <div class="secao-titulo">
-                Unidades Jurídicas com melhor desempenho
-            </div>
-            <div id="chart_best" class="c3"></div>
+          <div class="secao-subtitulo">
+            Unidades Jurídicas com melhor desempenho
+          </div>
+          <div id="chart_best" class="c3"></div>
         </div>
       </div>
-
-      <div class="chart-box chart-container">
+      <div class="chart-box">
         <div class="card">
-            <div class="secao-titulo">
-                Unidades Jurídicas com desempenho próximo 
-            </div>
-            <div id="chart_neighbors" class="c3"></div>
-        </div>
-      </div>
-
-      </div>
-      <div class="w-100 pb-4"></div>
-
-      <!-- <div class="w-100 d-none d-md-block pb-4"></div>
-      <div class="row">
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-          <div class="card best-times">
-            <div class="best-times-title"> RANKING DOS MELHORES TEMPOS </div>
-            <div class="best-times-info"> Abaixo a lista das Unidades Judiciárias com melhores tempos das macro etapas dos processos
-            </div>
-            <div class="best-times-line"> </div>
-            <ol class="list-unstyled mb-0">
-              <li id="best-time-1" class="best-times-item"></li>
-              <li id="best-time-2" class="best-times-item"></li>
-              <li id="best-time-3" class="best-times-item"></li>
-              <li id="best-time-4" class="best-times-item"></li>
-              <li id="best-time-5" class="best-times-item"></li>
-              <li id="best-time-6" class="best-times-item"></li>
-              <li id="best-time-7" class="best-times-item"></li>
-              <li id="best-time-8" class="best-times-item"></li>
-              <li id="best-time-9" class="best-times-item"></li>
-              <li id="best-time-10" class="best-times-item"></li>
-            </ol>
+          <div class="secao-subtitulo">
+            Unidades Jurídicas com desempenho próximo
           </div>
-        </div>
-        <div class="w-100 d-block d-md-none pb-3 pb-md-0"></div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-8">
-          <div class="map">
-            <div class="map-title">
-              <p>MAPA DA REGIÃO</p>
-            </div>
-            <div id="map"></div>
-          </div>
+          <div id="chart_neighbors" class="c3"></div>
         </div>
       </div>
-    </section> -->
+    </div>
   </main>
   <!-- scripts -->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

@@ -26,12 +26,18 @@ svg {
   @extend .img-fluid;
 }
 
-
 .migalha-pao {
+  font-size: 0.875rem;
+  a {
+    color: #212529;
+  }
   ol {
     @extend .breadcrumb;
     li {
       @extend .breadcrumb-item;
+      &.active {
+        font-weight: 600;
+      }
     }
   }
 }
@@ -83,11 +89,76 @@ svg {
   margin-top: 1rem;
 }
 
-.secao-titulo {
-  font-size: 1.5rem;
-  @extend .mb-3;
-  @extend .font-weight-bold;
-  @extend .text-uppercase;
+.secao {
+  &-titulo {
+    font-size: 1.5rem;
+    @extend .mb-3;
+    @extend .font-weight-bold;
+    @extend .text-uppercase;
+    @extend .d-flex;
+    @extend .justify-content-between;
+  }
+  &-subtitulo {
+    @extend .secao-titulo;
+    font-size: 1rem;
+  }
+  &-header {
+    @extend .table-header;
+    @extend .justify-content-between;
+    @extend .align-items-center;
+  }
+}
+
+.titulo-pagina {
+  @extend .jumbotron;
+  @extend .border;
+  @extend .shadow-sm;
   @extend .d-flex;
   @extend .justify-content-between;
+  padding: 2rem;
+
+  p {
+    @extend .mb-2;
+    font-size: 0.875rem;
+  }
+  ul {
+    font-size: 0.875rem;
+    @extend .list-unstyled;
+    li {
+      @extend .d-inline-block;
+      @extend .pr-2;
+      a {
+        color: var(--dark);
+      }
+    }
+  }
+}
+.tribunal {
+  &-vara {
+    @extend .display-4;
+    font-size: 2rem;
+  }
+  &-nome {
+    @extend .lead;
+  }
+}
+.pagina {
+  &-posicao,
+  &-info {
+    @extend .col-12;
+  }
+  &-info {
+    @extend .col-md-10;
+  }
+  &-posicao {
+    @extend .d-flex;
+    @extend .align-items-center;
+    @extend .justify-content-center;
+    @extend .col-md-2;
+
+    font-size: 3rem;
+    font-weight: 600;
+    background: transparent url(../resources/images/medalha.svg) no-repeat center;
+    background-size: contain;
+  }
 }
