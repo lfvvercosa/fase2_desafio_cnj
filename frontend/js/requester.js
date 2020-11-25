@@ -27,6 +27,13 @@ function getVaras() {
   });
 }
 
+function getVarasCallback(callback) {
+  var url = urlBase + 'varas'
+  jQuery.get(url, (data)=>{
+    callback(data)
+  });
+}
+
 function getVaraByID(vara_id, callback) {
   if(court_details){
     callback(court_details)

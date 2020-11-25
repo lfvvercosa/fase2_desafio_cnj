@@ -1,4 +1,5 @@
 readCache()
+console.log(user)
 setRankComponent($('#toggle-switch'))
 setStatisticsComponent()
 
@@ -192,14 +193,18 @@ function send() {
   comment.comment = ""+commentBody
   console.log(comment)
   postComment(comment)
+  $('#comment-replay').modal('hide')
 }
 
 function configPopup(e) {
   console.log(e)
   console.log(e.id)
   var info = e.id.split(';')
-  comment = {vara_id: vara_id, step_id: info[0], comment: ''}
+  console.log(user)
+  var c = JSON.parse(user.court)
+  comment = {vara_id: c.vara_id, step_id: info[0], comment: ''}
   console.log(comment)
-  $('#vara_name3').html(info[2])
-  $('#vara_name4').html(info[2])
+  $('#user_name').html(user.name)
+  $('#vara_name3').html(c.name)
+  $('#vara_name4').html(c.name)
 }

@@ -54,7 +54,7 @@ var server = http.createServer(function(request, response){
   console.log("url = " + request.url);
   var urls = ["/"]
   if(request.url.indexOf(".") == -1) {
-    filePath = './frontend/index.html';
+    filePath = './frontend/login.html';
   } else{
       filePath = './frontend' + request.url;
     }

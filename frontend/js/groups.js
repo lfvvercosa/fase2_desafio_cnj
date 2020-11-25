@@ -37,6 +37,9 @@ var warning_audiencia = undefined
 var warning_citacao = undefined
 var warning_outros = undefined
 
+readCache()
+console.log(user)
+
 getGroups((data)=>{
   groups = data
 
@@ -141,7 +144,7 @@ function fillRankTable(courts, filter, isBottleNeck, tableName) {
       +'<i class="fas AAAAAAAAAAAAA fa-'+icon+'"></i></span></button></td></tr>'
             
       tableComponent.append(row);
-      var urlBase = window.location.href
+      var urlBase = window.location.href.replace("index.html", "")
       $('#'+tableName+'_rank_'+court.vara_id).click(e=>{
         vara_id = e.currentTarget.id
         saveCache()
