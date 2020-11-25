@@ -96,7 +96,7 @@ function setRankComponent(checkBox) {
       container.append('<tr id="diagnosis-comments-title_' + i + '">')
       container = $('#diagnosis-comments-title_' + i)
       container.append('<th style="width: 50%">Comentário mais curtido</th>')
-      container.append('<th style="width: 30%">Unidade jurídico </th>')
+      container.append('<th style="width: 30%">Unidade Judiciária </th>')
       container.append('<th style="width: 15%;">Duração</th>')
       container.append('<th style="width: 5%;">Comentar</th>')
       container = $('#diagnosis-comments_' + i)
