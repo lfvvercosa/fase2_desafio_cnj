@@ -39,6 +39,7 @@ function setRankComponent(checkBox) {
       var destination = step.destination
       var time = step.med_time + ' dias'
       var position = step.ranking
+      var frequency = step.frequency
       var container = $('.diagnosis')
       //button
       container.append('<button id= "button_' + i + '" class="btn-tramitacao" type="button" data-toggle="collapse" data-target="#diagnostico_' + i + '" aria-expanded="false" aria-controls="diagnostico_' + i + '" />')
@@ -71,7 +72,7 @@ function setRankComponent(checkBox) {
       container = $('#row_' + i)
       container.append('<td class="occurrences" id="occurrences_' + i + '">')
       container = $('#occurrences_' + i)
-      container.append('<p class="m-0"><strong>' + 65 + '</strong><br>Ocorrêcias</p>')
+      container.append('<p class="m-0"><strong>'+frequency+'</strong><br>Ocorrêcias</p>')
       container = $('#row_' + i)
       container.append('<td class="chevron"><i class="fas fa-chevron-up"></i></td>')
 

@@ -125,7 +125,7 @@ function fillRankTable(courts, filter, isBottleNeck, tableName) {
       '</th><td id='+tableName+'_days_'+court.vara_id+'>'+court.days_finish_process+' dias</td><td id='+tableName+'_movements_'+court.vara_id+'>'+court.movements+'</td><td id='+tableName+'_processes_'+court.vara_id+'>'
       +court.finished_processes+'</td><td id='+tableName+'_best_movements_'+court.vara_id+'>'+court.melhorEtapa+'</td><td id='+tableName+'_worst_movements_'+court.vara_id+'>'+court.piorEtapa+'</td>'
       +'<td><button class="modal-button modal-button-'+buttonClass+'" type=button data-toggle=tooltip'
-      +' title="Enviar alerta para este tribunal"><span data-toggle=modal data-target=#alertasSugeridos>'
+      +' title="Enviar alerta para este tribunal"><span id="'+court.vara_id+'" onclick="(configModal(this))" data-toggle=modal data-target=#alertasSugeridos>'
       +'<i class="fas AAAAAAAAAAAAA fa-'+icon+'"></i></span></button></td></tr>'
             
       tableComponent.append(row);
@@ -179,6 +179,17 @@ function fillRankTable(courts, filter, isBottleNeck, tableName) {
       })
     }
   });
+}
+
+function configModal(e) {
+  var court = selectedGroup.varas.find((court)=> court.vara_id == [e.id])
+  $('#modal_vara_name').html(court.name)
+  $('#modal_vara_name2').html(court.name)
+  $('#modal_tribunal').html(court.tribunal)
+  $('#modal_average_time').html('-----')
+  $('#modal_time').html(court.days_finish_process)
+  $('#modal_origin').html(court.piorEtapa)
+  $('#modal_destination').html('-----')
 }
 
 function fillMovementsChart() {
@@ -379,14 +390,11 @@ function fillMap() {
   selectedGroup.varas.forEach((vara)=>{
     locations.push([vara.name, vara.latitude, vara.longitude])  
   })
-  console.log("### location is ")
-  console.log(locations)
   populateMap(map, infowindow, locations)
 }
 
 function fillCboClassFilter() {
   $('#cboClass').html('<option value=""></option>')
-  console.log(Object.keys(selectedGroup.classes_frequentes))
   Object.keys(selectedGroup.classes_frequentes).forEach((classe) => {
     $('#cboClass').append('<option value="'+classe+'">'+classe+'</option>')
   })
