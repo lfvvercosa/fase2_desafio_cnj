@@ -78,10 +78,10 @@
                         <option value="grau-3">3º Grau</option>
                     </select>
                 </div>
-                <div class="filtro-select">
+                <!-- <div class="filtro-select">
                     <select id="cboClass" class="select select-classe" name="classes[]" multiple="multiple">
                     </select>
-                </div>
+                </div> -->
                 <div class="filtro-select filtro-select-grupo">
                     <select id="cboGroup" class="select select-grupo" onchange="selectGroupById(this)">
                     </select>
@@ -91,10 +91,11 @@
                     <button><i class="fas fa-search"></i> Filtrar</button>
                 </div>
                 <div class="filtro-button todos-grupos">
-                    <button type="button" data-toggle="collapse" title="Visualizar todos os grupos"
-                        data-target="#todos-grupos" aria-expanded="false" aria-controls="todos-grupos">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        Todos os grupos
+                    <button type="button" data-toggle="collapse" data-target="#todos-grupos" aria-expanded="false"
+                        aria-controls="todos-grupos">
+                        <span data-toggle="tooltip" title="Visualizar todos os grupos"> <i
+                                class="fas fa-exclamation-triangle"></i> Todos os grupos
+                        </span>
                     </button>
 
 
@@ -102,8 +103,14 @@
             </div>
         </form>
         <section class="chart-box chart-container collapse collapse-grupos" id="todos-grupos">
-            <div id="chart_alerts" class="c3" style="max-height: 320px; position: relative;">
+            <div class="card">
+                <div class="secao-titulo">Alertas por grupo</div>
+                <p>Clique nas colunas do gráfico para alterar as informações disponíveis na página
+                    
+                </p>
+                <div id="chart_alerts" class="c3" style="max-height: 320px; position: relative;">
 
+                </div>
             </div>
         </section>
         <ul class="grupo-descricao">
@@ -165,8 +172,8 @@
                             Melhores e Piores Unidades Judiciárias
                         </div>
                         <div>
-                            <select id="cboTribunal" onchange="filterCourt()" class="selectTribunal" data-toggle="tooltip"
-                                title="Selecione o tribunal">
+                            <select id="cboTribunal" onchange="filterCourt()" class="selectTribunal"
+                                data-toggle="tooltip" title="Selecione o tribunal">
                                 <option selected value="0">Todos os tribunais</option>
                             </select>
                             <button onclick="download_table_as_csv('rank_courts_table');" class="csv">
@@ -243,7 +250,8 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="alertasSugeridosLabel">Confirmar envio de alerta para <strong id="modal_vara_name"></strong></h5>
+                    <h5 class="modal-title" id="alertasSugeridosLabel">Confirmar envio de alerta para <strong
+                            id="modal_vara_name"></strong></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
                         title="Fechar janela">
                         <span aria-hidden="true">&times;</span>
@@ -265,9 +273,14 @@
                                 órgão de controle têm promovido ações coordenadas de promoção da eficiência do Poder
                                 Judiciário Nacional com o envio de alertas de execução processual fora dos padrões
                                 nacionais.</p>
-                            <p>Nesse contexto, identificou-se que o Órgão Judiciário - OJ, <span id="modal_vara_name2"></span> , integrante do
-                                <span id="modal_tribunal"></span>, têm apresentado um tempo de execução médio de <span id="modal_time"></span>
-                                dias entre as macroetapas <span id="modal_origin"></span> e <span id="modal_destination"></span>, superior ao apurado de <span id="modal_average_time"></span> nos OJs com características similares entre 2000 e 2020.</p>
+                            <p>Nesse contexto, identificou-se que o Órgão Judiciário - OJ, <span
+                                    id="modal_vara_name2"></span> , integrante do
+                                <span id="modal_tribunal"></span>, têm apresentado um tempo de execução médio de <span
+                                    id="modal_time"></span>
+                                dias entre as macroetapas <span id="modal_origin"></span> e <span
+                                    id="modal_destination"></span>, superior ao apurado de <span
+                                    id="modal_average_time"></span> nos OJs com características similares entre 2000 e
+                                2020.</p>
                             <p>Portanto, solicita-se a apresentação esclarecimentos dos fatos ora relatados no link
                                 <a href="www.panorama.com.br/xsvsrt" target="_blank">panorama.com.br/xsvsrt</a>, a
                                 fim de registrá-los e para que o CNJ os avalie de forma adequada.</p>
