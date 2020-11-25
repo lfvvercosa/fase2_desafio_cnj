@@ -2,6 +2,8 @@ readCache()
 setRankComponent($('#toggle-switch'))
 setStatisticsComponent()
 
+var comment = {}
+
 function setRankComponent(checkBox) {
   var isBottleNeck = checkBox == undefined || checkBox.checked == undefined || checkBox.checked
   getVaraByID(vara_id, (json) => {
@@ -12,8 +14,6 @@ function setRankComponent(checkBox) {
 
     $('#vara_name').html(json.name)
     $('#vara_name2').html(json.name)
-    $('#vara_name3').html(json.name)
-    $('#vara_name4').html(json.name)
     $('#court_name').html(json.tribunal)
     $('#court_name2').html(json.tribunal)
     $('#group_name').html(selectedGroup.group_name)
@@ -104,8 +104,7 @@ function loadComments(i, container, step) {
     vara_id,
     3,
     (json2) => {
-      //console.log(json2.slice(0,3))
-      bestVarasOnStep = json2.slice(0.3)
+      bestVarasOnStep = json2
       for (var j = 0; j < bestVarasOnStep.length; j++) {
         container = $('#tbody-comments_' + i)
         container.append('<tr id="comment_' + i + '_' + j + '">')
@@ -122,7 +121,7 @@ function loadComments(i, container, step) {
         container = $('#comment_' + i + '_' + j)
         container.append('<td class="text-center">' + bestVarasOnStep[j].med_time + ' dias</td>')
         container = $('#comment_'+i+'_'+j)
-        container.append('<td id="insert_comment_'+i+'_'+j+'" ><button class="modal-button modal-button-comment" type="button" data-toggle="tooltip" title="Responder ao comentário"><span data-toggle="modal" data-target="#comment-replay"><i class="fas fa-comments"></i></span></button>')
+        container.append('<td id="insert_comment_'+i+'_'+j+'" ><button class="modal-button modal-button-comment" type="button" data-toggle="tooltip" title="Responder ao comentário"><span id="'+step.step_id+';'+bestVarasOnStep[j].vara_id+ ';'+bestVarasOnStep[j].vara_name +'" onclick="configPopup(this)" data-toggle="modal" data-target="#comment-replay"><i  class="fas fa-comments"></i></span></button>')
         container = $('#insert_comment_'+i+'_'+j)
 
         container = $('#comment_' + i + '_' + j)
@@ -166,7 +165,6 @@ function setStatisticsComponent() {
 
 function getIcon(origin) {
   var movements = ['Distribuição','Conclusão','Despacho','Decisão','Julgamento','Trânsito em julgado','Baixa/Arquivamento', 'Audiencia', 'Citação', 'Outros']
-  console.log(origin)
   switch(origin){
     case movements[0] : return 'fa-users'
     case movements[1] : return 'fa-users'
@@ -180,4 +178,21 @@ function getIcon(origin) {
     case movements[9] : return 'fa-users'
     case movements[10] : return 'fa-users'
   }
+}
+
+function send() {
+  var commentBody = $('#comment-body')[0].value
+  comment.comment = ""+commentBody
+  console.log(comment)
+  postComment(comment)
+}
+
+function configPopup(e) {
+  console.log(e)
+  console.log(e.id)
+  var info = e.id.split(';')
+  comment = {vara_id: vara_id, step_id: info[0], comment: ''}
+  console.log(comment)
+  $('#vara_name3').html(info[2])
+  $('#vara_name4').html(info[2])
 }

@@ -76,3 +76,17 @@ function getCourtsFromGroup(groupId, callback) {
     callback(data)
   });
 }
+
+function postComment(comment) {
+  $.ajax({
+    type: "POST",
+    contentType: "application/json",
+    url: urlBase + 'comments/create',
+    data: JSON.stringify({
+      "vara_id": comment.vara_id,
+      "step_id": comment.step_id,
+      "comment": comment.comment
+    }),
+    dataType: 'json'
+ });
+}
