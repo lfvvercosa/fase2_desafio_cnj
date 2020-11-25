@@ -1,6 +1,6 @@
 
 getBestVaras(vara_id, selectedGroup.varas.length, (result)=>{
-    var groups = ['Distribuição','Conclusão','Despacho','Decisão','Julgamento','Trânsito em julgado','Baixa ou arquivamento', 'Audiencia', 'Citação', 'Outros']
+    var groups = ['Distribuição','Conclusão','Despacho','Decisão','Julgamento','Trânsito em julgado','Baixa ou arquivamento', 'Audiencia', 'Citação', 'Apreciação inicial']
     var time_distribuicao = ["Distribuição"]
     var time_conclusao = ["Conclusão"]
     var time_despacho = ["Despacho"]
@@ -10,7 +10,11 @@ getBestVaras(vara_id, selectedGroup.varas.length, (result)=>{
     var time_baixa_ou_arquivamento = ["Baixa ou arquivamento"]
     var time_audiencia = ["Audiencia"]
     var time_citacao = ["Citação"]
-    var time_outros = ["Outros"]
+    var time_outros = ["Apreciação inicial"]
+
+    console.log("######## result varas is ##########")
+    console.log(result)
+
     setNeighborsChart(result)
     var best = result.slice(0,5)
     best.slice(0,5).forEach(json => {
@@ -42,16 +46,16 @@ getBestVaras(vara_id, selectedGroup.varas.length, (result)=>{
             time_baixa_ou_arquivamento.push(getValidValue(json.time_baixa_ou_arquivamento))
         else
             time_baixa_ou_arquivamento.push(0)
-        if(json.time_audiencia && json.audiencia != null)
-            time_audiencia.push(getValidValue(json.audiencia))
+        if(json.time_audiencia && json.time_audiencia != null)
+            time_audiencia.push(getValidValue(json.time_audiencia))
         else
             time_audiencia.push(0)
-        if(json.time_citacao && json.citacao != null)
-            time_citacao.push(getValidValue(json.citacao))
+        if(json.time_citacao && json.time_citacao != null)
+            time_citacao.push(getValidValue(json.time_citacao))
         else
             time_citacao.push(0)
-        if(json.time_outros && json.outros!= null)
-            time_outros.push(getValidValue(json.outros))
+        if(json.time_outros && json.time_outros!= null)
+            time_outros.push(getValidValue(json.time_outros))
         else
             time_outros.push(0)
     });
@@ -91,7 +95,7 @@ getBestVaras(vara_id, selectedGroup.varas.length, (result)=>{
 })
 
 function setNeighborsChart(result) {
-    var groups = ['Distribuição','Conclusão','Despacho','Decisão','Julgamento','Trânsito em julgado','Baixa ou arquivamento', 'Audiencia', 'Citação', 'Outros']
+    var groups = ['Distribuição','Conclusão','Despacho','Decisão','Julgamento','Trânsito em julgado','Baixa ou arquivamento', 'Audiencia', 'Citação', 'Apreciação inicial']
     var time_distribuicao = ["Distribuição"]
     var time_conclusao = ["Conclusão"]
     var time_despacho = ["Despacho"]
@@ -101,7 +105,7 @@ function setNeighborsChart(result) {
     var time_baixa_ou_arquivamento = ["Baixa ou arquivamento"]
     var time_audiencia = ["Audiencia"]
     var time_citacao = ["Citação"]
-    var time_outros = ["Outros"]
+    var time_outros = ["Apreciação inicial"]
     var neighbors = findNeighbors(result)
     console.log(neighbors)
     neighbors.forEach(json => {
@@ -133,16 +137,16 @@ function setNeighborsChart(result) {
             time_baixa_ou_arquivamento.push(getValidValue(json.time_baixa_ou_arquivamento))
         else
             time_baixa_ou_arquivamento.push(0)
-        if(json.time_audiencia && json.audiencia != null)
-            time_audiencia.push(getValidValue(json.audiencia))
+        if(json.time_audiencia && json.time_audiencia != null)
+            time_audiencia.push(getValidValue(json.time_audiencia))
         else
             time_audiencia.push(0)
-        if(json.time_citacao && json.citacao != null)
-            time_citacao.push(getValidValue(json.citacao))
+        if(json.time_citacao && json.time_citacao != null)
+            time_citacao.push(getValidValue(json.time_citacao))
         else
             time_citacao.push(0)
-        if(json.time_outros && json.outros!= null)
-            time_outros.push(getValidValue(json.outros))
+        if(json.time_outros && json.time_outros!= null)
+            time_outros.push(getValidValue(json.time_outros))
         else
             time_outros.push(0)
     });
@@ -242,13 +246,13 @@ function findNeighbors(result) {
     }
     else {
         if(right >= 4)
-            return result.slice(pos-1, pos+5)
+            return result.slice(pos, pos+5)
         else if(right == 3) 
-            return result.slice(pos-1, pos+4)
+            return result.slice(pos, pos+4)
         else if(right == 2)
-            return result.slice(pos-1, pos+3)
+            return result.slice(pos, pos+3)
         else if (right == 1)
-            return result.slice(pos-1, pos+2)
+            return result.slice(pos, pos+2)
         else
             return result.slice(pos, pos+1)
         
