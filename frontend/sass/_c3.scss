@@ -1,16 +1,22 @@
-.c3 svg {
-  font: 10px sans-serif;
-  -webkit-tap-highlight-color: transparent;
-}
-.c3 line,
-.c3 path {
-  fill: none;
-  stroke: #000;
-}
-.c3 text {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+.c3 {
+  * {
+    font-size: 1rem !important;
+  }
+  svg {
+    font-size:10px "Open Sans", sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+  line,
+  path {
+    fill: none;
+    stroke: #000;
+  }
+
+  text {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
 }
 .c3-bars path,
 .c3-event-rect,
@@ -28,7 +34,7 @@
 }
 .c3-chart-arc text {
   fill: #fff;
-  font-size: 13px;
+  // font-size: 13px;
 }
 .c3-grid line {
   stroke: #aaa;
@@ -42,7 +48,7 @@
 }
 .c3-text.c3-empty {
   fill: grey;
-  font-size: 2em;
+  // font-size: 2em;
 }
 .c3-line {
   stroke-width: 1px;
@@ -99,7 +105,7 @@
   stroke-width: 1;
 }
 .c3-title {
-  font: 14px sans-serif;
+  // font: 14px sans-serif;
 }
 .c3-tooltip-container {
   z-index: 10;
@@ -118,7 +124,7 @@
   border: 1px solid #ccc;
 }
 .c3-tooltip th {
-  background-color: #aaa;
+  background-color: #333;
   font-size: 14px;
   padding: 2px 5px;
   text-align: left;
@@ -129,6 +135,7 @@
   padding: 3px 6px;
   background-color: #fff;
   border-left: 1px dotted #999;
+  width: 70%;
 }
 .c3-tooltip td > span {
   display: inline-block;
@@ -138,6 +145,9 @@
 }
 .c3-tooltip .value {
   text-align: right;
+  width: 30%;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
 }
 .c3-area {
   stroke-width: 0;

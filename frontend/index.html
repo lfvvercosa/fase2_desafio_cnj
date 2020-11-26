@@ -3,26 +3,18 @@
 
 <head>
     <title>Panorama CNJ</title>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.2/js/all.min.js"
-        integrity="sha512-IqeQ6271Vq75Nf4OOwCEYi4tIAyT2J7vtKrmOU9WCezb+YkxqAu+igEi2CuLEnA7cqtvFDHsQhXbpZXx/evxrw=="
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.2/js/all.min.js" integrity="sha512-IqeQ6271Vq75Nf4OOwCEYi4tIAyT2J7vtKrmOU9WCezb+YkxqAu+igEi2CuLEnA7cqtvFDHsQhXbpZXx/evxrw==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./sass/main.css">
-
     <link rel="icon" sizes="32x32" href="./resources/images/favicon.jpg" />
     <link rel="icon" sizes="192x192" href="./resources/images/favicon.jpg" />
     <link rel="apple-touch-icon-precomposed" href="./resources/images/favicon.jpg" />
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script> <!-- d3 -->
-    <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script> <!-- c3js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
     <script src="./resources/c3/c3.min.js"></script>
     <script src="./config.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
@@ -32,106 +24,80 @@
     <script src="./js/map.js"></script>
     <script src="./js/table.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
-
     <script src="./js/main.js"></script>
 </head>
 
 <body>
     <main>
-        <!-- HEADER -->
-        <header class="site-header">
-            <img src="resources/images/logo.png" alt="" class="site-logo">
+        <header class="site-header"> <img src="resources/images/logo.png" alt="" class="site-logo">
             <div class="site-modulo">Panorama</div>
         </header>
-        <!-- HEADER -->
-        <!-- NAV -->
         <nav class="migalha-pao" aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li>Bem vindo ao &nbsp; <strong>Panorama</strong> &nbsp; do Conselho Nacional de Justiça</li>
             </ol>
         </nav>
-        <!-- NAV -->
-        <!-- FILTRO -->
-        <form class="filtro-form filtro-selectors">
-            <!-- INFO -->
-            <div class="filtro-info" data-toggle="popover" title="Como pesquisar"
-                data-content="Para iniciar sua pesquisa, basta clicar nos filtros disponíveis e digitar os termos para o sistema exibir mais rapidamente as opções existentes">
-                <i class="fas fa-info"></i>
-            </div>
-            <!-- SELECTS -->
-            <div class="filtros">
-                <label class="filtro-label" for="filter-cluster">Informações desejadas:</label>
-                <div class="filtro-select filtro-select-assuntos">
-                    <select class="select select-assuntos" name="cluster[]" readonly disabled id="filter-cluster">
-                        <option select value="Justica Estadual">Justiça Estadual</option>
-                        <option value="Justica Federal">Justiça Federal</option>
-                        <option value="Justica Militar">Justiça Militar</option>
-                        <option value="Justica Trabalho">Justiça Trabalho</option>
-                        <option value="Trubunais Justica superiores">Justiça Trubunais superiores</option>
-                    </select>
+        <form class="filtro-form">
+            <div class="row">
+                <div class="filtro-info" data-toggle="popover" title="Como pesquisar"
+                    data-content="Para iniciar sua pesquisa, basta clicar nos filtros disponíveis e digitar os termos para o sistema exibir mais rapidamente as opções existentes">
+                    <div> <i class="fas fa-info"></i></div>
                 </div>
-                <div class="filtro-select filtro-select-grau">
-                    <select class="select select-grau" name="grau[]" readonly disabled>
-                        <option select value="grau-1">1º Grau</option>
-                        <option value="grau-2">2º Grau</option>
-                        <option value="grau-3">3º Grau</option>
-                    </select>
-                </div>
-                <!-- <div class="filtro-select">
-                    <select id="cboClass" class="select select-classe" name="classes[]" multiple="multiple">
-                    </select>
-                </div> -->
-                <div class="filtro-select filtro-select-grupo">
-                    <select id="cboGroup" class="select select-grupo" onchange="selectGroupById(this)">
-                    </select>
-                </div>
-                <!-- BOTAO -->
-                <div class="filtro-button d-none">
-                    <button><i class="fas fa-search"></i> Filtrar</button>
-                </div>
-                <div class="filtro-button todos-grupos">
-                    <button type="button" data-toggle="collapse" data-target="#todos-grupos" aria-expanded="false"
-                        aria-controls="todos-grupos">
-                        <span data-toggle="tooltip" title="Visualizar todos os grupos"> <i
-                                class="fas fa-exclamation-triangle"></i> Todos os grupos
-                        </span>
-                    </button>
-
-
+                <div class="filtros">
+                    <div>
+                        <label class="filtro-label" for="filter-cluster">Informações desejadas:</label>
+                        <div data-toggle="tooltip" title="Justiça Estadual" class="filtro-select filtro-select-assuntos">
+                            <select class="select select-assuntos" name="cluster[]" readonly disabled id="filter-cluster">
+                                <option select value="Justica Estadual">Justiça Estadual</option>
+                                <option value="Justica Federal">Justiça Federal</option>
+                                <option value="Justica Militar">Justiça Militar</option>
+                                <option value="Justica Trabalho">Justiça Trabalho</option>
+                                <option value="Trubunais Justica superiores">Justiça Trubunais superiores</option>
+                            </select>
+                        </div>
+                        <div data-toggle="tooltip" title="1º Grau" class="filtro-select filtro-select-grau">
+                            <select class="select select-grau" name="grau[]" readonly disabled>
+                                <option select value="grau-1">1º Grau</option>
+                                <option value="grau-2">2º Grau</option>
+                                <option value="grau-3">3º Grau</option>
+                            </select>
+                        </div>
+                        <div data-toggle="tooltip" title="Selecione o Grupo" class="filtro-select filtro-select-grupo">
+                            <select id="cboGroup" class="select select-grupo" onchange="selectGroupById(this)">
+                            </select>
+                        </div>
+                        <div class="filtro-button todos-grupos">
+                            <button type="button" data-toggle="collapse" data-target="#todos-grupos" aria-expanded="false" aria-controls="todos-grupos">
+                                <span data-toggle="tooltip" title="Visualizar todos os grupos">
+                                    <i class="fas fa-exclamation-triangle"></i> Todos os grupos 
+                                </span> 
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </form>
         <section class="chart-box chart-container collapse collapse-grupos" id="todos-grupos">
             <div class="card">
                 <div class="secao-titulo">Alertas por grupo</div>
-                <p>Clique nas colunas do gráfico para alterar as informações disponíveis na página
-                    
-                </p>
-                <div id="chart_alerts" class="c3" style="max-height: 320px; position: relative;">
-
-                </div>
+                <p>Clique nas colunas do gráfico para alterar as informações disponíveis na página </p>
+                <div id="chart_alerts" class="c3" style="max-height: 320px; position: relative;"> </div>
             </div>
         </section>
         <ul class="grupo-descricao">
-            <li class="secao-titulo"><span id="group_name"></span><i class="alerta-uj  fas fa-circle"></i></li>
+            <li class="secao-titulo"><span id="group_name"></span><span data-toggle="tooltip" title="Grupo em alerta"><i
+                        class="alerta-uj fas fa-circle"></i></span></li>
             <li>Membros<strong id="group_members"></strong></li>
             <li>Tempo médio de processo<strong id="group_time"></strong></li>
         </ul>
-
-        <!-- FILTRO -->
         <section class="tabela tabela-alerta-sugeridos tabela-container">
             <div class="card">
                 <div class="table-header">
-                    <div class="secao-titulo">
-                        Unidades Judiciárias em alerta
-                    </div>
+                    <div class="secao-titulo"> Unidades Judiciárias em alerta </div>
                 </div>
                 <section class="chart-box chart-container collapse collapse-grupos">
                     <div class="card">
-                        <div class="secao-titulo">
-                            Alertas por grupos
-                        </div>
-
+                        <div class="secao-titulo"> Alertas por grupos </div>
                     </div>
                 </section>
                 <div class="table-responsive">
@@ -142,23 +108,18 @@
                                 <th style="width: 45%" rowspan="2">Unidade Judiciária</th>
                                 <th rowspan="2">Tribunal</th>
                                 <th style="width: 90px" rowspan="2">Tempo</th>
-                                <!-- <th colspan="2">Quantidade</th> -->
                                 <th rowspan="2">Movimentação média</th>
                                 <th rowspan="2">Processos</th>
                                 <th colspan="2">Etapas</th>
                                 <th style="width: 70px" rowspan="2"><span data-toggle="tooltip"
                                         title="Enviar alerta para a Unidade Judiciária">Alerta</span></th>
-
                             </tr>
                             <tr>
-                                <!-- <th>Movimentos</th> -->
-                                <!-- <th>Processos</th> -->
                                 <th>Melhor</th>
                                 <th>Pior</th>
                             </tr>
                         </thead>
-                        <tbody id="rank_courts_warning">
-                        </tbody>
+                        <tbody id="rank_courts_warning"> </tbody>
                     </table>
                 </div>
             </div>
@@ -167,18 +128,12 @@
             <div class="tabela tabela-container">
                 <div class="card">
                     <div class="table-header">
-                        <div class="secao-titulo">
-                            Melhores e Piores Unidades Judiciárias
-                        </div>
-                        <div>
-                            <select id="cboTribunal" onchange="filterCourt()" class="selectTribunal"
+                        <div class="secao-titulo"> Melhores e Piores Unidades Judiciárias </div>
+                        <div> <select id="cboTribunal" onchange="filterCourt()" class="selectTribunal"
                                 data-toggle="tooltip" title="Selecione o tribunal">
                                 <option selected value="0">Todos os tribunais</option>
-                            </select>
-                            <button onclick="download_table_as_csv('rank_courts_table');" class="csv">
-                                <i class="fas fa-file-export"></i> CSV
-                            </button>
-                        </div>
+                            </select> <button onclick="download_table_as_csv('rank_courts_table');" class="csv"> <i
+                                    class="fas fa-file-export"></i> CSV </button> </div>
                     </div>
                     <div class="table-responsive">
                         <table id="rank_courts_table">
@@ -188,78 +143,55 @@
                                     <th style="width: 45%" rowspan="2">Unidade Judiciária</th>
                                     <th rowspan="2">Tribunal</th>
                                     <th style="width: 90px" rowspan="2">Tempo</th>
-                                    <!-- <th colspan="2">Quantidade</th> -->
                                     <th rowspan="2">Movimentação média</th>
                                     <th rowspan="2">Processos</th>
                                     <th colspan="2">Etapas</th>
                                     <th style="width: 70px" rowspan="2"><span data-toggle="tooltip"
                                             title="Enviar mensagem para a Unidade Judiciária">Aviso</span></th>
-
                                 </tr>
                                 <tr>
-                                    <!-- <th>Movimentos</th> -->
-                                    <!-- <th>Processos</th> -->
                                     <th>Melhor</th>
                                     <th>Pior</th>
                                 </tr>
                             </thead>
-                            <tbody id="rank_courts">
-                            </tbody>
+                            <tbody id="rank_courts"> </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </section>
-        <div class="secao-titulo">
-            Tempo percentual das macroetapas
-        </div>
+        <div class="secao-titulo"> Tempo percentual das macroetapas </div>
         <div class="row">
             <div class="chart-box">
                 <div class="card">
-                    <div class="secao-subtitulo">
-                        Unidades de melhor desempenho
-                    </div>
+                    <div class="secao-subtitulo"> Unidades de melhor desempenho </div>
                     <div id="chart_best" class="c3"></div>
                 </div>
             </div>
-
             <div class="chart-box">
                 <div class="card">
-                    <div class="secao-subtitulo">
-                        Unidades de pior desempenho
-                    </div>
+                    <div class="secao-subtitulo"> Unidades de pior desempenho </div>
                     <div id="chart_worst" class="c3"></div>
                 </div>
             </div>
         </div>
         <div class="mapa mapa-container">
-            <div class="secao-titulo">
-                Unidades Judiciárias do grupo
-            </div>
+            <div class="secao-titulo"> Unidades Judiciárias do grupo </div>
             <div id="map" style="height: 500px;"></div>
         </div>
-
     </main>
-
-
-    <!--  MODAL -->
-
     <div class="modal fade" id="alertasSugeridos" data-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="alertasSugeridosLabel">Confirmar envio de alerta para <strong
-                            id="modal_vara_name"></strong></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
-                        title="Fechar janela">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                            id="modal_vara_name"></strong></h5> <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close" data-toggle="tooltip" title="Fechar janela"> <span
+                            aria-hidden="true">&times;</span> </button>
                 </div>
                 <div class="modal-body">
-
-                    <header class="site-header">
-                        <img src="resources/images/logo.png" alt="" class="site-logo">
+                    <header class="site-header"> <img src="resources/images/logo.png" alt="" class="site-logo">
                         <div class="site-modulo">Panorama</div>
                     </header>
                     <article class="container">
@@ -273,31 +205,27 @@
                                 Judiciário Nacional com o envio de alertas de execução processual fora dos padrões
                                 nacionais.</p>
                             <p>Nesse contexto, identificou-se que o Órgão Judiciário - OJ, <span
-                                    id="modal_vara_name2"></span> , integrante do
-                                <span id="modal_tribunal"></span>, têm apresentado um tempo de execução médio de <span
-                                    id="modal_time"></span>
-                                dias entre as macroetapas <span id="modal_origin"></span> e <span
-                                    id="modal_destination"></span>, superior ao apurado de <span
-                                    id="modal_average_time"></span> nos OJs com características similares entre 2000 e
-                                2020.</p>
-                            <p>Portanto, solicita-se a apresentação esclarecimentos dos fatos ora relatados no link
-                                <a href="www.panorama.com.br/xsvsrt" target="_blank">panorama.com.br/xsvsrt</a>, a
-                                fim de registrá-los e para que o CNJ os avalie de forma adequada.</p>
+                                    id="modal_vara_name2"></span> , integrante do <span id="modal_tribunal"></span>, têm
+                                apresentado um tempo de execução médio de <span id="modal_time"></span> dias entre as
+                                macroetapas <span id="modal_origin"></span> e <span id="modal_destination"></span>,
+                                superior ao apurado de <span id="modal_average_time"></span> nos OJs com características
+                                similares entre 2000 e 2020.</p>
+                            <p>Portanto, solicita-se a apresentação esclarecimentos dos fatos ora relatados no link <a
+                                    href="www.panorama.com.br/xsvsrt" target="_blank">panorama.com.br/xsvsrt</a>, a fim
+                                de registrá-los e para que o CNJ os avalie de forma adequada.</p>
                             <p>Sendo as solicitações para o momento, o CNJ coloca-se à disposição para quaisquer
                                 esclarecimentos que se fizerem necessários e renova, na oportunidade, expressões de
                                 estima e consideração."</p>
                         </div>
                     </article>
-                    <div class="row py-3">
-                        <strong class="col-4 text-center text-md-right">Acesso ao aviso:</strong>
+                    <div class="row py-3"> <strong class="col-4 text-center text-md-right">Acesso ao aviso:</strong>
                         <div class="col-8"><a href="www.panorama.com.br/xsvsrt"
                                 target="_blank">panorama.com.br/xsvsrt</a></div>
                     </div>
                 </div>
-                <div class="modal-footer show-toast">
-                    <button type="button" class="btn btn-link" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" id="enviar-alerta">Enviar alerta</button>
-                </div>
+                <div class="modal-footer show-toast"> <button type="button" class="btn btn-link"
+                        data-dismiss="modal">Fechar</button> <button type="button" class="btn btn-primary"
+                        id="enviar-alerta">Enviar alerta</button> </div>
             </div>
         </div>
     </div>

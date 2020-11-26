@@ -1,79 +1,74 @@
-.todos-grupos {
-  button {
-    @extend .btn;
-    @extend .btn-outline-warning;
-    width: 130px;
-    &[aria-expanded="true"],
-    &:focus,
-    &:hover {
-      @extend .btn-warning;
-      @extend .text-white;
-    }
-  }
-}
-
 .filtro {
   &-form {
     @extend .my-3;
     @extend .w-100;
     @extend .card;
-    display: flex;
-    @extend .justify-content-center;
-    @extend .flex-column;
-    @extend .flex-md-row;
   }
-  &-select,
-  &-label {
-    @extend .pb-md-0;
-    @extend .px-md-3;
-    @extend .mb-0;
-    @extend .pb-3;
-    @extend .px-0;
+  &s,
+  &-info {
+    @extend .col-12;
+  }
+  &-info {
+    @extend .col-md-1;
+    &,
+    & div {
+      @extend .d-flex;
+      @extend .align-items-center;
+      @extend .justify-content-center;
+    }
+    div {
+      @extend .info;
+      width: 36px;
+      height: 36px;
+    }
+  }
+  &s {
+    @extend .col-md-11;
     @extend .w-100;
+    & > div {
+      @extend .row;
+    }
   }
+
   &-label {
+    @extend .pt-2;
+    @extend .mb-0;
     @extend .text-center;
     @extend .text-md-right;
   }
-  &-select {
-    @extend .mb-3;
-    @extend .mb-md-0;
-    .select {
+  &-label,
+  &-select,
+  &-button {
+    @extend .col-12;
+    @extend .col-md-6;
+    @extend .col-lg;
+    @extend .pb-3;
+    @extend .pb-md-0;
+    select {
       @extend .w-100;
-      &2-selection {
-        min-height: 32px !important;
+    }
+    .select2-selection {
+      min-height: 38px;
+      &__rendered {
+        @extend .d-inline-block;
+        font-size: 0.875rem;
+        text-transform: capitalize;
+        line-height: 1.5;
       }
     }
-  }
-  &-button {
-    button {
-      @extend .btn;
-      @extend .btn-outline-secondary;
-    }
-  }
-  &-info {
-    @extend .info;
-    width: 36px;
-    height: 36px;
-    @extend .d-flex;
-    @extend .align-items-center;
-    @extend .justify-content-center;
-  }
-  &s {
-    @extend .d-flex;
-    @extend .justify-content-between;
-    @extend .flex-grow-1;
   }
 }
-.collapse {
-  &-grupos {
+.todos-grupos {
+  button {
+    @extend .btn;
+    @extend .btn-outline-warning;
     @extend .w-100;
-    padding: 1rem 0 !important;
-    .card {
-      background: #eee;
-      .secao-titulo {
-        text-transform: none !important;
-      }
+
+    &[aria-expanded="true"],
+    &:focus,
+    &:hover {
+      @extend .btn-warning;
+      @extend .text-white;
     }
   }
 }
