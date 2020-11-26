@@ -12,8 +12,6 @@ getBestVaras(vara_id, selectedGroup.varas.length, (result)=>{
     var time_citacao = ["Citação"]
     var time_outros = ["Apreciação inicial"]
 
-    console.log("######## result varas is ##########")
-    console.log(result)
 
     setNeighborsChart(result)
     var best = result.slice(0,5)

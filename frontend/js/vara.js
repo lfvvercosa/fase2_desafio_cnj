@@ -146,14 +146,15 @@ function loadComments(i, container, step) {
 function setStatisticsComponent() {
   getVaraByID(vara_id, (json) => {
     //worst
+
     $('#statistics-wrost-title-1').html('Etapa com  <br/>pior desempenho')
-    $('#statistics-wrost-value').html(getStepName(json.worst_steps[0].origin))
+    $('#statistics-wrost-value').html(getStepName(json.piorEtapa))
     $('#statistics-wrost-position').html('1' + '° de ' + json.group.amount_of_varas + ' varas')
     //statistics-wrost-title-2
 
     //best
     $('#statistics-best-title-1').html('Etapa com <br/> melhor desempenho')
-    $('#statistics-best-value').html(getStepName(json.best_steps[0].origin))
+    $('#statistics-best-value').html(getStepName(json.melhorEtapa))
     $('#statistics-best-position').html('1' + '° de ' + json.group.amount_of_varas + ' varas')
     //statistics-best-title-2
 

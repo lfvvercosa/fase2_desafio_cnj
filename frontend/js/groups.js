@@ -134,13 +134,16 @@ function fillRankTable(courts, filter, isBottleNeck, tableName) {
   var colorClass = isBottleNeck ? 'uj-alerta' : 'uj-destaque'
   var buttonClass = isBottleNeck ? 'warning' : 'award'
   var icon = isBottleNeck ? 'bullhorn' : 'award'
+  var messageID = isBottleNeck ? 'alertasSugeridos' : 'parabenizacoesSugeridas'
+  var funcOnClick = isBottleNeck ? 'configModal' : 'configModalCongrats'
+
   courts.forEach(court => {
     if(!filter || filter == "Todos" || (filter == court.tribunal)) {
       var row = '<tr class='+colorClass+'><td id='+tableName+'_rank_'+court.vara_id+'>'+court.ranking+'</td><td class="uj-nome" id='+tableName+'_name_'+court.vara_id+' title="'+court.name+'">'+court.name+'</td><th>'+court.tribunal+
       '</th><td id='+tableName+'_days_'+court.vara_id+'>'+court.days_finish_process+' dias</td><td id='+tableName+'_movements_'+court.vara_id+'>'+court.movements+'</td><td id='+tableName+'_processes_'+court.vara_id+'>'
       +court.finished_processes+'</td><td id='+tableName+'_best_movements_'+court.vara_id+'>'+getStepName(court.melhorEtapa)+'</td><td id='+tableName+'_worst_movements_'+court.vara_id+'>'+getStepName(court.piorEtapa)+'</td>'
       +'<td><button class="modal-button modal-button-'+buttonClass+'" type=button data-toggle=tooltip'
-      +' title="Enviar alerta para este tribunal"><span id="'+court.vara_id+'" onclick="configModal(this)" data-toggle=modal data-target=#alertasSugeridos>'
+      +' title="Enviar alerta para este tribunal"><span id="'+court.vara_id+'" onclick="'+funcOnClick+'(this)" data-toggle=modal data-target=#'+messageID+'>'
       +'<i class="fas AAAAAAAAAAAAA fa-'+icon+'"></i></span></button></td></tr>'
             
       tableComponent.append(row);
@@ -196,37 +199,36 @@ function fillRankTable(courts, filter, isBottleNeck, tableName) {
   });
 }
 
-function getPercentageWorstStep(court){
-  piorEtapa = court.piorEtapa
+function getPercentageStep(step, court){
 
-  if (piorEtapa == 'Distribuição'){
+  if (step == 'Distribuição'){
     return court.time_distribuicao
   }
-  if (piorEtapa == 'Conclusão'){
+  if (step == 'Conclusão'){
     return court.time_conclusao
   }
-  if (piorEtapa == 'Despacho'){
+  if (step == 'Despacho'){
     return court.time_despacho
   }
-  if (piorEtapa == 'Decisão'){
+  if (step == 'Decisão'){
     return court.time_decisao
   }
-  if (piorEtapa == 'Julgamento'){
+  if (step == 'Julgamento'){
     return court.time_julgamento
   }
-  if (piorEtapa == 'Trânsito em julgado'){
+  if (step == 'Trânsito em julgado'){
     return court.time_transito_em_julgado
   }
-  if (piorEtapa == 'Baixa ou arquivamento'){
+  if (step == 'Baixa ou arquivamento'){
     return court.time_baixa_ou_arquivamento
   }
-  if (piorEtapa == 'Audiencia'){
+  if (step == 'Audiencia'){
     return court.time_audiencia
   }
-  if (piorEtapa == 'Citação'){
+  if (step == 'Citação'){
     return court.time_citacao
   }
-  if (piorEtapa == 'Apreciação inicial'){
+  if (step == 'Apreciação inicial'){
     return court.time_outros
   }
   
@@ -235,14 +237,14 @@ function getPercentageWorstStep(court){
 function configModal(e) {
   var court = selectedGroup.varas.find((court)=> court.vara_id == [e.id])
 
-  var percentageWorstStep = getPercentageWorstStep(court)
+  var percentageWorstStep = getPercentageStep(court.piorEtapa, court)
+  var percentageBestStep = getPercentageStep(court.melhorEtapa, court)
 
-  console.log("#### court is")
+  console.log('####### configModal')
   console.log(court)
-  console.log(court["time_audiencia"])
 
+  $('#modal_vara_name_id').html('vara'+court.name)
   $('#modal_vara_name').html(court.name)
-  $('#modal_vara_name2').html(court.name)
   $('#modal_tribunal').html(court.tribunal)
   $('#modal_average_time').html('-----')
   $('#modal_time').html(court.days_finish_process)
@@ -250,6 +252,25 @@ function configModal(e) {
   $('#modal_worst_step_percent').html(percentageWorstStep)
   $('#modal_destination').html('-----')
   $('#modal_group_time').html(Math.round(selectedGroup.tempo_medio))
+}
+
+function configModalCongrats(e) {
+  var court = selectedGroup.varas.find((court)=> court.vara_id == [e.id])
+
+  var percentageBestStep = getPercentageStep(court.melhorEtapa, court)
+
+  console.log('####### configModal')
+  console.log(court)
+
+  $('#modal_vara_name_id2').html('vara'+court.name)
+  $('#modal_vara_name2').html(court.name)
+  $('#modal_tribunal2').html(court.tribunal)
+  $('#modal_average_time2').html('-----')
+  $('#modal_time2').html(court.days_finish_process)
+  $('#modal_best_step').html(court.melhorEtapa)
+  $('#modal_best_step_percent').html(percentageBestStep)
+  $('#modal_destination2').html('-----')
+  $('#modal_group_time2').html(Math.round(selectedGroup.tempo_medio))
 }
 
 function fillMovementsChart() {
