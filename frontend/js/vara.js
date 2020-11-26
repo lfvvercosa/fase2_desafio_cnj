@@ -118,7 +118,7 @@ function loadComments(i, container, step) {
     selectedGroup.varas.length,
     (json2) => {
       bestVarasOnStep = json2
-      for (var j = 0; j < bestVarasOnStep.length; j++) {
+      for (var j = 0; j < 3; j++) {
         container = $('#tbody-comments_' + i)
         container.append('<tr id="comment_' + i + '_' + j + '">')
         container = $('#comment_' + i + '_' + j)
