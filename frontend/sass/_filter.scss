@@ -8,20 +8,7 @@
   &-info {
     @extend .col-12;
   }
-  &-info {
-    @extend .col-md-1;
-    &,
-    & div {
-      @extend .d-flex;
-      @extend .align-items-center;
-      @extend .justify-content-center;
-    }
-    div {
-      @extend .info;
-      width: 36px;
-      height: 36px;
-    }
-  }
+
   &s {
     @extend .col-md-11;
     @extend .w-100;
@@ -70,5 +57,23 @@
       @extend .btn-warning;
       @extend .text-white;
     }
+  }
+}
+
+
+.filtro-info {
+  @extend .col-md-1;
+  &,
+  & div {
+    @extend .d-flex;
+    @extend .align-items-center;
+    @extend .justify-content-center;
+
+  }
+  div {
+    @extend .info;
+    width: 36px;
+    height: 36px;
+    background: #000;
   }
 }
