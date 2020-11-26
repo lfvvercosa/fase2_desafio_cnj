@@ -196,15 +196,60 @@ function fillRankTable(courts, filter, isBottleNeck, tableName) {
   });
 }
 
+function getPercentageWorstStep(court){
+  piorEtapa = court.piorEtapa
+
+  if (piorEtapa == 'Distribuição'){
+    return court.time_distribuicao
+  }
+  if (piorEtapa == 'Conclusão'){
+    return court.time_conclusao
+  }
+  if (piorEtapa == 'Despacho'){
+    return court.time_despacho
+  }
+  if (piorEtapa == 'Decisão'){
+    return court.time_decisao
+  }
+  if (piorEtapa == 'Julgamento'){
+    return court.time_julgamento
+  }
+  if (piorEtapa == 'Trânsito em julgado'){
+    return court.time_transito_em_julgado
+  }
+  if (piorEtapa == 'Baixa ou arquivamento'){
+    return court.time_baixa_ou_arquivamento
+  }
+  if (piorEtapa == 'Audiencia'){
+    return court.time_audiencia
+  }
+  if (piorEtapa == 'Citação'){
+    return court.time_citacao
+  }
+  if (piorEtapa == 'Apreciação inicial'){
+    return court.time_outros
+  }
+  
+}
+
 function configModal(e) {
   var court = selectedGroup.varas.find((court)=> court.vara_id == [e.id])
+
+  var percentageWorstStep = getPercentageWorstStep(court)
+
+  console.log("#### court is")
+  console.log(court)
+  console.log(court["time_audiencia"])
+
   $('#modal_vara_name').html(court.name)
   $('#modal_vara_name2').html(court.name)
   $('#modal_tribunal').html(court.tribunal)
   $('#modal_average_time').html('-----')
   $('#modal_time').html(court.days_finish_process)
-  $('#modal_origin').html(court.piorEtapa)
+  $('#modal_worst_step').html(court.piorEtapa)
+  $('#modal_worst_step_percent').html(percentageWorstStep)
   $('#modal_destination').html('-----')
+  $('#modal_group_time').html(Math.round(selectedGroup.tempo_medio))
 }
 
 function fillMovementsChart() {
