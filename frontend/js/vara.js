@@ -28,7 +28,7 @@ function setRankComponent(checkBox) {
     $('#court_name2').html(json.tribunal)
     $('#group_name').html(selectedGroup.group_name)
     $('#court_rank').html(json.ranking)
-    $('#comment_title').html('Que legal! Adicionar um comentário construtivo faz parte das boas práticas do CNJ')
+    $('#comment_title').html('Insira seu comentário e contribua para troca de experiências e de boas práticas')
 
     var container = $('.diagnosis').html('')
 
