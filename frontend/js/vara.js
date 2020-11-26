@@ -1,9 +1,10 @@
 readCache()
-console.log(user)
 setRankComponent($('#toggle-switch'))
 setStatisticsComponent()
 
 var comment = {}
+var selectedButton = undefined
+var added = 0;
 
 function getStepName(step){
   if(step == "Outros"){
@@ -49,7 +50,7 @@ function setRankComponent(checkBox) {
       var frequency = step.frequency
       var container = $('.diagnosis')
       //button
-      container.append('<button id= "button_' + i + '" class="btn-tramitacao" type="button" data-toggle="collapse" data-target="#diagnostico_' + i + '" aria-expanded="false" aria-controls="diagnostico_' + i + '" />')
+      container.append('<button onclick="saveButton(this)"true id= "button_' + i + '" class="btn-tramitacao" type="button" data-toggle="collapse" data-target="#diagnostico_' + i + '" aria-expanded="false" aria-controls="diagnostico_' + i + '" />')
       container = $('#button_' + i)
       container.append('<div id="table-responsive_' + i + '" class="table-responsive">')
       container = $('#table-responsive_' + i)
@@ -105,16 +106,19 @@ function setRankComponent(checkBox) {
       loadComments(i, container, step)
       i++
     })
+    //setButtonState()
   })
+
+
 }
 
 function loadComments(i, container, step) {
   getBestVarasOnStep(step.step_id,
     vara_id,
-    3,
+    selectedGroup.varas.length,
     (json2) => {
       bestVarasOnStep = json2
-      for (var j = 0; j < bestVarasOnStep.length; j++) {
+      for (var j = 0; j < 3; j++) {
         container = $('#tbody-comments_' + i)
         container.append('<tr id="comment_' + i + '_' + j + '">')
         container = $('#comment_' + i + '_' + j)
@@ -193,7 +197,57 @@ function send() {
   comment.comment = ""+commentBody
   console.log(comment)
   postComment(comment)
+  
   $('#comment-replay').modal('hide')
+  getVaraByID(vara_id, (json) => {
+    var checkBox = $('#toggle-switch')
+    var isBottleNeck = checkBox == undefined || checkBox.checked == undefined || checkBox.checked
+    var steps = isBottleNeck ? json.worst_steps : json.best_steps
+   
+    var x = 0
+    steps.forEach(step => {
+      if(x == selectedButton){
+        getBestVarasOnStep(step.step_id,
+          vara_id,
+          selectedGroup.varas.length,
+          (json2) => {
+            var i = selectedButton
+            console.log('i = '+i)
+            var c = JSON.parse(user.court)
+            console.log("c is "+JSON.stringify(c))
+            console.log("comment is "+JSON.stringify(comment))
+            bestVarasOnStep = json2
+            var j = bestVarasOnStep.length + added
+            container = $('#tbody-comments_' + i)
+            console.log('first container is '+JSON.stringify(container))
+            container.append('<tr id="comment_' + i + '_' + j + '">')
+            container = $('#comment_' + i + '_' + j)
+            container.append('<td id="td_comment_' + i + '_' + j + '">')
+            container = $('#td_comment_' + i + '_' + j)
+            container.append('<div id="comment_text_' + i + '_' + j + '">')
+            container = $('#comment_text_' + i + '_' + j)
+            container.append('<p>' + comment.comment)
+            container = $('#comment_' + i + '_' + j)
+            container.append('<td id="name_' + i + '_' + j + '">')
+            container = $('#name_' + i + '_' + j)
+            container.append('<span>' + c.name + '</span>')
+            container = $('#comment_' + i + '_' + j)
+            container.append('<td class="text-center">' + step.med_time + ' dias</td>')
+            container = $('#comment_'+i+'_'+j)
+            container.append('<td id="insert_comment_'+i+'_'+j+'" ><button class="modal-button modal-button-comment" type="button" data-toggle="tooltip" title="Responder ao comentário"><span id="'+step.step_id+';'+c.vara_id+ ';'+c.name +'" onclick="configPopup(this)" data-toggle="modal" data-target="#comment-replay"><i  class="fas fa-comments"></i></span></button>')
+            container = $('#insert_comment_'+i+'_'+j)
+    
+            container = $('#comment_' + i + '_' + j)
+            container.vara_id = c.vara_id
+            comment = {}    
+            added++;
+            $('#comment-body')[0].value = ""
+          })
+      }
+      x++
+      
+    })
+  })
 }
 
 function configPopup(e) {
@@ -207,4 +261,22 @@ function configPopup(e) {
   $('#user_name').html(user.name)
   $('#vara_name3').html(c.name)
   $('#vara_name4').html(c.name)
+}
+
+function saveButton(e) {
+  console.log(e)
+  console.log(e.id)
+  selectedButton = (""+e.id).replace("button_", "")
+}
+
+function setButtonState() {
+  console.log(selectedButton)
+  console.log($('#'+selectedButton))
+  if(selectedButton){
+    setTimeout(()=>{
+      console.log('show button '+selectedButton)
+      $('#'+selectedButton).collapse('show')
+    }, 1000)
+
+  }
 }

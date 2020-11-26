@@ -59,7 +59,7 @@ getGroups((data)=>{
         rotated: false,
         x: {
           tick: {
-            format: function (x) { return 'grupo '+(groups[x] ? groups[x].identificador : '') }
+            format: function (x) { return groups[x].group_name}
           }
         }
     },
