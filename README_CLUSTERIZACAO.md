@@ -40,14 +40,14 @@ Abaixo segue imagem da configuração realizada na primeira etapa <br>
     Esta etapa refere-se ao primeiro nível de agrupamento realizado para construção dos critérios. Na fase anterior, restringimos as unidades judiciárias que fariam parte do critério, já nesta etapa, podemos ou não informar como as unidades judiciárias serão agrupadas segundo variáveis categóricas (não numéricas), tais como **Justiça** e **Grau**. Ao final desta etapa já teríamos as unidades agrupadas. Contudo, como iremos observar na próxima etapa, o agrupamento das unidades judiciárias apenas por Justiça Estadual e 1º grau (por exemplo) muito provavelmente não será um critério de agrupamento justo para as unidades, por não considerar a **MATÉRIA** e **COMPETENCIA** das unidades. Neste sentido, podemos utilizar a 3ª etapa para criar o segundo nível de agrupamento dentro do nível criado nesta etapa (Justiça Estadual + 1º grau).
 
 Abaixo segue imagem da configuração realizada na segunda etapa <br>
-<img src='/reports/figures/Etapa2.png'><br>
+<img src='/reports/figures/etapa2.png'><br>
     
 **3ª Etapa: Clusterização** <br>
     Clusterizar é o termo utilizado para criar grupos de objetos semelhantes a partir de variáveis numéricas. 
 > Para a clusterização (3º etapa) utilizamos a técnica estatística de análise multivariada denominada análise de componentes principais. A partir da sua aplicação, passa a ser possível reduzir o número de dimensõe em análise (quantidade de variáveis escolhidas na 3ª etapa) de modo que um número pequeno de componentes (digamos, 1, 2 ou até 3, a depender da quantidade de variáveis em análise) consegue explicar uma proporção satisfatória da variância populacional, ou seja, cerca de 80% a 90% dos dados. 
 
 Abaixo segue imagem da configuração realizada na terceira etapa <br>
-<img src='/reports/figures/Etapa3.png'><br>
+<img src='/reports/figures/etapa3.png'><br>
 
 * **Análise de Componentes Principais (ACP)**<br>
 Trata-se de método de análise multivariada, utilizada para resumir grande número de variáveis em poucas dimensões. É uma tentativa de compreender relações complexas impossíveis de serem trabalhadas com métodos univariados ou bivariados, permitindo, assim, visualizações gráficas e análises mais aprofundadas por parte do pesquisador. _Fonte: [Justiça em Números 2020]( https://www.cnj.jus.br/pesquisas-judiciarias/justica-em-numeros/))_
