@@ -149,16 +149,27 @@ svg {
   }
   &-info {
     @extend .col-md-10;
+    @extend .d-flex;
+    @extend .justify-content-center;
+    @extend .flex-column;
   }
   &-posicao {
     @extend .d-flex;
     @extend .align-items-center;
     @extend .justify-content-center;
     @extend .col-md-2;
-
-    font-size: 3rem;
-    font-weight: 600;
-    background: transparent url(../resources/images/medalha.svg) no-repeat center;
+    min-height: 150px;
+    span {
+      font-size: 3rem;
+      font-weight: 600;
+      margin-top: -1.5rem;
+      letter-spacing: -5px;
+      &:after {
+        content: "º";
+      }
+    }
+    background: transparent url(../resources/images/medalha.svg) no-repeat
+      center;
     background-size: contain;
   }
 }
