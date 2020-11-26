@@ -146,8 +146,9 @@ clustering.labels_
 
 df_cluster = pd.DataFrame(data=clustering.labels_, columns=['cluster'])
 
-df_cluster['count'] = df_cluster['cluster']
-df_cluster.groupby('cluster').count()
+df_aux = df_cluster.copy()
+df_aux['count'] = df_aux['cluster']
+df_aux.groupby('cluster').count()
 
 ######### SALVAR DATAFRAME ######### 
 
