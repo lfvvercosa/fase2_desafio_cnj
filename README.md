@@ -45,7 +45,7 @@ A principal fonte de dados da solução PANORAMA são os dados básicos e movime
 <a id="uso"></a>
 #### Instruções de Uso
 Vídeo de demonstração do PANORAMA <br>
-[![Video de demonstração do PANORAMA](http://img.youtube.com/vi/HUdqS584Dqw/0.jpg)](https://www.youtube.com/watch?v=HUdqS584Dqw "Panorama")
+[![Video de demonstração do PANORAMA](http://img.youtube.com/vi/PR7vPh5alOY/0.jpg)](https://www.youtube.com/watch?v=PR7vPh5alOY "Panorama")
 * [Consulte nosso MANUAL para mais informações sobre o uso da ferramenta PANORAMA.](README_MANUAL.md)
 
 #### Licenças utilizadas
