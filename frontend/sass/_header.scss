@@ -1,0 +1,27 @@
+.site {
+  &-header {
+    @extend .d-flex;
+    @extend .align-items-stretch;
+    @extend .flex-column;
+    @extend .flex-md-row;
+    @extend .w-100;
+    @extend .rounded;
+    @extend .p-3;
+    @extend .mb-3;
+    background-color: #0a243b;
+  }
+  &-logo {
+    @extend .mr-md-3;
+    @extend .ml-0;
+    width: 300px;
+    max-width: 100%;
+  }
+  &-modulo {
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+}

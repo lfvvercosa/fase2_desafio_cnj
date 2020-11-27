@@ -1,0 +1,12 @@
+.info {
+  opacity: 0.8;
+  @extend .rounded-circle;
+  @extend .border;
+  border-color: transparent;
+  &:hover,
+  &:focus {
+    @extend .bg-info;
+    @extend .text-white;
+    border-color: var(--info);
+  }
+}

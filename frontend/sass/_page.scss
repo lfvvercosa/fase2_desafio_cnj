@@ -1,0 +1,175 @@
+* {
+  transition: background-color ease-in-out 0.3s;
+}
+
+html,
+body {
+  line-height: 1.5;
+  font-family: "Open Sans", sans-serif;
+  background-color: #f6f6f6;
+}
+body {
+  @extend .py-3;
+  @extend .pb-5;
+}
+button {
+  &:focus {
+    outline: none;
+  }
+}
+main {
+  @extend .col-12;
+  @extend .col-md-10;
+  @extend .mx-auto;
+}
+svg {
+  @extend .img-fluid;
+}
+
+.migalha-pao {
+  font-size: 0.875rem;
+  a {
+    color: #212529;
+  }
+  ol {
+    @extend .breadcrumb;
+    li {
+      @extend .breadcrumb-item;
+      &.active {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.grupo {
+  &-descricao {
+    @extend .col-12;
+    @extend .mb-0;
+    @extend .list-inline;
+    @extend .list-unstyled;
+
+    li {
+      @extend .d-inline-block;
+      @extend .px-md-4;
+      @extend .pr-0;
+      @extend .text-center;
+      font-size: small;
+      text-transform: lowercase;
+      &:first-of-type {
+        @extend .pl-0;
+      }
+      &.secao-titulo {
+        font-size: 3rem;
+      }
+      strong {
+        @extend .text-danger;
+        @extend .d-block;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@keyframes pulso {
+  0% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.alerta-uj {
+  @extend .text-danger;
+  animation: pulso 1s infinite alternate;
+  font-size: 1rem;
+  position: absolute;
+  margin-top: 1rem;
+}
+
+.secao {
+  &-titulo {
+    font-size: 1.5rem;
+    @extend .mb-3;
+    @extend .font-weight-bold;
+    @extend .text-uppercase;
+    @extend .d-flex;
+    @extend .justify-content-between;
+  }
+  &-subtitulo {
+    @extend .secao-titulo;
+    font-size: 1rem;
+  }
+  &-header {
+    @extend .table-header;
+    @extend .justify-content-between;
+    @extend .align-items-center;
+  }
+}
+
+.titulo-pagina {
+  @extend .jumbotron;
+  @extend .border;
+  @extend .shadow-sm;
+  @extend .d-flex;
+  @extend .justify-content-between;
+  padding: 2rem;
+
+  p {
+    @extend .mb-2;
+    font-size: 0.875rem;
+  }
+  ul {
+    font-size: 0.875rem;
+    @extend .list-unstyled;
+    li {
+      @extend .d-inline-block;
+      @extend .pr-2;
+      a {
+        color: var(--dark);
+      }
+    }
+  }
+}
+.tribunal {
+  &-vara {
+    @extend .display-4;
+    font-size: 2rem;
+  }
+  &-nome {
+    @extend .lead;
+  }
+}
+.pagina {
+  &-posicao,
+  &-info {
+    @extend .col-12;
+  }
+  &-info {
+    @extend .col-md-10;
+    @extend .d-flex;
+    @extend .justify-content-center;
+    @extend .flex-column;
+  }
+  &-posicao {
+    @extend .d-flex;
+    @extend .align-items-center;
+    @extend .justify-content-center;
+    @extend .col-md-2;
+    min-height: 150px;
+    span {
+      font-size: 3rem;
+      font-weight: 600;
+      margin-top: -1.5rem;
+      letter-spacing: -5px;
+      &:after {
+        content: "º";
+      }
+    }
+    background: transparent url(../resources/images/medalha.svg) no-repeat
+      center;
+    background-size: contain;
+  }
+}

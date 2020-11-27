@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Página inicial | Desafio CNJ</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.2/js/all.min.js"
+        integrity="sha512-IqeQ6271Vq75Nf4OOwCEYi4tIAyT2J7vtKrmOU9WCezb+YkxqAu+igEi2CuLEnA7cqtvFDHsQhXbpZXx/evxrw=="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./sass/main.css">
+
+    <link rel="icon" sizes="32x32" href="./resources/images/favicon.jpg" />
+    <link rel="icon" sizes="192x192" href="./resources/images/favicon.jpg" />
+    <link rel="apple-touch-icon-precomposed" href="./resources/images/favicon.jpg" />
+</head>
+
+<body>
+    <main>
+        <header class="site-header">
+            <img src="resources/images/logo.png" alt="" class="site-logo">
+            <div class="site-modulo">Panorama</div>
+        </header>
+        <form class="filtro-form">
+
+            <fieldset class="collapse collapse-configuracoes" id="configuracoes">
+                <div class="card">
+                    <legend>Configurações
+                        <button type="button" data-toggle="collapse" title="Fechar configurações" data-target="#configuracoes" aria-expanded="false" aria-controls="configuracoes" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                    </legend>
+
+                <div class="row">
+                    <div class="col-12 col-md-8">
+                        <strong class="w-100">Tipo de justiça</strong>
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn" class="justica-estadual"><input type="checkbox" name="configuracao-justica" id="justica-estadual">Estadual</label>
+                            <label class="btn" class="justica-federal"><input type="checkbox" name="configuracao-justica" id="justica-federal">Federal</label>
+                            <label class="btn" class="justica-militar"><input type="checkbox" name="configuracao-justica" id="justica-militar">Militar</label>
+                            <label class="btn" class="justica-trabalho"><input type="checkbox" name="configuracao-justica" id="justica-trabalho">Trabalho</label>
+                            <label class="btn" class="justica-trubunais"><input type="checkbox" name="configuracao-justica" id="justica-trubunais">Trubunais superiores</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <strong class="w-100">Graus</strong>
+
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn" class="grau-1"><input type="checkbox" name="configuracao-grau" id="justica-grau-1">1º grau</label>
+                            <label class="btn" class="grau-2"><input type="checkbox" name="configuracao-grau" id="justica-grau-2">2º grau</label>
+                            <label class="btn" class="grau-3"><input type="checkbox" name="configuracao-grau" id="justica-grau-3">3º grau</label>
+                        </div>
+                    </div>
+                    <div class="py-2 w-100"></div>
+                    <strong class="col-12">Critérios de Clusterização</strong>
+                    
+                    <div class="configuracao-assunto">
+                        <label for="configuracao-assunto">
+                            <input class="form-check-input" id="configuracao-assunto" type="checkbox" value=""> Assunto
+                            <sup>*</sup>
+                        </label>
+                        <div class="d-flex">
+                            <input type="range" min="0" max="100" oninput="rangeCriterioAssuntos(this)" value="0">
+                            <input type="number" readonly value="0">
+                        </div>
+                    </div>
+                    <div class="configuracao-classe">
+                        <label for="configuracao-classe">
+                            <input class="form-check-input" for="configuracao-classe" type="checkbox" value=""> Classe
+                            processual <sup>*</sup>
+                        </label>
+                        <div class="d-flex">
+                            <input type="range" min="0" max="100" oninput="rangeCriterioClasse(this)" value="0">
+                            <input type="number" readonly value="0">
+                        </div>
+                    </div>
+                    <div class="configuracao-periodo">
+                        <label for="configuracao-periodo">
+                            Período
+                            processual <sup>*</sup>
+                        </label>
+                        <div class="select-group">
+                            <select  data-toggle="tooltip" title="Selecione o período incial" name="" id="">
+                                <option value="">1970</option>
+                                <option value="">1980</option>
+                                <option value="">1990</option>
+                            </select>
+                            
+                            <select data-toggle="tooltip" title="Selecione o período final" name="" id="">
+                                <option value="">2000</option>
+                                <option value="">2010</option>
+                                <option value="">2020</option>
+                            </select>
+                            
+                        </div>
+                    </div>
+                    <div class="py-2 w-100"></div>
+                    <div class="w-100 d-flex justify-content-center">
+                        <button type="reset" class="mx-3 btn btn-outline-secondary"><i class="fas mr-3 fa-eraser"></i>Restaurar ao padrão</button>
+                        <button type="submit" class="mx-3 btn btn-outline-primary"><i class="fas fa-filter mr-3"></i> Aplicar configurações</button>
+                    </div>
+
+                </div>
+                <small><sup>*</sup> Nível hierárquico</small>
+                </div>
+                <div class="w-100 mb-3"></div>
+            </fieldset>
+
+            <div class="filtro-button filtro-button-configuracao">
+                <button type="button" data-toggle="collapse" title="Abrir configurações" data-target="#configuracoes" aria-expanded="false" aria-controls="configuracoes">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+            <label class="filtro-label" for="filter-cluster">Filtros de agrupamento:</label>
+            <div class="filtro-select">
+                <select id="filter-cluster" class="select select-assuntos" name="cluster[]" multiple="multiple">
+                    <option value="1">assunto 1</option>
+                    <option value="2">assunto 2</option>
+                    <option value="3">assunto 3</option>
+                    <option value="4">assunto 4</option>
+                    <option value="5">assunto 5</option>
+                    <option value="6">assunto 6</option>
+                    <option value="7">assunto 7</option>
+                    <option value="8">assunto 8</option>
+                    <option value="9">assunto 9</option>
+                    <option value="10">assunto 10</option>
+                </select>
+            </div>
+            <div class="filtro-select">
+                <select class="select select-classes" name="classes[]" multiple="multiple">
+                    <option value="1">classe 1</option>
+                    <option value="2">classe 2</option>
+                    <option value="3">classe 3</option>
+                    <option value="4">classe 4</option>
+                    <option value="5">classe 5</option>
+                    <option value="6">classe 6</option>
+                    <option value="7">classe 7</option>
+                    <option value="8">classe 8</option>
+                    <option value="9">classe 9</option>
+                    <option value="10">classe 10</option>
+                </select>
+            </div>
+            <div class="filtro-select">
+                <select class="select select-filtro" name="filtros[]" multiple="multiple">
+                    <option value="1">filtro 1</option>
+                    <option value="2">filtro 2</option>
+                    <option value="3">filtro 3</option>
+                    <option value="4">filtro 4</option>
+                    <option value="5">filtro 5</option>
+                    <option value="6">filtro 6</option>
+                    <option value="7">filtro 7</option>
+                    <option value="8">filtro 8</option>
+                    <option value="9">filtro 9</option>
+                    <option value="10">filtro 10</option>
+                </select>
+            </div>
+            <div class="filtro-button">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="filtro-info" data-toggle="popover" title="Como pesquisar"
+                data-content="Para iniciar sua pesquisa, basta clicar nos filtros disponíveis e digitar os termos para o sistema exibir mais rapidamente as opções existentes">
+                <i class="fas fa-info"></i>
+            </div>
+        </form>
+
+        <nav class="migalha-pao" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="active" aria-current="page">Você está:&nbsp;<strong>Página inicial</strong></li>
+            </ol>
+        </nav>
+        <div class="content">
+            <div class="chart-box">
+                <div>
+                    <div class="secao-titulo">
+                        Grupos
+                    </div>
+                    <div id="grupos"></div>
+                </div>
+
+            </div>
+            <div class="mapa">
+                <div class="secao-titulo">
+                    MAPA DA REGIÃO
+                </div>
+                <div id="map"></div>
+            </div>
+            <div class="w-100"></div>
+
+            <div class="chart-box">
+                <div>
+                    <div class="secao-titulo">
+                        Assuntos mais frequentes
+                    </div>
+                    <div id="assuntos-frequentes"></div>
+                </div>
+            </div>
+            <div class="chart-box">
+                <div>
+                    <div class="secao-titulo">
+                        Classes mais frequentes
+                    </div>
+                    <div id="classes-frequentes"></div>
+                </div>
+            </div>
+            <div class="w-100"></div>
+
+            <div class="chart-box chart-container">
+                <div>
+                    <div class="secao-titulo">
+                        Tempo X Frequência
+                    </div>
+                    <div id="chart"></div>
+                </div>
+            </div>
+        </div>
+        </section>
+    </main>
+
+    
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script> <!-- d3 -->
+    <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script> <!-- c3js -->
+    <script src="./resources/c3/c3.min.js"></script>
+    <script src="./config.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="./js/cache.js"></script>
+    <script src="./js/requester.js"></script>
+    <script src="./js/map.js"></script>
+    <script src="./js/header.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/components.js"></script>
+    <script src="./js/rank-chart.js"></script>
+
+    <!-- SELECT 2 -->
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="popover"]').popover({
+                trigger: 'hover'
+
+            });
+
+            $('.select-assuntos').select2({
+                placeholder: 'Justiça',
+                multiple: true
+            });
+            $('.select-classes').select2({
+                placeholder: 'Grau',
+                multiple: true
+            });
+            $('.select-filtro').select2({
+                placeholder: 'Classe processual',
+                multiple: true
+            });
+
+
+            var chart = c3.generate({
+                data: {
+                    columns: [
+                        ['data1', 30, 20, 100, 40, 15, 20],
+                        ['data2', 40, 10, 40, 20, 10, 50]
+                    ],
+                    type: 'bar'
+                }, bindto: '#assuntos-frequentes'
+            });
+            var chart = c3.generate({
+                data: {
+                    columns: [
+                        ['data1', 30],
+                        ['data2', 40],
+                        ['data3', 40],
+                        ['data4', 10],
+                        ['data5', 20],
+                        ['data6', 10]
+                    ],
+                    type: 'pie'
+                }, bindto: '#classes-frequentes'
+            });
+
+
+
+            var chart = c3.generate({
+                data: {
+                    columns: [
+                        ['grupo1', 52, 71, 33, 7, 24, 84, 23, 30, 78, 73],
+                        ['grupo2', 47, 84, 56, 92, 84, 56, 26, 37, 78, 70],
+                        ['grupo3', 100, 17, 51, 63, 26, 45, 92, 91, 96, 40],
+                        ['grupo4', 20, 47, 10, 53, 54, 34, 36, 76, 64, 13],
+                        ['grupo5', 49, 10, 96, 4, 2, 80, 59, 27, 16, 37],
+                        ['grupo6', 96, 15, 54, 47, 78, 79, 91, 69, 70, 87],
+                        ['grupo7', 9, 89, 33, 18, 41, 86, 52, 77, 62, 15],
+                        ['grupo8', 89, 10, 25, 85, 13, 26, 64, 72, 53, 80],
+                        ['grupo9', 9, 49, 94, 62, 95, 71, 41, 86, 40, 10],
+                        ['grupo10', 72, 48, 99, 4, 66, 40, 90, 18, 16, 51]
+                    ],
+                    types: {
+                        grupo1: 'area',
+                        grupo2: 'area',
+                        grupo3: 'area',
+                        grupo4: 'area',
+                        grupo5: 'area',
+                        grupo6: 'area-spline',
+                        grupo7: 'area-spline',
+                        grupo8: 'area-spline',
+                        grupo9: 'area-spline',
+                        grupo10: 'area-spline'
+                    }
+                }, bindto: '#grupos'
+            });
+        });
+
+        function rangeCriterioAssuntos(elem) {
+            $(elem).next().val($(elem).val());
+        };
+        function rangeCriterioClasse(elem) {
+            $(elem).next().val($(elem).val());
+        }
+
+    </script>
+    <script>
+
+        function getVals() {
+            // Get slider values
+            var parent = this.parentNode;
+            var slides = parent.getElementsByTagName("input");
+            var slide1 = parseFloat(slides[0].value);
+            var slide2 = parseFloat(slides[1].value);
+            // Neither slider will clip the other, so make sure we determine which is larger
+            if (slide1 > slide2) { var tmp = slide2; slide2 = slide1; slide1 = tmp; }
+
+            var displayElement = parent.getElementsByClassName("rangeValues")[0];
+            displayElement.innerHTML = slide1 + " - " + slide2;
+        }
+
+        window.onload = function () {
+            // Initialize Sliders
+            var sliderSections = document.getElementsByClassName("range-slider");
+            for (var x = 0; x < sliderSections.length; x++) {
+                var sliders = sliderSections[x].getElementsByTagName("input");
+                for (var y = 0; y < sliders.length; y++) {
+                    if (sliders[y].type === "range") {
+                        sliders[y].oninput = getVals;
+                        // Manually trigger event first time to display values
+                        sliders[y].oninput();
+                    }
+                }
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

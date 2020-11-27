@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Acesse o Panorama CNJ</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.2/js/all.min.js"
+        integrity="sha512-IqeQ6271Vq75Nf4OOwCEYi4tIAyT2J7vtKrmOU9WCezb+YkxqAu+igEi2CuLEnA7cqtvFDHsQhXbpZXx/evxrw=="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./sass/main.css">
+
+    <link rel="icon" sizes="32x32" href="./resources/images/favicon.jpg" />
+    <link rel="icon" sizes="192x192" href="./resources/images/favicon.jpg" />
+    <link rel="apple-touch-icon-precomposed" href="./resources/images/favicon.jpg" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script> <!-- d3 -->
+    <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script> <!-- c3js -->
+    <script src="./resources/c3/c3.min.js"></script>
+    <script src="./config.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="./js/cache.js"></script>
+    <script src="./js/requester.js"></script>
+    <script src="./js/components.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/login.js"></script>
+</head>
+
+<body class="login">
+
+    <div class="login-container">
+
+        <header>
+            <img src="resources/images/logo-preta.png" alt="">
+            <h1>PANORAMA CNJ</h1>
+        </header>
+
+        <form accept="#" class="form">
+	    <div class="form-group">
+                <label class="form-label" for="nome">Nome</label>
+                <div>
+                    <input class="form-control" data-toggle="tooltip" title="Digite seu nome"
+                        placeholder="Digite seu nome" required type="text" autofocus id="user_name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <div>
+                    <input class="form-control" data-toggle="tooltip" title="Utilize um email válido"
+                        placeholder="Utilize um email válido" type="email" required id="email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="senha">Senha</label>
+                <div>
+                    <input class="form-control" data-toggle="tooltip" title="Digite sua senha"
+                        placeholder="*************" type="password" required id="senha">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="ul">Unidade Jurídica</label>
+                <div>
+                    <select id="varas_selector" on data-toggle="tooltip" title="Selecione sua unidade jurídica"
+                        class="form-control" id="ul">
+
+                    </select>
+                </div>
+            </div>
+            <div class="form-group form-check;">
+                <input class="form-check-input" type="checkbox" required id="politica">
+                <label class="form-check-label" for="politica">Concordo com os termos apresentados na <a
+                        href="#politica" data-toggle="modal" data-target="#politicaModal">Política de
+                        Privacidade</a></label>
+            </div>
+            <div class="form-button">
+                <button onclick="login()" type="submit">Acessar<i class="ml-3 fas fa-chevron-right"></i></button>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal fade" id="politicaModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="politicaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="politicaModalLabel">Política de Privacidade Panorama CNJ</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Quando você acessa a solução Panorama, você nos fornece alguns dados
+                        pessoais com o objetivo de viabilizar a sua operação. O Conselho
+                        Nacional de Justiça (CNJ) preza pela segurança dos seus dados, pelo
+                        respeito a sua privacidade e pela transparência com você e, por isso,
+                        dedicamos este documento para explicar como os seus dados pessoais serão
+                        tratados pelo CNJ e quais são as medidas que aplicamos para mantê-los
+                        seguros.</p>
+                    <p>Antes de mais nada, nos apresentamos, nós somos o Conselho Nacional de
+                        Justiça (CNJ). O CNJ é uma instituição pública que visa aperfeiçoar o
+                        trabalho do sistema judiciário brasileiro, principalmente no que diz
+                        respeito ao controle e à transparência administrativa e processual,
+                        criada pela Emenda Constitucional nº 45, de 2004 e instalada em 14 de
+                        junho de 2005, nos termos do art. 103-B da Constituição Federal.
+                        Trata-se de um órgão do Poder Judiciário com sede em Brasília (DF), SAF
+                        SUL Quadra 2 Lotes 5/6, CEP: 70070-600, inscrito no CNPJ:
+                        07.421.906/0001-29 e com atuação em todo o território nacional.
+                        E segundo a definição trazida pela Lei Geral de Proteção de Dados “LGPD”
+                        (Lei Federal nº 13.709.2018), na maior parte do tempo seremos o
+                        controlador das suas informações, sendo assim, responsável por definir o
+                        que acontece com estes dados e por protegê-los.</p>
+                    <p>Para facilitar a compreensão desta política, todas as vezes que
+                        encontrar os termos “CNJ”, “nós” ou “nossos”, estamos nos referindo ao
+                        controlador dos seus dados pessoais, e todas as vezes que ler “usuário”,
+                        “você”, “seu” ou “sua”, nos referimos a você, nosso usuário da solução
+                        Panorama.</p>
+                    <h2 id="quais-dados-s-o-coletados-pelo-cnj">QUAIS DADOS SÃO COLETADOS PELO CNJ</h2>
+                    <p>Durante sua experiência em nossa solução Panorama, podemos coletar
+                        diferentes tipos de dados pessoais, de forma automática com o objetivo
+                        de conferência, monitoramento e controle, ou fornecidas diretamente por
+                        você, como por exemplo para a realização de seu cadastro. Veja abaixo
+                        quais dados pessoais nós podemos coletar e em cada situação:</p>
+                    <p>Durante o cadastro:</p>
+                    <ul>
+                        <li>Nome completo;</li>
+                        <li>Número de CPF;</li>
+                        <li>Endereço de e-mail;</li>
+                        <li>Número de celular;</li>
+                        <li>Unidade Judiciária - UJ de lotação;</li>
+                        <li>Data de nascimento.</li>
+                    </ul>
+                    <p>Durante a navegação na plataforma:</p>
+                    <ul>
+                        <li>Endereço de IP;</li>
+                        <li>Informações sobre o dispositivo utilizado para a navegação;</li>
+                        <li>Contagem de visualizações,</li>
+                    </ul>
+                    <p>A qualquer momento, você poderá revogar essa autorização utilizando os
+                        nossos canais de ouvidoria ou o caminho
+                        <a
+                            href="https://www.cnj.jus.br/OuvidoriaFormularioWeb/index.jsf">https://www.cnj.jus.br/OuvidoriaFormularioWeb/index.jsf</a>.
+                    </p>
+                    <h2 id="como-n-s-utilizamos-os-seus-dados-pessoais">COMO NÓS UTILIZAMOS OS SEUS DADOS PESSOAIS</h2>
+                    <p>Nós utilizamos os dados pessoais para garantir um atendimento de
+                        qualidade e uma melhor experiência na utilização da solução. Listamos
+                        abaixo as finalidades que poderemos utilizar seus dados pessoais:</p>
+                    <h3 id="dados-cadastrais-">Dados cadastrais:</h3>
+                    <ul>
+                        <li>Para viabilizar a prestação de diferentes serviços disponíveis em
+                            nossa solução como o compartilhamento de boas práticas e a consulta
+                            dos principais gargalos da sua Unidade Judiciária - UJ.</li>
+                        <li>Para entrar em contato com você, quando necessário. Esse contato
+                            pode contemplar diversos assuntos, como comunicação sobre situações
+                            de alertas de desempenho, dúvidas sobre os comentários inseridos.</li>
+                        <li>Para auxiliar no diagnóstico e solução de problemas técnicos.</li>
+                        <li>Para desenvolver novas funcionalidades e melhorias, melhorando a sua
+                            experiência com nossos serviços disponíveis.</li>
+                        <li>Para auxiliar nas análises que possam ser utilizadas para proteger
+                            sua conta e aumentar o nível de segurança dos seus dados cadastrais
+                            ou, ainda, prevenir possíveis fraudes.</li>
+                    </ul>
+                    <h3 id="dados-de-navega-o-">Dados de Navegação:</h3>
+                    <ul>
+                        <li>Para auxiliar no diagnóstico e solução de problema técnicos.</li>
+                        <li>Para desenvolver novas funcionalidades e melhorias, melhorando a sua
+                            experiência com nossos serviços disponíveis.</li>
+                    </ul>
+                    <h2 id="com-quem-n-s-podemos-compartilhar-os-dados-pessoais">COM QUEM NÓS PODEMOS COMPARTILHAR OS
+                        DADOS PESSOAIS</h2>
+                    <p>Para a execução das atividades acima listadas, sempre que necessário,
+                        nós poderemos compartilhar os seus dados pessoais com outras
+                        instituições de controle, desde que com previsão legal de atribuição,
+                        com prestadores de serviço ou parceiros. Apresentamos a seguir um resumo
+                        destas possibilidades:</p>
+                    <p>Prestadores de serviço: para que possamos disponibilizar nossos serviços
+                        com qualidade, contamos com a colaboração de diversos prestadores de
+                        serviço, que tratam os dados pessoais coletados em nosso nome e de
+                        acordo com nossas instruções.</p>
+                    <p>Autoridades governamentais: nós devemos fornecer dados pessoais de
+                        Usuários, em atendimento à ordem judicial, solicitações de autoridades
+                        administrativas, obrigação legal ou regulatória, bem como para agir de
+                        forma colaborativa com autoridades governamentais.</p>
+                    <h2 id="armazenamento-e-seguran-a-dos-dados-pessoais">ARMAZENAMENTO E SEGURANÇA DOS DADOS PESSOAIS
+                    </h2>
+                    <p>Nós armazenamos seus dados de forma segura em data centers localizados
+                        no Brasil e adotamos as melhores técnicas para proteger os dados
+                        pessoais coletados de acessos não autorizados, destruição, perda,
+                        alteração, comunicação ou qualquer forma de tratamento inadequado ou
+                        ilícito. Ressaltamos, contudo, que nenhuma plataforma é completamente
+                        segura. Se você tiver qualquer preocupação ou suspeita de que os seus
+                        dados estejam em risco, por favor, entre em contato conosco por meio dos
+                        nossos canais de atendimento que ficaremos felizes em te ou auxiliar
+                        prontamente.</p>
+                    <p>Seus dados pessoais serão mantidos durante todo o período que for
+                        usuário ativo da solução Panorama. Após esse período, podemos armazenar
+                        os seus dados pessoais por um período adicional para fins de auditoria,
+                        para possibilitar o cumprimento de obrigações legais ou regulatórias.
+                        Faremos a retenção dos seus dados pelo prazo necessário, respeitando os
+                        prazos estabelecidos na legislação aplicável.</p>
+                    <h2 id="cookies-e-tecnologias-de-monitoramento">COOKIES E TECNOLOGIAS DE MONITORAMENTO</h2>
+                    <p>Podemos utilizar certas tecnologias de monitoramento para coletar as
+                        informações das atividades realizadas nas nossa plataforma de forma
+                        automatizada. As informações coletadas por meio de tais tecnologias são
+                        utilizadas para realizar métricas de performance do aplicativo,
+                        identificar problemas no uso, captar o comportamento dos Usuários de
+                        forma geral e coletar dados de impressão de conteúdos.</p>
+                    <p>Veja abaixo algumas das tecnologias que poderão estar presentes na
+                        solução Panorama:</p>
+                    <p>Cookies: cookie é um pequeno arquivo adicionado ao dispositivo do
+                        Usuário para fornecer uma experiência personalizada de acesso à
+                        plataforma. Os cookies ajudam a analisar o tráfego de internet e nos
+                        permite saber quando o Usuário visitou um site específico. Um cookie não
+                        dá acesso a um computador ou revela informações além dos dados que o
+                        usuário escolhe compartilhar conosco.</p>
+                    <p>Pixels: pixels são partes do código JavaScript instalados adicionados em
+                        nossas aplicações, websites ou no corpo de um e-mail, com a finalidade
+                        de rastrear coletar informações sobre as atividades dos usuários,
+                        permitindo a identificação dos seus padrões de acesso, navegação e
+                        interesse, e otimizando utilizados para otimizar o direcionamento de
+                        conteúdo.</p>
+                    <h2 id="seus-direitos-como-titular-dos-dados-pessoais">SEUS DIREITOS COMO TITULAR DOS DADOS PESSOAIS
+                    </h2>
+                    <p>A transparência sobre o tratamento dos seus dados pessoais é prioridade
+                        para o CNJ. Além das informações disponibilizadas nesta Política de
+                        Privacidade, você pode também exercer os direitos previstos na Lei Geral
+                        de Proteção de Dados, entre eles:</p>
+                    <ul>
+                        <li>Confirmação da existência de tratamento de dados pessoais.</li>
+                        <li>Acesso aos dados pessoais.</li>
+                        <li>Revogação do consentimento.</li>
+                        <li>Correção de dados pessoais incompletos, inexatos ou desatualizados.</li>
+                        <li>Eliminação dos dados pessoais tratados com o consentimento ou
+                            desnecessários, excessivos ou quando entender que algum ponto da
+                            LGPD não foi atendido.</li>
+                        <li>Informação sobre as hipóteses e com quais parceiros e outras
+                            instituições podemos compartilhar, ou receber dados pessoais
+                            referentes a você.</li>
+                        <li>Informação sobre a possibilidade de não fornecer consentimento e
+                            sobre as consequências da negativa, quando aplicável.</li>
+                    </ul>
+                    <p>Todas as solicitações serão tratadas de forma gratuita, e serão
+                        submetidas a uma prévia avaliação da sua identidade e da viabilidade do
+                        atendimento, a fim de cumprir com eventuais obrigações que impeçam o
+                        completo atendimento das requisições dos titulares de direito.</p>
+                    <h2 id="altera-es-desta-pol-tica-de-privacidade">ALTERAÇÕES DESTA POLÍTICA DE PRIVACIDADE</h2>
+                    <p>Estamos constantemente buscando aprimorar a experiência de nossos
+                        clientes. Assim, nossas práticas de tratamento de dados pessoais poderão
+                        sofrer alterações com a inclusão de novas funcionalidades e serviços.</p>
+                    <p>Valorizamos a transparência no modo em que tratamos seus dados pessoais.
+                        Toda vez que alguma condição relevante desta Política de Privacidade for
+                        alterada, essas alterações serão válidas, eficazes e vinculantes após a
+                        nova versão ser publicada em nosso site. Estas alterações serão
+                        comunicadas por meio de um dos canais disponibilizados por você durante
+                        o seu cadastro (e-mail, SMS, WhatsApp e outros).</p>
+                    <h2 id="fale-conosco">FALE CONOSCO</h2>
+                    <p>Sempre que você tiver alguma dúvida sobre esta Política de Privacidade,
+                        mesmo após sua leitura, ou precisar interagir conosco sobre assuntos
+                        envolvendo os seus dados pessoais, poderá fazê-lo::</p>
+                    <p>Por meio dos nossos canais de atendimento disponíveis em
+                        <a
+                            href="https://www.cnj.jus.br/OuvidoriaFormularioWeb/index">https://www.cnj.jus.br/OuvidoriaFormularioWeb/index</a>,
+                        solicitando as
+                        opções sobre a privacidade dos seus dados pessoais, sempre que
+                        disponível; ou</p>
+                    <p>Pelo e-mail do Encarregado de Dados: <a
+                            href="&#109;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#x65;&#x6e;&#99;&#97;&#114;&#x72;&#x65;&#103;&#97;&#100;&#111;&#64;&#99;&#x6e;&#x6a;&#x2e;&#x6a;&#117;&#115;&#46;&#98;&#x72;">&#x65;&#x6e;&#99;&#97;&#114;&#x72;&#x65;&#103;&#97;&#100;&#111;&#64;&#99;&#x6e;&#x6a;&#x2e;&#x6a;&#117;&#115;&#46;&#98;&#x72;</a>
+                    </p>
+                    <p>Estamos sempre à disposição para esclarecer suas dúvidas e colocar você
+                        no controle dos seus dados pessoais.</p>
+                    <p>Contem conosco para mantê-los informados!</p>
+                    <p>Atualização: 25 de Novembro de 2020.<br><strong>CONSELHO NACIONAL DE JUSTIÇA - CNJ</strong></p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

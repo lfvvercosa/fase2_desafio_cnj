@@ -1,0 +1,13 @@
+.chart {
+  &-box {
+    @extend .col-12;
+    @extend .col-md-6;
+    @extend .mb-3;
+  }
+  &-container {
+    @extend .col-md-12;
+    @extend .px-0;
+
+
+  }
+}

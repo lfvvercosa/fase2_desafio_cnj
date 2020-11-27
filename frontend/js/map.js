@@ -1,3 +1,6 @@
+var infowindow = undefined
+var map = undefined
+var markers = []
 
 function addMapToDocument(){
   var googleMapBaseUrl = "https://maps.googleapis.com/maps/api/js"
@@ -6,42 +9,86 @@ function addMapToDocument(){
     +"&libraries="
     +"&v=weekly"
   var googleMap = document.createElement('script');
+  googleMap.setAttribute("async", "")
   googleMap.src = googleMapBaseUrl+googleMapUrlKeyParams
   googleMap.async = true
   document.getElementsByTagName('head')[0].appendChild(googleMap)
 }
 
 function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 6,
-    center: new google.maps.LatLng(-7.9184546, -34.8209559),
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: new google.maps.LatLng(-15.6182046,-50.6699791),
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     gestureHandling: 'none',
     zoomControl: false
   });
 
-  var infowindow = new google.maps.InfoWindow();
+  infowindow = new google.maps.InfoWindow();
 
-  var locations = getCourtList()
 
-  populateMap(map, infowindow, locations)
+
+}
+
+// Sets the map on all markers in the array.
+function setMapOnAll(map) {
+  for (let i = 0; i < markers.length; i++) {
+    markers[i].setMap(map);
+  }
+}
+
+// Removes the markers from the map, but keeps them in the array.
+function clearMarkers() {
+  setMapOnAll(null);
+}
+
+// Shows any markers currently in the array.
+function showMarkers() {
+  setMapOnAll(map);
+}
+
+// Deletes all markers in the array by removing references to them.
+function deleteMarkers() {
+  clearMarkers();
+  markers = [];
+}
+
+// Filter out non-brazilian locations
+function isInsideBrazil(lat, long) {
+  if(long < -73.992222 || long > -34.791667) {
+    return false
+  }
+  if(lat > 5.272222 || lat < -33.750833) {
+    return false
+  }
+
+  return true
 }
 
 function populateMap(map, infowindow, locations) {
   var marker, i;
 
-  for (i = 0; i < locations.length; i++) {  
-    marker = new google.maps.Marker({
-      position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-      map: map
-    });
+  deleteMarkers()
 
-    google.maps.event.addListener(marker, 'click', (function(marker, i) {
-      return function() {
-        infowindow.setContent(locations[i][0]);
-        infowindow.open(map, marker);
-      }
-    })(marker, i));
+  for (i = 0; i < locations.length; i++) { 
+    
+    if (isInsideBrazil(locations[i][1], locations[i][2])) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+  
+      markers.push(marker)
+  
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+    
   }
 }
 

@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Desafio CNJ</title>
-    <!-- html5 meta tags -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -15,9 +15,9 @@
     <!-- style -->
     <link rel="stylesheet" href="../css/layout/page.css">
     <link rel="stylesheet" href="../css/layout/header.css">
+    <link rel="stylesheet" href="../css/layout/menu.css">
     <link rel="stylesheet" href="../css/index/components/rounded-info.css">
     <link rel="stylesheet" href="../css/index/components/card.css">
-    <link rel="stylesheet" href="../css/index/components/menu.css">
     <link rel="stylesheet" href="../css/index/components/rank.css">
     <link rel="stylesheet" href="../css/comparing-courts/components/control.css">
     <link rel="stylesheet" href="../css/comparing-courts/components/graphs.css">
@@ -73,8 +73,12 @@
     <!-- <script srclibs/="../tests/test1.js"></script> -->
 
     <script src="../libs/sigma.js-1.2.1/plugins/sigma.plugins.dragNodes/sigma.plugins.dragNodes.js"></script>
-
+    <script src="../libs/sigma.js-1.2.1/plugins/sigma.plugins.animate/sigma.plugins.animate.js"></script>
+    <script src="../libs/sigma.js-1.2.1/plugins/sigma.layout.noverlap/sigma.layout.noverlap.js"></script>
+    
     <!-- behaviour -->
+    <script src="../js/cache.js" ></script>
+    <script src="../js/requester.js" ></script>
 
   </head>
   <body>
@@ -82,7 +86,7 @@
     <!-- header -->
     <div class="container">
       <div class="row">
-        <div class="col-1 position">
+        <div id="medal" class="col-1 position">
           <div class="position-container">
             <div id="position-number" class="position-number"></div>
             <div class="position-text">colocada</div>
@@ -115,7 +119,6 @@
                   <div class="rounded-info header-bottom-group-item"><p id="group-el-1"></p></div>
                   <div class="rounded-info header-bottom-group-item"><p id="group-el-2"></p></div>
                   <div class="rounded-info header-bottom-group-item"><p id="group-el-3"></p></div>
-                  <div class="rounded-info header-bottom-group-item"><p id="group-el-4"></p></div>
                 </div>
               </div>
             </div>
@@ -128,12 +131,12 @@
       <div class="row">
         <div class="menu col-1">
           <div class="menu-content">
-            <object id="menu-home" class="menu-content-icon-selected" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/home.svg"></object>
-            <object id="menu-chart" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/chart.svg"></object>
-            <object id="menu-info" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/info.svg"></object>
-            <object id="menu-search" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/search.svg"></object>
-            <object id="menu-sitemap" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/sitemap.svg"></object>
-            <object id="menu-file" type="image/svg+xml" data="http://http://backend-cnj-time4.herokuapp.com/frontend/resources/images/icons/file.svg"></object>
+            <object id="menu-home" type="image/svg+xml" data="../resources/images/icons/home.svg"></object>
+            <object id="menu-chart" class="menu-content-icon-selected" type="image/svg+xml" data="../resources/images/icons/chart.svg"></object>
+            <object id="menu-info" type="image/svg+xml" data="../resources/images/icons/info.svg"></object>
+            <object id="menu-search" type="image/svg+xml" data="../resources/images/icons/search.svg"></object>
+            <object id="menu-sitemap" type="image/svg+xml" data="../resources/images/icons/sitemap.svg"></object>
+            <object id="menu-file" type="image/svg+xml" data="../resources/images/icons/file.svg"></object>
           </div>
         </div>
         <div class="col-11 card">
@@ -168,9 +171,21 @@
             </div>
           </div>
           <div class="container graph-container">
-            <div id="graph-container-left" class="graph-container-left"></div>
+            <div class="graph-container-left">
+              <div id="graph-container-left-court" class="graph-container-left-name">VARA ÚNICA DE ANAJAS</div>
+              <div id="graph-container-left" class="graph-container-left-content"></div>
+              <div class="rank-movements-coments">
+                <div class="rank-movements-coments-box">
+                  <p>ESCREVER UM COMENTÁRIO</p>
+                </div>
+              </div>
+            </div>
             <div class="graph-container-separator"></div>
-            <div id="graph-container-right" class="graph-container-right"></div>
+            <div class="graph-container-right">
+              <div class="graph-container-right-title">Comparativo com a vara de melhor resultado</div>
+              <div id="graph-container-right-court" class="graph-container-right-name">NOME DA VARA QUE ESTÁ SENDO COMPARADA</div>
+              <div id="graph-container-right" class="graph-container-right-content"></div> 
+            </div>
           </div>
           <div class="container footer">
             <div class="row">
@@ -262,11 +277,9 @@
       </div>
     </div>
 
-    <!-- scripts -->
     <script src="../js/header.js" ></script>
     <script src="../js/comparing-courts.js" ></script>
     <script src="../js/components.js" ></script>
     <script src="../js/graph.js" ></script>
-    <script src="../js/requester.js" ></script>
   </body>
 </html>

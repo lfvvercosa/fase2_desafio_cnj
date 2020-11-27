@@ -1,0 +1,156 @@
+.tabela {
+  @extend .chart-box;
+  @extend .chart-container;
+}
+table {
+  @extend .mb-0;
+  thead {
+    @extend .thead-dark;
+    th {
+      padding: 0.75rem;
+      vertical-align: middle !important;
+    }
+  }
+  tbody {
+    tr {
+      td {
+        &:nth-of-type(2) {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          max-width: 1px;
+          text-align: left;
+        }
+        &:hover,
+        &:focus {
+          cursor: pointer;
+        }
+      }
+
+      // &:hover,
+      // &:focus {
+      //  th, td {
+      //     border: 1px solid red !important;
+      //   }
+      // }
+    }
+  }
+}
+.table-header {
+  @extend .d-flex;
+  @extend .justify-content-between;
+  .secao-titulo {
+    @extend .mb-md-0;
+    @extend .flex-grow-1;
+  }
+  div {
+    &:last-of-type {
+      @extend .d-flex;
+      @extend .align-items-center;
+    }
+  }
+  select,
+  .select2 {
+    @extend .form-control;
+    @extend .d-inline-block;
+    width: 250px;
+    @extend .mr-2;
+    &-search__field {
+      &:focus {
+        outline: none;
+      }
+    }
+    .select2-selection {
+      @extend .border-0;
+    }
+  }
+  button {
+    @extend .btn;
+    &.csv {
+      @extend .btn-outline-success;
+      min-width: 90px;
+    }
+  }
+}
+.table-responsive {
+  @extend .pt-3;
+}
+
+.tabela-alerta-sugeridos {
+  table {
+    @extend .table-striped;
+    @extend .table;
+    @extend .text-center;
+
+    @extend .table-bordered;
+    @extend .table-sm;
+    td {
+      background: transparent;
+    }
+  }
+}
+
+#rank_courts_table {
+  @extend .table;
+  @extend .text-center;
+
+  @extend .table-bordered;
+  @extend .table-sm;
+  thead {
+    @extend .thead-dark;
+  }
+  tbody {
+    tr {
+      &.uj-destaque {
+        @extend .table-info;
+        &:nth-child(even) {
+          &,
+          & td,
+          & th {
+            background: rgba(189, 228, 235, 0.3) !important;
+          }
+        }
+        button {
+          @extend .text-info;
+        }
+      }
+      &.uj-alerta {
+        @extend .table-danger;
+        button {
+          @extend .text-danger;
+        }
+        &:nth-child(even) {
+          &,
+          & td,
+          & th {
+            background: rgba(245, 199, 203, 0.3) !important;
+          }
+        }
+      }
+
+      &.table-title,
+      &.ellipses {
+        td {
+          @extend .text-uppercase;
+          font-weight: bold;
+          border-width: 0 1px;
+          background-color: #fff !important;
+          @extend .text-center;
+          &.ellipses {
+            td {
+              padding: 1rem 0;
+            }
+          }
+        }
+      }
+      td {
+        button {
+          &:hover,
+          &:focus {
+            @extend .text-white;
+          }
+        }
+      }
+    }
+  }
+}

@@ -15,6 +15,7 @@
    * @param  {configurable}             settings The settings function.
    */
   sigma.canvas.hovers.def = function(node, context, settings) {
+    /* 
     var x,
         y,
         w,
@@ -25,7 +26,7 @@
         size = node[prefix + 'size'],
         fontSize = (settings('labelSize') === 'fixed') ?
           settings('defaultLabelSize') :
-          settings('labelSizeRatio') * size;
+          settings('labelSizeRatio') * size/4;
 
     // Label background:
     context.font = (fontStyle ? fontStyle + ' ' : '') +
@@ -101,6 +102,6 @@
         Math.round(node[prefix + 'x'] + size + 3),
         Math.round(node[prefix + 'y'] + fontSize / 3)
       );
-    }
+    } */
   };
 }).call(this);

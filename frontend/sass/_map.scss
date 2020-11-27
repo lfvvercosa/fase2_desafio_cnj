@@ -1,0 +1,14 @@
+#map {
+  height: 375px;
+  @extend .rounded;
+}
+
+.mapa {
+  @extend .col-12;
+  @extend .mb-3;
+  @extend .col-md-6;
+
+  &-container {
+    @extend .chart-container;
+  }
+}

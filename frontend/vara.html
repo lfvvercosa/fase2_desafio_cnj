@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Panorama</title>
+  <!-- html5 meta tags -->
+  <meta charset="utf-8">
+  <link rel="icon" sizes="32x32" href="./resources/images/favicon.jpg" />
+  <link rel="icon" sizes="192x192" href="./resources/images/favicon.jpg" />
+  <link rel="apple-touch-icon-precomposed" href="./resources/images/favicon.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.2/js/all.min.js"
+    integrity="sha512-IqeQ6271Vq75Nf4OOwCEYi4tIAyT2J7vtKrmOU9WCezb+YkxqAu+igEi2CuLEnA7cqtvFDHsQhXbpZXx/evxrw=="
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="./sass/main.css">
+</head>
+
+<body>
+  <main>
+    <header class="site-header">
+      <img src="resources/images/logo.png" alt="" class="site-logo">
+      <div class="site-modulo">Panorama</div>
+    </header>
+    <nav class="migalha-pao" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li><a data-toggle="tooltip" title="Retornar a tela inicial" href="index.html">Panorama CNJ</a></li>
+        <li id="group_name"></li>
+        <li id="court_name"></li>
+        <li id="vara_name" class="active"></li>
+      </ol>
+    </nav>
+    <div class="titulo-pagina">
+      <div class="pagina-info">
+        <h1 id="vara_name2" class="tribunal-vara"></h1>
+        <span id="court_name2" class="tribunal-nome"></span>
+        <hr class="my-2">
+        <p id="court_address">
+        </p>
+      </div>
+      <div class="pagina-posicao" data-toggle="tooltip" title="Posição da Unidade Jurídica no ranking do melhor tempo médio de processo no grupo">
+        <span id="court_rank"></span>
+        
+      </div>
+
+    </div>
+    <div class="my2" id="detalhes"></div>
+    <section class="statistics">
+      <div class="statistics-len3 statistics-card">
+        <div class="card">
+          <div id="statistics-duration-title-1" class="statistics-card-title"></div>
+          <div id="statistics-duration-title-2" class="statistics-card-title"></div>
+          <div id="statistics-duration-value" class="statistics-card-value"></div>
+        </div>
+      </div>
+      <div class="statistics-len2 statistics-card">
+        <div class="card">
+          <div id="statistics-moves-title-1" class="statistics-card-title"></div>
+          <div id="statistics-moves-title-2" class="statistics-card-title"></div>
+          <div id="statistics-moves-value" class="statistics-card-value"></div>
+        </div>
+      </div>
+      <div class="statistics-len1 statistics-card">
+        <div class="card">
+          <div id="statistics-finished-title-1" class="statistics-card-title"></div>
+          <div id="statistics-finished-title-2" class="statistics-card-title"></div>
+          <div id="statistics-finished-value" class="statistics-card-value"></div>
+
+        </div>
+      </div>
+
+      <div class="statistics-len4 statistics-card">
+        <div class="card">
+          <div id="statistics-best-title-1" class="statistics-card-title"></div>
+          <div id="statistics-best-title-2" class="statistics-card-title"></div>
+          <div id="statistics-best-value" class="statistics-card-value"></div>
+        </div>
+      </div>
+      <div class="statistics-len5 statistics-card">
+        <div class="card">
+          <div id="statistics-wrost-title-1" class="statistics-card-title"></div>
+          <div id="statistics-wrost-title-2" class="statistics-card-title"></div>
+          <div id="statistics-wrost-value" class="statistics-card-value"></div>
+
+        </div>
+      </div>
+    </section>
+    <div class="ranking">
+      <header class="secao-header">
+        <section class="secao-titulo">Gestão de tramitação processual</section>
+        <div class="steps">
+          <div class="steps-toggle">
+            <div class="steps-option steps-option-destaques">Destaques</div>
+            <div class="steps-switch">
+              <input type="checkbox" class="d-none" checked="false" id="toggle-switch"
+                onchange="setRankComponent(this)">
+              <label for="toggle-switch">
+                <i class="switch fas fa-toggle-on"></i>
+              </label>
+              <div class="steps-option steps-option-gargalos">Gargalos</div>
+
+            </div>
+          </div>
+        </div>
+        <div class="filtro-info">
+          <div data-toggle="popover" title="Gestão de Tramitação Processual"
+            data-content="Exibe principais transições entre macroetapas processuais ordenadas por maior tempo consumido no processo (GARGALO) ou menor tempo (DESTAQUE) da Unidade Judiciária.">
+            <i class="fas fa-info"></i></div>
+        </div>
+      </header>
+      <div class="diagnosis">
+      </div>
+    </div>
+    <div class="row">
+      <div class="chart-box">
+        <div class="card">
+          <div class="secao-subtitulo">
+            Unidades Judiciárias com melhor desempenho
+          </div>
+          <div id="chart_best" class="c3"></div>
+        </div>
+      </div>
+      <div class="chart-box">
+        <div class="card">
+          <div class="secao-subtitulo">
+            Unidades Judiciárias com desempenho semelhante
+          </div>
+          <div id="chart_neighbors" class="c3"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- scripts -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script> <!-- d3 -->
+  <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script> <!-- c3js -->
+  <script src="./resources/c3/c3.min.js"></script>
+  <script src="./config.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script src="./js/cache.js"></script>
+  <script src="./js/requester.js"></script>
+  <script src="./js/header.js"></script>
+  <script src="./js/vara.js"></script>
+  <script src="./js/components.js"></script>
+  <script src="./js/rank-chart.js"></script>
+  <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+      $('[data-toggle="popover"]').popover({
+        trigger: 'hover'
+
+      })
+
+    })
+  </script>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="comment-replay" tabindex="-1" aria-labelledby="comment-replayLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="comment-replayLabel"><strong id="vara_name3"></strong></h5>
+          <button title="Fechar janela" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="comment_title"></p>
+
+
+          <form action="#">
+            <fieldset class="form-group">
+              <legend><label for="comment-reply-new">Escreva seu comentário</label></legend>
+              <textarea class="form-control" id="comment-body" placeholder="Digite seu comentário aqui"
+                rows="3"></textarea>
+
+            </fieldset>
+          </form>
+
+
+
+
+        </div>
+        <div class="modal-footer d-flex justify-content-between">
+          <button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+          <button type="button" onclick="send()" class="btn btn-primary">Enviar comentário</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

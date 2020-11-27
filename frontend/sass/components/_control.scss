@@ -1,0 +1,42 @@
+.control {
+  height: 10rem;
+  background-color: white;
+  .row {
+    height: 100%;
+    margin: 0;
+  }
+  &-title {
+    font-weight: 600;
+    font-size: 2.4rem;
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+  &-list {
+    .row {
+      align-items: center;
+    }
+    &-item {
+      display: block;
+      &-name {
+        font-weight: 600;
+        font-size: 1.8rem;
+        margin: 0;
+      }
+      &-controller {
+        display: flex;
+        padding-top: 1rem;
+        &-input{
+          width: 80%;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+        &-value {
+          font-weight: 400;
+          font-size: 1.6rem;
+          padding-left: 1rem;
+        }
+      }
+    }
+  }
+}

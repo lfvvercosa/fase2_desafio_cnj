@@ -1,0 +1,284 @@
+<div id="rank-worst" class="row rank-worst d-flex align-items-center">
+              <p class="rank-movements-title">GARGALOS EM DESTAQUE</p>
+              <div class="d-flex flex-column flex-md-row align-items-center w-100">
+                <div class="col-12 col-md-6 rank-movements">
+                  <div class="rank-movements-content">
+                    <div class="row">
+                      <!-- first item -->
+                      <div class="col-12 col-md-4 pb-5 rank-movements-content-item">
+                        <div id="bottleneck-mov-1-source" class="rounded-info rank-movements-content-item-name"></div>
+                        <div class="rank-movements-content-item-transaction">
+                          <div class="rank-movements-content-item-transaction-text">
+                            <p id="bottleneck-mov-1-position"
+                              class="rank-movements-content-item-transaction-text-number"> </p>
+                            <p id="bottleneck-mov-1-description"
+                              class="rank-movements-content-item-transaction-text-time"> </p>
+                          </div>
+                          <div class="rank-movements-content-item-transaction-arrow"><img
+                              src="./resources/images/arrows/arrow-1.svg"></div>
+                        </div>
+                        <div id="bottleneck-mov-3-dest" class="rounded-info rank-movements-content-item-name"></div>
+                      </div> <!-- second item -->
+                      <div class="col-12 col-md-4 pb-5 rank-movements-content-item">
+                        <div id="bottleneck-mov-2-source" class="rounded-info rank-movements-content-item-name"></div>
+                        <div class="rank-movements-content-item-transaction">
+                          <div class="rank-movements-content-item-transaction-text">
+                            <p id="bottleneck-mov-2-position"
+                              class="rank-movements-content-item-transaction-text-number"> </p>
+                            <p id="bottleneck-mov-2-description"
+                              class="rank-movements-content-item-transaction-text-time"> </p>
+                          </div>
+                          <div class="rank-movements-content-item-transaction-arrow"><img
+                              src="./resources/images/arrows/arrow-1.svg"></div>
+                        </div>
+                        <div id="bottleneck-mov-2-dest" class="rounded-info rank-movements-content-item-name"></div>
+                      </div> <!-- third item -->
+                      <div class="col-12 col-md-4 pb-5 rank-movements-content-item">
+                        <div id="bottleneck-mov-3-source" class="rounded-info rank-movements-content-item-name"></div>
+                        <div class="rank-movements-content-item-transaction">
+                          <div class="rank-movements-content-item-transaction-text">
+                            <p id="bottleneck-mov-3-position"
+                              class="rank-movements-content-item-transaction-text-number"> </p>
+                            <p id="bottleneck-mov-3-description"
+                              class="rank-movements-content-item-transaction-text-time"> </p>
+                          </div>
+                          <div class="rank-movements-content-item-transaction-arrow"><img
+                              src="./resources/images/arrows/arrow-1.svg"></div>
+                        </div>
+                        <div id="bottleneck-mov-1-dest" class="rounded-info rank-movements-content-item-name"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rank-movements-coments">
+                    <div class="rank-movements-coments-box">
+                      <p>ESCREVER UM COMENTÁRIO</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-100 d-block d-md-none pb-3 pb-md-0"></div>
+
+                <div class="col-12 col-md-6 rank-table">
+                  <div class="rank-table-tabs d-flex flex-md-row flex-column">
+                    <div id="table-bottleneck-tab1" class="rank-table-tabs-item rank-table-tabs-item-selected"></div>
+                    <div id="table-bottleneck-tab2" class="rank-table-tabs-item"></div>
+                    <div id="table-bottleneck-tab3" class="rank-table-tabs-item"></div>
+                  </div>
+                  <table class="table rank-table-content">
+                    <thead class="rank-table-title">
+                      <tr>
+                        <th class="rank-table-title-index"><span>#</span></th>
+                        <th class="rank-table-title-name"><span>Nome</span></th>
+                        <th class="rank-table-title-duration"><span>Duração</span></th>
+                        <th class="rank-table-title-comments"><span>Comentários</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr id="table-bottleneck-row-1" class="rank-table-content-odd">
+                        <td id="table-bottleneck-row-1-index" class="rank-table-content-index">1</td>
+                        <td id="table-bottleneck-row-1-name" class="rank-table-content-name"></td>
+                        <td id="table-bottleneck-row-1-duration" class="rank-table-content-duration"></td>
+                        <td id="table-bottleneck-row-1-comments" class="rank-table-content-comments"></td>
+                      </tr>
+                      <tr id="table-bottleneck-row-2" class="rank-table-content-even">
+                        <td id="table-bottleneck-row-2-index" class="rank-table-content-index">2</td>
+                        <td id="table-bottleneck-row-2-name" class="rank-table-content-name"></td>
+                        <td id="table-bottleneck-row-2-duration" class="rank-table-content-duration"></td>
+                        <td id="table-bottleneck-row-2-comments" class="rank-table-content-comments"></td>
+                      </tr>
+                      <tr id="table-bottleneck-row-3">
+                        <td id="table-bottleneck-row-3-index" class="rank-table-content-index">3</td>
+                        <td id="table-bottleneck-row-3-name" class="rank-table-content-name"></td>
+                        <td id="table-bottleneck-row-3-duration" class="rank-table-content-duration"></td>
+                        <td id="table-bottleneck-row-3-comments" class="rank-table-content-comments"></td>
+                      </tr>
+                      <tr id="table-bottleneck-row-4" class="rank-table-content-even">
+                        <td id="table-bottleneck-row-4-index" class="rank-table-content-index">4</td>
+                        <td id="table-bottleneck-row-4-name" class="rank-table-content-name"></td>
+                        <td id="table-bottleneck-row-4-duration" class="rank-table-content-duration"></td>
+                        <td id="table-bottleneck-row-4-comments" class="rank-table-content-comments"></td>
+                      </tr>
+                      <tr id="table-bottleneck-row-5" class="rank-table-content-odd">
+                        <td id="table-bottleneck-row-5-index" class="rank-table-content-index">5</td>
+                        <td id="table-bottleneck-row-5-name" class="rank-table-content-name"></td>
+                        <td id="table-bottleneck-row-5-duration" class="rank-table-content-duration"></td>
+                        <td id="table-bottleneck-row-5-comments" class="rank-table-content-comments"></td>
+                      </tr>
+                      <tr id="table-bottleneck-row-6" class="rank-table-content-even">
+                        <td class="rank-table-content-6-index">6</td>
+                        <td class="rank-table-content-6-name"></td>
+                        <td class="rank-table-content-6-duration"></td>
+                        <td class="rank-table-content-6-comments"></td>
+                      </tr>
+                      <tr id="table-bottleneck-row-7" class="rank-table-content-odd">
+                        <td id="table-bottleneck-row-7-index" class="rank-table-content-index">7</td>
+                        <td id="table-bottleneck-row-7-name" class="rank-table-content-name"></td>
+                        <td id="table-bottleneck-row-7-duration" class="rank-table-content-duration"></td>
+                        <td id="table-bottleneck-row-7-comments" class="rank-table-content-comments"></td>
+                      </tr>
+                      <tr id="table-bottleneck-row-8" class="rank-table-content-even">
+                        <td id="table-bottleneck-row-8-index" class="rank-table-content-index">8</td>
+                        <td id="table-bottleneck-row-8-name" class="rank-table-content-name"></td>
+                        <td id="table-bottleneck-row-8-duration" class="rank-table-content-duration"></td>
+                        <td id="table-bottleneck-row-8-comments" class="rank-table-content-comments"></td>
+                      </tr>
+                      <tr id="table-bottleneck-row-9" class="rank-table-content-odd">
+                        <td id="table-bottleneck-row-9-index" class="rank-table-content-index">9</td>
+                        <td id="table-bottleneck-row-9-name" class="rank-table-content-name"></td>
+                        <td id="table-bottleneck-row-9-duration" class="rank-table-content-duration"></td>
+                        <td id="table-bottleneck-row-9-comments" class="rank-table-content-comments"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div id="rank-best" class="row rank-best d-flex align-items-center  ">
+              <p class="rank-movements-title">ETAPAS EM DESTAQUE</p>
+              <div class="d-flex flex-column flex-md-row align-items-center w-100">
+
+                <div class="col-12 col-md-6 rank-movement-list">
+                  <div class="rank-movements-content">
+                    <div class="row">
+                      <!-- first item -->
+                      <div class="col-12 col-md-4 pb-5 rank-movements-content-item">
+                        <div id="best-mov-1-source" class="rounded-info rank-movements-content-item-name"></div>
+                        <div class="rank-movements-content-item-transaction">
+                          <div class="rank-movements-content-item-transaction-text">
+                            <p id="best-mov-1-position" class="rank-movements-content-item-transaction-text-number">
+                            </p>
+                            <p id="best-mov-1-description" class="rank-movements-content-item-transaction-text-time">
+                            </p>
+                          </div>
+                          <div class="rank-movements-content-item-transaction-arrow"><img
+                              src="./resources/images/arrows/arrow-1.svg"></div>
+                        </div>
+                        <div id="best-mov-1-dest" class="rounded-info rank-movements-content-item-name"></div>
+                      </div> <!-- second item -->
+                      <div class="col-12 col-md-4 pb-5 rank-movements-content-item">
+                        <div id="best-mov-2-source" class="rounded-info rank-movements-content-item-name"></div>
+                        <div class="rank-movements-content-item-transaction">
+                          <div class="rank-movements-content-item-transaction-text">
+                            <p id="best-mov-2-position" class="rank-movements-content-item-transaction-text-number">
+                            </p>
+                            <p id="best-mov-2-description" class="rank-movements-content-item-transaction-text-time">
+                            </p>
+                          </div>
+                          <div class="rank-movements-content-item-transaction-arrow"><img
+                              src="./resources/images/arrows/arrow-1.svg"></div>
+                        </div>
+                        <div id="best-mov-2-dest" class="rounded-info rank-movements-content-item-name"></div>
+                      </div> <!-- third item -->
+                      <div class="col-12 col-md-4 pb-5 rank-movements-content-item">
+                        <div id="best-mov-3-source" class="rounded-info rank-movements-content-item-name"></div>
+                        <div class="rank-movements-content-item-transaction">
+                          <div class="rank-movements-content-item-transaction-text">
+                            <p id="best-mov-3-position" class="rank-movements-content-item-transaction-text-number">
+                            </p>
+                            <p id="best-mov-3-description" class="rank-movements-content-item-transaction-text-time">
+                            </p>
+                          </div>
+                          <div class="rank-movements-content-item-transaction-arrow"><img
+                              src="./resources/images/arrows/arrow-1.svg"></div>
+                        </div>
+                        <div id="best-mov-3-dest" class="rounded-info rank-movements-content-item-name"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rank-movements-coments">
+                    <div class="rank-movements-coments-box">
+                      <p>ESCREVER UM COMENTÁRIO</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-100 d-block d-md-none pb-3 pb-md-0"></div>
+
+                <div class="col-12 col-md-6 rank-table">
+                  <div class="rank-table-tabs d-flex flex-md-row flex-column">
+                    <div id="table-best-tab1" class="rank-table-tabs-item rank-table-tabs-item-selected"></div>
+                    <div id="table-best-tab2" class="rank-table-tabs-item"></div>
+                    <div id="table-best-tab3" class="rank-table-tabs-item"></div>
+                  </div>
+
+                  <div class="table rank-table-content">
+                    <table>
+                      <thead class="rank-table-title">
+                        <tr>
+                          <th id="table-best-title-index" class="rank-table-content-index"><span>#</span></th>
+                          <th id="table-best-title-name" class="rank-table-content-name"><span>Nome</span></th>
+                          <th id="table-best-title-duration" class="rank-table-content-duration"><span>Duração</span>
+                          </th>
+                          <th id="table-best-title-comments" class="rank-table-content-comments">
+                            <span>Comentários</span>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr id="table-best-row-1" class="rank-table-content-odd">
+                          <td id="table-best-row-1-index" class="rank-table-content-index">1</td>
+                          <td id="table-best-row-1-name" class="rank-table-content-name"></td>
+                          <td id="table-best-row-1-duration" class="rank-table-content-duration"></td>
+                          <td id="table-best-row-1-comments" class="rank-table-content-comments"></td>
+                        </tr>
+                        <tr id="table-best-row-2" class="rank-table-content-even">
+                          <td id="table-best-row-2-index" class="rank-table-content-index">2</td>
+                          <td id="table-best-row-2-name" class="rank-table-content-name"></td>
+                          <td id="table-best-row-2-duration" class="rank-table-content-duration"></td>
+                          <td id="table-best-row-2-comments" class="rank-table-content-comments"></td>
+                        </tr>
+                        <tr id="table-best-row-3">
+                          <td id="table-best-row-3-index" class="rank-table-content-index">3</td>
+                          <td id="table-best-row-3-name" class="rank-table-content-name"></td>
+                          <td id="table-best-row-3-duration" class="rank-table-content-duration"></td>
+                          <td id="table-best-row-3-comments" class="rank-table-content-comments"></td>
+                        </tr>
+                        <tr id="table-best-row-4" class="rank-table-content-even">
+                          <td id="table-best-row-4-index" class="rank-table-content-index">4</td>
+                          <td id="table-best-row-4-name" class="rank-table-content-name"></td>
+                          <td id="table-best-row-4-duration" class="rank-table-content-duration"></td>
+                          <td id="table-best-row-4-comments" class="rank-table-content-comments"></td>
+                        </tr>
+                        <tr id="table-best-row-5" class="rank-table-content-odd">
+                          <td id="table-best-row-5-index" class="rank-table-content-index">5</td>
+                          <td id="table-best-row-5-name" class="rank-table-content-name"></td>
+                          <td id="table-best-row-5-duration" class="rank-table-content-duration"></td>
+                          <td id="table-best-row-5-comments" class="rank-table-content-comments"></td>
+                        </tr>
+                        <tr id="table-best-row-6" class="rank-table-content-even">
+                          <td id="table-best-row-6-index" class="rank-table-content-index">6</td>
+                          <td id="table-best-row-6-name" class="rank-table-content-name"></td>
+                          <td id="table-best-row-6-duration" class="rank-table-content-duration"></td>
+                          <td id="table-best-row-6-comments" class="rank-table-content-comments"></td>
+                        </tr>
+                        <tr class="rank-table-content-odd">
+                          <td id="table-best-row-7" id="table-best-row-7-index" class="rank-table-content-index">7
+                          </td>
+                          <td id="table-best-row-7-name" class="rank-table-content-name"></td>
+                          <td id="table-best-row-7-duration" class="rank-table-content-duration"></td>
+                          <td id="table-best-row-7-comments" class="rank-table-content-comments"></td>
+                        </tr>
+                        <tr id="table-best-row-8" class="rank-table-content-even">
+                          <td id="table-best-row-8-index" class="rank-table-content-index">8</td>
+                          <td id="table-best-row-8-name" class="rank-table-content-name"></td>
+                          <td id="table-best-row-8-duration" class="rank-table-content-duration"></td>
+                          <td id="table-best-row-8-comments" class="rank-table-content-comments"></td>
+                        </tr>
+                        <tr id="table-best-row-9" class="rank-table-content-odd">
+                          <td id="table-best-row-9-index" class="rank-table-content-index">9</td>
+                          <td id="table-best-row-9-name" class="rank-table-content-name"></td>
+                          <td id="table-best-row-9-duration" class="rank-table-content-duration"></td>
+                          <td id="table-best-row-9-comments" class="rank-table-content-comments"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            ---------------------
+
+
+
+            
+     
