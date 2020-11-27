@@ -66,7 +66,21 @@ PM4Py é a plataforma de mineração de processos de código aberto líder escri
 
 # Como executar o projeto
 
-Nosso time subiu os servidores do backend e do front-end na plataforma gratuira Heroku. Dessa forma, é possível acessar nossa solução, batizada de Panorama, utilizando o seguinte endereço web:
+Nosso time realizou duas formas de execução do projeto, a primeira utilizando Dockerfiles customizados e a segunda numa plataforma gratuita de servidor.
+
+## Utilizando Dockerfiles
+
+Para executar o projeto utilizando Dockerfiles, nós dividimos em três partes: Front-end, back-end e database.
+
+1. Front-end: para rodar o front-end, basta rodar o seguinte comando na raiz deste projeto e em seguida acessar o site http://localhost:9000/:
+
+    > $ docker run -p 9000:9000 panorama
+
+2. Para executar o back-end e o database, você pode seguir os passos descritos no [projeto do backend neste link](https://github.com/gabriel-bandeira/backend-desafio-cnj)
+
+## Utilizando servidor online
+
+Na segunda forma, utilizando um servidor online, nosso time subiu os servidores do backend e do front-end na plataforma gratuira Heroku. Dessa forma, é possível acessar nossa solução, batizada de Panorama, utilizando o seguinte endereço web:
     http://panorama-fase2.herokuapp.com
     
 **OBS(1)**: É importante destacar limitação da versão gratuita da plataforma Heroku. Ela restringe o número de conexões máximas ao banco de dados, sendo assim, após extendido uso, o banco de dados pode ficar indisponível por alguns minutos. 
