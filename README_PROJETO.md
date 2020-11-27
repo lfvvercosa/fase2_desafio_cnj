@@ -96,14 +96,13 @@ No mais, listamos aqui os principais passos para executar nossa solução do in�
 3. Instalação do backend Django
     1. O projeto do backend está disponível em: git: gabriel-bandeira/backend-desafio-cnj
     2. Instalar dependências utilizando o comando 'pip install -r requirements.txt'
-    3. Executar script MacroSteps.py em: git: lfvvercosa/desafio_cnj para geração dos jsons
-    4. Popular o banco de dados com o jsons presentes na pasta Fixtures utilizando o comando 'python manage.py loaddata <nome_do_json>' na seguinte ordem:
+    3. Popular o banco de dados com o jsons presentes na pasta Fixtures utilizando o comando 'python manage.py loaddata <nome_do_json>' na seguinte ordem:
         1. base5_comments.json
         2. base5_groups.json
         3. base5_varas.json
         4. base5_steps_config.json
         5. base5_steps.json
-    5. Executar o backend com o comando 'python manage.py runserver'
+    4. Executar o backend com o comando 'python manage.py runserver'
 4. Instalação do front-end
     1. Instalar o Node.js
     2. executar Npm install
